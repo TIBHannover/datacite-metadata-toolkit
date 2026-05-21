@@ -1,3 +1,11 @@
+# comment: |
+#   Subject IRIs for sub-elements use nested paths (e.g. property/creator/creatorName)
+#   that resolve via the redirect workflow to the canonical flat property files.
+#   dateType values with no schema.org equivalent (Accepted, Submitted, Withdrawn,
+#   Other, Valid) are intentionally omitted; they are covered in the DataCite-DCTERMS
+#   mapping. schema:validFrom is not in the domain of CreativeWork/Dataset and was
+#   removed. object_id values use https://schema.org/ (HTTPS) per current schema.org
+#   convention.
 # curie_map:
 #   datacite-ld: https://schema.stage.datacite.org/linked-data/
 #   datacite-class: https://schema.stage.datacite.org/linked-data/class/
