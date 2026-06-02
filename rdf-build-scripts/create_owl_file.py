@@ -69,11 +69,6 @@ def main():
         g.parse(file, format="json-ld")
     print(f"{counter} jsonld files parsed from property directory")
 
-    ## change RDF.Property to OWL.AnnotationProperty
-    # for subject in set(g.subjects(RDF.type, RDF.Property)):
-    #    g.remove((subject, RDF.type, RDF.Property))
-    #    g.add((subject, RDF.type, OWL.AnnotationProperty))
-
     # write to RDF/XML file
     g.serialize(destination=BASE_DIR / "datacite.owl", format="pretty-xml")
 
