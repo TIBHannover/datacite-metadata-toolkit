@@ -7,7 +7,7 @@ from rdflib.namespace import RDF, RDFS, OWL, XSD, SKOS, DCTERMS
 BASE_DIR = Path(__file__).resolve().parent
 
 # folder that holds vocabs, classes and properties
-SOURCE_DIR = BASE_DIR.parent / "rdf-vocabulary-staging"
+SOURCE_DIR = BASE_DIR.parent.parent / "rdf-vocabulary-staging"
 
 def main():
     g = Graph()
@@ -70,7 +70,9 @@ def main():
     print(f"{counter} jsonld files parsed from property directory")
 
     # write to RDF/XML file
-    g.serialize(destination=BASE_DIR / "datacite.owl", format="pretty-xml")
+    OUT_DIR = BASE_DIR / "out"
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    g.serialize(destination=OUT_DIR/ "datacite.owl", format="pretty-xml")
 
 if __name__ == "__main__":
     main()
