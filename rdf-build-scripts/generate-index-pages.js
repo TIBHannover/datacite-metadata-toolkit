@@ -6,7 +6,7 @@ const { compareVersions, resolveCurrentVersion, resolveVocabRoot } = require("./
 
 const projectRoot = process.cwd();
 const root = resolveVocabRoot(projectRoot);
-const basePath = "/linked-data";
+const basePath = process.env.PAGES_BASE_PATH || "/linked-data";
 const currentVersion = resolveCurrentVersion(root);
 const manifestFile = path.join(root, "manifest", `datacite-${currentVersion}.json`);
 
@@ -40,7 +40,14 @@ function escapeHtml(value) {
 }
 
 function relUrl(...parts) {
-  return `${basePath}/${parts.join("/")}`.replace(/\/+/g, "/");
+  const normalizedBase = basePath.replace(/\/+$/, "");
+  const suffix = parts.filter(Boolean).join("/");
+  if (!suffix) return normalizedBase || "/";
+  return `${normalizedBase}/${suffix}`.replace(/\/+/g, "/");
+}
+
+function displayBasePath() {
+  return `${relUrl("")}/`;
 }
 
 function fileMtimeLabel(absPath) {
@@ -196,7 +203,7 @@ function commonStyles() {
 
 function pageShell({ title, sectionLabel, lead, bodyHtml, navCurrent }) {
   const nav = [
-    ["Home", relUrl("") + "/"],
+    ["Home", displayBasePath()],
     ["Classes", relUrl("class") + "/"],
     ["Properties", relUrl("property") + "/"],
     ["Controlled Terms", relUrl("vocab") + "/"],
@@ -214,14 +221,14 @@ function pageShell({ title, sectionLabel, lead, bodyHtml, navCurrent }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)} · DataCite Linked Data (Staging)</title>
+  <title>${escapeHtml(title)} · DataCite Linked Data</title>
   <meta name="description" content="${escapeHtml(lead)}">
   <style>${commonStyles()}</style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="${relUrl("")}/">DataCite Linked Data</a>
+      <a class="brand" href="${displayBasePath()}">DataCite Linked Data</a>
       <nav class="nav" aria-label="Section navigation">${nav}</nav>
     </div>
   </header>
@@ -235,7 +242,7 @@ function pageShell({ title, sectionLabel, lead, bodyHtml, navCurrent }) {
       ${bodyHtml}
     </main>
     <div class="footer">
-      <a href="${relUrl("")}/">Back to /linked-data/</a>
+      <a href="${displayBasePath()}">Back to ${escapeHtml(displayBasePath())}</a>
     </div>
   </div>
 </body>
