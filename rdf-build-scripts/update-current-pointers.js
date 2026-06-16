@@ -7,6 +7,10 @@ const { getArgValue, listManifestVersions, resolveCurrentVersion, resolveVocabRo
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
 
+// Matches the license emitted by build-distribution.js for the versioned distributions,
+// so the current-pointer carries the same self-describing metadata as its siblings.
+const licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0";
+
 function die(message, code = 1) {
   console.error(message);
   process.exit(code);
@@ -72,7 +76,7 @@ function buildVersionLinks(namespace, version) {
   };
 }
 
-function buildDistCurrentPointer(namespace, currentLinks) {
+function buildDistCurrentPointer(namespace, currentLinks, created) {
   const today = new Date().toISOString().slice(0, 10);
 
   return {
@@ -85,7 +89,9 @@ function buildDistCurrentPointer(namespace, currentLinks) {
       xsd: "http://www.w3.org/2001/XMLSchema#",
       title: { "@id": "dcterms:title", "@language": "en" },
       identifier: "dcterms:identifier",
+      created: { "@id": "dcterms:created", "@type": "xsd:date" },
       modified: { "@id": "dcterms:modified", "@type": "xsd:date" },
+      license: { "@id": "dcterms:license", "@type": "@id" },
       source: { "@id": "dcterms:source", "@type": "@id" },
       seeAlso: { "@id": "rdfs:seeAlso", "@type": "@id", "@container": "@set" },
       versionInfo: "owl:versionInfo",
@@ -98,7 +104,9 @@ function buildDistCurrentPointer(namespace, currentLinks) {
         title: "DataCite Linked Data Current Distribution Pointer",
         identifier: "datacite-current",
         versionInfo: currentLinks.version,
+        created: created || today,
         modified: today,
+        license: licenseUrl,
         source: currentLinks.manifest,
         seeAlso: [currentLinks.distJsonld, currentLinks.distTtl, currentLinks.distRdf],
         comment: "Pointer to the current default DataCite linked-data distribution.",
@@ -161,7 +169,8 @@ function main() {
   console.log(`Wrote ${path.relative(projectRoot, manifestCurrentPath)}`);
 
   const distCurrentPath = path.join(vocabRoot, "dist", "datacite-current.jsonld");
-  writeJson(distCurrentPath, buildDistCurrentPointer(namespace, currentLinks));
+  const createdDate = manifest.releaseDate || manifest.created || new Date().toISOString().slice(0, 10);
+  writeJson(distCurrentPath, buildDistCurrentPointer(namespace, currentLinks, createdDate));
   console.log(`Wrote ${path.relative(projectRoot, distCurrentPath)}`);
 
   copyLatestDistributionAliases(currentVersion);

@@ -126,6 +126,41 @@ Three related fields are **open lists** per spec — values are free text, not c
 
 ---
 
+## Versioning model
+
+The DataCite metadata schema evolves over time (4.6, 4.7, …). This section explains how the linked-data vocabulary handles that change, so consumers always know exactly what they are pointing at.
+
+There are three kinds of artifact, and they behave differently:
+
+| Artifact | Example | Changes over time? | Use it when you want… |
+|---|---|---|---|
+| **Canonical term IRI** | `…/property/subject`, `…/vocab/resourceTypeGeneral/Dataset` | **Never** — stable forever | A durable identifier for a DataCite term |
+| **Frozen versioned distribution** | `dist/datacite-4.6.ttl`, `dist/datacite-4.7.ttl` | **Never** after publication | The exact state of the vocabulary as of one release |
+| **Moving "latest" distribution** | `dist/datacite.ttl` (`.jsonld`, `.rdf`) | Yes — always equals the newest release | Always-current vocabulary, from one stable URL |
+
+A separate pointer file, `dist/datacite-current.jsonld`, is a small machine-readable record that simply names which release is currently the default.
+
+**Key consequence — version provenance.** Because canonical term IRIs are stable, a machine *cannot* tell which DataCite schema version a term was used under from the IRI alone. If you dereference `…/property/subject`, you get its current meaning. If exact provenance matters (was this record built against 4.6 or 4.7?), the consuming system must store that separately — either the schema version string (e.g. `4.6`) or the versioned snapshot IRI (e.g. `…/dist/datacite-4.6.jsonld`).
+
+### Why we do not mint versioned per-term IRIs
+
+Several community members have asked for version-specific IRIs for individual *terms* (so a term carries its release inside its own identifier). We deliberately do **not** do this:
+
+- **Identifier explosion.** Versioning every term on every release would create thousands of near-duplicate IRIs, and tools that reason about `sameAs` / `relatedTo` would have to reconcile all of them.
+- **Aligns with DC / DCTERMS.** The established practice is to treat each major change as a new *ontology version*, not as new per-term IRIs.
+- **Forward-compatible.** Frozen distributions don't rule out per-term versioned IRIs later; if a strong need emerges they can be layered on without breaking any existing stable IRI.
+
+### Two separate versioning questions
+
+These are easy to conflate but are independent:
+
+1. **Which version of an *external* subject vocabulary was used?** (e.g. UAT 5.1, AGROVOC) — expressed in the Subject property's `schemeUri` when that vocabulary offers a versioned IRI. This is about *other people's* vocabularies, not DataCite's.
+2. **Which version of the *DataCite* schema was used?** — a separate concern, captured by the versioned distribution / schema-version context described above.
+
+See also [Version History](#version-history) for what changed in each release.
+
+---
+
 ## How to Use
 
 ### 1. Explore the vocabulary

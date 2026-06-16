@@ -12,18 +12,19 @@
 #   datacite-prop: https://schema.stage.datacite.org/linked-data/property/
 #   datacite-vocab: https://schema.stage.datacite.org/linked-data/vocab/
 #   schema: https://schema.org/
+#   prov: http://www.w3.org/ns/prov#
 #   skos: http://www.w3.org/2004/02/skos/core#
 #   semapv: https://w3id.org/semapv/vocab/
 #   orcid: https://orcid.org/
 # mapping_set_id: https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-schemaorg.sssom.tsv
-# mapping_set_version: 0.1.0
+# mapping_set_version: 0.2.0
 # mapping_set_description: "SSSOM mappings from DataCite Metadata Schema 4.6 properties and controlled vocabulary terms to Schema.org. Schema.org targets only; DataCite-to-DCTERMS/DCAT-AP mappings are maintained in a separate artefact. Subject IRIs for sub-elements use nested paths (e.g. property/creator/creatorName) that resolve via the redirect workflow to the canonical flat property files. dateType values with no schema.org equivalent (Accepted, Submitted, Withdrawn, Other, Valid) are intentionally omitted and covered in the DataCite-DCTERMS mapping; schema:validFrom is not in the domain of CreativeWork/Dataset and was removed. object_id values use https://schema.org/ (HTTPS) per current schema.org convention."
 # creator_id:
 #   - orcid:0000-0003-1378-5495
 # license: https://creativecommons.org/licenses/by/4.0/
 # subject_source: "datacite-ld:"
 # object_source: "schema:"
-# mapping_date: 2026-05-12
+# mapping_date: 2026-06-16
 subject_id	predicate_id	object_id	mapping_justification	subject_label	object_label	comment
 datacite-prop:identifier	skos:exactMatch	schema:identifier	semapv:ManualMappingCuration	identifier	identifier	DataCite's mandatory DOI maps directly to schema:identifier as a PropertyValue
 datacite-prop:identifierType	skos:exactMatch	schema:propertyID	semapv:ManualMappingCuration	identifierType	propertyID	The scheme name (e.g. DOI) is the propertyID of a schema:PropertyValue
@@ -271,3 +272,10 @@ datacite-vocab:contributorType/Translator	skos:relatedMatch	schema:roleName	sema
 datacite-vocab:contributorType/WorkPackageLeader	skos:relatedMatch	schema:roleName	semapv:ManualMappingCuration	WorkPackageLeader	roleName	No dedicated schema.org property; expressed as roleName="WorkPackageLeader"
 datacite-prop:geoLocation/geoLocationPolygon/polygonPoint	skos:exactMatch	schema:GeoCoordinates	semapv:ManualMappingCuration	polygonPoint	GeoCoordinates	Each vertex of the polygon is a lat/long pair; serialised as a schema:GeoCoordinates object
 datacite-prop:geoLocation/geoLocationPolygon/inPolygonPoint	skos:closeMatch	schema:GeoCoordinates	semapv:ManualMappingCuration	inPolygonPoint	GeoCoordinates	DataCite-specific interior/containment point for the polygon; closest schema.org type is GeoCoordinates; closeMatch because inPolygonPoint has no direct schema.org equivalent
+datacite-prop:format	skos:closeMatch	schema:fileFormat	semapv:ManualMappingCuration	format	fileFormat	schema:fileFormat is the deprecated alias of schema:encodingFormat; a reverse converter that encounters fileFormat in schema.org JSON-LD must route it to DataCite format. closeMatch because the schema.org property is deprecated.
+datacite-prop:rights	skos:relatedMatch	schema:conditionsOfAccess	semapv:ManualMappingCuration	rights	conditionsOfAccess	Access conditions (e.g. embargo, restricted) are a rights statement; capture as a free-text DataCite rights entry (no rightsURI) when no license URI is present. relatedMatch because conditionsOfAccess is an access policy rather than a license.
+datacite-prop:fundingReference/funderName	skos:closeMatch	schema:funder	semapv:ManualMappingCuration	funderName	funder	schema:funder points at the funding Organization (whereas schema:funding links a Grant). Reverse converter: take funder.name -> funderName and funder.identifier (ROR) -> funderIdentifier. closeMatch because funder is the Organization node while funderName is its name string.
+datacite-vocab:relationType/IsSupplementedBy	skos:relatedMatch	prov:wasDerivedFrom	semapv:ManualMappingCuration	IsSupplementedBy	wasDerivedFrom	prov:wasDerivedFrom indicates a source the resource was derived from; per discussion #168 this should populate a relatedIdentifier with relationType=IsSupplementedBy. relatedMatch because PROV derivation is broader than DataCite supplement semantics.
+datacite-vocab:relationType/References	skos:closeMatch	schema:mentions	semapv:ManualMappingCuration	References	mentions	schema:mentions denotes a referenced/mentioned resource; route to a relatedIdentifier with relationType=References. closeMatch because mentions is an informal reference whereas References implies a bibliographic citation.
+datacite-prop:relatedIdentifier/relationType	skos:relatedMatch	prov:wasGeneratedBy	semapv:ManualMappingCuration	relationType	wasGeneratedBy	PROPOSED. prov:wasGeneratedBy indicates the instrument that generated the resource and is currently unmapped. Proposed target: a relatedIdentifier with relatedItemType/resourceTypeGeneral=Instrument carrying the instrument PID (e.g. RRID, IGSN). relatedMatch because PROV activity-generation has no exact DataCite relationType. Confirm with converter team.
+datacite-vocab:relationType/IsDescribedBy	skos:relatedMatch	schema:subjectOf	semapv:ManualMappingCuration	IsDescribedBy	subjectOf	PROPOSED. schema:subjectOf links a resource to a CreativeWork (e.g. a metadata record) about it; route to a relatedIdentifier with relationType=IsDescribedBy (or HasMetadata when the target is a metadata document). relatedMatch because subjectOf is broader than DataCite description semantics. Confirm with converter team.
