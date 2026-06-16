@@ -173,7 +173,7 @@
       "identifier": "datacite-4.7",
       "versionInfo": "4.7",
       "created": "2026-03-03",
-      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "source": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7.json",
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.jsonld",

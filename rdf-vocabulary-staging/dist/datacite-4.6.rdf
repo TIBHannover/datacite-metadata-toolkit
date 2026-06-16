@@ -13,10 +13,10 @@
     <rdfs:comment xml:lang="en">Integrated distribution of the DataCite linked-data classes, properties, vocabulary schemes, and vocabulary terms for schema version 4.6.</rdfs:comment>
     <dcterms:title xml:lang="en">DataCite Linked Data 4.6 Distribution</dcterms:title>
     <dcterms:source rdf:resource="https://schema.stage.datacite.org/linked-data/manifest/datacite-4.6.json"/>
-    <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     <dcterms:identifier>datacite-4.6</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
-    >2026-05-22</dcterms:created>
+    >2026-06-16</dcterms:created>
   </owl:Ontology>
   <rdfs:Class rdf:about="https://schema.stage.datacite.org/linked-data/class/RelatedItem">
     <rdfs:seeAlso rdf:resource="https://schema.stage.datacite.org/linked-data/class/RelatedItem.jsonld"/>
