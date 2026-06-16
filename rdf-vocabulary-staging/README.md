@@ -83,7 +83,9 @@ Versioned inventories of every class, property, and vocabulary term defined in t
 
 ## Namespace
 
-All IRIs use the staging namespace `https://schema.stage.datacite.org/linked-data/`. The production namespace (`https://schema.datacite.org/linked-data/`) is generated separately via `../rdf-build-scripts/generate-production-namespace.sh`.
+All source IRIs use the staging namespace `https://schema.stage.datacite.org/linked-data/`. The public TIB/w3id namespace is generated separately via `../rdf-build-scripts/generate-production-namespace.sh`.
+
+By default, that script rewrites staging IRIs to the canonical namespace `https://w3id.org/tib/datacite/` and prepares generated HTML links for the GitHub Pages publication backend `https://tibhannover.github.io/datacite/`.
 
 ---
 
