@@ -6,6 +6,11 @@ const { getArgValue, listManifestVersions, resolveCurrentVersion, resolveVocabRo
 
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
+// License of the published vocabulary/data artifacts, kept identical to the
+// constant in build-distribution.js so the current-pointer matches the dist
+// files it points at. This is the data license (CC-BY-4.0), not the tooling
+// license (Apache-2.0, see package.json).
+const licenseUrl = "https://creativecommons.org/licenses/by/4.0/";
 
 function die(message, code = 1) {
   console.error(message);
@@ -87,6 +92,7 @@ function buildDistCurrentPointer(namespace, currentLinks) {
       identifier: "dcterms:identifier",
       modified: { "@id": "dcterms:modified", "@type": "xsd:date" },
       source: { "@id": "dcterms:source", "@type": "@id" },
+      license: { "@id": "dcterms:license", "@type": "@id" },
       seeAlso: { "@id": "rdfs:seeAlso", "@type": "@id", "@container": "@set" },
       versionInfo: "owl:versionInfo",
       comment: { "@id": "rdfs:comment", "@language": "en" },
@@ -100,6 +106,7 @@ function buildDistCurrentPointer(namespace, currentLinks) {
         versionInfo: currentLinks.version,
         modified: today,
         source: currentLinks.manifest,
+        license: licenseUrl,
         seeAlso: [currentLinks.distJsonld, currentLinks.distTtl, currentLinks.distRdf],
         comment: "Pointer to the current default DataCite linked-data distribution.",
       },
