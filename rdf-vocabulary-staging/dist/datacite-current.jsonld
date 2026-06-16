@@ -27,10 +27,6 @@
       "@id": "dcterms:source",
       "@type": "@id"
     },
-    "license": {
-      "@id": "dcterms:license",
-      "@type": "@id"
-    },
     "seeAlso": {
       "@id": "rdfs:seeAlso",
       "@type": "@id",
@@ -51,9 +47,8 @@
       "versionInfo": "4.7",
       "created": "2026-03-03",
       "modified": "2026-06-16",
-      "license": "https://www.apache.org/licenses/LICENSE-2.0",
-      "source": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7.json",
       "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7.json",
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.jsonld",
         "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.ttl",

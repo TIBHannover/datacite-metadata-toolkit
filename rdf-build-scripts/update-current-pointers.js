@@ -12,10 +12,6 @@ const vocabRoot = resolveVocabRoot(projectRoot);
 // license (Apache-2.0, see package.json).
 const licenseUrl = "https://creativecommons.org/licenses/by/4.0/";
 
-// Matches the license emitted by build-distribution.js for the versioned distributions,
-// so the current-pointer carries the same self-describing metadata as its siblings.
-const licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0";
-
 function die(message, code = 1) {
   console.error(message);
   process.exit(code);
@@ -98,7 +94,6 @@ function buildDistCurrentPointer(namespace, currentLinks, created) {
       modified: { "@id": "dcterms:modified", "@type": "xsd:date" },
       license: { "@id": "dcterms:license", "@type": "@id" },
       source: { "@id": "dcterms:source", "@type": "@id" },
-      license: { "@id": "dcterms:license", "@type": "@id" },
       seeAlso: { "@id": "rdfs:seeAlso", "@type": "@id", "@container": "@set" },
       versionInfo: "owl:versionInfo",
       comment: { "@id": "rdfs:comment", "@language": "en" },
@@ -114,7 +109,6 @@ function buildDistCurrentPointer(namespace, currentLinks, created) {
         modified: today,
         license: licenseUrl,
         source: currentLinks.manifest,
-        license: licenseUrl,
         seeAlso: [currentLinks.distJsonld, currentLinks.distTtl, currentLinks.distRdf],
         comment: "Pointer to the current default DataCite linked-data distribution.",
       },
