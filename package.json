@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "syncCheck": "python3 rdf-build-scripts/synCheck.py",
+    "build:production-namespace": "bash rdf-build-scripts/generate-production-namespace.sh",
     "validate-mappings": "node validation-and-conversion/scripts/validate.js mappings/jskos-mappings.json",
     "validate-profiles": "for f in validation-and-conversion/schemas/schema-profiles/*.json validation-and-conversion/schemas/schema-profiles/*.jsonld; do echo \"=== $f ===\"; npx ajv-cli --strict=false --spec=draft2019 compile -s \"$f\" || exit 1; done"
   },

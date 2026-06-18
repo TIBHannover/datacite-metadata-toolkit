@@ -15,7 +15,11 @@ const { resolveManifestPath, resolveVocabRoot } = require("./lib/versioning");
 
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
-const licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0";
+// License of the published vocabulary/data artifacts (the dcterms:license on
+// every dist ontology node), NOT the license of this tooling. The code is
+// Apache-2.0 (see package.json); the vocabulary is CC-BY-4.0, matching the
+// root LICENSE file and the SSSOM mapping headers under mappings/.
+const licenseUrl = "https://creativecommons.org/licenses/by/4.0/";
 
 function die(message, code = 1) {
   console.error(message);

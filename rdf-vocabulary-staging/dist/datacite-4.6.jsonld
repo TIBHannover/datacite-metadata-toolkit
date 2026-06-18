@@ -92,8 +92,8 @@
       "title": "DataCite Linked Data 4.6 Distribution",
       "identifier": "datacite-4.6",
       "versionInfo": "4.6",
-      "created": "2026-05-22",
-      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "created": "2026-06-16",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "source": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.6.json",
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/dist/datacite-4.6.jsonld",

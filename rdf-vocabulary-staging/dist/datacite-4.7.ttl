@@ -2180,7 +2180,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.rdf> , <https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.ttl> , <https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.jsonld>;
         dcterms:created     "2026-03-03"^^xsd:date;
         dcterms:identifier  "datacite-4.7";
-        dcterms:license     <https://www.apache.org/licenses/LICENSE-2.0>;
+        dcterms:license     <https://creativecommons.org/licenses/by/4.0/>;
         dcterms:source      <https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7.json>;
         dcterms:title       "DataCite Linked Data 4.7 Distribution"@en;
         owl:versionInfo     "4.7" .
