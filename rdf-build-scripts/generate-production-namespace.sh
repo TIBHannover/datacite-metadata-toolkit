@@ -20,6 +20,7 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 SRC="${SRC:-rdf-vocabulary-staging}"
 DST="${DST:-production-namespace}"
 SOURCE_NAMESPACE="${SOURCE_NAMESPACE:-https://schema.stage.datacite.org/linked-data/}"
@@ -50,7 +51,7 @@ done
 # labels match the target GitHub Pages project path.
 (
   cd "$DST"
-  PAGES_BASE_PATH="$PAGES_BASE_PATH" node ../rdf-build-scripts/generate-index-pages.js
+  PAGES_BASE_PATH="$PAGES_BASE_PATH" node "$SCRIPT_DIR/generate-index-pages.js"
 )
 
 echo "Done. Production namespace written to $DST/"
