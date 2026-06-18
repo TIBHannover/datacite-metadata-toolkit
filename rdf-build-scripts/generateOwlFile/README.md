@@ -12,9 +12,9 @@ The script collects the JSON-LD files from the vocab, class, and property direct
 
 ### Output
 
-The output of this script will be generated in the `out` directory within this scripts directory.
+The output of this script will be generated in the `rdf-vocabulary-staging/dist` directory. This folder is where all distribution files live.
 
-- Filename: `datacite.owl`
+- Filename: `datacite-<version>.owl`, for example `datacite-4.7.owl`
 
 
 ## Setup
@@ -33,8 +33,16 @@ pip install --upgrade pip
 # Install dependencies
 pip install -r ./requirements.txt 
 ```
+### set enviroment variables
 
-### Run script
+```
+# set version (replace <version> for example with 4.7)
+DATACITE_VERSION="<version>"
+
+# set namespace (replace <namespace> for example with https://w3id.org/tib/datacite/)
+DATACITE_NAMESPACE="<namespace>"
+```
+### run script
 
 ```
 python generate-owl-file.py
