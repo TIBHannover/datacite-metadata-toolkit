@@ -190,7 +190,7 @@ See the [Schema Profiles](#schema-profiles) section below for which profile to c
 
 ### 8. Explore crosswalk mappings
 
-The `mappings/` folder provides four complementary views of how DataCite terms align with external vocabularies. **All four files use the same canonical IRI scheme**: subject IRIs resolve to the linked-data namespace (`https://schema.stage.datacite.org/linked-data/{property,class,vocab/<scheme>}/<name>`) and Schema.org targets use the HTTPS form (`https://schema.org/<name>`). Tools can merge any subset of these files into a single RDF graph without IRI conflicts.
+The `mappings/` folder provides four complementary views of how DataCite terms align with external vocabularies. **All four files use the same canonical IRI scheme**: subject IRIs resolve to the linked-data namespace (`https://w3id.org/tib/datacite/{property,class,vocab/<scheme>}/<name>`) and Schema.org targets use the HTTPS form (`https://schema.org/<name>`). Tools can merge any subset of these files into a single RDF graph without IRI conflicts.
 
 - **`SKOS_crosswalks.jsonld`** — SKOS-predicate mappings (`skos:exactMatch`, `skos:closeMatch`, etc.) to Schema.org, DCAT, DCTERMS, and Wikidata, embedded directly in the vocabulary JSON-LD. Uses CURIE prefixes `datacite-prop:`, `datacite-class:`, `datacite-vocab:`.
 - **`datacite-schemaorg.sssom.tsv`** — machine-readable [SSSOM](https://mapping-commons.github.io/sssom/) mapping set from DataCite 4.6 properties and controlled vocabulary terms to Schema.org only. Suitable for automated alignment pipelines and SSSOM-aware tools.
