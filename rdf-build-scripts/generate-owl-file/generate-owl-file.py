@@ -43,6 +43,7 @@ def main():
     g.add((ontology_iri, DCTERMS.source, manifest_iri))
     g.add((ontology_iri, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
     g.add((ontology_iri, DCTERMS.contributor, URIRef("https://github.com/selgebali")))
+    g.add((ontology_iri, DCTERMS.contributor, URIRef("https://orcid.org/0000-0003-1378-5495")))
     g.add((ontology_iri, DCTERMS.contributor, URIRef("https://github.com/DenizJaeger")))
 
     # define ConceptScheme and Concept as classes
