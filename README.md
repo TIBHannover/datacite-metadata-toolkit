@@ -68,6 +68,7 @@ It is the **source of truth** for the DataCite linked-data namespace. The namesp
 │   ├── generate-index-pages.js      # Build HTML index pages for GitHub Pages
 │   ├── generate-production-namespace.sh  # Rewrite staging URLs to production URLs
 │   ├── synCheck.py                  # Sync check: verify profile $defs match vocab term files
+│   ├── generateOwlFile/             # Create .owl from vocab, class and property
 │   └── lib/                         # Shared libraries (versioning, release-import modules)
 │
 ├── .github/workflows/
