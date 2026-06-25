@@ -1,11 +1,11 @@
 {
   "@context": [
-    "https://schema.stage.datacite.org/linked-data/schema-profiles/datacite4.6-profile.json",
+    "https://w3id.org/tib/datacite/schema-profiles/datacite4.6-profile.json",
     {
-      "datacite-ld": "https://schema.stage.datacite.org/linked-data/",
-      "datacite-class": "https://schema.stage.datacite.org/linked-data/class/",
-      "datacite-prop": "https://schema.stage.datacite.org/linked-data/property/",
-      "datacite-vocab": "https://schema.stage.datacite.org/linked-data/vocab/",
+      "datacite-ld": "https://w3id.org/tib/datacite/",
+      "datacite-class": "https://w3id.org/tib/datacite/class/",
+      "datacite-prop": "https://w3id.org/tib/datacite/property/",
+      "datacite-vocab": "https://w3id.org/tib/datacite/vocab/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "schema": "https://schema.org/",
       "dcat": "http://www.w3.org/ns/dcat#",
