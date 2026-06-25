@@ -1,0 +1,13 @@
+{
+  "artifactFileCount": 303,
+  "bundleChecksumAlgorithm": "sha256-of-CHECKSUMS.sha256",
+  "bundleChecksum": "f1ef5ea7a970770fef0968b8c080b9cf42809ade47379841104528a282bc4ff3",
+  "checksumsFile": "CHECKSUMS.sha256",
+  "excludedFromChecksum": [
+    "CHECKSUMS.sha256",
+    "manifest/bundle-integrity.json"
+  ],
+  "canonicalNamespace": "https://w3id.org/tib/datacite/",
+  "publicationBaseUrl": "https://tibhannover.github.io/datacite/",
+  "pagesBasePath": "/datacite"
+}

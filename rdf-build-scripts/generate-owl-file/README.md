@@ -42,7 +42,13 @@ DATACITE_VERSION="<version>"
 
 # set namespace (replace <namespace> for example with https://w3id.org/tib/datacite/)
 DATACITE_NAMESPACE="<namespace>"
+
+# optional: set ontology created date; defaults to releaseDate in the version manifest
+DATACITE_CREATED_DATE="YYYY-MM-DD"
 ```
+
+`DATACITE_CREATED_DATE` must use `YYYY-MM-DD`. If it is not set, the script reads `releaseDate` from `rdf-vocabulary-staging/manifest/datacite-<version>.json`. This keeps regenerated OWL output stable instead of changing every day.
+
 ### run script
 
 ```

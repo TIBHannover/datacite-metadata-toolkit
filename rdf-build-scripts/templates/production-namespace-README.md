@@ -31,6 +31,15 @@ All RDF identifiers in this bundle use the persistent W3ID namespace. The GitHub
 
 The generated section `index.html` files are for human browsing. The JSON-LD, Turtle, RDF/XML, manifest, and context files are the machine-readable namespace artifacts.
 
+## Integrity Files
+
+| Path | Purpose |
+|---|---|
+| `CHECKSUMS.sha256` | SHA-256 checksum list for every generated artifact except the integrity files themselves |
+| `manifest/bundle-integrity.json` | Machine-readable file count, bundle checksum, namespace, and publication-target metadata |
+
+The `bundleChecksum` in `manifest/bundle-integrity.json` is the SHA-256 hash of `CHECKSUMS.sha256`. This keeps the bundle checksum stable and avoids hashing the checksum files into themselves.
+
 ## Publication Flow
 
 The intended flow is:
@@ -49,4 +58,5 @@ Before publishing, verify that:
 
 - no machine-readable artifact in this bundle contains the staging namespace URL from the source tree
 - representative files such as `class/Resource.jsonld`, `property/identifier.jsonld`, `vocab/resourceTypeGeneral/Dataset.jsonld`, `context/fullcontext.jsonld`, and `manifest/datacite-current.json` use `{{CANONICAL_NAMESPACE}}`
+- `shasum -a 256 -c CHECKSUMS.sha256` succeeds from inside this directory
 - W3ID redirects resolve to the corresponding files under `{{PUBLICATION_BASE_URL}}`

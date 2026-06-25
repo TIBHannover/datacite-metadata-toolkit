@@ -3,7 +3,8 @@ import os
 from pathlib import Path
 from rdflib import Graph, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD, SKOS, DCTERMS
-from datetime import date
+from datetime import datetime
+from xml.sax.saxutils import escape, quoteattr
 
 # this files folder
 BASE_DIR = Path(__file__).resolve().parent
@@ -13,6 +14,99 @@ SOURCE_DIR = BASE_DIR.parent.parent / "rdf-vocabulary-staging"
 # env vars
 NAMESPACE = os.environ.get("DATACITE_NAMESPACE", "https://w3id.org/tib/datacite/")
 VERSION = os.environ.get("DATACITE_VERSION", "4.7")
+
+def validate_date(value):
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").date().isoformat()
+    except ValueError as exc:
+        raise ValueError(f"Expected date in YYYY-MM-DD format, got {value!r}") from exc
+
+def ontology_created_date():
+    explicit = os.environ.get("DATACITE_CREATED_DATE")
+    if explicit:
+        return validate_date(explicit)
+
+    manifest_path = SOURCE_DIR / "manifest" / f"datacite-{VERSION}.json"
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    created = manifest.get("releaseDate") or manifest.get("created") or manifest.get("updated")
+    if not created:
+        raise ValueError(
+            f"Could not find releaseDate, created, or updated in {manifest_path}"
+        )
+    return validate_date(created)
+
+def term_key(term):
+    return str(term)
+
+def qname(g, uri):
+    return g.namespace_manager.qname(uri)
+
+def primary_type(types):
+    ordered = [
+        OWL.Ontology,
+        RDFS.Class,
+        RDF.Property,
+        OWL.Class,
+        SKOS.ConceptScheme,
+        SKOS.Concept,
+        OWL.NamedIndividual,
+    ]
+    for candidate in ordered:
+        if candidate in types:
+            return candidate
+    return sorted(types, key=term_key)[0] if types else None
+
+def write_deterministic_rdf_xml(g, destination):
+    namespace_declarations = [
+        ("rdf", RDF),
+        ("rdfs", RDFS),
+        ("owl", OWL),
+        ("skos", SKOS),
+        ("dcterms", DCTERMS),
+        ("xsd", XSD),
+    ]
+    subjects = sorted(set(g.subjects()), key=term_key)
+
+    lines = ['<?xml version="1.0" encoding="utf-8"?>', "<rdf:RDF"]
+    for prefix, namespace in namespace_declarations:
+        lines.append(f"  xmlns:{prefix}={quoteattr(str(namespace))}")
+    lines.append(">")
+
+    for subject in subjects:
+        subject_types = set(g.objects(subject, RDF.type))
+        node_type = primary_type(subject_types)
+        node_tag = qname(g, node_type) if node_type else "rdf:Description"
+        lines.append(f"  <{node_tag} rdf:about={quoteattr(str(subject))}>")
+
+        predicate_objects = []
+        for predicate, obj in g.predicate_objects(subject):
+            if predicate == RDF.type and obj == node_type:
+                continue
+            predicate_objects.append((predicate, obj))
+
+        predicate_objects.sort(key=lambda item: (qname(g, item[0]), term_key(item[1])))
+
+        for predicate, obj in predicate_objects:
+            predicate_tag = qname(g, predicate)
+            if isinstance(obj, URIRef):
+                lines.append(f"    <{predicate_tag} rdf:resource={quoteattr(str(obj))}/>")
+            elif isinstance(obj, Literal):
+                attrs = []
+                if obj.language:
+                    attrs.append(f"xml:lang={quoteattr(obj.language)}")
+                if obj.datatype:
+                    attrs.append(f"rdf:datatype={quoteattr(str(obj.datatype))}")
+                attr_text = f" {' '.join(attrs)}" if attrs else ""
+                lines.append(f"    <{predicate_tag}{attr_text}>{escape(str(obj))}</{predicate_tag}>")
+            else:
+                raise TypeError(f"Unsupported RDF term in deterministic RDF/XML output: {obj!r}")
+
+        lines.append(f"  </{node_tag}>")
+
+    lines.append("</rdf:RDF>")
+    destination.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 def main():
     g = Graph()
@@ -39,7 +133,7 @@ def main():
     g.add((ontology_iri, DCTERMS.description, Literal(
         f"OWL representation of the DataCite linked-data vocabulary "
         f"for DataCite Metadata Schema {VERSION}.", lang="en")))
-    g.add((ontology_iri, DCTERMS.created, Literal(date.today().isoformat(), datatype=XSD.date)))
+    g.add((ontology_iri, DCTERMS.created, Literal(ontology_created_date(), datatype=XSD.date)))
     g.add((ontology_iri, DCTERMS.source, manifest_iri))
     g.add((ontology_iri, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
     g.add((ontology_iri, DCTERMS.contributor, URIRef("https://github.com/selgebali")))
@@ -90,10 +184,10 @@ def main():
         g.parse(file, format="json-ld")
     print(f"{counter} jsonld files parsed from property directory")
 
-    # write to RDF/XML file
+    # write to deterministic RDF/XML file
     OUT_DIR = SOURCE_DIR / "dist"
     filename = f"datacite-{VERSION}.owl"
-    g.serialize(destination=OUT_DIR/ filename, format="pretty-xml")
+    write_deterministic_rdf_xml(g, OUT_DIR / filename)
 
 if __name__ == "__main__":
     main()

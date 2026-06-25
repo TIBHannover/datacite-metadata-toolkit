@@ -161,7 +161,7 @@ npm run build:production-namespace
 # Output is written to production-namespace/
 ```
 
-The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
+The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
 
 The production bundle intentionally does not own publication-root files such as `.nojekyll`, `LICENSE`, or the root `index.html`; those belong to `TIBHannover/datacite`.
 

@@ -1,0 +1,61 @@
+name: Check Production Namespace
+
+on:
+  pull_request:
+    paths:
+      - "production-namespace/**"
+      - "rdf-vocabulary-staging/**"
+      - "rdf-build-scripts/**"
+      - "package.json"
+      - ".github/workflows/check-production-namespace.yml"
+  push:
+    branches: [main]
+    paths:
+      - "production-namespace/**"
+      - "rdf-vocabulary-staging/**"
+      - "rdf-build-scripts/**"
+      - "package.json"
+      - ".github/workflows/check-production-namespace.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-production-namespace:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install OWL generator dependencies
+        run: pip install -r rdf-build-scripts/generate-owl-file/requirements.txt
+
+      - name: Regenerate OWL artifact
+        run: python3 rdf-build-scripts/generate-owl-file/generate-owl-file.py
+
+      - name: Regenerate production namespace
+        run: npm run build:production-namespace
+
+      - name: Verify production namespace checksums
+        run: |
+          cd production-namespace
+          shasum -a 256 -c CHECKSUMS.sha256
+
+      - name: Check committed generated artifacts are current
+        run: |
+          if ! git diff --exit-code -- rdf-vocabulary-staging/dist/datacite-4.7.owl production-namespace; then
+            echo "::error::Generated namespace artifacts are out of date. Regenerate the OWL artifact and production namespace, then commit the result."
+            exit 1
+          fi

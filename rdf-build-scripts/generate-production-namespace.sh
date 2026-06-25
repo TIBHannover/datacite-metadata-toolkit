@@ -68,8 +68,47 @@ fi
   PAGES_BASE_PATH="$PAGES_BASE_PATH" node "$SCRIPT_DIR/generate-index-pages.js"
 )
 
+CHECKSUMS_FILE="CHECKSUMS.sha256"
+INTEGRITY_FILE="manifest/bundle-integrity.json"
+rm -f "$DST/$CHECKSUMS_FILE" "$DST/$INTEGRITY_FILE"
+
+(
+  cd "$DST"
+  find . -type f \
+    ! -path "./$CHECKSUMS_FILE" \
+    ! -path "./$INTEGRITY_FILE" \
+    -print \
+    | LC_ALL=C sort \
+    | sed 's#^\./##' \
+    | while IFS= read -r file; do
+        shasum -a 256 "$file"
+      done
+) > "$DST/$CHECKSUMS_FILE"
+
+ARTIFACT_FILE_COUNT="$(wc -l < "$DST/$CHECKSUMS_FILE" | tr -d ' ')"
+BUNDLE_CHECKSUM="$(shasum -a 256 "$DST/$CHECKSUMS_FILE" | awk '{print $1}')"
+
+mkdir -p "$(dirname "$DST/$INTEGRITY_FILE")"
+cat > "$DST/$INTEGRITY_FILE" <<EOF
+{
+  "artifactFileCount": $ARTIFACT_FILE_COUNT,
+  "bundleChecksumAlgorithm": "sha256-of-CHECKSUMS.sha256",
+  "bundleChecksum": "$BUNDLE_CHECKSUM",
+  "checksumsFile": "$CHECKSUMS_FILE",
+  "excludedFromChecksum": [
+    "$CHECKSUMS_FILE",
+    "$INTEGRITY_FILE"
+  ],
+  "canonicalNamespace": "$CANONICAL_NAMESPACE",
+  "publicationBaseUrl": "$PUBLICATION_BASE_URL",
+  "pagesBasePath": "$PAGES_BASE_PATH"
+}
+EOF
+
 echo "Done. Production namespace written to $DST/"
 echo "Files: $(find "$DST" -type f | wc -l | tr -d ' ')"
+echo "Artifact files checksummed: $ARTIFACT_FILE_COUNT"
+echo "Bundle checksum: $BUNDLE_CHECKSUM"
 echo "Canonical namespace: $CANONICAL_NAMESPACE"
 echo "GitHub Pages base path: $PAGES_BASE_PATH"
 echo "Publication backend: $PUBLICATION_BASE_URL"
