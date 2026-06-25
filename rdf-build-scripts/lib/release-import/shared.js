@@ -122,7 +122,7 @@ async function fetchText(url) {
   try {
     response = await fetch(url, {
       headers: {
-        "user-agent": "schema.datacite.org-linked-data modular release importer",
+        "user-agent": "datacite-metadata-toolkit modular release importer",
         accept: "text/html,application/xml,text/xml,text/plain,*/*",
       },
     });
