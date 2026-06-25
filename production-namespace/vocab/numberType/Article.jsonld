@@ -1,0 +1,10 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/numberType/Article",
+  "type": "Concept",
+  "prefLabel": "Article",
+  "notation": "Article",
+  "definition": "A number identifying an article within a journal issue or proceedings volume.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType"
+}

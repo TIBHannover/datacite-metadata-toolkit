@@ -1,0 +1,10 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
+  "type": "Concept",
+  "prefLabel": "RightsHolder",
+  "notation": "RightsHolder",
+  "definition": "Person or institution owning or managing property rights, including intellectual property rights over the resource.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

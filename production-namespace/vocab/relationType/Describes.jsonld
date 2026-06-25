@@ -1,0 +1,13 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/Describes",
+  "type": "Concept",
+  "prefLabel": "Describes",
+  "notation": "Describes",
+  "definition": "indicates A describes B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
+  "type": "Concept",
+  "prefLabel": "IsPublishedIn",
+  "notation": "IsPublishedIn",
+  "definition": "indicates A is published inside B, but is independent of other things published inside of B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>"
+  ]
+}

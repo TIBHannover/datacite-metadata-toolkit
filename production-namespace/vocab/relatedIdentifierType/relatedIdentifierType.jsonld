@@ -1,0 +1,37 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 relatedIdentifierType",
+      "identifier": "relatedIdentifierType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/SWHID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id"
+      ]
+    }
+  ]
+}

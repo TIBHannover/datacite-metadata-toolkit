@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC",
+  "type": "Concept",
+  "prefLabel": "ISTC",
+  "altLabel": "International Standard Text Code",
+  "notation": "ISTC",
+  "definition": "A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"ISTC\" relationType=\"Cites\">0A9 2002 12B4A105 7</relatedIdentifier>"
+  ],
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 titleType",
+      "identifier": "titleType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/Subtitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/Other"
+      ]
+    }
+  ]
+}

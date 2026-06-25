@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "title": {
+      "@id": "dcterms:title",
+      "@language": "en"
+    },
+    "identifier": "dcterms:identifier",
+    "created": {
+      "@id": "dcterms:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "versionInfo": "owl:versionInfo",
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    }
+  },
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/dist/datacite-current",
+      "type": "owl:Ontology",
+      "title": "DataCite Linked Data Current Distribution Pointer",
+      "identifier": "datacite-current",
+      "versionInfo": "4.7",
+      "created": "2026-03-03",
+      "modified": "2026-06-16",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://w3id.org/tib/datacite/manifest/datacite-4.7.json",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/dist/datacite-4.7.jsonld",
+        "https://w3id.org/tib/datacite/dist/datacite-4.7.ttl",
+        "https://w3id.org/tib/datacite/dist/datacite-4.7.rdf"
+      ],
+      "comment": "Pointer to the current default DataCite linked-data distribution."
+    }
+  ]
+}

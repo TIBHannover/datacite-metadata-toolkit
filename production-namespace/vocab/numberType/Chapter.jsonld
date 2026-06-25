@@ -1,0 +1,10 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/numberType/Chapter",
+  "type": "Concept",
+  "prefLabel": "Chapter",
+  "notation": "Chapter",
+  "definition": "A number identifying a chapter within a book or monograph.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType"
+}

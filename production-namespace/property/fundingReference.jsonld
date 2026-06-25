@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "schema": "https://w3id.org/tib/datacite/",
+    "datacite": "https://w3id.org/tib/datacite/"
+  },
+  "@id": "https://w3id.org/tib/datacite/property/fundingReference",
+  "@type": "rdf:Property",
+  "rdfs:label": "fundingReference",
+  "rdfs:comment": "Information about financial support (funding) for the resource being registered."
+}

@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other",
+  "type": "Concept",
+  "prefLabel": "Other",
+  "notation": "Other",
+  "definition": "Any funder identifier type not covered by the other values in the funderIdentifierType controlled list.",
+  "scopeNote": "Use Other for funder identifier schemes that are not represented by a named value in this vocabulary. If a particular scheme is in common use, consider proposing it as a named value in a future DataCite release.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType"
+}

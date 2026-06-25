@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader",
+  "type": "Concept",
+  "prefLabel": "ProjectLeader",
+  "notation": "ProjectLeader",
+  "definition": "Person officially designated as head of project team or sub-project team instrumental in the work necessary to development of the resource.",
+  "scopeNote": "The Project Leader remains intimately involved throughout the life of the particular project team.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

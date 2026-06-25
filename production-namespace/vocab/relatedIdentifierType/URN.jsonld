@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN",
+  "type": "Concept",
+  "prefLabel": "URN",
+  "altLabel": "Uniform Resource Name",
+  "notation": "URN",
+  "definition": "A unique and persistent identifier of an electronic document. The syntax is: urn:<NID>:<NSS>. The leading urn: sequence is case-insensitive, <NID> is the namespace identifier, <NSS> is the namespace-specific string.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:101:1-201102033592</relatedIdentifier>"
+  ],
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
+}

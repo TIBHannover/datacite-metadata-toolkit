@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager",
+  "type": "Concept",
+  "prefLabel": "ProjectManager",
+  "notation": "ProjectManager",
+  "definition": "Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams.",
+  "scopeNote": "The manager of a project normally has more administrative responsibility than actual work involvement.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

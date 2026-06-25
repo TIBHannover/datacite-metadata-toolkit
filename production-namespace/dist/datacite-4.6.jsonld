@@ -1,0 +1,3483 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "Concept": "skos:Concept",
+    "ConceptScheme": "skos:ConceptScheme",
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@language": "en"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@language": "en"
+    },
+    "definition": {
+      "@id": "skos:definition",
+      "@language": "en"
+    },
+    "scopeNote": {
+      "@id": "skos:scopeNote",
+      "@language": "en"
+    },
+    "notation": "skos:notation",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf",
+      "@type": "@id"
+    },
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "title": {
+      "@id": "dcterms:title",
+      "@language": "en"
+    },
+    "identifier": "dcterms:identifier",
+    "created": {
+      "@id": "dcterms:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "versionInfo": "owl:versionInfo",
+    "example": {
+      "@id": "skos:example",
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  },
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/dist/datacite-4.6",
+      "type": "owl:Ontology",
+      "title": "DataCite Linked Data 4.6 Distribution",
+      "identifier": "datacite-4.6",
+      "versionInfo": "4.6",
+      "created": "2026-06-16",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://w3id.org/tib/datacite/manifest/datacite-4.6.json",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/dist/datacite-4.6.jsonld",
+        "https://w3id.org/tib/datacite/dist/datacite-4.6.ttl",
+        "https://w3id.org/tib/datacite/dist/datacite-4.6.rdf"
+      ],
+      "comment": "Integrated distribution of the DataCite linked-data classes, properties, vocabulary schemes, and vocabulary terms for schema version 4.6."
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/AlternateIdentifier",
+      "type": "rdfs:Class",
+      "label": "AlternateIdentifier",
+      "comment": "An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/AlternateIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Contributor",
+      "type": "rdfs:Class",
+      "label": "Contributor",
+      "comment": " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Contributor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Creator",
+      "type": "rdfs:Class",
+      "label": "Creator",
+      "comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Creator.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Date",
+      "type": "rdfs:Class",
+      "label": "Date",
+      "comment": "Different dates relevant to the work.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Date.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Description",
+      "type": "rdfs:Class",
+      "label": "Description",
+      "comment": " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Description.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Format",
+      "type": "rdfs:Class",
+      "label": "Format",
+      "comment": "Technical format of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Format.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/FundingReference",
+      "type": "rdfs:Class",
+      "label": "FundingReference",
+      "comment": "Information about financial support (funding) for the resource being registered.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/FundingReference.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/GeoLocation",
+      "type": "rdfs:Class",
+      "label": "GeoLocation",
+      "comment": "Spatial region or named place where the data was gathered or about which the data is focused.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/GeoLocation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Identifier",
+      "type": "rdfs:Class",
+      "label": "Identifier",
+      "comment": "The Identifier is a unique string that identifies a resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Identifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Language",
+      "type": "rdfs:Class",
+      "label": "Language",
+      "comment": "The primary language of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Language.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/PublicationYear",
+      "type": "rdfs:Class",
+      "label": "PublicationYear",
+      "comment": "The year when the data was or will be made publicly available. In the case of resources such as software or dynamic data where there may be multiple releases in one year, include the Date property and sub-properties (dateType/dateInformation) to provide more information about the publication or release date details.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/PublicationYear.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Publisher",
+      "type": "rdfs:Class",
+      "label": "Publisher",
+      "comment": "The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Publisher.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/RelatedIdentifier",
+      "type": "rdfs:Class",
+      "label": "RelatedIdentifier",
+      "comment": "Identifiers of related resources. These must be globally unique identifiers.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/RelatedIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/RelatedItem",
+      "type": "rdfs:Class",
+      "label": "RelatedItem",
+      "comment": "Information about a resource related to the one being registered.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/RelatedItem.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Resource",
+      "type": "rdfs:Class",
+      "label": "Resource",
+      "comment": "Any object (data, software, instrument, document, sample, etc.) that can be cited via a DataCite-assigned persistent identifier (DOI). This is the root class of the DataCite Metadata Schema; every DataCite record describes exactly one Resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Resource.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/ResourceType",
+      "type": "rdfs:Class",
+      "label": "ResourceType",
+      "comment": "A description of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/ResourceType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Rights",
+      "type": "rdfs:Class",
+      "label": "Rights",
+      "comment": "Any rights information for this resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Rights.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Size",
+      "type": "rdfs:Class",
+      "label": "Size",
+      "comment": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Size.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Subject",
+      "type": "rdfs:Class",
+      "label": "Subject",
+      "comment": "Subject, keyword, classification code, or key phrase describing the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Subject.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Title",
+      "type": "rdfs:Class",
+      "label": "Title",
+      "comment": "A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Title.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/class/Version",
+      "type": "rdfs:Class",
+      "label": "Version",
+      "comment": "The version number of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/class/Version.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/affiliation",
+      "type": "rdf:Property",
+      "label": "affiliation",
+      "comment": "The organizational or institutional affiliation of the creator.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/affiliation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/affiliationIdentifier",
+      "type": "rdf:Property",
+      "label": "affiliationIdentifier",
+      "comment": "Uniquely identifies the organizational affiliation of the creator.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/affiliationIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/affiliationIdentifierScheme",
+      "type": "rdf:Property",
+      "label": "affiliationIdentifierScheme",
+      "comment": "The name of the affiliation identifier scheme",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/affiliationIdentifierScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/alternateIdentifier",
+      "type": "rdf:Property",
+      "label": "alternateIdentifier",
+      "comment": "An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/alternateIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/alternateIdentifierType",
+      "type": "rdf:Property",
+      "label": "alternateIdentifierType",
+      "comment": "The type of the AlternateIdentifier.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/alternateIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/awardNumber",
+      "type": "rdf:Property",
+      "label": "awardNumber",
+      "comment": "The code assigned by the funder to a sponsored award (grant).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/awardNumber.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/awardTitle",
+      "type": "rdf:Property",
+      "label": "awardTitle",
+      "comment": "The human readable title or name of the award (grant).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/awardTitle.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/awardURI",
+      "type": "rdf:Property",
+      "label": "awardURI",
+      "comment": "The URI leading to a page provided by the funder for more information about the award (grant).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/awardURI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/classificationCode",
+      "type": "rdf:Property",
+      "label": "classificationCode",
+      "comment": "The classification code used for the subject term in the subject scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/classificationCode.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/contributor",
+      "type": "rdf:Property",
+      "label": "contributor",
+      "comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/contributor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/contributorName",
+      "type": "rdf:Property",
+      "label": "contributorName",
+      "comment": "The full name of the contributor.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/contributorName.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/contributorType",
+      "type": "rdf:Property",
+      "label": "contributorType",
+      "comment": "The type of contributor of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/contributorType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/creator",
+      "type": "rdf:Property",
+      "label": "creator",
+      "comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/creator.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/creatorName",
+      "type": "rdf:Property",
+      "label": "creatorName",
+      "comment": "The full name of the creator.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/creatorName.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/date",
+      "type": "rdf:Property",
+      "label": "date",
+      "comment": "Different dates relevant to the work.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/date.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/dateInformation",
+      "type": "rdf:Property",
+      "label": "dateInformation",
+      "comment": "Specific information about the date, if appropriate.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/dateInformation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/dateType",
+      "type": "rdf:Property",
+      "label": "dateType",
+      "comment": "The type of date.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/dateType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/description",
+      "type": "rdf:Property",
+      "label": "description",
+      "comment": "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/description.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/descriptionType",
+      "type": "rdf:Property",
+      "label": "descriptionType",
+      "comment": "The type of the Description.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/descriptionType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/eastBoundLongitude",
+      "type": "rdf:Property",
+      "label": "eastBoundLongitude",
+      "comment": "Eastern longitudinal dimension of box.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/eastBoundLongitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/edition",
+      "type": "rdf:Property",
+      "label": "edition",
+      "comment": "Edition or version of the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/edition.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/familyName",
+      "type": "rdf:Property",
+      "label": "familyName",
+      "comment": "The surname or last name of the creator.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/familyName.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/firstPage",
+      "type": "rdf:Property",
+      "label": "firstPage",
+      "comment": "First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/firstPage.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/format",
+      "type": "rdf:Property",
+      "label": "format",
+      "comment": "Technical format of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/format.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/funderIdentifier",
+      "type": "rdf:Property",
+      "label": "funderIdentifier",
+      "comment": "Uniquely identifies a funding entity, according to various types.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/funderIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/funderIdentifierType",
+      "type": "rdf:Property",
+      "label": "funderIdentifierType",
+      "comment": "The type of the funderIdentifier.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/funderIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/funderName",
+      "type": "rdf:Property",
+      "label": "funderName",
+      "comment": "Name of the funding provider.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/funderName.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/fundingReference",
+      "type": "rdf:Property",
+      "label": "fundingReference",
+      "comment": "Information about financial support (funding) for the resource being registered.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/fundingReference.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/geoLocation",
+      "type": "rdf:Property",
+      "label": "geoLocation",
+      "comment": "Spatial region or named place where the data was gathered or about which the data is focused.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/geoLocation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/geoLocationBox",
+      "type": "rdf:Property",
+      "label": "geoLocationBox",
+      "comment": "The spatial limits of a box.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/geoLocationBox.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/geoLocationPlace",
+      "type": "rdf:Property",
+      "label": "geoLocationPlace",
+      "comment": "Description of a geographic location.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/geoLocationPlace.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/geoLocationPoint",
+      "type": "rdf:Property",
+      "label": "geoLocationPoint",
+      "comment": "A point location in space.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/geoLocationPoint.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/geoLocationPolygon",
+      "type": "rdf:Property",
+      "label": "geoLocationPolygon",
+      "comment": "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/geoLocationPolygon.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/givenName",
+      "type": "rdf:Property",
+      "label": "givenName",
+      "comment": "The personal or first name of the creator.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/givenName.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/identifier",
+      "type": "rdf:Property",
+      "label": "identifier",
+      "comment": "The Identifier is a unique string that identifies a resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/identifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/identifierType",
+      "type": "rdf:Property",
+      "label": "identifierType",
+      "comment": "The type of Identifier.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/identifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/inPolygonPoint",
+      "type": "rdf:Property",
+      "label": "inPolygonPoint",
+      "comment": "A point location in a polygon.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/inPolygonPoint.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/issue",
+      "type": "rdf:Property",
+      "label": "issue",
+      "comment": "Issue number or name of the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/issue.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/language",
+      "type": "rdf:Property",
+      "label": "language",
+      "comment": "The primary language of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/language.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/lastPage",
+      "type": "rdf:Property",
+      "label": "lastPage",
+      "comment": "Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/lastPage.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/nameIdentifier",
+      "type": "rdf:Property",
+      "label": "nameIdentifier",
+      "comment": "Uniquely identifies an individual or legal entity, according to various schemes.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/nameIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/nameIdentifierScheme",
+      "type": "rdf:Property",
+      "label": "nameIdentifierScheme",
+      "comment": "The name of the name identifier scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/nameIdentifierScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/nameType",
+      "type": "rdf:Property",
+      "label": "nameType",
+      "comment": "The type of name.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/nameType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/northBoundLatitude",
+      "type": "rdf:Property",
+      "label": "northBoundLatitude",
+      "comment": "Northern latitudinal dimension of box.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/northBoundLatitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/number",
+      "type": "rdf:Property",
+      "label": "number",
+      "comment": "Number of the resource within the related item, e.g., report number or article number.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/number.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/numberType",
+      "type": "rdf:Property",
+      "label": "numberType",
+      "comment": "Type of the related item’s number, e.g., report number or article number.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/numberType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/pointLatitude",
+      "type": "rdf:Property",
+      "label": "pointLatitude",
+      "comment": "Latitudinal dimension of point.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/pointLatitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/pointLongitude",
+      "type": "rdf:Property",
+      "label": "pointLongitude",
+      "comment": "Longitudinal dimension of point.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/pointLongitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/polygonPoint",
+      "type": "rdf:Property",
+      "label": "polygonPoint",
+      "comment": "A point location in a polygon.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/polygonPoint.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/publicationYear",
+      "type": "rdf:Property",
+      "label": "publicationYear",
+      "comment": "The year when the item was or will be made publicly available.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/publicationYear.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/publisher",
+      "type": "rdf:Property",
+      "label": "publisher",
+      "comment": "The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/publisher.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/publisherIdentifier",
+      "type": "rdf:Property",
+      "label": "publisherIdentifier",
+      "comment": "Uniquely identifies the publisher, according to various schemes.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/publisherIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/publisherIdentifierScheme",
+      "type": "rdf:Property",
+      "label": "publisherIdentifierScheme",
+      "comment": "The name of the publisher identifier scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/publisherIdentifierScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedIdentifier",
+      "type": "rdf:Property",
+      "label": "relatedIdentifier",
+      "comment": "Identifiers of related resources. These must be globally unique identifiers.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedIdentifierType",
+      "type": "rdf:Property",
+      "label": "relatedIdentifierType",
+      "comment": "The type of the RelatedIdentifier.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedItem",
+      "type": "rdf:Property",
+      "label": "relatedItem",
+      "comment": "Information about a resource related to the one being registered.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedItem.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedItemIdentifier",
+      "type": "rdf:Property",
+      "label": "relatedItemIdentifier",
+      "comment": "The identifier for the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedItemIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedItemIdentifierType",
+      "type": "rdf:Property",
+      "label": "relatedItemIdentifierType",
+      "comment": "The type of the Identifier for the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedItemIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedItemType",
+      "type": "rdf:Property",
+      "label": "relatedItemType",
+      "comment": "The general type of the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedItemType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relatedMetadataScheme",
+      "type": "rdf:Property",
+      "label": "relatedMetadataScheme",
+      "comment": "The name of the scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relatedMetadataScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/relationType",
+      "type": "rdf:Property",
+      "label": "relationType",
+      "comment": "Description of the relationship of the resource being registered (A) and the related resource (B).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/relationType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/resourceType",
+      "type": "rdf:Property",
+      "label": "resourceType",
+      "comment": "A description of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/resourceType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/resourceTypeGeneral",
+      "type": "rdf:Property",
+      "label": "resourceTypeGeneral",
+      "comment": "The general type of a resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/resourceTypeGeneral.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/rights",
+      "type": "rdf:Property",
+      "label": "rights",
+      "comment": "Any rights information for this resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/rights.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/rightsIdentifier",
+      "type": "rdf:Property",
+      "label": "rightsIdentifier",
+      "comment": "A short standardized identifier for the licence.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/rightsIdentifier.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/rightsIdentifierScheme",
+      "type": "rdf:Property",
+      "label": "rightsIdentifierScheme",
+      "comment": "The name of the scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/rightsIdentifierScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/rightsURI",
+      "type": "rdf:Property",
+      "label": "rightsURI",
+      "comment": "The URI of the license.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/rightsURI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/schemeType",
+      "type": "rdf:Property",
+      "label": "schemeType",
+      "comment": "The type of the relatedMetadataScheme, linked with the schemeURI.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/schemeType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/schemeURI",
+      "type": "rdf:Property",
+      "label": "schemeURI",
+      "comment": "The URI of an identifier scheme.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/schemeURI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/size",
+      "type": "rdf:Property",
+      "label": "size",
+      "comment": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/size.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/southBoundLatitude",
+      "type": "rdf:Property",
+      "label": "southBoundLatitude",
+      "comment": "Southern latitude of box .",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/southBoundLatitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/subject",
+      "type": "rdf:Property",
+      "label": "subject",
+      "comment": "Subject, keyword, classification code, or key phrase describing the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/subject.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/subjectScheme",
+      "type": "rdf:Property",
+      "label": "subjectScheme",
+      "comment": "The name of the subject scheme or classification code or authority if one is used.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/subjectScheme.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/title",
+      "type": "rdf:Property",
+      "label": "title",
+      "comment": "A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/title.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/titleType",
+      "type": "rdf:Property",
+      "label": "titleType",
+      "comment": "The type of Title (other than the Main Title).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/titleType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/valueURI",
+      "type": "rdf:Property",
+      "label": "valueURI",
+      "comment": " The URI of the subject term.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/valueURI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/version",
+      "type": "rdf:Property",
+      "label": "version",
+      "comment": "The version number of the resource.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/version.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/volume",
+      "type": "rdf:Property",
+      "label": "volume",
+      "comment": "Volume of the related item.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/volume.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/property/westBoundLongitude",
+      "type": "rdf:Property",
+      "label": "westBoundLongitude",
+      "comment": "Western longitudinal dimension of box.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/property/westBoundLongitude.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 contributorType",
+      "identifier": "contributorType",
+      "created": "2026-01-18",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson",
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector",
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataCurator",
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataManager",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Distributor",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Editor",
+        "https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Producer",
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader",
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager",
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember",
+        "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency",
+        "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority",
+        "https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Researcher",
+        "https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup",
+        "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Translator",
+        "https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader",
+        "https://w3id.org/tib/datacite/vocab/contributorType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/contributorType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson",
+      "type": "Concept",
+      "prefLabel": "ContactPerson",
+      "notation": "ContactPerson",
+      "definition": "Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource.",
+      "scopeNote": "May also be the “Point of Contact” in an organisation that controls access to the resource, if that organisation is different from the Publisher, Distributor, and Data Manager.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector",
+      "type": "Concept",
+      "prefLabel": "DataCollector",
+      "notation": "DataCollector",
+      "definition": "Person/institution responsible for finding or gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).",
+      "scopeNote": "May also be used when crediting survey conductors, interviewers, event or condition observers, or persons responsible for monitoring key instrument data.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/DataCurator",
+      "type": "Concept",
+      "prefLabel": "DataCurator",
+      "notation": "DataCurator",
+      "definition": "Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository.",
+      "scopeNote": "While the DataManager is concerned with digital maintenance, the DataCurator’s role encompasses quality assurance focused on content and metadata. Responsibilities can include checking completeness; verifying standard metadata; adding/verifying specialized metadata; and determining how metadata maps to search engines, database products, and automated feeds. Repository managers and data librarians may fall within this category.",
+      "example": [
+        "https://doi.org/10.20375/0000-000D-1D1F-2"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataCurator.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/DataManager",
+      "type": "Concept",
+      "prefLabel": "DataManager",
+      "notation": "DataManager",
+      "definition": "Person (or organisation with a staff of data managers, such as a data centre) responsible for maintaining the finished resource.",
+      "scopeNote": "Ensures the resource is periodically refreshed (software/hardware support), kept available/protected from unauthorized access, stored according to industry standards, and handled according to applicable records management requirements.",
+      "example": [
+        "https://doi.org/10.6073/pasta/41b3ed2e152e1e4c3846e646118208e7"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/DataManager.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Distributor",
+      "type": "Concept",
+      "prefLabel": "Distributor",
+      "notation": "Distributor",
+      "definition": "Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form.",
+      "scopeNote": "Works stored in more than one archive/repository may credit each as a distributor.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Distributor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Editor",
+      "type": "Concept",
+      "prefLabel": "Editor",
+      "notation": "Editor",
+      "definition": "A person who oversees the details related to the publication format of the resource.",
+      "scopeNote": "If the Editor is to be credited in place of multiple creators, the Editor’s name may be supplied as Creator, with “(Ed.)” appended to the name.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Editor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution",
+      "type": "Concept",
+      "prefLabel": "HostingInstitution",
+      "notation": "HostingInstitution",
+      "definition": "Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.",
+      "scopeNote": "This role normally falls on the university, research center, or organization where the data center/repository belongs. May also be used for an organisation that stores the data offline, often a data centre if that data centre is not the publisher.",
+      "example": [
+        "Université Grenoble Alpes (UGA)"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution is not adequately described by any of the other values for contributorType.",
+      "scopeNote": "Could be a photographer, artist, or writer whose contribution helped to publicize the resource (as opposed to creating it), a reviewer, someone providing administrative services (depositing updates, analysing usage), etc.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Producer",
+      "type": "Concept",
+      "prefLabel": "Producer",
+      "notation": "Producer",
+      "definition": "Typically, a person or organisation responsible for the artistry and form of a media product.",
+      "scopeNote": "In the data industry, this may be a company producing DVDs that package data for future dissemination by a distributor.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Producer.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader",
+      "type": "Concept",
+      "prefLabel": "ProjectLeader",
+      "notation": "ProjectLeader",
+      "definition": "Person officially designated as head of project team or sub-project team instrumental in the work necessary to development of the resource.",
+      "scopeNote": "The Project Leader remains intimately involved throughout the life of the particular project team.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager",
+      "type": "Concept",
+      "prefLabel": "ProjectManager",
+      "notation": "ProjectManager",
+      "definition": "Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams.",
+      "scopeNote": "The manager of a project normally has more administrative responsibility than actual work involvement.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember",
+      "type": "Concept",
+      "prefLabel": "ProjectMember",
+      "notation": "ProjectMember",
+      "definition": "Person on the membership list of a designated project/project team.",
+      "scopeNote": "This vocabulary may or may not indicate the quality, quantity, or substance of the person’s involvement.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency",
+      "type": "Concept",
+      "prefLabel": "RegistrationAgency",
+      "notation": "RegistrationAgency",
+      "definition": "Institution/organisation officially appointed by a Registration Authority to handle specific tasks within a defined area of responsibility.",
+      "scopeNote": "DataCite is a Registration Agency for the International DOI Foundation (IDF). One task is to assign DOI prefixes to allocating agents who then assign full DOI strings to clients and provide metadata back to the DataCite registry.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority",
+      "type": "Concept",
+      "prefLabel": "RegistrationAuthority",
+      "notation": "RegistrationAuthority",
+      "definition": "A standards-setting body from which Registration Agencies obtain official recognition and guidance.",
+      "scopeNote": "The IDF serves as the Registration Authority for the International Standards Organisation (ISO) in the area/domain of Digital Object Identifiers.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson",
+      "type": "Concept",
+      "prefLabel": "RelatedPerson",
+      "notation": "RelatedPerson",
+      "definition": "A person without a specifically defined role in the development of the resource, but who is someone the author wishes to recognize.",
+      "scopeNote": "Could be an author’s intellectual mentor, a person providing intellectual leadership in the discipline or subject domain, etc.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Researcher",
+      "type": "Concept",
+      "prefLabel": "Researcher",
+      "notation": "Researcher",
+      "definition": "A person involved in analysing data or the results of an experiment or formal study.",
+      "scopeNote": "Should be a person, not an institution. A person gathering data would typically be DataCollector. A researcher may find additional data online and correlate it to collected data.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Researcher.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup",
+      "type": "Concept",
+      "prefLabel": "ResearchGroup",
+      "notation": "ResearchGroup",
+      "definition": "Typically refers to a group of individuals with a lab, department, or division that has a specifically defined focus of activity.",
+      "scopeNote": "May operate at a narrower level of scope; may or may not hold less administrative responsibility than a project team.",
+      "example": [
+        "Space Research & Planetary Sciences Division of the University of Bern (WP Unibe)",
+        "doi:10.26302/SSHADE/EXPERIMEN T_OP_20201104_001"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
+      "type": "Concept",
+      "prefLabel": "RightsHolder",
+      "notation": "RightsHolder",
+      "definition": "Person or institution owning or managing property rights, including intellectual property rights over the resource.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor",
+      "type": "Concept",
+      "prefLabel": "Sponsor",
+      "notation": "Sponsor",
+      "definition": "Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc.",
+      "scopeNote": "Includes organisations that provide in-kind support (donation, people, facility, instrumentation) necessary for development of the resource.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor",
+      "type": "Concept",
+      "prefLabel": "Supervisor",
+      "notation": "Supervisor",
+      "definition": "Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/Translator",
+      "type": "Concept",
+      "prefLabel": "Translator",
+      "notation": "Translator",
+      "definition": "A person, organization, or automated system responsible for converting the content of a resource from one language into another, preserving its meaning and intended message.",
+      "scopeNote": "Apply to DOI metadata for a resource which has been translated from another resource.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/Translator.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader",
+      "type": "Concept",
+      "prefLabel": "WorkPackageLeader",
+      "notation": "WorkPackageLeader",
+      "definition": "A Work Package is a recognized data product, not all of which is included in publication. The package may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring comprehensive contents, versioning, and availability of the Work Package during development of the resource.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 dateType",
+      "identifier": "dateType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Available",
+        "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Collected",
+        "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
+        "https://w3id.org/tib/datacite/vocab/dateType/Created",
+        "https://w3id.org/tib/datacite/vocab/dateType/Issued",
+        "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Updated",
+        "https://w3id.org/tib/datacite/vocab/dateType/Valid",
+        "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn",
+        "https://w3id.org/tib/datacite/vocab/dateType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/dateType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
+      "type": "Concept",
+      "prefLabel": "Accepted",
+      "notation": "Accepted",
+      "definition": "The date that the publisher accepted the resource into their system.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "To indicate the start of an embargo period, use Accepted or Submitted, as appropriate.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Accepted.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Available",
+      "type": "Concept",
+      "prefLabel": "Available",
+      "notation": "Available",
+      "definition": "The date the resource is made publicly available. May be a range.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "To indicate the end of an embargo period, use Available.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Available.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Collected",
+      "type": "Concept",
+      "prefLabel": "Collected",
+      "notation": "Collected",
+      "definition": "The date or date range in which the resource content was collected.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Collected.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
+      "type": "Concept",
+      "prefLabel": "Copyrighted",
+      "notation": "Copyrighted",
+      "definition": "The specific, documented date at which the resource receives a copyrighted status, if applicable.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
+      "type": "Concept",
+      "prefLabel": "Coverage",
+      "notation": "Coverage",
+      "definition": "The date or date range that the resource content applies to, describes, or covers.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Coverage.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Created",
+      "type": "Concept",
+      "prefLabel": "Created",
+      "notation": "Created",
+      "definition": "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "Recommended for discovery.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Created.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Issued",
+      "type": "Concept",
+      "prefLabel": "Issued",
+      "notation": "Issued",
+      "definition": "The date that the resource is published or distributed, e.g., to a data centre.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Issued.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Other date that does not fit into an existing category.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
+      "type": "Concept",
+      "prefLabel": "Submitted",
+      "notation": "Submitted",
+      "definition": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Submitted.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Updated",
+      "type": "Concept",
+      "prefLabel": "Updated",
+      "notation": "Updated",
+      "definition": "The date of the last update to the resource, when the resource is being added to. May be a range.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Updated.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Valid",
+      "type": "Concept",
+      "prefLabel": "Valid",
+      "notation": "Valid",
+      "definition": "The date or date range during which the dataset or resource is accurate.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Valid.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn",
+      "type": "Concept",
+      "prefLabel": "Withdrawn",
+      "notation": "Withdrawn",
+      "definition": "The date the resource is removed.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+      "scopeNote": "It is good practice to include a Description that indicates the reason for the retraction or withdrawal.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 descriptionType",
+      "identifier": "descriptionType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/descriptionType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
+      "type": "Concept",
+      "prefLabel": "Abstract",
+      "notation": "Abstract",
+      "definition": "A brief description of the resource and the context in which the resource was created.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "Recommended for discovery. Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.",
+      "example": [
+        "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
+      "type": "Concept",
+      "prefLabel": "Methods",
+      "notation": "Methods",
+      "definition": "The methodology employed for the study or research.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "Recommended for discovery. Full documentation about methods supports open science.",
+      "example": [
+        "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Methods.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Other description information that does not fit into an existing category.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "Use for any other description type.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation",
+      "type": "Concept",
+      "prefLabel": "SeriesInformation",
+      "notation": "SeriesInformation",
+      "definition": "Information about a repeating series, such as volume, issue, number.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+      "type": "Concept",
+      "prefLabel": "TableOfContents",
+      "notation": "TableOfContents",
+      "definition": "A listing of the Table of Contents.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.",
+      "example": [
+        "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo",
+      "type": "Concept",
+      "prefLabel": "TechnicalInfo",
+      "notation": "TechnicalInfo",
+      "definition": "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "scopeNote": "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate.",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 funderIdentifierType",
+      "identifier": "funderIdentifierType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/funderIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID",
+      "type": "Concept",
+      "prefLabel": "Crossref Funder ID",
+      "altLabel": "Crossref Funder Registry ID",
+      "notation": "Crossref Funder ID",
+      "definition": "A persistent identifier for a funding body assigned by the Crossref Funder Registry, a curated, openly licensed registry of funder names and identifiers used to disambiguate funding organizations in scholarly metadata.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID",
+      "type": "Concept",
+      "prefLabel": "GRID",
+      "altLabel": "Global Research Identifier Database",
+      "notation": "GRID",
+      "definition": "A persistent identifier for a research organization issued by the Global Research Identifier Database (GRID), a free database of research-related institution identifiers maintained by Digital Science.",
+      "scopeNote": "GRID identifiers were succeeded by ROR identifiers in 2021; new records SHOULD prefer ROR where an equivalent ROR identifier exists.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI",
+      "type": "Concept",
+      "prefLabel": "ISNI",
+      "altLabel": "International Standard Name Identifier",
+      "notation": "ISNI",
+      "definition": "A 16-character identifier for the public identity of a person or organization, defined by ISO 27729 and assigned by the ISNI International Agency. When used as a funder identifier, the ISNI uniquely identifies the funding organization.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Any funder identifier type not covered by the other values in the funderIdentifierType controlled list.",
+      "scopeNote": "Use Other for funder identifier schemes that are not represented by a named value in this vocabulary. If a particular scheme is in common use, consider proposing it as a named value in a future DataCite release.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR",
+      "type": "Concept",
+      "prefLabel": "ROR",
+      "altLabel": "Research Organization Registry",
+      "notation": "ROR",
+      "definition": "A persistent identifier for a research organization from the Research Organization Registry (ROR), a community-led, open registry of unique identifiers for every organization that performs, funds, or otherwise contributes to research.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/identifierType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 identifierType",
+      "identifier": "identifierType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/identifierType/DOI"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/identifierType/identifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/identifierType/DOI",
+      "type": "Concept",
+      "prefLabel": "DOI",
+      "altLabel": "Digital Object Identifier",
+      "notation": "DOI",
+      "definition": "A character string used to uniquely and persistently identify a citable resource, registered with a DOI Registration Agency such as DataCite. A DOI name consists of a prefix (assigned to the registrant) and a suffix (assigned by the registrant to the resource), separated by a slash.",
+      "scopeNote": "The DOI is the required identifier type for resources registered with DataCite; every DataCite record MUST carry exactly one DOI as its primary identifier.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/identifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/identifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/identifierType/DOI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/nameType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 nameType",
+      "identifier": "nameType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/nameType/Organizational",
+        "https://w3id.org/tib/datacite/vocab/nameType/Personal"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/nameType/nameType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/nameType/Organizational",
+      "type": "Concept",
+      "prefLabel": "Organizational",
+      "notation": "Organizational",
+      "definition": "An organization or institution name.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/nameType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/nameType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/nameType/Organizational.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/nameType/Personal",
+      "type": "Concept",
+      "prefLabel": "Personal",
+      "notation": "Personal",
+      "definition": "An individual person’s name.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/nameType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/nameType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/nameType/Personal.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 numberType",
+      "identifier": "numberType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Article",
+        "https://w3id.org/tib/datacite/vocab/numberType/Chapter",
+        "https://w3id.org/tib/datacite/vocab/numberType/Report",
+        "https://w3id.org/tib/datacite/vocab/numberType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/numberType/numberType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType/Article",
+      "type": "Concept",
+      "prefLabel": "Article",
+      "notation": "Article",
+      "definition": "A number identifying an article within a journal issue or proceedings volume.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Article.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType/Chapter",
+      "type": "Concept",
+      "prefLabel": "Chapter",
+      "notation": "Chapter",
+      "definition": "A number identifying a chapter within a book or monograph.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Chapter.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Any number type not covered by the other values in the numberType controlled list.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType/Report",
+      "type": "Concept",
+      "prefLabel": "Report",
+      "notation": "Report",
+      "definition": "A number identifying a report within a report series.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Report.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 relatedIdentifierType",
+      "identifier": "relatedIdentifierType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN",
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/relatedIdentifierType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK",
+      "type": "Concept",
+      "prefLabel": "ARK",
+      "altLabel": "Archival Resource Key",
+      "notation": "ARK",
+      "definition": "A URI designed to support long-term access to information objects. In general, ARK syntax is of the form (brackets, []. indicate optional elements): [http://NMA/]ark:/NAAN/Name [Qualifier].",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ARK\" relationType=\"IsCitedBy\">ark:/13030/tqb3kh97gh8w</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv",
+      "type": "Concept",
+      "prefLabel": "arXiv",
+      "altLabel": "arXiv identifier",
+      "notation": "arXiv",
+      "definition": "arXiv.org is a repository of preprints of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"arXiv\" relationType=\"IsCitedBy\">arXiv:0706.0001</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode",
+      "type": "Concept",
+      "prefLabel": "bibcode",
+      "altLabel": "Astrophysics Data System bibliographic codes",
+      "notation": "bibcode",
+      "definition": "A standardized 19-character identifier according to the syntax yyyyjjjjjvvvvmppppa. See http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:bibcode/. Note: bibcodes can be searched via https://ui.adsabs.harvard.edu/ or resolved using https://ui.adsabs.harvard.edu/abs/<bibcode>.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"bibcode\" relationType=\"IsCitedBy\">2018AGUFM.A24K..07S</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR",
+      "type": "Concept",
+      "prefLabel": "CSTR",
+      "altLabel": "Common Science and Technology Resources Identifier",
+      "notation": "CSTR",
+      "definition": "CSTR is an identifier based on the Chinese National Standard GB/T 32843—2016 “Science and technology resource identification”, providing a unique identification service for scientific data, papers, scientific institutions, researchers, scientific instruments, patents and other scientific and technological resources.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"CSTR\" relationType=\"References\">31253.11.sciencedb.13238</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI",
+      "type": "Concept",
+      "prefLabel": "DOI",
+      "altLabel": "Digital Object Identifier",
+      "notation": "DOI",
+      "definition": "A character string used to uniquely identify an object. A DOI name is divided into two parts, a prefix and a suffix, separated by a slash.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsSupplementTo\">10.1016/j.epsl.2011.11.037</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13",
+      "type": "Concept",
+      "prefLabel": "EAN13",
+      "altLabel": "European Article Number (now renamed International Article Number, but retaining the original acronym)",
+      "notation": "EAN13",
+      "definition": "A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"EAN13\" relationType=\"Cites\">9783468111242</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN",
+      "type": "Concept",
+      "prefLabel": "EISSN",
+      "altLabel": "Electronic International Standard Serial Number",
+      "notation": "EISSN",
+      "definition": "ISSN used to identify periodicals in electronic form (eISSN or e-ISSN).",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"eISSN\" relationType=\"Cites\">1562-6865</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle",
+      "type": "Concept",
+      "prefLabel": "Handle",
+      "altLabel": "Handle",
+      "notation": "Handle",
+      "definition": "This refers specifically to an ID in the Handle system operated by the Corporation for National Research Initiatives (CNRI).",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"Handle\" relationType=\"References\">10013/epic.10033</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN",
+      "type": "Concept",
+      "prefLabel": "IGSN",
+      "altLabel": "International Generic Sample Number",
+      "notation": "IGSN",
+      "definition": "A code that uniquely identifies samples from our natural environment and related features-of-interest.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"IGSN\" relationType=\"References\">IECUR0097</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN",
+      "type": "Concept",
+      "prefLabel": "ISBN",
+      "altLabel": "International Standard Book Number",
+      "notation": "ISBN",
+      "definition": "A unique numeric book identifier. There are 2 formats: a 10-digit ISBN format and a 13-digit ISBN.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"IsPartOf\">978-3-905673-82-1</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN",
+      "type": "Concept",
+      "prefLabel": "ISSN",
+      "altLabel": "International Standard Serial Number",
+      "notation": "ISSN",
+      "definition": "A unique 8-digit number used to identify a print or electronic periodical publication.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPartOf\">0077-5606</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC",
+      "type": "Concept",
+      "prefLabel": "ISTC",
+      "altLabel": "International Standard Text Code",
+      "notation": "ISTC",
+      "definition": "A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ISTC\" relationType=\"Cites\">0A9 2002 12B4A105 7</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN",
+      "type": "Concept",
+      "prefLabel": "LISSN",
+      "altLabel": "Linking ISSN",
+      "notation": "LISSN",
+      "definition": "The linking ISSN or ISSN-L enables collocation or linking among different media versions of a continuing resource.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"LISSN\" relationType=\"Cites\">1188-1534</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID",
+      "type": "Concept",
+      "prefLabel": "LSID",
+      "altLabel": "Life Science Identifiers",
+      "notation": "LSID",
+      "definition": "A unique identifier for data in the Life Science domain. Format: urn:lsid:authority:namespace:identifier:revision.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"LSID\" relationType=\"Cites\">urn:lsid:ubio.org:namebank:11815</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID",
+      "type": "Concept",
+      "prefLabel": "PMID",
+      "altLabel": "PubMed identifier",
+      "notation": "PMID",
+      "definition": "A unique number assigned to each PubMed record.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsReferencedBy\">12082125</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL",
+      "type": "Concept",
+      "prefLabel": "PURL",
+      "altLabel": "Persistent Uniform Resource Locator",
+      "notation": "PURL",
+      "definition": "A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"PURL\" relationType=\"Cites\">http://purl.oclc.org/foo/bar</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID",
+      "type": "Concept",
+      "prefLabel": "RRID",
+      "altLabel": "Research Resource IDentifier",
+      "notation": "RRID",
+      "definition": "A character string used to uniquely identify key inputs to an experiment including the so-called “key biological resources” as defined by the National Institutes of Health, and related tools such as core facilities and databases. An RRID name is divided into two parts, the authority and a local identifier, separated by an underscore.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"RRID\" relationType=\"Cites\">RRID:SCR_014641</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC",
+      "type": "Concept",
+      "prefLabel": "UPC",
+      "altLabel": "Universal Product Code",
+      "notation": "UPC",
+      "definition": "A barcode symbology used for tracking trade items in stores. Its most common form, the UPC-A, consists of 12 numerical digits.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"UPC\" relationType=\"Cites\">123456789999</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL",
+      "type": "Concept",
+      "prefLabel": "URL",
+      "altLabel": "Uniform Resource Locator",
+      "notation": "URL",
+      "definition": "Also known as web address, a URL is a specific character string that constitutes a reference to a resource. The syntax is: scheme://domain:port/path?query_string#fragment_id.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCitedBy\">http://www.heatflow.und.edu/index2.html</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN",
+      "type": "Concept",
+      "prefLabel": "URN",
+      "altLabel": "Uniform Resource Name",
+      "notation": "URN",
+      "definition": "A unique and persistent identifier of an electronic document. The syntax is: urn:<NID>:<NSS>. The leading urn: sequence is case-insensitive, <NID> is the namespace identifier, <NSS> is the namespace-specific string.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:101:1-201102033592</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id",
+      "type": "Concept",
+      "prefLabel": "w3id",
+      "altLabel": "Permanent identifier for Web applications",
+      "notation": "w3id",
+      "definition": "Mostly used to publish vocabularies and ontologies. The letters ‘w3’ stand for “World Wide Web”.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"w3id\" relationType=\"IsCitedBy\">https://w3id.org/games/spec/coil#Coil_Bomb_Die_Of_Age</relatedIdentifier>"
+      ],
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 relationType",
+      "identifier": "relationType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Cites",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Continues",
+        "https://w3id.org/tib/datacite/vocab/relationType/Describes",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/References",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Documents",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Compiles",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Requires",
+        "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Collects",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/relationType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
+      "type": "Concept",
+      "prefLabel": "Cites",
+      "notation": "Cites",
+      "definition": "indicates that A includes B in a citation",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Cites.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Collects",
+      "type": "Concept",
+      "prefLabel": "Collects",
+      "notation": "Collects",
+      "definition": "Indicates A collects B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May indicate relationship between an instrument and a dataset it collected/observed.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Collects.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Compiles",
+      "type": "Concept",
+      "prefLabel": "Compiles",
+      "notation": "Compiles",
+      "definition": "indicates B is the result of a compile or creation event using A",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used for software and text; a compiler can be a computer program or a person.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Compiles.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Continues",
+      "type": "Concept",
+      "prefLabel": "Continues",
+      "notation": "Continues",
+      "definition": "indicates A is a continuation of the work B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Continues.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Describes",
+      "type": "Concept",
+      "prefLabel": "Describes",
+      "notation": "Describes",
+      "definition": "indicates A describes B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Describes.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Documents",
+      "type": "Concept",
+      "prefLabel": "Documents",
+      "notation": "Documents",
+      "definition": "indicates A is documentation about/explaining B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used for software documentation.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Documents.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata",
+      "type": "Concept",
+      "prefLabel": "HasMetadata",
+      "notation": "HasMetadata",
+      "definition": "indicates resource A has additional metadata B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasMetadata\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567890</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
+      "type": "Concept",
+      "prefLabel": "HasPart",
+      "notation": "HasPart",
+      "definition": "indicates A includes the part B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/HasPart.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation",
+      "type": "Concept",
+      "prefLabel": "HasTranslation",
+      "notation": "HasTranslation",
+      "definition": "indicates A has a translation B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "When a resource is shared in one language and later translated, use HasTranslation to link original to translation. If released simultaneously in multiple languages, connect in both directions.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
+      "type": "Concept",
+      "prefLabel": "HasVersion",
+      "notation": "HasVersion",
+      "definition": "indicates A has a version B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "The registered resource such as a software package or code repository has a versioned instance (A has instance B). May relate an un-versioned code repository to a specific software version.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasVersion\">10.5281/ZENODO.832053</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/HasVersion.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
+      "type": "Concept",
+      "prefLabel": "IsCitedBy",
+      "notation": "IsCitedBy",
+      "definition": "indicates that B includes A in a citation",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy",
+      "type": "Concept",
+      "prefLabel": "IsCollectedBy",
+      "notation": "IsCollectedBy",
+      "definition": "Indicates A is collected by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May indicate relationship between a dataset and an instrument used to collect/measure/observe data.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCollectedBy\">10.5072/instrument</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
+      "type": "Concept",
+      "prefLabel": "IsCompiledBy",
+      "notation": "IsCompiledBy",
+      "definition": "indicates B is used to compile or create A",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May indicate a traditional text compilation, or the compiler program used to generate executable software.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
+      "type": "Concept",
+      "prefLabel": "IsContinuedBy",
+      "notation": "IsContinuedBy",
+      "definition": "indicates A is continued by the work B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
+      "type": "Concept",
+      "prefLabel": "IsDerivedFrom",
+      "notation": "IsDerivedFrom",
+      "definition": "indicates B is a source upon which A is based",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Use for a resource that is a derivative of an original resource. Example context: dataset derived from a larger dataset and manipulated.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy",
+      "type": "Concept",
+      "prefLabel": "IsDescribedBy",
+      "notation": "IsDescribedBy",
+      "definition": "indicates A is described by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy",
+      "type": "Concept",
+      "prefLabel": "IsDocumentedBy",
+      "notation": "IsDocumentedBy",
+      "definition": "indicates B is documentation about/explaining A",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used for software documentation.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsDocumentedBy\">http://tobias-lib.uni-tuebingen.de/volltexte/2000/96/</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
+      "type": "Concept",
+      "prefLabel": "IsIdenticalTo",
+      "notation": "IsIdenticalTo",
+      "definition": "indicates that A is identical to B, for use when there is a need to register two separate instances of the same resource",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Use when the same resource is saved in another location (e.g., another institution).",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsIdenticalTo\">http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
+      "type": "Concept",
+      "prefLabel": "IsMetadataFor",
+      "notation": "IsMetadataFor",
+      "definition": "indicates additional metadata A for a resource B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
+      "type": "Concept",
+      "prefLabel": "IsNewVersionOf",
+      "notation": "IsNewVersionOf",
+      "definition": "indicates A is a new edition of B, where the new edition has been modified or updated",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
+      "type": "Concept",
+      "prefLabel": "IsObsoletedBy",
+      "notation": "IsObsoletedBy",
+      "definition": "Indicates A is replaced by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
+      "type": "Concept",
+      "prefLabel": "IsOriginalFormOf",
+      "notation": "IsOriginalFormOf",
+      "definition": "indicates A is the original form of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used for different software operating systems or compiler formats.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
+      "type": "Concept",
+      "prefLabel": "IsPartOf",
+      "notation": "IsPartOf",
+      "definition": "indicates A is a portion of B; may be used for elements of a series",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
+      "type": "Concept",
+      "prefLabel": "IsPreviousVersionOf",
+      "notation": "IsPreviousVersionOf",
+      "definition": "indicates A is a previous edition of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
+      "type": "Concept",
+      "prefLabel": "IsPublishedIn",
+      "notation": "IsPublishedIn",
+      "definition": "indicates A is published inside B, but is independent of other things published inside of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+      "type": "Concept",
+      "prefLabel": "IsReferencedBy",
+      "notation": "IsReferencedBy",
+      "definition": "indicates A is used as a source of information by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
+      "type": "Concept",
+      "prefLabel": "IsRequiredBy",
+      "notation": "IsRequiredBy",
+      "definition": "Indicates A is required by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used to indicate software dependencies.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
+      "type": "Concept",
+      "prefLabel": "IsReviewedBy",
+      "notation": "IsReviewedBy",
+      "definition": "indicates that A is reviewed by B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf",
+      "type": "Concept",
+      "prefLabel": "IsSourceOf",
+      "notation": "IsSourceOf",
+      "definition": "indicates A is a source upon which B is based",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "IsSourceOf is the original resource from which a derivative resource was created (e.g., original dataset without value manipulation).",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsSourceOf\">http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy",
+      "type": "Concept",
+      "prefLabel": "IsSupplementedBy",
+      "notation": "IsSupplementedBy",
+      "definition": "indicates that B is a supplement to A",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsSupplementedBy\">16911322</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
+      "type": "Concept",
+      "prefLabel": "IsSupplementTo",
+      "notation": "IsSupplementTo",
+      "definition": "indicates that A is a supplement to B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:0168-ssoar-13172</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf",
+      "type": "Concept",
+      "prefLabel": "IsTranslationOf",
+      "notation": "IsTranslationOf",
+      "definition": "indicates A is a translation of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "When a resource is shared in one language and later translated, use IsTranslationOf to link translation to original.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+      "type": "Concept",
+      "prefLabel": "IsVariantFormOf",
+      "notation": "IsVariantFormOf",
+      "definition": "indicates A is a variant or different form of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Use for a different form of one thing. May be used for different software operating systems or compiler formats.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
+      "type": "Concept",
+      "prefLabel": "IsVersionOf",
+      "notation": "IsVersionOf",
+      "definition": "indicates A is a version of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "The registered resource is an instance of a target resource (A is an instance of B). May relate a specific software version to its code repository.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVersionOf\">10.5281/ZENODO.832054</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+      "type": "Concept",
+      "prefLabel": "Obsoletes",
+      "notation": "Obsoletes",
+      "definition": "Indicates A replaces B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/References",
+      "type": "Concept",
+      "prefLabel": "References",
+      "notation": "References",
+      "definition": "indicates B is used as a source of information for A",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "Recommended for discovery.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/References.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
+      "type": "Concept",
+      "prefLabel": "Requires",
+      "notation": "Requires",
+      "definition": "Indicates A requires B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "scopeNote": "May be used to indicate software dependencies.",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Requires.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
+      "type": "Concept",
+      "prefLabel": "Reviews",
+      "notation": "Reviews",
+      "definition": "indicates that A is a review of B",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+      "example": [
+        "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Reviews.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 resourceTypeGeneral",
+      "identifier": "resourceTypeGeneral",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/resourceTypeGeneral.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual",
+      "type": "Concept",
+      "prefLabel": "Audiovisual",
+      "notation": "Audiovisual",
+      "definition": "A series of visual representations imparting an impression of motion when shown in succession. May or may not include sound.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "May be used for films, video, etc.",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.17608/k6.auckland.4620790.v1"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#MovingImage"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award",
+      "type": "Concept",
+      "prefLabel": "Award",
+      "notation": "Award",
+      "definition": "An umbrella term for resources provided to individual(s) or organization(s) in support of research, academic output, or training, such as a specific instance of funding, grant, investment, sponsorship, scholarship, recognition, or non-monetary materials.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Award\">Grant</resourceType>\n<resourceType resourceTypeGeneral=\"Award\">Facility use</resourceType>",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book",
+      "type": "Concept",
+      "prefLabel": "Book",
+      "notation": "Book",
+      "definition": "A medium for recording information in the form of writing or images, typically composed of many pages bound together and protected by a cover.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Book\">Textbook</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter",
+      "type": "Concept",
+      "prefLabel": "BookChapter",
+      "notation": "BookChapter",
+      "definition": "One of the main divisions of a book.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.15122/isbn.978-2-406-09313-8.p.0639",
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.17613/m6631d"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection",
+      "type": "Concept",
+      "prefLabel": "Collection",
+      "notation": "Collection",
+      "definition": "An aggregation of resources, which may encompass collections of one resourceType as well as those of mixed types. A collection is described as a group; its parts may also be separately described.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "A collection of samples, or various files making up a report",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.1594/pangaea.877589"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Collection"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
+      "type": "Concept",
+      "prefLabel": "ComputationalNotebook",
+      "notation": "ComputationalNotebook",
+      "definition": "A virtual notebook environment used for literate programming.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"ComputationalNotebook\">Jupyter</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#InteractiveResource"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper",
+      "type": "Concept",
+      "prefLabel": "ConferencePaper",
+      "notation": "ConferencePaper",
+      "definition": "Article that is written with the goal of being accepted to a conference.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"ConferencePaper\">Experience Report</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding",
+      "type": "Concept",
+      "prefLabel": "ConferenceProceeding",
+      "notation": "ConferenceProceeding",
+      "definition": "Collection of academic papers published in the context of an academic conference.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"ConferenceProceeding\">Annual Convention</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper",
+      "type": "Concept",
+      "prefLabel": "DataPaper",
+      "notation": "DataPaper",
+      "definition": "A factual and objective publication with a focused intent to identify and describe specific data, sets of data, or data collections to facilitate discoverability.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "A data paper describes data provenance and methodologies used in the gathering, processing, organizing, and representing the data",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.17912/w2mw2d"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset",
+      "type": "Concept",
+      "prefLabel": "Dataset",
+      "notation": "Dataset",
+      "definition": "Data encoded in a defined structure.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Data file or files",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.1594/pangaea.804876"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Dataset"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation",
+      "type": "Concept",
+      "prefLabel": "Dissertation",
+      "notation": "Dissertation",
+      "definition": "A written essay, treatise, or thesis, especially one written by a candidate for the degree of Doctor of Philosophy.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Dissertation\">PhD thesis</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event",
+      "type": "Concept",
+      "prefLabel": "Event",
+      "notation": "Event",
+      "definition": "A non-persistent, time-based occurrence.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Descriptive information and/or content that is the basis for discovery of the purpose, location, duration, and responsible agents associated with an event such as a webcast or convention",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7269/p3rn35sz"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Event"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image",
+      "type": "Concept",
+      "prefLabel": "Image",
+      "notation": "Image",
+      "definition": "A visual representation other than text.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Digitised or born digital images, drawings or photographs",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.6083/m4qn65c5"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Image"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument",
+      "type": "Concept",
+      "prefLabel": "Instrument",
+      "notation": "Instrument",
+      "definition": "A device, tool or apparatus used to obtain, measure and/or analyze data.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "This is meant to be the instrument instance (the individual physical device), not the digital description or design of an instrument.\n<resourceType resourceTypeGeneral=\"Instrument\">Reflectometer</resourceType>",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource",
+      "type": "Concept",
+      "prefLabel": "InteractiveResource",
+      "notation": "InteractiveResource",
+      "definition": "A resource requiring interaction from the user to be understood, executed, or experienced.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Training modules, files that require use of a viewer (e.g., Flash), or query/response portals",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7269/p3tb14tr"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#InteractiveResource"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal",
+      "type": "Concept",
+      "prefLabel": "Journal",
+      "notation": "Journal",
+      "definition": "A scholarly publication consisting of articles that is published regularly throughout the year.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Journal\"></resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle",
+      "type": "Concept",
+      "prefLabel": "JournalArticle",
+      "notation": "JournalArticle",
+      "definition": "A written composition on a topic of interest, which forms a separate part of a journal.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"JournalArticle\"></resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model",
+      "type": "Concept",
+      "prefLabel": "Model",
+      "notation": "Model",
+      "definition": "An abstract, conceptual, graphical, mathematical or visualization model that represents empirical objects, phenomena, or physical processes.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Modelled descriptions of, for example, different aspects of languages or a molecular biology reaction chain",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.5285/4d866cd2-c907-4ce2-b070-084ca9779dc2"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "If selected, supply a value for ResourceType.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan",
+      "type": "Concept",
+      "prefLabel": "OutputManagementPlan",
+      "notation": "OutputManagementPlan",
+      "definition": "A formal document that outlines how research outputs are to be handled both during a research project and after the project is completed.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Includes data, software, and materials.\n<resourceType resourceTypeGeneral=\"OutputManagementPlan\">Data Management Plan</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview",
+      "type": "Concept",
+      "prefLabel": "PeerReview",
+      "notation": "PeerReview",
+      "definition": "Evaluation of scientific, academic, or professional work by others working in the same field.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.6084/m9.figshare.5742270\n<resourceType resourceTypeGeneral=\"PeerReview\">Scientific Article</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject",
+      "type": "Concept",
+      "prefLabel": "PhysicalObject",
+      "notation": "PhysicalObject",
+      "definition": "A physical object or substance.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Artifacts, specimens, material samples, and features-of-interest of any size. Digital representations of physical objects should use one of the other resourceTypeGeneral values.",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7299/X78052RB"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint",
+      "type": "Concept",
+      "prefLabel": "Preprint",
+      "notation": "Preprint",
+      "definition": "A version of a scholarly or scientific paper that precedes formal peer review and publication in a peer-reviewed scholarly or scientific journal.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Preprint\">Research Paper</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project",
+      "type": "Concept",
+      "prefLabel": "Project",
+      "notation": "Project",
+      "definition": "A planned endeavor or activity, frequently collaborative, intended to achieve a particular aim using allocated resources such as budget, time, and expertise.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "This represents the project (research projects and studies). For project deliverables/descriptions, use the resource type for the output.\n<resourceType resourceTypeGeneral=\"Project\">Field season</resourceType>\n<resourceType resourceTypeGeneral=\"Project\">Cohort study</resourceType>",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report",
+      "type": "Concept",
+      "prefLabel": "Report",
+      "notation": "Report",
+      "definition": "A document that presents information in an organized format for a specific audience and purpose.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Report\">Annual Report</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service",
+      "type": "Concept",
+      "prefLabel": "Service",
+      "notation": "Service",
+      "definition": "An organized system of apparatus, appliances, staff, etc., for supplying some function(s) required by end users.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Data management service, or long-term preservation service",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.21938/3I01ISNUCODNH1ZJBCVUWA"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Service"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software",
+      "type": "Concept",
+      "prefLabel": "Software",
+      "notation": "Software",
+      "definition": "A computer program other than a computational notebook, in either source code (text) or compiled form. Use this type for general software components supporting scholarly research. Use the ComputationalNotebook value for virtual notebooks.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Software supporting scholarly research",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.4225/03/5954F738EE5AA"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Software"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound",
+      "type": "Concept",
+      "prefLabel": "Sound",
+      "notation": "Sound",
+      "definition": "A resource primarily intended to be heard.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Audio recording",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7282/T3J67F05"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Sound"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard",
+      "type": "Concept",
+      "prefLabel": "Standard",
+      "notation": "Standard",
+      "definition": "Something established by authority, custom, or general consent as a model, example, or point of reference.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "<resourceType resourceTypeGeneral=\"Standard\">Dublin Core</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration",
+      "type": "Concept",
+      "prefLabel": "StudyRegistration",
+      "notation": "StudyRegistration",
+      "definition": "A detailed, time-stamped description of a research plan, often openly shared in a registry or published in a journal before the study is conducted to lend accountability and transparency in the hypothesis generating and testing process.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Includes pre-registrations, registered reports, and clinical trials. Study registrations are sometimes peer-reviewed and may include the hypothesis, expected results, study design, and/or analysis plan.\n<resourceType resourceTypeGeneral=\"StudyRegistration\">Pre-registration</resourceType>",
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text",
+      "type": "Concept",
+      "prefLabel": "Text",
+      "notation": "Text",
+      "definition": "A resource consisting primarily of words for reading that is not covered by any other textual resource type in this list.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "example": [
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.5682/9786065914018"
+      ],
+      "closeMatch": [
+        "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow",
+      "type": "Concept",
+      "prefLabel": "Workflow",
+      "notation": "Workflow",
+      "definition": "A structured series of steps which can be executed to produce a final outcome, allowing users a means to specify and enact their work in a more reproducible manner.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "scopeNote": "Computational workflows involving sequential operations made on data by wrapped software and may be specified in a format belonging to a workflow management system, such as Taverna (http://www.taverna.org.uk/).",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 titleType",
+      "identifier": "titleType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/Subtitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle",
+        "https://w3id.org/tib/datacite/vocab/titleType/Other"
+      ],
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/titleType/titleType.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle",
+      "type": "Concept",
+      "prefLabel": "AlternativeTitle",
+      "notation": "AlternativeTitle",
+      "definition": "A title by which the resource is also known, used as an alternative to the primary title.",
+      "scopeNote": "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType/Other",
+      "type": "Concept",
+      "prefLabel": "Other",
+      "notation": "Other",
+      "definition": "Any title type not covered by the other values in the titleType controlled list.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/titleType/Other.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType/Subtitle",
+      "type": "Concept",
+      "prefLabel": "Subtitle",
+      "notation": "Subtitle",
+      "definition": "A secondary title that follows the main title and provides additional information about the resource.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/titleType/Subtitle.jsonld"
+      ]
+    },
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle",
+      "type": "Concept",
+      "prefLabel": "TranslatedTitle",
+      "notation": "TranslatedTitle",
+      "definition": "A title that is a translation of the primary title into another language.",
+      "scopeNote": "Use the xml:lang attribute to indicate the language of the translated title.",
+      "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+      "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+      "seeAlso": [
+        "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle.jsonld"
+      ]
+    }
+  ]
+}

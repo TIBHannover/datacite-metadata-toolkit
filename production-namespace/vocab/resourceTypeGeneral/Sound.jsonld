@@ -1,0 +1,17 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound",
+  "type": "Concept",
+  "prefLabel": "Sound",
+  "notation": "Sound",
+  "definition": "A resource primarily intended to be heard.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "scopeNote": "Audio recording",
+  "example": [
+    "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7282/T3J67F05"
+  ],
+  "closeMatch": [
+    "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Sound"
+  ]
+}

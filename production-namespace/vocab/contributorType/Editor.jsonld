@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/Editor",
+  "type": "Concept",
+  "prefLabel": "Editor",
+  "notation": "Editor",
+  "definition": "A person who oversees the details related to the publication format of the resource.",
+  "scopeNote": "If the Editor is to be credited in place of multiple creators, the Editor’s name may be supplied as Creator, with “(Ed.)” appended to the name.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

@@ -1,0 +1,10 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/numberType/Report",
+  "type": "Concept",
+  "prefLabel": "Report",
+  "notation": "Report",
+  "definition": "A number identifying a report within a report series.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType"
+}

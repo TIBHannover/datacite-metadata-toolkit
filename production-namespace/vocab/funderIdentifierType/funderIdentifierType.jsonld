@@ -1,0 +1,19 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 funderIdentifierType",
+      "identifier": "funderIdentifierType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other"
+      ]
+    }
+  ]
+}

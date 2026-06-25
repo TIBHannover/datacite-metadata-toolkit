@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+  "type": "Concept",
+  "prefLabel": "TableOfContents",
+  "notation": "TableOfContents",
+  "definition": "A listing of the Table of Contents.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "scopeNote": "Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.",
+  "example": [
+    "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031"
+  ]
+}

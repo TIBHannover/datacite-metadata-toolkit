@@ -1,0 +1,18 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/numberType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 numberType",
+      "identifier": "numberType",
+      "created": "2026-05-12",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/numberType/Article",
+        "https://w3id.org/tib/datacite/vocab/numberType/Chapter",
+        "https://w3id.org/tib/datacite/vocab/numberType/Report",
+        "https://w3id.org/tib/datacite/vocab/numberType/Other"
+      ]
+    }
+  ]
+}

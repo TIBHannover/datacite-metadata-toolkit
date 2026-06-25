@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/Producer",
+  "type": "Concept",
+  "prefLabel": "Producer",
+  "notation": "Producer",
+  "definition": "Typically, a person or organisation responsible for the artistry and form of a media product.",
+  "scopeNote": "In the data industry, this may be a company producing DVDs that package data for future dissemination by a distributor.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

@@ -4,89 +4,24 @@
 
 This repository provides machine-readable linked-data resources and tooling for the **DataCite Metadata Schema** (currently versions 4.6 and 4.7): RDF class and property definitions, controlled vocabulary terms as resolvable IRIs, JSON Schema validation profiles, an XML-to-JSON conversion script, and SKOS / JSKOS / SSSOM crosswalk mappings to external vocabularies (Schema.org, DCTERMS, DCAT-AP, Wikidata).
 
-It is the **source of truth** for the DataCite linked-data namespace. The namespace itself is published from a separate flat-layout mirror, [`datacite/schema.datacite.org-linked-data`](https://github.com/datacite/schema.datacite.org-linked-data). **Do not edit the publication repo directly** — all changes start here.
-
-> **Note**: the automated sync workflow that opened PRs against the publication mirror is currently **disabled** (file present at [`.github/workflows/sync-to-publication.yml.disabled`](.github/workflows/sync-to-publication.yml.disabled)). Changes to this repo's `main` branch must be mirrored manually until the automation is re-enabled. To re-enable, rename the file back to `sync-to-publication.yml`.
+It is the **source of truth** for the DataCite linked-data namespace. For the TIB/W3ID publication route, this repository generates a reviewable `production-namespace/` bundle that can be synced to [`TIBHannover/datacite-metadata-toolkit`](https://github.com/TIBHannover/datacite-metadata-toolkit). The TIB toolkit fork then supplies the flat publication repository, [`TIBHannover/datacite`](https://github.com/TIBHannover/datacite), which is the GitHub Pages backend for the W3ID namespace. **Do not edit the publication repo directly** — all generated namespace changes start here or in [`TIBHannover/datacite-metadata-toolkit`](https://github.com/TIBHannover/datacite-metadata-toolkit).
 
 ---
 
 ## Repository Layout
 
-```
-.
-├── rdf-vocabulary-staging/          # Vocabulary source files (edit these)
-│   ├── class/                       # 21 RDF class definitions (Resource, Creator, Title, …)
-│   ├── property/                    # 80 RDF property definitions at 4.7 (79 at 4.6)
-│   ├── vocab/                       # 11 controlled vocabulary schemes (counts shown for 4.7; 4.6 totals 147)
-│   │   ├── contributorType/         # 22 terms
-│   │   ├── dateType/                # 12 terms
-│   │   ├── descriptionType/         # 6 terms
-│   │   ├── funderIdentifierType/    # 5 terms
-│   │   ├── identifierType/          # 1 term
-│   │   ├── nameType/                # 2 terms
-│   │   ├── numberType/              # 4 terms
-│   │   ├── relatedIdentifierType/   # 23 terms  (21 at 4.6 — adds RAiD, SWHID in 4.7)
-│   │   ├── relationType/            # 39 terms  (38 at 4.6 — adds Other in 4.7)
-│   │   ├── resourceTypeGeneral/     # 34 terms  (32 at 4.6 — adds Poster, Presentation in 4.7)
-│   │   └── titleType/               # 4 terms
-│   ├── context/
-│   │   └── fullcontext.jsonld       # JSON-LD context mapping DataCite keys to IRIs
-│   └── manifest/
-│       ├── datacite-4.6.json        # Versioned index for DataCite 4.6
-│       └── datacite-4.7.json        # Versioned index for DataCite 4.7
-│
-├── validation-and-conversion/
-│   ├── schemas/
-│   │   ├── schema-profiles/         # JSON Schema profiles for API validation
-│   │   │   ├── datacite4.6-schema.json    # Core attribute schema
-│   │   │   ├── datacite4.6-profile.json   # Modular submission profile (POST/PUT)
-│   │   │   ├── integrated.json            # Self-contained bundled profile
-│   │   │   ├── datacite_api.jsonld        # JSON-LD context for REST API payloads
-│   │   │   ├── rules.json                 # Supplementary validation rules
-│   │   │   └── titleTypes.jsonld          # Title-type SKOS fragment
-│   │   └── xsd/                     # Official DataCite XSD schema files
-│   ├── scripts/
-│   │   ├── convert.py               # Convert DataCite XML → REST API JSON
-│   │   ├── validate.js              # Validate JSKOS mappings (requires jskos-validate)
-│   │   └── validate_xml.rb          # Validate DataCite XML against XSD
-│   └── examples/                    # Example records and an XML ↔ JSON roundtrip experiment
-│
-├── mappings/
-│   ├── SKOS_crosswalks.jsonld          # SKOS mappings to Schema.org, DCAT, DCTERMS, Wikidata
-│   ├── datacite-schemaorg.sssom.tsv    # SSSOM mappings: DataCite → Schema.org
-│   ├── datacite-dcterms.sssom.tsv      # SSSOM mappings: DataCite → DCTERMS / DCAT-AP
-│   └── jskos-mappings.json             # Same mappings in JSKOS format for Cocoda
-│
-├── rdf-build-scripts/               # Vocabulary build + release pipeline
-│   ├── detect-datacite-release.js   # Detect changes in a new DataCite release
-│   ├── apply-datacite-release-plan.js  # Apply an approved change plan to vocab files
-│   ├── release-snapshot.js          # Manifest + dist + index regeneration
-│   ├── build-distribution.js        # Bundle vocab into .jsonld/.ttl/.rdf
-│   ├── manifest-sync.js             # Sync the manifest with files on disk
-│   ├── update-current-pointers.js   # Update datacite-current pointer files
-│   ├── update-root-index.js         # Patch root index.html with current version info
-│   ├── generate-index-pages.js      # Build HTML index pages for GitHub Pages
-│   ├── generate-production-namespace.sh  # Rewrite staging URLs to production URLs
-│   ├── synCheck.py                  # Sync check: verify profile $defs match vocab term files
-│   ├── generateOwlFile/             # Create .owl from vocab, class and property
-│   └── lib/                         # Shared libraries (versioning, release-import modules)
-│
-├── .github/workflows/
-│   ├── deploy-pages.yml             # Publish vocabulary + schema profiles to GitHub Pages
-│   ├── detect-datacite-release.yml  # CI runner for detect-datacite-release.js
-│   ├── apply-datacite-release-plan.yml  # CI runner for apply-datacite-release-plan.js
-│   └── release-snapshot.yml         # CI runner for release-snapshot.js
-│
-└── website/
-    ├── index.html                   # Landing page (deployed to GitHub Pages)
-    └── docs-index.html              # Documentation index page
-```
+The key folders are:
 
-**Generated directories** (regenerated by build scripts; the snapshots committed under `rdf-vocabulary-staging/dist/` and `reports/` are the most recent published artifacts and should not be edited by hand):
-
-- `rdf-vocabulary-staging/dist/` — bundled distribution files (`build-distribution.js`)
-- `reports/` — release detect/apply reports (`detect-datacite-release.js`, `apply-datacite-release-plan.js`)
-- `production-namespace/` — production-tier copy, not committed (`generate-production-namespace.sh`)
+| Path | What to expect |
+|---|---|
+| `production-namespace/` | Generated TIB/W3ID production bundle. This is the reviewable output intended for later sync to `TIBHannover/datacite-metadata-toolkit` and then publication through `TIBHannover/datacite`. It contains W3ID-rewritten `class/`, `property/`, `vocab/`, `context/`, `manifest/`, and `dist/` artifacts plus section `index.html` pages. It does not own publication-root files such as `.nojekyll`, `LICENSE`, or the root `index.html`; those belong to `TIBHannover/datacite`. |
+| `rdf-vocabulary-staging/` | Editable linked-data source files using the staging namespace. Expect class definitions, property definitions, controlled vocabularies, JSON-LD context files, manifests, generated distribution snapshots under `dist/`, and section index pages. |
+| `rdf-build-scripts/` | Build and release tooling. This includes release detection/application scripts, manifest and distribution builders, index generation, production namespace generation, OWL generation, shared libraries, and templates copied into generated bundles. |
+| `validation-and-conversion/` | JSON Schema profiles, XML validation/conversion scripts, XSD files, and examples for validating or converting DataCite metadata records. |
+| `mappings/` | SKOS, JSKOS, and SSSOM mappings from DataCite terms to Schema.org, DCTERMS, DCAT-AP, Wikidata, and related vocabularies. |
+| `reports/` | Generated release detection/application reports and plans. These are regenerated by the release tooling. |
+| `website/` | Source website pages used for human-facing documentation and landing pages. |
+| `.github/workflows/` | GitHub Actions workflows for release detection, applying release plans, snapshot builds, and Pages deployment. |
 
 ---
 
@@ -226,7 +161,9 @@ npm run build:production-namespace
 # Output is written to production-namespace/
 ```
 
-The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, and prepares generated HTML links for the GitHub Pages project path `/datacite`.
+The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
+
+The production bundle intentionally does not own publication-root files such as `.nojekyll`, `LICENSE`, or the root `index.html`; those belong to `TIBHannover/datacite`.
 
 To override the defaults:
 
@@ -234,6 +171,7 @@ To override the defaults:
 SOURCE_NAMESPACE="https://schema.stage.datacite.org/linked-data/" \
 CANONICAL_NAMESPACE="https://w3id.org/tib/datacite/" \
 PAGES_BASE_PATH="/datacite" \
+PUBLICATION_BASE_URL="https://tibhannover.github.io/datacite/" \
 DST="production-namespace" \
 bash rdf-build-scripts/generate-production-namespace.sh
 ```
@@ -429,6 +367,7 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 | `build-distribution.js` | `[--version x.y]` | Bundles vocab files into `dist/datacite-<v>.jsonld` and converts to `.ttl`/`.rdf` |
 | `update-current-pointers.js` | `[--version x.y]` | Writes `datacite-current.json` and `dist/datacite.jsonld` aliases |
 | `generate-index-pages.js` | _(no args)_ | Regenerates HTML browser index pages for `class/`, `property/`, `vocab/`, `context/`, `dist/`, `manifest/` |
+| `generate-production-namespace.sh` | env vars: `SOURCE_NAMESPACE`, `CANONICAL_NAMESPACE`, `PAGES_BASE_PATH`, `PUBLICATION_BASE_URL`, `DST` | Builds the reviewable `production-namespace/` bundle for the TIB/W3ID publication flow |
 | `update-root-index.js` | _(no args)_ | Patches AUTO marker blocks in `rdf-vocabulary-staging/index.html` if that file exists (no-op otherwise) |
 | `detect-datacite-release.js` | `[--version x.y] [--release-date YYYY-MM-DD]` | Detects changes, writes plan to `reports/` |
 | `apply-datacite-release-plan.js` | `--plan <path> [--modules <csv>] [--set-current]` | Applies an approved plan to vocab source files |
@@ -492,7 +431,7 @@ Adds or updates these controlled values, all represented in the vocabulary files
 
 **JSON Schema profile vs JSON-LD context** — The schema profiles (`validation-and-conversion/schemas/schema-profiles/`) check the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
 
-**Staging vs production namespace** — Vocabulary files use the staging host `https://schema.stage.datacite.org/linked-data/`. The production namespace (`https://schema.datacite.org/linked-data/`) is generated separately via `generate-production-namespace.sh` for release.
+**Staging vs production namespace** — Source vocabulary files use the staging host `https://schema.stage.datacite.org/linked-data/`. The TIB/W3ID production namespace (`https://w3id.org/tib/datacite/`) is generated separately via `generate-production-namespace.sh` into `production-namespace/`.
 
 ---
 

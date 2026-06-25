@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+  "type": "Concept",
+  "prefLabel": "IsVariantFormOf",
+  "notation": "IsVariantFormOf",
+  "definition": "indicates A is a variant or different form of B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "scopeNote": "Use for a different form of one thing. May be used for different software operating systems or compiler formats.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>"
+  ]
+}

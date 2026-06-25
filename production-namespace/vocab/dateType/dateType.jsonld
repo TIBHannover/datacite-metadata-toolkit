@@ -1,0 +1,26 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/dateType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 dateType",
+      "identifier": "dateType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Available",
+        "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Collected",
+        "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
+        "https://w3id.org/tib/datacite/vocab/dateType/Created",
+        "https://w3id.org/tib/datacite/vocab/dateType/Issued",
+        "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
+        "https://w3id.org/tib/datacite/vocab/dateType/Updated",
+        "https://w3id.org/tib/datacite/vocab/dateType/Valid",
+        "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn",
+        "https://w3id.org/tib/datacite/vocab/dateType/Other"
+      ]
+    }
+  ]
+}

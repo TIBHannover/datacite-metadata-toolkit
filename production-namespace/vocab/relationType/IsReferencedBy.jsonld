@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+  "type": "Concept",
+  "prefLabel": "IsReferencedBy",
+  "notation": "IsReferencedBy",
+  "definition": "indicates A is used as a source of information by B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "scopeNote": "Recommended for discovery.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
+  "type": "Concept",
+  "prefLabel": "IsReviewedBy",
+  "notation": "IsReviewedBy",
+  "definition": "indicates that A is reviewed by B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>"
+  ]
+}

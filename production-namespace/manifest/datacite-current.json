@@ -1,0 +1,27 @@
+{
+  "namespace": "https://w3id.org/tib/datacite/",
+  "currentVersion": "4.7",
+  "updated": "2026-06-16",
+  "links": {
+    "manifest": "https://w3id.org/tib/datacite/manifest/datacite-4.7.json",
+    "distJsonld": "https://w3id.org/tib/datacite/dist/datacite-4.7.jsonld",
+    "distTtl": "https://w3id.org/tib/datacite/dist/datacite-4.7.ttl",
+    "distRdf": "https://w3id.org/tib/datacite/dist/datacite-4.7.rdf"
+  },
+  "availableVersions": [
+    {
+      "version": "4.6",
+      "manifest": "https://w3id.org/tib/datacite/manifest/datacite-4.6.json",
+      "distJsonld": "https://w3id.org/tib/datacite/dist/datacite-4.6.jsonld",
+      "distTtl": "https://w3id.org/tib/datacite/dist/datacite-4.6.ttl",
+      "distRdf": "https://w3id.org/tib/datacite/dist/datacite-4.6.rdf"
+    },
+    {
+      "version": "4.7",
+      "manifest": "https://w3id.org/tib/datacite/manifest/datacite-4.7.json",
+      "distJsonld": "https://w3id.org/tib/datacite/dist/datacite-4.7.jsonld",
+      "distTtl": "https://w3id.org/tib/datacite/dist/datacite-4.7.ttl",
+      "distRdf": "https://w3id.org/tib/datacite/dist/datacite-4.7.rdf"
+    }
+  ]
+}

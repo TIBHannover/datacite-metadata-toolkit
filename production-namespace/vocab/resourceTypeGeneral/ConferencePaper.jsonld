@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper",
+  "type": "Concept",
+  "prefLabel": "ConferencePaper",
+  "notation": "ConferencePaper",
+  "definition": "Article that is written with the goal of being accepted to a conference.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "scopeNote": "<resourceType resourceTypeGeneral=\"ConferencePaper\">Experience Report</resourceType>",
+  "closeMatch": [
+    "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
+  "type": "Concept",
+  "prefLabel": "Methods",
+  "notation": "Methods",
+  "definition": "The methodology employed for the study or research.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "scopeNote": "Recommended for discovery. Full documentation about methods supports open science.",
+  "example": [
+    "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X"
+  ]
+}

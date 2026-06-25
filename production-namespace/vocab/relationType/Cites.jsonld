@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
+  "type": "Concept",
+  "prefLabel": "Cites",
+  "notation": "Cites",
+  "definition": "indicates that A includes B in a citation",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "scopeNote": "Recommended for discovery.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>"
+  ]
+}

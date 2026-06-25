@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/Distributor",
+  "type": "Concept",
+  "prefLabel": "Distributor",
+  "notation": "Distributor",
+  "definition": "Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form.",
+  "scopeNote": "Works stored in more than one archive/repository may credit each as a distributor.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

@@ -1,0 +1,13 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
+  "type": "Concept",
+  "prefLabel": "IsContinuedBy",
+  "notation": "IsContinuedBy",
+  "definition": "indicates A is continued by the work B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
+  ]
+}

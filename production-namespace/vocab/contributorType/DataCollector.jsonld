@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector",
+  "type": "Concept",
+  "prefLabel": "DataCollector",
+  "notation": "DataCollector",
+  "definition": "Person/institution responsible for finding or gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).",
+  "scopeNote": "May also be used when crediting survey conductors, interviewers, event or condition observers, or persons responsible for monitoring key instrument data.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

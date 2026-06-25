@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Collected",
+  "type": "Concept",
+  "prefLabel": "Collected",
+  "notation": "Collected",
+  "definition": "The date or date range in which the resource content was collected.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+  "scopeNote": "To indicate precise or particular timeframes in which research was conducted."
+}

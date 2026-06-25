@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book",
+  "type": "Concept",
+  "prefLabel": "Book",
+  "notation": "Book",
+  "definition": "A medium for recording information in the form of writing or images, typically composed of many pages bound together and protected by a cover.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "scopeNote": "<resourceType resourceTypeGeneral=\"Book\">Textbook</resourceType>",
+  "closeMatch": [
+    "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+  ]
+}

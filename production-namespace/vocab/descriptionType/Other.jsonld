@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Other",
+  "type": "Concept",
+  "prefLabel": "Other",
+  "notation": "Other",
+  "definition": "Other description information that does not fit into an existing category.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "scopeNote": "Use for any other description type."
+}

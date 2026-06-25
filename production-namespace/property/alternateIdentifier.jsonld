@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "schema": "https://w3id.org/tib/datacite/",
+    "datacite": "https://w3id.org/tib/datacite/"
+  },
+  "@id": "https://w3id.org/tib/datacite/property/alternateIdentifier",
+  "@type": "rdf:Property",
+  "rdfs:label": "alternateIdentifier",
+  "rdfs:comment": "An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number."
+}

@@ -1,0 +1,53 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/relationType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 relationType",
+      "identifier": "relationType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Cites",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Continues",
+        "https://w3id.org/tib/datacite/vocab/relationType/Describes",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/References",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Documents",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Compiles",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Requires",
+        "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Collects",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation",
+        "https://w3id.org/tib/datacite/vocab/relationType/Other"
+      ]
+    }
+  ]
+}

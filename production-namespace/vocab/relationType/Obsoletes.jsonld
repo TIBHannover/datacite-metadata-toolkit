@@ -1,0 +1,13 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+  "type": "Concept",
+  "prefLabel": "Obsoletes",
+  "notation": "Obsoletes",
+  "definition": "Indicates A replaces B",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>"
+  ]
+}

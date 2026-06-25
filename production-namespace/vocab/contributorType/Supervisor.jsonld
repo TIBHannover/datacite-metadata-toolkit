@@ -1,0 +1,10 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor",
+  "type": "Concept",
+  "prefLabel": "Supervisor",
+  "notation": "Supervisor",
+  "definition": "Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL",
+  "type": "Concept",
+  "prefLabel": "PURL",
+  "altLabel": "Persistent Uniform Resource Locator",
+  "notation": "PURL",
+  "definition": "A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name.",
+  "example": [
+    "<relatedIdentifier relatedIdentifierType=\"PURL\" relationType=\"Cites\">http://purl.oclc.org/foo/bar</relatedIdentifier>"
+  ],
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
+}

@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Available",
+  "type": "Concept",
+  "prefLabel": "Available",
+  "notation": "Available",
+  "definition": "The date the resource is made publicly available. May be a range.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+  "scopeNote": "To indicate the end of an embargo period, use Available."
+}

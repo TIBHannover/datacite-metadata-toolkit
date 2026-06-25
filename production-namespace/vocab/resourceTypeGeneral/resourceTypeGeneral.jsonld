@@ -1,0 +1,48 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 resourceTypeGeneral",
+      "identifier": "resourceTypeGeneral",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Poster",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow",
+        "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other"
+      ]
+    }
+  ]
+}

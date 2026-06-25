@@ -1,0 +1,14 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding",
+  "type": "Concept",
+  "prefLabel": "ConferenceProceeding",
+  "notation": "ConferenceProceeding",
+  "definition": "Collection of academic papers published in the context of an academic conference.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "scopeNote": "<resourceType resourceTypeGeneral=\"ConferenceProceeding\">Annual Convention</resourceType>",
+  "closeMatch": [
+    "https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text"
+  ]
+}

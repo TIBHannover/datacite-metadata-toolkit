@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controlled Terms (Vocabularies) · DataCite Linked Data</title>
+  <meta name="description" content="Browse DataCite controlled vocabularies and term files (for example resourceTypeGeneral, relationType, and contributorType).">
+  <style>
+  :root {
+    --dc-navy: #243B54;
+    --dc-cyan: #00B1E2;
+    --dc-blue: #5B88B9;
+    --dc-teal: #46BCAB;
+    --dc-mint: #90D7CD;
+    --dc-magenta: #BC2B66;
+    --dc-yellow: #EEEE98;
+    --dc-coral: #F07C73;
+    --bg: color-mix(in srgb, var(--dc-mint) 12%, white);
+    --panel: color-mix(in srgb, white 95%, var(--dc-yellow) 5%);
+    --panel-2: color-mix(in srgb, white 90%, var(--dc-mint) 10%);
+    --text: var(--dc-navy);
+    --muted: color-mix(in srgb, var(--dc-navy) 70%, var(--dc-blue));
+    --line: color-mix(in srgb, var(--dc-blue) 28%, white);
+    --accent: var(--dc-cyan);
+    --accent-2: var(--dc-magenta);
+    --accent-3: var(--dc-teal);
+    --shadow: 0 10px 24px rgba(36, 59, 84, 0.08);
+    --radius: 14px;
+    --max: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: var(--dc-navy);
+      --panel: color-mix(in srgb, var(--dc-navy) 82%, var(--dc-blue));
+      --panel-2: color-mix(in srgb, var(--dc-navy) 68%, var(--dc-teal));
+      --text: color-mix(in srgb, white 92%, var(--dc-mint));
+      --muted: color-mix(in srgb, white 58%, var(--dc-mint));
+      --line: color-mix(in srgb, var(--dc-blue) 35%, var(--dc-navy));
+      --accent: var(--dc-cyan);
+      --accent-2: var(--dc-coral);
+      --accent-3: var(--dc-teal);
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background:
+      radial-gradient(1000px 500px at 95% -10%, color-mix(in srgb, var(--dc-coral) 20%, transparent), transparent 60%),
+      radial-gradient(800px 420px at -10% 10%, color-mix(in srgb, var(--dc-cyan) 16%, transparent), transparent 65%),
+      var(--bg);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    line-height: 1.45;
+  }
+  a {
+    color: var(--accent);
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 0.08em;
+  }
+  a:hover { text-decoration-thickness: 0.12em; }
+  .wrap { width: min(100% - 2rem, var(--max)); margin: 0 auto; }
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(6px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+  }
+  .topbar .wrap {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem;
+    padding: .7rem 0;
+  }
+  .brand { color: var(--text); text-decoration: none; font-weight: 700; }
+  .nav { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .nav a {
+    text-decoration: none; color: var(--muted); font-size: .95rem;
+    padding: .35rem .55rem; border-radius: 999px;
+  }
+  .nav a:hover, .nav a:focus-visible { background: var(--panel-2); color: var(--text); outline: none; }
+  main { padding: 1rem 0 2rem; }
+  .hero, .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .hero { padding: 1.1rem; margin: 1rem 0; }
+  .panel { padding: 1rem; margin: .9rem 0; }
+  .eyebrow {
+    display: inline-block;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: .2rem .55rem;
+    font-size: .82rem;
+  }
+  h1 { margin: .6rem 0 .35rem; line-height: 1.08; font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem); }
+  h2 { margin: 0 0 .6rem; font-size: 1.15rem; }
+  h3 { margin: 0 0 .35rem; font-size: 1rem; }
+  p { margin: .35rem 0 .75rem; }
+  .muted { color: var(--muted); }
+  .meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+  .chip {
+    border: 1px solid var(--line); background: var(--panel-2); color: var(--muted);
+    border-radius: 999px; padding: .25rem .55rem; font-size: .88rem;
+  }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: .75rem; }
+  .card {
+    grid-column: span 12;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--panel) 94%, white 6%);
+    padding: .8rem;
+  }
+  .card p { color: var(--muted); }
+  .card .path { font-size: .9rem; color: var(--muted); word-break: break-word; }
+  .list {
+    margin: 0; padding: 0; list-style: none;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  }
+  .list li + li { border-top: 1px solid var(--line); }
+  .row {
+    display: grid; grid-template-columns: 1.2fr 2fr auto; gap: .8rem;
+    align-items: start; padding: .7rem .8rem;
+    background: color-mix(in srgb, var(--panel) 95%, white 5%);
+  }
+  .row .name a { font-weight: 600; text-decoration: none; }
+  .row .desc { color: var(--muted); }
+  .row .meta-col { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+  .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+  .search {
+    width: 100%; max-width: 420px;
+    padding: .55rem .7rem; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--panel-2); color: var(--text);
+    font: inherit;
+  }
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-bottom: .7rem; }
+  .footer { color: var(--muted); text-align: center; margin: 1rem 0 2rem; font-size: .95rem; }
+  .small { font-size: .9rem; }
+  @media (max-width: 800px) {
+    .row { grid-template-columns: 1fr; gap: .35rem; }
+    .row .meta-col { white-space: normal; }
+  }
+  @media (min-width: 700px) {
+    .card.span-6 { grid-column: span 6; }
+    .card.span-4 { grid-column: span 4; }
+    .card.span-3 { grid-column: span 3; }
+  }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/datacite/">DataCite Linked Data</a>
+      <nav class="nav" aria-label="Section navigation"><a href="/datacite/">Home</a><a href="/datacite/class/">Classes</a><a href="/datacite/property/">Properties</a><a href="/datacite/vocab/" aria-current="page">Controlled Terms</a><a href="/datacite/context/">Contexts</a><a href="/datacite/manifest/">Manifests</a></nav>
+    </div>
+  </header>
+  <div class="wrap">
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Controlled Terms</span>
+        <h1>Controlled Terms (Vocabularies)</h1>
+        <p class="muted">Browse DataCite controlled vocabularies and term files (for example resourceTypeGeneral, relationType, and contributorType).</p>
+      </section>
+      
+    <section class="panel">
+      <p class="muted">Controlled terms are grouped into vocabulary schemes. Open a scheme file for the concept scheme, or open individual term files for specific values.</p>
+      <div class="grid"><article class="card span-6">
+        <h3>contributorType</h3>
+        <p>DataCite 4.6 contributorType</p>
+        <p class="small muted">22 term files · 22 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/contributorType/contributorType.jsonld">Scheme file</a> · <a href="/datacite/vocab/contributorType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/contributorType/ContactPerson.jsonld">ContactPerson</a>, <a href="/datacite/vocab/contributorType/DataCollector.jsonld">DataCollector</a>, <a href="/datacite/vocab/contributorType/DataCurator.jsonld">DataCurator</a>, <a href="/datacite/vocab/contributorType/DataManager.jsonld">DataManager</a>, <a href="/datacite/vocab/contributorType/Distributor.jsonld">Distributor</a></p>
+      </article><article class="card span-6">
+        <h3>dateType</h3>
+        <p>DataCite 4.6 dateType</p>
+        <p class="small muted">12 term files · 12 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/dateType/dateType.jsonld">Scheme file</a> · <a href="/datacite/vocab/dateType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/dateType/Accepted.jsonld">Accepted</a>, <a href="/datacite/vocab/dateType/Available.jsonld">Available</a>, <a href="/datacite/vocab/dateType/Collected.jsonld">Collected</a>, <a href="/datacite/vocab/dateType/Copyrighted.jsonld">Copyrighted</a>, <a href="/datacite/vocab/dateType/Coverage.jsonld">Coverage</a></p>
+      </article><article class="card span-6">
+        <h3>descriptionType</h3>
+        <p>DataCite 4.6 descriptionType</p>
+        <p class="small muted">6 term files · 6 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/descriptionType/descriptionType.jsonld">Scheme file</a> · <a href="/datacite/vocab/descriptionType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/descriptionType/Abstract.jsonld">Abstract</a>, <a href="/datacite/vocab/descriptionType/Methods.jsonld">Methods</a>, <a href="/datacite/vocab/descriptionType/Other.jsonld">Other</a>, <a href="/datacite/vocab/descriptionType/SeriesInformation.jsonld">SeriesInformation</a>, <a href="/datacite/vocab/descriptionType/TableOfContents.jsonld">TableOfContents</a></p>
+      </article><article class="card span-6">
+        <h3>funderIdentifierType</h3>
+        <p>DataCite 4.6 funderIdentifierType</p>
+        <p class="small muted">5 term files · 5 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/funderIdentifierType/funderIdentifierType.jsonld">Scheme file</a> · <a href="/datacite/vocab/funderIdentifierType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/funderIdentifierType/CrossrefFunderID.jsonld">CrossrefFunderID</a>, <a href="/datacite/vocab/funderIdentifierType/GRID.jsonld">GRID</a>, <a href="/datacite/vocab/funderIdentifierType/ISNI.jsonld">ISNI</a>, <a href="/datacite/vocab/funderIdentifierType/Other.jsonld">Other</a>, <a href="/datacite/vocab/funderIdentifierType/ROR.jsonld">ROR</a></p>
+      </article><article class="card span-6">
+        <h3>identifierType</h3>
+        <p>DataCite 4.6 identifierType</p>
+        <p class="small muted">1 term files · 1 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/identifierType/identifierType.jsonld">Scheme file</a> · <a href="/datacite/vocab/identifierType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/identifierType/DOI.jsonld">DOI</a></p>
+      </article><article class="card span-6">
+        <h3>nameType</h3>
+        <p>DataCite 4.6 nameType</p>
+        <p class="small muted">2 term files · 2 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/nameType/nameType.jsonld">Scheme file</a> · <a href="/datacite/vocab/nameType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/nameType/Organizational.jsonld">Organizational</a>, <a href="/datacite/vocab/nameType/Personal.jsonld">Personal</a></p>
+      </article><article class="card span-6">
+        <h3>numberType</h3>
+        <p>DataCite 4.6 numberType</p>
+        <p class="small muted">4 term files · 4 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/numberType/numberType.jsonld">Scheme file</a> · <a href="/datacite/vocab/numberType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/numberType/Article.jsonld">Article</a>, <a href="/datacite/vocab/numberType/Chapter.jsonld">Chapter</a>, <a href="/datacite/vocab/numberType/Other.jsonld">Other</a>, <a href="/datacite/vocab/numberType/Report.jsonld">Report</a></p>
+      </article><article class="card span-6">
+        <h3>relatedIdentifierType</h3>
+        <p>DataCite 4.6 relatedIdentifierType</p>
+        <p class="small muted">23 term files · 23 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/relatedIdentifierType/relatedIdentifierType.jsonld">Scheme file</a> · <a href="/datacite/vocab/relatedIdentifierType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/relatedIdentifierType/ARK.jsonld">ARK</a>, <a href="/datacite/vocab/relatedIdentifierType/arXiv.jsonld">arXiv</a>, <a href="/datacite/vocab/relatedIdentifierType/bibcode.jsonld">bibcode</a>, <a href="/datacite/vocab/relatedIdentifierType/CSTR.jsonld">CSTR</a>, <a href="/datacite/vocab/relatedIdentifierType/DOI.jsonld">DOI</a></p>
+      </article><article class="card span-6">
+        <h3>relationType</h3>
+        <p>DataCite 4.6 relationType</p>
+        <p class="small muted">39 term files · 39 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/relationType/relationType.jsonld">Scheme file</a> · <a href="/datacite/vocab/relationType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/relationType/Cites.jsonld">Cites</a>, <a href="/datacite/vocab/relationType/Collects.jsonld">Collects</a>, <a href="/datacite/vocab/relationType/Compiles.jsonld">Compiles</a>, <a href="/datacite/vocab/relationType/Continues.jsonld">Continues</a>, <a href="/datacite/vocab/relationType/Describes.jsonld">Describes</a></p>
+      </article><article class="card span-6">
+        <h3>resourceTypeGeneral</h3>
+        <p>DataCite 4.6 resourceTypeGeneral</p>
+        <p class="small muted">34 term files · 34 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/resourceTypeGeneral/resourceTypeGeneral.jsonld">Scheme file</a> · <a href="/datacite/vocab/resourceTypeGeneral/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/resourceTypeGeneral/Audiovisual.jsonld">Audiovisual</a>, <a href="/datacite/vocab/resourceTypeGeneral/Award.jsonld">Award</a>, <a href="/datacite/vocab/resourceTypeGeneral/Book.jsonld">Book</a>, <a href="/datacite/vocab/resourceTypeGeneral/BookChapter.jsonld">BookChapter</a>, <a href="/datacite/vocab/resourceTypeGeneral/Collection.jsonld">Collection</a></p>
+      </article><article class="card span-6">
+        <h3>titleType</h3>
+        <p>DataCite 4.6 titleType</p>
+        <p class="small muted">4 term files · 4 top concepts · updated 2026-06-25</p>
+        <p><a href="/datacite/vocab/titleType/titleType.jsonld">Scheme file</a> · <a href="/datacite/vocab/titleType/context.jsonld">Context</a></p>
+        <p class="path"><span class="small muted">Examples:</span> <a href="/datacite/vocab/titleType/AlternativeTitle.jsonld">AlternativeTitle</a>, <a href="/datacite/vocab/titleType/Other.jsonld">Other</a>, <a href="/datacite/vocab/titleType/Subtitle.jsonld">Subtitle</a>, <a href="/datacite/vocab/titleType/TranslatedTitle.jsonld">TranslatedTitle</a></p>
+      </article></div>
+    </section>
+  
+    </main>
+    <div class="footer">
+      <a href="/datacite/">Back to /datacite/</a>
+    </div>
+  </div>
+</body>
+</html>

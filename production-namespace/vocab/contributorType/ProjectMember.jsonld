@@ -1,0 +1,11 @@
+{
+  "@context": "./context.jsonld",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember",
+  "type": "Concept",
+  "prefLabel": "ProjectMember",
+  "notation": "ProjectMember",
+  "definition": "Person on the membership list of a designated project/project team.",
+  "scopeNote": "This vocabulary may or may not indicate the quality, quantity, or substance of the person’s involvement.",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
+}

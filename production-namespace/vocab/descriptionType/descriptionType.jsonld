@@ -1,0 +1,20 @@
+{
+  "@context": "./context.jsonld",
+  "@graph": [
+    {
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType",
+      "type": "ConceptScheme",
+      "title": "DataCite 4.6 descriptionType",
+      "identifier": "descriptionType",
+      "created": "2026-02-20",
+      "hasTopConcept": [
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Other"
+      ]
+    }
+  ]
+}
