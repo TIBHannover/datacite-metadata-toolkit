@@ -19,7 +19,8 @@ The output of this script will be generated in the `rdf-vocabulary-staging/dist`
 
 ## Setup
 
-To execute the script run the following commands. Make sure to set the working directory to this scripts folder.
+To execute the script run the following commands. Make sure to set the working directory to this scripts folder 
+(current path: `rdf-build-scripts/generate-owl-file`.
 
 ### create or start virtual environment
 
@@ -33,7 +34,7 @@ pip install --upgrade pip
 # Install dependencies
 pip install -r ./requirements.txt 
 ```
-### set enviroment variables
+### set environment variables
 
 ```
 # set version (replace <version> for example with 4.7)
