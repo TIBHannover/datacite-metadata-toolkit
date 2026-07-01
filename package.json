@@ -7,6 +7,7 @@
   "scripts": {
     "syncCheck": "python3 rdf-build-scripts/synCheck.py",
     "build:production-namespace": "bash rdf-build-scripts/generate-production-namespace.sh",
+    "check:vocab-scheme-titles": "node rdf-build-scripts/check-vocab-scheme-titles.js",
     "validate-mappings": "node validation-and-conversion/scripts/validate.js mappings/jskos-mappings.json",
     "validate-profiles": "for f in validation-and-conversion/schemas/schema-profiles/*.json validation-and-conversion/schemas/schema-profiles/*.jsonld; do echo \"=== $f ===\"; npx ajv-cli --strict=false --spec=draft2019 compile -s \"$f\" || exit 1; done"
   },

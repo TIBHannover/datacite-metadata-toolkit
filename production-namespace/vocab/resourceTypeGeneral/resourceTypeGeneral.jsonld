@@ -4,7 +4,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 resourceTypeGeneral",
+      "title": "DataCite resourceTypeGeneral",
       "identifier": "resourceTypeGeneral",
       "created": "2026-02-20",
       "hasTopConcept": [

@@ -4,7 +4,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/relationType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 relationType",
+      "title": "DataCite relationType",
       "identifier": "relationType",
       "created": "2026-02-20",
       "hasTopConcept": [

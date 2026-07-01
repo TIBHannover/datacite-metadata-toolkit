@@ -48,7 +48,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/titleType/titleType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "titleType";
-        dcterms:title       "DataCite 4.6 titleType"@en;
+        dcterms:title       "DataCite titleType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/titleType/Other> , <https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle> , <https://w3id.org/tib/datacite/vocab/titleType/Subtitle> , <https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle> .
 
 <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow>
@@ -434,7 +434,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/resourceTypeGeneral.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "resourceTypeGeneral";
-        dcterms:title       "DataCite 4.6 resourceTypeGeneral"@en;
+        dcterms:title       "DataCite resourceTypeGeneral"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Poster> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper> , <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Reviews>
@@ -858,7 +858,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/relationType/relationType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "relationType";
-        dcterms:title       "DataCite 4.6 relationType"@en;
+        dcterms:title       "DataCite relationType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/relationType/Other> , <https://w3id.org/tib/datacite/vocab/relationType/HasTranslation> , <https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf> , <https://w3id.org/tib/datacite/vocab/relationType/Collects> , <https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy> , <https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy> , <https://w3id.org/tib/datacite/vocab/relationType/Obsoletes> , <https://w3id.org/tib/datacite/vocab/relationType/Requires> , <https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy> , <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf> , <https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom> , <https://w3id.org/tib/datacite/vocab/relationType/Reviews> , <https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy> , <https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo> , <https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf> , <https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf> , <https://w3id.org/tib/datacite/vocab/relationType/Compiles> , <https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy> , <https://w3id.org/tib/datacite/vocab/relationType/Documents> , <https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy> , <https://w3id.org/tib/datacite/vocab/relationType/References> , <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> , <https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn> , <https://w3id.org/tib/datacite/vocab/relationType/HasPart> , <https://w3id.org/tib/datacite/vocab/relationType/IsPartOf> , <https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf> , <https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf> , <https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf> , <https://w3id.org/tib/datacite/vocab/relationType/HasVersion> , <https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy> , <https://w3id.org/tib/datacite/vocab/relationType/Cites> , <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo> , <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy> , <https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy> , <https://w3id.org/tib/datacite/vocab/relationType/Continues> , <https://w3id.org/tib/datacite/vocab/relationType/Describes> , <https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy> , <https://w3id.org/tib/datacite/vocab/relationType/HasMetadata> , <https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor> .
 
 <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id>
@@ -1120,7 +1120,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/relatedIdentifierType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "relatedIdentifierType";
-        dcterms:title       "DataCite 4.6 relatedIdentifierType"@en;
+        dcterms:title       "DataCite relatedIdentifierType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/SWHID> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN> , <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN> .
 
 <https://w3id.org/tib/datacite/vocab/numberType/Report>
@@ -1164,7 +1164,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/numberType/numberType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "numberType";
-        dcterms:title       "DataCite 4.6 numberType"@en;
+        dcterms:title       "DataCite numberType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/numberType/Other> , <https://w3id.org/tib/datacite/vocab/numberType/Report> , <https://w3id.org/tib/datacite/vocab/numberType/Chapter> , <https://w3id.org/tib/datacite/vocab/numberType/Article> .
 
 <https://w3id.org/tib/datacite/vocab/nameType/Personal>
@@ -1190,7 +1190,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/nameType/nameType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "nameType";
-        dcterms:title       "DataCite 4.6 nameType"@en;
+        dcterms:title       "DataCite nameType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/nameType/Personal> , <https://w3id.org/tib/datacite/vocab/nameType/Organizational> .
 
 <https://w3id.org/tib/datacite/vocab/identifierType/DOI>
@@ -1209,7 +1209,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/identifierType/identifierType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "identifierType";
-        dcterms:title       "DataCite 4.6 identifierType"@en;
+        dcterms:title       "DataCite identifierType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/identifierType/DOI> .
 
 <https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR>
@@ -1268,7 +1268,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/funderIdentifierType/funderIdentifierType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "funderIdentifierType";
-        dcterms:title       "DataCite 4.6 funderIdentifierType"@en;
+        dcterms:title       "DataCite funderIdentifierType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other> , <https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR> , <https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI> , <https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID> , <https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo>
@@ -1339,7 +1339,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/descriptionType/descriptionType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "descriptionType";
-        dcterms:title       "DataCite 4.6 descriptionType"@en;
+        dcterms:title       "DataCite descriptionType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/descriptionType/Other> , <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo> , <https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents> , <https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation> , <https://w3id.org/tib/datacite/vocab/descriptionType/Methods> , <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn>
@@ -1462,7 +1462,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/dateType/dateType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "dateType";
-        dcterms:title       "DataCite 4.6 dateType"@en;
+        dcterms:title       "DataCite dateType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/dateType/Other> , <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn> , <https://w3id.org/tib/datacite/vocab/dateType/Accepted> , <https://w3id.org/tib/datacite/vocab/dateType/Available> , <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted> , <https://w3id.org/tib/datacite/vocab/dateType/Collected> , <https://w3id.org/tib/datacite/vocab/dateType/Coverage> , <https://w3id.org/tib/datacite/vocab/dateType/Created> , <https://w3id.org/tib/datacite/vocab/dateType/Issued> , <https://w3id.org/tib/datacite/vocab/dateType/Submitted> , <https://w3id.org/tib/datacite/vocab/dateType/Updated> , <https://w3id.org/tib/datacite/vocab/dateType/Valid> .
 
 <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader>
@@ -1691,7 +1691,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://w3id.org/tib/datacite/vocab/contributorType/contributorType.jsonld>;
         dcterms:created     "2026-01-18"^^xsd:date;
         dcterms:identifier  "contributorType";
-        dcterms:title       "DataCite 4.6 contributorType"@en;
+        dcterms:title       "DataCite contributorType"@en;
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/contributorType/Other> , <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> , <https://w3id.org/tib/datacite/vocab/contributorType/Translator> , <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> , <https://w3id.org/tib/datacite/vocab/contributorType/Sponsor> , <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> , <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> , <https://w3id.org/tib/datacite/vocab/contributorType/Researcher> , <https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson> , <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> , <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember> , <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> , <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector> , <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator> , <https://w3id.org/tib/datacite/vocab/contributorType/DataManager> , <https://w3id.org/tib/datacite/vocab/contributorType/Distributor> , <https://w3id.org/tib/datacite/vocab/contributorType/Editor> , <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> , <https://w3id.org/tib/datacite/vocab/contributorType/Producer> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager> .
 
 <https://w3id.org/tib/datacite/property/westBoundLongitude>

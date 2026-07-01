@@ -1097,7 +1097,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 contributorType",
+      "title": "DataCite contributorType",
       "identifier": "contributorType",
       "created": "2026-01-18",
       "hasTopConcept": [
@@ -1496,7 +1496,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 dateType",
+      "title": "DataCite dateType",
       "identifier": "dateType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -1710,7 +1710,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 descriptionType",
+      "title": "DataCite descriptionType",
       "identifier": "descriptionType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -1836,7 +1836,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 funderIdentifierType",
+      "title": "DataCite funderIdentifierType",
       "identifier": "funderIdentifierType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -1937,7 +1937,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 identifierType",
+      "title": "DataCite identifierType",
       "identifier": "identifierType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -1970,7 +1970,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 nameType",
+      "title": "DataCite nameType",
       "identifier": "nameType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -2017,7 +2017,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 numberType",
+      "title": "DataCite numberType",
       "identifier": "numberType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -2096,7 +2096,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 relatedIdentifierType",
+      "title": "DataCite relatedIdentifierType",
       "identifier": "relatedIdentifierType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -2572,7 +2572,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 relationType",
+      "title": "DataCite relationType",
       "identifier": "relationType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -3354,7 +3354,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 resourceTypeGeneral",
+      "title": "DataCite resourceTypeGeneral",
       "identifier": "resourceTypeGeneral",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -4068,7 +4068,7 @@
         "owl:NamedIndividual",
         "ConceptScheme"
       ],
-      "title": "DataCite 4.6 titleType",
+      "title": "DataCite titleType",
       "identifier": "titleType",
       "created": "2026-05-12",
       "hasTopConcept": [

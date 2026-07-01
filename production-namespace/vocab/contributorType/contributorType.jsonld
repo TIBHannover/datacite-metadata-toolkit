@@ -4,7 +4,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/contributorType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 contributorType",
+      "title": "DataCite contributorType",
       "identifier": "contributorType",
       "created": "2026-01-18",
       "hasTopConcept": [

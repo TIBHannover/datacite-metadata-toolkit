@@ -48,7 +48,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/titleType/titleType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "titleType";
-        dcterms:title       "DataCite 4.6 titleType"@en;
+        dcterms:title       "DataCite titleType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/titleType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/titleType/TranslatedTitle> , <https://schema.stage.datacite.org/linked-data/vocab/titleType/Subtitle> , <https://schema.stage.datacite.org/linked-data/vocab/titleType/AlternativeTitle> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Workflow>
@@ -412,7 +412,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/resourceTypeGeneral.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "resourceTypeGeneral";
-        dcterms:title       "DataCite 4.6 resourceTypeGeneral"@en;
+        dcterms:title       "DataCite resourceTypeGeneral"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Other> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Workflow> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Text> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/StudyRegistration> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Standard> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Sound> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Software> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Service> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Report> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Project> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Preprint> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/PhysicalObject> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/PeerReview> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/OutputManagementPlan> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Model> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/JournalArticle> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Journal> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/InteractiveResource> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Instrument> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Image> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Event> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Audiovisual> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Award> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Book> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/BookChapter> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Collection> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/ComputationalNotebook> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/ConferencePaper> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/ConferenceProceeding> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/DataPaper> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Dataset> , <https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Dissertation> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/relationType/Reviews>
@@ -825,7 +825,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/relationType/relationType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "relationType";
-        dcterms:title       "DataCite 4.6 relationType"@en;
+        dcterms:title       "DataCite relationType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/relationType/HasTranslation> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsTranslationOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Collects> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCollectedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsObsoletedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Obsoletes> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Requires> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsRequiredBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSourceOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDerivedFrom> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Reviews> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReviewedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsIdenticalTo> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsOriginalFormOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVariantFormOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Compiles> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCompiledBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Documents> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDocumentedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/References> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReferencedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPublishedIn> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/HasPart> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPartOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPreviousVersionOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsNewVersionOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVersionOf> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCitedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Cites> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementTo> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsContinuedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Continues> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/Describes> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDescribedBy> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/HasMetadata> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/IsMetadataFor> , <https://schema.stage.datacite.org/linked-data/vocab/relationType/HasVersion> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/w3id>
@@ -1064,7 +1064,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/relatedIdentifierType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "relatedIdentifierType";
-        dcterms:title       "DataCite 4.6 relatedIdentifierType"@en;
+        dcterms:title       "DataCite relatedIdentifierType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/w3id> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/URN> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/URL> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/UPC> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/RRID> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/PURL> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/PMID> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/LSID> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/LISSN> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/ISTC> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/ARK> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/arXiv> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/bibcode> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/CSTR> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/DOI> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/EAN13> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/EISSN> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/Handle> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/IGSN> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/ISBN> , <https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/ISSN> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/numberType/Report>
@@ -1108,7 +1108,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/numberType/numberType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "numberType";
-        dcterms:title       "DataCite 4.6 numberType"@en;
+        dcterms:title       "DataCite numberType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/numberType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/numberType/Report> , <https://schema.stage.datacite.org/linked-data/vocab/numberType/Chapter> , <https://schema.stage.datacite.org/linked-data/vocab/numberType/Article> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/nameType/Personal>
@@ -1134,7 +1134,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/nameType/nameType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "nameType";
-        dcterms:title       "DataCite 4.6 nameType"@en;
+        dcterms:title       "DataCite nameType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/nameType/Personal> , <https://schema.stage.datacite.org/linked-data/vocab/nameType/Organizational> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/identifierType/DOI>
@@ -1153,7 +1153,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/identifierType/identifierType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "identifierType";
-        dcterms:title       "DataCite 4.6 identifierType"@en;
+        dcterms:title       "DataCite identifierType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/identifierType/DOI> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/ROR>
@@ -1212,7 +1212,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/funderIdentifierType.jsonld>;
         dcterms:created     "2026-05-12"^^xsd:date;
         dcterms:identifier  "funderIdentifierType";
-        dcterms:title       "DataCite 4.6 funderIdentifierType"@en;
+        dcterms:title       "DataCite funderIdentifierType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/ROR> , <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/ISNI> , <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/GRID> , <https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/CrossrefFunderID> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo>
@@ -1283,7 +1283,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/descriptionType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "descriptionType";
-        dcterms:title       "DataCite 4.6 descriptionType"@en;
+        dcterms:title       "DataCite descriptionType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo> , <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TableOfContents> , <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/SeriesInformation> , <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Methods> , <https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Abstract> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/dateType/Withdrawn>
@@ -1406,7 +1406,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/dateType/dateType.jsonld>;
         dcterms:created     "2026-02-20"^^xsd:date;
         dcterms:identifier  "dateType";
-        dcterms:title       "DataCite 4.6 dateType"@en;
+        dcterms:title       "DataCite dateType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/dateType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Accepted> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Available> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Copyrighted> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Collected> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Coverage> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Created> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Issued> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Submitted> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Updated> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Valid> , <https://schema.stage.datacite.org/linked-data/vocab/dateType/Withdrawn> .
 
 <https://schema.stage.datacite.org/linked-data/vocab/contributorType/WorkPackageLeader>
@@ -1635,7 +1635,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/vocab/contributorType/contributorType.jsonld>;
         dcterms:created     "2026-01-18"^^xsd:date;
         dcterms:identifier  "contributorType";
-        dcterms:title       "DataCite 4.6 contributorType"@en;
+        dcterms:title       "DataCite contributorType"@en;
         skos:hasTopConcept  <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Other> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/WorkPackageLeader> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Translator> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Supervisor> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Sponsor> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/RightsHolder> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/ResearchGroup> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Researcher> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/RelatedPerson> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/RegistrationAuthority> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/RegistrationAgency> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/ContactPerson> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/DataCollector> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/DataCurator> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/DataManager> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Distributor> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Editor> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/HostingInstitution> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/Producer> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/ProjectLeader> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/ProjectManager> , <https://schema.stage.datacite.org/linked-data/vocab/contributorType/ProjectMember> .
 
 <https://schema.stage.datacite.org/linked-data/property/westBoundLongitude>
@@ -2116,7 +2116,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdf:type            owl:Ontology;
         rdfs:comment        "Integrated distribution of the DataCite linked-data classes, properties, vocabulary schemes, and vocabulary terms for schema version 4.6."@en;
         rdfs:seeAlso        <https://schema.stage.datacite.org/linked-data/dist/datacite-4.6.rdf> , <https://schema.stage.datacite.org/linked-data/dist/datacite-4.6.ttl> , <https://schema.stage.datacite.org/linked-data/dist/datacite-4.6.jsonld>;
-        dcterms:created     "2026-06-16"^^xsd:date;
+        dcterms:created     "2026-07-01"^^xsd:date;
         dcterms:identifier  "datacite-4.6";
         dcterms:license     <https://creativecommons.org/licenses/by/4.0/>;
         dcterms:source      <https://schema.stage.datacite.org/linked-data/manifest/datacite-4.6.json>;

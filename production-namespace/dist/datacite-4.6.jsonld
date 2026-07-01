@@ -92,7 +92,7 @@
       "title": "DataCite Linked Data 4.6 Distribution",
       "identifier": "datacite-4.6",
       "versionInfo": "4.6",
-      "created": "2026-06-16",
+      "created": "2026-07-01",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "source": "https://w3id.org/tib/datacite/manifest/datacite-4.6.json",
       "seeAlso": [
@@ -1005,7 +1005,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/contributorType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 contributorType",
+      "title": "DataCite contributorType",
       "identifier": "contributorType",
       "created": "2026-01-18",
       "hasTopConcept": [
@@ -1335,7 +1335,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/dateType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 dateType",
+      "title": "DataCite dateType",
       "identifier": "dateType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -1510,7 +1510,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 descriptionType",
+      "title": "DataCite descriptionType",
       "identifier": "descriptionType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -1615,7 +1615,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 funderIdentifierType",
+      "title": "DataCite funderIdentifierType",
       "identifier": "funderIdentifierType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -1698,7 +1698,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/identifierType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 identifierType",
+      "title": "DataCite identifierType",
       "identifier": "identifierType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -1725,7 +1725,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/nameType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 nameType",
+      "title": "DataCite nameType",
       "identifier": "nameType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -1763,7 +1763,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/numberType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 numberType",
+      "title": "DataCite numberType",
       "identifier": "numberType",
       "created": "2026-05-12",
       "hasTopConcept": [
@@ -1827,7 +1827,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 relatedIdentifierType",
+      "title": "DataCite relatedIdentifierType",
       "identifier": "relatedIdentifierType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -2196,7 +2196,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/relationType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 relationType",
+      "title": "DataCite relationType",
       "identifier": "relationType",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -2841,7 +2841,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 resourceTypeGeneral",
+      "title": "DataCite resourceTypeGeneral",
       "identifier": "resourceTypeGeneral",
       "created": "2026-02-20",
       "hasTopConcept": [
@@ -3416,7 +3416,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/titleType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 titleType",
+      "title": "DataCite titleType",
       "identifier": "titleType",
       "created": "2026-05-12",
       "hasTopConcept": [

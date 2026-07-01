@@ -418,7 +418,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/contributorType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-18</dcterms:created>
     <dcterms:identifier>contributorType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 contributorType</dcterms:title>
+    <dcterms:title>DataCite contributorType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/contributorType/DataCollector"/>
@@ -646,7 +646,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/dateType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>dateType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 dateType</dcterms:title>
+    <dcterms:title>DataCite dateType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Accepted"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Available"/>
@@ -767,7 +767,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>descriptionType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 descriptionType</dcterms:title>
+    <dcterms:title>DataCite descriptionType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/Abstract"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/Methods"/>
@@ -836,7 +836,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/funderIdentifierType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-12</dcterms:created>
     <dcterms:identifier>funderIdentifierType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 funderIdentifierType</dcterms:title>
+    <dcterms:title>DataCite funderIdentifierType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID"/>
@@ -893,7 +893,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/identifierType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-12</dcterms:created>
     <dcterms:identifier>identifierType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 identifierType</dcterms:title>
+    <dcterms:title>DataCite identifierType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/identifierType/DOI"/>
   </skos:ConceptScheme>
@@ -910,7 +910,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/nameType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>nameType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 nameType</dcterms:title>
+    <dcterms:title>DataCite nameType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/nameType/Organizational"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/nameType/Personal"/>
@@ -934,7 +934,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/numberType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-12</dcterms:created>
     <dcterms:identifier>numberType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 numberType</dcterms:title>
+    <dcterms:title>DataCite numberType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/numberType/Article"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/numberType/Chapter"/>
@@ -976,7 +976,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/relatedIdentifierType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>relatedIdentifierType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 relatedIdentifierType</dcterms:title>
+    <dcterms:title>DataCite relatedIdentifierType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR"/>
@@ -1236,7 +1236,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/relationType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>relationType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 relationType</dcterms:title>
+    <dcterms:title>DataCite relationType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Cites"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Collects"/>
@@ -1658,7 +1658,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/resourceTypeGeneral">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-20</dcterms:created>
     <dcterms:identifier>resourceTypeGeneral</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 resourceTypeGeneral</dcterms:title>
+    <dcterms:title>DataCite resourceTypeGeneral</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award"/>
@@ -2050,7 +2050,7 @@
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/titleType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-12</dcterms:created>
     <dcterms:identifier>titleType</dcterms:identifier>
-    <dcterms:title>DataCite 4.6 titleType</dcterms:title>
+    <dcterms:title>DataCite titleType</dcterms:title>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/Other"/>

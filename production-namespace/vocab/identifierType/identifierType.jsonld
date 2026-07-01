@@ -4,7 +4,7 @@
     {
       "id": "https://w3id.org/tib/datacite/vocab/identifierType",
       "type": "ConceptScheme",
-      "title": "DataCite 4.6 identifierType",
+      "title": "DataCite identifierType",
       "identifier": "identifierType",
       "created": "2026-05-12",
       "hasTopConcept": [

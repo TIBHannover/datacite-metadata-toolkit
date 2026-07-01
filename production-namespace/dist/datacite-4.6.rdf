@@ -16,7 +16,7 @@
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     <dcterms:identifier>datacite-4.6</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
-    >2026-06-16</dcterms:created>
+    >2026-07-01</dcterms:created>
   </owl:Ontology>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/RelatedItem">
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/class/RelatedItem.jsonld"/>
@@ -576,7 +576,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/funderIdentifierType/funderIdentifierType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 funderIdentifierType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite funderIdentifierType</dcterms:title>
     <dcterms:identifier>funderIdentifierType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-05-12</dcterms:created>
@@ -844,7 +844,7 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
     <dcterms:identifier>resourceTypeGeneral</dcterms:identifier>
-    <dcterms:title xml:lang="en">DataCite 4.6 resourceTypeGeneral</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite resourceTypeGeneral</dcterms:title>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/resourceTypeGeneral.jsonld"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual">
@@ -1108,7 +1108,7 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
     <dcterms:identifier>relatedIdentifierType</dcterms:identifier>
-    <dcterms:title xml:lang="en">DataCite 4.6 relatedIdentifierType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite relatedIdentifierType</dcterms:title>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relatedIdentifierType/relatedIdentifierType.jsonld"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK">
@@ -1367,7 +1367,7 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-01-18</dcterms:created>
     <dcterms:identifier>contributorType</dcterms:identifier>
-    <dcterms:title xml:lang="en">DataCite 4.6 contributorType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite contributorType</dcterms:title>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/contributorType/contributorType.jsonld"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson">
@@ -1538,7 +1538,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/titleType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 titleType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite titleType</dcterms:title>
     <dcterms:identifier>titleType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-05-12</dcterms:created>
@@ -1565,7 +1565,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/nameType/nameType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 nameType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite nameType</dcterms:title>
     <dcterms:identifier>nameType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
@@ -1641,7 +1641,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/descriptionType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 descriptionType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite descriptionType</dcterms:title>
     <dcterms:identifier>descriptionType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
@@ -1967,7 +1967,7 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
     <dcterms:identifier>relationType</dcterms:identifier>
-    <dcterms:title xml:lang="en">DataCite 4.6 relationType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite relationType</dcterms:title>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/relationType.jsonld"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy">
@@ -2110,7 +2110,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/identifierType/identifierType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 identifierType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite identifierType</dcterms:title>
     <dcterms:identifier>identifierType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-05-12</dcterms:created>
@@ -2157,7 +2157,7 @@
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/numberType/numberType.jsonld"/>
-    <dcterms:title xml:lang="en">DataCite 4.6 numberType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite numberType</dcterms:title>
     <dcterms:identifier>numberType</dcterms:identifier>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-05-12</dcterms:created>
@@ -2176,7 +2176,7 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
     >2026-02-20</dcterms:created>
     <dcterms:identifier>dateType</dcterms:identifier>
-    <dcterms:title xml:lang="en">DataCite 4.6 dateType</dcterms:title>
+    <dcterms:title xml:lang="en">DataCite dateType</dcterms:title>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/dateType.jsonld"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Accepted">

@@ -48,6 +48,9 @@ jobs:
       - name: Regenerate production namespace
         run: npm run build:production-namespace
 
+      - name: Check vocabulary scheme titles
+        run: npm run check:vocab-scheme-titles
+
       - name: Verify production namespace checksums
         run: |
           cd production-namespace

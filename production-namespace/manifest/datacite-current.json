@@ -1,7 +1,7 @@
 {
   "namespace": "https://w3id.org/tib/datacite/",
   "currentVersion": "4.7",
-  "updated": "2026-06-16",
+  "updated": "2026-07-01",
   "links": {
     "manifest": "https://w3id.org/tib/datacite/manifest/datacite-4.7.json",
     "distJsonld": "https://w3id.org/tib/datacite/dist/datacite-4.7.jsonld",
