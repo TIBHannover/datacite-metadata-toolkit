@@ -1,0 +1,16 @@
+name: Deploy to GitHub Pages
+
+# DISABLED
+#
+# This toolkit repository does not own the GitHub Pages publication target.
+# The TIB/W3ID production namespace is published from TIBHannover/datacite,
+# which serves https://tibhannover.github.io/datacite/ from its main branch.
+#
+# Keeping this file disabled prevents actions/configure-pages from failing
+# with "Get Pages site failed" when GitHub Pages is not enabled for
+# TIBHannover/datacite-metadata-toolkit.
+#
+# The active check in this repository is check-production-namespace.yml.
+# Publication sync should be initiated from TIBHannover/datacite, where the
+# repository-scoped GITHUB_TOKEN can open a PR against that same repository
+# without requiring a cross-repository PUBLICATION_SYNC_TOKEN.
