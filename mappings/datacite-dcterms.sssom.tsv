@@ -1,5 +1,5 @@
 # comment: |
-#   SSSOM mappings from DataCite Metadata Schema 4.6 to DCTERMS (Dublin Core Terms).
+#   SSSOM mappings from DataCite Metadata Schema 4.7 to DCTERMS (Dublin Core Terms).
 #   Companion file to datacite-schemaorg.sssom.tsv. Strictly limited to DataCite
 #   terms with NO adequate Schema.org equivalent — overlap with schemaorg is
 #   excluded by design. Currently this means four dateType values omitted from
@@ -19,7 +19,7 @@
 #   orcid: https://orcid.org/
 # mapping_set_id: https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-dcterms.sssom.tsv
 # mapping_set_version: 0.2.0
-# mapping_set_description: "SSSOM mappings from DataCite Metadata Schema 4.6 to DCTERMS (Dublin Core Terms). Strictly limited to DataCite terms with no adequate Schema.org equivalent; companion to datacite-schemaorg.sssom.tsv. Overlap with schemaorg is excluded by design."
+# mapping_set_description: "SSSOM mappings from DataCite Metadata Schema 4.7 to DCTERMS (Dublin Core Terms). Strictly limited to DataCite terms with no adequate Schema.org equivalent; companion to datacite-schemaorg.sssom.tsv. Overlap with schemaorg is excluded by design."
 # creator_id:
 #   - orcid:0000-0003-1378-5495
 # license: https://creativecommons.org/licenses/by/4.0/
