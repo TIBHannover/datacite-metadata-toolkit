@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/geoLocation> a rdf:Property ;
     rdfs:label "geoLocation" ;
-    rdfs:comment "Spatial region or named place where the data was gathered or about which the data is focused." .
+    rdfs:comment "Spatial region or named place where the data was gathered or about which the data is focused." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/GeoLocation> ;
+    skos:scopeNote "In RDF, this property links the resource to a GeoLocation node, which groups the element's sub-properties." .
 

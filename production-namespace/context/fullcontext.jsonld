@@ -23,7 +23,15 @@
         "@vocab": "https://w3id.org/tib/datacite/vocab/identifierType/"
       }
     },
-    "creators": {"@id": "@nest"},
+    "creators": {
+      "@id": "property:creator",
+      "@container": "@set",
+      "@context": {
+        "name": {
+          "@id": "property:creatorName"
+        }
+      }
+    },
     "creator": {
       "@id": "property:creator",
       "@type": "@id",
@@ -57,7 +65,15 @@
       "@id": "property:schemeURI",
       "@type": "@id"
     },
-    "affiliation": "property:affiliation",
+    "affiliation": {
+      "@id": "property:affiliation",
+      "@container": "@set",
+      "@context": {
+        "name": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "affiliationIdentifier": {
       "@id": "property:affiliationIdentifier",
       "@type": "@id"
@@ -66,7 +82,15 @@
       "@id": "property:affiliationIdentifierScheme",
       "@type": "xsd:string"
     },
-    "titles": {"@id": "@nest"},
+    "titles": {
+      "@id": "property:title",
+      "@container": "@set",
+      "@context": {
+        "title": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "title": {
       "@id": "property:title",
       "@container": "@set"
@@ -79,7 +103,12 @@
       }
     },
     "publisher": {
-      "@id": "property:publisher"
+      "@id": "property:publisher",
+      "@context": {
+        "name": {
+          "@id": "rdf:value"
+        }
+      }
     },
     "publisherIdentifier": {
       "@id": "property:publisherIdentifier",
@@ -101,7 +130,15 @@
         "@vocab": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/"
       }
     },
-    "subjects": {"@id": "@nest"},
+    "subjects": {
+      "@id": "property:subject",
+      "@container": "@set",
+      "@context": {
+        "subject": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "subject": {
       "@id": "property:subject",
       "@container": "@set"
@@ -118,7 +155,15 @@
       "@id": "property:valueURI",
       "@type": "@id"
     },
-    "contributors": {"@id": "@nest"},
+    "contributors": {
+      "@id": "property:contributor",
+      "@container": "@set",
+      "@context": {
+        "name": {
+          "@id": "property:contributorName"
+        }
+      }
+    },
     "contributor": {
       "@id": "property:contributor",
       "@type": "@id",
@@ -134,7 +179,15 @@
         "@vocab": "https://w3id.org/tib/datacite/vocab/contributorType/"
       }
     },
-    "dates": {"@id": "@nest"},
+    "dates": {
+      "@id": "property:date",
+      "@container": "@set",
+      "@context": {
+        "date": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "date": {
       "@id": "property:date",
       "@container": "@set"
@@ -159,7 +212,15 @@
         }
       }
     },
-    "alternateIdentifiers": {"@id": "@nest"},
+    "alternateIdentifiers": {
+      "@id": "property:alternateIdentifier",
+      "@container": "@set",
+      "@context": {
+        "alternateIdentifier": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "alternateIdentifier": {
       "@id": "property:alternateIdentifier",
       "@container": "@set"
@@ -168,7 +229,15 @@
       "@id": "property:alternateIdentifierType",
       "@type": "xsd:string"
     },
-    "relatedIdentifiers": {"@id": "@nest"},
+    "relatedIdentifiers": {
+      "@id": "property:relatedIdentifier",
+      "@container": "@set",
+      "@context": {
+        "relatedIdentifier": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "relatedIdentifier": {
       "@id": "property:relatedIdentifier",
       "@container": "@set"
@@ -191,7 +260,11 @@
       "@id": "property:relationTypeInformation",
       "@type": "xsd:string"
     },
-    "sizes": {"@id": "@nest"},
+    "sizes": {
+      "@id": "property:size",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
     "size": {
       "@id": "property:size",
       "@type": "xsd:string",
@@ -201,13 +274,25 @@
       "@id": "property:version",
       "@type": "xsd:string"
     },
-    "formats": {"@id": "@nest"},
+    "formats": {
+      "@id": "property:format",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
     "format": {
       "@id": "property:format",
       "@type": "xsd:string",
       "@container": "@set"
     },
-    "rightsList": {"@id": "@nest"},
+    "rightsList": {
+      "@id": "property:rights",
+      "@container": "@set",
+      "@context": {
+        "rights": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "rights": {
       "@id": "property:rights"
     },
@@ -223,7 +308,15 @@
       "@id": "property:rightsURI",
       "@type": "@id"
     },
-    "descriptions": {"@id": "@nest"},
+    "descriptions": {
+      "@id": "property:description",
+      "@container": "@set",
+      "@context": {
+        "description": {
+          "@id": "rdf:value"
+        }
+      }
+    },
     "description": {
       "@id": "property:description",
       "@container": "@set"
@@ -235,7 +328,10 @@
         "@vocab": "https://w3id.org/tib/datacite/vocab/descriptionType/"
       }
     },
-    "geoLocations": {"@id": "@nest"},
+    "geoLocations": {
+      "@id": "property:geoLocation",
+      "@container": "@set"
+    },
     "geoLocation": "property:geoLocation",
     "geoLocationPlace": {
       "@id": "property:geoLocationPlace"
@@ -302,7 +398,10 @@
       "@type": "@id",
       "@container": "@set"
     },
-    "fundingReferences": {"@id": "@nest"},
+    "fundingReferences": {
+      "@id": "property:fundingReference",
+      "@container": "@set"
+    },
     "fundingReference": "property:fundingReference",
     "funderName": {
       "@id": "property:funderName",
@@ -331,7 +430,10 @@
       "@id": "property:awardTitle",
       "@type": "xsd:string"
     },
-    "relatedItems": {"@id": "@nest"},
+    "relatedItems": {
+      "@id": "property:relatedItem",
+      "@container": "@set"
+    },
     "relatedItem": "property:relatedItem",
     "relatedItemType": {
       "@id": "property:relatedItemType",
@@ -343,7 +445,11 @@
     },
     "relatedItemIdentifier": {
       "@id": "property:relatedItemIdentifier",
-      "@type": "xsd:string"
+      "@context": {
+        "relatedItemIdentifier": {
+          "@id": "rdf:value"
+        }
+      }
     },
     "relatedItemIdentifierType": {
       "@id": "property:relatedItemIdentifierType",
@@ -384,7 +490,65 @@
       "@id": "property:edition",
       "@type": "xsd:string"
     },
-    "lang": "@language"
-    
+    "lang": {
+      "@id": "http://purl.org/dc/terms/language"
+    },
+    "types": {
+      "@id": "@nest"
+    },
+    "identifiers": {
+      "@id": "property:identifier",
+      "@container": "@set",
+      "@context": {
+        "identifier": {
+          "@id": "rdf:value"
+        }
+      }
+    },
+    "nameIdentifiers": {
+      "@id": "property:nameIdentifier",
+      "@container": "@set",
+      "@context": {
+        "nameIdentifier": {
+          "@id": "rdf:value"
+        }
+      }
+    },
+    "schemeUri": {
+      "@id": "property:schemeURI",
+      "@type": "@id"
+    },
+    "rightsUri": {
+      "@id": "property:rightsURI",
+      "@type": "@id"
+    },
+    "valueUri": {
+      "@id": "property:valueURI",
+      "@type": "@id"
+    },
+    "awardUri": {
+      "@id": "property:awardURI",
+      "@type": "@id"
+    },
+    "relatedMetadataScheme": {
+      "@id": "property:relatedMetadataScheme",
+      "@type": "xsd:string"
+    },
+    "schemeType": {
+      "@id": "property:schemeType",
+      "@type": "xsd:string"
+    },
+    "Contributor": "class:Contributor",
+    "Subject": "class:Subject",
+    "Date": "class:Date",
+    "AlternateIdentifier": "class:AlternateIdentifier",
+    "RelatedIdentifier": "class:RelatedIdentifier",
+    "Rights": "class:Rights",
+    "Description": "class:Description",
+    "GeoLocation": "class:GeoLocation",
+    "FundingReference": "class:FundingReference",
+    "RelatedItem": "class:RelatedItem",
+    "Identifier": "class:Identifier"
+
   }
 }

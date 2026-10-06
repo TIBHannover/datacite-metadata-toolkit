@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://schema.stage.datacite.org/linked-data/",
-    "datacite": "https://schema.stage.datacite.org/linked-data/"
+    "datacite": "https://schema.stage.datacite.org/linked-data/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://schema.stage.datacite.org/linked-data/property/creator",
   "@type": "rdf:Property",
   "rdfs:label": "creator",
-  "rdfs:comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property."
+  "rdfs:comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.",
+  "rdfs:range": {
+    "@id": "https://schema.stage.datacite.org/linked-data/class/Creator"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it."
 }

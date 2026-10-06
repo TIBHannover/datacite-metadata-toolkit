@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://w3id.org/tib/datacite/",
-    "datacite": "https://w3id.org/tib/datacite/"
+    "datacite": "https://w3id.org/tib/datacite/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://w3id.org/tib/datacite/property/relatedItem",
   "@type": "rdf:Property",
   "rdfs:label": "relatedItem",
-  "rdfs:comment": "Information about a resource related to the one being registered."
+  "rdfs:comment": "Information about a resource related to the one being registered.",
+  "rdfs:range": {
+    "@id": "https://w3id.org/tib/datacite/class/RelatedItem"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a RelatedItem node, which groups the element's sub-properties."
 }

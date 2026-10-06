@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/fundingReference> a rdf:Property ;
     rdfs:label "fundingReference" ;
-    rdfs:comment "Information about financial support (funding) for the resource being registered." .
+    rdfs:comment "Information about financial support (funding) for the resource being registered." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/FundingReference> ;
+    skos:scopeNote "In RDF, this property links the resource to a FundingReference node, which groups the element's sub-properties." .
 
