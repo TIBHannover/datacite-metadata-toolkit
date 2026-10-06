@@ -6,6 +6,7 @@ on:
       - "production-namespace/**"
       - "rdf-vocabulary-staging/**"
       - "rdf-build-scripts/**"
+      - "validation-and-conversion/shapes/**"
       - "package.json"
       - ".github/workflows/check-production-namespace.yml"
   push:
@@ -14,6 +15,7 @@ on:
       - "production-namespace/**"
       - "rdf-vocabulary-staging/**"
       - "rdf-build-scripts/**"
+      - "validation-and-conversion/shapes/**"
       - "package.json"
       - ".github/workflows/check-production-namespace.yml"
   workflow_dispatch:

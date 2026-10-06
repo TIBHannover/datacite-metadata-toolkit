@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://schema.stage.datacite.org/linked-data/class/Identifier"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Identifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType."
 }

@@ -402,7 +402,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/AlternateIdentifier"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a AlternateIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType.",
       "id": "https://w3id.org/tib/datacite/property/alternateIdentifier",
       "type": "owl:ObjectProperty",
       "label": "alternateIdentifier",
@@ -460,7 +460,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Contributor"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation.",
       "id": "https://w3id.org/tib/datacite/property/contributor",
       "type": "owl:ObjectProperty",
       "label": "contributor",
@@ -491,7 +491,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Creator"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation.",
       "id": "https://w3id.org/tib/datacite/property/creator",
       "type": "owl:ObjectProperty",
       "label": "creator",
@@ -513,7 +513,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Date"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Date node; the node gives the date value with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Date node; the node gives the date as plain text in rdf:value, alongside its dateType and dateInformation.",
       "id": "https://w3id.org/tib/datacite/property/date",
       "type": "owl:ObjectProperty",
       "label": "date",
@@ -544,7 +544,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Description"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Description node; the node gives the description text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType.",
       "id": "https://w3id.org/tib/datacite/property/description",
       "type": "owl:ObjectProperty",
       "label": "description",
@@ -709,7 +709,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Identifier"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Identifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType.",
       "id": "https://w3id.org/tib/datacite/property/identifier",
       "type": "owl:ObjectProperty",
       "label": "identifier",
@@ -857,7 +857,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Publisher"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Publisher node; the node gives the publisher name with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme.",
       "id": "https://w3id.org/tib/datacite/property/publisher",
       "type": "owl:ObjectProperty",
       "label": "publisher",
@@ -888,7 +888,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/RelatedIdentifier"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers.",
       "id": "https://w3id.org/tib/datacite/property/relatedIdentifier",
       "type": "owl:ObjectProperty",
       "label": "relatedIdentifier",
@@ -995,7 +995,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Rights"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Rights node; the node gives the rights statement with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme.",
       "id": "https://w3id.org/tib/datacite/property/rights",
       "type": "owl:ObjectProperty",
       "label": "rights",
@@ -1071,7 +1071,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Subject"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Subject node; the node gives the subject text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode.",
       "id": "https://w3id.org/tib/datacite/property/subject",
       "type": "owl:ObjectProperty",
       "label": "subject",
@@ -1093,7 +1093,7 @@
       "rdfs:range": {
         "@id": "https://w3id.org/tib/datacite/class/Title"
       },
-      "skos:scopeNote": "In RDF, this property links the resource to a Title node; the node gives the title text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.",
+      "skos:scopeNote": "In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType.",
       "id": "https://w3id.org/tib/datacite/property/title",
       "type": "owl:ObjectProperty",
       "label": "title",

@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://w3id.org/tib/datacite/class/Creator"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation."
 }

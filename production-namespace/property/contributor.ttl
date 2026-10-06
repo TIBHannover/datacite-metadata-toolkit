@@ -6,5 +6,5 @@
     rdfs:label "contributor" ;
     rdfs:comment "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property." ;
     rdfs:range <https://w3id.org/tib/datacite/class/Contributor> ;
-    skos:scopeNote "In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it." .
+    skos:scopeNote "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation." .
 

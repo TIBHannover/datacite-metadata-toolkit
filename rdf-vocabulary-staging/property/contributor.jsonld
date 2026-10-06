@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://schema.stage.datacite.org/linked-data/class/Contributor"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation."
 }

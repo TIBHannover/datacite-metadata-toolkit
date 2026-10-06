@@ -1730,7 +1730,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "title"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Title>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/title.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Title node; the node gives the title text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType." .
 
 <https://w3id.org/tib/datacite/property/subjectScheme>
         rdf:type      owl:ObjectProperty;
@@ -1744,7 +1744,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "subject"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Subject>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/subject.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Subject node; the node gives the subject text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode." .
 
 <https://w3id.org/tib/datacite/property/southBoundLatitude>
         rdf:type      owl:ObjectProperty;
@@ -1794,7 +1794,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "rights"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Rights>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/rights.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Rights node; the node gives the rights statement with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme." .
 
 <https://w3id.org/tib/datacite/property/resourceTypeGeneral>
         rdf:type      owl:ObjectProperty;
@@ -1864,7 +1864,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "relatedIdentifier"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/RelatedIdentifier>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/relatedIdentifier.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers." .
 
 <https://w3id.org/tib/datacite/property/publisherIdentifierScheme>
         rdf:type      owl:ObjectProperty;
@@ -1884,7 +1884,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "publisher"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Publisher>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/publisher.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Publisher node; the node gives the publisher name with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme." .
 
 <https://w3id.org/tib/datacite/property/publicationYear>
         rdf:type      owl:ObjectProperty;
@@ -1982,7 +1982,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "identifier"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Identifier>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/identifier.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Identifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType." .
 
 <https://w3id.org/tib/datacite/property/givenName>
         rdf:type      owl:ObjectProperty;
@@ -2090,7 +2090,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "description"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Description>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/description.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Description node; the node gives the description text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType." .
 
 <https://w3id.org/tib/datacite/property/dateType>
         rdf:type      owl:ObjectProperty;
@@ -2110,7 +2110,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "date"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Date>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/date.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Date node; the node gives the date value with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Date node; the node gives the date as plain text in rdf:value, alongside its dateType and dateInformation." .
 
 <https://w3id.org/tib/datacite/property/creatorName>
         rdf:type      owl:ObjectProperty;
@@ -2124,7 +2124,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "creator"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Creator>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/creator.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation." .
 
 <https://w3id.org/tib/datacite/property/contributorType>
         rdf:type      owl:ObjectProperty;
@@ -2144,7 +2144,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "contributor"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Contributor>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/contributor.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation." .
 
 <https://w3id.org/tib/datacite/property/classificationCode>
         rdf:type      owl:ObjectProperty;
@@ -2182,7 +2182,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "alternateIdentifier"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/AlternateIdentifier>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/alternateIdentifier.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a AlternateIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+        skos:scopeNote  "In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType." .
 
 <https://w3id.org/tib/datacite/property/affiliationIdentifierScheme>
         rdf:type      owl:ObjectProperty;

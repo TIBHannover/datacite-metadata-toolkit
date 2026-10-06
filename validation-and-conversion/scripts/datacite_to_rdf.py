@@ -7,8 +7,11 @@ node, linked from the resource, with its text in rdf:value and its qualifiers
 
 The JSON-LD context alone produces that structure. prepare() adds what a context
 cannot: an explicit rdf:type on each node, a language tag on the text (JSON-LD
-cannot move a sibling "lang" key onto a value), and protection for identifiers
+cannot move a sibling "lang" key onto a value), a Publisher node for a publisher
+given only as a name (as related items do), and protection for identifiers
 that are not web addresses, which a JSON-LD processor would otherwise drop.
+
+validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl checks the output.
 
 Usage:
     python3 validation-and-conversion/scripts/datacite_to_rdf.py record.json > record.ttl
@@ -65,6 +68,16 @@ def tag_language(item, text_key):
         item[text_key] = {"@value": item[text_key], "@language": item.pop("lang")}
 
 
+def publisher_node(container):
+    """Make the publisher a Publisher node, whether the record gives a bare name or an object."""
+    publisher = container.get("publisher")
+    if isinstance(publisher, str):
+        publisher = container["publisher"] = {"name": publisher}
+    if isinstance(publisher, dict):
+        publisher["@type"] = "class:Publisher"
+        tag_language(publisher, "name")
+
+
 def type_items(container):
     """Add rdf:type and language tags to structured lists, including those nested in related items."""
     for key, (cls, text_key) in STRUCTURED.items():
@@ -75,6 +88,7 @@ def type_items(container):
             if isinstance(item, dict):
                 item["@type"] = cls
                 tag_language(item, text_key)
+                publisher_node(item)
                 type_items(item)
 
 
@@ -99,9 +113,7 @@ def prepare(attributes):
     # repeats alternateIdentifiers and is ignored by the context.
     if record.get("doi"):
         record["identifier"] = {"@type": "class:Identifier", "value": record["doi"], "identifierType": "DOI"}
-    if isinstance(record.get("publisher"), dict):
-        record["publisher"]["@type"] = "class:Publisher"
-        tag_language(record["publisher"], "name")
+    publisher_node(record)
     return record
 
 
