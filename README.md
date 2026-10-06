@@ -138,7 +138,7 @@ Individual term files follow a predictable structure:
 Each title and creator becomes its own node: the title text is in `rdf:value` beside its `titleType`, and the name is in `creatorName`. A context alone cannot add node types, language tags or creator positions, so use the converter for complete RDF:
 
 ```bash
-npm run convert:rdf -- validation-and-conversion/examples/real-dataset-dryad.json > record.ttl
+npm run --silent convert:rdf -- validation-and-conversion/examples/real-dataset-dryad.json > record.ttl
 pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
 ```
 

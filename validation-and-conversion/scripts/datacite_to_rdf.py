@@ -117,6 +117,9 @@ def polygon_nodes(geo_location):
 
 def type_items(container):
     """Add rdf:type and language tags to structured lists, including those nested in related items."""
+    if isinstance(container.get("affiliation"), list):
+        container["affiliation"] = [{"name": item} if isinstance(item, str) else item
+                                    for item in container["affiliation"]]
     for key, (cls, text_key) in STRUCTURED.items():
         items = container.get(key)
         if not isinstance(items, list):
@@ -147,8 +150,12 @@ def protect_identifiers(value):
 
 
 def is_doi_of(entry, doi):
-    value = str(entry.get("identifier", "")).lower()
-    return str(entry.get("identifierType", "")).upper() == "DOI" and bool(doi) and value.endswith(doi.lower())
+    value = str(entry.get("identifier", "")).strip().lower()
+    for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
+        if value.startswith(prefix):
+            value = value[len(prefix):]
+            break
+    return str(entry.get("identifierType", "")).upper() == "DOI" and bool(doi) and value == doi.strip().lower()
 
 
 def merge_api_identifiers(record):
