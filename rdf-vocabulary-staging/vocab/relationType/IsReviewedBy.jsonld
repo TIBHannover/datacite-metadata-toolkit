@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReviewedBy",
   "type": "Concept",
-  "prefLabel": "IsReviewedBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsReviewedBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "je recenzován (čím)"
+    }
+  ],
   "notation": "IsReviewedBy",
-  "definition": "indicates that A is reviewed by B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates that A is reviewed by B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je recenzován entitou B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

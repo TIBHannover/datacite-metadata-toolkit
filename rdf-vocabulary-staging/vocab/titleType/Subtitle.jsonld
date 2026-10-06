@@ -2,9 +2,31 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/Subtitle",
   "type": "Concept",
-  "prefLabel": "Subtitle",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Subtitle"
+    },
+    {
+      "@language": "cs",
+      "@value": "Podnázev"
+    }
+  ],
   "notation": "Subtitle",
-  "definition": "A secondary title that follows the main title and provides additional information about the resource.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "A secondary title that follows the main title and provides additional information about the resource."
+    },
+    {
+      "@language": "cs",
+      "@value": "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType"
+  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

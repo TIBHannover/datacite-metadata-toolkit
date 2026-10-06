@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsNewVersionOf",
   "type": "Concept",
-  "prefLabel": "IsNewVersionOf",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsNewVersionOf"
+    },
+    {
+      "@language": "cs",
+      "@value": "je novou verzí (čeho)"
+    }
+  ],
   "notation": "IsNewVersionOf",
-  "definition": "indicates A is a new edition of B, where the new edition has been modified or updated",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is a new edition of B, where the new edition has been modified or updated"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

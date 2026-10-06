@@ -2,9 +2,31 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Updated",
   "type": "Concept",
-  "prefLabel": "Updated",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Updated"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum aktualizace"
+    }
+  ],
   "notation": "Updated",
-  "definition": "The date of the last update to the resource, when the resource is being added to. May be a range.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date of the last update to the resource, when the resource is being added to. May be a range."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum poslední aktualizace zdroje. Může se jednat i o časové rozmezí."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType"
+  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

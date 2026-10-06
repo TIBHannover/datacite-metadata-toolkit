@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsOriginalFormOf",
   "type": "Concept",
-  "prefLabel": "IsOriginalFormOf",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsOriginalFormOf"
+    },
+    {
+      "@language": "cs",
+      "@value": "je původní variantou (čeho)"
+    }
+  ],
   "notation": "IsOriginalFormOf",
-  "definition": "indicates A is the original form of B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is the original form of B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je původní variantou B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "May be used for different software operating systems or compiler formats.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

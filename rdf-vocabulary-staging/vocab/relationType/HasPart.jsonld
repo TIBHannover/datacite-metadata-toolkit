@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasPart",
   "type": "Concept",
-  "prefLabel": "HasPart",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "HasPart"
+    },
+    {
+      "@language": "cs",
+      "@value": "má část/i"
+    }
+  ],
   "notation": "HasPart",
-  "definition": "indicates A includes the part B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A includes the part B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A má část B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

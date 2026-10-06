@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/AlternativeTitle",
   "type": "Concept",
-  "prefLabel": "AlternativeTitle",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "AlternativeTitle"
+    },
+    {
+      "@language": "cs",
+      "@value": "Alternativní název"
+    }
+  ],
   "notation": "AlternativeTitle",
-  "definition": "A title by which the resource is also known, used as an alternative to the primary title.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "A title by which the resource is also known, used as an alternative to the primary title."
+    },
+    {
+      "@language": "cs",
+      "@value": "Název, pod kterým je zdroj také známý, používaný jako alternativa k primárnímu názvu."
+    }
+  ],
   "scopeNote": "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.",
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType"
+  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

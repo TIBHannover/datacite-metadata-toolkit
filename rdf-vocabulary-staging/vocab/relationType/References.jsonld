@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/References",
   "type": "Concept",
-  "prefLabel": "References",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "References"
+    },
+    {
+      "@language": "cs",
+      "@value": "odkazuje (na co)"
+    }
+  ],
   "notation": "References",
-  "definition": "indicates B is used as a source of information for A",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates B is used as a source of information for A"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že B odkazuje na A"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "Recommended for discovery.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }
