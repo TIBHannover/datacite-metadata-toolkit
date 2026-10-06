@@ -1,0 +1,327 @@
+@prefix dcc: <https://w3id.org/tib/datacite/class/> .
+@prefix dcp: <https://w3id.org/tib/datacite/property/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.5061/dryad.h44j0zq16> dcp:contributor [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "University of Washington" ;
+                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "Ellingboe, Ethan" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0009-0007-5856-0886" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
+    dcp:creator [ a dcc:Creator ;
+            schema:position 3 ;
+            dcp:affiliation [ rdf:value "University of Washington" ;
+                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:creatorName "Sultana Priyota, Azeezah" ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Creator ;
+            schema:position 2 ;
+            dcp:affiliation [ rdf:value "University of Washington" ;
+                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:creatorName "Huang, Monica" ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Creator ;
+            schema:position 1 ;
+            dcp:affiliation [ rdf:value "University of Washington" ;
+                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:creatorName "Ellingboe, Ethan" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0009-0007-5856-0886" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Creator ;
+            schema:position 4 ;
+            dcp:affiliation [ rdf:value "University of Washington" ;
+                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:creatorName "Simonen, Kathrina" ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
+    dcp:date [ a dcc:Date ;
+            rdf:value "2026-01-17T01:13:38Z" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Created> ],
+        [ a dcc:Date ;
+            rdf:value "2026-04-22T00:00:00Z" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Available> ],
+        [ a dcc:Date ;
+            rdf:value "2026-01-20T18:09:24Z" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Submitted> ],
+        [ a dcc:Date ;
+            rdf:value "2026-04-22T00:00:00Z" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Issued> ],
+        [ a dcc:Date ;
+            rdf:value "2026-10-06T00:00:00Z" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Updated> ] ;
+    dcp:description [ a dcc:Description ;
+            rdf:value """Life cycle assessments (LCAs) are essential for understanding the
+ environmental impacts of material production. However, gaps in life cycle
+ inventory (LCI) data for material and chemical inputs present a key
+ challenge for LCA practitioners, especially in the early design stages.
+ Strategies for filling in these gaps require additional time and
+ expertise, which can hinder the LCA’s completion. This dataset is the
+ result of classifying existing LCI data for chemical and material
+ production processes by the product’s chemical structure, then evaluating
+ environmental impact distributions of all chemicals and materials within a
+ chemical group. LCI data for this dataset was collected from the Federal
+ LCA Commons, and the open-source web tool ClassyFire was used to classify
+ products by their chemical structure into the ChemOnt chemical taxonomy.
+ This results in a dataset of environmental impact distributions based on
+ existing LCI data and chemical structure, appropriate to be used as proxy
+ environmental impact data for chemicals or specialty materials when data
+ specific to that product does not exist. This dataset includes descriptive
+ statistics, specifically the minimum, 20th percentile, median, 80th
+ percentile, and maximum environmental impact for each environmental impact
+ and chemical entity group. The environmental impacts evaluated are Global
+ Warming Potential (GWP, evaluated using IPCC AR5 characterization
+ factors), Acidification Potential (AP), Eutrophication Potential (EP),
+ Ozone Depletion Potential (ODP), and Photochemical Oxidant Creation
+ Potential (POCP). Input materials with data gaps may be classified into
+ the same chemical taxonomy, where proxy environmental impact values can be
+ selected from the available distributions to quickly fill in any data
+ gaps. For an example of how this data may be used, please see the
+ associated spreadsheet tool in the Supplemental Information section. The
+ methods used to create dataset were applied to classify material
+ production processes available in the Federal LCA Commons in this dataset,
+ however could be similarly applied to other LCA databases. """ ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract> ],
+        [ a dcc:Description ;
+            rdf:value """# Data from: A proxy method to bridge LCA data gaps using automated
+ material classification and probabilistic under-specification Dataset DOI:
+ [10.5061/dryad.h44j0zq16](https://doi.org/10.5061/dryad.h44j0zq16) ##
+ Description of the data and file structure Supporting information for *A
+ proxy method to bridge LCA data gaps using automated material
+ classification and probabilistic under-specification.* This dataset
+ includes: 1. Environmental impact results for chemical entities with
+ process life cycle inventory (LCI) data available in the Federal LCA
+ Commons, as well as the InChI key corresponding to the product chemical
+ entity from each process, and ClassyFire classification results for each
+ InChI key.("Process_environmental_impacts_FLCAC.csv") 2. Proxy
+ underspecified environmental impact descriptive statistics for process
+ environmental impacts grouped by ClassyFire classification. For each
+ ClassyFire group at each taxonomic level having at least one constituent
+ process, the minimum, 20th percentile, median, 80th percentile, and
+ maximum environmental impact values are provided. The number of Federal
+ LCA Commons processes with products classified into each group is also
+ provided. ("Proxy_environmental_impacts_FLCAC.csv")
+ Additionally, a spreadsheet tool containing formulas for automatic InChI
+ key search by chemical name and lookup of proxy environmental impact
+ distributions by chemical class corresponding to the dataset files
+ described above has been uploaded for access on Zenodo. Evaluation of life
+ cycle impact assessment (LCIA) results from life cycle inventory (LCI)
+ data was conducted using the open-source LCA software OpenLCA (version
+ 2.4.0). To demonstrate the methods and framework described in the
+ associated journal article, the five core impact assessment categories
+ required by ISO 21930:2017 were selected for evaluation: 100-year global
+ warming potential (GWP), acidification potential (AP), eutrophication
+ potential (EP), ozone depletion potential (ODP), and photochemical oxidant
+ creation potential (POCP). The US EPA ISO21930-LCIA-US (v0.1) LCIA method
+ was used to evaluate these impact categories for product systems generated
+ from Federal LCA Commons processes using OpenLCA. Please see the
+ associated journal article for further details of the calculation and
+ classification methods. ### Files and variables #### File:
+ Process_environmental_impacts_FLCAC.csv **Description:** This file
+ contains environmental impact results for chemical entities with process
+ life cycle inventory (LCI) data available in the Federal LCA Commons, as
+ well as the InChI key corresponding to the product chemical entity from
+ each process, and ClassyFire classification results for each InChI key.
+ ##### Variables * Process Name: Name of process dataset from the Federal
+ LCA Commons * UUID: A Universally Unique Identifier code corresponding to
+ the process dataset from the Federal LCA Commons * Process Type: Either a
+ unit process (requires product system linking) or an LCI result (already
+ aggregated for the full product system). * Amount: Quantity of the product
+ output from the process under study for which environmental impact results
+ were evaluated. * Unit: Unit corresponding to the amount. * GWP [kg CO2
+ eq]: Global warming potential, in units of kg CO~2~ eq. * AP [kg SO2
+ eq]: Acidification potential, in units of kg SO~2~ eq. * EP [kg N
+ eq]: Eutrophication potential, in units of kg N eq. * ODP [kg CFC-11
+ eq]: Ozone depletion potential, in units of kg CFC-11 eq. * POCP [kg O3
+ eq]: Photochemical oxidant creation potential, in units of kg O~3~ eq. *
+ NAICS Category: North American Industrial Classification System category *
+ NAICS Subcategory: North American Industrial Classification System
+ subcategory * Compound/Substance Name: Chemical entity name of the product
+ compound or substance * InChIKey: International Chemical Identifier Key *
+ Kingdom: ClassyFire Kingdom-level classification  * Superclass: ClassyFire
+ Superclass-level classification  * Class: ClassyFire Class-level
+ classification  * Subclass: ClassyFire Subclass-level classification  *
+ Parent level 1:  ClassyFire Parent level 1 classification  * Parent level
+ 2: ClassyFire Parent level 2 classification * Parent level 3: ClassyFire
+ Parent level 3 classification #### File:
+ Proxy_environmental_impacts_FLCAC.csv **Description:** This file contains
+ proxy underspecified environmental impact descriptive statistics for
+ process environmental impacts grouped by ClassyFire classification. For
+ each ClassyFire group at each taxonomic level having at least one
+ constituent process, the minimum, 20th percentile, median, 80th
+ percentile, and maximum environmental impact values are provided. The
+ number of Federal LCA Commons processes with products classified into each
+ group is also provided. ##### Variables * ChemOnt Taxonomic Level: Level
+ of group in ChemOnt (ClassyFire) taxonomy: Kingdom, Superclass, Class, or
+ Subclass. * Category Name: ClassyFire chemical entity group * Processes
+ Classified: Number of Federal LCA Commons processes with product chemical
+ entities classified into this group. * GWP Min. [kgCO2eq/kg]: Minimum GWP
+ of product chemical entities classified into this group. * GWP 20th%
+ [kgCO2eq/kg]: 20th percentile GWP of product chemical entities classified
+ into this group. * GWP Q1 [kgCO2eq/kg]: Quartile 1 (25th percentile) GWP
+ of product chemical entities classified into this group. * GWP Median
+ [kgCO2eq/kg]: Median GWP of product chemical entities classified into this
+ group. * GWP Q3 [kgCO2eq/kg]: Quartile 3 (75th percentile) GWP of product
+ chemical entities classified into this group. * GWP 80th% [kgCO2eq/kg]:
+ 80th percentile GWP of product chemical entities classified into this
+ group. * GWP Max. [kgCO2eq/kg]: Maximum GWP of product chemical entities
+ classified into this group. * AP Min. [kgSO2eq/kg]: Minimum AP of product
+ chemical entities classified into this group. * AP 20th%
+ [kgSO2eq/kg]: 20th percentile AP of product chemical entities classified
+ into this group. * AP Q1 [kgSO2eq/kg]: Quartile 1 (25th percentile) AP
+ of product chemical entities classified into this group. * AP Median
+ [kgSO2eq/kg]: Median AP of product chemical entities classified into this
+ group. * AP Q3 [kgSO2eq/kg]: Quartile 3 (75th percentile) AP of product
+ chemical entities classified into this group. * AP 80th% [kgSO2eq/kg]:
+ 80th percentile AP of product chemical entities classified into this
+ group. * AP Max. [kgSO2eq/kg]: Maximum AP of product chemical entities
+ classified into this group. * EP Min. [kgNeq/kg]: Minimum EP of product
+ chemical entities classified into this group. * EP 20th% [kgNeq/kg]: 20th
+ percentile EP of product chemical entities classified into this group. *
+ EP Q1 [kgNeq/kg]: Quartile 1 (25th percentile) EP of product chemical
+ entities classified into this group. * EP Median [kgNeq/kg]: Median EP
+ of product chemical entities classified into this group. * EP Q3
+ [kgNeq/kg]: Quartile 3 (75th percentile) EP of product chemical entities
+ classified into this group. * EP 80th% [kgNeq/kg]: 80th percentile EP
+ of product chemical entities classified into this group. * EP Max.
+ [kgNeq/kg]: Maximum EP of product chemical entities classified into this
+ group. * ODP Min. [kgCFC-11eq/kg]: Minimum ODP of product chemical
+ entities classified into this group. * ODP 20th% [kgCFC-11eq/kg]: 20th
+ percentile ODP of product chemical entities classified into this group. *
+ ODP Q1 [kgCFC-11eq/kg]: Quartile 1 (25th percentile) ODP of product
+ chemical entities classified into this group. * ODP Median
+ [kgCFC-11eq/kg]: Median ODP of product chemical entities classified into
+ this group. * ODP Q3 [kgCFC-11eq/kg]: Quartile 3 (75th percentile) ODP
+ of product chemical entities classified into this group. * ODP 80th%
+ [kgCFC-11eq/kg]: 80th percentile ODP of product chemical entities
+ classified into this group. * ODP Max. [kgCFC-11eq/kg]: Maximum ODP
+ of product chemical entities classified into this group. * POCP Min.
+ [kgO3eq/kg]: Minimum POCP of product chemical entities classified into
+ this group. * POCP 20th% [kgO3eq/kg]: 20th percentile POCP of product
+ chemical entities classified into this group. * POCP Q1 [kgO3eq/kg]:
+ Quartile 1 (25th percentile) POCP of product chemical entities classified
+ into this group. * POCP Median [kgO3eq/kg]: Median POCP of product
+ chemical entities classified into this group. * POCP Q3
+ [kgO3eq/kg]: Quartile 3 (75th percentile) POCP of product chemical
+ entities classified into this group. * POCP 80th% [kgO3eq/kg]: 80th
+ percentile POCP of product chemical entities classified into this group. *
+ POCP Max. [kgO3eq/kg]: Maximum POCP of product chemical entities
+ classified into this group. ## Code/software No custom code or software is
+ required to access or use the data files in this repository. The included
+ .csv data files can be opened using standard spreadsheet software or
+ imported into programming environments. The supplementary Microsoft Excel
+ (.xlsx) spreadsheet tool hosted on Zenodo requires enabling Excel's
+ built-in WEBSERVICE functions to retrieve InChI key data via the Pubchem
+ PUG-REST API
+ ([https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)) and the ClassyFire API ([http://classyfire.wishartlab.com/access)](http://classyfire.wishartlab.com/access). ## Access information Other publicly accessible locations of the data: * This data is also accessible via the associated journal article. Data was derived from the following sources: * Software: OpenLCA (version 2.4.0) LCI Data: * National Renewable Energy Laboratory/USLCI Database Public (version 1.2025-06.0) [https://www.lcacommons.gov/lca-collaboration/National_Renewable_Energy_Laboratory/USLCI_Database_Public/datasets](https://www.lcacommons.gov/lca-collaboration/National_Renewable_Energy_Laboratory/USLCI_Database_Public/datasets)? commitId=c46436821cedb106a7eebd8220117d00b6590a43 [Accessed: 27 February 2025] - US Forest Service Forest Products Laboratory/Forestry and Forest Products (version 1.2025-08.0) [https://www.lcacommons.gov/lca-collaboration/US_Forest_Service_Forest_Products_Lab/Woody_biomass/datasets\\[Accessed](https://www.lcacommons.gov/lca-collaboration/US_Forest_Service_Forest_Products_Lab/Woody_biomass/datasets[Accessed): 21 July 2025] - NIST / Construction Materials (version 1.2025-07.0) [https://www.lcacommons.gov/lca-collaboration/NIST/construction_materials/datasets](https://www.lcacommons.gov/lca-collaboration/NIST/construction_materials/datasets) [Accessed July 21 2025] * US Environmental Protection Agency / USEEIOv2.0 (version 1.2022-06.0) [https://www.lcacommons.gov/lca-](https://www.lcacommons.gov/lca-) collaboration/US_Environmental_Protection_Agency/USEEIO_v2/datasets [Accessed August 22 2025] LCIA Methods: * US EPA / ISO21930-LCIA-US (version 1.2024-6.0) [https://www.lcacommons.gov/lca-collaboration/US_Environmental_Protection_Agency/construction_epd_indicators/datasets](https://www.lcacommons.gov/lca-collaboration/US_Environmental_Protection_Agency/construction_epd_indicators/datasets) [Accessed July 21 2025]          Chemical entity classification: * Djoumbou Feunang Y, Eisner R, Knox C, Chepelev L, Hastings J, Owen G, Fahy E, Steinbeck C, Subramanian S, Bolton E, Greiner R, and Wishart DS. ClassyFire: Automated Chemical Classification With A Comprehensive, Computable Taxonomy. Journal of Cheminformatics, 2016, 8:61.\\ DOI: [10.1186/s13321-016-0174-y](http://jcheminf.springeropen.com/articles/10.1186/s13321-016-0174-y) ## Acknowledgment This material is based on work developed as part of the Parametric Open Data for Life Cycle Assessment (POD|LCA) project supported by the Advanced Research Projects Agency-Energy (ARPA-E) in the U.S. Department of Energy, under award number DE-AR0001624 as part of the program under program number DE-FOA-0001953 (Topic V: Life Cycle Assessment for Carbon Negative Buildings). The views and opinions of the authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof.  Team members who contributed to this work include Ethan Ellingboe, Monica Huang, Azeezah Sultana Priyota, and Kathrina Simonen. """ ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo> ],
+        [ a dcc:Description ;
+            rdf:value """Evaluation of life cycle impact assessment (LCIA) results from
+ life cycle inventory (LCI) data was conducted using the open-source LCA
+ software OpenLCA (version 2.4.0). To demonstrate the methods and framework
+ described in the associated journal article, the five core impact
+ assessment categories required by ISO 21930:2017 were selected for
+ evaluation: 100-year global warming potential (GWP), acidification
+ potential (AP), eutrophication potential (EP), ozone depletion potential
+ (ODP), and photochemical oxidant creation potential (POCP). The US EPA
+ ISO21930-LCIA-US (v0.1) LCIA method was used to evaluate these impact
+ categories for product systems generated from Federal LCA Commons
+ processes using OpenLCA. Please see the associated journal article for
+ further details of the calculation and classification methods.
+ This dataset was developed as part of the Parametric Open Data
+ for Life Cycle Assessment Project (POD|LCA) Project which contains a suite
+ of open-source methods, models, data, and a variety of tools for
+ screening-level (early-stage) building sector life cycle assessments
+ (LCAs). This dataset can be used to fill data gaps in LCA studies and is
+ being integrated into tools developed by the POD|LCA project. This results
+ in a dataset of proxy environmental impact data appropriate to be used to
+ fill data gaps for chemicals or specialty materials when data specific to
+ that product does not exist. Please refer to the corresponding article for
+ additional details. For more information on the POD|LCA project, please
+ visit https://podlca.uw.edu/ and https://www.lifecyclelab.org/project/pod-lca/.""" ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Methods> ] ;
+    dcp:fundingReference [ a dcc:FundingReference ;
+            dcp:awardNumber "DE-AR0001624"^^xsd:string ;
+            dcp:funderIdentifier <https://ror.org/03q1rgc19> ;
+            dcp:funderIdentifierType <https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR> ;
+            dcp:funderName "Advanced Research Projects Agency - Energy"^^xsd:string ] ;
+    dcp:identifier [ a dcc:Identifier ;
+            rdf:value "10.5061/dryad.h44j0zq16" ;
+            dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
+    dcp:language "en" ;
+    dcp:publicationYear 2026 ;
+    dcp:publisher [ a dcc:Publisher ;
+            rdf:value "Dryad" ;
+            dcp:publisherIdentifier <https://ror.org/00x6h5n95> ;
+            dcp:publisherIdentifierScheme "ROR"^^xsd:string ;
+            dcp:schemeURI <https://ror.org/> ] ;
+    dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1021/acs.est.5c12282" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.5281/zenodo.19694242" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.6084/m9.figshare.30996661" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf> ] ;
+    dcp:resourceType "dataset"^^xsd:string ;
+    dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset> ;
+    dcp:rights [ a dcc:Rights ;
+            rdf:value "Creative Commons Zero v1.0 Universal" ;
+            dcp:rightsIdentifier "cc0-1.0"^^xsd:string ;
+            dcp:rightsIdentifierScheme "SPDX"^^xsd:string ;
+            dcp:rightsURI <https://creativecommons.org/publicdomain/zero/1.0/legalcode> ;
+            dcp:schemeURI <https://spdx.org/licenses/> ] ;
+    dcp:size "124875 bytes"^^xsd:string ;
+    dcp:subject [ a dcc:Subject ;
+            rdf:value "FOS: Earth and related environmental sciences" ;
+            dcp:schemeURI <https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf> ;
+            dcp:subjectScheme "fos"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "probabilistic under-specification" ],
+        [ a dcc:Subject ;
+            rdf:value "Data Gap" ],
+        [ a dcc:Subject ;
+            rdf:value "life cycle assessment" ],
+        [ a dcc:Subject ;
+            rdf:value "FOS: Environmental engineering" ;
+            dcp:schemeURI <https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf> ;
+            dcp:subjectScheme "fos"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "FOS: Materials engineering" ;
+            dcp:schemeURI <https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf> ;
+            dcp:subjectScheme "fos"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "FOS: Chemical sciences" ;
+            dcp:schemeURI <https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf> ;
+            dcp:subjectScheme "fos"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "FOS: Engineering and technology" ;
+            dcp:schemeURI <https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf> ;
+            dcp:subjectScheme "fos"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "chemical classification" ],
+        [ a dcc:Subject ;
+            rdf:value "proxy data" ] ;
+    dcp:title [ a dcc:Title ;
+            rdf:value "Data from: A proxy method to bridge LCA data gaps using automated material classification and probabilistic under-specification" ] ;
+    dcp:version "10"^^xsd:string .
+

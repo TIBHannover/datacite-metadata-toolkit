@@ -573,7 +573,7 @@
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relatedIdentifier",
       "status": "conversion_only",
-      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained.",
+      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier.",
       "rule_ids": [
         "related-resources"
       ]
@@ -589,7 +589,7 @@
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relatedItem",
       "status": "conversion_only",
-      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained.",
+      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier.",
       "rule_ids": [
         "related-resources"
       ]
@@ -613,7 +613,7 @@
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relatedItemType",
       "status": "conversion_only",
-      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained.",
+      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier.",
       "rule_ids": [
         "related-resources"
       ]
@@ -629,7 +629,7 @@
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relationType",
       "status": "conversion_only",
-      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained.",
+      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier.",
       "rule_ids": [
         "related-resources"
       ]
@@ -637,7 +637,7 @@
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relationTypeInformation",
       "status": "conversion_only",
-      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained.",
+      "reason": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier.",
       "rule_ids": [
         "related-resources"
       ]
@@ -1351,33 +1351,51 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Collects",
-      "status": "no_equivalent",
-      "reason": "The Collects relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Compiles",
-      "status": "no_equivalent",
-      "reason": "The Compiles relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Continues",
-      "status": "no_equivalent",
-      "reason": "The Continues relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Describes",
-      "status": "no_equivalent",
-      "reason": "The Describes relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Documents",
-      "status": "no_equivalent",
-      "reason": "The Documents relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata",
-      "status": "no_equivalent",
-      "reason": "The HasMetadata relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
@@ -1389,13 +1407,16 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation",
-      "status": "no_equivalent",
-      "reason": "The HasTranslation relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
       "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:hasVersion with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcat:hasVersion with this direction: DCAT 3 uses it to link a resource to a versioned instance of it, as DataCite HasVersion does (for example a concept DOI and its version DOIs). It is a sub-property of dcterms:hasVersion.",
       "rule_ids": [
         "relation-hasversion"
       ]
@@ -1410,18 +1431,27 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy",
-      "status": "no_equivalent",
-      "reason": "The IsCollectedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
-      "status": "no_equivalent",
-      "reason": "The IsCompiledBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
-      "status": "no_equivalent",
-      "reason": "The IsContinuedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
@@ -1433,38 +1463,59 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy",
-      "status": "no_equivalent",
-      "reason": "The IsDescribedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy",
-      "status": "no_equivalent",
-      "reason": "The IsDocumentedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
-      "status": "no_equivalent",
-      "reason": "The IsIdenticalTo relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
-      "status": "no_equivalent",
-      "reason": "The IsMetadataFor relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
-      "status": "no_equivalent",
-      "reason": "The IsNewVersionOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcat:previousVersion with this direction; DCAT 3 previous version (from PAV) links a version to the version it revises, which is what IsNewVersionOf states. It is more specific than dcterms:isVersionOf.",
+      "rule_ids": [
+        "relation-isnewversionof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
-      "status": "no_equivalent",
-      "reason": "The IsObsoletedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isReplacedBy with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation.",
+      "rule_ids": [
+        "relation-isobsoletedby"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
-      "status": "no_equivalent",
-      "reason": "The IsOriginalFormOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:hasFormat with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation. A is the original; B is the same resource in another form.",
+      "rule_ids": [
+        "relation-isoriginalformof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
@@ -1476,8 +1527,11 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
-      "status": "no_equivalent",
-      "reason": "The IsPreviousVersionOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "State the relation from B, the related resource: A IsPreviousVersionOf B becomes B dcat:previousVersion A. DCAT 3 has no next-version property. Do not use dcat:hasVersion, which links an abstract resource to its versions, not a version to its successor.",
+      "rule_ids": [
+        "relation-ispreviousversionof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
@@ -1497,56 +1551,83 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
-      "status": "no_equivalent",
-      "reason": "The IsRequiredBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isRequiredBy with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation.",
+      "rule_ids": [
+        "relation-isrequiredby"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
-      "status": "no_equivalent",
-      "reason": "The IsReviewedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf",
-      "status": "no_equivalent",
-      "reason": "The IsSourceOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "State the relation from B, the related resource: A IsSourceOf B becomes B dcterms:source A. This is the inverse of IsDerivedFrom, which uses dcterms:source. DCTERMS has no inverse of source.",
+      "rule_ids": [
+        "relation-issourceof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
-      "status": "no_equivalent",
-      "reason": "The IsSupplementTo relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy",
-      "status": "no_equivalent",
-      "reason": "The IsSupplementedBy relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf",
-      "status": "no_equivalent",
-      "reason": "The IsTranslationOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
-      "status": "no_equivalent",
-      "reason": "The IsVariantFormOf relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isFormatOf with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation. B is the original; A is the same resource in another form.",
+      "rule_ids": [
+        "relation-isvariantformof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
       "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isVersionOf with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isVersionOf with this direction. DCAT 3 dcat:isVersionOf may only be added alongside dcat:hasVersion on B, so it cannot replace dcterms:isVersionOf here.",
       "rule_ids": [
         "relation-isversionof"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
-      "status": "no_equivalent",
-      "reason": "The Obsoletes relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:replaces with this direction; DCAT 3 includes dcterms:replaces in its versioning properties for a catalogued resource.",
+      "rule_ids": [
+        "relation-obsoletes"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Other",
-      "status": "no_equivalent",
-      "reason": "The Other relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/References",
@@ -1558,13 +1639,19 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
-      "status": "no_equivalent",
-      "reason": "The Requires relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:requires with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation.",
+      "rule_ids": [
+        "relation-requires"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
-      "status": "no_equivalent",
-      "reason": "The Reviews relationship has no equally specific approved DCAT relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type.",
+      "rule_ids": [
+        "relation-qualified"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual",

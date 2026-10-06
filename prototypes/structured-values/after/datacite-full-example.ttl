@@ -1,0 +1,580 @@
+@prefix dcc: <https://w3id.org/tib/datacite/class/> .
+@prefix dcp: <https://w3id.org/tib/datacite/property/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.82433/B09Z-4K37> dcp:alternateIdentifier [ a dcc:AlternateIdentifier ;
+            rdf:value "12345" ;
+            dcp:alternateIdentifierType "Local accession number"^^xsd:string ] ;
+    dcp:contributor [ a dcc:Contributor ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Distributor> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> ],
+        [ a dcc:Contributor ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Sponsor> ],
+        [ a dcc:Contributor ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/04wxnsj81" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Editor> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleOrganization" ;
+                    dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Producer> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Researcher> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Other> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Translator> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataManager> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ] ;
+    dcp:creator [ a dcc:Creator ;
+            schema:position 2 ;
+            dcp:creatorName "ExampleOrganization" ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/04wxnsj81" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
+        [ a dcc:Creator ;
+            schema:position 1 ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:creatorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
+    dcp:date [ a dcc:Date ;
+            rdf:value "2024-01-01/2024-12-31" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Collected> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Available> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01/2024-12-31" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Coverage> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Submitted> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Created> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Issued> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Accepted> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Valid> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Updated> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted> ],
+        [ a dcc:Date ;
+            rdf:value "2024-01-01" ;
+            dcp:dateInformation "ExampleDateInformation"^^xsd:string ;
+            dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Other> ] ;
+    dcp:description [ a dcc:Description ;
+            rdf:value "Example Abstract"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract> ],
+        [ a dcc:Description ;
+            rdf:value "Example SeriesInformation"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation> ],
+        [ a dcc:Description ;
+            rdf:value "Example TechnicalInfo"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo> ],
+        [ a dcc:Description ;
+            rdf:value "Example TableOfContents"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents> ],
+        [ a dcc:Description ;
+            rdf:value "Example Methods"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Methods> ],
+        [ a dcc:Description ;
+            rdf:value "Example Other"@en ;
+            dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Other> ] ;
+    dcp:format "application/xml"^^xsd:string,
+        "text/plain"^^xsd:string ;
+    dcp:fundingReference [ a dcc:FundingReference ;
+            dcp:awardNumber "12345"^^xsd:string ;
+            dcp:awardTitle "Example AwardTitle"^^xsd:string ;
+            dcp:awardURI <https://example.com/example-award-uri> ;
+            dcp:funderIdentifier <https://doi.org/10.13039/501100000780> ;
+            dcp:funderIdentifierType <https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID> ;
+            dcp:funderName "Example Funder"^^xsd:string ] ;
+    dcp:geoLocation [ a dcc:GeoLocation ;
+            dcp:geoLocationBox [ dcp:eastBoundLongitude "-123.02" ;
+                    dcp:northBoundLatitude "49.315" ;
+                    dcp:southBoundLatitude "49.195" ;
+                    dcp:westBoundLongitude "-123.27" ] ;
+            dcp:geoLocationPlace "Vancouver, British Columbia, Canada" ;
+            dcp:geoLocationPoint [ dcp:pointLatitude "49.2827" ;
+                    dcp:pointLongitude "-123.1207" ] ;
+            dcp:geoLocationPolygon [ dcp:polygonPoint [ schema:position 5 ;
+                            dcp:pointLatitude "41.991" ;
+                            dcp:pointLongitude "-71.032" ],
+                        [ schema:position 2 ;
+                            dcp:pointLatitude "42.893" ;
+                            dcp:pointLongitude "-69.622" ],
+                        [ schema:position 1 ;
+                            dcp:pointLatitude "41.991" ;
+                            dcp:pointLongitude "-71.032" ],
+                        [ schema:position 3 ;
+                            dcp:pointLatitude "41.991" ;
+                            dcp:pointLongitude "-68.211" ],
+                        [ schema:position 4 ;
+                            dcp:pointLatitude "41.090" ;
+                            dcp:pointLongitude "-69.622" ] ] ] ;
+    dcp:identifier [ a dcc:Identifier ;
+            rdf:value "10.82433/B09Z-4K37" ;
+            dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
+    dcp:language "en" ;
+    dcp:publicationYear 2024 ;
+    dcp:publisher [ a dcc:Publisher ;
+            rdf:value "Example Publisher"@en ;
+            dcp:publisherIdentifier <https://ror.org/04z8jg394> ;
+            dcp:publisherIdentifierScheme "ROR"^^xsd:string ;
+            dcp:schemeURI <https://ror.org/> ] ;
+    dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;
+            rdf:value "http://purl.oclc.org/foo/bar" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasPart> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "IECUR0097" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasMetadata> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Requires> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "31253.11.sciencedb.13238" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "https://w3id.org/games/spec/coil#Coil_Bomb_Die_Of_Age" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Documents> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "2018AGUFM.A24K..07S" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Obsoletes> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "978-3-905673-82-1" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Compiles> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "0A9 2002 12B4A105 7" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Collects> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "urn:lsid:ubio.org:namebank:11815" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "arXiv:0706.0001" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Cites> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "1188-1534" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "0077-5606" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasVersion> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasTranslation> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "RRID:SCR_014641" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "ark:/13030/tqb3kh97gh8w" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "http://www.heatflow.und.edu/index2.html" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/References> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "123456789999" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "9783468111242" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Continues> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Reviews> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10013/epic.10033" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "1562-6865" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Describes> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "urn:nbn:de:101:1-201102033592" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "12082125" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsPartOf> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal> ],
+        [ a dcc:RelatedIdentifier ;
+            rdf:value "10.1016/j.epsl.2011.11.037" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow> ] ;
+    dcp:relatedItem [ a dcc:RelatedItem ;
+            dcp:contributor [ a dcc:Contributor ;
+                    dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Other> ;
+                    dcp:familyName "ExampleFamilyName" ;
+                    dcp:givenName "ExampleGivenName" ] ;
+            dcp:creator [ a dcc:Creator ;
+                    schema:position 1 ;
+                    dcp:creatorName "ExampleFamilyName, ExampleGivenName" ;
+                    dcp:familyName "ExampleFamilyName" ;
+                    dcp:givenName "ExampleGivenName" ;
+                    dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
+            dcp:edition "Example RelatedItem Edition"^^xsd:string ;
+            dcp:firstPage "1"^^xsd:string ;
+            dcp:issue "2"^^xsd:string ;
+            dcp:lastPage "100"^^xsd:string ;
+            dcp:number "1"^^xsd:string ;
+            dcp:numberType <https://w3id.org/tib/datacite/vocab/numberType/Other> ;
+            dcp:publicationYear "1990" ;
+            dcp:publisher [ a dcc:Publisher ;
+                    rdf:value "Example RelatedItem Publisher" ] ;
+            dcp:relatedItemIdentifier [ rdf:value "1234-5678" ;
+                    dcp:relatedItemIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN> ] ;
+            dcp:relatedItemType <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/Cites> ;
+            dcp:title [ a dcc:Title ;
+                    rdf:value "Example RelatedItem TranslatedTitle" ;
+                    dcp:titleType <https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle> ],
+                [ a dcc:Title ;
+                    rdf:value "Example RelatedItem Title" ] ;
+            dcp:volume "1"^^xsd:string ] ;
+    dcp:resourceType "Example ResourceType"^^xsd:string ;
+    dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset> ;
+    dcp:rights [ a dcc:Rights ;
+            rdf:value "Creative Commons Attribution 4.0 International"@en ;
+            dcp:rightsIdentifier "CC-BY-4.0"^^xsd:string ;
+            dcp:rightsIdentifierScheme "SPDX"^^xsd:string ;
+            dcp:rightsURI <https://creativecommons.org/licenses/by/4.0/> ;
+            dcp:schemeURI <https://spdx.org/licenses/> ] ;
+    dcp:size "1 MB"^^xsd:string,
+        "90 pages"^^xsd:string ;
+    dcp:subject [ a dcc:Subject ;
+            rdf:value "FOS: Computer and information sciences" ;
+            dcp:schemeURI <http://www.oecd.org/science/inno> ;
+            dcp:subjectScheme "Fields of Science and Technology (FOS)"^^xsd:string ;
+            dcp:valueURI <http://www.oecd.org/science/inno/38235147.pdf> ],
+        [ a dcc:Subject ;
+            rdf:value "Digital curation and preservation" ;
+            dcp:classificationCode "461001"^^xsd:string ;
+            dcp:schemeURI <https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc> ;
+            dcp:subjectScheme "Australian and New Zealand Standard Research Classification (ANZSRC), 2020"^^xsd:string ],
+        [ a dcc:Subject ;
+            rdf:value "Example Subject" ] ;
+    dcp:title [ a dcc:Title ;
+            rdf:value "Example Title"@en ],
+        [ a dcc:Title ;
+            rdf:value "Example TranslatedTitle"@fr ;
+            dcp:titleType <https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle> ],
+        [ a dcc:Title ;
+            rdf:value "Example Subtitle"@en ;
+            dcp:titleType <https://w3id.org/tib/datacite/vocab/titleType/Subtitle> ],
+        [ a dcc:Title ;
+            rdf:value "Example AlternativeTitle"@en ;
+            dcp:titleType <https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle> ] ;
+    dcp:version "1"^^xsd:string .
+

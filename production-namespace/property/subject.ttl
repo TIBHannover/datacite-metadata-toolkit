@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/subject> a rdf:Property ;
     rdfs:label "subject" ;
-    rdfs:comment "Subject, keyword, classification code, or key phrase describing the resource." .
+    rdfs:comment "Subject, keyword, classification code, or key phrase describing the resource." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/Subject> ;
+    skos:scopeNote "In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode." .
 

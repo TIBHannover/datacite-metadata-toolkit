@@ -2,7 +2,7 @@
   "namespace": "https://schema.stage.datacite.org/linked-data/",
   "version": "4.7",
   "context": [
-    "https://schema.stage.datacite.org/linked-data/context/fullcontext.jsonld",
+    "https://schema.stage.datacite.org/linked-data/context/fullcontext-4.7.jsonld",
     "https://schema.stage.datacite.org/linked-data/vocab/context.jsonld",
     "https://schema.stage.datacite.org/linked-data/vocab/contributorType/context.jsonld",
     "https://schema.stage.datacite.org/linked-data/vocab/dateType/context.jsonld",

@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://w3id.org/tib/datacite/",
-    "datacite": "https://w3id.org/tib/datacite/"
+    "datacite": "https://w3id.org/tib/datacite/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://w3id.org/tib/datacite/property/creator",
   "@type": "rdf:Property",
   "rdfs:label": "creator",
-  "rdfs:comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property."
+  "rdfs:comment": "The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.",
+  "rdfs:range": {
+    "@id": "https://w3id.org/tib/datacite/class/Creator"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first)."
 }

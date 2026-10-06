@@ -1,0 +1,29 @@
+# Example: read the structured DataCite RDF and write Schema.org / DCTERMS.
+# Each text value is taken from the node's rdf:value, next to its qualifier.
+PREFIX dcp: <https://w3id.org/tib/datacite/property/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+  ?r schema:abstract ?abstract .
+  ?r dcterms:title ?title .
+  ?r dcterms:rights ?rightsNode .
+  ?rightsNode a dcterms:RightsStatement ; rdfs:label ?rightsText ; rdfs:seeAlso ?rightsURI .
+}
+WHERE {
+  {
+    ?r dcp:description ?d .
+    ?d dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract> ;
+       rdf:value ?abstract .
+  } UNION {
+    ?r dcp:title ?t .
+    ?t rdf:value ?title .
+    FILTER NOT EXISTS { ?t dcp:titleType ?anyType }   # the main title has no titleType
+  } UNION {
+    ?r dcp:rights ?rightsNode .
+    ?rightsNode rdf:value ?rightsText .
+    OPTIONAL { ?rightsNode dcp:rightsURI ?rightsURI }
+  }
+}

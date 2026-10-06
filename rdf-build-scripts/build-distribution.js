@@ -166,6 +166,9 @@ function buildOntologyNode(manifest) {
   const version = manifest.version;
   const created = manifest.releaseDate || manifest.created || new Date().toISOString().slice(0, 10);
   const distBase = `${manifest.namespace}dist/datacite-${version}`;
+  // "4.7-r2" is revision 2 of the TIB modelling of DataCite schema 4.7.
+  const [schemaVersion, revision] = String(version).split("-r");
+  const schemaLabel = revision ? `${schemaVersion} (modelling revision ${revision})` : version;
 
   return {
     id: distBase,
@@ -179,7 +182,7 @@ function buildOntologyNode(manifest) {
     seeAlso: [`${distBase}.jsonld`, `${distBase}.ttl`, `${distBase}.rdf`],
     comment:
       `Integrated distribution of the DataCite linked-data classes, properties, ` +
-      `vocabulary schemes, and vocabulary terms for schema version ${version}.`,
+      `vocabulary schemes, and vocabulary terms for schema version ${schemaLabel}.`,
   };
 }
 

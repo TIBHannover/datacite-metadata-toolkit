@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/alternateIdentifier> a rdf:Property ;
     rdfs:label "alternateIdentifier" ;
-    rdfs:comment "An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number." .
+    rdfs:comment "An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/AlternateIdentifier> ;
+    skos:scopeNote "In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType." .
 

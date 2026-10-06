@@ -259,14 +259,14 @@ footer { margin-top: 4rem; color: var(--muted); font-size: 0.9rem; border-top: 1
 
       <h3>Link strengths in each mapping file</h3>
       <p>Bars share one scale, so their lengths compare directly.</p>
-      <div class="bars" role="img" aria-label="Schema.org: 52 close, 33 broad, 12 narrow, 15 related. Dublin Core: 53 close, 31 broad, 1 related. Wikidata: 19 close, 5 broad, 2 narrow. DCAT: 11 close, 4 broad.">
+      <div class="bars" role="img" aria-label="Schema.org: 52 close, 33 broad, 12 narrow, 15 related. Dublin Core: 53 close, 32 broad, 1 related. Wikidata: 19 close, 5 broad, 2 narrow. DCAT: 11 close, 4 broad.">
         <div>
           <div class="bar-label">Schema.org <span>112 rows</span></div>
           <div class="track" style="width:100%"><div class="bar"><div class="seg close" style="flex:52">52</div><div class="seg broad" style="flex:33">33</div><div class="seg narrow" style="flex:12">12</div><div class="seg related" style="flex:15">15</div></div></div>
         </div>
         <div>
-          <div class="bar-label">Dublin Core <span>85 rows</span></div>
-          <div class="track" style="width:75.9%"><div class="bar"><div class="seg close" style="flex:53">53</div><div class="seg broad" style="flex:31">31</div><div class="seg related" style="flex:1"></div></div></div>
+          <div class="bar-label">Dublin Core <span>86 rows</span></div>
+          <div class="track" style="width:76.8%"><div class="bar"><div class="seg close" style="flex:53">53</div><div class="seg broad" style="flex:32">32</div><div class="seg related" style="flex:1"></div></div></div>
         </div>
         <div>
           <div class="bar-label">Wikidata <span>26 rows</span></div>
@@ -301,10 +301,10 @@ footer { margin-top: 4rem; color: var(--muted); font-size: 0.9rem; border-top: 1
 
       <h3>Every term has an outcome</h3>
       <p>The <span class="term">coverage register</span> records one outcome for each of the 253 DataCite terms, per vocabulary. Nothing is silently left out.</p>
-      <div class="bars" role="img" aria-label="Outcomes per vocabulary. Schema.org: 107 mapped, 112 recipe only, 34 no equivalent. Dublin Core: 85 mapped, 135 recipe only, 33 no equivalent. DCAT: 15 mapped, 169 recipe only, 38 no equivalent, 31 out of scope. Wikidata: 26 mapped, 2 recipe only, 35 no equivalent, 190 out of scope.">
+      <div class="bars" role="img" aria-label="Outcomes per vocabulary. Schema.org: 107 mapped, 112 recipe only, 34 no equivalent. Dublin Core: 86 mapped, 136 recipe only, 31 no equivalent. DCAT: 15 mapped, 198 recipe only, 9 no equivalent, 31 out of scope. Wikidata: 26 mapped, 2 recipe only, 35 no equivalent, 190 out of scope.">
         <div><div class="bar-label">Schema.org <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:107">107</div><div class="seg conv" style="flex:112">112</div><div class="seg none" style="flex:34">34</div></div></div>
-        <div><div class="bar-label">Dublin Core <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:85">85</div><div class="seg conv" style="flex:135">135</div><div class="seg none" style="flex:33">33</div></div></div>
-        <div><div class="bar-label">DCAT <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:15"></div><div class="seg conv" style="flex:169">169</div><div class="seg none" style="flex:38">38</div><div class="seg scope" style="flex:31">31</div></div></div>
+        <div><div class="bar-label">Dublin Core <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:86">86</div><div class="seg conv" style="flex:136">136</div><div class="seg none" style="flex:31">31</div></div></div>
+        <div><div class="bar-label">DCAT <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:15"></div><div class="seg conv" style="flex:198">198</div><div class="seg none" style="flex:9"></div><div class="seg scope" style="flex:31">31</div></div></div>
         <div><div class="bar-label">Wikidata <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:26">26</div><div class="seg conv" style="flex:2"></div><div class="seg none" style="flex:35">35</div><div class="seg scope" style="flex:190">190</div></div></div>
       </div>
       <div class="legend"><span><i class="swatch" style="background:var(--close)"></i>mapped</span><span><i class="swatch" style="background:var(--conv)"></i>recipe only</span><span><i class="swatch" style="background:var(--none)"></i>no equivalent</span><span><i class="swatch" style="background:var(--scope)"></i>out of scope</span></div>
@@ -406,6 +406,7 @@ sssom validate mappings/datacite-schemaorg.sssom.tsv</code></pre>
         <li><span>Change the row in the right <code>datacite-*.sssom.tsv</code> file. Explain your reasoning in the <code>comment</code> column.</span></li>
         <li><span>If a term gains or loses its only mapping, update its outcome in <code>coverage/</code>.</span></li>
         <li><span>Regenerate the JSKOS and SKOS files: <code>npm run build:mappings</code></span></li>
+        <li><span>Refresh the published copy in <code>production-namespace/</code>: <code>npm run build:production-namespace</code>. The checks fail on an out-of-date copy.</span></li>
         <li><span>Run the checks: <code>npm run check:mappings</code> and <code>npm run test:mappings</code></span></li>
         <li><span>Open a pull request on the toolkit repository so the change can be reviewed.</span></li>
       </ol>

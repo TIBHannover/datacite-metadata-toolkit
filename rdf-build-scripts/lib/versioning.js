@@ -1,24 +1,30 @@
 const fs = require("fs");
 const path = require("path");
 
+// "4.7-r2" is revision 2 of the TIB modelling of DataCite schema 4.7; a plain
+// "4.7" is revision 1. Schema versions compare first, then revisions, so
+// 4.7 < 4.7-r2 < 4.7.1 < 4.8.
 function parseVersion(v) {
-  return String(v)
+  const [schema, revision] = String(v).split("-r");
+  const parts = schema
     .split(".")
     .map((part) => Number.parseInt(part, 10))
     .map((n) => (Number.isFinite(n) ? n : 0));
+  const rev = Number.parseInt(revision, 10);
+  return { parts, revision: Number.isFinite(rev) ? rev : 1 };
 }
 
 function compareVersions(a, b) {
   const av = parseVersion(a);
   const bv = parseVersion(b);
-  const len = Math.max(av.length, bv.length);
+  const len = Math.max(av.parts.length, bv.parts.length);
 
   for (let i = 0; i < len; i += 1) {
-    const ai = av[i] || 0;
-    const bi = bv[i] || 0;
+    const ai = av.parts[i] || 0;
+    const bi = bv.parts[i] || 0;
     if (ai !== bi) return ai - bi;
   }
-  return 0;
+  return av.revision - bv.revision;
 }
 
 function listManifestVersions(repoRoot) {

@@ -1,27 +1,49 @@
 # DataCite Metadata Toolkit
 
-> **Note** — this repo is being renamed from `datacite4.6-jsonld` to **`datacite-metadata-toolkit`** to better reflect its scope (now covers DataCite 4.6 + 4.7, JSON Schema profiles, XML conversion, and crosswalk mappings — not just JSON-LD).
+This toolkit helps turn **DataCite metadata**—information describing research outputs—into **linked data** that other systems can understand. It provides definitions for metadata fields, tools for validating and converting records, and crosswalks to Schema.org, Dublin Core (DCTERMS), DCAT 3, and Wikidata.
 
-This repository provides machine-readable linked-data resources and tooling for the **DataCite Metadata Schema** (currently versions 4.6 and 4.7): RDF class and property definitions, controlled vocabulary terms as resolvable IRIs, JSON Schema validation profiles, an XML-to-JSON conversion script, and SKOS / JSKOS / SSSOM crosswalk mappings to external vocabularies (Schema.org, DCTERMS, DCAT 3, Wikidata).
+The toolkit includes resources for DataCite Metadata Schema **4.6 and 4.7**. Its current linked-data modelling revision is **4.7-r2**: a second way of representing DataCite 4.7 in RDF, not a new DataCite schema release.
 
-It is the **source of truth** for the DataCite linked-data namespace. For the TIB/W3ID publication route, this repository generates a reviewable `production-namespace/` bundle that can be synced to [`TIBHannover/datacite-metadata-toolkit`](https://github.com/TIBHannover/datacite-metadata-toolkit). The TIB toolkit fork then supplies the flat publication repository, [`TIBHannover/datacite`](https://github.com/TIBHannover/datacite), which is the GitHub Pages backend for the W3ID namespace. **Do not edit the publication repo directly** — all generated namespace changes start here or in [`TIBHannover/datacite-metadata-toolkit`](https://github.com/TIBHannover/datacite-metadata-toolkit).
+## Current state
+
+The 4.7-r2 changes are merged into `main`. Titles, descriptions, dates, identifiers, and other repeatable elements are grouped into separate RDF nodes, so each value stays beside its own type, language, or other details. Creator order and polygon drawing order are recorded explicitly. The converter also retains alternate identifiers and handles affiliations supplied as either names or objects.
+
+**Compatibility:** 4.7-r2 changes the structure of RDF records. Existing queries and converters written for the older structure may need updating. The earlier versioned distributions remain available; use `context/fullcontext-4.7.jsonld` and `dist/datacite-4.7.*` to retain the 4.7 behaviour. The unversioned context and distribution files in this repository follow 4.7-r2.
+
+The merged changes passed 47 regression tests, mapping validation, current-version alias checks, and publication-bundle checksum verification on 6 October 2026. Rebuilding the generated files produced no differences. These checks cover the tested examples and structural rules; they do not establish that every possible record or crosswalk is correct. See the latest [Check Mappings](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-mappings.yml) and [Check Production Namespace](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-production-namespace.yml) runs for current results.
+
+**Publication status, checked 6 October 2026:** this source repository points to 4.7-r2; the TIB toolkit and publication repositories still point to 4.7. Merging here does not publish the update to the public namespace.
+
+## Source and publication flow
+
+Changes to the generated namespace move through pull requests in this order:
+
+1. [`selgebali/datacite-metadata-toolkit`](https://github.com/selgebali/datacite-metadata-toolkit): edit the sources, run checks, and build `production-namespace/`.
+2. [`TIBHannover/datacite-metadata-toolkit`](https://github.com/TIBHannover/datacite-metadata-toolkit): review and integrate the toolkit changes.
+3. [`TIBHannover/datacite`](https://github.com/TIBHannover/datacite): review and publish the generated files through GitHub Pages, which serves the W3ID namespace.
+
+GitHub Pages is disabled on both toolkit repositories and enabled on the publication repository. This repository's Pages deployment and publication-sync workflows are disabled; publication is a separate PR-based step.
+
+Start generated namespace changes in a toolkit repository and rebuild the bundle rather than editing its generated files by hand. The publication repository owns its root `README.md`, `.nojekyll`, `LICENSE`, and `index.html`; preserve these when updating the generated files. After cloning or syncing the publication repository, run `shasum -a 256 -c CHECKSUMS.sha256` from its root to verify the actual publication tree.
 
 ---
 
 ## Repository Layout
 
-The key folders are:
+The folders separate editable sources, conversion tools, generated output, and documentation:
 
 | Path | What to expect |
 |---|---|
-| `production-namespace/` | Generated TIB/W3ID production bundle. This is the reviewable output intended for later sync to `TIBHannover/datacite-metadata-toolkit` and then publication through `TIBHannover/datacite`. It contains W3ID-rewritten `class/`, `property/`, `vocab/`, `context/`, `manifest/`, and `dist/` artifacts plus section `index.html` pages. It does not own publication-root files such as `.nojekyll`, `LICENSE`, or the root `index.html`; those belong to `TIBHannover/datacite`. |
+| `production-namespace/` | Generated TIB/W3ID production bundle. This is the reviewable output intended for later sync to `TIBHannover/datacite-metadata-toolkit` and then publication through `TIBHannover/datacite`. It contains W3ID-rewritten `class/`, `property/`, `vocab/`, `context/`, `manifest/`, and `dist/` artifacts plus section `index.html` pages, the published `mappings/`, and the SHACL `shapes/`. It does not own publication-root files such as the root `README.md`, `.nojekyll`, `LICENSE`, or `index.html`; those belong to `TIBHannover/datacite`. |
 | `rdf-vocabulary-staging/` | Editable linked-data source files using the staging namespace. Expect class definitions, property definitions, controlled vocabularies, JSON-LD context files, manifests, generated distribution snapshots under `dist/`, and section index pages. |
 | `rdf-build-scripts/` | Build and release tooling. This includes release detection/application scripts, manifest and distribution builders, index generation, production namespace generation, OWL generation, shared libraries, and templates copied into generated bundles. |
-| `validation-and-conversion/` | JSON Schema profiles, XML validation/conversion scripts, XSD files, and examples for validating or converting DataCite metadata records. |
+| `validation-and-conversion/` | JSON Schema profiles, XML validation/conversion scripts, the REST API JSON-to-RDF converter, SHACL shapes for its output, XSD files, and examples for validating or converting DataCite metadata records. |
 | `mappings/` | Curated SSSOM mapping sets from DataCite 4.7 terms to Schema.org, DCTERMS, DCAT 3, and Wikidata, with conversion rules, coverage records, and generated SKOS/JSKOS exports. |
+| `tests/` | Automated regression tests for mappings, JSON-to-RDF conversion, and SHACL structural validation. |
+| `prototypes/structured-values/` | Earlier before/after examples and comparison tools explaining the structured-value model. The maintained converter is in `validation-and-conversion/scripts/`. |
 | `reports/` | Generated release detection/application reports and plans. These are regenerated by the release tooling. |
 | `website/` | Source website pages used for human-facing documentation and landing pages. |
-| `.github/workflows/` | GitHub Actions workflows for release detection, applying release plans, snapshot builds, and Pages deployment. |
+| `.github/workflows/` | GitHub Actions checks and release tooling. The Pages deployment and publication-sync files have a `.disabled` suffix in this source repository. |
 
 ---
 
@@ -39,7 +61,7 @@ The staging namespace is rooted at `https://schema.stage.datacite.org/linked-dat
 | Manifest | `…/linked-data/manifest/datacite-4.6.json` |
 | Schema profile | `…/linked-data/schema-profiles/<filename>` |
 
-The GitHub Pages deploy publishes this layout so the IRIs resolve to both human-readable HTML pages and machine-readable JSON-LD. `generate-production-namespace.sh` creates the public namespace bundle for the planned TIB publication setup:
+`generate-production-namespace.sh` rewrites the staging identifiers to the canonical TIB/W3ID namespace and builds the publication bundle. The separate publication repository serves its files through GitHub Pages:
 
 | Layer | URL |
 |---|---|
@@ -85,6 +107,12 @@ A separate pointer file, `dist/datacite-current.jsonld`, is a small machine-read
 
 **Key consequence — version provenance.** Because canonical term IRIs are stable, a machine *cannot* tell which DataCite schema version a term was used under from the IRI alone. If you dereference `…/property/subject`, you get its current meaning. If exact provenance matters (was this record built against 4.6 or 4.7?), the consuming system must store that separately — either the schema version string (e.g. `4.6`) or the versioned snapshot IRI (e.g. `…/dist/datacite-4.6.jsonld`).
 
+### Revisions of one DataCite version
+
+A *revision* changes how one DataCite version is modelled in RDF without changing its terms. `4.7-r2` is revision 2 of DataCite 4.7; versions sort as 4.7 < 4.7-r2 < 4.8. A revision gets its own frozen files (`manifest/datacite-4.7-r2.json`, `context/fullcontext-4.7-r2.jsonld`, `dist/datacite-4.7-r2.*`), and the files of the earlier revision stay unchanged.
+
+**4.7-r2 changes the shape of DataCite RDF.** Each repeatable element (title, description, date, identifier, rights, ...) becomes its own node with its text in `rdf:value`, and creators carry `schema:position`. The moving `context/fullcontext.jsonld` and `dist/datacite.*` now follow 4.7-r2. To keep the 4.7 behaviour, use `context/fullcontext-4.7.jsonld` and `dist/datacite-4.7.*`.
+
 ### Why we do not mint versioned per-term IRIs
 
 Several community members have asked for version-specific IRIs for individual *terms* (so a term carries its release inside its own identifier). We deliberately do **not** do this:
@@ -108,7 +136,7 @@ See also [Version History](#version-history) for what changed in each release.
 
 ### 1. Explore the vocabulary
 
-`rdf-vocabulary-staging/manifest/datacite-4.6.json` is a versioned index of every defined class, property, and vocabulary term. Start there to discover what is available.
+Start with `rdf-vocabulary-staging/manifest/datacite-current.json` to see the current revision, then open `rdf-vocabulary-staging/manifest/datacite-4.7-r2.json` for its index of classes, properties, and vocabulary terms. Earlier versioned manifests describe the earlier snapshots.
 
 Individual term files follow a predictable structure:
 
@@ -118,16 +146,25 @@ Individual term files follow a predictable structure:
 
 ### 2. Use the JSON-LD context
 
-`rdf-vocabulary-staging/context/fullcontext.jsonld` maps DataCite-style compact JSON keys to their full IRIs. Reference it in your JSON-LD documents:
+`rdf-vocabulary-staging/context/fullcontext.jsonld` maps the keys of DataCite REST API JSON to their full IRIs. Reference it in your JSON-LD documents:
 
 ```json
 {
   "@context": "https://schema.stage.datacite.org/linked-data/context/fullcontext.jsonld",
-  "@type": "Resource",
-  "identifier": "10.1234/example",
-  "creator": [{ "creatorName": "Smith, Jane" }]
+  "@id": "https://doi.org/10.1234/example",
+  "titles": [{ "title": "Example title", "titleType": "Subtitle" }],
+  "creators": [{ "name": "Smith, Jane", "nameType": "Personal" }]
 }
 ```
+
+Each title and creator becomes its own node: the title text is in `rdf:value` beside its `titleType`, and the name is in `creatorName`. A context alone cannot add node types, language tags or creator positions, so use the converter for complete RDF:
+
+```bash
+npm run --silent convert:rdf -- validation-and-conversion/examples/real-dataset-dryad.json > record.ttl
+pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
+```
+
+The converter reads a DataCite REST API record and writes Turtle. If a creator or contributor has an empty name-identifier entry (for example, an ORCID scheme with `nameIdentifier: null`), conversion stops with the field location and an instruction to supply the identifier or remove the empty entry. It does not invent identifiers or silently drop these entries. The SHACL shapes check the conventions: text in `rdf:value`, exactly once; dates and identifiers as plain strings; creators and polygon points numbered with `schema:position`; controlled values from the DataCite vocabularies. `pip install -r rdf-build-scripts/requirements-mappings.txt` installs both tools' Python dependencies.
 
 ### 3. Validate a DataCite XML record
 
@@ -163,7 +200,7 @@ npm run build:production-namespace
 
 The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
 
-The production bundle intentionally does not own publication-root files such as `.nojekyll`, `LICENSE`, or the root `index.html`; those belong to `TIBHannover/datacite`.
+The production bundle intentionally does not own publication-root files such as the root `README.md`, `.nojekyll`, `LICENSE`, or `index.html`; those belong to `TIBHannover/datacite`.
 
 To override the defaults:
 
@@ -215,6 +252,7 @@ Mapping predicates are deliberately conservative. A `skos:relatedMatch` records 
 ```bash
 pip install -r rdf-build-scripts/requirements-mappings.txt
 npm run build:mappings   # regenerate SKOS/JSKOS exports from SSSOM
+npm run build:production-namespace   # refresh the published copy in production-namespace/mappings/
 npm run check:mappings   # validate sources, coverage and exports without writing
 npm run test:mappings    # regression tests
 ```
@@ -388,6 +426,7 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 | `manifest-sync.js` | `--check \| --write \| --validate [--version x.y] [--manifest <path>] [--allow-narrow]` | Rebuilds or validates a manifest from files on disk |
 | `build-distribution.js` | `[--version x.y]` | Bundles vocab files into `dist/datacite-<v>.jsonld` and converts to `.ttl`/`.rdf` |
 | `update-current-pointers.js` | `[--version x.y]` | Writes `datacite-current.json` and `dist/datacite.jsonld` aliases |
+| `check-current-aliases.js` | — | Fails if `dist/datacite.{jsonld,ttl,rdf}` differ from the current version's files (`npm run check:current-aliases`) |
 | `generate-index-pages.js` | _(no args)_ | Regenerates HTML browser index pages for `class/`, `property/`, `vocab/`, `context/`, `dist/`, `manifest/` |
 | `generate-production-namespace.sh` | env vars: `SOURCE_NAMESPACE`, `CANONICAL_NAMESPACE`, `PAGES_BASE_PATH`, `PUBLICATION_BASE_URL`, `DST` | Builds the reviewable `production-namespace/` bundle for the TIB/W3ID publication flow |
 | `update-root-index.js` | _(no args)_ | Patches AUTO marker blocks in `rdf-vocabulary-staging/index.html` if that file exists (no-op otherwise) |
@@ -411,9 +450,20 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 
 ## Version History
 
-`rdf-vocabulary-staging/manifest/datacite-current.json` points at the current published version (currently **4.7**). Each release leaves a versioned manifest, an apply report under `reports/`, and a release-matrix delta under `rdf-vocabulary-staging/manifest/release-matrix-<prev>-<next>.json`.
+`rdf-vocabulary-staging/manifest/datacite-current.json` points at the current revision in this repository (currently **4.7-r2**). It does not confirm which revision is deployed on the public site. Schema-release tooling produces versioned manifests, apply reports under `reports/`, and release-matrix deltas; modelling revisions also have their own versioned manifests and distributions.
 
-### DataCite 4.7 (current)
+### DataCite 4.7-r2 (current)
+
+Revision 2 of the DataCite 4.7 modelling: same terms, a new RDF shape. It is a breaking change for RDF data; see [Revisions of one DataCite version](#revisions-of-one-datacite-version).
+
+- Repeatable elements become their own nodes, with the element's text in `rdf:value` and its qualifiers beside it. Fourteen link properties gain an `rdfs:range` and a `skos:scopeNote` saying where the text goes.
+- Creators and polygon points record their order with `schema:position` (1 = first).
+- SHACL shapes (`shapes/datacite-4.7-r2.shacl.ttl`) check DataCite RDF against these rules.
+- `mappings/rdf-paths.json` gives the SPARQL path to every DataCite term in this RDF.
+- The converter retains alternate identifiers without mistaking a distinct DOI for the record's own DOI, and normalizes string affiliations into value nodes.
+- Crosswalk recipes cover additional DCAT relationships, DCTERMS `IsSourceOf`, and Schema.org `ComputationalNotebook` mappings.
+
+### DataCite 4.7
 
 Applied on top of 4.6 via the Detect → Review → Apply pipeline. Changes:
 

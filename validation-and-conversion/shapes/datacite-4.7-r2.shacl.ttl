@@ -1,0 +1,281 @@
+# SHACL shapes for DataCite RDF produced with the 4.7-r2 JSON-LD context.
+#
+# They check the RDF structure, not DataCite's required fields (the JSON Schema
+# and XSD do that):
+#   - each repeatable element is its own node of the right class;
+#   - the element's main text is in rdf:value, exactly once, and is text, never
+#     a web address; text that DataCite lets carry a language may be tagged;
+#   - creators are numbered 1, 2, 3, ... in DataCite's priority order, and
+#     polygon points in drawing order (schema:position), with no repeats or gaps;
+#   - controlled values are IRIs from the matching DataCite vocabulary.
+#
+# rdfs:range cannot enforce any of this: it only lets a reasoner infer a class.
+# Published at https://w3id.org/tib/datacite/shapes/datacite-4.7-r2.shacl.ttl.
+#
+#   pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcp:  <https://w3id.org/tib/datacite/property/> .
+@prefix dcc:  <https://w3id.org/tib/datacite/class/> .
+@prefix dcsh: <https://w3id.org/tib/datacite/shapes/4.7-r2/> .
+@prefix schema: <https://schema.org/> .
+
+# ---------------------------------------------------------------------------
+# rdf:value: one text value per node, never a web address
+# ---------------------------------------------------------------------------
+
+dcsh:ValueIsText
+    a sh:NodeShape ;
+    sh:targetSubjectsOf rdf:value ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "A node gives its main text once, in rdf:value, as text (not a web address)." ;
+    ] .
+
+# Text that DataCite lets carry a language: plain or language-tagged string.
+dcsh:TaggableText
+    a sh:NodeShape ;
+    sh:targetClass dcc:Title , dcc:Description , dcc:Subject , dcc:Publisher ;
+    sh:targetObjectsOf dcp:affiliation ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:minCount 1 ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:message "The element's text is required in rdf:value, as a string or language-tagged string." ;
+    ] .
+
+# A rights statement may be given by URI alone, so its text is optional.
+dcsh:RightsText
+    a sh:NodeShape ;
+    sh:targetClass dcc:Rights ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:message "A rights statement in rdf:value is a string or language-tagged string." ;
+    ] .
+
+# Dates and identifiers are plain text: no language tag, no web address.
+dcsh:PlainText
+    a sh:NodeShape ;
+    sh:targetClass dcc:Date , dcc:Identifier , dcc:AlternateIdentifier , dcc:RelatedIdentifier ;
+    sh:targetObjectsOf dcp:nameIdentifier , dcp:relatedItemIdentifier ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Dates and identifiers are required in rdf:value as plain strings." ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# Repeatable elements are nodes of their class (the rdfs:range, enforced)
+# ---------------------------------------------------------------------------
+
+dcsh:TitleNode a sh:NodeShape ; sh:targetObjectsOf dcp:title ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Title .
+dcsh:CreatorNode a sh:NodeShape ; sh:targetObjectsOf dcp:creator ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Creator .
+dcsh:SubjectNode a sh:NodeShape ; sh:targetObjectsOf dcp:subject ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Subject .
+dcsh:ContributorNode a sh:NodeShape ; sh:targetObjectsOf dcp:contributor ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Contributor .
+dcsh:DateNode a sh:NodeShape ; sh:targetObjectsOf dcp:date ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Date .
+dcsh:IdentifierNode a sh:NodeShape ; sh:targetObjectsOf dcp:identifier ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Identifier .
+dcsh:AlternateIdentifierNode a sh:NodeShape ; sh:targetObjectsOf dcp:alternateIdentifier ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:AlternateIdentifier .
+dcsh:RelatedIdentifierNode a sh:NodeShape ; sh:targetObjectsOf dcp:relatedIdentifier ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:RelatedIdentifier .
+dcsh:RightsNode a sh:NodeShape ; sh:targetObjectsOf dcp:rights ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Rights .
+dcsh:DescriptionNode a sh:NodeShape ; sh:targetObjectsOf dcp:description ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Description .
+dcsh:PublisherNode a sh:NodeShape ; sh:targetObjectsOf dcp:publisher ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:Publisher ;
+    sh:message "The publisher, including a related item's publisher, is a Publisher node with its name in rdf:value." .
+dcsh:GeoLocationNode a sh:NodeShape ; sh:targetObjectsOf dcp:geoLocation ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:GeoLocation .
+dcsh:FundingReferenceNode a sh:NodeShape ; sh:targetObjectsOf dcp:fundingReference ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:FundingReference .
+dcsh:RelatedItemNode a sh:NodeShape ; sh:targetObjectsOf dcp:relatedItem ;
+    sh:nodeKind sh:BlankNodeOrIRI ; sh:class dcc:RelatedItem .
+
+# ---------------------------------------------------------------------------
+# Creators and contributors
+# ---------------------------------------------------------------------------
+
+dcsh:Creator
+    a sh:NodeShape ;
+    sh:targetClass dcc:Creator ;
+    sh:property [
+        sh:path dcp:creatorName ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+    ] ;
+    sh:property [
+        sh:path schema:position ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Each creator records its place in DataCite's priority order with one schema:position, starting at 1." ;
+    ] .
+
+# Positions of one resource's creators run 1, 2, 3, ... with no repeats or gaps.
+dcsh:CreatorPositions
+    a sh:NodeShape ;
+    sh:targetSubjectsOf dcp:creator ;
+    sh:sparql [
+        sh:message "Two creators share position {?position}." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:creator ?a , ?b .
+                FILTER (?a != ?b)
+                ?a schema:position ?position .
+                ?b schema:position ?position .
+            }""" ;
+    ] ;
+    sh:sparql [
+        sh:message "Creator position {?position} has no creator before it." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:creator ?creator .
+                ?creator schema:position ?position .
+                FILTER (?position > 1)
+                FILTER NOT EXISTS {
+                    $this dcp:creator ?previous .
+                    ?previous schema:position ?before .
+                    FILTER (?before = ?position - 1)
+                }
+            }""" ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# Polygons: one node per polygon, its points numbered in drawing order
+# ---------------------------------------------------------------------------
+
+dcsh:Polygon
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:geoLocationPolygon ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [
+        sh:path dcp:polygonPoint ;
+        sh:minCount 4 ;
+        sh:message "A polygon has at least four points (the first and last are the same)." ;
+    ] ;
+    sh:property [ sh:path dcp:inPolygonPoint ; sh:maxCount 1 ] ;
+    sh:sparql [
+        sh:message "Two points of one polygon share position {?position}." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:polygonPoint ?a , ?b .
+                FILTER (?a != ?b)
+                ?a schema:position ?position .
+                ?b schema:position ?position .
+            }""" ;
+    ] ;
+    sh:sparql [
+        sh:message "Polygon point position {?position} has no point before it." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:polygonPoint ?point .
+                ?point schema:position ?position .
+                FILTER (?position > 1)
+                FILTER NOT EXISTS {
+                    $this dcp:polygonPoint ?previous .
+                    ?previous schema:position ?before .
+                    FILTER (?before = ?position - 1)
+                }
+            }""" ;
+    ] .
+
+dcsh:PolygonPoint
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:polygonPoint ;
+    sh:property [
+        sh:path schema:position ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Each polygon point records its place in the drawing order with one schema:position, starting at 1." ;
+    ] ;
+    sh:property [ sh:path dcp:pointLatitude ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path dcp:pointLongitude ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+dcsh:InPolygonPoint
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:inPolygonPoint ;
+    sh:property [ sh:path dcp:pointLatitude ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path dcp:pointLongitude ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+dcsh:Prefixes
+    sh:declare [ sh:prefix "dcp" ; sh:namespace "https://w3id.org/tib/datacite/property/"^^xsd:anyURI ] ;
+    sh:declare [ sh:prefix "schema" ; sh:namespace "https://schema.org/"^^xsd:anyURI ] .
+
+dcsh:Contributor
+    a sh:NodeShape ;
+    sh:targetClass dcc:Contributor ;
+    sh:property [
+        sh:path dcp:contributorName ;
+        sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# Qualifiers: controlled values come from their own DataCite vocabulary;
+# free-text qualifiers stay text.
+# ---------------------------------------------------------------------------
+
+dcsh:IdentifierType
+    a sh:NodeShape ;
+    sh:targetClass dcc:Identifier ;
+    sh:property [
+        sh:path dcp:identifierType ;
+        sh:minCount 1 ;
+        sh:in ( <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ) ;
+        sh:message "The primary identifier is a DOI; other identifiers are AlternateIdentifier nodes." ;
+    ] .
+
+dcsh:AlternateIdentifierType
+    a sh:NodeShape ;
+    sh:targetClass dcc:AlternateIdentifier ;
+    sh:property [
+        sh:path dcp:alternateIdentifierType ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "alternateIdentifierType is free text, not a vocabulary term." ;
+    ] .
+
+dcsh:TitleType a sh:NodeShape ; sh:targetClass dcc:Title ;
+    sh:property [ sh:path dcp:titleType ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/titleType/" ] .
+dcsh:DescriptionType a sh:NodeShape ; sh:targetClass dcc:Description ;
+    sh:property [ sh:path dcp:descriptionType ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/descriptionType/" ] .
+dcsh:DateType a sh:NodeShape ; sh:targetClass dcc:Date ;
+    sh:property [ sh:path dcp:dateType ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/dateType/" ] .
+dcsh:RelatedIdentifierTypes a sh:NodeShape ; sh:targetClass dcc:RelatedIdentifier ;
+    sh:property [ sh:path dcp:relatedIdentifierType ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/relatedIdentifierType/" ] ;
+    sh:property [ sh:path dcp:relationType ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/relationType/" ] .
+dcsh:NameType a sh:NodeShape ; sh:targetClass dcc:Creator , dcc:Contributor ;
+    sh:property [ sh:path dcp:nameType ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/nameType/" ] .
+dcsh:ContributorType a sh:NodeShape ; sh:targetClass dcc:Contributor ;
+    sh:property [ sh:path dcp:contributorType ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/contributorType/" ] .
+dcsh:FunderIdentifierType a sh:NodeShape ; sh:targetClass dcc:FundingReference ;
+    sh:property [ sh:path dcp:funderIdentifierType ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+        sh:pattern "^https://w3id\\.org/tib/datacite/vocab/funderIdentifierType/" ] .

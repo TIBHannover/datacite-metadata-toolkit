@@ -161,7 +161,7 @@
       "target_path": "resource -> selected relationship -> identified related resource",
       "operation": "conditional",
       "lossiness": "conditional",
-      "notes": "Resolve the related resource identifier with its scheme and select a relationship using relationType. A generic dcterms:relation fallback loses the qualifier unless the original type and relationTypeInformation are retained."
+      "notes": "Resolve the related resource identifier with its scheme and select a relationship using relationType. Where no direct property fits, or the direct property is broader, use dcat:qualifiedRelation with the DataCite relationType concept as dcat:hadRole; a bare dcterms:relation loses the qualifier."
     },
     {
       "id": "related-metadata-scheme",
@@ -366,10 +366,10 @@
       ],
       "condition": "relationType is HasVersion on related resource B in record A.",
       "source_path": "relatedIdentifier or relatedItem with relationType=HasVersion",
-      "target_path": "A -> dcterms:hasVersion -> B",
+      "target_path": "A -> dcat:hasVersion -> B",
       "operation": "conditional",
       "lossiness": "conditional",
-      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:hasVersion with this direction; preserve the more specific DataCite relation qualifier when the target is broader."
+      "notes": "Keep A as the described resource and B as the related resource. Select dcat:hasVersion with this direction: DCAT 3 uses it to link a resource to a versioned instance of it, as DataCite HasVersion does (for example a concept DOI and its version DOIs). It is a sub-property of dcterms:hasVersion."
     },
     {
       "id": "relation-isversionof",
@@ -381,7 +381,7 @@
       "target_path": "A -> dcterms:isVersionOf -> B",
       "operation": "conditional",
       "lossiness": "conditional",
-      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:isVersionOf with this direction; preserve the more specific DataCite relation qualifier when the target is broader."
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:isVersionOf with this direction. DCAT 3 dcat:isVersionOf may only be added alongside dcat:hasVersion on B, so it cannot replace dcterms:isVersionOf here."
     },
     {
       "id": "relation-isderivedfrom",
@@ -394,6 +394,145 @@
       "operation": "conditional",
       "lossiness": "conditional",
       "notes": "Keep A as the described resource and B as the related resource. Select dcterms:source with this direction; preserve the more specific DataCite relation qualifier when the target is broader."
+    },
+    {
+      "id": "relation-obsoletes",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes"
+      ],
+      "condition": "relationType is Obsoletes on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=Obsoletes",
+      "target_path": "A -> dcterms:replaces -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:replaces with this direction; DCAT 3 includes dcterms:replaces in its versioning properties for a catalogued resource."
+    },
+    {
+      "id": "relation-isobsoletedby",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy"
+      ],
+      "condition": "relationType is IsObsoletedBy on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsObsoletedBy",
+      "target_path": "A -> dcterms:isReplacedBy -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:isReplacedBy with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation."
+    },
+    {
+      "id": "relation-requires",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Requires"
+      ],
+      "condition": "relationType is Requires on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=Requires",
+      "target_path": "A -> dcterms:requires -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:requires with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation."
+    },
+    {
+      "id": "relation-isrequiredby",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy"
+      ],
+      "condition": "relationType is IsRequiredBy on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsRequiredBy",
+      "target_path": "A -> dcterms:isRequiredBy -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:isRequiredBy with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation."
+    },
+    {
+      "id": "relation-isvariantformof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf"
+      ],
+      "condition": "relationType is IsVariantFormOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsVariantFormOf",
+      "target_path": "A -> dcterms:isFormatOf -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:isFormatOf with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation. B is the original; A is the same resource in another form."
+    },
+    {
+      "id": "relation-isoriginalformof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf"
+      ],
+      "condition": "relationType is IsOriginalFormOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsOriginalFormOf",
+      "target_path": "A -> dcterms:hasFormat -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcterms:hasFormat with this direction; DCAT 3 lists it among the standard DCTERMS relations to use before a qualified relation. A is the original; B is the same resource in another form."
+    },
+    {
+      "id": "relation-isnewversionof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf"
+      ],
+      "condition": "relationType is IsNewVersionOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsNewVersionOf",
+      "target_path": "A -> dcat:previousVersion -> B",
+      "operation": "conditional",
+      "lossiness": "conditional",
+      "notes": "Keep A as the described resource and B as the related resource. Select dcat:previousVersion with this direction; DCAT 3 previous version (from PAV) links a version to the version it revises, which is what IsNewVersionOf states. It is more specific than dcterms:isVersionOf."
+    },
+    {
+      "id": "relation-ispreviousversionof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf"
+      ],
+      "condition": "relationType is IsPreviousVersionOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsPreviousVersionOf",
+      "target_path": "B -> dcat:previousVersion -> A",
+      "operation": "inverse",
+      "lossiness": "conditional",
+      "notes": "State the relation from B, the related resource: A IsPreviousVersionOf B becomes B dcat:previousVersion A. DCAT 3 recognizes dcat:nextVersion as an inverse that may supplement, but must not replace, the canonical dcat:previousVersion statement. Do not use dcat:hasVersion, which links an abstract resource to its versions, not a version to its successor."
+    },
+    {
+      "id": "relation-issourceof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf"
+      ],
+      "condition": "relationType is IsSourceOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsSourceOf",
+      "target_path": "B -> dcterms:source -> A",
+      "operation": "inverse",
+      "lossiness": "conditional",
+      "notes": "State the relation from B, the related resource: A IsSourceOf B becomes B dcterms:source A. This is the inverse of IsDerivedFrom, which uses dcterms:source. DCTERMS has no inverse of source."
+    },
+    {
+      "id": "relation-qualified",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/Collects",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Compiles",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Continues",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Describes",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Documents",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
+        "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy",
+        "https://w3id.org/tib/datacite/vocab/relationType/Other"
+      ],
+      "condition": "relationType has no standard DCTERMS or PROV property on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType and optional relationTypeInformation",
+      "target_path": "A -> dcat:qualifiedRelation -> dcat:Relationship (dcterms:relation -> B; dcat:hadRole -> DataCite relationType concept)",
+      "operation": "construct",
+      "lossiness": "none",
+      "notes": "DCAT 3 qualified relations cover a known relationship that has no standard DCTERMS or PROV property, and DCAT names the DataCite relation types as a vocabulary for dcat:hadRole. Use the canonical DataCite relationType IRI as the role, so the exact relation and its direction survive; keep relationTypeInformation on the Relationship node. A bare dcterms:relation would lose the relation type."
     },
     {
       "id": "contributor-roles",

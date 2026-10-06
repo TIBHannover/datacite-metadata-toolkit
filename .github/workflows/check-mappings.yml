@@ -7,6 +7,11 @@ on:
       - "production-namespace/**"
       - "rdf-build-scripts/*mapping*"
       - "tests/mappings/**"
+      - "tests/conversion/**"
+      - "validation-and-conversion/scripts/datacite_to_rdf.py"
+      - "validation-and-conversion/examples/**"
+      - "validation-and-conversion/shapes/**"
+      - "rdf-vocabulary-staging/context/**"
       - "validation-and-conversion/scripts/validate.js"
       - "website/crosswalk-guide.html"
       - "package.json"
@@ -18,6 +23,11 @@ on:
       - "production-namespace/**"
       - "rdf-build-scripts/*mapping*"
       - "tests/mappings/**"
+      - "tests/conversion/**"
+      - "validation-and-conversion/scripts/datacite_to_rdf.py"
+      - "validation-and-conversion/examples/**"
+      - "validation-and-conversion/shapes/**"
+      - "rdf-vocabulary-staging/context/**"
       - "validation-and-conversion/scripts/validate.js"
       - "website/crosswalk-guide.html"
       - "package.json"
@@ -44,6 +54,8 @@ jobs:
           npm install --ignore-scripts --no-package-lock
       - name: Regression tests
         run: npm run test:mappings
+      - name: JSON-to-RDF conversion tests
+        run: npm run test:conversion
       - name: Validate sources, coverage, and generated exports
         run: npm run check:mappings
       - name: Validate official SSSOM schema and CURIE rules

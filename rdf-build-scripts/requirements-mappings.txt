@@ -2,3 +2,7 @@
 PyYAML==6.0.3
 sssom==0.4.16
 sssom-schema==1.0.0
+# rdflib parses mappings/rdf-paths.json and runs the conversion tests.
+rdflib==7.6.0
+# pyshacl checks converter output against validation-and-conversion/shapes/.
+pyshacl==0.40.1

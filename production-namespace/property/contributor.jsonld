@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://w3id.org/tib/datacite/",
-    "datacite": "https://w3id.org/tib/datacite/"
+    "datacite": "https://w3id.org/tib/datacite/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://w3id.org/tib/datacite/property/contributor",
   "@type": "rdf:Property",
   "rdfs:label": "contributor",
-  "rdfs:comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property."
+  "rdfs:comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.",
+  "rdfs:range": {
+    "@id": "https://w3id.org/tib/datacite/class/Contributor"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation."
 }

@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/contributor> a rdf:Property ;
     rdfs:label "contributor" ;
-    rdfs:comment "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property." .
+    rdfs:comment "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/Contributor> ;
+    skos:scopeNote "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation." .
 

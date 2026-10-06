@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://w3id.org/tib/datacite/",
-    "datacite": "https://w3id.org/tib/datacite/"
+    "datacite": "https://w3id.org/tib/datacite/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://w3id.org/tib/datacite/property/rights",
   "@type": "rdf:Property",
   "rdfs:label": "rights",
-  "rdfs:comment": "Any rights information for this resource."
+  "rdfs:comment": "Any rights information for this resource.",
+  "rdfs:range": {
+    "@id": "https://w3id.org/tib/datacite/class/Rights"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme."
 }
