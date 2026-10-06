@@ -402,6 +402,7 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "inPolygonPoint": "property:inPolygonPoint",
     "fundingReferences": {
       "@id": "property:fundingReference",
       "@container": "@set"

@@ -5,8 +5,8 @@
 #   - each repeatable element is its own node of the right class;
 #   - the element's main text is in rdf:value, exactly once, and is text, never
 #     a web address; text that DataCite lets carry a language may be tagged;
-#   - creators are numbered 1, 2, 3, ... in DataCite's priority order
-#     (schema:position), with no repeats or gaps;
+#   - creators are numbered 1, 2, 3, ... in DataCite's priority order, and
+#     polygon points in drawing order (schema:position), with no repeats or gaps;
 #   - controlled values are IRIs from the matching DataCite vocabulary.
 #
 # rdfs:range cannot enforce any of this: it only lets a reasoner infer a class.
@@ -156,6 +156,67 @@ dcsh:CreatorPositions
                 }
             }""" ;
     ] .
+
+# ---------------------------------------------------------------------------
+# Polygons: one node per polygon, its points numbered in drawing order
+# ---------------------------------------------------------------------------
+
+dcsh:Polygon
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:geoLocationPolygon ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [
+        sh:path dcp:polygonPoint ;
+        sh:minCount 4 ;
+        sh:message "A polygon has at least four points (the first and last are the same)." ;
+    ] ;
+    sh:property [ sh:path dcp:inPolygonPoint ; sh:maxCount 1 ] ;
+    sh:sparql [
+        sh:message "Two points of one polygon share position {?position}." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:polygonPoint ?a , ?b .
+                FILTER (?a != ?b)
+                ?a schema:position ?position .
+                ?b schema:position ?position .
+            }""" ;
+    ] ;
+    sh:sparql [
+        sh:message "Polygon point position {?position} has no point before it." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:polygonPoint ?point .
+                ?point schema:position ?position .
+                FILTER (?position > 1)
+                FILTER NOT EXISTS {
+                    $this dcp:polygonPoint ?previous .
+                    ?previous schema:position ?before .
+                    FILTER (?before = ?position - 1)
+                }
+            }""" ;
+    ] .
+
+dcsh:PolygonPoint
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:polygonPoint ;
+    sh:property [
+        sh:path schema:position ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Each polygon point records its place in the drawing order with one schema:position, starting at 1." ;
+    ] ;
+    sh:property [ sh:path dcp:pointLatitude ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path dcp:pointLongitude ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+dcsh:InPolygonPoint
+    a sh:NodeShape ;
+    sh:targetObjectsOf dcp:inPolygonPoint ;
+    sh:property [ sh:path dcp:pointLatitude ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path dcp:pointLongitude ; sh:minCount 1 ; sh:maxCount 1 ] .
 
 dcsh:Prefixes
     sh:declare [ sh:prefix "dcp" ; sh:namespace "https://w3id.org/tib/datacite/property/"^^xsd:anyURI ] ;

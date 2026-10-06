@@ -1,7 +1,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/polygonPoint> a rdf:Property ;
     rdfs:label "polygonPoint" ;
-    rdfs:comment "A point location in a polygon." .
+    rdfs:comment "A point location in a polygon." ;
+    skos:scopeNote "In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first)." .
 

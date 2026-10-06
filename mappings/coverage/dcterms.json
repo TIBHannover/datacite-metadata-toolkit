@@ -1510,8 +1510,11 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf",
-      "status": "no_equivalent",
-      "reason": "The IsSourceOf relationship has no equally specific approved DCTERMS relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "conversion_only",
+      "reason": "Swap the direction: dcterms:source points from B to A. Keep the DataCite relation qualifier, since the target statement is about B, not the described resource A.",
+      "rule_ids": [
+        "relation-issourceof"
+      ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo",
@@ -1602,8 +1605,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
-      "status": "no_equivalent",
-      "reason": "DCMI has no single approved equal-scope type for ComputationalNotebook. Retain the source category; classifying every instance as Text, Software, or PhysicalObject would require resource-specific evidence."
+      "status": "mapped",
+      "reason": "DataCite suggests the DCMI Type InteractiveResource for computational notebooks; the DCMI category is broader, so read the SSSOM comment before transforming data."
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper",
