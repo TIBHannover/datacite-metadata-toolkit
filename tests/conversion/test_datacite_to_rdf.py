@@ -196,6 +196,26 @@ class StructureTest(unittest.TestCase):
         self.assertEqual(len(list(self.graph.objects(self.record, DCP.alternateIdentifier))),
                          len(self.attributes["alternateIdentifiers"]))
 
+    def test_doi_suffix_does_not_discard_a_distinct_identifier(self):
+        doi = "10.1234/test"
+        other = "10.9999/10.1234/test"
+        attributes = {"doi": doi, "identifiers": [
+            {"identifier": other, "identifierType": "DOI"},
+            {"identifier": "https://dx.doi.org/10.1234/TEST", "identifierType": "DOI"}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        nodes = list(graph.objects(rdflib.URIRef("https://doi.org/" + doi), DCP.alternateIdentifier))
+        self.assertEqual(len(nodes), 1)
+        self.assertEqual(str(graph.value(nodes[0], rdflib.RDF.value)), other)
+
+    def test_string_affiliations_conform_for_creators_and_related_items(self):
+        attributes = {"doi": "10.1234/test", "creators": [{"name": "A", "affiliation": ["University"]}],
+                      "relatedItems": [{"creators": [{"name": "B", "affiliation": ["Other University"]}]}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        names = {str(graph.value(node, rdflib.RDF.value)) for node in graph.objects(None, DCP.affiliation)}
+        self.assertEqual(names, {"University", "Other University"})
+        conforms, _, report = pyshacl.validate(graph, shacl_graph=str(SHAPES))
+        self.assertTrue(conforms, report)
+
     def test_related_item_publisher_is_a_node(self):
         item = next(self.graph.objects(self.record, DCP.relatedItem))
         publisher = next(self.graph.objects(item, DCP.publisher))

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "rdf-build-scripts"))
 
 from mapping_tools import (  # noqa: E402
-    BASE, SCHEMA, SKOS, MappingError, build, check_semantics, strict_tsv,
+    BASE, SCHEMA, SKOS, SUBJECT_SOURCE, MappingError, build, check_semantics, read_sssom, strict_tsv,
 )
 
 
@@ -23,6 +23,25 @@ class StrictTsvTest(unittest.TestCase):
     def test_escaped_quotes_are_accepted(self):
         rows = strict_tsv('a\t"roleName=""DataCollector"""\n', "test")
         self.assertEqual(rows, [["a", 'roleName="DataCollector"']])
+
+
+class SubjectSourceTest(unittest.TestCase):
+    def test_every_set_names_the_datacite_47_schema(self):
+        for path in sorted((ROOT / "mappings").glob("datacite-*.sssom.tsv")):
+            metadata, _ = read_sssom(path)
+            prefix, _, local = metadata["subject_source"].partition(":")
+            self.assertEqual(metadata["curie_map"][prefix] + local, SUBJECT_SOURCE, path.name)
+
+    def test_wrong_prefix_base_is_rejected(self):
+        """The DCAT set once expanded to https://datacite-metadata-schema.readthedocs.iokernel-4.7/metadata.xsd."""
+        source = ROOT / "mappings" / "datacite-dcat.sssom.tsv"
+        text = source.read_text(encoding="utf-8").replace(
+            "dataciteschema: https://schema.datacite.org/meta/", "dataciteschema: https://datacite-metadata-schema.readthedocs.io", 1)
+        with tempfile.TemporaryDirectory() as directory:
+            broken = Path(directory) / source.name
+            broken.write_text(text, encoding="utf-8")
+            with self.assertRaises(MappingError):
+                read_sssom(broken)
 
 
 class SemanticRegressionTest(unittest.TestCase):
