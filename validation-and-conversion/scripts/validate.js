@@ -1,78 +1,61 @@
-// validate.js
-const fs       = require("fs");
+// Validate JSON, a collection envelope, or NDJSON. Unknown and empty inputs fail.
+const fs = require("fs");
 const { validate } = require("jskos-validate");
 
-// Accept either a JSON object containing arrays (e.g. {"mappings": [...]})
-// or NDJSON (one JSON object per line).
-const filePath = process.argv[2] || "mappings/jskos-mappings.json";
-const text     = fs.readFileSync(filePath, "utf8");
-
-let items = [];
-try {
-  const parsed = JSON.parse(text);
-  if (Array.isArray(parsed)) {
-    items = parsed;
-  } else if (parsed && typeof parsed === "object") {
-    if (Array.isArray(parsed.mappings)) {
-      items = items.concat(parsed.mappings);
-    }
-    if (Array.isArray(parsed.concepts)) {
-      items = items.concat(parsed.concepts);
-    }
-    if (Array.isArray(parsed.schemes)) {
-      items = items.concat(parsed.schemes);
-    }
-    if (items.length === 0) {
-      // Best-effort: collect any top-level array values.
-      for (const value of Object.values(parsed)) {
-        if (Array.isArray(value)) items = items.concat(value);
-      }
-    }
-    if (items.length === 0) {
-      // Single object — treat the whole document as one item.
-      items = [parsed];
-    }
+function readItems(text) {
+  if (!text.trim()) throw new Error("Input is empty");
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch (_) {
+    return text.split(/\r?\n/).filter(line => line.trim()).map(line => JSON.parse(line));
   }
-} catch (_e) {
-  // Fall back to NDJSON parsing.
-  items = text
-    .trim()
-    .split(/\r?\n/)
-    .filter(Boolean)
-    .map(line => JSON.parse(line));
+  if (Array.isArray(parsed)) return parsed;
+  if (!parsed || typeof parsed !== "object") throw new Error("Expected an object or array");
+  const collections = ["mappings", "concepts", "schemes"].filter(key => key in parsed);
+  if (!collections.length) return [parsed];
+  return collections.flatMap(key => {
+    if (!Array.isArray(parsed[key])) throw new Error(`${key} must be an array`);
+    return parsed[key];
+  });
 }
 
-let countValid = 0, countInvalid = 0;
+function validatorFor(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+  const rawType = item.type || item["@type"] || [];
+  const types = Array.isArray(rawType) ? rawType : [rawType];
+  if ("from" in item || "to" in item || types.some(type =>
+    typeof type === "string" && /^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#(exact|close|broad|narrow|related)Match$/.test(type))) {
+    return validate.mapping;
+  }
+  if (types.some(type => ["skos:ConceptScheme", "http://www.w3.org/2004/02/skos/core#ConceptScheme"].includes(type))) return validate.scheme;
+  if (types.some(type => ["skos:Concept", "http://www.w3.org/2004/02/skos/core#Concept"].includes(type))) return validate.concept;
+  return null;
+}
 
-items.forEach((item, idx) => {
-  const typeField = item.type || item["@type"];
-  let isValid, errors;
-
-  if (item.from && item.to) {
-    isValid = validate.mapping(item);
-    errors  = validate.mapping.errorMessages;
+try {
+  const path = process.argv[2] || "mappings/jskos-mappings.json";
+  const items = readItems(fs.readFileSync(path, "utf8"));
+  if (!items.length) throw new Error("Input contains no items");
+  let valid = 0;
+  let invalid = 0;
+  let unknown = 0;
+  for (const [index, item] of items.entries()) {
+    const check = validatorFor(item);
+    if (!check) {
+      unknown++;
+      console.error(`Item ${index}: unknown JSKOS item type`);
+    } else if (check(item)) {
+      valid++;
+    } else {
+      invalid++;
+      console.error(`Item ${index}: INVALID`);
+      for (const error of check.errorMessages || []) console.error("  -", error);
+    }
   }
-  else if (typeField && typeField.includes("skos:Concept")) {
-    isValid = validate.concept(item);
-    errors  = validate.concept.errorMessages;
-  }
-  else if (typeField && typeField.includes("ConceptScheme")) {
-    isValid = validate.scheme(item);
-    errors  = validate.scheme.errorMessages;
-  }
-  else {
-    console.warn(`Skipping unknown item ${idx}`);
-    return;
-  }
-
-  if (isValid) {
-    console.log(`[${typeField}] Item ${idx} valid.`);
-    countValid++;
-  } else {
-    console.log(`[${typeField}] Item ${idx} INVALID:`);
-    errors.forEach(e => console.log("  -", e));
-    countInvalid++;
-  }
-});
-
-console.log(`\nSummary: ${countValid} valid, ${countInvalid} invalid (of ${items.length} total).`);
+  console.log(`Summary: ${valid} valid, ${invalid} invalid, ${unknown} unknown (of ${items.length} total).`);
+  if (invalid || unknown || !valid) process.exitCode = 1;
+} catch (error) {
+  console.error(`Validation failed: ${error.message}`);
+  process.exitCode = 1;
+}

@@ -1,0 +1,4 @@
+# Known-compatible pair: sssom 0.4.x is incompatible with newer schema releases.
+PyYAML==6.0.3
+sssom==0.4.16
+sssom-schema==1.0.0
