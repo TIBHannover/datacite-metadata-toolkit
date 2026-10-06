@@ -1,7 +1,9 @@
 """Tests for validation-and-conversion/scripts/datacite_to_rdf.py and the JSON-LD context."""
 
 import json
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,7 +14,7 @@ from rdflib.compare import isomorphic
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "validation-and-conversion" / "scripts"))
 
-from datacite_to_rdf import DEFAULT_CONTEXT, load_context, record_attributes, to_graph  # noqa: E402
+from datacite_to_rdf import DEFAULT_CONTEXT, load_context, prepare, record_attributes, to_graph  # noqa: E402
 
 EXAMPLES = ROOT / "validation-and-conversion" / "examples"
 RECORDS = [EXAMPLES / "record.json", EXAMPLES / "real-dataset-dryad.json", EXAMPLES / "real-software-zenodo.json"]
@@ -116,6 +118,28 @@ def convert(path):
 
 
 class RecordConversionTest(unittest.TestCase):
+    def test_cli_reports_empty_identifier_without_emitting_rdf(self):
+        with tempfile.TemporaryDirectory() as directory:
+            record = Path(directory) / "record.json"
+            record.write_text(json.dumps({"creators": [{"nameIdentifiers": [{"nameIdentifier": None}]}]}))
+            result = subprocess.run(
+                [sys.executable, str(ROOT / "validation-and-conversion/scripts/datacite_to_rdf.py"), str(record)],
+                capture_output=True, text=True,
+            )
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("$.creators[0].nameIdentifiers[0].nameIdentifier", result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_empty_name_identifiers_are_rejected_with_their_location(self):
+        for value in (None, "", "   "):
+            attributes = {"doi": "10.1234/test", "relatedItems": [{"creators": [
+                {"name": "A", "nameIdentifiers": [{"nameIdentifier": value, "nameIdentifierScheme": "ORCID"}]}]}]}
+            original = json.dumps(attributes)
+            with self.assertRaisesRegex(ValueError, r"relatedItems\[0\].creators\[0\].nameIdentifiers\[0\]"):
+                prepare(attributes)
+            self.assertEqual(json.dumps(attributes), original)
+
     def test_no_values_lost(self):
         for path in RECORDS:
             attributes, graph = convert(path)

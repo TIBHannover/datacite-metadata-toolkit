@@ -489,7 +489,7 @@
       "target_path": "B -> dcat:previousVersion -> A",
       "operation": "inverse",
       "lossiness": "conditional",
-      "notes": "State the relation from B, the related resource: A IsPreviousVersionOf B becomes B dcat:previousVersion A. DCAT 3 has no next-version property. Do not use dcat:hasVersion, which links an abstract resource to its versions, not a version to its successor."
+      "notes": "State the relation from B, the related resource: A IsPreviousVersionOf B becomes B dcat:previousVersion A. DCAT 3 recognizes dcat:nextVersion as an inverse that may supplement, but must not replace, the canonical dcat:previousVersion statement. Do not use dcat:hasVersion, which links an abstract resource to its versions, not a version to its successor."
     },
     {
       "id": "relation-issourceof",
