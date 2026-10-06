@@ -50,9 +50,11 @@ function displayBasePath() {
   return `${relUrl("")}/`;
 }
 
-function fileMtimeLabel(absPath) {
-  const stat = fs.statSync(absPath);
-  return stat.mtime.toISOString().slice(0, 10);
+// File size, not modification time: copying the bundle resets file times, so a
+// date would change on every rebuild and the committed pages would never match.
+function fileSizeLabel(absPath) {
+  const bytes = fs.statSync(absPath).size;
+  return bytes < 1024 ? `${bytes} B` : `${(bytes / 1024).toFixed(1)} KB`;
 }
 
 function commonStyles() {
@@ -264,7 +266,7 @@ function parseClassOrProperty(dirName, file) {
     comment,
     type,
     href: relUrl(dirName, file),
-    mtime: fileMtimeLabel(abs),
+    size: fileSizeLabel(abs),
   };
 }
 
@@ -301,7 +303,7 @@ function buildClassIndex() {
             <div class="small muted code">${escapeHtml(item.file)}</div>
           </div>
           <div class="desc">${escapeHtml(item.comment || "No description available.")}</div>
-          <div class="meta-col">${escapeHtml(item.type)}<br>${escapeHtml(item.mtime)}</div>
+          <div class="meta-col">${escapeHtml(item.type)}<br>${escapeHtml(item.size)}</div>
         </div>
       </li>`,
     )
@@ -343,7 +345,7 @@ function buildPropertyIndex() {
             <div class="small muted code">${escapeHtml(item.file)}</div>
           </div>
           <div class="desc">${escapeHtml(item.comment || "No description available.")}</div>
-          <div class="meta-col">${escapeHtml(item.type)}<br>${escapeHtml(item.mtime)}</div>
+          <div class="meta-col">${escapeHtml(item.type)}<br>${escapeHtml(item.size)}</div>
         </div>
       </li>`,
     )
@@ -410,7 +412,7 @@ function buildVocabIndex() {
         <h3>${escapeHtml(dir)}</h3>
         <p>${escapeHtml(title)}</p>
         <p class="small muted">${escapeHtml(
-          `${termFiles.length} term files · ${topConcepts} top concepts · updated ${fileMtimeLabel(schemePath)}`,
+          `${termFiles.length} term files · ${topConcepts} top concepts`,
         )}</p>
         <p>${links}</p>
         ${
@@ -474,7 +476,7 @@ function buildContextIndex() {
               <div class="small muted code">${escapeHtml(rel.replace(/\\/g, "/"))}</div>
             </div>
             <div class="desc">${escapeHtml(note)}</div>
-            <div class="meta-col">${escapeHtml(fileMtimeLabel(abs))}</div>
+            <div class="meta-col">${escapeHtml(fileSizeLabel(abs))}</div>
           </div>
         </li>`;
       })
@@ -543,7 +545,7 @@ function buildDistIndex() {
               <div class="small muted code">${escapeHtml(path.join("dist", file).replace(/\\/g, "/"))}</div>
             </div>
             <div class="desc">${escapeHtml(note)}</div>
-            <div class="meta-col">${escapeHtml(fileMtimeLabel(abs))}</div>
+            <div class="meta-col">${escapeHtml(fileSizeLabel(abs))}</div>
           </div>
         </li>`;
         })
@@ -600,7 +602,6 @@ function buildManifestIndex() {
         <p class="muted">Current version pointer · current <span class="code">${escapeHtml(pointer.currentVersion || "")}</span></p>
         <p><a href="${relUrl("manifest", "datacite-current.json")}">Open current pointer</a></p>
         <p class="small muted">${escapeHtml(`manifest: ${links.manifest || "n/a"} · dist: ${links.distJsonld || "n/a"}`)}</p>
-        <p class="small muted">Updated ${escapeHtml(fileMtimeLabel(currentPointerPath))}</p>
       </article>`;
     } catch {
       currentPointerCard = "";
@@ -623,7 +624,6 @@ function buildManifestIndex() {
         <p class="muted">Version ${escapeHtml(json.version || "unknown")} · namespace <span class="code">${escapeHtml(json.namespace || "")}</span></p>
         <p><a href="${relUrl("manifest", file)}">Open manifest</a></p>
         <p class="small muted">${escapeHtml(`${summary.classes} classes · ${summary.properties} properties · ${summary.contexts} contexts · ${summary.vocabularies} vocabularies · ${summary.vocabTerms} terms`)}</p>
-        <p class="small muted">Updated ${escapeHtml(fileMtimeLabel(abs))}</p>
       </article>`;
     })
     .join("");
@@ -638,7 +638,6 @@ function buildManifestIndex() {
         <p class="muted">Release change matrix · ${escapeHtml(json.fromVersion || "?")} → ${escapeHtml(json.toVersion || "?")}</p>
         <p><a href="${relUrl("manifest", file)}">Open release matrix</a></p>
         <p class="small muted">${escapeHtml(`${changes} recorded change${changes === 1 ? "" : "s"} · release ${json.releaseDate || "unknown"}`)}</p>
-        <p class="small muted">Updated ${escapeHtml(fileMtimeLabel(abs))}</p>
       </article>`;
     })
     .join("");

@@ -76,6 +76,7 @@ class MutationTest(unittest.TestCase):
         self.root = Path(self.temp.name)
         shutil.copytree(ROOT / "mappings", self.root / "mappings")
         shutil.copytree(ROOT / "production-namespace", self.root / "production-namespace")
+        shutil.copytree(ROOT / "website", self.root / "website")
 
     def tearDown(self):
         self.temp.cleanup()
@@ -114,6 +115,12 @@ class MutationTest(unittest.TestCase):
         path = self.root / "production-namespace" / "mappings" / "coverage" / "dcat.json"
         path.write_text(path.read_text(encoding="utf-8") + " ", encoding="utf-8")
         with self.assertRaisesRegex(MappingError, "Stale published mapping"):
+            build(self.root, check=True)
+
+    def test_stale_published_guide_fails_check(self):
+        path = self.root / "website" / "crosswalk-guide.html"
+        path.write_text(path.read_text(encoding="utf-8").replace("Crosswalk Guide", "Crosswalk Notes"), encoding="utf-8")
+        with self.assertRaisesRegex(MappingError, "Stale published guide"):
             build(self.root, check=True)
 
     def test_build_regenerates_exports(self):

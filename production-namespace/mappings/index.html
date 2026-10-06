@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DataCite Crosswalk Guide</title>
+<meta name="description" content="A plain-language guide to the DataCite 4.7 crosswalk: how to read the mappings, what link strengths and directions mean, which file to use, and how to change a mapping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: reading column with a sticky contents rail on wide screens; one column on phones. */
+:root {
+  --bg: #f6f8f7;
+  --surface: #ffffff;
+  --fg: #16212f;
+  --muted: #566372;
+  --line: #d9e0e3;
+  --accent: #0a6f6a;
+  --accent-soft: #dff0ee;
+  --warn: #9a5b00;
+  --warn-soft: #fbefd9;
+  --close: #0a6f6a;
+  --broad: #2f5fa7;
+  --narrow: #7a4bb0;
+  --related: #8996a3;
+  --conv: #b7c9c6;
+  --none: #e2c58f;
+  --scope: #d9dee2;
+  --code-bg: #eef2f1;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f161d; --surface: #16202a; --fg: #e4eae9; --muted: #9aa8b3; --line: #2a3743;
+    --accent: #4cc2b8; --accent-soft: #143430; --warn: #f0b45a; --warn-soft: #3a2a10;
+    --close: #3fa99f; --broad: #5f8bd4; --narrow: #a17ad6; --related: #5d6b78;
+    --conv: #3b5552; --none: #7a6233; --scope: #2c3742; --code-bg: #1c2833;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f161d; --surface: #16202a; --fg: #e4eae9; --muted: #9aa8b3; --line: #2a3743;
+  --accent: #4cc2b8; --accent-soft: #143430; --warn: #f0b45a; --warn-soft: #3a2a10;
+  --close: #3fa99f; --broad: #5f8bd4; --narrow: #a17ad6; --related: #5d6b78;
+  --conv: #3b5552; --none: #7a6233; --scope: #2c3742; --code-bg: #1c2833;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 1.05rem; line-height: 1.65;
+  padding-inline: 16px; padding-block: 0 4rem;
+}
+.shell { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+@media (min-width: 900px) { .shell { grid-template-columns: 200px minmax(0, 1fr); } }
+main { min-width: 0; max-width: 46rem; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.6rem; font-weight: 700; margin-top: 3.5rem; scroll-margin-top: 1.5rem; }
+h3 { font-size: 1.15rem; font-weight: 700; margin-top: 2rem; }
+p { margin: 0.9rem 0 0; }
+ul, ol { margin: 0.9rem 0 0; padding-left: 1.3rem; }
+li + li { margin-top: 0.35rem; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font-family: var(--font-mono); font-size: 0.86em; background: var(--code-bg); padding: 0.08em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+pre { margin: 1rem 0 0; background: var(--code-bg); border-radius: 8px; padding: 0.8rem 1rem; overflow-x: auto; }
+pre code { background: none; padding: 0; font-size: 0.82rem; overflow-wrap: normal; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 1.2rem; color: var(--muted); margin-top: 1rem; }
+.term { font-family: var(--font-mono); font-size: 0.78rem; background: var(--accent-soft); color: var(--accent); padding: 0.05em 0.45em; border-radius: 999px; white-space: nowrap; }
+
+nav.toc { padding-top: 3rem; }
+@media (min-width: 900px) { nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; } }
+nav.toc ol { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.2rem; font-family: var(--font-display); font-size: 0.95rem; }
+nav.toc a { color: var(--muted); text-decoration: none; display: block; padding: 0.15rem 0; }
+nav.toc a:hover { color: var(--fg); }
+@media (max-width: 899px) { nav.toc { padding-top: 1.5rem; } nav.toc ol { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); } }
+
+header.top { padding-top: 3rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-top: 1.6rem; }
+.fact { border-top: 3px solid var(--accent); padding-top: 0.5rem; }
+.fact b { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; display: block; font-variant-numeric: tabular-nums; }
+.fact span { color: var(--muted); font-size: 0.9rem; }
+
+.jobs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.75rem; margin-top: 1.2rem; }
+.job { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.8rem 0.9rem; }
+.job b { font-family: var(--font-display); display: block; font-size: 1.05rem; }
+.job span { color: var(--muted); font-size: 0.95rem; }
+
+.triple { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.triple div { padding: 0.7rem 0.8rem; min-width: 0; }
+.triple div + div { border-left: 1px solid var(--line); }
+.triple small, .node small { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.triple code, .node code { background: none; padding: 0; font-size: 0.82rem; }
+@media (max-width: 520px) { .triple { grid-template-columns: 1fr; } .triple div + div { border-left: 0; border-top: 1px solid var(--line); } }
+
+.scale { margin-top: 1.2rem; display: grid; gap: 0.5rem; }
+.scale-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.8rem; align-items: baseline; }
+.scale-row > code { background: none; padding: 0; font-weight: 600; }
+.swatch { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: baseline; }
+@media (max-width: 520px) { .scale-row { grid-template-columns: 1fr; gap: 0.1rem; } }
+
+/* stacked bars; widths share one scale per chart */
+.bars { margin-top: 1.2rem; display: grid; gap: 0.8rem; }
+.bar-label { font-family: var(--font-display); font-size: 0.95rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.bar-label span { color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; }
+.track { margin-top: 0.3rem; }
+.bar { display: flex; height: 1.7rem; border-radius: 5px; overflow: hidden; }
+.seg { display: grid; place-items: center; font-family: var(--font-mono); font-size: 0.72rem; font-variant-numeric: tabular-nums; min-width: 0; overflow: hidden; color: #fff; }
+.seg.close { background: var(--close); } .seg.broad { background: var(--broad); } .seg.narrow { background: var(--narrow); } .seg.related { background: var(--related); }
+.seg.mapped { background: var(--close); } .seg.conv { background: var(--conv); color: var(--fg); } .seg.none { background: var(--none); color: var(--fg); } .seg.scope { background: var(--scope); color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; }
+
+.flow { margin-top: 1.2rem; display: grid; gap: 0.5rem; }
+.node { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem; min-width: 0; }
+.node.you { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.arrow { text-align: center; color: var(--muted); font-family: var(--font-mono); font-size: 0.8rem; }
+.fork { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.fork3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+@media (max-width: 600px) { .fork, .fork3 { grid-template-columns: 1fr; } }
+
+.compare { margin-top: 1rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.compare > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.8rem 0.95rem; min-width: 0; }
+.compare h3 { margin: 0; font-size: 1rem; }
+.compare p { font-size: 0.95rem; }
+.compare .bad { border-color: var(--warn); }
+.compare .bad h3 { color: var(--warn); }
+.compare .good h3 { color: var(--accent); }
+@media (max-width: 600px) { .compare { grid-template-columns: 1fr; } }
+
+.table-wrap { overflow-x: auto; margin-top: 1.1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; background: var(--code-bg); }
+td code { white-space: nowrap; }
+.row-anatomy td:first-child { font-family: var(--font-mono); font-size: 0.82rem; white-space: nowrap; }
+
+.callout { margin-top: 1.4rem; background: var(--warn-soft); border-radius: 10px; padding: 0.9rem 1.1rem; }
+.callout b { color: var(--warn); font-family: var(--font-display); }
+.note { margin-top: 1.2rem; background: var(--accent-soft); border-radius: 10px; padding: 0.9rem 1.1rem; }
+.note b { color: var(--accent); font-family: var(--font-display); }
+
+ol.steps { list-style: none; padding: 0; counter-reset: step; display: grid; gap: 0.6rem; }
+ol.steps li { counter-increment: step; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.6rem; align-items: start; }
+ol.steps li::before { content: counter(step); font-family: var(--font-display); font-weight: 700; color: var(--accent); border: 2px solid var(--accent); border-radius: 50%; width: 1.7rem; height: 1.7rem; display: grid; place-items: center; font-size: 0.9rem; }
+ol.steps li + li { margin-top: 0; }
+
+.gloss-tools { margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+#gloss-search { flex: 1 1 16rem; font: inherit; font-size: 1rem; padding: 0.55rem 0.8rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+#gloss-count { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+dl.gloss { margin: 1rem 0 0; display: grid; border-top: 1px solid var(--line); }
+dl.gloss > div { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+dl.gloss dt { font-family: var(--font-display); font-weight: 700; }
+dl.gloss dd { margin: 0; }
+dl.gloss dd em { color: var(--muted); font-style: normal; font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-top: 0.2rem; overflow-wrap: anywhere; }
+@media (max-width: 600px) { dl.gloss > div { grid-template-columns: 1fr; gap: 0.15rem; } }
+footer { margin-top: 4rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="toc" aria-label="Contents">
+    <div class="eyebrow">Contents</div>
+    <ol>
+      <li><a href="#idea">The big picture</a></li>
+      <li><a href="#reading">Reading a mapping</a></li>
+      <li><a href="#strength">Link strength</a></li>
+      <li><a href="#direction">Direction matters</a></li>
+      <li><a href="#layers">Mappings and recipes</a></li>
+      <li><a href="#files">The files</a></li>
+      <li><a href="#addresses">Permanent addresses</a></li>
+      <li><a href="#using">Using the mappings</a></li>
+      <li><a href="#quality">How quality is checked</a></li>
+      <li><a href="#contributing">Changing a mapping</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="top">
+      <div class="eyebrow">DataCite Metadata Schema 4.7</div>
+      <h1>DataCite Crosswalk Guide</h1>
+      <p class="lede">How DataCite metadata terms line up with Schema.org, Dublin Core, DCAT and Wikidata, and how to read, use and improve the mapping files. No prior linked-data knowledge needed; every technical word is explained in the <a href="#glossary">glossary</a>.</p>
+      <div class="facts">
+        <div class="fact"><b>253</b><span>DataCite 4.7 terms</span></div>
+        <div class="fact"><b>4</b><span>target vocabularies</span></div>
+        <div class="fact"><b>238</b><span>mapping rows</span></div>
+        <div class="fact"><b>1,012</b><span>recorded outcomes (253 terms × 4)</span></div>
+      </div>
+    </header>
+
+    <section id="idea">
+      <h2>The big picture</h2>
+      <p>Repositories describe the same research outputs in different vocabularies. DataCite says <code>creator</code>, Schema.org says <code>creator</code> too, Dublin Core says <code>dcterms:creator</code>, and Wikidata uses numbered items. A <span class="term">crosswalk</span> is a dictionary between them. Each entry is a <span class="term">mapping</span>: "DataCite <code>title</code> is close to Dublin Core <code>title</code>".</p>
+      <p>A useful crosswalk gets three things right.</p>
+      <div class="jobs">
+        <div class="job"><b>Content</b><span>Each entry says something true about the two terms.</span></div>
+        <div class="job"><b>Format</b><span>The dictionary is written in a standard form that software can read.</span></div>
+        <div class="job"><b>Publishing</b><span>Every term, and the dictionary itself, has a permanent web address.</span></div>
+      </div>
+      <p>The four target vocabularies cover different needs: <strong>Schema.org</strong> for search engines, <strong>Dublin Core (DCTERMS)</strong> for libraries and repositories, <strong>DCAT</strong> for data catalogues, and <strong>Wikidata</strong> for the shared knowledge graph.</p>
+    </section>
+
+    <section id="reading">
+      <h2>Reading a mapping</h2>
+      <p>Every mapping is a <span class="term">triple</span>: three parts that read like a sentence.</p>
+      <div class="triple" role="group" aria-label="Example triple">
+        <div><small>Subject (DataCite)</small><code>datacite-vocab:relationType/IsPartOf</code></div>
+        <div><small>Predicate (how close)</small><code>skos:closeMatch</code></div>
+        <div><small>Object (the other vocabulary)</small><code>dcterms:isPartOf</code></div>
+      </div>
+      <p>The names are short forms called <span class="term">CURIEs</span>. The prefix before the colon stands for the start of a web address, so <code>dcterms:isPartOf</code> means <code>http://purl.org/dc/terms/isPartOf</code>. Each mapping file lists its prefixes at the top.</p>
+
+      <h3>One row of a mapping file</h3>
+      <p>The mapping files use <span class="term">SSSOM</span>, a standard spreadsheet format. This is the row above, column by column.</p>
+      <div class="table-wrap">
+        <table class="row-anatomy">
+          <thead><tr><th>Column</th><th>Value</th><th>What it tells you</th></tr></thead>
+          <tbody>
+            <tr><td>subject_id</td><td><code>datacite-vocab:relationType/IsPartOf</code></td><td>The DataCite term</td></tr>
+            <tr><td>predicate_id</td><td><code>skos:closeMatch</code></td><td>How close the meanings are</td></tr>
+            <tr><td>object_id</td><td><code>dcterms:isPartOf</code></td><td>The term in the other vocabulary</td></tr>
+            <tr><td>mapping_justification</td><td><code>semapv:ManualMappingCuration</code></td><td>A person decided this by reading both definitions</td></tr>
+            <tr><td>subject_label, object_label</td><td>IsPartOf, isPartOf</td><td>Readable names for display</td></tr>
+            <tr><td>object_source_version</td><td>2020-01-20</td><td>Which release of the other vocabulary was checked</td></tr>
+            <tr><td>author_id, reviewer_id</td><td><code>orcid:0000-0003-1378-5495</code></td><td>Who wrote and who checked the mapping</td></tr>
+            <tr><td>comment</td><td>Corresponding relationship with the same direction…</td><td>The reasoning, and any conditions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="strength">
+      <h2>Link strength</h2>
+      <p>The predicate in the middle of each triple is the most important judgement in a mapping. It comes from <span class="term">SKOS</span>, a W3C standard for vocabularies.</p>
+      <div class="scale">
+        <div class="scale-row"><code>exactMatch</code><span>Interchangeable everywhere. This crosswalk never uses it (see below).</span></div>
+        <div class="scale-row"><code><i class="swatch" style="background:var(--close)"></i>closeMatch</code><span>Nearly the same meaning. <code>creator</code> → <code>schema:creator</code></span></div>
+        <div class="scale-row"><code><i class="swatch" style="background:var(--broad)"></i>broadMatch</code><span>Their term is wider than DataCite's. <code>title</code> → <code>schema:name</code>, because a name can belong to anything.</span></div>
+        <div class="scale-row"><code><i class="swatch" style="background:var(--narrow)"></i>narrowMatch</code><span>Their term is narrower. <code>size</code> → <code>schema:contentSize</code>, which only means file size.</span></div>
+        <div class="scale-row"><code><i class="swatch" style="background:var(--related)"></i>relatedMatch</code><span>Connected, but not the same kind of thing. <code>publicationYear</code> → <code>dcterms:issued</code>: a year versus a full date.</span></div>
+      </div>
+
+      <div class="compare">
+        <div class="bad"><h3>Why no exactMatch</h3><p><code>exactMatch</code> is <span class="term">transitive</span>: if <code>creatorName</code> exactly equals <code>schema:name</code>, and <code>title</code> exactly equals <code>schema:name</code>, software concludes that a person's name and a document's title are the same thing.</p></div>
+        <div class="good"><h3>What the crosswalk does instead</h3><p>It uses the weakest link that is still true. <code>creatorName</code> and <code>title</code> both get <code>broadMatch</code> to <code>schema:name</code>, which says each is a kind of name without making them equal to each other.</p></div>
+      </div>
+
+      <h3>Link strengths in each mapping file</h3>
+      <p>Bars share one scale, so their lengths compare directly.</p>
+      <div class="bars" role="img" aria-label="Schema.org: 52 close, 33 broad, 12 narrow, 15 related. Dublin Core: 53 close, 31 broad, 1 related. Wikidata: 19 close, 5 broad, 2 narrow. DCAT: 11 close, 4 broad.">
+        <div>
+          <div class="bar-label">Schema.org <span>112 rows</span></div>
+          <div class="track" style="width:100%"><div class="bar"><div class="seg close" style="flex:52">52</div><div class="seg broad" style="flex:33">33</div><div class="seg narrow" style="flex:12">12</div><div class="seg related" style="flex:15">15</div></div></div>
+        </div>
+        <div>
+          <div class="bar-label">Dublin Core <span>85 rows</span></div>
+          <div class="track" style="width:75.9%"><div class="bar"><div class="seg close" style="flex:53">53</div><div class="seg broad" style="flex:31">31</div><div class="seg related" style="flex:1"></div></div></div>
+        </div>
+        <div>
+          <div class="bar-label">Wikidata <span>26 rows</span></div>
+          <div class="track" style="width:23.2%"><div class="bar"><div class="seg close" style="flex:19">19</div><div class="seg broad" style="flex:5"></div><div class="seg narrow" style="flex:2"></div></div></div>
+        </div>
+        <div>
+          <div class="bar-label">DCAT <span>15 rows</span></div>
+          <div class="track" style="width:13.4%"><div class="bar"><div class="seg close" style="flex:11">11</div><div class="seg broad" style="flex:4"></div></div></div>
+        </div>
+      </div>
+      <div class="legend"><span><i class="swatch" style="background:var(--close)"></i>closeMatch</span><span><i class="swatch" style="background:var(--broad)"></i>broadMatch</span><span><i class="swatch" style="background:var(--narrow)"></i>narrowMatch</span><span><i class="swatch" style="background:var(--related)"></i>relatedMatch</span></div>
+    </section>
+
+    <section id="direction">
+      <h2>Direction matters</h2>
+      <p>DataCite relations are written from the point of view of the record you are describing. Other vocabularies sometimes point the other way. That is an <span class="term">inverse relation</span>, and mapping it naively writes the fact backwards.</p>
+      <div class="compare">
+        <div class="bad"><h3>Opposite direction</h3><p>"My dataset <code>IsCitedBy</code> that paper." Schema.org's <code>citation</code> points from the paper to the dataset. A direct mapping would state that the dataset cites the paper, so this pair is handled only by a conversion rule that flips the two ends.</p></div>
+        <div class="good"><h3>Same direction</h3><p>Dublin Core has matching pairs such as <code>isPartOf</code> and <code>hasPart</code>. "A <code>IsPartOf</code> B" becomes "A <code>dcterms:isPartOf</code> B", so these are mapped directly.</p></div>
+      </div>
+      <p>The automatic checks reject known wrong-direction pairs, such as <code>Reviews</code> → <code>schema:reviews</code> or <code>IsCitedBy</code> → <code>dcterms:references</code>.</p>
+    </section>
+
+    <section id="layers">
+      <h2>Mappings and recipes</h2>
+      <p>Two different statements are easy to confuse.</p>
+      <div class="compare">
+        <div class="good"><h3>Correspondence</h3><p>"These two terms mean similar things." This goes in the SSSOM mapping files.</p></div>
+        <div class="good"><h3>Conversion rule</h3><p>"When you translate a record, put this value there, under these conditions." This goes in the <code>conversion/</code> recipes.</p></div>
+      </div>
+      <p>Example: DataCite's <code>publicationYear</code> holds just a year, such as <code>2024</code>. Dublin Core's <code>issued</code> can hold a full date. The mapping file records that they are related. The recipe adds the instruction a converter needs: never invent a month or a day.</p>
+
+      <h3>Every term has an outcome</h3>
+      <p>The <span class="term">coverage register</span> records one outcome for each of the 253 DataCite terms, per vocabulary. Nothing is silently left out.</p>
+      <div class="bars" role="img" aria-label="Outcomes per vocabulary. Schema.org: 107 mapped, 112 recipe only, 34 no equivalent. Dublin Core: 85 mapped, 135 recipe only, 33 no equivalent. DCAT: 15 mapped, 169 recipe only, 38 no equivalent, 31 out of scope. Wikidata: 26 mapped, 2 recipe only, 35 no equivalent, 190 out of scope.">
+        <div><div class="bar-label">Schema.org <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:107">107</div><div class="seg conv" style="flex:112">112</div><div class="seg none" style="flex:34">34</div></div></div>
+        <div><div class="bar-label">Dublin Core <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:85">85</div><div class="seg conv" style="flex:135">135</div><div class="seg none" style="flex:33">33</div></div></div>
+        <div><div class="bar-label">DCAT <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:15"></div><div class="seg conv" style="flex:169">169</div><div class="seg none" style="flex:38">38</div><div class="seg scope" style="flex:31">31</div></div></div>
+        <div><div class="bar-label">Wikidata <span>253 terms</span></div><div class="bar"><div class="seg mapped" style="flex:26">26</div><div class="seg conv" style="flex:2"></div><div class="seg none" style="flex:35">35</div><div class="seg scope" style="flex:190">190</div></div></div>
+      </div>
+      <div class="legend"><span><i class="swatch" style="background:var(--close)"></i>mapped</span><span><i class="swatch" style="background:var(--conv)"></i>recipe only</span><span><i class="swatch" style="background:var(--none)"></i>no equivalent</span><span><i class="swatch" style="background:var(--scope)"></i>out of scope</span></div>
+      <p>"Recipe only" covers terms such as identifier-scheme values and geographic coordinates, which are carried along inside a converted record rather than matched to a single term. Wikidata is mostly out of scope because its mappings align concepts like "dataset" or "book", not record fields.</p>
+    </section>
+
+    <section id="files">
+      <h2>The files</h2>
+      <p>Everything lives in the <code>mappings/</code> folder of the toolkit. Use the file that fits your tool.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>File</th><th>What it is</th><th>Who it is for</th></tr></thead>
+          <tbody>
+            <tr><td><code>datacite-schemaorg.sssom.tsv</code><br><code>datacite-dcterms.sssom.tsv</code><br><code>datacite-dcat.sssom.tsv</code><br><code>datacite-wikidata.sssom.tsv</code></td><td>The mapping sets, one per vocabulary. These are the source; everything else is generated from them.</td><td>Mapping tools and anyone reviewing a mapping</td></tr>
+            <tr><td><code>jskos-mappings.json</code></td><td>All mappings in <span class="term">JSKOS</span>, with labels, vocabularies, author, date and notes.</td><td>Cocoda and jskos-server</td></tr>
+            <tr><td><code>SKOS_crosswalks.jsonld</code></td><td>All mappings as linked data, with a label for every term.</td><td>Triple stores and RDF tools</td></tr>
+            <tr><td><code>conversion/*.json</code></td><td>Recipes for translating real records.</td><td>Developers writing converters</td></tr>
+            <tr><td><code>coverage/*.json</code></td><td>The outcome for every DataCite term.</td><td>Anyone checking completeness</td></tr>
+            <tr><td><code>target-sources.json</code></td><td>Which release of each vocabulary was checked, with download addresses and fingerprints.</td><td>Anyone checking provenance</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Dublin Core terms that DCAT reuses, such as <code>dcterms:title</code>, appear in both the Dublin Core and DCAT files. In the combined JSKOS and SKOS files each mapping appears once, giving 225 unique mappings from 238 rows.</p>
+    </section>
+
+    <section id="addresses">
+      <h2>Permanent addresses</h2>
+      <p>Every DataCite term has a permanent address under <code>https://w3id.org/tib/datacite/</code>. <span class="term">w3id</span> holds no files. It forwards each request to wherever the files are hosted, currently GitHub Pages. If hosting ever moves, only the forwarding rules change and every published address keeps working.</p>
+      <div class="flow" aria-label="Request flow">
+        <div class="node"><small>Someone asks for</small><code>https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy</code></div>
+        <div class="arrow">↓ w3id applies the namespace's forwarding rules</div>
+        <div class="fork">
+          <div class="node"><small>Program asks for Turtle</small><code>…/vocab/relationType/IsCitedBy.ttl</code></div>
+          <div class="node"><small>Anything else</small><code>…/vocab/relationType/IsCitedBy.jsonld</code></div>
+        </div>
+        <div class="arrow">↓ served from tibhannover.github.io/datacite</div>
+      </div>
+      <p>Choosing a format by what the requester asks for is called <span class="term">content negotiation</span>. <span class="term">JSON-LD</span> is the default; a program can ask for <span class="term">Turtle</span> by sending <code>Accept: text/turtle</code>. Both hold exactly the same information.</p>
+      <p>The mapping files have permanent addresses too, for example <code>https://w3id.org/tib/datacite/mappings/datacite-schemaorg.sssom.tsv</code>. That address is also each file's official name, its <code>mapping_set_id</code>.</p>
+      <div class="note"><b>If an address does not resolve yet.</b> Turtle responses and the <code>mappings/</code> addresses are being rolled out. Until then, use the JSON-LD address, or take the files directly from the toolkit repository.</div>
+      <p>Try it yourself:</p>
+      <pre><code>curl -sL https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy
+curl -sL -H "Accept: text/turtle" https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy</code></pre>
+    </section>
+
+    <section id="using">
+      <h2>Using the mappings</h2>
+      <h3>In Cocoda</h3>
+      <p><span class="term">Cocoda</span> is a web tool for browsing and reviewing mappings. Its server, <span class="term">jskos-server</span>, imports <code>jskos-mappings.json</code> directly, because the file is a plain list of mappings and every mapping names its two vocabularies:</p>
+      <pre><code>npm run import -- mappings https://w3id.org/tib/datacite/mappings/jskos-mappings.json</code></pre>
+      <p>Vocabularies are identified by their <span class="term">BARTOC</span> registry address, which is how Cocoda recognises them:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Vocabulary</th><th>BARTOC address</th></tr></thead>
+          <tbody>
+            <tr><td>DataCite Metadata Schema</td><td><code>http://bartoc.org/en/node/21149</code></td></tr>
+            <tr><td>Schema.org</td><td><code>http://bartoc.org/en/node/18250</code></td></tr>
+            <tr><td>DCMI Metadata Terms (Dublin Core)</td><td><code>http://bartoc.org/en/node/725</code></td></tr>
+            <tr><td>DCMI Type Vocabulary</td><td><code>http://bartoc.org/en/node/17909</code></td></tr>
+            <tr><td>Data Catalog Vocabulary (DCAT)</td><td><code>http://bartoc.org/en/node/1691</code></td></tr>
+            <tr><td>Wikidata</td><td><code>http://bartoc.org/en/node/1940</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>With SSSOM tools</h3>
+      <p>The SSSOM files work with <code>sssom-py</code> and other ontology-alignment tools. To check a file yourself:</p>
+      <pre><code>pip install sssom==0.4.16 sssom-schema==1.0.0
+sssom validate mappings/datacite-schemaorg.sssom.tsv</code></pre>
+
+      <h3>When converting records</h3>
+      <ul>
+        <li>Read the row comment and the matching recipe in <code>conversion/</code> before transforming data.</li>
+        <li>Treat <code>relatedMatch</code> as "connected", never as permission to swap one term for the other.</li>
+        <li>Check the direction of relations. If a pair appears only in a recipe with the operation <code>inverse</code>, the two ends must be swapped.</li>
+        <li>Keep the original DataCite value when the target term is broader, so detail is not lost.</li>
+      </ul>
+    </section>
+
+    <section id="quality">
+      <h2>How quality is checked</h2>
+      <p>Every change to the mapping files runs automatic checks on GitHub, a setup called <span class="term">CI</span>. The checks fail unless all of the following hold.</p>
+      <ul>
+        <li>Each SSSOM file passes the official SSSOM validator, including its rules for prefixes and short names.</li>
+        <li>Every DataCite term exists in the published DataCite 4.7 vocabulary.</li>
+        <li>Every target term exists, and is not deprecated, in the pinned release of its vocabulary.</li>
+        <li>Known wrong-direction and wrong-meaning pairs are refused.</li>
+        <li>The coverage register gives every DataCite term an outcome, and agrees with the mapping files.</li>
+        <li>The JSKOS and SKOS files contain exactly the same mappings as the SSSOM files, and the JSKOS file passes the official JSKOS validator.</li>
+        <li>The published copies of the mapping files match the originals.</li>
+      </ul>
+      <div class="callout"><b>What the checks cannot do.</b> They confirm that the files are well formed, complete and consistent. They cannot confirm that a mapping is right. That judgement comes from people reading both definitions, which is why each row names its author and reviewer.</div>
+    </section>
+
+    <section id="contributing">
+      <h2>Changing a mapping</h2>
+      <p>Found a mapping you disagree with? Edit the SSSOM file, never the generated files.</p>
+      <ol class="steps">
+        <li><span>Change the row in the right <code>datacite-*.sssom.tsv</code> file. Explain your reasoning in the <code>comment</code> column.</span></li>
+        <li><span>If a term gains or loses its only mapping, update its outcome in <code>coverage/</code>.</span></li>
+        <li><span>Regenerate the JSKOS and SKOS files: <code>npm run build:mappings</code></span></li>
+        <li><span>Run the checks: <code>npm run check:mappings</code> and <code>npm run test:mappings</code></span></li>
+        <li><span>Open a pull request on the toolkit repository so the change can be reviewed.</span></li>
+      </ol>
+      <p>The checks need Python packages listed in <code>rdf-build-scripts/requirements-mappings.txt</code>, and <code>npm install</code> for the JSKOS validator.</p>
+    </section>
+
+    <section id="glossary">
+      <h2>Glossary</h2>
+      <div class="gloss-tools">
+        <label for="gloss-search" class="eyebrow">Filter</label>
+        <input id="gloss-search" type="search" placeholder="Type a word, e.g. redirect" autocomplete="off">
+        <span id="gloss-count" aria-live="polite"></span>
+      </div>
+      <dl class="gloss" id="gloss"></dl>
+    </section>
+
+    <footer>Covers the DataCite Metadata Schema 4.7 crosswalk in the <code>datacite-metadata-toolkit</code> repository. Maintained by Sara El-Gebali (ORCID 0000-0003-1378-5495), PID4NFDI, TIB Hannover. Mappings are licensed CC BY 4.0. <a href="../">Back to the DataCite namespace</a>.</footer>
+  </main>
+</div>
+
+<script>
+const GLOSSARY = [
+  ["Crosswalk", "A dictionary between two or more metadata vocabularies.", ""],
+  ["Mapping", "One entry in a crosswalk, linking a DataCite term to a term in another vocabulary.", "Every row of an SSSOM file is one mapping."],
+  ["Vocabulary", "An agreed list of terms for describing things.", "Schema.org, Dublin Core, DCAT, Wikidata"],
+  ["Target", "The vocabulary a mapping file maps to.", "datacite-schemaorg.sssom.tsv targets Schema.org"],
+  ["IRI / URI", "A web address used as the name of a term.", "https://w3id.org/tib/datacite/property/title"],
+  ["Canonical IRI", "The one official spelling of a term's address.", "property/creatorName"],
+  ["Namespace", "The shared beginning of all addresses in a vocabulary.", "https://w3id.org/tib/datacite/"],
+  ["Triple", "A three-part statement: subject, predicate, object. Every mapping is one.", "title · closeMatch · dcterms:title"],
+  ["RDF / linked data", "Describing things as triples with web addresses as names, so data from different places can be joined.", ""],
+  ["JSON-LD", "JSON, a common data format, with extra meaning attached so it counts as linked data. The default format for DataCite terms.", "IsCitedBy.jsonld"],
+  ["Turtle", "Another way of writing the same triples, easier for people to read and preferred by some tools.", "IsCitedBy.ttl"],
+  ["SKOS", "A W3C standard for vocabularies and the links between them. It defines the match predicates.", ""],
+  ["exactMatch", "Interchangeable everywhere. Not used in this crosswalk.", ""],
+  ["closeMatch", "Nearly the same meaning.", "creator → schema:creator"],
+  ["broadMatch", "The other vocabulary's term is wider.", "title → schema:name"],
+  ["narrowMatch", "The other vocabulary's term is narrower.", "size → schema:contentSize"],
+  ["relatedMatch", "Connected, but not the same kind of thing.", "publicationYear → dcterms:issued"],
+  ["Transitive", "If A equals C and B equals C, software concludes A equals B. exactMatch behaves this way.", ""],
+  ["Inverse relation", "A relationship that points the opposite way.", "IsCitedBy versus schema:citation"],
+  ["SSSOM", "A standard spreadsheet format for sharing mappings, with information about the whole file at the top.", ""],
+  ["TSV", "Tab-separated values: a spreadsheet saved as plain text with tabs between columns.", ""],
+  ["CURIE", "A short form of an address, expanded using the file's prefix list.", "datacite-prop:title"],
+  ["Prefix", "The short name before the colon in a CURIE. Each file lists what its prefixes stand for in its curie_map.", "dcterms: http://purl.org/dc/terms/"],
+  ["mapping_set_id", "A mapping file's own permanent name.", "https://w3id.org/tib/datacite/mappings/datacite-schemaorg.sssom.tsv"],
+  ["Mapping justification", "How a mapping was decided. Manual mapping curation means a person read both definitions.", "semapv:ManualMappingCuration"],
+  ["Author / reviewer", "Who wrote a mapping, and who checked it. Recorded on every row by ORCID.", "author_id, reviewer_id"],
+  ["ORCID", "A permanent identifier for a researcher.", "0000-0003-1378-5495"],
+  ["Correspondence", "A statement that two terms mean similar things. Belongs in the SSSOM files.", ""],
+  ["Conversion rule", "A recipe for translating real records, with conditions and direction.", "conversion/schemaorg.json"],
+  ["Coverage register", "One outcome for every DataCite term per vocabulary: mapped, recipe only, no equivalent, or out of scope.", "coverage/schemaorg.json"],
+  ["JSKOS", "A JSON format for vocabularies and mappings, used by Cocoda.", "jskos-mappings.json"],
+  ["Cocoda", "A web tool for creating, browsing and reviewing mappings between vocabularies.", ""],
+  ["jskos-server", "The server behind Cocoda that stores mappings and imports JSKOS files.", ""],
+  ["BARTOC", "A registry of vocabularies. Cocoda identifies each vocabulary by its BARTOC address.", "http://bartoc.org/en/node/21149"],
+  ["fromScheme / toScheme", "The two vocabularies a JSKOS mapping connects.", ""],
+  ["Concept scheme", "A whole controlled list treated as one thing.", "vocab/relationType"],
+  ["w3id", "A permanent-address service that forwards requests to wherever files are hosted.", ""],
+  ["Redirect", "An instruction to fetch something from another address. 303 means 'see this other document', the linked-data convention.", ""],
+  ["Resolve", "An address resolves when visiting it returns the file.", ""],
+  ["GitHub Pages", "GitHub's website hosting, where the files are served from.", "tibhannover.github.io/datacite"],
+  ["Content negotiation", "One address serving different formats depending on what the requester asks for.", ""],
+  ["Accept header", "The part of a request where a program says which format it wants.", "Accept: text/turtle"],
+  ["Validator", "A program that checks a file follows a format's rules.", "sssom validate, jskos-validate"],
+  ["CI", "Continuous integration: GitHub runs the checks automatically on every change.", ""],
+  ["Regression test", "A test proving an old mistake cannot come back.", ""],
+  ["Single source of truth", "The one place you edit. Everything else is generated from it.", "The four SSSOM files"],
+  ["Generated file", "A file produced by a script. Never edit it by hand.", "jskos-mappings.json"],
+  ["Pinned release", "A specific, recorded version of a vocabulary that the mappings were checked against.", "Schema.org 30.1"],
+  ["Checksum", "A fingerprint of a file. A changed file gets a different fingerprint.", "CHECKSUMS.sha256"],
+  ["Pull request", "A proposal to change a repository, where others can review the change before it is accepted.", ""]
+];
+
+const list = document.getElementById("gloss");
+const count = document.getElementById("gloss-count");
+const search = document.getElementById("gloss-search");
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+list.innerHTML = GLOSSARY.map(([term, meaning, example]) =>
+  `<div data-text="${esc((term + " " + meaning + " " + example).toLowerCase())}"><dt>${esc(term)}</dt><dd>${esc(meaning)}${example ? `<em>${esc(example)}</em>` : ""}</dd></div>`
+).join("");
+function filterGlossary() {
+  const q = search.value.trim().toLowerCase();
+  let shown = 0;
+  for (const row of list.children) {
+    const match = !q || row.dataset.text.includes(q);
+    row.hidden = !match;
+    if (match) shown++;
+  }
+  count.textContent = shown + " of " + GLOSSARY.length + " terms";
+}
+search.addEventListener("input", filterGlossary);
+filterGlossary();
+</script>
+</body>
+</html>
