@@ -37,6 +37,10 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "position": {
+      "@id": "https://schema.org/position",
+      "@type": "xsd:integer"
+    },
     "creatorName": {
       "@id": "property:creatorName"
     },
@@ -398,6 +402,7 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "inPolygonPoint": "property:inPolygonPoint",
     "fundingReferences": {
       "@id": "property:fundingReference",
       "@container": "@set"

@@ -144,7 +144,7 @@
     <rdfs:comment xml:lang="en">Latitudinal dimension of point.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/alternateIdentifier">
-    <skos:scopeNote>In RDF, this property links the resource to a AlternateIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/alternateIdentifier.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/AlternateIdentifier"/>
     <rdfs:label xml:lang="en">alternateIdentifier</rdfs:label>
@@ -181,6 +181,7 @@
     <rdfs:comment xml:lang="en">Uniquely identifies a funding entity, according to various types.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocationPolygon">
+    <skos:scopeNote>In RDF, this property links a GeoLocation to one polygon node, which holds the polygon's polygonPoint nodes and its optional inPolygonPoint.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/geoLocationPolygon.jsonld"/>
     <rdfs:label xml:lang="en">geoLocationPolygon</rdfs:label>
     <rdfs:comment xml:lang="en">A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.</rdfs:comment>
@@ -236,7 +237,7 @@
     <rdfs:comment xml:lang="en">The surname or last name of the creator.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/publisher">
-    <skos:scopeNote>In RDF, this property links the resource to a Publisher node; the node gives the publisher name with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/publisher.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Publisher"/>
     <rdfs:label xml:lang="en">publisher</rdfs:label>
@@ -295,7 +296,7 @@
     <rdfs:comment xml:lang="en">A description of the resource.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/date">
-    <skos:scopeNote>In RDF, this property links the resource to a Date node; the node gives the date value with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Date node; the node gives the date as plain text in rdf:value, alongside its dateType and dateInformation.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/date.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Date"/>
     <rdfs:label xml:lang="en">date</rdfs:label>
@@ -334,7 +335,7 @@
     <rdfs:comment xml:lang="en">Spatial region or named place where the data was gathered or about which the data is focused.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/identifier">
-    <skos:scopeNote>In RDF, this property links the resource to a Identifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/identifier.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Identifier"/>
     <rdfs:label xml:lang="en">identifier</rdfs:label>
@@ -366,7 +367,7 @@
     <rdfs:comment xml:lang="en">The general type of the related item.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/subject">
-    <skos:scopeNote>In RDF, this property links the resource to a Subject node; the node gives the subject text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/subject.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Subject"/>
     <rdfs:label xml:lang="en">subject</rdfs:label>
@@ -378,7 +379,7 @@
     <rdfs:comment xml:lang="en">The name of the subject scheme or classification code or authority if one is used.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedIdentifier">
-    <skos:scopeNote>In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/relatedIdentifier.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/RelatedIdentifier"/>
     <rdfs:label xml:lang="en">relatedIdentifier</rdfs:label>
@@ -425,7 +426,7 @@
     <rdfs:comment xml:lang="en">The type of Identifier.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/rights">
-    <skos:scopeNote>In RDF, this property links the resource to a Rights node; the node gives the rights statement with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/rights.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Rights"/>
     <rdfs:label xml:lang="en">rights</rdfs:label>
@@ -442,19 +443,20 @@
     <rdfs:comment xml:lang="en">Volume of the related item.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/polygonPoint">
+    <skos:scopeNote>In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first).</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/polygonPoint.jsonld"/>
     <rdfs:label xml:lang="en">polygonPoint</rdfs:label>
     <rdfs:comment xml:lang="en">A point location in a polygon.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/description">
-    <skos:scopeNote>In RDF, this property links the resource to a Description node; the node gives the description text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/description.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Description"/>
     <rdfs:label xml:lang="en">description</rdfs:label>
     <rdfs:comment xml:lang="en">All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/contributor">
-    <skos:scopeNote>In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/contributor.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Contributor"/>
     <rdfs:label xml:lang="en">contributor</rdfs:label>
@@ -488,7 +490,7 @@
     <rdfs:comment xml:lang="en">A point location in space.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/creator">
-    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first).</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/creator.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Creator"/>
     <rdfs:label xml:lang="en">creator</rdfs:label>
@@ -520,7 +522,7 @@
     <rdfs:comment xml:lang="en">Southern latitude of box .</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/title">
-    <skos:scopeNote>In RDF, this property links the resource to a Title node; the node gives the title text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/property/title.jsonld"/>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Title"/>
     <rdfs:label xml:lang="en">title</rdfs:label>

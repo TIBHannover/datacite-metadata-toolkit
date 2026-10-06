@@ -16,7 +16,8 @@
       "path": "dcp:contributor"
     },
     "https://w3id.org/tib/datacite/class/Creator": {
-      "path": "dcp:creator"
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
     },
     "https://w3id.org/tib/datacite/class/Date": {
       "path": "dcp:date"
@@ -110,7 +111,8 @@
       "path": "dcp:contributor/dcp:contributorType"
     },
     "https://w3id.org/tib/datacite/property/creator": {
-      "path": "dcp:creator"
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
     },
     "https://w3id.org/tib/datacite/property/creatorName": {
       "path": "dcp:creator/dcp:creatorName"
@@ -218,7 +220,8 @@
       "path": "dcp:geoLocation/(dcp:geoLocationPoint|dcp:geoLocationPolygon/(dcp:polygonPoint|dcp:inPolygonPoint))/dcp:pointLongitude"
     },
     "https://w3id.org/tib/datacite/property/polygonPoint": {
-      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:polygonPoint"
+      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:polygonPoint",
+      "note": "Each polygon point has schema:position (1 = first); sort by it to recover the drawing order."
     },
     "https://w3id.org/tib/datacite/property/publicationYear": {
       "path": "dcp:publicationYear"

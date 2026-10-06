@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://schema.stage.datacite.org/linked-data/class/Rights"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Rights node; the node gives the rights statement with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme."
 }

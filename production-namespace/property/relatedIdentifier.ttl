@@ -6,5 +6,5 @@
     rdfs:label "relatedIdentifier" ;
     rdfs:comment "Identifiers of related resources. These must be globally unique identifiers." ;
     rdfs:range <https://w3id.org/tib/datacite/class/RelatedIdentifier> ;
-    skos:scopeNote "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it." .
+    skos:scopeNote "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers." .
 

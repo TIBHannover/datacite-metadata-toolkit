@@ -84,6 +84,11 @@ cp "$MAPPINGS_SRC"/datacite-*.sssom.tsv \
    "$MAPPINGS_SRC/rdf-paths.json" \
    "$DST/mappings/"
 cp -r "$MAPPINGS_SRC/conversion" "$MAPPINGS_SRC/coverage" "$DST/mappings/"
+# Publish the SHACL shapes that check DataCite RDF made with the current
+# context (https://w3id.org/tib/datacite/shapes/<file>).
+SHAPES_SRC="${SHAPES_SRC:-validation-and-conversion/shapes}"
+mkdir -p "$DST/shapes"
+cp "$SHAPES_SRC"/*.shacl.ttl "$DST/shapes/"
 # The crosswalk guide is the mappings/ landing page. Its "back" link points to
 # the namespace home instead of the toolkit website's docs page.
 GUIDE_SRC="${GUIDE_SRC:-website/crosswalk-guide.html}"

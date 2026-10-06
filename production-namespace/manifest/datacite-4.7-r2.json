@@ -5,7 +5,7 @@
   "revision": 2,
   "releaseDate": "2026-10-06",
   "schemaReleaseDate": "2026-03-03",
-  "revisionNote": "Revision 2 of the TIB linked-data modelling of DataCite 4.7. Repeatable elements (creators, titles, descriptions, dates, identifiers, rights, ...) become their own nodes, linked from the resource, with the element's text in rdf:value beside its type, scheme and language. Same terms as 4.7.",
+  "revisionNote": "Revision 2 of the TIB linked-data modelling of DataCite 4.7. Repeatable elements (creators, titles, descriptions, dates, identifiers, rights, ...) become their own nodes, linked from the resource. The element's main text is in rdf:value, exactly once, beside its type, scheme and language; dates and identifiers are plain strings. Each creator records its place in DataCite's priority order with schema:position (1 = first). Same terms as 4.7.",
   "context": [
     "https://w3id.org/tib/datacite/context/fullcontext-4.7-r2.jsonld",
     "https://w3id.org/tib/datacite/vocab/context.jsonld",

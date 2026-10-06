@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://w3id.org/tib/datacite/class/Description"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Description node; the node gives the description text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType."
 }

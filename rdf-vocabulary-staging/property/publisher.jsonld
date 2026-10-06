@@ -13,5 +13,5 @@
   "rdfs:range": {
     "@id": "https://schema.stage.datacite.org/linked-data/class/Publisher"
   },
-  "skos:scopeNote": "In RDF, this property links the resource to a Publisher node; the node gives the publisher name with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it."
+  "skos:scopeNote": "In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme."
 }
