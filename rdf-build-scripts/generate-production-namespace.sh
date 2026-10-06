@@ -81,6 +81,7 @@ cp "$MAPPINGS_SRC"/datacite-*.sssom.tsv \
    "$MAPPINGS_SRC/SKOS_crosswalks.jsonld" \
    "$MAPPINGS_SRC/jskos-mappings.json" \
    "$MAPPINGS_SRC/target-sources.json" \
+   "$MAPPINGS_SRC/rdf-paths.json" \
    "$DST/mappings/"
 cp -r "$MAPPINGS_SRC/conversion" "$MAPPINGS_SRC/coverage" "$DST/mappings/"
 # The crosswalk guide is the mappings/ landing page. Its "back" link points to

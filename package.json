@@ -12,6 +12,8 @@
     "build:mappings": "python3 rdf-build-scripts/build-mappings.py",
     "check:mappings": "python3 rdf-build-scripts/build-mappings.py --check && npm run validate-mappings",
     "test:mappings": "python3 -m unittest discover -s tests/mappings -p 'test_*.py' && node --test tests/mappings/validate.test.js",
+    "test:conversion": "python3 -m unittest discover -s tests/conversion -p 'test_*.py'",
+    "convert:rdf": "python3 validation-and-conversion/scripts/datacite_to_rdf.py",
     "validate-profiles": "for f in validation-and-conversion/schemas/schema-profiles/*.json validation-and-conversion/schemas/schema-profiles/*.jsonld; do echo \"=== $f ===\"; npx ajv-cli --strict=false --spec=draft2019 compile -s \"$f\" || exit 1; done"
   },
   "dependencies": {

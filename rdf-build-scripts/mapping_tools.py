@@ -225,9 +225,34 @@ def check_coverage(path, target, sources, mapped, rules):
     require(seen == sources, f"{path}: missing coverage for {len(sources - seen)} source terms: {', '.join(sorted(sources - seen)[:5])}")
 
 
+def check_rdf_paths(path, sources):
+    """Every DataCite term needs a valid SPARQL property path into DataCite RDF."""
+    from rdflib.plugins.sparql import prepareQuery  # rdflib is installed with sssom
+
+    document = read_json(path)
+    require(document.get("version") == 1 and isinstance(document.get("terms"), dict), f"{path}: invalid rdf-paths document")
+    prefixes = document.get("prefixes", {})
+    declarations = "".join(f"PREFIX {name}: <{iri}>\n" for name, iri in prefixes.items())
+    terms = document["terms"]
+    require(set(terms) == sources, f"{path}: missing or unknown terms: {sorted(sources ^ set(terms))[:5]}")
+    for term, entry in terms.items():
+        location = f"{path}: {term}"
+        rdf_path = entry.get("path")
+        if rdf_path is None:
+            require(term == BASE + "class/Resource", f"{location}: missing path")
+            continue
+        try:
+            prepareQuery(declarations + f"SELECT ?v WHERE {{ ?r {rdf_path} ?v }}")
+        except Exception as error:
+            raise MappingError(f"{location}: invalid SPARQL property path {rdf_path!r}: {error}") from error
+        if term.startswith(BASE + "vocab/"):
+            require(entry.get("value") == term, f"{location}: controlled value must name its own IRI")
+
+
 def validate_sources(root):
     sources = canonical_sources(root)
     directory = root / "mappings"
+    check_rdf_paths(directory / "rdf-paths.json", sources)
     inventory = read_json(directory / "target-vocabularies.json")
     require(inventory.get("version") == 1 and isinstance(inventory.get("terms"), dict), "Invalid target-vocabularies.json inventory")
     # DCAT reuses DCTERMS terms; read it last so shared triples keep the DCTERMS row.
@@ -392,7 +417,7 @@ def check_published_copy(root):
     require(published.is_dir(), f"Missing {published}; run bash rdf-build-scripts/generate-production-namespace.sh")
     source = root / "mappings"
     names = [p.name for p in source.glob("datacite-*.sssom.tsv")]
-    names += [*EXPORTS, "target-sources.json"]
+    names += [*EXPORTS, "target-sources.json", "rdf-paths.json"]
     names += [f"{group}/{p.name}" for group in ("conversion", "coverage") for p in (source / group).glob("*.json")]
     for name in sorted(names):
         copy = published / name

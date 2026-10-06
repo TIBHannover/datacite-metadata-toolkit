@@ -61,7 +61,7 @@ jobs:
 
       - name: Check committed generated artifacts are current
         run: |
-          if ! git diff --exit-code -- rdf-vocabulary-staging/dist/datacite-4.7.owl production-namespace; then
+          if ! git diff --exit-code -- rdf-vocabulary-staging/dist production-namespace; then
             echo "::error::Generated namespace artifacts are out of date. Regenerate the OWL artifact and production namespace, then commit the result."
             exit 1
           fi

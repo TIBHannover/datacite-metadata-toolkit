@@ -2,3 +2,5 @@
 PyYAML==6.0.3
 sssom==0.4.16
 sssom-schema==1.0.0
+# rdflib parses mappings/rdf-paths.json and runs the conversion tests.
+rdflib==7.6.0

@@ -13,7 +13,15 @@ SOURCE_DIR = BASE_DIR.parent.parent / "rdf-vocabulary-staging"
 
 # env vars
 NAMESPACE = os.environ.get("DATACITE_NAMESPACE", "https://w3id.org/tib/datacite/")
-VERSION = os.environ.get("DATACITE_VERSION", "4.7")
+
+def current_version():
+    """Default to the release named in the staging current-version pointer."""
+    pointer = SOURCE_DIR / "manifest" / "datacite-current.json"
+    with open(pointer, "r", encoding="utf-8") as f:
+        return json.load(f)["currentVersion"]
+
+
+VERSION = os.environ.get("DATACITE_VERSION") or current_version()
 
 def validate_date(value):
     try:
@@ -128,11 +136,14 @@ def main():
     g.add((ontology_iri, RDF.type, OWL.Ontology))
     g.add((ontology_iri, OWL.versionIRI, version_iri))
     g.add((ontology_iri, OWL.versionInfo, Literal(VERSION)))
+    # "4.7-r2" is revision 2 of the TIB modelling of DataCite schema 4.7.
+    schema_version, _, revision = VERSION.partition("-r")
     g.add((ontology_iri, DCTERMS.title,
            Literal(f"DataCite Linked Data Ontology {VERSION}", lang="en")))
     g.add((ontology_iri, DCTERMS.description, Literal(
         f"OWL representation of the DataCite linked-data vocabulary "
-        f"for DataCite Metadata Schema {VERSION}.", lang="en")))
+        f"for DataCite Metadata Schema {schema_version}"
+        + (f" (modelling revision {revision})." if revision else "."), lang="en")))
     g.add((ontology_iri, DCTERMS.created, Literal(ontology_created_date(), datatype=XSD.date)))
     g.add((ontology_iri, DCTERMS.source, manifest_iri))
     g.add((ontology_iri, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))

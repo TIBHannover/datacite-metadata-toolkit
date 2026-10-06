@@ -110,6 +110,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/alternateIdentifier">
     <rdfs:comment>An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number.</rdfs:comment>
     <rdfs:label>alternateIdentifier</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/AlternateIdentifier"/>
+    <skos:scopeNote>In RDF, this property links the resource to a AlternateIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/alternateIdentifierType">
     <rdfs:comment>The type of the AlternateIdentifier.</rdfs:comment>
@@ -134,6 +136,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/contributor">
     <rdfs:comment>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.</rdfs:comment>
     <rdfs:label>contributor</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Contributor"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Contributor node; the node gives its name with contributorName and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/contributorName">
     <rdfs:comment>The full name of the contributor.</rdfs:comment>
@@ -146,6 +150,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/creator">
     <rdfs:comment>The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.</rdfs:comment>
     <rdfs:label>creator</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Creator"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives its name with creatorName and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/creatorName">
     <rdfs:comment>The full name of the creator.</rdfs:comment>
@@ -154,6 +160,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/date">
     <rdfs:comment>Different dates relevant to the work.</rdfs:comment>
     <rdfs:label>date</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Date"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Date node; the node gives the date value with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/dateInformation">
     <rdfs:comment>Specific information about the date, if appropriate.</rdfs:comment>
@@ -166,6 +174,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/description">
     <rdfs:comment>All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</rdfs:comment>
     <rdfs:label>description</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Description"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Description node; the node gives the description text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/descriptionType">
     <rdfs:comment>The type of the Description.</rdfs:comment>
@@ -206,10 +216,14 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/fundingReference">
     <rdfs:comment>Information about financial support (funding) for the resource being registered.</rdfs:comment>
     <rdfs:label>fundingReference</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/FundingReference"/>
+    <skos:scopeNote>In RDF, this property links the resource to a FundingReference node, which groups the element's sub-properties.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/geoLocation">
     <rdfs:comment>Spatial region or named place where the data was gathered or about which the data is focused.</rdfs:comment>
     <rdfs:label>geoLocation</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/GeoLocation"/>
+    <skos:scopeNote>In RDF, this property links the resource to a GeoLocation node, which groups the element's sub-properties.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/geoLocationBox">
     <rdfs:comment>The spatial limits of a box.</rdfs:comment>
@@ -234,6 +248,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/identifier">
     <rdfs:comment>The Identifier is a unique string that identifies a resource.</rdfs:comment>
     <rdfs:label>identifier</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Identifier"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Identifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/identifierType">
     <rdfs:comment>The type of Identifier.</rdfs:comment>
@@ -298,6 +314,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/publisher">
     <rdfs:comment>The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.</rdfs:comment>
     <rdfs:label>publisher</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Publisher"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Publisher node; the node gives the publisher name with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/publisherIdentifier">
     <rdfs:comment>Uniquely identifies the publisher, according to various schemes.</rdfs:comment>
@@ -310,6 +328,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/relatedIdentifier">
     <rdfs:comment>Identifiers of related resources. These must be globally unique identifiers.</rdfs:comment>
     <rdfs:label>relatedIdentifier</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/RelatedIdentifier"/>
+    <skos:scopeNote>In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/relatedIdentifierType">
     <rdfs:comment>The type of the RelatedIdentifier.</rdfs:comment>
@@ -318,6 +338,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/relatedItem">
     <rdfs:comment>Information about a resource related to the one being registered.</rdfs:comment>
     <rdfs:label>relatedItem</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/RelatedItem"/>
+    <skos:scopeNote>In RDF, this property links the resource to a RelatedItem node, which groups the element's sub-properties.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/relatedItemIdentifier">
     <rdfs:comment>The identifier for the related item.</rdfs:comment>
@@ -354,6 +376,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/rights">
     <rdfs:comment>Any rights information for this resource.</rdfs:comment>
     <rdfs:label>rights</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Rights"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Rights node; the node gives the rights statement with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/rightsIdentifier">
     <rdfs:comment>A short standardized identifier for the licence.</rdfs:comment>
@@ -386,6 +410,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/subject">
     <rdfs:comment>Subject, keyword, classification code, or key phrase describing the resource.</rdfs:comment>
     <rdfs:label>subject</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Subject"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Subject node; the node gives the subject text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/subjectScheme">
     <rdfs:comment>The name of the subject scheme or classification code or authority if one is used.</rdfs:comment>
@@ -394,6 +420,8 @@
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/title">
     <rdfs:comment>A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.</rdfs:comment>
     <rdfs:label>title</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Title"/>
+    <skos:scopeNote>In RDF, this property links the resource to a Title node; the node gives the title text with rdf:value and holds the element's qualifiers (type, scheme, language) alongside it.</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/titleType">
     <rdfs:comment>The type of Title (other than the Main Title).</rdfs:comment>
@@ -2095,12 +2123,12 @@
     <dcterms:contributor rdf:resource="https://github.com/DenizJaeger"/>
     <dcterms:contributor rdf:resource="https://github.com/selgebali"/>
     <dcterms:contributor rdf:resource="https://orcid.org/0000-0003-1378-5495"/>
-    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-03</dcterms:created>
-    <dcterms:description xml:lang="en">OWL representation of the DataCite linked-data vocabulary for DataCite Metadata Schema 4.7.</dcterms:description>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-06</dcterms:created>
+    <dcterms:description xml:lang="en">OWL representation of the DataCite linked-data vocabulary for DataCite Metadata Schema 4.7 (modelling revision 2).</dcterms:description>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:source rdf:resource="https://w3id.org/tib/datacite/manifest/datacite-4.7.json"/>
-    <dcterms:title xml:lang="en">DataCite Linked Data Ontology 4.7</dcterms:title>
-    <owl:versionIRI rdf:resource="https://w3id.org/tib/datacite/dist/datacite-4.7"/>
-    <owl:versionInfo>4.7</owl:versionInfo>
+    <dcterms:source rdf:resource="https://w3id.org/tib/datacite/manifest/datacite-4.7-r2.json"/>
+    <dcterms:title xml:lang="en">DataCite Linked Data Ontology 4.7-r2</dcterms:title>
+    <owl:versionIRI rdf:resource="https://w3id.org/tib/datacite/dist/datacite-4.7-r2"/>
+    <owl:versionInfo>4.7-r2</owl:versionInfo>
   </owl:Ontology>
 </rdf:RDF>
