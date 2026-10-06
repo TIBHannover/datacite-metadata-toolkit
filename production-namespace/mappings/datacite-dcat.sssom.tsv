@@ -15,7 +15,7 @@
 #   Wikidata evidence is a dated lookup, not an immutable vocabulary release.
 # curie_map:
 #   orcid: https://orcid.org/
-#   dataciteschema: https://datacite-metadata-schema.readthedocs.io 
+#   dataciteschema: https://schema.datacite.org/meta/
 #   datacite-class: https://w3id.org/tib/datacite/class/
 #   datacite-prop: https://w3id.org/tib/datacite/property/
 #   datacite-vocab: https://w3id.org/tib/datacite/vocab/

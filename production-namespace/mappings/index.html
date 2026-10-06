@@ -406,6 +406,7 @@ sssom validate mappings/datacite-schemaorg.sssom.tsv</code></pre>
         <li><span>Change the row in the right <code>datacite-*.sssom.tsv</code> file. Explain your reasoning in the <code>comment</code> column.</span></li>
         <li><span>If a term gains or loses its only mapping, update its outcome in <code>coverage/</code>.</span></li>
         <li><span>Regenerate the JSKOS and SKOS files: <code>npm run build:mappings</code></span></li>
+        <li><span>Refresh the published copy in <code>production-namespace/</code>: <code>npm run build:production-namespace</code>. The checks fail on an out-of-date copy.</span></li>
         <li><span>Run the checks: <code>npm run check:mappings</code> and <code>npm run test:mappings</code></span></li>
         <li><span>Open a pull request on the toolkit repository so the change can be reviewed.</span></li>
       </ol>
