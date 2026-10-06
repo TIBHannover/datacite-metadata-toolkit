@@ -1,7 +1,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/geoLocationPolygon> a rdf:Property ;
     rdfs:label "geoLocationPolygon" ;
-    rdfs:comment "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain." .
+    rdfs:comment "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain." ;
+    skos:scopeNote "In RDF, this property links a GeoLocation to one polygon node, which holds the polygon's polygonPoint nodes and its optional inPolygonPoint." .
 

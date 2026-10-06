@@ -6,6 +6,10 @@
         "fr" ;
     dcp:affiliation [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
             dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
+        [ dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
+            dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
+        [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+            dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
         [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
             dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
         [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
@@ -35,10 +39,6 @@
         [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
             dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
         [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-            dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
-        [ dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-            dcp:affiliationIdentifierScheme "ROR"^^xsd:string ],
-        [ dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
             dcp:affiliationIdentifierScheme "ROR"^^xsd:string ] ;
     dcp:alternateIdentifier "12345" ;
     dcp:alternateIdentifierType "Local accession number"^^xsd:string ;
@@ -106,12 +106,12 @@
     dcp:geoLocationPlace "Vancouver, British Columbia, Canada" ;
     dcp:geoLocationPoint [ dcp:pointLatitude "49.2827" ;
             dcp:pointLongitude "-123.1207" ] ;
-    dcp:geoLocationPolygon [ dcp:polygonPoint [ dcp:pointLatitude "42.893" ;
-                    dcp:pointLongitude "-69.622" ] ],
-        [ dcp:polygonPoint [ dcp:pointLatitude "41.991" ;
+    dcp:geoLocationPolygon [ dcp:polygonPoint [ dcp:pointLatitude "41.991" ;
                     dcp:pointLongitude "-71.032" ] ],
         [ dcp:polygonPoint [ dcp:pointLatitude "41.991" ;
                     dcp:pointLongitude "-68.211" ] ],
+        [ dcp:polygonPoint [ dcp:pointLatitude "42.893" ;
+                    dcp:pointLongitude "-69.622" ] ],
         [ dcp:polygonPoint [ dcp:pointLatitude "41.090" ;
                     dcp:pointLongitude "-69.622" ] ],
         [ dcp:polygonPoint [ dcp:pointLatitude "41.991" ;

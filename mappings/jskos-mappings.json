@@ -8701,6 +8701,61 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/dcmitype/InteractiveResource",
+          "notation": [
+            "InteractiveResource"
+          ],
+          "prefLabel": {
+            "en": "InteractiveResource"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/17909"
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "DataCite's suggested Dublin Core mapping for ComputationalNotebook is InteractiveResource; the DCMI category is broader."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
+          "notation": [
+            "resourceTypeGeneral/ComputationalNotebook"
+          ],
+          "prefLabel": {
+            "en": "ComputationalNotebook"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/SoftwareSourceCode",
           "notation": [
             "SoftwareSourceCode"
