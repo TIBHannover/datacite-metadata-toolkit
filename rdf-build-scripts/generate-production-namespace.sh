@@ -83,6 +83,11 @@ cp "$MAPPINGS_SRC"/datacite-*.sssom.tsv \
    "$MAPPINGS_SRC/target-sources.json" \
    "$DST/mappings/"
 cp -r "$MAPPINGS_SRC/conversion" "$MAPPINGS_SRC/coverage" "$DST/mappings/"
+# The crosswalk guide is the mappings/ landing page. Its "back" link points to
+# the namespace home instead of the toolkit website's docs page.
+GUIDE_SRC="${GUIDE_SRC:-website/crosswalk-guide.html}"
+perl -pe 's|<a href="docs-index.html">Back to the documentation</a>|<a href="../">Back to the DataCite namespace</a>|' \
+  "$GUIDE_SRC" > "$DST/mappings/index.html"
 
 CHECKSUMS_FILE="CHECKSUMS.sha256"
 INTEGRITY_FILE="manifest/bundle-integrity.json"

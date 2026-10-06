@@ -398,3 +398,9 @@ def check_published_copy(root):
         copy = published / name
         require(copy.is_file() and copy.read_bytes() == (source / name).read_bytes(),
                 f"Stale published mapping {copy}; run bash rdf-build-scripts/generate-production-namespace.sh")
+    # The guide is published as the mappings/ landing page with a namespace-home back link.
+    guide = (root / "website" / "crosswalk-guide.html").read_text(encoding="utf-8").replace(
+        '<a href="docs-index.html">Back to the documentation</a>', '<a href="../">Back to the DataCite namespace</a>')
+    index = published / "index.html"
+    require(index.is_file() and index.read_text(encoding="utf-8") == guide,
+            f"Stale published guide {index}; run bash rdf-build-scripts/generate-production-namespace.sh")

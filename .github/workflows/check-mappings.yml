@@ -8,6 +8,7 @@ on:
       - "rdf-build-scripts/*mapping*"
       - "tests/mappings/**"
       - "validation-and-conversion/scripts/validate.js"
+      - "website/crosswalk-guide.html"
       - "package.json"
       - ".github/workflows/check-mappings.yml"
   push:
@@ -18,6 +19,7 @@ on:
       - "rdf-build-scripts/*mapping*"
       - "tests/mappings/**"
       - "validation-and-conversion/scripts/validate.js"
+      - "website/crosswalk-guide.html"
       - "package.json"
       - ".github/workflows/check-mappings.yml"
   workflow_dispatch:
