@@ -164,7 +164,7 @@ npm run --silent convert:rdf -- validation-and-conversion/examples/real-dataset-
 pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
 ```
 
-The converter reads a DataCite REST API record and writes Turtle. The SHACL shapes check the conventions: text in `rdf:value`, exactly once; dates and identifiers as plain strings; creators and polygon points numbered with `schema:position`; controlled values from the DataCite vocabularies. `pip install -r rdf-build-scripts/requirements-mappings.txt` installs both tools' Python dependencies.
+The converter reads a DataCite REST API record and writes Turtle. If a creator or contributor has an empty name-identifier entry (for example, an ORCID scheme with `nameIdentifier: null`), conversion stops with the field location and an instruction to supply the identifier or remove the empty entry. It does not invent identifiers or silently drop these entries. The SHACL shapes check the conventions: text in `rdf:value`, exactly once; dates and identifiers as plain strings; creators and polygon points numbered with `schema:position`; controlled values from the DataCite vocabularies. `pip install -r rdf-build-scripts/requirements-mappings.txt` installs both tools' Python dependencies.
 
 ### 3. Validate a DataCite XML record
 

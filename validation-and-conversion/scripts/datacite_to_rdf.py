@@ -177,7 +177,27 @@ def merge_api_identifiers(record):
         record["alternateIdentifiers"] = alternates
 
 
+def check_name_identifiers(value, path="$"):
+    """Reject identifier entries with no value rather than emitting empty RDF nodes."""
+    if isinstance(value, list):
+        for index, item in enumerate(value):
+            check_name_identifiers(item, f"{path}[{index}]")
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            if key == "nameIdentifiers" and isinstance(item, list):
+                for index, entry in enumerate(item):
+                    if isinstance(entry, dict):
+                        identifier = entry.get("nameIdentifier")
+                        if not isinstance(identifier, str) or not identifier.strip():
+                            raise ValueError(
+                                f"{path}.{key}[{index}].nameIdentifier has no nonempty identifier value; "
+                                "supply the identifier or remove the empty entry before conversion"
+                            )
+            check_name_identifiers(item, f"{path}.{key}")
+
+
 def prepare(attributes):
+    check_name_identifiers(attributes)
     record = copy.deepcopy(attributes)
     merge_api_identifiers(record)
     protect_identifiers(record)
@@ -211,7 +231,10 @@ def main():
     parser.add_argument("--context", default=str(DEFAULT_CONTEXT), help="JSON-LD context file")
     parser.add_argument("--no-prepare", action="store_true", help="use the JSON-LD context only")
     args = parser.parse_args()
-    graph = to_graph(record_attributes(args.record), load_context(args.context), prepared=not args.no_prepare)
+    try:
+        graph = to_graph(record_attributes(args.record), load_context(args.context), prepared=not args.no_prepare)
+    except ValueError as error:
+        parser.error(str(error))
     sys.stdout.write(graph.serialize(format="turtle"))
 
 
