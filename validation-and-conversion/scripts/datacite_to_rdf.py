@@ -7,7 +7,8 @@ node, linked from the resource, with its text in rdf:value and its qualifiers
 priority order with schema:position (1 = first).
 
 The JSON-LD context alone produces that structure. prepare() adds what a context
-cannot: an explicit rdf:type on each node, the creators' positions, a language tag on the text (JSON-LD
+cannot: an explicit rdf:type on each node, the positions of creators and
+polygon points, a language tag on the text (JSON-LD
 cannot move a sibling "lang" key onto a value), a Publisher node for a publisher
 given only as a name (as related items do), alternate identifiers that the REST
 API lists under "identifiers", and protection for identifiers that are not web
@@ -80,6 +81,40 @@ def publisher_node(container):
         tag_language(publisher, "name")
 
 
+def as_list(value):
+    return value if isinstance(value, list) else [] if value is None else [value]
+
+
+def is_point_entry(entry):
+    """One entry of an API polygon: {"polygonPoint": {...}} or {"inPolygonPoint": {...}}."""
+    return isinstance(entry, dict) and (isinstance(entry.get("polygonPoint"), dict) or set(entry) == {"inPolygonPoint"})
+
+
+def polygon_nodes(geo_location):
+    """Give each polygon one node holding its points, numbered in drawing order, and its inPolygonPoint.
+
+    The REST API lists one polygon as [{"polygonPoint": {...}}, ..., {"inPolygonPoint": {...}}]
+    and several as a list of such lists; XML-shaped JSON uses {"polygonPoint": [...]}.
+    """
+    polygons = as_list(geo_location.get("geoLocationPolygon"))
+    if polygons and all(is_point_entry(entry) for entry in polygons):
+        polygons = [polygons]  # a single polygon, given as its list of points
+    nodes = []
+    for polygon in polygons:
+        if isinstance(polygon, dict):
+            polygon = [{"polygonPoint": point} for point in as_list(polygon.get("polygonPoint"))] + \
+                      [{"inPolygonPoint": point} for point in as_list(polygon.get("inPolygonPoint"))]
+        node = {"polygonPoint": []}
+        for entry in as_list(polygon):
+            if isinstance(entry, dict) and isinstance(entry.get("polygonPoint"), dict):
+                node["polygonPoint"].append(dict(entry["polygonPoint"], position=len(node["polygonPoint"]) + 1))
+            if isinstance(entry, dict) and isinstance(entry.get("inPolygonPoint"), dict):
+                node["inPolygonPoint"] = entry["inPolygonPoint"]
+        nodes.append(node)
+    if nodes:
+        geo_location["geoLocationPolygon"] = nodes
+
+
 def type_items(container):
     """Add rdf:type and language tags to structured lists, including those nested in related items."""
     for key, (cls, text_key) in STRUCTURED.items():
@@ -91,6 +126,8 @@ def type_items(container):
                 item["@type"] = cls
                 if key == "creators":
                     item["position"] = position
+                if key == "geoLocations":
+                    polygon_nodes(item)
                 tag_language(item, text_key)
                 publisher_node(item)
                 type_items(item)

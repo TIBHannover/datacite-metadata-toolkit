@@ -231,6 +231,49 @@ class CreatorOrderTest(unittest.TestCase):
         self.assertEqual(creator_names(graph, item), [c["name"] for c in attributes["relatedItems"][0]["creators"]])
 
 
+def point(latitude, longitude):
+    return {"pointLatitude": latitude, "pointLongitude": longitude}
+
+
+SQUARE = [point("0", "0"), point("0", "1"), point("1", "1"), point("1", "0"), point("0", "0")]
+
+
+class PolygonTest(unittest.TestCase):
+    def convert(self, polygon):
+        attributes = {"doi": "10.1234/geo", "geoLocations": [{"geoLocationPolygon": polygon}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        location = next(graph.objects(rdflib.URIRef("https://doi.org/10.1234/geo"), DCP.geoLocation))
+        return graph, list(graph.objects(location, DCP.geoLocationPolygon))
+
+    def points(self, graph, polygon):
+        nodes = sorted(graph.objects(polygon, DCP.polygonPoint), key=lambda n: graph.value(n, POSITION).toPython())
+        return [point(str(graph.value(n, DCP.pointLatitude)), str(graph.value(n, DCP.pointLongitude))) for n in nodes]
+
+    def test_points_form_one_polygon_in_drawing_order(self):
+        attributes, graph = convert(EXAMPLES / "record.json")
+        location = next(graph.objects(rdflib.URIRef("https://doi.org/" + attributes["doi"]), DCP.geoLocation))
+        polygons = list(graph.objects(location, DCP.geoLocationPolygon))
+        self.assertEqual(len(polygons), 1)
+        expected = [entry["polygonPoint"] for entry in attributes["geoLocations"][0]["geoLocationPolygon"]]
+        self.assertEqual(self.points(graph, polygons[0]), expected)
+
+    def test_in_polygon_point_is_kept(self):
+        graph, polygons = self.convert([{"polygonPoint": p} for p in SQUARE] + [{"inPolygonPoint": point("0.5", "0.5")}])
+        inside = graph.value(polygons[0], DCP.inPolygonPoint)
+        self.assertEqual((str(graph.value(inside, DCP.pointLatitude)), str(graph.value(inside, DCP.pointLongitude))), ("0.5", "0.5"))
+        self.assertEqual(self.points(graph, polygons[0]), SQUARE)
+
+    def test_several_polygons_stay_apart(self):
+        other = [point("5", "5"), point("5", "6"), point("6", "6"), point("5", "5")]
+        graph, polygons = self.convert([[{"polygonPoint": p} for p in SQUARE], [{"polygonPoint": p} for p in other]])
+        self.assertEqual(sorted(len(self.points(graph, p)) for p in polygons), [4, 5])
+
+    def test_xml_shaped_polygon(self):
+        graph, polygons = self.convert({"polygonPoint": SQUARE, "inPolygonPoint": point("0.5", "0.5")})
+        self.assertEqual(self.points(graph, polygons[0]), SQUARE)
+        self.assertIsNotNone(graph.value(polygons[0], DCP.inPolygonPoint))
+
+
 SHAPE_PREFIXES = """
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcp: <https://w3id.org/tib/datacite/property/> .
@@ -250,6 +293,10 @@ BROKEN = {
                                      '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 1 ] .',
     "gap in creator positions": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 1 ] , '
                                 '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 3 ] .',
+    "polygon point without a position": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPolygon [ dcp:polygonPoint '
+        + ' , '.join(f'[ dcp:pointLatitude "{i}" ; dcp:pointLongitude "0" ]' for i in range(4)) + ' ] ] .',
+    "polygon with three points": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPolygon [ dcp:polygonPoint '
+        + ' , '.join(f'[ dcp:pointLatitude "{i}" ; dcp:pointLongitude "0" ; schema:position {i + 1} ]' for i in range(3)) + ' ] ] .',
     "creator position starts at 0": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 0 ] .',
     "language tag on a date": 'doi:x dcp:date [ a dcc:Date ; rdf:value "2020"@en ; '
                               'dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Issued> ] .',
