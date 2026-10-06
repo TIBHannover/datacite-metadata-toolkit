@@ -230,6 +230,7 @@ Mapping predicates are deliberately conservative. A `skos:relatedMatch` records 
 ```bash
 pip install -r rdf-build-scripts/requirements-mappings.txt
 npm run build:mappings   # regenerate SKOS/JSKOS exports from SSSOM
+npm run build:production-namespace   # refresh the published copy in production-namespace/mappings/
 npm run check:mappings   # validate sources, coverage and exports without writing
 npm run test:mappings    # regression tests
 ```
