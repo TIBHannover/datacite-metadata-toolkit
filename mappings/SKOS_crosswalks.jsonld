@@ -1126,6 +1126,11 @@
     {
       "@id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
       "rdfs:label": "ComputationalNotebook",
+      "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/dcmitype/InteractiveResource"
+        }
+      ],
       "skos:relatedMatch": [
         {
           "@id": "https://schema.org/SoftwareSourceCode"

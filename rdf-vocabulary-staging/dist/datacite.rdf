@@ -181,6 +181,7 @@
     <rdfs:comment xml:lang="en">Uniquely identifies a funding entity, according to various types.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/geoLocationPolygon">
+    <skos:scopeNote>In RDF, this property links a GeoLocation to one polygon node, which holds the polygon's polygonPoint nodes and its optional inPolygonPoint.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://schema.stage.datacite.org/linked-data/property/geoLocationPolygon.jsonld"/>
     <rdfs:label xml:lang="en">geoLocationPolygon</rdfs:label>
     <rdfs:comment xml:lang="en">A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.</rdfs:comment>
@@ -442,6 +443,7 @@
     <rdfs:comment xml:lang="en">Volume of the related item.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/polygonPoint">
+    <skos:scopeNote>In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first).</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://schema.stage.datacite.org/linked-data/property/polygonPoint.jsonld"/>
     <rdfs:label xml:lang="en">polygonPoint</rdfs:label>
     <rdfs:comment xml:lang="en">A point location in a polygon.</rdfs:comment>
@@ -488,7 +490,7 @@
     <rdfs:comment xml:lang="en">A point location in space.</rdfs:comment>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/creator">
-    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first).</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="https://schema.stage.datacite.org/linked-data/property/creator.jsonld"/>
     <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Creator"/>
     <rdfs:label xml:lang="en">creator</rdfs:label>

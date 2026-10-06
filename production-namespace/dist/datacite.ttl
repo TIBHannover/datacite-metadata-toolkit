@@ -1893,10 +1893,11 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/publicationYear.jsonld> .
 
 <https://w3id.org/tib/datacite/property/polygonPoint>
-        rdf:type      rdf:Property;
-        rdfs:comment  "A point location in a polygon."@en;
-        rdfs:label    "polygonPoint"@en;
-        rdfs:seeAlso  <https://w3id.org/tib/datacite/property/polygonPoint.jsonld> .
+        rdf:type        rdf:Property;
+        rdfs:comment    "A point location in a polygon."@en;
+        rdfs:label      "polygonPoint"@en;
+        rdfs:seeAlso    <https://w3id.org/tib/datacite/property/polygonPoint.jsonld>;
+        skos:scopeNote  "In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first)." .
 
 <https://w3id.org/tib/datacite/property/pointLongitude>
         rdf:type      rdf:Property;
@@ -1991,10 +1992,11 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/givenName.jsonld> .
 
 <https://w3id.org/tib/datacite/property/geoLocationPolygon>
-        rdf:type      rdf:Property;
-        rdfs:comment  "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain."@en;
-        rdfs:label    "geoLocationPolygon"@en;
-        rdfs:seeAlso  <https://w3id.org/tib/datacite/property/geoLocationPolygon.jsonld> .
+        rdf:type        rdf:Property;
+        rdfs:comment    "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain."@en;
+        rdfs:label      "geoLocationPolygon"@en;
+        rdfs:seeAlso    <https://w3id.org/tib/datacite/property/geoLocationPolygon.jsonld>;
+        skos:scopeNote  "In RDF, this property links a GeoLocation to one polygon node, which holds the polygon's polygonPoint nodes and its optional inPolygonPoint." .
 
 <https://w3id.org/tib/datacite/property/geoLocationPoint>
         rdf:type      rdf:Property;
@@ -2124,7 +2126,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "creator"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Creator>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/creator.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation." .
+        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first)." .
 
 <https://w3id.org/tib/datacite/property/contributorType>
         rdf:type      rdf:Property;
