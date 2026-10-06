@@ -1,0 +1,2 @@
+# Python dependency for rdf-build-scripts/generate-term-turtle.py (production namespace build).
+rdflib==7.6.0

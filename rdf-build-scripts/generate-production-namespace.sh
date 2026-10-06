@@ -61,12 +61,28 @@ if [ -f "$README_TEMPLATE" ]; then
     "$DST/README.md"
 fi
 
+# Write X.ttl next to every term X.jsonld (w3id serves it for Accept: text/turtle).
+# Runs after the namespace rewrite so the Turtle uses canonical IRIs.
+"${PYTHON:-python3}" "$SCRIPT_DIR/generate-term-turtle.py" "$DST"
+
 # Rebuild section index pages inside the publication bundle so navigation and
 # labels match the target GitHub Pages project path.
 (
   cd "$DST"
   PAGES_BASE_PATH="$PAGES_BASE_PATH" node "$SCRIPT_DIR/generate-index-pages.js"
 )
+
+# Publish the curated mapping sets so their w3id mapping_set_id IRIs resolve
+# (https://w3id.org/tib/datacite/mappings/<file>). Internal tooling inputs such
+# as target-vocabularies.json stay in the toolkit repository.
+MAPPINGS_SRC="${MAPPINGS_SRC:-mappings}"
+mkdir -p "$DST/mappings"
+cp "$MAPPINGS_SRC"/datacite-*.sssom.tsv \
+   "$MAPPINGS_SRC/SKOS_crosswalks.jsonld" \
+   "$MAPPINGS_SRC/jskos-mappings.json" \
+   "$MAPPINGS_SRC/target-sources.json" \
+   "$DST/mappings/"
+cp -r "$MAPPINGS_SRC/conversion" "$MAPPINGS_SRC/coverage" "$DST/mappings/"
 
 CHECKSUMS_FILE="CHECKSUMS.sha256"
 INTEGRITY_FILE="manifest/bundle-integrity.json"

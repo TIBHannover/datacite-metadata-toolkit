@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy> a skos:Concept ;
+    skos:definition "Indicates A is collected by B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCollectedBy\">10.5072/instrument</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsCollectedBy" ;
+    skos:prefLabel "IsCollectedBy" ;
+    skos:scopeNote "May indicate relationship between a dataset and an instrument used to collect/measure/observe data." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

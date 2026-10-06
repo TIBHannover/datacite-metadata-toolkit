@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/GeoLocation> a rdfs:Class ;
+    rdfs:label "GeoLocation" ;
+    rdfs:comment "Spatial region or named place where the data was gathered or about which the data is focused." .
+

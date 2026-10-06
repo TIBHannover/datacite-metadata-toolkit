@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf> a skos:Concept ;
+    skos:definition "indicates A is a variant or different form of B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsVariantFormOf" ;
+    skos:prefLabel "IsVariantFormOf" ;
+    skos:scopeNote "Use for a different form of one thing. May be used for different software operating systems or compiler formats." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

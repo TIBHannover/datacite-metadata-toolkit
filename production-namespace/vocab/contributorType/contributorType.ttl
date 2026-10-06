@@ -1,0 +1,31 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType> a skos:ConceptScheme ;
+    dcterms:created "2026-01-18"^^xsd:date ;
+    dcterms:identifier "contributorType" ;
+    dcterms:title "DataCite contributorType" ;
+    skos:hasTopConcept <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/DataManager>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Distributor>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Editor>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Other>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Producer>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Researcher>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Sponsor>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/Translator>,
+        <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> .
+

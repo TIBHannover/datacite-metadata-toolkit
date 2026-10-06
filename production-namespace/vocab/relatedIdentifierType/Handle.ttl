@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle> a skos:Concept ;
+    skos:altLabel "Handle" ;
+    skos:definition "This refers specifically to an ID in the Handle system operated by the Corporation for National Research Initiatives (CNRI)." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"Handle\" relationType=\"References\">10013/epic.10033</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "Handle" ;
+    skos:prefLabel "Handle" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

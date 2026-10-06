@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/titleType/Subtitle> a skos:Concept ;
+    skos:definition "A secondary title that follows the main title and provides additional information about the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/titleType> ;
+    skos:notation "Subtitle" ;
+    skos:prefLabel "Subtitle" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/titleType> .
+

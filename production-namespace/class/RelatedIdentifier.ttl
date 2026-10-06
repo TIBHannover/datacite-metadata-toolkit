@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/RelatedIdentifier> a rdfs:Class ;
+    rdfs:label "RelatedIdentifier" ;
+    rdfs:comment "Identifiers of related resources. These must be globally unique identifiers." .
+

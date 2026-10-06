@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Coverage> a skos:Concept ;
+    skos:definition "The date or date range that the resource content applies to, describes, or covers." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Coverage" ;
+    skos:prefLabel "Coverage" ;
+    skos:scopeNote "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC> a skos:Concept ;
+    skos:altLabel "Universal Product Code" ;
+    skos:definition "A barcode symbology used for tracking trade items in stores. Its most common form, the UPC-A, consists of 12 numerical digits." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"UPC\" relationType=\"Cites\">123456789999</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "UPC" ;
+    skos:prefLabel "UPC" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

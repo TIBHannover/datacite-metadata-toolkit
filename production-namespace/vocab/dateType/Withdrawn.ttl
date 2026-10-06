@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Withdrawn> a skos:Concept ;
+    skos:definition "The date the resource is removed." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Withdrawn" ;
+    skos:prefLabel "Withdrawn" ;
+    skos:scopeNote "It is good practice to include a Description that indicates the reason for the retraction or withdrawal." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Copyrighted> a skos:Concept ;
+    skos:definition "The specific, documented date at which the resource receives a copyrighted status, if applicable." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Copyrighted" ;
+    skos:prefLabel "Copyrighted" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

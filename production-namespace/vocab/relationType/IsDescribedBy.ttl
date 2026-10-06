@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy> a skos:Concept ;
+    skos:definition "indicates A is described by B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsDescribedBy" ;
+    skos:prefLabel "IsDescribedBy" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

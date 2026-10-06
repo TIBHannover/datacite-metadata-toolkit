@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode> a skos:Concept ;
+    skos:altLabel "Astrophysics Data System bibliographic codes" ;
+    skos:definition "A standardized 19-character identifier according to the syntax yyyyjjjjjvvvvmppppa. See http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:bibcode/. Note: bibcodes can be searched via https://ui.adsabs.harvard.edu/ or resolved using https://ui.adsabs.harvard.edu/abs/<bibcode>." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"bibcode\" relationType=\"IsCitedBy\">2018AGUFM.A24K..07S</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "bibcode" ;
+    skos:prefLabel "bibcode" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

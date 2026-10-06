@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/Identifier> a rdfs:Class ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "The Identifier is a unique string that identifies a resource." .
+

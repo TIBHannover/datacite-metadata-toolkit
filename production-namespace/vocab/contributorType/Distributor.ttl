@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Distributor> a skos:Concept ;
+    skos:definition "Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Distributor" ;
+    skos:prefLabel "Distributor" ;
+    skos:scopeNote "Works stored in more than one archive/repository may credit each as a distributor." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

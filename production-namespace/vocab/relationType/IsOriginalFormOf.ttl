@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf> a skos:Concept ;
+    skos:definition "indicates A is the original form of B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsOriginalFormOf" ;
+    skos:prefLabel "IsOriginalFormOf" ;
+    skos:scopeNote "May be used for different software operating systems or compiler formats." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

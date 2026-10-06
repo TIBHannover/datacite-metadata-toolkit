@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader> a skos:Concept ;
+    skos:definition "Person officially designated as head of project team or sub-project team instrumental in the work necessary to development of the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "ProjectLeader" ;
+    skos:prefLabel "ProjectLeader" ;
+    skos:scopeNote "The Project Leader remains intimately involved throughout the life of the particular project team." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

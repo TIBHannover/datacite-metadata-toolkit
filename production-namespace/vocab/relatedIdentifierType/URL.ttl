@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL> a skos:Concept ;
+    skos:altLabel "Uniform Resource Locator" ;
+    skos:definition "Also known as web address, a URL is a specific character string that constitutes a reference to a resource. The syntax is: scheme://domain:port/path?query_string#fragment_id." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCitedBy\">http://www.heatflow.und.edu/index2.html</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "URL" ;
+    skos:prefLabel "URL" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

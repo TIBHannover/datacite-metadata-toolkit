@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/DataManager> a skos:Concept ;
+    skos:definition "Person (or organisation with a staff of data managers, such as a data centre) responsible for maintaining the finished resource." ;
+    skos:example "https://doi.org/10.6073/pasta/41b3ed2e152e1e4c3846e646118208e7" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "DataManager" ;
+    skos:prefLabel "DataManager" ;
+    skos:scopeNote "Ensures the resource is periodically refreshed (software/hardware support), kept available/protected from unauthorized access, stored according to industry standards, and handled according to applicable records management requirements." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

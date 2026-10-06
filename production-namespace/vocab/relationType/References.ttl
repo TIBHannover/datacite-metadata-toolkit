@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/References> a skos:Concept ;
+    skos:definition "indicates B is used as a source of information for A" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "References" ;
+    skos:prefLabel "References" ;
+    skos:scopeNote "Recommended for discovery." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/HasMetadata> a skos:Concept ;
+    skos:definition "indicates resource A has additional metadata B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasMetadata\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567890</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "HasMetadata" ;
+    skos:prefLabel "HasMetadata" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

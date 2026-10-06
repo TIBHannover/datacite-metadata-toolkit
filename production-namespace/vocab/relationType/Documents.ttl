@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Documents> a skos:Concept ;
+    skos:definition "indicates A is documentation about/explaining B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Documents" ;
+    skos:prefLabel "Documents" ;
+    skos:scopeNote "May be used for software documentation." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

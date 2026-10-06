@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN> a skos:Concept ;
+    skos:altLabel "Electronic International Standard Serial Number" ;
+    skos:definition "ISSN used to identify periodicals in electronic form (eISSN or e-ISSN)." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"eISSN\" relationType=\"Cites\">1562-6865</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "EISSN" ;
+    skos:prefLabel "EISSN" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

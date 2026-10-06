@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project> a skos:Concept ;
+    skos:definition "A planned endeavor or activity, frequently collaborative, intended to achieve a particular aim using allocated resources such as budget, time, and expertise." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Project" ;
+    skos:prefLabel "Project" ;
+    skos:scopeNote """This represents the project (research projects and studies). For project deliverables/descriptions, use the resource type for the output.
+<resourceType resourceTypeGeneral="Project">Field season</resourceType>
+<resourceType resourceTypeGeneral="Project">Cohort study</resourceType>""" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

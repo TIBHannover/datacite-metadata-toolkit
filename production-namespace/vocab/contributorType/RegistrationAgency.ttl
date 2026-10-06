@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency> a skos:Concept ;
+    skos:definition "Institution/organisation officially appointed by a Registration Authority to handle specific tasks within a defined area of responsibility." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "RegistrationAgency" ;
+    skos:prefLabel "RegistrationAgency" ;
+    skos:scopeNote "DataCite is a Registration Agency for the International DOI Foundation (IDF). One task is to assign DOI prefixes to allocating agents who then assign full DOI strings to clients and provide metadata back to the DataCite registry." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

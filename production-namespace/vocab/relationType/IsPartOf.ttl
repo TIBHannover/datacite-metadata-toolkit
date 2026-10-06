@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsPartOf> a skos:Concept ;
+    skos:definition "indicates A is a portion of B; may be used for elements of a series" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsPartOf" ;
+    skos:prefLabel "IsPartOf" ;
+    skos:scopeNote "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

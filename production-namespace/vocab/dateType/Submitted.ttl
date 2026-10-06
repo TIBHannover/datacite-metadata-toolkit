@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Submitted> a skos:Concept ;
+    skos:definition "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Submitted" ;
+    skos:prefLabel "Submitted" ;
+    skos:scopeNote "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

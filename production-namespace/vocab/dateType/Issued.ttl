@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Issued> a skos:Concept ;
+    skos:definition "The date that the resource is published or distributed, e.g., to a data centre." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Issued" ;
+    skos:prefLabel "Issued" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

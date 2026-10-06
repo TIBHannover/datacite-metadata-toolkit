@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN> a skos:Concept ;
+    skos:altLabel "International Generic Sample Number" ;
+    skos:definition "A code that uniquely identifies samples from our natural environment and related features-of-interest." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"IGSN\" relationType=\"References\">IECUR0097</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "IGSN" ;
+    skos:prefLabel "IGSN" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

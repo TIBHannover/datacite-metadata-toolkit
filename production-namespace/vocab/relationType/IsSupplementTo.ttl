@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo> a skos:Concept ;
+    skos:definition "indicates that A is a supplement to B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:0168-ssoar-13172</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsSupplementTo" ;
+    skos:prefLabel "IsSupplementTo" ;
+    skos:scopeNote "Recommended for discovery." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

@@ -1,7 +1,7 @@
 {
-  "artifactFileCount": 303,
+  "artifactFileCount": 582,
   "bundleChecksumAlgorithm": "sha256-of-CHECKSUMS.sha256",
-  "bundleChecksum": "9a2b36955ad81e0aff85e5377c57d0f9b3b06c5264ac7c2b09ff08fbc9919e99",
+  "bundleChecksum": "1fd5ea5cd4581a7a4945b5599ee2f6266d8d998fc8c398736cb2e58708c81078",
   "checksumsFile": "CHECKSUMS.sha256",
   "excludedFromChecksum": [
     "CHECKSUMS.sha256",

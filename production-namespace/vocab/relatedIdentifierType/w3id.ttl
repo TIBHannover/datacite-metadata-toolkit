@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id> a skos:Concept ;
+    skos:altLabel "Permanent identifier for Web applications" ;
+    skos:definition "Mostly used to publish vocabularies and ontologies. The letters ‘w3’ stand for “World Wide Web”." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"w3id\" relationType=\"IsCitedBy\">https://w3id.org/games/spec/coil#Coil_Bomb_Die_Of_Age</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "w3id" ;
+    skos:prefLabel "w3id" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

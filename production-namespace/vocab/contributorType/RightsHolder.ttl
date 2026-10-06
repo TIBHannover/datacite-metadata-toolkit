@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> a skos:Concept ;
+    skos:definition "Person or institution owning or managing property rights, including intellectual property rights over the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "RightsHolder" ;
+    skos:prefLabel "RightsHolder" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

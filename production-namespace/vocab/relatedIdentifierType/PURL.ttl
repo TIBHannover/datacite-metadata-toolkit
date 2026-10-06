@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL> a skos:Concept ;
+    skos:altLabel "Persistent Uniform Resource Locator" ;
+    skos:definition "A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"PURL\" relationType=\"Cites\">http://purl.oclc.org/foo/bar</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "PURL" ;
+    skos:prefLabel "PURL" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

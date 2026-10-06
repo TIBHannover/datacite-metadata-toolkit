@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Dataset> ;
+    skos:definition "Data encoded in a defined structure." ;
+    skos:example "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.1594/pangaea.804876" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Dataset" ;
+    skos:prefLabel "Dataset" ;
+    skos:scopeNote "Data file or files" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#InteractiveResource> ;
+    skos:definition "A resource requiring interaction from the user to be understood, executed, or experienced." ;
+    skos:example "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.7269/p3tb14tr" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "InteractiveResource" ;
+    skos:prefLabel "InteractiveResource" ;
+    skos:scopeNote "Training modules, files that require use of a viewer (e.g., Flash), or query/response portals" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

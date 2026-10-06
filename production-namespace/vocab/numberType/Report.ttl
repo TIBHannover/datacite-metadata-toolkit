@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/numberType/Report> a skos:Concept ;
+    skos:definition "A number identifying a report within a report series." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/numberType> ;
+    skos:notation "Report" ;
+    skos:prefLabel "Report" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/numberType> .
+

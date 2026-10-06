@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> a skos:Concept ;
+    skos:altLabel "Digital Object Identifier" ;
+    skos:definition "A character string used to uniquely identify an object. A DOI name is divided into two parts, a prefix and a suffix, separated by a slash." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsSupplementTo\">10.1016/j.epsl.2011.11.037</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "DOI" ;
+    skos:prefLabel "DOI" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

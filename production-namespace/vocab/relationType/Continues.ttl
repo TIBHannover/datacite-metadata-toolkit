@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Continues> a skos:Concept ;
+    skos:definition "indicates A is a continuation of the work B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Continues" ;
+    skos:prefLabel "Continues" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

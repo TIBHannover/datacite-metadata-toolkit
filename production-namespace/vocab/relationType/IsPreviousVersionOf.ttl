@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf> a skos:Concept ;
+    skos:definition "indicates A is a previous edition of B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsPreviousVersionOf" ;
+    skos:prefLabel "IsPreviousVersionOf" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

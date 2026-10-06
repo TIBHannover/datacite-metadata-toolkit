@@ -1,0 +1,10 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tib/datacite/vocab/identifierType> a skos:ConceptScheme ;
+    dcterms:created "2026-05-12"^^xsd:date ;
+    dcterms:identifier "identifierType" ;
+    dcterms:title "DataCite identifierType" ;
+    skos:hasTopConcept <https://w3id.org/tib/datacite/vocab/identifierType/DOI> .
+

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK> a skos:Concept ;
+    skos:altLabel "Archival Resource Key" ;
+    skos:definition "A URI designed to support long-term access to information objects. In general, ARK syntax is of the form (brackets, []. indicate optional elements): [http://NMA/]ark:/NAAN/Name [Qualifier]." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"ARK\" relationType=\"IsCitedBy\">ark:/13030/tqb3kh97gh8w</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "ARK" ;
+    skos:prefLabel "ARK" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+
