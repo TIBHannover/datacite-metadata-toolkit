@@ -1,10 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Submitted> a skos:Concept ;
-    skos:definition "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition """Datum, kdy tvůrce odešle (odevzdá) zdroj vydavateli. Toto datum se může lišit od Data přijetí, pokud vydavatel následně uplatní recenzní proces nebo jiný proces výběru.
+Doporučeno použít pro lepší vyhledávání."""@cs,
+        "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Submitted" ;
-    skos:prefLabel "Submitted" ;
+    skos:prefLabel "Datum podání"@cs,
+        "Submitted"@en ;
     skos:scopeNote "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

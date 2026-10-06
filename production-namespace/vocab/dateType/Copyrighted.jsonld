@@ -2,9 +2,31 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
   "type": "Concept",
-  "prefLabel": "Copyrighted",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Copyrighted"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum udělení copyrightu"
+    }
+  ],
   "notation": "Copyrighted",
-  "definition": "The specific, documented date at which the resource receives a copyrighted status, if applicable.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The specific, documented date at which the resource receives a copyrighted status, if applicable."
+    },
+    {
+      "@language": "cs",
+      "@value": "Konkrétní, zdokumentované datum, kdy zdroj získá status autorskoprávně chráněného díla, ​​pokud lze na dílo ochranu uplatnit."
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
-  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType"
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

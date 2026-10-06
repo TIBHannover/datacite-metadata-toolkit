@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Compiles",
   "type": "Concept",
-  "prefLabel": "Compiles",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Compiles"
+    },
+    {
+      "@language": "cs",
+      "@value": "kompiluje (co)"
+    }
+  ],
   "notation": "Compiles",
-  "definition": "indicates B is the result of a compile or creation event using A",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates B is the result of a compile or creation event using A"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že B je výsledkem kompilace nebo vytvoření za použití A"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "May be used for software and text; a compiler can be a computer program or a person.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

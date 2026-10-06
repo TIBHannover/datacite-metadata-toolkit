@@ -2,9 +2,31 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/Other",
   "type": "Concept",
-  "prefLabel": "Other",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Other"
+    },
+    {
+      "@language": "cs",
+      "@value": "Jiný"
+    }
+  ],
   "notation": "Other",
-  "definition": "Any title type not covered by the other values in the titleType controlled list.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Any title type not covered by the other values in the titleType controlled list."
+    },
+    {
+      "@language": "cs",
+      "@value": "Jakýkoli typ názvu, který není pokryt jinými hodnotami v řízeném slovníku titleType."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType"
+  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor",
   "type": "Concept",
-  "prefLabel": "IsMetadataFor",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsMetadataFor"
+    },
+    {
+      "@language": "cs",
+      "@value": "je metadaty pro"
+    }
+  ],
   "notation": "IsMetadataFor",
-  "definition": "indicates additional metadata A for a resource B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates additional metadata A for a resource B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje další metadata A pro zdroj B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

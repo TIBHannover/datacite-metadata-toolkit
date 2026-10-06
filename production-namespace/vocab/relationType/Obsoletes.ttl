@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Obsoletes> a skos:Concept ;
-    skos:definition "Indicates A replaces B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A nahrazuje B"@cs,
+        "Indicates A replaces B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Obsoletes" ;
-    skos:prefLabel "Obsoletes" ;
+    skos:prefLabel "nahrazuje (co)"@cs,
+        "Obsoletes"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

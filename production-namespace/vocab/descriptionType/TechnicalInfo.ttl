@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo> a skos:Concept ;
-    skos:definition "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Podrobné informace, které mohou souviset s návrhem, implementací, provozem, použitím a/nebo údržbou systému nebo přístroje nebo jiným nastavením procesu získání či ověření datasetu či jiného zdroje."@cs,
+        "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
     skos:notation "TechnicalInfo" ;
-    skos:prefLabel "TechnicalInfo" ;
+    skos:prefLabel "Technická informace"@cs,
+        "TechnicalInfo"@en ;
     skos:scopeNote "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
 

@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf> a skos:Concept ;
-    skos:definition "indicates A is a translation of B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je překladem B"@cs,
+        "indicates A is a translation of B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsTranslationOf" ;
-    skos:prefLabel "IsTranslationOf" ;
+    skos:prefLabel "je překladem (čeho)"@cs,
+        "IsTranslationOf"@en ;
     skos:scopeNote "When a resource is shared in one language and later translated, use IsTranslationOf to link translation to original." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

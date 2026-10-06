@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor> a skos:Concept ;
-    skos:definition "indicates additional metadata A for a resource B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje další metadata A pro zdroj B"@cs,
+        "indicates additional metadata A for a resource B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsMetadataFor" ;
-    skos:prefLabel "IsMetadataFor" ;
+    skos:prefLabel "je metadaty pro"@cs,
+        "IsMetadataFor"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

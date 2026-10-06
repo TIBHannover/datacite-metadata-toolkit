@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Compiles> a skos:Concept ;
-    skos:definition "indicates B is the result of a compile or creation event using A" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že B je výsledkem kompilace nebo vytvoření za použití A"@cs,
+        "indicates B is the result of a compile or creation event using A"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Compiles" ;
-    skos:prefLabel "Compiles" ;
+    skos:prefLabel "kompiluje (co)"@cs,
+        "Compiles"@en ;
     skos:scopeNote "May be used for software and text; a compiler can be a computer program or a person." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/Reviews",
   "type": "Concept",
-  "prefLabel": "Reviews",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Reviews"
+    },
+    {
+      "@language": "cs",
+      "@value": "recenzuje (co)"
+    }
+  ],
   "notation": "Reviews",
-  "definition": "indicates that A is a review of B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates that A is a review of B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že entita A je recenzí B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

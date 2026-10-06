@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Collects",
   "type": "Concept",
-  "prefLabel": "Collects",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Collects"
+    },
+    {
+      "@language": "cs",
+      "@value": "sbírá"
+    }
+  ],
   "notation": "Collects",
-  "definition": "Indicates A collects B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Indicates A collects B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A sbírá/shromažďuje B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "May indicate relationship between an instrument and a dataset it collected/observed.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

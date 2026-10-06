@@ -1,9 +1,15 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Issued> a skos:Concept ;
-    skos:definition "The date that the resource is published or distributed, e.g., to a data centre." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Datum, kdy je zdroj zveřejněn nebo distribuován, např. v repozitáři nebo jiném systému."@cs,
+        "The date that the resource is published or distributed, e.g., to a data centre."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Issued" ;
-    skos:prefLabel "Issued" ;
+    skos:prefLabel "Datum vydání"@cs,
+        "Issued"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

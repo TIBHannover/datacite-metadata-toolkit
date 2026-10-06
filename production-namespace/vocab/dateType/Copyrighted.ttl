@@ -1,9 +1,15 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted> a skos:Concept ;
-    skos:definition "The specific, documented date at which the resource receives a copyrighted status, if applicable." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Konkrétní, zdokumentované datum, kdy zdroj získá status autorskoprávně chráněného díla, ​​pokud lze na dílo ochranu uplatnit."@cs,
+        "The specific, documented date at which the resource receives a copyrighted status, if applicable."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Copyrighted" ;
-    skos:prefLabel "Copyrighted" ;
+    skos:prefLabel "Datum udělení copyrightu"@cs,
+        "Copyrighted"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

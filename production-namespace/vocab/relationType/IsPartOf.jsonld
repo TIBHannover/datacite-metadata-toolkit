@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
   "type": "Concept",
-  "prefLabel": "IsPartOf",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsPartOf"
+    },
+    {
+      "@language": "cs",
+      "@value": "je součástí"
+    }
+  ],
   "notation": "IsPartOf",
-  "definition": "indicates A is a portion of B; may be used for elements of a series",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is a portion of B; may be used for elements of a series"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je součástí B; lze použít pro jednotlivé prvky řady (série)"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

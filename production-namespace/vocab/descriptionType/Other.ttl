@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/Other> a skos:Concept ;
-    skos:definition "Other description information that does not fit into an existing category." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Další popisné informace, které nelze zařadit do existující kategorie."@cs,
+        "Other description information that does not fit into an existing category."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
     skos:notation "Other" ;
-    skos:prefLabel "Other" ;
+    skos:prefLabel "Jiný"@cs,
+        "Other"@en ;
     skos:scopeNote "Use for any other description type." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
 

@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf> a skos:Concept ;
-    skos:definition "indicates A is a variant or different form of B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je variantou nebo jinou formou B"@cs,
+        "indicates A is a variant or different form of B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsVariantFormOf" ;
-    skos:prefLabel "IsVariantFormOf" ;
+    skos:prefLabel "je variantou (čeho)"@cs,
+        "IsVariantFormOf"@en ;
     skos:scopeNote "Use for a different form of one thing. May be used for different software operating systems or compiler formats." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

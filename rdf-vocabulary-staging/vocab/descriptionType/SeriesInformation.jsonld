@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/SeriesInformation",
   "type": "Concept",
-  "prefLabel": "SeriesInformation",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "SeriesInformation"
+    },
+    {
+      "@language": "cs",
+      "@value": "Informace o sérii"
+    }
+  ],
   "notation": "SeriesInformation",
-  "definition": "Information about a repeating series, such as volume, issue, number.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Information about a repeating series, such as volume, issue, number."
+    },
+    {
+      "@language": "cs",
+      "@value": "Informace o sérii, například svazek a číslo."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
-  "scopeNote": "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected."
+  "scopeNote": "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

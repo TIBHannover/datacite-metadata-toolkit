@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
   "type": "Concept",
-  "prefLabel": "Submitted",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Submitted"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum podání"
+    }
+  ],
   "notation": "Submitted",
-  "definition": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum, kdy tvůrce odešle (odevzdá) zdroj vydavateli. Toto datum se může lišit od Data přijetí, pokud vydavatel následně uplatní recenzní proces nebo jiný proces výběru.\nDoporučeno použít pro lepší vyhledávání."
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-  "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate."
+  "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

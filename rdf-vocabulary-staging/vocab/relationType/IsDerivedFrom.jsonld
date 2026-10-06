@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDerivedFrom",
   "type": "Concept",
-  "prefLabel": "IsDerivedFrom",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsDerivedFrom"
+    },
+    {
+      "@language": "cs",
+      "@value": "je odvozen od (čeho)"
+    }
+  ],
   "notation": "IsDerivedFrom",
-  "definition": "indicates B is a source upon which A is based",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates B is a source upon which A is based"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že B je zdrojem, na kterém je A založen"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "Use for a resource that is a derivative of an original resource. Example context: dataset derived from a larger dataset and manipulated.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

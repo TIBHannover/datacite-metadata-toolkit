@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/dateType/Collected",
   "type": "Concept",
-  "prefLabel": "Collected",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Collected"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum sběru"
+    }
+  ],
   "notation": "Collected",
-  "definition": "The date or date range in which the resource content was collected.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date or date range in which the resource content was collected."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum nebo časové rozmezí, ve kterém byl shromážděn obsah zdroje."
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-  "scopeNote": "To indicate precise or particular timeframes in which research was conducted."
+  "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

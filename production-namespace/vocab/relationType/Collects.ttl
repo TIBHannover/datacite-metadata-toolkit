@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Collects> a skos:Concept ;
-    skos:definition "Indicates A collects B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A sbírá/shromažďuje B"@cs,
+        "Indicates A collects B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Collects" ;
-    skos:prefLabel "Collects" ;
+    skos:prefLabel "sbírá"@cs,
+        "Collects"@en ;
     skos:scopeNote "May indicate relationship between an instrument and a dataset it collected/observed." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

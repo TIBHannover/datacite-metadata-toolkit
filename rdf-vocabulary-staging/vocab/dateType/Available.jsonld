@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Available",
   "type": "Concept",
-  "prefLabel": "Available",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Available"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum zveřejnění"
+    }
+  ],
   "notation": "Available",
-  "definition": "The date the resource is made publicly available. May be a range.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date the resource is made publicly available. May be a range."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum, kdy je zdroj zpřístupněn veřejnosti. Může se jednat o časové rozmezí. \nUžívejte i pro označení konce období embarga."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "scopeNote": "To indicate the end of an embargo period, use Available."
+  "scopeNote": "To indicate the end of an embargo period, use Available.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

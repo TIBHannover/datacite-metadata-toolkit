@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract> a skos:Concept ;
-    skos:definition "A brief description of the resource and the context in which the resource was created." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Stručný popis zdroje a kontextu, v jehož rámci zdroj vznikl."@cs,
+        "A brief description of the resource and the context in which the resource was created."@en ;
     skos:example "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
     skos:notation "Abstract" ;
-    skos:prefLabel "Abstract" ;
+    skos:prefLabel "Abstrakt"@cs,
+        "Abstract"@en ;
     skos:scopeNote "Recommended for discovery. Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
 

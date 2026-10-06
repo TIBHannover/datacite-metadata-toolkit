@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/Describes",
   "type": "Concept",
-  "prefLabel": "Describes",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Describes"
+    },
+    {
+      "@language": "cs",
+      "@value": "popisuje (co)"
+    }
+  ],
   "notation": "Describes",
-  "definition": "indicates A describes B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A describes B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A popisuje B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

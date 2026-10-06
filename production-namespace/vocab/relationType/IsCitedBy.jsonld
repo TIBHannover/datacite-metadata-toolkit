@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
   "type": "Concept",
-  "prefLabel": "IsCitedBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsCitedBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "je citován (čím)"
+    }
+  ],
   "notation": "IsCitedBy",
-  "definition": "indicates that B includes A in a citation",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates that B includes A in a citation"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že B cituje A"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "Recommended for discovery.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

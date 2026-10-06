@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/Methods> a skos:Concept ;
-    skos:definition "The methodology employed for the study or research." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Metodologie použitá pro studii nebo výzkum."@cs,
+        "The methodology employed for the study or research."@en ;
     skos:example "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
     skos:notation "Methods" ;
-    skos:prefLabel "Methods" ;
+    skos:prefLabel "Metodologie"@cs,
+        "Methods"@en ;
     skos:scopeNote "Recommended for discovery. Full documentation about methods supports open science." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
 

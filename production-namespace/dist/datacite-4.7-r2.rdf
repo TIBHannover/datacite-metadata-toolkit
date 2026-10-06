@@ -1582,43 +1582,63 @@
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/titleType/Other">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:prefLabel xml:lang="cs">Jiný</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Other</skos:prefLabel>
         <skos:notation>Other</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:definition xml:lang="cs">Jakýkoli typ názvu, který není pokryt jinými hodnotami v řízeném slovníku titleType.</skos:definition>
         <skos:definition xml:lang="en">Any title type not covered by the other values in the titleType controlled list.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/Other.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
         <skos:scopeNote xml:lang="en">Use the xml:lang attribute to indicate the language of the translated title.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Přeložený název</skos:prefLabel>
         <skos:prefLabel xml:lang="en">TranslatedTitle</skos:prefLabel>
         <skos:notation>TranslatedTitle</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:definition xml:lang="cs">Název, který je překladem primárního názvu do jiného jazyka.</skos:definition>
         <skos:definition xml:lang="en">A title that is a translation of the primary title into another language.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/titleType/Subtitle">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:prefLabel xml:lang="cs">Podnázev</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Subtitle</skos:prefLabel>
         <skos:notation>Subtitle</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:definition xml:lang="cs">Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji.</skos:definition>
         <skos:definition xml:lang="en">A secondary title that follows the main title and provides additional information about the resource.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/Subtitle.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
         <skos:scopeNote xml:lang="en">Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Alternativní název</skos:prefLabel>
         <skos:prefLabel xml:lang="en">AlternativeTitle</skos:prefLabel>
         <skos:notation>AlternativeTitle</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
+        <skos:definition xml:lang="cs">Název, pod kterým je zdroj také známý, používaný jako alternativa k primárnímu názvu.</skos:definition>
         <skos:definition xml:lang="en">A title by which the resource is also known, used as an alternative to the primary title.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/titleType/titleType.jsonld"/>
@@ -1659,69 +1679,99 @@
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/Other">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">Use for any other description type.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Jiný</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Other</skos:prefLabel>
         <skos:notation>Other</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
+        <skos:definition xml:lang="cs">Další popisné informace, které nelze zařadit do existující kategorie.</skos:definition>
         <skos:definition xml:lang="en">Other description information that does not fit into an existing category.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/Other.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Technická informace</skos:prefLabel>
         <skos:prefLabel xml:lang="en">TechnicalInfo</skos:prefLabel>
         <skos:notation>TechnicalInfo</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
+        <skos:definition xml:lang="cs">Podrobné informace, které mohou souviset s návrhem, implementací, provozem, použitím a/nebo údržbou systému nebo přístroje nebo jiným nastavením procesu získání či ověření datasetu či jiného zdroje.</skos:definition>
         <skos:definition xml:lang="en">Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">Use “&lt;br&gt;” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Obsah</skos:prefLabel>
         <skos:prefLabel xml:lang="en">TableOfContents</skos:prefLabel>
         <skos:notation>TableOfContents</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:example>https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031</skos:example>
+        <skos:definition xml:lang="cs">Obsah zdroje.</skos:definition>
         <skos:definition xml:lang="en">A listing of the Table of Contents.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Informace o sérii</skos:prefLabel>
         <skos:prefLabel xml:lang="en">SeriesInformation</skos:prefLabel>
         <skos:notation>SeriesInformation</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
+        <skos:definition xml:lang="cs">Informace o sérii, například svazek a číslo.</skos:definition>
         <skos:definition xml:lang="en">Information about a repeating series, such as volume, issue, number.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/Methods">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery. Full documentation about methods supports open science.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Metodologie</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Methods</skos:prefLabel>
         <skos:notation>Methods</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:example>https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X</skos:example>
+        <skos:definition xml:lang="cs">Metodologie použitá pro studii nebo výzkum.</skos:definition>
         <skos:definition xml:lang="en">The methodology employed for the study or research.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/Methods.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/descriptionType/Abstract">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery. Use “&lt;br&gt;” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Abstrakt</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Abstract</skos:prefLabel>
         <skos:notation>Abstract</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType"/>
         <skos:example>https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774</skos:example>
+        <skos:definition xml:lang="cs">Stručný popis zdroje a kontextu, v jehož rámci zdroj vznikl.</skos:definition>
         <skos:definition xml:lang="en">A brief description of the resource and the context in which the resource was created.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/Abstract.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/descriptionType/descriptionType.jsonld"/>
@@ -1735,329 +1785,469 @@
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Other">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">If selected, supply a value for relationTypeInformation describing the nature of the relationship; applies to both relatedIdentifier and relatedItem.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">jiná role</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Other</skos:prefLabel>
         <skos:notation>Other</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Other" relationTypeInformation="is output of" resourceTypeGeneral="Project"&gt;10.21384/p27z-6n52&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A souvisí s B a tento vztah neodpovídá žádné z existujících kategorií</skos:definition>
         <skos:definition xml:lang="en">indicates that A is related to B and the relationship does not fit into an existing category</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Other.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/HasTranslation">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">When a resource is shared in one language and later translated, use HasTranslation to link original to translation. If released simultaneously in multiple languages, connect in both directions.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">má překlad</skos:prefLabel>
         <skos:prefLabel xml:lang="en">HasTranslation</skos:prefLabel>
         <skos:notation>HasTranslation</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="HasTranslation"&gt;10.21384/g01j-jm06&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A má překlad B</skos:definition>
         <skos:definition xml:lang="en">indicates A has a translation B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/HasTranslation.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">When a resource is shared in one language and later translated, use IsTranslationOf to link translation to original.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je překladem (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsTranslationOf</skos:prefLabel>
         <skos:notation>IsTranslationOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsTranslationOf"&gt;10.21384/828a-cm38&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je překladem B</skos:definition>
         <skos:definition xml:lang="en">indicates A is a translation of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Collects">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May indicate relationship between an instrument and a dataset it collected/observed.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">sbírá</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Collects</skos:prefLabel>
         <skos:notation>Collects</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Collects"&gt;10.5072/data&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A sbírá/shromažďuje B</skos:definition>
         <skos:definition xml:lang="en">Indicates A collects B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Collects.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May indicate relationship between a dataset and an instrument used to collect/measure/observe data.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je sbírán (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsCollectedBy</skos:prefLabel>
         <skos:notation>IsCollectedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsCollectedBy"&gt;10.5072/instrument&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je sbírán/shromažďován entitou B</skos:definition>
         <skos:definition xml:lang="en">Indicates A is collected by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je nahrazen (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsObsoletedBy</skos:prefLabel>
         <skos:notation>IsObsoletedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsObsoletedBy"&gt;10.5438/0005&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je nahrazen B</skos:definition>
         <skos:definition xml:lang="en">Indicates A is replaced by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Obsoletes">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">nahrazuje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Obsoletes</skos:prefLabel>
         <skos:notation>Obsoletes</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Obsoletes"&gt;10.5438/0007&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A nahrazuje B</skos:definition>
         <skos:definition xml:lang="en">Indicates A replaces B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Obsoletes.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Requires">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used to indicate software dependencies.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">požaduje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Requires</skos:prefLabel>
         <skos:notation>Requires</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Requires"&gt;10.1234/867&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A vyžaduje B</skos:definition>
         <skos:definition xml:lang="en">Indicates A requires B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Requires.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used to indicate software dependencies.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je požadován (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsRequiredBy</skos:prefLabel>
         <skos:notation>IsRequiredBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsRequiredBy"&gt;10.1234/8675&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je vyžadován entitou B</skos:definition>
         <skos:definition xml:lang="en">Indicates A is required by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">IsSourceOf is the original resource from which a derivative resource was created (e.g., original dataset without value manipulation).</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je zdrojem odvozené verze</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsSourceOf</skos:prefLabel>
         <skos:notation>IsSourceOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="IsSourceOf"&gt;http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je zdrojem, na kterém je B založen</skos:definition>
         <skos:definition xml:lang="en">indicates A is a source upon which B is based</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Use for a resource that is a derivative of an original resource. Example context: dataset derived from a larger dataset and manipulated.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je odvozen od (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsDerivedFrom</skos:prefLabel>
         <skos:notation>IsDerivedFrom</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsDerivedFrom"&gt;10.6078/M7DZ067C&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B je zdrojem, na kterém je A založen</skos:definition>
         <skos:definition xml:lang="en">indicates B is a source upon which A is based</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Reviews">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">recenzuje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Reviews</skos:prefLabel>
         <skos:notation>Reviews</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Reviews"&gt;10.12688/f1000research.4001.1&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že entita A je recenzí B</skos:definition>
         <skos:definition xml:lang="en">indicates that A is a review of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Reviews.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je recenzován (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsReviewedBy</skos:prefLabel>
         <skos:notation>IsReviewedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsReviewedBy"&gt;10.5256/F1000RESEARCH.4288.R4745&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je recenzován entitou B</skos:definition>
         <skos:definition xml:lang="en">indicates that A is reviewed by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Use when the same resource is saved in another location (e.g., another institution).</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je identický s</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsIdenticalTo</skos:prefLabel>
         <skos:notation>IsIdenticalTo</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="IsIdenticalTo"&gt;http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je identické s B (použije se v případě potřeby zaregistrovat dvě samostatné instance téhož zdroje)</skos:definition>
         <skos:definition xml:lang="en">indicates that A is identical to B, for use when there is a need to register two separate instances of the same resource</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used for different software operating systems or compiler formats.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je původní variantou (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsOriginalFormOf</skos:prefLabel>
         <skos:notation>IsOriginalFormOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsOriginalFormOf"&gt;10.1234/9035&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je původní variantou B</skos:definition>
         <skos:definition xml:lang="en">indicates A is the original form of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Use for a different form of one thing. May be used for different software operating systems or compiler formats.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je variantou (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsVariantFormOf</skos:prefLabel>
         <skos:notation>IsVariantFormOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsVariantFormOf"&gt;10.1234/8675&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je variantou nebo jinou formou B</skos:definition>
         <skos:definition xml:lang="en">indicates A is a variant or different form of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Compiles">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used for software and text; a compiler can be a computer program or a person.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">kompiluje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Compiles</skos:prefLabel>
         <skos:notation>Compiles</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URN" relationType="Compiles"&gt;urn:nbn:de:bsz:21-opus-963&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B je výsledkem kompilace nebo vytvoření za použití A</skos:definition>
         <skos:definition xml:lang="en">indicates B is the result of a compile or creation event using A</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Compiles.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May indicate a traditional text compilation, or the compiler program used to generate executable software.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">kompilován (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsCompiledBy</skos:prefLabel>
         <skos:notation>IsCompiledBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="IsCompiledBy"&gt;http://d-nb.info/gnd/4513749-3&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B je použit ke kompilaci nebo vytvoření A</skos:definition>
         <skos:definition xml:lang="en">indicates B is used to compile or create A</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Documents">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used for software documentation.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">dokumentuje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Documents</skos:prefLabel>
         <skos:notation>Documents</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Documents"&gt;10.1234/7836&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je dokumentací vysvětlující B</skos:definition>
         <skos:definition xml:lang="en">indicates A is documentation about/explaining B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Documents.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">May be used for software documentation.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je zdokumentován (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsDocumentedBy</skos:prefLabel>
         <skos:notation>IsDocumentedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="IsDocumentedBy"&gt;http://tobias-lib.uni-tuebingen.de/volltexte/2000/96/&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B je dokumentací vysvětlující A</skos:definition>
         <skos:definition xml:lang="en">indicates B is documentation about/explaining A</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/References">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">odkazuje (na co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">References</skos:prefLabel>
         <skos:notation>References</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URN" relationType="References"&gt;urn:nbn:de:bsz:21-opus-963&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B odkazuje na A</skos:definition>
         <skos:definition xml:lang="en">indicates B is used as a source of information for A</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/References.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je na něj odkazováno z (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsReferencedBy</skos:prefLabel>
         <skos:notation>IsReferencedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="IsReferencedBy"&gt;http://www.testpubl.de&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že na A je odkazován z B</skos:definition>
         <skos:definition xml:lang="en">indicates A is used as a source of information by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je publikován v</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsPublishedIn</skos:prefLabel>
         <skos:notation>IsPublishedIn</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="ISSN" relationType="IsPublishedIn"&gt;2213-1337&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je publikován v B, ale je nezávislý na ostatních věcech publikovaných uvnitř B</skos:definition>
         <skos:definition xml:lang="en">indicates A is published inside B, but is independent of other things published inside of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/HasPart">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">má část/i</skos:prefLabel>
         <skos:prefLabel xml:lang="en">HasPart</skos:prefLabel>
         <skos:notation>HasPart</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URL" relationType="HasPart"&gt;https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A má část B</skos:definition>
         <skos:definition xml:lang="en">indicates A includes the part B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/HasPart.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsPartOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je součástí</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsPartOf</skos:prefLabel>
         <skos:notation>IsPartOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsPartOf"&gt;10.5281/zenodo.754312&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je součástí B; lze použít pro jednotlivé prvky řady (série)</skos:definition>
         <skos:definition xml:lang="en">indicates A is a portion of B; may be used for elements of a series</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsPartOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je předchozí verzí (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsPreviousVersionOf</skos:prefLabel>
         <skos:notation>IsPreviousVersionOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsPreviousVersionOf"&gt;10.5438/0007&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je předchozím vydáním B</skos:definition>
         <skos:definition xml:lang="en">indicates A is a previous edition of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je novou verzí (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsNewVersionOf</skos:prefLabel>
         <skos:notation>IsNewVersionOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsNewVersionOf"&gt;10.5438/0005&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno</skos:definition>
         <skos:definition xml:lang="en">indicates A is a new edition of B, where the new edition has been modified or updated</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">The registered resource is an instance of a target resource (A is an instance of B). May relate a specific software version to its code repository.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je verzí</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsVersionOf</skos:prefLabel>
         <skos:notation>IsVersionOf</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsVersionOf"&gt;10.5281/ZENODO.832054&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je verzí B</skos:definition>
         <skos:definition xml:lang="en">indicates A is a version of B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
@@ -2069,126 +2259,181 @@
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je citován (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsCitedBy</skos:prefLabel>
         <skos:notation>IsCitedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy"&gt;10.4232/10.ASEAS-5.2-1&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B cituje A</skos:definition>
         <skos:definition xml:lang="en">indicates that B includes A in a citation</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Cites">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">cituje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Cites</skos:prefLabel>
         <skos:notation>Cites</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="ISBN" relationType="Cites"&gt;0761964312&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A cituje B</skos:definition>
         <skos:definition xml:lang="en">indicates that A includes B in a citation</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Cites.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">je doplňkem k (čemu)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsSupplementTo</skos:prefLabel>
         <skos:notation>IsSupplementTo</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URN" relationType="IsSupplementTo"&gt;urn:nbn:de:0168-ssoar-13172&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je doplňkem B</skos:definition>
         <skos:definition xml:lang="en">indicates that A is a supplement to B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">má doplněk</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsSupplementedBy</skos:prefLabel>
         <skos:notation>IsSupplementedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="PMID" relationType="IsSupplementedBy"&gt;16911322&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že B je doplňkem A</skos:definition>
         <skos:definition xml:lang="en">indicates that B is a supplement to A</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je pokračováním (čeho)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsContinuedBy</skos:prefLabel>
         <skos:notation>IsContinuedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URN" relationType="IsContinuedBy"&gt;urn:nbn:de:bsz:21-opus-4967&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A pokračuje dílem B</skos:definition>
         <skos:definition xml:lang="en">indicates A is continued by the work B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Continues">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">pokračuje (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Continues</skos:prefLabel>
         <skos:notation>Continues</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="URN" relationType="Continues"&gt;urn:nbn:de:bsz:21-opus-4966&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je pokračováním díla B</skos:definition>
         <skos:definition xml:lang="en">indicates A is a continuation of the work B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Continues.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/Describes">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">popisuje (co)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Describes</skos:prefLabel>
         <skos:notation>Describes</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="Describes"&gt;10.6084/m9.figshare.c.3288407&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A popisuje B</skos:definition>
         <skos:definition xml:lang="en">indicates A describes B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/Describes.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je popsán (čím)</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsDescribedBy</skos:prefLabel>
         <skos:notation>IsDescribedBy</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsDescribedBy"&gt;10.1038/sdata.2016.123&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A je popsán B</skos:definition>
         <skos:definition xml:lang="en">indicates A is described by B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/HasMetadata">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">má metadata</skos:prefLabel>
         <skos:prefLabel xml:lang="en">HasMetadata</skos:prefLabel>
         <skos:notation>HasMetadata</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="HasMetadata" relatedMetadataScheme="DDI-L" schemeURI="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd"&gt;10.1234/567890&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že zdroj A má další metadata B</skos:definition>
         <skos:definition xml:lang="en">indicates resource A has additional metadata B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/HasMetadata.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
+        <skos:prefLabel xml:lang="cs">je metadaty pro</skos:prefLabel>
         <skos:prefLabel xml:lang="en">IsMetadataFor</skos:prefLabel>
         <skos:notation>IsMetadataFor</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="IsMetadataFor" relatedMetadataScheme="DDI-L" schemeURI="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd"&gt;10.1234/567891&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje další metadata A pro zdroj B</skos:definition>
         <skos:definition xml:lang="en">indicates additional metadata A for a resource B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/relationType/HasVersion">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:scopeNote xml:lang="en">The registered resource such as a software package or code repository has a versioned instance (A has instance B). May relate an un-versioned code repository to a specific software version.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">má verzi</skos:prefLabel>
         <skos:prefLabel xml:lang="en">HasVersion</skos:prefLabel>
         <skos:notation>HasVersion</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/relationType"/>
         <skos:example>&lt;relatedIdentifier relatedIdentifierType="DOI" relationType="HasVersion"&gt;10.5281/ZENODO.832053&lt;/relatedIdentifier&gt;</skos:example>
+        <skos:definition xml:lang="cs">označuje, že A má verzi B</skos:definition>
         <skos:definition xml:lang="en">indicates A has a version B</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/relationType/HasVersion.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
   </skos:ConceptScheme>
@@ -2262,11 +2507,16 @@
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Other">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:prefLabel xml:lang="cs">Jiné datum</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Other</skos:prefLabel>
         <skos:notation>Other</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Jiná datace, která se vztahuje ke zdroji a nepatří do existující kategorie.</skos:definition>
         <skos:definition xml:lang="en">Other date that does not fit into an existing category.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Other.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
@@ -2278,117 +2528,176 @@
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Accepted">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">To indicate the start of an embargo period, use Accepted or Submitted, as appropriate.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum přijetí</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Accepted</skos:prefLabel>
         <skos:notation>Accepted</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum, kdy vydavatel přijal zdroj do svého systému. 
+Pro označení začátku období embarga použijte podle potřeby možnost Datum přijetí nebo Datum podání.</skos:definition>
         <skos:definition xml:lang="en">The date that the publisher accepted the resource into their system.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Accepted.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Available">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">To indicate the end of an embargo period, use Available.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum zveřejnění</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Available</skos:prefLabel>
         <skos:notation>Available</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum, kdy je zdroj zpřístupněn veřejnosti. Může se jednat o časové rozmezí. 
+Užívejte i pro označení konce období embarga.</skos:definition>
         <skos:definition xml:lang="en">The date the resource is made publicly available. May be a range.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Available.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Copyrighted">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:prefLabel xml:lang="cs">Datum udělení copyrightu</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Copyrighted</skos:prefLabel>
         <skos:notation>Copyrighted</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Konkrétní, zdokumentované datum, kdy zdroj získá status autorskoprávně chráněného díla, ​​pokud lze na dílo ochranu uplatnit.</skos:definition>
         <skos:definition xml:lang="en">The specific, documented date at which the resource receives a copyrighted status, if applicable.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Copyrighted.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Collected">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">To indicate precise or particular timeframes in which research was conducted.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum sběru</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Collected</skos:prefLabel>
         <skos:notation>Collected</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum nebo časové rozmezí, ve kterém byl shromážděn obsah zdroje.</skos:definition>
         <skos:definition xml:lang="en">The date or date range in which the resource content was collected.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Collected.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Coverage">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Časové pokrytí</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Coverage</skos:prefLabel>
         <skos:notation>Coverage</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum nebo časové rozmezí, na které se obsah zdroje vztahuje, které popisuje nebo pokrývá.</skos:definition>
         <skos:definition xml:lang="en">The date or date range that the resource content applies to, describes, or covers.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Coverage.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Created">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum vytvoření</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Created</skos:prefLabel>
         <skos:notation>Created</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. 
+Doporučeno použít pro lepší vyhledávání.</skos:definition>
         <skos:definition xml:lang="en">The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Created.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Issued">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:prefLabel xml:lang="cs">Datum vydání</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Issued</skos:prefLabel>
         <skos:notation>Issued</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum, kdy je zdroj zveřejněn nebo distribuován, např. v repozitáři nebo jiném systému.</skos:definition>
         <skos:definition xml:lang="en">The date that the resource is published or distributed, e.g., to a data centre.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Issued.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Submitted">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum podání</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Submitted</skos:prefLabel>
         <skos:notation>Submitted</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum, kdy tvůrce odešle (odevzdá) zdroj vydavateli. Toto datum se může lišit od Data přijetí, pokud vydavatel následně uplatní recenzní proces nebo jiný proces výběru.
+Doporučeno použít pro lepší vyhledávání.</skos:definition>
         <skos:definition xml:lang="en">The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Submitted.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Updated">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:prefLabel xml:lang="cs">Datum aktualizace</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Updated</skos:prefLabel>
         <skos:notation>Updated</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum poslední aktualizace zdroje. Může se jednat i o časové rozmezí.</skos:definition>
         <skos:definition xml:lang="en">The date of the last update to the resource, when the resource is being added to. May be a range.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Updated.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Valid">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:prefLabel xml:lang="cs">Datum platnosti</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Valid</skos:prefLabel>
         <skos:notation>Valid</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum nebo časové rozmezí, po které je dataset nebo zdroj platný a aktuální.</skos:definition>
         <skos:definition xml:lang="en">The date or date range during which the dataset or resource is accurate.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Valid.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://w3id.org/tib/datacite/vocab/dateType/Withdrawn">
         <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
         <skos:scopeNote xml:lang="en">It is good practice to include a Description that indicates the reason for the retraction or withdrawal.</skos:scopeNote>
+        <skos:prefLabel xml:lang="cs">Datum odstranění</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Withdrawn</skos:prefLabel>
         <skos:notation>Withdrawn</skos:notation>
         <skos:inScheme rdf:resource="https://w3id.org/tib/datacite/vocab/dateType"/>
+        <skos:definition xml:lang="cs">Datum odstranění zdroje. Je vhodné uvést důvod odstranění.</skos:definition>
         <skos:definition xml:lang="en">The date the resource is removed.</skos:definition>
+        <skos:changeNote xml:lang="en">Added/updated Czech translation for prefLabel and/or definition (2026-09-18)</skos:changeNote>
         <rdfs:seeAlso rdf:resource="https://w3id.org/tib/datacite/vocab/dateType/Withdrawn.jsonld"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2026-09-18</dcterms:modified>
       </skos:Concept>
     </skos:hasTopConcept>
   </skos:ConceptScheme>
