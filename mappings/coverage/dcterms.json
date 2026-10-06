@@ -168,8 +168,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/affiliationIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -197,8 +197,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/awardNumber",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -334,8 +334,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/funderIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -453,8 +453,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/nameIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -525,8 +525,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/publicationYear",
-      "status": "conversion_only",
-      "reason": "Keep year precision. Publication and public availability are distinct events; choose dcterms:available instead if that is what the source year establishes.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:issued; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "publication-year"
       ]
@@ -538,8 +538,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/publisherIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -578,8 +578,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/relatedItemIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -641,8 +641,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/property/rightsIdentifier",
-      "status": "conversion_only",
-      "reason": "Attach identifiers to their own entity rather than the main resource. Preserve scheme and lexical value separately; bare identifiers are not interchangeable with entity IRIs.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:identifier; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "identifier-context"
       ]
@@ -885,8 +885,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
-      "status": "conversion_only",
-      "reason": "Contributor role values are not property equivalents. Preserve the role on the contribution/attribution, not on the main resource; RightsHolder may additionally justify dcterms:rightsHolder. DCAT hadRole belongs on a qualified attribution or relationship node.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:rightsHolder; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "contributor-roles"
       ]
@@ -925,16 +925,16 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
-      "status": "conversion_only",
-      "reason": "Select dcterms:dateAccepted only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:dateAccepted; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-accepted"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Available",
-      "status": "conversion_only",
-      "reason": "Select dcterms:available only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:available; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-available"
       ]
@@ -946,32 +946,32 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
-      "status": "conversion_only",
-      "reason": "Select dcterms:dateCopyrighted only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:dateCopyrighted; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-copyrighted"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
-      "status": "conversion_only",
-      "reason": "Select dcterms:temporal only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:temporal; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-coverage"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Created",
-      "status": "conversion_only",
-      "reason": "Select dcterms:created only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:created; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-created"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Issued",
-      "status": "conversion_only",
-      "reason": "Select dcterms:issued only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:issued; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-issued"
       ]
@@ -983,24 +983,24 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
-      "status": "conversion_only",
-      "reason": "Select dcterms:dateSubmitted only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:dateSubmitted; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-submitted"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Updated",
-      "status": "conversion_only",
-      "reason": "Select dcterms:modified only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:modified; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-updated"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/dateType/Valid",
-      "status": "conversion_only",
-      "reason": "Select dcterms:valid only for this qualified date. Preserve original precision and ranges; Coverage needs a temporal-coverage representation, not a publication date.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:valid; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "date-valid"
       ]
@@ -1012,8 +1012,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
-      "status": "conversion_only",
-      "reason": "Abstract uses dcterms:abstract, TableOfContents uses dcterms:tableOfContents, and other types can use dcterms:description with the original type retained. Methods are not dcterms:instructionalMethod.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:abstract; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "descriptions"
       ]
@@ -1044,8 +1044,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
-      "status": "conversion_only",
-      "reason": "Abstract uses dcterms:abstract, TableOfContents uses dcterms:tableOfContents, and other types can use dcterms:description with the original type retained. Methods are not dcterms:instructionalMethod.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:tableOfContents; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "descriptions"
       ]
@@ -1340,8 +1340,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:references with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:references; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-cites"
       ]
@@ -1378,8 +1378,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:hasPart with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:hasPart; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-haspart"
       ]
@@ -1391,16 +1391,16 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:hasVersion with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:hasVersion; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-hasversion"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isReferencedBy with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isReferencedBy; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-iscitedby"
       ]
@@ -1422,8 +1422,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:source with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:source; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-isderivedfrom"
       ]
@@ -1450,55 +1450,55 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
-      "status": "no_equivalent",
-      "reason": "The IsNewVersionOf relationship has no equally specific approved DCTERMS relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isVersionOf; read the SSSOM comment and conversion rules before transforming data."
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isReplacedBy with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isReplacedBy; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-isobsoletedby"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
-      "status": "no_equivalent",
-      "reason": "The IsOriginalFormOf relationship has no equally specific approved DCTERMS relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:hasFormat; read the SSSOM comment and conversion rules before transforming data."
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isPartOf with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isPartOf; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-ispartof"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
-      "status": "no_equivalent",
-      "reason": "The IsPreviousVersionOf relationship has no equally specific approved DCTERMS relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:hasVersion; read the SSSOM comment and conversion rules before transforming data."
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isPartOf with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isPartOf; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-ispublishedin"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isReferencedBy with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isReferencedBy; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-isreferencedby"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isRequiredBy with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isRequiredBy; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-isrequiredby"
       ]
@@ -1530,21 +1530,21 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
-      "status": "no_equivalent",
-      "reason": "The IsVariantFormOf relationship has no equally specific approved DCTERMS relation here. A generic dcterms:relation can preserve relatedness only if the original qualifier is retained; no term equivalence is asserted."
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isFormatOf; read the SSSOM comment and conversion rules before transforming data."
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:isVersionOf with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:isVersionOf; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-isversionof"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:replaces with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:replaces; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-obsoletes"
       ]
@@ -1556,16 +1556,16 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/References",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:references with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:references; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-references"
       ]
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
-      "status": "conversion_only",
-      "reason": "Keep A as the described resource and B as the related resource. Select dcterms:requires with this direction; preserve the more specific DataCite relation qualifier when the target is broader.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:requires; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "relation-requires"
       ]
@@ -1747,8 +1747,8 @@
     },
     {
       "subject_id": "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle",
-      "status": "conversion_only",
-      "reason": "AlternativeTitle can use dcterms:alternative; translated titles require their language. Subtitle and Other must retain their qualifier because DCTERMS does not distinguish all title kinds.",
+      "status": "mapped",
+      "reason": "Reviewed term correspondence with dcterms:alternative; read the SSSOM comment and conversion rules before transforming data.",
       "rule_ids": [
         "title-qualifiers"
       ]

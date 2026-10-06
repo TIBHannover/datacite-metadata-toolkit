@@ -105,6 +105,9 @@
       "rdfs:label": "affiliationIdentifier",
       "skos:broadMatch": [
         {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
+        {
           "@id": "https://schema.org/identifier"
         }
       ]
@@ -125,6 +128,9 @@
       "@id": "https://w3id.org/tib/datacite/property/awardNumber",
       "rdfs:label": "awardNumber",
       "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
         {
           "@id": "https://schema.org/identifier"
         }
@@ -275,6 +281,9 @@
       "rdfs:label": "funderIdentifier",
       "skos:broadMatch": [
         {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
+        {
           "@id": "https://schema.org/identifier"
         }
       ]
@@ -401,6 +410,9 @@
       "rdfs:label": "nameIdentifier",
       "skos:broadMatch": [
         {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
+        {
           "@id": "https://schema.org/identifier"
         }
       ]
@@ -428,6 +440,9 @@
       "rdfs:label": "publicationYear",
       "skos:relatedMatch": [
         {
+          "@id": "http://purl.org/dc/terms/issued"
+        },
+        {
           "@id": "https://schema.org/datePublished"
         }
       ]
@@ -449,6 +464,9 @@
       "rdfs:label": "publisherIdentifier",
       "skos:broadMatch": [
         {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
+        {
           "@id": "https://schema.org/identifier"
         }
       ]
@@ -457,6 +475,9 @@
       "@id": "https://w3id.org/tib/datacite/property/relatedItemIdentifier",
       "rdfs:label": "relatedItemIdentifier",
       "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
         {
           "@id": "https://schema.org/identifier"
         }
@@ -501,6 +522,9 @@
       "@id": "https://w3id.org/tib/datacite/property/rightsIdentifier",
       "rdfs:label": "rightsIdentifier",
       "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/identifier"
+        },
         {
           "@id": "https://schema.org/identifier"
         }
@@ -603,6 +627,15 @@
       ]
     },
     {
+      "@id": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
+      "rdfs:label": "RightsHolder",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/rightsHolder"
+        }
+      ]
+    },
+    {
       "@id": "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor",
       "rdfs:label": "Sponsor",
       "skos:closeMatch": [
@@ -621,8 +654,31 @@
       ]
     },
     {
+      "@id": "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
+      "rdfs:label": "Accepted",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/dateAccepted"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/dateType/Available",
+      "rdfs:label": "Available",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/available"
+        }
+      ]
+    },
+    {
       "@id": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
       "rdfs:label": "Copyrighted",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/dateCopyrighted"
+        }
+      ],
       "skos:relatedMatch": [
         {
           "@id": "https://schema.org/copyrightYear"
@@ -634,6 +690,9 @@
       "rdfs:label": "Coverage",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/temporal"
+        },
+        {
           "@id": "https://schema.org/temporalCoverage"
         }
       ]
@@ -642,6 +701,9 @@
       "@id": "https://w3id.org/tib/datacite/vocab/dateType/Created",
       "rdfs:label": "Created",
       "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/created"
+        },
         {
           "@id": "https://schema.org/dateCreated"
         }
@@ -652,7 +714,19 @@
       "rdfs:label": "Issued",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/issued"
+        },
+        {
           "@id": "https://schema.org/datePublished"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
+      "rdfs:label": "Submitted",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/dateSubmitted"
         }
       ]
     },
@@ -661,7 +735,19 @@
       "rdfs:label": "Updated",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/modified"
+        },
+        {
           "@id": "https://schema.org/dateModified"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/dateType/Valid",
+      "rdfs:label": "Valid",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/valid"
         }
       ]
     },
@@ -670,7 +756,19 @@
       "rdfs:label": "Abstract",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/abstract"
+        },
+        {
           "@id": "https://schema.org/abstract"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+      "rdfs:label": "TableOfContents",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/tableOfContents"
         }
       ]
     },
@@ -727,6 +825,11 @@
     {
       "@id": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
       "rdfs:label": "Cites",
+      "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/references"
+        }
+      ],
       "skos:closeMatch": [
         {
           "@id": "https://schema.org/citation"
@@ -737,6 +840,9 @@
       "@id": "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
       "rdfs:label": "HasPart",
       "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/hasPart"
+        },
         {
           "@id": "https://schema.org/hasPart"
         }
@@ -752,9 +858,30 @@
       ]
     },
     {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
+      "rdfs:label": "HasVersion",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/hasVersion"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
+      "rdfs:label": "IsCitedBy",
+      "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isReferencedBy"
+        }
+      ]
+    },
+    {
       "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
       "rdfs:label": "IsDerivedFrom",
       "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/source"
+        },
         {
           "@id": "https://schema.org/isBasedOn"
         }
@@ -770,11 +897,50 @@
       ]
     },
     {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
+      "rdfs:label": "IsNewVersionOf",
+      "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isVersionOf"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
+      "rdfs:label": "IsObsoletedBy",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isReplacedBy"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
+      "rdfs:label": "IsOriginalFormOf",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/hasFormat"
+        }
+      ]
+    },
+    {
       "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
       "rdfs:label": "IsPartOf",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
           "@id": "https://schema.org/isPartOf"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
+      "rdfs:label": "IsPreviousVersionOf",
+      "skos:broadMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/hasVersion"
         }
       ]
     },
@@ -783,7 +949,28 @@
       "rdfs:label": "IsPublishedIn",
       "skos:broadMatch": [
         {
+          "@id": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
           "@id": "https://schema.org/isPartOf"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+      "rdfs:label": "IsReferencedBy",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isReferencedBy"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
+      "rdfs:label": "IsRequiredBy",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isRequiredBy"
         }
       ]
     },
@@ -806,11 +993,52 @@
       ]
     },
     {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+      "rdfs:label": "IsVariantFormOf",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isFormatOf"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
+      "rdfs:label": "IsVersionOf",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/isVersionOf"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+      "rdfs:label": "Obsoletes",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/replaces"
+        }
+      ]
+    },
+    {
       "@id": "https://w3id.org/tib/datacite/vocab/relationType/References",
       "rdfs:label": "References",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/references"
+        }
+      ],
       "skos:narrowMatch": [
         {
           "@id": "https://schema.org/citation"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
+      "rdfs:label": "Requires",
+      "skos:closeMatch": [
+        {
+          "@id": "http://purl.org/dc/terms/requires"
         }
       ]
     },
@@ -1320,6 +1548,9 @@
       "rdfs:label": "AlternativeTitle",
       "skos:closeMatch": [
         {
+          "@id": "http://purl.org/dc/terms/alternative"
+        },
+        {
           "@id": "https://schema.org/alternateName"
         }
       ]
@@ -1398,8 +1629,24 @@
       "rdfs:label": "Standard"
     },
     {
+      "@id": "http://purl.org/dc/terms/abstract",
+      "rdfs:label": "abstract"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/alternative",
+      "rdfs:label": "alternative"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/available",
+      "rdfs:label": "available"
+    },
+    {
       "@id": "http://purl.org/dc/terms/contributor",
       "rdfs:label": "contributor"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/created",
+      "rdfs:label": "created"
     },
     {
       "@id": "http://purl.org/dc/terms/creator",
@@ -1408,6 +1655,18 @@
     {
       "@id": "http://purl.org/dc/terms/date",
       "rdfs:label": "date"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/dateAccepted",
+      "rdfs:label": "dateAccepted"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/dateCopyrighted",
+      "rdfs:label": "dateCopyrighted"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/dateSubmitted",
+      "rdfs:label": "dateSubmitted"
     },
     {
       "@id": "http://purl.org/dc/terms/description",
@@ -1422,8 +1681,48 @@
       "rdfs:label": "format"
     },
     {
+      "@id": "http://purl.org/dc/terms/hasFormat",
+      "rdfs:label": "hasFormat"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/hasPart",
+      "rdfs:label": "hasPart"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/hasVersion",
+      "rdfs:label": "hasVersion"
+    },
+    {
       "@id": "http://purl.org/dc/terms/identifier",
       "rdfs:label": "identifier"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isFormatOf",
+      "rdfs:label": "isFormatOf"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isPartOf",
+      "rdfs:label": "isPartOf"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isReferencedBy",
+      "rdfs:label": "isReferencedBy"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isReplacedBy",
+      "rdfs:label": "isReplacedBy"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isRequiredBy",
+      "rdfs:label": "isRequiredBy"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/isVersionOf",
+      "rdfs:label": "isVersionOf"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/issued",
+      "rdfs:label": "issued"
     },
     {
       "@id": "http://purl.org/dc/terms/language",
@@ -1434,12 +1733,36 @@
       "rdfs:label": "license"
     },
     {
+      "@id": "http://purl.org/dc/terms/modified",
+      "rdfs:label": "modified"
+    },
+    {
       "@id": "http://purl.org/dc/terms/publisher",
       "rdfs:label": "publisher"
     },
     {
+      "@id": "http://purl.org/dc/terms/references",
+      "rdfs:label": "references"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/replaces",
+      "rdfs:label": "replaces"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/requires",
+      "rdfs:label": "requires"
+    },
+    {
       "@id": "http://purl.org/dc/terms/rights",
       "rdfs:label": "rights"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/rightsHolder",
+      "rdfs:label": "rightsHolder"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/source",
+      "rdfs:label": "source"
     },
     {
       "@id": "http://purl.org/dc/terms/spatial",
@@ -1450,12 +1773,24 @@
       "rdfs:label": "subject"
     },
     {
+      "@id": "http://purl.org/dc/terms/tableOfContents",
+      "rdfs:label": "tableOfContents"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/temporal",
+      "rdfs:label": "temporal"
+    },
+    {
       "@id": "http://purl.org/dc/terms/title",
       "rdfs:label": "title"
     },
     {
       "@id": "http://purl.org/dc/terms/type",
       "rdfs:label": "type"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/valid",
+      "rdfs:label": "valid"
     },
     {
       "@id": "http://www.w3.org/ns/dcat#Dataset",

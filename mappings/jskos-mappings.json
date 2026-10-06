@@ -538,6 +538,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/affiliationIdentifier",
+          "notation": [
+            "property/affiliationIdentifier"
+          ],
+          "prefLabel": {
+            "en": "affiliationIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/identifier",
           "notation": [
             "identifier"
@@ -692,6 +750,64 @@
     "note": {
       "en": [
         "The Schema.org term is broader. Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/awardNumber",
+          "notation": [
+            "property/awardNumber"
+          ],
+          "prefLabel": {
+            "en": "awardNumber"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
       ]
     }
   },
@@ -1814,6 +1930,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/funderIdentifier",
+          "notation": [
+            "property/funderIdentifier"
+          ],
+          "prefLabel": {
+            "en": "funderIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/identifier",
           "notation": [
             "identifier"
@@ -2742,6 +2916,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/nameIdentifier",
+          "notation": [
+            "property/nameIdentifier"
+          ],
+          "prefLabel": {
+            "en": "nameIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/identifier",
           "notation": [
             "identifier"
@@ -2896,6 +3128,64 @@
     "note": {
       "en": [
         "Geographic correspondence; conversion requires contextual place/geometry construction; see geographic-coverage."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/publicationYear",
+          "notation": [
+            "property/publicationYear"
+          ],
+          "prefLabel": {
+            "en": "publicationYear"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "notation": [
+            "issued"
+          ],
+          "prefLabel": {
+            "en": "issued"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#relatedMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Related publication timing; a year is not a full date. Never invent a month or day."
       ]
     }
   },
@@ -3090,6 +3380,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/publisherIdentifier",
+          "notation": [
+            "property/publisherIdentifier"
+          ],
+          "prefLabel": {
+            "en": "publisherIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/identifier",
           "notation": [
             "identifier"
@@ -3128,6 +3476,64 @@
     "note": {
       "en": [
         "The Schema.org term is broader. Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/relatedItemIdentifier",
+          "notation": [
+            "property/relatedItemIdentifier"
+          ],
+          "prefLabel": {
+            "en": "relatedItemIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
       ]
     }
   },
@@ -3476,6 +3882,64 @@
     "note": {
       "en": [
         "The Schema.org term is narrower. License branch of rights-and-licenses; DataCite rights also contains nonlicense statements."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/property/rightsIdentifier",
+          "notation": [
+            "property/rightsIdentifier"
+          ],
+          "prefLabel": {
+            "en": "rightsIdentifier"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "notation": [
+            "identifier"
+          ],
+          "prefLabel": {
+            "en": "identifier"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader. Identifies the entity named by the source context; preserve the identifier scheme and lexical form."
       ]
     }
   },
@@ -4350,6 +4814,64 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
+          "notation": [
+            "contributorType/RightsHolder"
+          ],
+          "prefLabel": {
+            "en": "RightsHolder"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/rightsHolder",
+          "notation": [
+            "rightsHolder"
+          ],
+          "prefLabel": {
+            "en": "rightsHolder"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The rights-holder role corresponds to dcterms:rightsHolder; keep the agent's name, identifiers and type."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor",
           "notation": [
             "contributorType/Sponsor"
@@ -4466,6 +4988,180 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
+          "notation": [
+            "dateType/Accepted"
+          ],
+          "prefLabel": {
+            "en": "Accepted"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/dateAccepted",
+          "notation": [
+            "dateAccepted"
+          ],
+          "prefLabel": {
+            "en": "dateAccepted"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:dateAccepted, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Available",
+          "notation": [
+            "dateType/Available"
+          ],
+          "prefLabel": {
+            "en": "Available"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/available",
+          "notation": [
+            "available"
+          ],
+          "prefLabel": {
+            "en": "available"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:available, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
+          "notation": [
+            "dateType/Copyrighted"
+          ],
+          "prefLabel": {
+            "en": "Copyrighted"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/dateCopyrighted",
+          "notation": [
+            "dateCopyrighted"
+          ],
+          "prefLabel": {
+            "en": "dateCopyrighted"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:dateCopyrighted, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted",
           "notation": [
             "dateType/Copyrighted"
@@ -4517,6 +5213,64 @@
     "note": {
       "en": [
         "Date qualifier associated with the destination of its date value; see typed-dates for precision, event and information-loss conditions."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
+          "notation": [
+            "dateType/Coverage"
+          ],
+          "prefLabel": {
+            "en": "Coverage"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/temporal",
+          "notation": [
+            "temporal"
+          ],
+          "prefLabel": {
+            "en": "temporal"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:temporal, the property that holds its date value; keep the original precision and ranges."
       ]
     }
   },
@@ -4595,6 +5349,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/created",
+          "notation": [
+            "created"
+          ],
+          "prefLabel": {
+            "en": "created"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:created, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Created",
+          "notation": [
+            "dateType/Created"
+          ],
+          "prefLabel": {
+            "en": "Created"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/dateCreated",
           "notation": [
             "dateCreated"
@@ -4633,6 +5445,64 @@
     "note": {
       "en": [
         "This date kind corresponds to the property that holds its date value; see typed-dates for precision, event and information-loss conditions."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Issued",
+          "notation": [
+            "dateType/Issued"
+          ],
+          "prefLabel": {
+            "en": "Issued"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "notation": [
+            "issued"
+          ],
+          "prefLabel": {
+            "en": "issued"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:issued, the property that holds its date value; keep the original precision and ranges."
       ]
     }
   },
@@ -4698,6 +5568,122 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
+          "notation": [
+            "dateType/Submitted"
+          ],
+          "prefLabel": {
+            "en": "Submitted"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/dateSubmitted",
+          "notation": [
+            "dateSubmitted"
+          ],
+          "prefLabel": {
+            "en": "dateSubmitted"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:dateSubmitted, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Updated",
+          "notation": [
+            "dateType/Updated"
+          ],
+          "prefLabel": {
+            "en": "Updated"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/modified",
+          "notation": [
+            "modified"
+          ],
+          "prefLabel": {
+            "en": "modified"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:modified, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/dateType/Updated",
           "notation": [
             "dateType/Updated"
@@ -4756,6 +5742,122 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/dateType/Valid",
+          "notation": [
+            "dateType/Valid"
+          ],
+          "prefLabel": {
+            "en": "Valid"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/valid",
+          "notation": [
+            "valid"
+          ],
+          "prefLabel": {
+            "en": "valid"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "This date kind corresponds to dcterms:valid, the property that holds its date value; keep the original precision and ranges."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
+          "notation": [
+            "descriptionType/Abstract"
+          ],
+          "prefLabel": {
+            "en": "Abstract"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/abstract",
+          "notation": [
+            "abstract"
+          ],
+          "prefLabel": {
+            "en": "abstract"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The abstract kind corresponds to dcterms:abstract, the property that holds the abstract text."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
           "notation": [
             "descriptionType/Abstract"
@@ -4807,6 +5909,64 @@
     "note": {
       "en": [
         "The abstract kind corresponds to the property that holds the abstract text; see description-values."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+          "notation": [
+            "descriptionType/TableOfContents"
+          ],
+          "prefLabel": {
+            "en": "TableOfContents"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/tableOfContents",
+          "notation": [
+            "tableOfContents"
+          ],
+          "prefLabel": {
+            "en": "tableOfContents"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The table-of-contents kind corresponds to dcterms:tableOfContents, the property that holds that text."
       ]
     }
   },
@@ -5175,6 +6335,64 @@
     "to": {
       "memberSet": [
         {
+          "uri": "http://purl.org/dc/terms/references",
+          "notation": [
+            "references"
+          ],
+          "prefLabel": {
+            "en": "references"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader: dcterms:references also covers pointers that are not citations. Same direction: A Cites B becomes A dcterms:references B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
+          "notation": [
+            "relationType/Cites"
+          ],
+          "prefLabel": {
+            "en": "Cites"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
           "uri": "https://schema.org/citation",
           "notation": [
             "citation"
@@ -5213,6 +6431,64 @@
     "note": {
       "en": [
         "Corresponding relationship; see relation-cites for endpoints and conditions. A includes B in a citation."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/HasPart",
+          "notation": [
+            "relationType/HasPart"
+          ],
+          "prefLabel": {
+            "en": "HasPart"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/hasPart",
+          "notation": [
+            "hasPart"
+          ],
+          "prefLabel": {
+            "en": "hasPart"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A HasPart B becomes A dcterms:hasPart B."
       ]
     }
   },
@@ -5336,6 +6612,180 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion",
+          "notation": [
+            "relationType/HasVersion"
+          ],
+          "prefLabel": {
+            "en": "HasVersion"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/hasVersion",
+          "notation": [
+            "hasVersion"
+          ],
+          "prefLabel": {
+            "en": "hasVersion"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A HasVersion B becomes A dcterms:hasVersion B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy",
+          "notation": [
+            "relationType/IsCitedBy"
+          ],
+          "prefLabel": {
+            "en": "IsCitedBy"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isReferencedBy",
+          "notation": [
+            "isReferencedBy"
+          ],
+          "prefLabel": {
+            "en": "isReferencedBy"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader: dcterms:isReferencedBy also covers pointers that are not citations. Same direction: A IsCitedBy B becomes A dcterms:isReferencedBy B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
+          "notation": [
+            "relationType/IsDerivedFrom"
+          ],
+          "prefLabel": {
+            "en": "IsDerivedFrom"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/source",
+          "notation": [
+            "source"
+          ],
+          "prefLabel": {
+            "en": "source"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsDerivedFrom B becomes A dcterms:source B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom",
           "notation": [
             "relationType/IsDerivedFrom"
@@ -5452,6 +6902,238 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
+          "notation": [
+            "relationType/IsNewVersionOf"
+          ],
+          "prefLabel": {
+            "en": "IsNewVersionOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isVersionOf",
+          "notation": [
+            "isVersionOf"
+          ],
+          "prefLabel": {
+            "en": "isVersionOf"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader: it does not say which version came first. Same direction: A IsNewVersionOf B becomes A dcterms:isVersionOf B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy",
+          "notation": [
+            "relationType/IsObsoletedBy"
+          ],
+          "prefLabel": {
+            "en": "IsObsoletedBy"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isReplacedBy",
+          "notation": [
+            "isReplacedBy"
+          ],
+          "prefLabel": {
+            "en": "isReplacedBy"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsObsoletedBy B becomes A dcterms:isReplacedBy B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf",
+          "notation": [
+            "relationType/IsOriginalFormOf"
+          ],
+          "prefLabel": {
+            "en": "IsOriginalFormOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/hasFormat",
+          "notation": [
+            "hasFormat"
+          ],
+          "prefLabel": {
+            "en": "hasFormat"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Both describe substantially the same resource in another format. Same direction: A IsOriginalFormOf B becomes A dcterms:hasFormat B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
+          "notation": [
+            "relationType/IsPartOf"
+          ],
+          "prefLabel": {
+            "en": "IsPartOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isPartOf",
+          "notation": [
+            "isPartOf"
+          ],
+          "prefLabel": {
+            "en": "isPartOf"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsPartOf B becomes A dcterms:isPartOf B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf",
           "notation": [
             "relationType/IsPartOf"
@@ -5510,6 +7192,122 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
+          "notation": [
+            "relationType/IsPreviousVersionOf"
+          ],
+          "prefLabel": {
+            "en": "IsPreviousVersionOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/hasVersion",
+          "notation": [
+            "hasVersion"
+          ],
+          "prefLabel": {
+            "en": "hasVersion"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader: it does not say which version came first. Same direction: A IsPreviousVersionOf B becomes A dcterms:hasVersion B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
+          "notation": [
+            "relationType/IsPublishedIn"
+          ],
+          "prefLabel": {
+            "en": "IsPublishedIn"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isPartOf",
+          "notation": [
+            "isPartOf"
+          ],
+          "prefLabel": {
+            "en": "isPartOf"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The DCTERMS term is broader: publication in a journal or series is one kind of being part of something. Same direction: A IsPublishedIn B becomes A dcterms:isPartOf B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
           "notation": [
             "relationType/IsPublishedIn"
@@ -5561,6 +7359,122 @@
     "note": {
       "en": [
         "The Schema.org term is broader. Corresponding relationship; see relation-ispublishedin for endpoints and conditions. Preserve the stronger publication relation in the source; bibliographic-location creates issue/volume nodes when known."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
+          "notation": [
+            "relationType/IsReferencedBy"
+          ],
+          "prefLabel": {
+            "en": "IsReferencedBy"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isReferencedBy",
+          "notation": [
+            "isReferencedBy"
+          ],
+          "prefLabel": {
+            "en": "isReferencedBy"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsReferencedBy B becomes A dcterms:isReferencedBy B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
+          "notation": [
+            "relationType/IsRequiredBy"
+          ],
+          "prefLabel": {
+            "en": "IsRequiredBy"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isRequiredBy",
+          "notation": [
+            "isRequiredBy"
+          ],
+          "prefLabel": {
+            "en": "isRequiredBy"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsRequiredBy B becomes A dcterms:isRequiredBy B."
       ]
     }
   },
@@ -5684,6 +7598,238 @@
     "from": {
       "memberSet": [
         {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf",
+          "notation": [
+            "relationType/IsVariantFormOf"
+          ],
+          "prefLabel": {
+            "en": "IsVariantFormOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isFormatOf",
+          "notation": [
+            "isFormatOf"
+          ],
+          "prefLabel": {
+            "en": "isFormatOf"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Both describe substantially the same resource in another format. Same direction: A IsVariantFormOf B becomes A dcterms:isFormatOf B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf",
+          "notation": [
+            "relationType/IsVersionOf"
+          ],
+          "prefLabel": {
+            "en": "IsVersionOf"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/isVersionOf",
+          "notation": [
+            "isVersionOf"
+          ],
+          "prefLabel": {
+            "en": "isVersionOf"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A IsVersionOf B becomes A dcterms:isVersionOf B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
+          "notation": [
+            "relationType/Obsoletes"
+          ],
+          "prefLabel": {
+            "en": "Obsoletes"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/replaces",
+          "notation": [
+            "replaces"
+          ],
+          "prefLabel": {
+            "en": "replaces"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A Obsoletes B becomes A dcterms:replaces B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/References",
+          "notation": [
+            "relationType/References"
+          ],
+          "prefLabel": {
+            "en": "References"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/references",
+          "notation": [
+            "references"
+          ],
+          "prefLabel": {
+            "en": "references"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A References B becomes A dcterms:references B."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
           "uri": "https://w3id.org/tib/datacite/vocab/relationType/References",
           "notation": [
             "relationType/References"
@@ -5735,6 +7881,64 @@
     "note": {
       "en": [
         "The Schema.org term is narrower. Corresponding relationship; see relation-references for endpoints and conditions. References can exceed bibliographic citation; retain the source relation if this condition is not met."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
+          "notation": [
+            "relationType/Requires"
+          ],
+          "prefLabel": {
+            "en": "Requires"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/requires",
+          "notation": [
+            "requires"
+          ],
+          "prefLabel": {
+            "en": "requires"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "Corresponding relationship with the same direction: A Requires B becomes A dcterms:requires B."
       ]
     }
   },
@@ -10590,6 +12794,64 @@
     "note": {
       "en": [
         "Both denote an organized sequence of activities; execution metadata is outside this correspondence."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle",
+          "notation": [
+            "titleType/AlternativeTitle"
+          ],
+          "prefLabel": {
+            "en": "AlternativeTitle"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/terms/alternative",
+          "notation": [
+            "alternative"
+          ],
+          "prefLabel": {
+            "en": "alternative"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/725",
+      "notation": [
+        "dcterms"
+      ]
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#closeMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "The alternative-title kind corresponds to dcterms:alternative, the property that holds the title text."
       ]
     }
   },
