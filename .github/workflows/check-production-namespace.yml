@@ -54,6 +54,9 @@ jobs:
       - name: Check vocabulary scheme titles
         run: npm run check:vocab-scheme-titles
 
+      - name: Check unversioned dist files match the current version
+        run: npm run check:current-aliases
+
       - name: Verify production namespace checksums
         run: |
           cd production-namespace

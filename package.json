@@ -8,6 +8,7 @@
     "syncCheck": "python3 rdf-build-scripts/synCheck.py",
     "build:production-namespace": "bash rdf-build-scripts/generate-production-namespace.sh",
     "check:vocab-scheme-titles": "node rdf-build-scripts/check-vocab-scheme-titles.js",
+    "check:current-aliases": "node rdf-build-scripts/check-current-aliases.js",
     "validate-mappings": "node validation-and-conversion/scripts/validate.js mappings/jskos-mappings.json",
     "build:mappings": "python3 rdf-build-scripts/build-mappings.py",
     "check:mappings": "python3 rdf-build-scripts/build-mappings.py --check && npm run validate-mappings",

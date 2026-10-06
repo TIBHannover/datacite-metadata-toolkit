@@ -388,6 +388,7 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 | `manifest-sync.js` | `--check \| --write \| --validate [--version x.y] [--manifest <path>] [--allow-narrow]` | Rebuilds or validates a manifest from files on disk |
 | `build-distribution.js` | `[--version x.y]` | Bundles vocab files into `dist/datacite-<v>.jsonld` and converts to `.ttl`/`.rdf` |
 | `update-current-pointers.js` | `[--version x.y]` | Writes `datacite-current.json` and `dist/datacite.jsonld` aliases |
+| `check-current-aliases.js` | — | Fails if `dist/datacite.{jsonld,ttl,rdf}` differ from the current version's files (`npm run check:current-aliases`) |
 | `generate-index-pages.js` | _(no args)_ | Regenerates HTML browser index pages for `class/`, `property/`, `vocab/`, `context/`, `dist/`, `manifest/` |
 | `generate-production-namespace.sh` | env vars: `SOURCE_NAMESPACE`, `CANONICAL_NAMESPACE`, `PAGES_BASE_PATH`, `PUBLICATION_BASE_URL`, `DST` | Builds the reviewable `production-namespace/` bundle for the TIB/W3ID publication flow |
 | `update-root-index.js` | _(no args)_ | Patches AUTO marker blocks in `rdf-vocabulary-staging/index.html` if that file exists (no-op otherwise) |
