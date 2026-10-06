@@ -1,0 +1,51 @@
+name: Check Mappings
+
+on:
+  pull_request:
+    paths:
+      - "mappings/**"
+      - "production-namespace/**"
+      - "rdf-build-scripts/*mapping*"
+      - "tests/mappings/**"
+      - "validation-and-conversion/scripts/validate.js"
+      - "package.json"
+      - ".github/workflows/check-mappings.yml"
+  push:
+    branches: [main]
+    paths:
+      - "mappings/**"
+      - "production-namespace/**"
+      - "rdf-build-scripts/*mapping*"
+      - "tests/mappings/**"
+      - "validation-and-conversion/scripts/validate.js"
+      - "package.json"
+      - ".github/workflows/check-mappings.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install validators
+        run: |
+          python -m pip install -r rdf-build-scripts/requirements-mappings.txt
+          npm install --ignore-scripts --no-package-lock
+      - name: Regression tests
+        run: npm run test:mappings
+      - name: Validate sources, coverage, and generated exports
+        run: npm run check:mappings
+      - name: Validate official SSSOM schema and CURIE rules
+        run: |
+          for file in mappings/datacite-*.sssom.tsv; do
+            sssom validate "$file" -V JsonSchema -V PrefixMapCompleteness -V StrictCurieFormat || exit 1
+          done
