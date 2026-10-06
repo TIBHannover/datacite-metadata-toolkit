@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD> a skos:Concept ;
+    skos:altLabel "Research Activity Identifier" ;
+    skos:definition "The Research Activity Identifier (RAiD) is a persistent identifier (PID) and global registry dedicated to research projects. RAiD is governed by ISO standard 23527:2022, with the Australian Research Data Commons (ARDC) as the Registration Authority and lead developer of the system. RAiD provides a system to store, update, share, and link project information across the research community." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"RAiD\" relationType=\"IsPartOf\" resourceTypeGeneral=\"Project\">https://raid.org/10.26259/5c43ca8f</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "RAiD" ;
+    skos:prefLabel "RAiD" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

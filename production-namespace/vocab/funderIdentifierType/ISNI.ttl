@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI> a skos:Concept ;
+    skos:altLabel "International Standard Name Identifier" ;
+    skos:definition "A 16-character identifier for the public identity of a person or organization, defined by ISO 27729 and assigned by the ISNI International Agency. When used as a funder identifier, the ISNI uniquely identifies the funding organization." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/funderIdentifierType> ;
+    skos:notation "ISNI" ;
+    skos:prefLabel "ISNI" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/funderIdentifierType> .
+

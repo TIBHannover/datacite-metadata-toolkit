@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID> a skos:Concept ;
+    skos:altLabel "Global Research Identifier Database" ;
+    skos:definition "A persistent identifier for a research organization issued by the Global Research Identifier Database (GRID), a free database of research-related institution identifiers maintained by Digital Science." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/funderIdentifierType> ;
+    skos:notation "GRID" ;
+    skos:prefLabel "GRID" ;
+    skos:scopeNote "GRID identifiers were succeeded by ROR identifiers in 2021; new records SHOULD prefer ROR where an equivalent ROR identifier exists." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/funderIdentifierType> .
+

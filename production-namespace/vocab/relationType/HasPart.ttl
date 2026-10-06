@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/HasPart> a skos:Concept ;
+    skos:definition "indicates A includes the part B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "HasPart" ;
+    skos:prefLabel "HasPart" ;
+    skos:scopeNote "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

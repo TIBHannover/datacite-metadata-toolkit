@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Producer> a skos:Concept ;
+    skos:definition "Typically, a person or organisation responsible for the artistry and form of a media product." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Producer" ;
+    skos:prefLabel "Producer" ;
+    skos:scopeNote "In the data industry, this may be a company producing DVDs that package data for future dissemination by a distributor." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

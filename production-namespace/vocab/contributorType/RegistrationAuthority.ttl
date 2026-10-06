@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> a skos:Concept ;
+    skos:definition "A standards-setting body from which Registration Agencies obtain official recognition and guidance." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "RegistrationAuthority" ;
+    skos:prefLabel "RegistrationAuthority" ;
+    skos:scopeNote "The IDF serves as the Registration Authority for the International Standards Organisation (ISO) in the area/domain of Digital Object Identifiers." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Editor> a skos:Concept ;
+    skos:definition "A person who oversees the details related to the publication format of the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Editor" ;
+    skos:prefLabel "Editor" ;
+    skos:scopeNote "If the Editor is to be credited in place of multiple creators, the Editor’s name may be supplied as Creator, with “(Ed.)” appended to the name." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

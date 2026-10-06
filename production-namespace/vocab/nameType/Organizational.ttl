@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/nameType/Organizational> a skos:Concept ;
+    skos:definition "An organization or institution name." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/nameType> ;
+    skos:notation "Organizational" ;
+    skos:prefLabel "Organizational" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/nameType> .
+

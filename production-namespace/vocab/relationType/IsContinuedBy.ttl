@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy> a skos:Concept ;
+    skos:definition "indicates A is continued by the work B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsContinuedBy" ;
+    skos:prefLabel "IsContinuedBy" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

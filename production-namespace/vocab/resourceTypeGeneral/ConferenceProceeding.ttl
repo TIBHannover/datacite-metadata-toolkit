@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "Collection of academic papers published in the context of an academic conference." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "ConferenceProceeding" ;
+    skos:prefLabel "ConferenceProceeding" ;
+    skos:scopeNote "<resourceType resourceTypeGeneral=\"ConferenceProceeding\">Annual Convention</resourceType>" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

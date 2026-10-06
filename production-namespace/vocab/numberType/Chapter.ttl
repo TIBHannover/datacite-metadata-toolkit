@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/numberType/Chapter> a skos:Concept ;
+    skos:definition "A number identifying a chapter within a book or monograph." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/numberType> ;
+    skos:notation "Chapter" ;
+    skos:prefLabel "Chapter" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/numberType> .
+

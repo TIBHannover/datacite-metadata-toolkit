@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson> a skos:Concept ;
+    skos:definition "A person without a specifically defined role in the development of the resource, but who is someone the author wishes to recognize." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "RelatedPerson" ;
+    skos:prefLabel "RelatedPerson" ;
+    skos:scopeNote "Could be an author’s intellectual mentor, a person providing intellectual leadership in the discipline or subject domain, etc." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

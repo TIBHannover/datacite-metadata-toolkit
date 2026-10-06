@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Valid> a skos:Concept ;
+    skos:definition "The date or date range during which the dataset or resource is accurate." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Valid" ;
+    skos:prefLabel "Valid" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

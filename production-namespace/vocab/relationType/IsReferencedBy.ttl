@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> a skos:Concept ;
+    skos:definition "indicates A is used as a source of information by B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsReferencedBy" ;
+    skos:prefLabel "IsReferencedBy" ;
+    skos:scopeNote "Recommended for discovery." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

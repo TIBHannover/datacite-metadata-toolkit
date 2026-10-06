@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Created> a skos:Concept ;
+    skos:definition "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Created" ;
+    skos:prefLabel "Created" ;
+    skos:scopeNote "Recommended for discovery." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument> a skos:Concept ;
+    skos:definition "A device, tool or apparatus used to obtain, measure and/or analyze data." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Instrument" ;
+    skos:prefLabel "Instrument" ;
+    skos:scopeNote """This is meant to be the instrument instance (the individual physical device), not the digital description or design of an instrument.
+<resourceType resourceTypeGeneral="Instrument">Reflectometer</resourceType>""" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

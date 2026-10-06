@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Available> a skos:Concept ;
+    skos:definition "The date the resource is made publicly available. May be a range." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Available" ;
+    skos:prefLabel "Available" ;
+    skos:scopeNote "To indicate the end of an embargo period, use Available." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

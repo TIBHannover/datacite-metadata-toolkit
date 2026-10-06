@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID> a skos:Concept ;
+    skos:altLabel "Life Science Identifiers" ;
+    skos:definition "A unique identifier for data in the Life Science domain. Format: urn:lsid:authority:namespace:identifier:revision." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"LSID\" relationType=\"Cites\">urn:lsid:ubio.org:namebank:11815</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "LSID" ;
+    skos:prefLabel "LSID" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

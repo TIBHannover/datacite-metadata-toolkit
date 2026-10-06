@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> a skos:Concept ;
+    skos:definition "Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "ContactPerson" ;
+    skos:prefLabel "ContactPerson" ;
+    skos:scopeNote "May also be the “Point of Contact” in an organisation that controls access to the resource, if that organisation is different from the Publisher, Distributor, and Data Manager." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

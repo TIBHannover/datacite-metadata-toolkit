@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle> a skos:Concept ;
+    skos:definition "A title that is a translation of the primary title into another language." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/titleType> ;
+    skos:notation "TranslatedTitle" ;
+    skos:prefLabel "TranslatedTitle" ;
+    skos:scopeNote "Use the xml:lang attribute to indicate the language of the translated title." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/titleType> .
+

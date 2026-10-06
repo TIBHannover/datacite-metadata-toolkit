@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Describes> a skos:Concept ;
+    skos:definition "indicates A describes B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Describes" ;
+    skos:prefLabel "Describes" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

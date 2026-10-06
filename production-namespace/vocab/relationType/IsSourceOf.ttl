@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf> a skos:Concept ;
+    skos:definition "indicates A is a source upon which B is based" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsSourceOf\">http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsSourceOf" ;
+    skos:prefLabel "IsSourceOf" ;
+    skos:scopeNote "IsSourceOf is the original resource from which a derivative resource was created (e.g., original dataset without value manipulation)." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

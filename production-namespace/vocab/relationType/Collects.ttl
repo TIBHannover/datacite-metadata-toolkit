@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Collects> a skos:Concept ;
+    skos:definition "Indicates A collects B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Collects" ;
+    skos:prefLabel "Collects" ;
+    skos:scopeNote "May indicate relationship between an instrument and a dataset it collected/observed." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

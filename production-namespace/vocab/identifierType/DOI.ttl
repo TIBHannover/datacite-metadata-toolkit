@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/identifierType/DOI> a skos:Concept ;
+    skos:altLabel "Digital Object Identifier" ;
+    skos:definition "A character string used to uniquely and persistently identify a citable resource, registered with a DOI Registration Agency such as DataCite. A DOI name consists of a prefix (assigned to the registrant) and a suffix (assigned by the registrant to the resource), separated by a slash." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/identifierType> ;
+    skos:notation "DOI" ;
+    skos:prefLabel "DOI" ;
+    skos:scopeNote "The DOI is the required identifier type for resources registered with DataCite; every DataCite record MUST carry exactly one DOI as its primary identifier." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/identifierType> .
+

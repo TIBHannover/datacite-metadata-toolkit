@@ -61,6 +61,10 @@ if [ -f "$README_TEMPLATE" ]; then
     "$DST/README.md"
 fi
 
+# Write X.ttl next to every term X.jsonld (w3id serves it for Accept: text/turtle).
+# Runs after the namespace rewrite so the Turtle uses canonical IRIs.
+"${PYTHON:-python3}" "$SCRIPT_DIR/generate-term-turtle.py" "$DST"
+
 # Rebuild section index pages inside the publication bundle so navigation and
 # labels match the target GitHub Pages project path.
 (

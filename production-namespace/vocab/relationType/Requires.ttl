@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Requires> a skos:Concept ;
+    skos:definition "Indicates A requires B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Requires" ;
+    skos:prefLabel "Requires" ;
+    skos:scopeNote "May be used to indicate software dependencies." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

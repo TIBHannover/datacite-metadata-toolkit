@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy> a skos:Concept ;
+    skos:definition "Indicates A is replaced by B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsObsoletedBy" ;
+    skos:prefLabel "IsObsoletedBy" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

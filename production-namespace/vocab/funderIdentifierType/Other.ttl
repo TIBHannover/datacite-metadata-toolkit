@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other> a skos:Concept ;
+    skos:definition "Any funder identifier type not covered by the other values in the funderIdentifierType controlled list." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/funderIdentifierType> ;
+    skos:notation "Other" ;
+    skos:prefLabel "Other" ;
+    skos:scopeNote "Use Other for funder identifier schemes that are not represented by a named value in this vocabulary. If a particular scheme is in common use, consider proposing it as a named value in a future DataCite release." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/funderIdentifierType> .
+

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC> a skos:Concept ;
+    skos:altLabel "International Standard Text Code" ;
+    skos:definition "A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"ISTC\" relationType=\"Cites\">0A9 2002 12B4A105 7</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "ISTC" ;
+    skos:prefLabel "ISTC" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

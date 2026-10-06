@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN> a skos:Concept ;
+    skos:altLabel "International Standard Serial Number" ;
+    skos:definition "A unique 8-digit number used to identify a print or electronic periodical publication." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPartOf\">0077-5606</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "ISSN" ;
+    skos:prefLabel "ISSN" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

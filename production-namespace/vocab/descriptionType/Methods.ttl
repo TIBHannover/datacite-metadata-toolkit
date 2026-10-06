@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/descriptionType/Methods> a skos:Concept ;
+    skos:definition "The methodology employed for the study or research." ;
+    skos:example "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
+    skos:notation "Methods" ;
+    skos:prefLabel "Methods" ;
+    skos:scopeNote "Recommended for discovery. Full documentation about methods supports open science." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
+

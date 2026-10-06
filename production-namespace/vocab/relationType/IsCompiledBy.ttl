@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy> a skos:Concept ;
+    skos:definition "indicates B is used to compile or create A" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsCompiledBy" ;
+    skos:prefLabel "IsCompiledBy" ;
+    skos:scopeNote "May indicate a traditional text compilation, or the compiler program used to generate executable software." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

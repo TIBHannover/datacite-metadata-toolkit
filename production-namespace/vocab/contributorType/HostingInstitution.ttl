@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> a skos:Concept ;
+    skos:definition "Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support." ;
+    skos:example "Université Grenoble Alpes (UGA)" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "HostingInstitution" ;
+    skos:prefLabel "HostingInstitution" ;
+    skos:scopeNote "This role normally falls on the university, research center, or organization where the data center/repository belongs. May also be used for an organisation that stores the data offline, often a data centre if that data centre is not the publisher." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

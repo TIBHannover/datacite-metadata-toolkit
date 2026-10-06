@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Other> a skos:Concept ;
+    skos:definition "Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution is not adequately described by any of the other values for contributorType." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Other" ;
+    skos:prefLabel "Other" ;
+    skos:scopeNote "Could be a photographer, artist, or writer whose contribution helped to publicize the resource (as opposed to creating it), a reviewer, someone providing administrative services (depositing updates, analysing usage), etc." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+
