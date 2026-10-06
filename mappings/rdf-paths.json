@@ -1,0 +1,928 @@
+{
+  "version": 1,
+  "source_version": "4.7-r2",
+  "description": "Where each DataCite 4.7 term appears in DataCite RDF produced with the 4.7-r2 JSON-LD context. Each path is a SPARQL property path starting at the resource (https://doi.org/<DOI>); controlled values give the value IRI found at the end of their path. Related items reuse the same paths below dcp:relatedItem.",
+  "prefixes": {
+    "dcp": "https://w3id.org/tib/datacite/property/",
+    "dcv": "https://w3id.org/tib/datacite/vocab/",
+    "dcc": "https://w3id.org/tib/datacite/class/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  },
+  "terms": {
+    "https://w3id.org/tib/datacite/class/AlternateIdentifier": {
+      "path": "dcp:alternateIdentifier"
+    },
+    "https://w3id.org/tib/datacite/class/Contributor": {
+      "path": "dcp:contributor"
+    },
+    "https://w3id.org/tib/datacite/class/Creator": {
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
+    },
+    "https://w3id.org/tib/datacite/class/Date": {
+      "path": "dcp:date"
+    },
+    "https://w3id.org/tib/datacite/class/Description": {
+      "path": "dcp:description"
+    },
+    "https://w3id.org/tib/datacite/class/Format": {
+      "path": "dcp:format"
+    },
+    "https://w3id.org/tib/datacite/class/FundingReference": {
+      "path": "dcp:fundingReference"
+    },
+    "https://w3id.org/tib/datacite/class/GeoLocation": {
+      "path": "dcp:geoLocation"
+    },
+    "https://w3id.org/tib/datacite/class/Identifier": {
+      "path": "dcp:identifier"
+    },
+    "https://w3id.org/tib/datacite/class/Language": {
+      "path": "dcp:language"
+    },
+    "https://w3id.org/tib/datacite/class/PublicationYear": {
+      "path": "dcp:publicationYear"
+    },
+    "https://w3id.org/tib/datacite/class/Publisher": {
+      "path": "dcp:publisher"
+    },
+    "https://w3id.org/tib/datacite/class/RelatedIdentifier": {
+      "path": "dcp:relatedIdentifier"
+    },
+    "https://w3id.org/tib/datacite/class/RelatedItem": {
+      "path": "dcp:relatedItem"
+    },
+    "https://w3id.org/tib/datacite/class/Resource": {
+      "path": null,
+      "note": "The resource itself: the subject of every path, https://doi.org/<DOI>."
+    },
+    "https://w3id.org/tib/datacite/class/ResourceType": {
+      "path": "dcp:resourceType"
+    },
+    "https://w3id.org/tib/datacite/class/Rights": {
+      "path": "dcp:rights"
+    },
+    "https://w3id.org/tib/datacite/class/Size": {
+      "path": "dcp:size"
+    },
+    "https://w3id.org/tib/datacite/class/Subject": {
+      "path": "dcp:subject"
+    },
+    "https://w3id.org/tib/datacite/class/Title": {
+      "path": "dcp:title"
+    },
+    "https://w3id.org/tib/datacite/class/Version": {
+      "path": "dcp:version"
+    },
+    "https://w3id.org/tib/datacite/property/affiliation": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:affiliation/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/affiliationIdentifier": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:affiliation/dcp:affiliationIdentifier"
+    },
+    "https://w3id.org/tib/datacite/property/affiliationIdentifierScheme": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:affiliation/dcp:affiliationIdentifierScheme"
+    },
+    "https://w3id.org/tib/datacite/property/alternateIdentifier": {
+      "path": "dcp:alternateIdentifier/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/alternateIdentifierType": {
+      "path": "dcp:alternateIdentifier/dcp:alternateIdentifierType"
+    },
+    "https://w3id.org/tib/datacite/property/awardNumber": {
+      "path": "dcp:fundingReference/dcp:awardNumber"
+    },
+    "https://w3id.org/tib/datacite/property/awardTitle": {
+      "path": "dcp:fundingReference/dcp:awardTitle"
+    },
+    "https://w3id.org/tib/datacite/property/awardURI": {
+      "path": "dcp:fundingReference/dcp:awardURI"
+    },
+    "https://w3id.org/tib/datacite/property/classificationCode": {
+      "path": "dcp:subject/dcp:classificationCode"
+    },
+    "https://w3id.org/tib/datacite/property/contributor": {
+      "path": "dcp:contributor"
+    },
+    "https://w3id.org/tib/datacite/property/contributorName": {
+      "path": "dcp:contributor/dcp:contributorName"
+    },
+    "https://w3id.org/tib/datacite/property/contributorType": {
+      "path": "dcp:contributor/dcp:contributorType"
+    },
+    "https://w3id.org/tib/datacite/property/creator": {
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
+    },
+    "https://w3id.org/tib/datacite/property/creatorName": {
+      "path": "dcp:creator/dcp:creatorName"
+    },
+    "https://w3id.org/tib/datacite/property/date": {
+      "path": "dcp:date/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/dateInformation": {
+      "path": "dcp:date/dcp:dateInformation"
+    },
+    "https://w3id.org/tib/datacite/property/dateType": {
+      "path": "dcp:date/dcp:dateType"
+    },
+    "https://w3id.org/tib/datacite/property/description": {
+      "path": "dcp:description/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/descriptionType": {
+      "path": "dcp:description/dcp:descriptionType"
+    },
+    "https://w3id.org/tib/datacite/property/eastBoundLongitude": {
+      "path": "dcp:geoLocation/dcp:geoLocationBox/dcp:eastBoundLongitude"
+    },
+    "https://w3id.org/tib/datacite/property/edition": {
+      "path": "dcp:relatedItem/dcp:edition"
+    },
+    "https://w3id.org/tib/datacite/property/familyName": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:familyName"
+    },
+    "https://w3id.org/tib/datacite/property/firstPage": {
+      "path": "dcp:relatedItem/dcp:firstPage"
+    },
+    "https://w3id.org/tib/datacite/property/format": {
+      "path": "dcp:format"
+    },
+    "https://w3id.org/tib/datacite/property/funderIdentifier": {
+      "path": "dcp:fundingReference/dcp:funderIdentifier"
+    },
+    "https://w3id.org/tib/datacite/property/funderIdentifierType": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType"
+    },
+    "https://w3id.org/tib/datacite/property/funderName": {
+      "path": "dcp:fundingReference/dcp:funderName"
+    },
+    "https://w3id.org/tib/datacite/property/fundingReference": {
+      "path": "dcp:fundingReference"
+    },
+    "https://w3id.org/tib/datacite/property/geoLocation": {
+      "path": "dcp:geoLocation"
+    },
+    "https://w3id.org/tib/datacite/property/geoLocationBox": {
+      "path": "dcp:geoLocation/dcp:geoLocationBox"
+    },
+    "https://w3id.org/tib/datacite/property/geoLocationPlace": {
+      "path": "dcp:geoLocation/dcp:geoLocationPlace"
+    },
+    "https://w3id.org/tib/datacite/property/geoLocationPoint": {
+      "path": "dcp:geoLocation/dcp:geoLocationPoint"
+    },
+    "https://w3id.org/tib/datacite/property/geoLocationPolygon": {
+      "path": "dcp:geoLocation/dcp:geoLocationPolygon"
+    },
+    "https://w3id.org/tib/datacite/property/givenName": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:givenName"
+    },
+    "https://w3id.org/tib/datacite/property/identifier": {
+      "path": "dcp:identifier/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/identifierType": {
+      "path": "dcp:identifier/dcp:identifierType"
+    },
+    "https://w3id.org/tib/datacite/property/inPolygonPoint": {
+      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:inPolygonPoint"
+    },
+    "https://w3id.org/tib/datacite/property/issue": {
+      "path": "dcp:relatedItem/dcp:issue"
+    },
+    "https://w3id.org/tib/datacite/property/language": {
+      "path": "dcp:language"
+    },
+    "https://w3id.org/tib/datacite/property/lastPage": {
+      "path": "dcp:relatedItem/dcp:lastPage"
+    },
+    "https://w3id.org/tib/datacite/property/nameIdentifier": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:nameIdentifier/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/nameIdentifierScheme": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:nameIdentifier/dcp:nameIdentifierScheme"
+    },
+    "https://w3id.org/tib/datacite/property/nameType": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:nameType"
+    },
+    "https://w3id.org/tib/datacite/property/northBoundLatitude": {
+      "path": "dcp:geoLocation/dcp:geoLocationBox/dcp:northBoundLatitude"
+    },
+    "https://w3id.org/tib/datacite/property/number": {
+      "path": "dcp:relatedItem/dcp:number"
+    },
+    "https://w3id.org/tib/datacite/property/numberType": {
+      "path": "dcp:relatedItem/dcp:numberType"
+    },
+    "https://w3id.org/tib/datacite/property/pointLatitude": {
+      "path": "dcp:geoLocation/(dcp:geoLocationPoint|dcp:geoLocationPolygon/(dcp:polygonPoint|dcp:inPolygonPoint))/dcp:pointLatitude"
+    },
+    "https://w3id.org/tib/datacite/property/pointLongitude": {
+      "path": "dcp:geoLocation/(dcp:geoLocationPoint|dcp:geoLocationPolygon/(dcp:polygonPoint|dcp:inPolygonPoint))/dcp:pointLongitude"
+    },
+    "https://w3id.org/tib/datacite/property/polygonPoint": {
+      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:polygonPoint",
+      "note": "Each polygon point has schema:position (1 = first); sort by it to recover the drawing order."
+    },
+    "https://w3id.org/tib/datacite/property/publicationYear": {
+      "path": "dcp:publicationYear"
+    },
+    "https://w3id.org/tib/datacite/property/publisher": {
+      "path": "dcp:publisher/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/publisherIdentifier": {
+      "path": "dcp:publisher/dcp:publisherIdentifier"
+    },
+    "https://w3id.org/tib/datacite/property/publisherIdentifierScheme": {
+      "path": "dcp:publisher/dcp:publisherIdentifierScheme"
+    },
+    "https://w3id.org/tib/datacite/property/relatedIdentifier": {
+      "path": "dcp:relatedIdentifier/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/relatedIdentifierType": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType"
+    },
+    "https://w3id.org/tib/datacite/property/relatedItem": {
+      "path": "dcp:relatedItem"
+    },
+    "https://w3id.org/tib/datacite/property/relatedItemIdentifier": {
+      "path": "dcp:relatedItem/dcp:relatedItemIdentifier/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/relatedItemIdentifierType": {
+      "path": "dcp:relatedItem/dcp:relatedItemIdentifier/dcp:relatedItemIdentifierType"
+    },
+    "https://w3id.org/tib/datacite/property/relatedItemType": {
+      "path": "dcp:relatedItem/dcp:relatedItemType"
+    },
+    "https://w3id.org/tib/datacite/property/relatedMetadataScheme": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem/dcp:relatedItemIdentifier)/dcp:relatedMetadataScheme"
+    },
+    "https://w3id.org/tib/datacite/property/relationType": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType"
+    },
+    "https://w3id.org/tib/datacite/property/relationTypeInformation": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationTypeInformation"
+    },
+    "https://w3id.org/tib/datacite/property/resourceType": {
+      "path": "dcp:resourceType"
+    },
+    "https://w3id.org/tib/datacite/property/resourceTypeGeneral": {
+      "path": "dcp:resourceTypeGeneral"
+    },
+    "https://w3id.org/tib/datacite/property/rights": {
+      "path": "dcp:rights/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/rightsIdentifier": {
+      "path": "dcp:rights/dcp:rightsIdentifier"
+    },
+    "https://w3id.org/tib/datacite/property/rightsIdentifierScheme": {
+      "path": "dcp:rights/dcp:rightsIdentifierScheme"
+    },
+    "https://w3id.org/tib/datacite/property/rightsURI": {
+      "path": "dcp:rights/dcp:rightsURI"
+    },
+    "https://w3id.org/tib/datacite/property/schemeType": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem/dcp:relatedItemIdentifier)/dcp:schemeType"
+    },
+    "https://w3id.org/tib/datacite/property/schemeURI": {
+      "path": "(dcp:subject|dcp:rights|dcp:publisher|dcp:relatedIdentifier|(dcp:creator|dcp:contributor)/(dcp:nameIdentifier|dcp:affiliation))/dcp:schemeURI"
+    },
+    "https://w3id.org/tib/datacite/property/size": {
+      "path": "dcp:size"
+    },
+    "https://w3id.org/tib/datacite/property/southBoundLatitude": {
+      "path": "dcp:geoLocation/dcp:geoLocationBox/dcp:southBoundLatitude"
+    },
+    "https://w3id.org/tib/datacite/property/subject": {
+      "path": "dcp:subject/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/subjectScheme": {
+      "path": "dcp:subject/dcp:subjectScheme"
+    },
+    "https://w3id.org/tib/datacite/property/title": {
+      "path": "dcp:title/rdf:value"
+    },
+    "https://w3id.org/tib/datacite/property/titleType": {
+      "path": "dcp:title/dcp:titleType"
+    },
+    "https://w3id.org/tib/datacite/property/valueURI": {
+      "path": "dcp:subject/dcp:valueURI"
+    },
+    "https://w3id.org/tib/datacite/property/version": {
+      "path": "dcp:version"
+    },
+    "https://w3id.org/tib/datacite/property/volume": {
+      "path": "dcp:relatedItem/dcp:volume"
+    },
+    "https://w3id.org/tib/datacite/property/westBoundLongitude": {
+      "path": "dcp:geoLocation/dcp:geoLocationBox/dcp:westBoundLongitude"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/DataCollector"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/DataCurator": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/DataCurator"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/DataManager": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/DataManager"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Distributor": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Distributor"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Editor": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Editor"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Other": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Producer": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Producer"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Researcher": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Researcher"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Sponsor"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Supervisor"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/Translator": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/Translator"
+    },
+    "https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader": {
+      "path": "dcp:contributor/dcp:contributorType",
+      "value": "https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Accepted": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Accepted"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Available": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Available"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Collected": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Collected"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Coverage": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Coverage"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Created": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Created"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Issued": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Issued"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Other": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Submitted": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Submitted"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Updated": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Updated"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Valid": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Valid"
+    },
+    "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn": {
+      "path": "dcp:date/dcp:dateType",
+      "value": "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/Methods": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/Methods"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/Other": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents"
+    },
+    "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo": {
+      "path": "dcp:description/dcp:descriptionType",
+      "value": "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo"
+    },
+    "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID"
+    },
+    "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID"
+    },
+    "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI"
+    },
+    "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR": {
+      "path": "dcp:fundingReference/dcp:funderIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR"
+    },
+    "https://w3id.org/tib/datacite/vocab/identifierType/DOI": {
+      "path": "dcp:identifier/dcp:identifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/identifierType/DOI"
+    },
+    "https://w3id.org/tib/datacite/vocab/nameType/Organizational": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:nameType",
+      "value": "https://w3id.org/tib/datacite/vocab/nameType/Organizational"
+    },
+    "https://w3id.org/tib/datacite/vocab/nameType/Personal": {
+      "path": "(dcp:creator|dcp:contributor)/dcp:nameType",
+      "value": "https://w3id.org/tib/datacite/vocab/nameType/Personal"
+    },
+    "https://w3id.org/tib/datacite/vocab/numberType/Article": {
+      "path": "dcp:relatedItem/dcp:numberType",
+      "value": "https://w3id.org/tib/datacite/vocab/numberType/Article"
+    },
+    "https://w3id.org/tib/datacite/vocab/numberType/Chapter": {
+      "path": "dcp:relatedItem/dcp:numberType",
+      "value": "https://w3id.org/tib/datacite/vocab/numberType/Chapter"
+    },
+    "https://w3id.org/tib/datacite/vocab/numberType/Other": {
+      "path": "dcp:relatedItem/dcp:numberType",
+      "value": "https://w3id.org/tib/datacite/vocab/numberType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/numberType/Report": {
+      "path": "dcp:relatedItem/dcp:numberType",
+      "value": "https://w3id.org/tib/datacite/vocab/numberType/Report"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ARK"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EAN13"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/EISSN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/Handle"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/IGSN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISSN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISTC"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LSID"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PURL"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/SWHID": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/SWHID"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/UPC"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URN"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/bibcode"
+    },
+    "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id": {
+      "path": "dcp:relatedIdentifier/dcp:relatedIdentifierType",
+      "value": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/w3id"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Cites": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Cites"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Collects": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Collects"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Compiles": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Compiles"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Continues": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Continues"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Describes": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Describes"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Documents": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Documents"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/HasPart": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/HasPart"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/HasVersion": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/HasVersion"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Other": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/References": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/References"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Requires": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Requires"
+    },
+    "https://w3id.org/tib/datacite/vocab/relationType/Reviews": {
+      "path": "(dcp:relatedIdentifier|dcp:relatedItem)/dcp:relationType",
+      "value": "https://w3id.org/tib/datacite/vocab/relationType/Reviews"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Audiovisual"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Award"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Collection"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferencePaper"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ConferenceProceeding"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/DataPaper"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Event"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Image"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Instrument"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/InteractiveResource"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Journal"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/JournalArticle"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Model"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PhysicalObject"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Poster": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Poster"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Project"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Service"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Sound"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Standard"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Text"
+    },
+    "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow": {
+      "path": "dcp:resourceTypeGeneral",
+      "value": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow"
+    },
+    "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle": {
+      "path": "dcp:title/dcp:titleType",
+      "value": "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle"
+    },
+    "https://w3id.org/tib/datacite/vocab/titleType/Other": {
+      "path": "dcp:title/dcp:titleType",
+      "value": "https://w3id.org/tib/datacite/vocab/titleType/Other"
+    },
+    "https://w3id.org/tib/datacite/vocab/titleType/Subtitle": {
+      "path": "dcp:title/dcp:titleType",
+      "value": "https://w3id.org/tib/datacite/vocab/titleType/Subtitle"
+    },
+    "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle": {
+      "path": "dcp:title/dcp:titleType",
+      "value": "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle"
+    }
+  }
+}

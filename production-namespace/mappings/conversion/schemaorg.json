@@ -22,7 +22,7 @@
       "target_path": "A or B / schema:creator or schema:contributor / agent; agent @type schema:Person or schema:Organization; agent schema:name, schema:givenName, schema:familyName",
       "operation": "construct",
       "lossiness": "conditional",
-      "notes": "Construct distinct agent nodes; put creatorName/contributorName on the agent, not the resource. Personal selects Person; Organizational selects Organization. Given/family names apply to people, including related-item people. If type is unknown retain an untyped node and the source name. schema:creator is suitable for CreativeWork; for a physical instrument use schema:manufacturer only when manufacturer identity is established. Preserve creator order in the source record or an explicit ordered extension; an unordered RDF property does not preserve priority."
+      "notes": "Construct distinct agent nodes; put creatorName/contributorName on the agent, not the resource. Personal selects Person; Organizational selects Organization. Given/family names apply to people, including related-item people. If type is unknown retain an untyped node and the source name. schema:creator is suitable for CreativeWork; for a physical instrument use schema:manufacturer only when manufacturer identity is established. Preserve creator order: DataCite RDF (4.7-r2) gives each Creator node its place with schema:position (1 = first); emit creators in that order as an ordered list (JSON-LD @list), since repeating schema:creator does not preserve priority."
     },
     {
       "id": "title-values",

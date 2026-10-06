@@ -1,12 +1,12 @@
 {
   "namespace": "https://schema.stage.datacite.org/linked-data/",
-  "currentVersion": "4.7",
-  "updated": "2026-07-01",
+  "currentVersion": "4.7-r2",
+  "updated": "2026-10-06",
   "links": {
-    "manifest": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7.json",
-    "distJsonld": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.jsonld",
-    "distTtl": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.ttl",
-    "distRdf": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.rdf"
+    "manifest": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7-r2.json",
+    "distJsonld": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.jsonld",
+    "distTtl": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.ttl",
+    "distRdf": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.rdf"
   },
   "availableVersions": [
     {
@@ -22,6 +22,13 @@
       "distJsonld": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.jsonld",
       "distTtl": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.ttl",
       "distRdf": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7.rdf"
+    },
+    {
+      "version": "4.7-r2",
+      "manifest": "https://schema.stage.datacite.org/linked-data/manifest/datacite-4.7-r2.json",
+      "distJsonld": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.jsonld",
+      "distTtl": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.ttl",
+      "distRdf": "https://schema.stage.datacite.org/linked-data/dist/datacite-4.7-r2.rdf"
     }
   ]
 }

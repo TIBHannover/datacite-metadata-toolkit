@@ -6,6 +6,7 @@ on:
       - "production-namespace/**"
       - "rdf-vocabulary-staging/**"
       - "rdf-build-scripts/**"
+      - "validation-and-conversion/shapes/**"
       - "package.json"
       - ".github/workflows/check-production-namespace.yml"
   push:
@@ -14,6 +15,7 @@ on:
       - "production-namespace/**"
       - "rdf-vocabulary-staging/**"
       - "rdf-build-scripts/**"
+      - "validation-and-conversion/shapes/**"
       - "package.json"
       - ".github/workflows/check-production-namespace.yml"
   workflow_dispatch:
@@ -54,6 +56,9 @@ jobs:
       - name: Check vocabulary scheme titles
         run: npm run check:vocab-scheme-titles
 
+      - name: Check unversioned dist files match the current version
+        run: npm run check:current-aliases
+
       - name: Verify production namespace checksums
         run: |
           cd production-namespace
@@ -61,7 +66,7 @@ jobs:
 
       - name: Check committed generated artifacts are current
         run: |
-          if ! git diff --exit-code -- rdf-vocabulary-staging/dist/datacite-4.7.owl production-namespace; then
+          if ! git diff --exit-code -- rdf-vocabulary-staging/dist production-namespace; then
             echo "::error::Generated namespace artifacts are out of date. Regenerate the OWL artifact and production namespace, then commit the result."
             exit 1
           fi

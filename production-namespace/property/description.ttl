@@ -1,7 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/tib/datacite/property/description> a rdf:Property ;
     rdfs:label "description" ;
-    rdfs:comment "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument." .
+    rdfs:comment "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument." ;
+    rdfs:range <https://w3id.org/tib/datacite/class/Description> ;
+    skos:scopeNote "In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType." .
 

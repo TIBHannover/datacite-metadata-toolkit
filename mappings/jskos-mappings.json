@@ -691,7 +691,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "DCTERMS identifier also covers primary identifiers; DataCite limits this field to additional identifiers for the same instance."
+        "DCTERMS identifier also covers primary identifiers; DataCite limits this field to additional identifiers for the same instance. In DataCite RDF, take the identifier from the linked AlternateIdentifier node's rdf:value, next to its type."
       ]
     }
   },
@@ -749,7 +749,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "The Schema.org term is broader. Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values."
+        "The Schema.org term is broader. Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values. In DataCite RDF, take the identifier from the linked AlternateIdentifier node's rdf:value, next to its type."
       ]
     }
   },
@@ -1503,7 +1503,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Both associate a date or period with the resource; the dateType qualifier must remain available."
+        "Both associate a date or period with the resource; the dateType qualifier must remain available. In DataCite RDF, take the date from the linked Date node's rdf:value, next to its dateType."
       ]
     }
   },
@@ -1561,7 +1561,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Both provide information describing the resource; preserve the DataCite descriptionType separately."
+        "Both provide information describing the resource; preserve the DataCite descriptionType separately. In DataCite RDF, take the text from the linked Description node's rdf:value, next to its descriptionType."
       ]
     }
   },
@@ -1619,7 +1619,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Descriptive text correspondence; description-values retains language, markup and typed-description distinctions."
+        "Descriptive text correspondence; description-values retains language, markup and typed-description distinctions. In DataCite RDF, take the text from the linked Description node's rdf:value, next to its descriptionType."
       ]
     }
   },
@@ -2605,7 +2605,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Both identify the described resource; preserve the DOI scheme and lexical value."
+        "Both identify the described resource; preserve the DOI scheme and lexical value. In DataCite RDF, the DOI is the resource IRI and also the rdf:value of the linked Identifier node."
       ]
     }
   },
@@ -2663,7 +2663,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values."
+        "Identifies the entity determined by the source context; preserve scheme and lexical form with identifier-values. In DataCite RDF, the DOI is the resource IRI and also the rdf:value of the linked Identifier node."
       ]
     }
   },
@@ -3823,7 +3823,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "The Schema.org term is narrower. Access-policy branch of rights-and-licenses; not every rights statement is an access condition."
+        "The Schema.org term is narrower. Access-policy branch of rights-and-licenses; not every rights statement is an access condition. In DataCite RDF, take the statement from the linked Rights node's rdf:value."
       ]
     }
   },
@@ -3881,7 +3881,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "The Schema.org term is narrower. License branch of rights-and-licenses; DataCite rights also contains nonlicense statements."
+        "The Schema.org term is narrower. License branch of rights-and-licenses; DataCite rights also contains nonlicense statements. In DataCite RDF, take the licence URL from the linked Rights node's rightsURI."
       ]
     }
   },
@@ -4345,7 +4345,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Subject handling depends on controlled-term versus free-text context; see subjects."
+        "Subject handling depends on controlled-term versus free-text context; see subjects. In DataCite RDF, take the text from the linked Subject node's rdf:value, next to its scheme."
       ]
     }
   },
@@ -4461,7 +4461,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "The Schema.org term is broader. A title names the enclosing resource; see title-values for primary, translated and alternate titles and target-node placement."
+        "The Schema.org term is broader. A title names the enclosing resource; see title-values for primary, translated and alternate titles and target-node placement. In DataCite RDF, take the text from the linked Title node's rdf:value; only the title without a titleType is the main title."
       ]
     }
   },
@@ -4519,7 +4519,7 @@
     "created": "2026-10-06",
     "note": {
       "en": [
-        "Both name the resource; preserve language and title type independently."
+        "Both name the resource; preserve language and title type independently. In DataCite RDF, take the text from the linked Title node's rdf:value; only the title without a titleType is the main title."
       ]
     }
   },
@@ -8681,6 +8681,61 @@
     "note": {
       "en": [
         "A collection of creative works can use Collection; collections of other entity types require another target model. See resource-types."
+      ]
+    }
+  },
+  {
+    "from": {
+      "memberSet": [
+        {
+          "uri": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/ComputationalNotebook",
+          "notation": [
+            "resourceTypeGeneral/ComputationalNotebook"
+          ],
+          "prefLabel": {
+            "en": "ComputationalNotebook"
+          }
+        }
+      ]
+    },
+    "to": {
+      "memberSet": [
+        {
+          "uri": "http://purl.org/dc/dcmitype/InteractiveResource",
+          "notation": [
+            "InteractiveResource"
+          ],
+          "prefLabel": {
+            "en": "InteractiveResource"
+          }
+        }
+      ]
+    },
+    "fromScheme": {
+      "uri": "http://bartoc.org/en/node/21149",
+      "notation": [
+        "datacite"
+      ]
+    },
+    "toScheme": {
+      "uri": "http://bartoc.org/en/node/17909"
+    },
+    "type": [
+      "http://www.w3.org/2004/02/skos/core#broadMatch"
+    ],
+    "creator": [
+      {
+        "uri": "https://orcid.org/0000-0003-1378-5495",
+        "prefLabel": {
+          "en": "Sara El-Gebali"
+        }
+      }
+    ],
+    "justification": "https://w3id.org/semapv/vocab/ManualMappingCuration",
+    "created": "2026-10-06",
+    "note": {
+      "en": [
+        "DataCite's suggested Dublin Core mapping for ComputationalNotebook is InteractiveResource; the DCMI category is broader."
       ]
     }
   },

@@ -2,7 +2,7 @@
   "namespace": "https://w3id.org/tib/datacite/",
   "version": "4.7",
   "context": [
-    "https://w3id.org/tib/datacite/context/fullcontext.jsonld",
+    "https://w3id.org/tib/datacite/context/fullcontext-4.7.jsonld",
     "https://w3id.org/tib/datacite/vocab/context.jsonld",
     "https://w3id.org/tib/datacite/vocab/contributorType/context.jsonld",
     "https://w3id.org/tib/datacite/vocab/dateType/context.jsonld",

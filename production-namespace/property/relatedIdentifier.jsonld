@@ -3,10 +3,15 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "schema": "https://w3id.org/tib/datacite/",
-    "datacite": "https://w3id.org/tib/datacite/"
+    "datacite": "https://w3id.org/tib/datacite/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "@id": "https://w3id.org/tib/datacite/property/relatedIdentifier",
   "@type": "rdf:Property",
   "rdfs:label": "relatedIdentifier",
-  "rdfs:comment": "Identifiers of related resources. These must be globally unique identifiers."
+  "rdfs:comment": "Identifiers of related resources. These must be globally unique identifiers.",
+  "rdfs:range": {
+    "@id": "https://w3id.org/tib/datacite/class/RelatedIdentifier"
+  },
+  "skos:scopeNote": "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers."
 }

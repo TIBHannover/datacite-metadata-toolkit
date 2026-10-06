@@ -28,8 +28,20 @@ All RDF identifiers in this bundle use the persistent W3ID namespace. The GitHub
 | `context/` | JSON-LD context files |
 | `manifest/` | Versioned inventories and current-version pointers |
 | `dist/` | Versioned and current distribution artifacts in JSON-LD, RDF/XML, Turtle, and OWL-related forms |
+| `mappings/` | SSSOM mapping sets, SKOS/JSKOS exports, conversion rules, coverage and RDF paths |
+| `shapes/` | SHACL shapes that check DataCite RDF made with the current context |
 
 The generated section `index.html` files are for human browsing. The JSON-LD, Turtle, RDF/XML, manifest, and context files are the machine-readable namespace artifacts.
+
+## Modelling conventions (4.7-r2)
+
+Revision 2 of the DataCite 4.7 modelling changes how records look in RDF. Data written for 4.7 (revision 1) must be updated. The versioned 4.7 files stay available unchanged, but the unversioned `context/fullcontext.jsonld` and `dist/datacite.*` now follow 4.7-r2.
+
+- **Own nodes:** each repeatable element (title, description, subject, date, rights, publisher, identifiers, ...) is its own node, linked from the resource by the DataCite property of the same name.
+- **Text in `rdf:value`:** the element's main text is the node's `rdf:value`, exactly once, beside its qualifiers (type, scheme, language). Titles, descriptions, subjects, rights, publishers and affiliations may carry a language tag; dates and identifiers are plain strings, never web addresses. Where DataCite itself names the text (`creatorName`, `contributorName`, `funderName`, `awardTitle`, `geoLocationPlace`), that property is used instead. `rdf:value` is not declared in the OWL files: OWL 2 DL reserves the `rdf:` namespace.
+- **Creator order:** each Creator node records its place in DataCite's priority order with `schema:position` (`https://schema.org/position`, an integer; 1 = first).
+
+`shapes/datacite-4.7-r2.shacl.ttl` checks these rules.
 
 ## Integrity Files
 
