@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/OutputManagementPlan> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "A formal document that outlines how research outputs are to be handled both during a research project and after the project is completed." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "OutputManagementPlan" ;
+    skos:prefLabel "OutputManagementPlan" ;
+    skos:scopeNote """Includes data, software, and materials.
+<resourceType resourceTypeGeneral="OutputManagementPlan">Data Management Plan</resourceType>""" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

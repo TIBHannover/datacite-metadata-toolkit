@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Reviews> a skos:Concept ;
+    skos:definition "indicates that A is a review of B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Reviews" ;
+    skos:prefLabel "Reviews" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

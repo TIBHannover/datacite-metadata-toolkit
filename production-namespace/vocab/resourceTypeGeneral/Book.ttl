@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "A medium for recording information in the form of writing or images, typically composed of many pages bound together and protected by a cover." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Book" ;
+    skos:prefLabel "Book" ;
+    skos:scopeNote "<resourceType resourceTypeGeneral=\"Book\">Textbook</resourceType>" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

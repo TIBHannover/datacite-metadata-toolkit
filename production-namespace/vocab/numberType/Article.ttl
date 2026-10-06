@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/numberType/Article> a skos:Concept ;
+    skos:definition "A number identifying an article within a journal issue or proceedings volume." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/numberType> ;
+    skos:notation "Article" ;
+    skos:prefLabel "Article" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/numberType> .
+

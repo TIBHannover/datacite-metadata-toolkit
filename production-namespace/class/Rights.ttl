@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/Rights> a rdfs:Class ;
+    rdfs:label "Rights" ;
+    rdfs:comment "Any rights information for this resource." .
+

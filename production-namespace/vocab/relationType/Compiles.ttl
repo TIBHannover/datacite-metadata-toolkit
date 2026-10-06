@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Compiles> a skos:Concept ;
+    skos:definition "indicates B is the result of a compile or creation event using A" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Compiles" ;
+    skos:prefLabel "Compiles" ;
+    skos:scopeNote "May be used for software and text; a compiler can be a computer program or a person." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

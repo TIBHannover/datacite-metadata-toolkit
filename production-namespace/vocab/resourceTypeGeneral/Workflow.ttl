@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow> a skos:Concept ;
+    skos:definition "A structured series of steps which can be executed to produce a final outcome, allowing users a means to specify and enact their work in a more reproducible manner." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Workflow" ;
+    skos:prefLabel "Workflow" ;
+    skos:scopeNote "Computational workflows involving sequential operations made on data by wrapped software and may be specified in a format belonging to a workflow management system, such as Taverna (http://www.taverna.org.uk/)." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

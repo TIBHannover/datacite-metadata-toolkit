@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> a skos:Concept ;
+    skos:definition "Typically refers to a group of individuals with a lab, department, or division that has a specifically defined focus of activity." ;
+    skos:example "Space Research & Planetary Sciences Division of the University of Bern (WP Unibe)",
+        "doi:10.26302/SSHADE/EXPERIMEN T_OP_20201104_001" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "ResearchGroup" ;
+    skos:prefLabel "ResearchGroup" ;
+    skos:scopeNote "May operate at a narrower level of scope; may or may not hold less administrative responsibility than a project team." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

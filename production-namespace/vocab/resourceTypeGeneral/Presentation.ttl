@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation> a skos:Concept ;
+    skos:definition "A set of slides containing text, tables or figures, designed to communicate ideas or research results, for viewing by an audience at a conference, symposium, seminar, lecture, workshop or other event." ;
+    skos:example "<resourceType resourceTypeGeneral=\"Presentation\">Conference presentation slides</resourceType>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Presentation" ;
+    skos:prefLabel "Presentation" ;
+    skos:scopeNote "For a video recording of a presentation, use \"Audiovisual\"." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/StudyRegistration> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "A detailed, time-stamped description of a research plan, often openly shared in a registry or published in a journal before the study is conducted to lend accountability and transparency in the hypothesis generating and testing process." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "StudyRegistration" ;
+    skos:prefLabel "StudyRegistration" ;
+    skos:scopeNote """Includes pre-registrations, registered reports, and clinical trials. Study registrations are sometimes peer-reviewed and may include the hypothesis, expected results, study design, and/or analysis plan.
+<resourceType resourceTypeGeneral="StudyRegistration">Pre-registration</resourceType>""" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo> a skos:Concept ;
+    skos:definition "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
+    skos:notation "TechnicalInfo" ;
+    skos:prefLabel "TechnicalInfo" ;
+    skos:scopeNote "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
+

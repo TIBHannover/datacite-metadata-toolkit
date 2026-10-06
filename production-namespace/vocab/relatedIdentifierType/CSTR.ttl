@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/CSTR> a skos:Concept ;
+    skos:altLabel "Common Science and Technology Resources Identifier" ;
+    skos:definition "CSTR is an identifier based on the Chinese National Standard GB/T 32843—2016 “Science and technology resource identification”, providing a unique identification service for scientific data, papers, scientific institutions, researchers, scientific instruments, patents and other scientific and technological resources." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"CSTR\" relationType=\"References\">31253.11.sciencedb.13238</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "CSTR" ;
+    skos:prefLabel "CSTR" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

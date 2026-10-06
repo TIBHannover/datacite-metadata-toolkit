@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Sponsor> a skos:Concept ;
+    skos:definition "Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Sponsor" ;
+    skos:prefLabel "Sponsor" ;
+    skos:scopeNote "Includes organisations that provide in-kind support (donation, people, facility, instrumentation) necessary for development of the resource." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

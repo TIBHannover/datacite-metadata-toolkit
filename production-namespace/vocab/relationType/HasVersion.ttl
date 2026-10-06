@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/HasVersion> a skos:Concept ;
+    skos:definition "indicates A has a version B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasVersion\">10.5281/ZENODO.832053</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "HasVersion" ;
+    skos:prefLabel "HasVersion" ;
+    skos:scopeNote "The registered resource such as a software package or code repository has a versioned instance (A has instance B). May relate an un-versioned code repository to a specific software version." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

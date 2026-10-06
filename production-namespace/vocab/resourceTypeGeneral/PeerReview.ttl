@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/PeerReview> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "Evaluation of scientific, academic, or professional work by others working in the same field." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "PeerReview" ;
+    skos:prefLabel "PeerReview" ;
+    skos:scopeNote """https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.6084/m9.figshare.5742270
+<resourceType resourceTypeGeneral="PeerReview">Scientific Article</resourceType>""" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

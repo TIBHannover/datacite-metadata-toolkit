@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Updated> a skos:Concept ;
+    skos:definition "The date of the last update to the resource, when the resource is being added to. May be a range." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Updated" ;
+    skos:prefLabel "Updated" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

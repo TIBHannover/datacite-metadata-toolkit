@@ -1,0 +1,12 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/BookChapter> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "One of the main divisions of a book." ;
+    skos:example "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.15122/isbn.978-2-406-09313-8.p.0639",
+        "https://api.datacite.org/dois/application/vnd.datacite.datacite+xml/10.17613/m6631d" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "BookChapter" ;
+    skos:prefLabel "BookChapter" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

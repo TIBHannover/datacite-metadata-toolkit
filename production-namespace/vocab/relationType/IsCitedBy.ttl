@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy> a skos:Concept ;
+    skos:definition "indicates that B includes A in a citation" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsCitedBy" ;
+    skos:prefLabel "IsCitedBy" ;
+    skos:scopeNote "Recommended for discovery." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

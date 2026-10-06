@@ -1,0 +1,13 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tib/datacite/vocab/numberType> a skos:ConceptScheme ;
+    dcterms:created "2026-05-12"^^xsd:date ;
+    dcterms:identifier "numberType" ;
+    dcterms:title "DataCite numberType" ;
+    skos:hasTopConcept <https://w3id.org/tib/datacite/vocab/numberType/Article>,
+        <https://w3id.org/tib/datacite/vocab/numberType/Chapter>,
+        <https://w3id.org/tib/datacite/vocab/numberType/Other>,
+        <https://w3id.org/tib/datacite/vocab/numberType/Report> .
+

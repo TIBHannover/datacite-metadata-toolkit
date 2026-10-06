@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dissertation> a skos:Concept ;
+    skos:closeMatch <https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/#Text> ;
+    skos:definition "A written essay, treatise, or thesis, especially one written by a candidate for the degree of Doctor of Philosophy." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> ;
+    skos:notation "Dissertation" ;
+    skos:prefLabel "Dissertation" ;
+    skos:scopeNote "<resourceType resourceTypeGeneral=\"Dissertation\">PhD thesis</resourceType>" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral> .
+

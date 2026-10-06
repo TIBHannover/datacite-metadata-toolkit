@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf> a skos:Concept ;
+    skos:definition "indicates A is a new edition of B, where the new edition has been modified or updated" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsNewVersionOf" ;
+    skos:prefLabel "IsNewVersionOf" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

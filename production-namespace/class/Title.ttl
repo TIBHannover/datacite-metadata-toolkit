@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/Title> a rdfs:Class ;
+    rdfs:label "Title" ;
+    rdfs:comment "A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument." .
+

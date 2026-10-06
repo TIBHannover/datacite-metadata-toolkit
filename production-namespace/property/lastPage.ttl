@@ -1,0 +1,7 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/property/lastPage> a rdf:Property ;
+    rdfs:label "lastPage" ;
+    rdfs:comment "Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings." .
+

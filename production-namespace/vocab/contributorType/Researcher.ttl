@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Researcher> a skos:Concept ;
+    skos:definition "A person involved in analysing data or the results of an experiment or formal study." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Researcher" ;
+    skos:prefLabel "Researcher" ;
+    skos:scopeNote "Should be a person, not an institution. A person gathering data would typically be DataCollector. A researcher may find additional data online and correlate it to collected data." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType> a skos:ConceptScheme ;
+    dcterms:created "2026-02-20"^^xsd:date ;
+    dcterms:identifier "dateType" ;
+    dcterms:title "DataCite dateType" ;
+    skos:hasTopConcept <https://w3id.org/tib/datacite/vocab/dateType/Accepted>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Available>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Collected>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Coverage>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Created>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Issued>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Other>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Submitted>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Updated>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Valid>,
+        <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn> .
+

@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/Publisher> a rdfs:Class ;
+    rdfs:label "Publisher" ;
+    rdfs:comment "The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role." .
+

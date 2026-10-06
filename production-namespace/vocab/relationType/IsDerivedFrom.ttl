@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom> a skos:Concept ;
+    skos:definition "indicates B is a source upon which A is based" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsDerivedFrom" ;
+    skos:prefLabel "IsDerivedFrom" ;
+    skos:scopeNote "Use for a resource that is a derivative of an original resource. Example context: dataset derived from a larger dataset and manipulated." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

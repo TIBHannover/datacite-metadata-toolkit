@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf> a skos:Concept ;
+    skos:definition "indicates A is a translation of B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsTranslationOf" ;
+    skos:prefLabel "IsTranslationOf" ;
+    skos:scopeNote "When a resource is shared in one language and later translated, use IsTranslationOf to link translation to original." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

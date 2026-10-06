@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> a skos:Concept ;
+    skos:definition "Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "Supervisor" ;
+    skos:prefLabel "Supervisor" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

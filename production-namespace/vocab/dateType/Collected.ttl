@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/dateType/Collected> a skos:Concept ;
+    skos:definition "The date or date range in which the resource content was collected." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
+    skos:notation "Collected" ;
+    skos:prefLabel "Collected" ;
+    skos:scopeNote "To indicate precise or particular timeframes in which research was conducted." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
+

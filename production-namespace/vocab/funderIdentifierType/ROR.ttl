@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR> a skos:Concept ;
+    skos:altLabel "Research Organization Registry" ;
+    skos:definition "A persistent identifier for a research organization from the Research Organization Registry (ROR), a community-led, open registry of unique identifiers for every organization that performs, funds, or otherwise contributes to research." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/funderIdentifierType> ;
+    skos:notation "ROR" ;
+    skos:prefLabel "ROR" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/funderIdentifierType> .
+

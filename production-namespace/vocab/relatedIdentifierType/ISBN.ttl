@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/ISBN> a skos:Concept ;
+    skos:altLabel "International Standard Book Number" ;
+    skos:definition "A unique numeric book identifier. There are 2 formats: a 10-digit ISBN format and a 13-digit ISBN." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"IsPartOf\">978-3-905673-82-1</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "ISBN" ;
+    skos:prefLabel "ISBN" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

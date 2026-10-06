@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/Obsoletes> a skos:Concept ;
+    skos:definition "Indicates A replaces B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "Obsoletes" ;
+    skos:prefLabel "Obsoletes" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

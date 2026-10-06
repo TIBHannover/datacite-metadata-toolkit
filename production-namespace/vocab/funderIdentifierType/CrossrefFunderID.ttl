@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID> a skos:Concept ;
+    skos:altLabel "Crossref Funder Registry ID" ;
+    skos:definition "A persistent identifier for a funding body assigned by the Crossref Funder Registry, a curated, openly licensed registry of funder names and identifiers used to disambiguate funding organizations in scholarly metadata." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/funderIdentifierType> ;
+    skos:notation "Crossref Funder ID" ;
+    skos:prefLabel "Crossref Funder ID" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/funderIdentifierType> .
+

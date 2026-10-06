@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/tib/datacite/class/Subject> a rdfs:Class ;
+    rdfs:label "Subject" ;
+    rdfs:comment "Subject, keyword, classification code, or key phrase describing the resource." .
+

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/arXiv> a skos:Concept ;
+    skos:altLabel "arXiv identifier" ;
+    skos:definition "arXiv.org is a repository of preprints of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"arXiv\" relationType=\"IsCitedBy\">arXiv:0706.0001</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "arXiv" ;
+    skos:prefLabel "arXiv" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

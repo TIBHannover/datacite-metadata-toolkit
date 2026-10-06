@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> a skos:Concept ;
+    skos:definition "A Work Package is a recognized data product, not all of which is included in publication. The package may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring comprehensive contents, versioning, and availability of the Work Package during development of the resource." ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/contributorType> ;
+    skos:notation "WorkPackageLeader" ;
+    skos:prefLabel "WorkPackageLeader" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/contributorType> .
+

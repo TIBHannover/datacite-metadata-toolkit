@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relatedIdentifierType/PMID> a skos:Concept ;
+    skos:altLabel "PubMed identifier" ;
+    skos:definition "A unique number assigned to each PubMed record." ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsReferencedBy\">12082125</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> ;
+    skos:notation "PMID" ;
+    skos:prefLabel "PMID" ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relatedIdentifierType> .
+

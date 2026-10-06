@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy> a skos:Concept ;
+    skos:definition "Indicates A is required by B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "IsRequiredBy" ;
+    skos:prefLabel "IsRequiredBy" ;
+    skos:scopeNote "May be used to indicate software dependencies." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+

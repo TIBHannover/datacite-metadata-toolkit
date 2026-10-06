@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/tib/datacite/vocab/relationType/HasTranslation> a skos:Concept ;
+    skos:definition "indicates A has a translation B" ;
+    skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>" ;
+    skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
+    skos:notation "HasTranslation" ;
+    skos:prefLabel "HasTranslation" ;
+    skos:scopeNote "When a resource is shared in one language and later translated, use HasTranslation to link original to translation. If released simultaneously in multiple languages, connect in both directions." ;
+    skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
+
