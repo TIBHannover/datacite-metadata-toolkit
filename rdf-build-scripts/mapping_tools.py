@@ -15,6 +15,8 @@ BASE = "https://w3id.org/tib/datacite/"
 SKOS = "http://www.w3.org/2004/02/skos/core#"
 SCHEMA = "https://schema.org/"
 DCTERMS = "http://purl.org/dc/terms/"
+# Every mapping set maps terms of this DataCite schema.
+SUBJECT_SOURCE = "https://schema.datacite.org/meta/kernel-4.7/metadata.xsd"
 MATCHES = {SKOS + name for name in ("exactMatch", "closeMatch", "broadMatch", "narrowMatch", "relatedMatch")}
 TARGETS = {"schemaorg", "dcterms", "dcat", "wikidata"}
 EXPORTS = ("SKOS_crosswalks.jsonld", "jskos-mappings.json")
@@ -124,6 +126,9 @@ def read_sssom(path):
     for slot in ("subject_source", "object_source"):
         if slot in metadata:
             expand(metadata[slot], prefixes, f"{path}: {slot}")
+    # A valid IRI is not enough: a wrong prefix base still expands to a well-formed IRI.
+    require(expand(metadata.get("subject_source"), prefixes, f"{path}: subject_source") == SUBJECT_SOURCE,
+            f"{path}: subject_source must expand to {SUBJECT_SOURCE}")
     table = strict_tsv("".join(lines), path)
     require(len(table) > 1, f"{path}: empty mapping table")
     header = table[0]
