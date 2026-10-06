@@ -1,9 +1,11 @@
 @prefix dcc: <https://w3id.org/tib/datacite/class/> .
 @prefix dcp: <https://w3id.org/tib/datacite/property/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://doi.org/10.5281/zenodo.22862110> dcp:creator [ a dcc:Creator ;
+            schema:position 1 ;
             dcp:affiliation [ rdf:value "ORCID" ;
                     dcp:affiliationIdentifier <https://ror.org/04fa4r544> ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ] ;
@@ -48,67 +50,70 @@ Code publié sous licence AGPL v3. Le traité dont est issue la construction est
         [ a dcc:Description ;
             rdf:value "<p>Version 2.0 of the data and verification scripts for the note <i>A Half-Shift Criterion on Three-Colour 12×12 Grids, and Its Restriction on the Cube</i> (submitted to the <i>Journal of Mathematics and the Arts</i>, September 2026). Nine Python scripts and three data files reproduce every number of the note: 1024 triplets in 8 families, 512 distinct grids, 256 tilings, 128 orbits (Theorem 2); the edge rule on the cube satisfied by 512 triplets, 256 grids, 128 tilings in exactly the four families containing the base yang (Theorem 3); the trichotomy on crossed pairs (Theorem 4); and the extended set of 113,280 constructions.</p><p><strong>Change in version 2.0.</strong> <code>cube_edges.py</code> replaced: the script of version 1.0 carried an obsolete docstring (\"384 triplets, three families\") and read the old 48-layer file <code>fonds_ecran_v1.json</code>; the current script reads <code>referent_360_v3.json</code> (60 layers) and prints 512 / 256 / 128 / 4 families, as stated in the note. Its output is included (<code>cube_edges.log</code>).</p><p><strong>Licence.</strong> AGPL v3; commercial licence on request.</p>"@eng ;
             dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Other> ] ;
+    dcp:identifier [ a dcc:Identifier ;
+            rdf:value "10.5281/zenodo.22862110" ;
+            dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
     dcp:language "en" ;
     dcp:publicationYear 2026 ;
     dcp:publisher [ a dcc:Publisher ;
             rdf:value "Zenodo" ] ;
     dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;
+            rdf:value "10.5281/zenodo.22945021" ;
+            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report> ],
+        [ a dcc:RelatedIdentifier ;
             rdf:value "10.5281/zenodo.22722485" ;
             dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
             dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo> ;
             dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Book> ],
         [ a dcc:RelatedIdentifier ;
-            rdf:value "10.5281/zenodo.22966839" ;
+            rdf:value "10.5281/zenodo.22967302" ;
             dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
-            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> ;
-            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint> ],
+            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasVersion> ],
         [ a dcc:RelatedIdentifier ;
             rdf:value "https://github.com/anibaledel/livreedhermes" ;
             dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/URL> ;
             dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo> ;
             dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software> ],
         [ a dcc:RelatedIdentifier ;
-            rdf:value "10.5281/zenodo.22967302" ;
-            dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
-            dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasVersion> ],
-        [ a dcc:RelatedIdentifier ;
             rdf:value "10.5281/zenodo.22862111" ;
             dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
             dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/HasVersion> ],
         [ a dcc:RelatedIdentifier ;
-            rdf:value "10.5281/zenodo.22945021" ;
+            rdf:value "10.5281/zenodo.22966839" ;
             dcp:relatedIdentifierType <https://w3id.org/tib/datacite/vocab/relatedIdentifierType/DOI> ;
             dcp:relationType <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy> ;
-            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Report> ] ;
+            dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Preprint> ] ;
     dcp:resourceType ""^^xsd:string ;
     dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Software> ;
     dcp:rights [ a dcc:Rights ;
+            rdf:value "© 2026 Anibal Edelberto Amiot" ;
+            dcp:rightsURI <http://rightsstatements.org/vocab/InC/1.0/> ],
+        [ a dcc:Rights ;
             rdf:value "GNU Affero General Public License v3.0 only" ;
             dcp:rightsIdentifier "agpl-3.0-only"^^xsd:string ;
             dcp:rightsIdentifierScheme "SPDX"^^xsd:string ;
             dcp:rightsURI <https://www.gnu.org/licenses/agpl.txt> ;
-            dcp:schemeURI <https://spdx.org/licenses/> ],
-        [ a dcc:Rights ;
-            rdf:value "© 2026 Anibal Edelberto Amiot" ;
-            dcp:rightsURI <http://rightsstatements.org/vocab/InC/1.0/> ] ;
+            dcp:schemeURI <https://spdx.org/licenses/> ] ;
     dcp:subject [ a dcc:Subject ;
-            rdf:value "three-colour grids" ],
-        [ a dcc:Subject ;
-            rdf:value "verification" ],
-        [ a dcc:Subject ;
             rdf:value "cube edge rule" ],
-        [ a dcc:Subject ;
-            rdf:value "magic squares" ],
-        [ a dcc:Subject ;
-            rdf:value "recreational mathematics" ],
         [ a dcc:Subject ;
             rdf:value "combinatorics" ],
         [ a dcc:Subject ;
-            rdf:value "exhaustive enumeration" ],
-        [ a dcc:Subject ;
             rdf:value "Jacquard weaving" ],
         [ a dcc:Subject ;
-            rdf:value "half-shift criterion" ] ;
+            rdf:value "exhaustive enumeration" ],
+        [ a dcc:Subject ;
+            rdf:value "magic squares" ],
+        [ a dcc:Subject ;
+            rdf:value "half-shift criterion" ],
+        [ a dcc:Subject ;
+            rdf:value "recreational mathematics" ],
+        [ a dcc:Subject ;
+            rdf:value "three-colour grids" ],
+        [ a dcc:Subject ;
+            rdf:value "verification" ] ;
     dcp:title [ a dcc:Title ;
             rdf:value "Data and verification scripts for \"A Half-Shift Criterion on Three-Colour 12×12 Grids\"" ] ;
     dcp:version "V1.0"^^xsd:string .
