@@ -151,7 +151,7 @@
     <rdfs:comment>The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.</rdfs:comment>
     <rdfs:label>creator</rdfs:label>
     <rdfs:range rdf:resource="https://schema.stage.datacite.org/linked-data/class/Creator"/>
-    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation.</skos:scopeNote>
+    <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first).</skos:scopeNote>
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.stage.datacite.org/linked-data/property/creatorName">
     <rdfs:comment>The full name of the creator.</rdfs:comment>

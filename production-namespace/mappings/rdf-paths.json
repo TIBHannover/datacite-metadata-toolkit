@@ -16,7 +16,8 @@
       "path": "dcp:contributor"
     },
     "https://w3id.org/tib/datacite/class/Creator": {
-      "path": "dcp:creator"
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
     },
     "https://w3id.org/tib/datacite/class/Date": {
       "path": "dcp:date"
@@ -110,7 +111,8 @@
       "path": "dcp:contributor/dcp:contributorType"
     },
     "https://w3id.org/tib/datacite/property/creator": {
-      "path": "dcp:creator"
+      "path": "dcp:creator",
+      "note": "Each Creator node has schema:position (1 = first); sort by it to recover DataCite's priority order."
     },
     "https://w3id.org/tib/datacite/property/creatorName": {
       "path": "dcp:creator/dcp:creatorName"

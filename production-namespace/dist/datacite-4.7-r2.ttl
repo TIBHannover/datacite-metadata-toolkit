@@ -2124,7 +2124,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:label      "creator"@en;
         rdfs:range      <https://w3id.org/tib/datacite/class/Creator>;
         rdfs:seeAlso    <https://w3id.org/tib/datacite/property/creator.jsonld>;
-        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation." .
+        skos:scopeNote  "In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first)." .
 
 <https://w3id.org/tib/datacite/property/contributorType>
         rdf:type      rdf:Property;

@@ -39,6 +39,7 @@ Revision 2 of the DataCite 4.7 modelling changes how records look in RDF. Data w
 
 - **Own nodes:** each repeatable element (title, description, subject, date, rights, publisher, identifiers, ...) is its own node, linked from the resource by the DataCite property of the same name.
 - **Text in `rdf:value`:** the element's main text is the node's `rdf:value`, exactly once, beside its qualifiers (type, scheme, language). Titles, descriptions, subjects, rights, publishers and affiliations may carry a language tag; dates and identifiers are plain strings, never web addresses. Where DataCite itself names the text (`creatorName`, `contributorName`, `funderName`, `awardTitle`, `geoLocationPlace`), that property is used instead. `rdf:value` is not declared in the OWL files: OWL 2 DL reserves the `rdf:` namespace.
+- **Creator order:** each Creator node records its place in DataCite's priority order with `schema:position` (`https://schema.org/position`, an integer; 1 = first).
 
 `shapes/datacite-4.7-r2.shacl.ttl` checks these rules.
 

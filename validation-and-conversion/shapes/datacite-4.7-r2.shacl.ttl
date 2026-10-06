@@ -5,6 +5,8 @@
 #   - each repeatable element is its own node of the right class;
 #   - the element's main text is in rdf:value, exactly once, and is text, never
 #     a web address; text that DataCite lets carry a language may be tagged;
+#   - creators are numbered 1, 2, 3, ... in DataCite's priority order
+#     (schema:position), with no repeats or gaps;
 #   - controlled values are IRIs from the matching DataCite vocabulary.
 #
 # rdfs:range cannot enforce any of this: it only lets a reasoner infer a class.
@@ -18,6 +20,7 @@
 @prefix dcp:  <https://w3id.org/tib/datacite/property/> .
 @prefix dcc:  <https://w3id.org/tib/datacite/class/> .
 @prefix dcsh: <https://w3id.org/tib/datacite/shapes/4.7-r2/> .
+@prefix schema: <https://schema.org/> .
 
 # ---------------------------------------------------------------------------
 # rdf:value: one text value per node, never a web address
@@ -113,7 +116,50 @@ dcsh:Creator
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+    ] ;
+    sh:property [
+        sh:path schema:position ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Each creator records its place in DataCite's priority order with one schema:position, starting at 1." ;
     ] .
+
+# Positions of one resource's creators run 1, 2, 3, ... with no repeats or gaps.
+dcsh:CreatorPositions
+    a sh:NodeShape ;
+    sh:targetSubjectsOf dcp:creator ;
+    sh:sparql [
+        sh:message "Two creators share position {?position}." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:creator ?a , ?b .
+                FILTER (?a != ?b)
+                ?a schema:position ?position .
+                ?b schema:position ?position .
+            }""" ;
+    ] ;
+    sh:sparql [
+        sh:message "Creator position {?position} has no creator before it." ;
+        sh:prefixes dcsh:Prefixes ;
+        sh:select """
+            SELECT $this ?position WHERE {
+                $this dcp:creator ?creator .
+                ?creator schema:position ?position .
+                FILTER (?position > 1)
+                FILTER NOT EXISTS {
+                    $this dcp:creator ?previous .
+                    ?previous schema:position ?before .
+                    FILTER (?before = ?position - 1)
+                }
+            }""" ;
+    ] .
+
+dcsh:Prefixes
+    sh:declare [ sh:prefix "dcp" ; sh:namespace "https://w3id.org/tib/datacite/property/"^^xsd:anyURI ] ;
+    sh:declare [ sh:prefix "schema" ; sh:namespace "https://schema.org/"^^xsd:anyURI ] .
 
 dcsh:Contributor
     a sh:NodeShape ;

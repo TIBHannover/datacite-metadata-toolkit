@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pyshacl
 import rdflib
+from rdflib.compare import isomorphic
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "validation-and-conversion" / "scripts"))
@@ -20,6 +21,7 @@ DIST = ROOT / "production-namespace" / "dist"
 DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 DCC = rdflib.Namespace("https://w3id.org/tib/datacite/class/")
 DCV = "https://w3id.org/tib/datacite/vocab/"
+POSITION = rdflib.URIRef("https://schema.org/position")
 # Derived citation formats, language codes (they become tags) and the legacy
 # "identifiers" list, which repeats alternateIdentifiers.
 SKIP_KEYS = {"schemaOrg", "bibtex", "citeproc", "ris", "lang", "doi", "identifiers"}
@@ -145,19 +147,53 @@ class StructureTest(unittest.TestCase):
                          self.attributes["relatedItems"][0]["publisher"])
 
 
+def creator_names(graph, subject):
+    """Creator names sorted by schema:position."""
+    nodes = sorted(graph.objects(subject, DCP.creator), key=lambda node: graph.value(node, POSITION).toPython())
+    return [str(graph.value(node, DCP.creatorName)) for node in nodes]
+
+
+class CreatorOrderTest(unittest.TestCase):
+    def setUp(self):
+        self.attributes = record_attributes(EXAMPLES / "real-dataset-dryad.json")
+        self.record = rdflib.URIRef("https://doi.org/" + self.attributes["doi"])
+        self.context = load_context(DEFAULT_CONTEXT)
+
+    def test_positions_follow_priority_order(self):
+        graph = to_graph(self.attributes, self.context)
+        self.assertEqual(creator_names(graph, self.record), [c["name"] for c in self.attributes["creators"]])
+
+    def test_reordering_creators_changes_the_graph(self):
+        reordered = dict(self.attributes, creators=list(reversed(self.attributes["creators"])))
+        self.assertFalse(isomorphic(to_graph(self.attributes, self.context), to_graph(reordered, self.context)))
+
+    def test_related_item_creators_are_numbered(self):
+        attributes = record_attributes(EXAMPLES / "record.json")
+        graph = to_graph(attributes, self.context)
+        item = next(graph.objects(rdflib.URIRef("https://doi.org/" + attributes["doi"]), DCP.relatedItem))
+        self.assertEqual(creator_names(graph, item), [c["name"] for c in attributes["relatedItems"][0]["creators"]])
+
+
 SHAPE_PREFIXES = """
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcp: <https://w3id.org/tib/datacite/property/> .
 @prefix dcc: <https://w3id.org/tib/datacite/class/> .
 @prefix dcv: <https://w3id.org/tib/datacite/vocab/> .
 @prefix doi: <https://doi.org/> .
+@prefix schema: <https://schema.org/> .
 """
 # Each snippet breaks one rule of the rdf:value convention; the shapes must reject all of them.
 BROKEN = {
     "publisher as plain text": 'doi:x dcp:publisher "Example Press" .',
     "identifier as a web address": 'doi:x dcp:alternateIdentifier [ a dcc:AlternateIdentifier ; '
                                    'rdf:value <https://example.org/1> ; dcp:alternateIdentifierType "URL" ] .',
-    "creator without a name": 'doi:x dcp:creator [ a dcc:Creator ] .',
+    "creator without a name": 'doi:x dcp:creator [ a dcc:Creator ; schema:position 1 ] .',
+    "creator without a position": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ] .',
+    "two creators share a position": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 1 ] , '
+                                     '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 1 ] .',
+    "gap in creator positions": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 1 ] , '
+                                '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 3 ] .',
+    "creator position starts at 0": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 0 ] .',
     "language tag on a date": 'doi:x dcp:date [ a dcc:Date ; rdf:value "2020"@en ; '
                               'dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Issued> ] .',
     "two texts on one title": 'doi:x dcp:title [ a dcc:Title ; rdf:value "One" , "Two" ] .',

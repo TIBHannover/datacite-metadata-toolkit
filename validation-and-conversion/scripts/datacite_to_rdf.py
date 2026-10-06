@@ -3,10 +3,11 @@
 
 Every repeatable DataCite element (description, title, date, ...) becomes its own
 node, linked from the resource, with its text in rdf:value and its qualifiers
-(type, scheme, language) beside it.
+(type, scheme, language) beside it. Each creator records its place in DataCite's
+priority order with schema:position (1 = first).
 
 The JSON-LD context alone produces that structure. prepare() adds what a context
-cannot: an explicit rdf:type on each node, a language tag on the text (JSON-LD
+cannot: an explicit rdf:type on each node, the creators' positions, a language tag on the text (JSON-LD
 cannot move a sibling "lang" key onto a value), a Publisher node for a publisher
 given only as a name (as related items do), and protection for identifiers
 that are not web addresses, which a JSON-LD processor would otherwise drop.
@@ -84,9 +85,11 @@ def type_items(container):
         items = container.get(key)
         if not isinstance(items, list):
             continue
-        for item in items:
+        for position, item in enumerate(items, start=1):
             if isinstance(item, dict):
                 item["@type"] = cls
+                if key == "creators":
+                    item["position"] = position
                 tag_language(item, text_key)
                 publisher_node(item)
                 type_items(item)
