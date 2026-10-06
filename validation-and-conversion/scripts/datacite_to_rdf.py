@@ -9,8 +9,9 @@ priority order with schema:position (1 = first).
 The JSON-LD context alone produces that structure. prepare() adds what a context
 cannot: an explicit rdf:type on each node, the creators' positions, a language tag on the text (JSON-LD
 cannot move a sibling "lang" key onto a value), a Publisher node for a publisher
-given only as a name (as related items do), and protection for identifiers
-that are not web addresses, which a JSON-LD processor would otherwise drop.
+given only as a name (as related items do), alternate identifiers that the REST
+API lists under "identifiers", and protection for identifiers that are not web
+addresses, which a JSON-LD processor would otherwise drop.
 
 validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl checks the output.
 
@@ -108,12 +109,36 @@ def protect_identifiers(value):
                 protect_identifiers(item)
 
 
+def is_doi_of(entry, doi):
+    value = str(entry.get("identifier", "")).lower()
+    return str(entry.get("identifierType", "")).upper() == "DOI" and bool(doi) and value.endswith(doi.lower())
+
+
+def merge_api_identifiers(record):
+    """The REST API lists alternate identifiers under "identifiers" (the context ignores
+    that key); add any not already in alternateIdentifiers, except the record's own DOI."""
+    alternates = record.get("alternateIdentifiers") or []
+    seen = {(a.get("alternateIdentifier"), a.get("alternateIdentifierType")) for a in alternates if isinstance(a, dict)}
+    for entry in record.pop("identifiers", None) or []:
+        if not isinstance(entry, dict) or not entry.get("identifier") or is_doi_of(entry, record.get("doi")):
+            continue
+        key = (entry["identifier"], entry.get("identifierType"))
+        if key not in seen:
+            seen.add(key)
+            alternate = {"alternateIdentifier": entry["identifier"]}
+            if entry.get("identifierType"):
+                alternate["alternateIdentifierType"] = entry["identifierType"]
+            alternates.append(alternate)
+    if alternates:
+        record["alternateIdentifiers"] = alternates
+
+
 def prepare(attributes):
     record = copy.deepcopy(attributes)
+    merge_api_identifiers(record)
     protect_identifiers(record)
     type_items(record)
-    # The DOI is the record's identifier; the API's legacy "identifiers" list
-    # repeats alternateIdentifiers and is ignored by the context.
+    # The DOI is the record's identifier.
     if record.get("doi"):
         record["identifier"] = {"@type": "class:Identifier", "value": record["doi"], "identifierType": "DOI"}
     publisher_node(record)
