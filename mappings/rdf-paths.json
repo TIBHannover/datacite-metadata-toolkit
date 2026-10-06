@@ -220,7 +220,8 @@
       "path": "dcp:geoLocation/(dcp:geoLocationPoint|dcp:geoLocationPolygon/(dcp:polygonPoint|dcp:inPolygonPoint))/dcp:pointLongitude"
     },
     "https://w3id.org/tib/datacite/property/polygonPoint": {
-      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:polygonPoint"
+      "path": "dcp:geoLocation/dcp:geoLocationPolygon/dcp:polygonPoint",
+      "note": "Each polygon point has schema:position (1 = first); sort by it to recover the drawing order."
     },
     "https://w3id.org/tib/datacite/property/publicationYear": {
       "path": "dcp:publicationYear"

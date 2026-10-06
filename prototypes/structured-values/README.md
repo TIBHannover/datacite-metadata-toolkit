@@ -1,5 +1,7 @@
 # Prototype: structured values for repeatable DataCite elements
 
+> **Status:** this prototype became revision 4.7-r2 of the namespace. The converter now lives in `validation-and-conversion/scripts/datacite_to_rdf.py`, the example records in `validation-and-conversion/examples/`, and SHACL shapes that check the output in `validation-and-conversion/shapes/`. `compare.py` still regenerates `before/`, `after/` and `RESULTS.md` from those files. The open questions below are resolved; see the end of this page.
+
 This branch prototypes a fix for a reported ambiguity: `https://w3id.org/tib/datacite/property/description` was used both for the link from a resource to a description and for the description text itself. Testing showed the same flaw affects every repeatable DataCite element, and that the JSON-LD context lost data as a result.
 
 ## The problem
@@ -84,7 +86,7 @@ From `RESULTS.md`:
 | Record | | JSON values lost | Text–type pairs readable | Invalid statements |
 |---|---|---:|---:|---|
 | DataCite full example | before | 106 of 466 | 0 of 61 | `@language` |
-| | after | 1 of 466 | 61 of 61 | none |
+| | after | 0 of 466 | 61 of 61 | none |
 | Dryad dataset | before | 33 of 102 | 5 of 17 | none |
 | | after | 0 of 102 | 17 of 17 | none |
 | Zenodo software | before | 8 of 59 | 1 of 9 | `@language` |
@@ -92,7 +94,7 @@ From `RESULTS.md`:
 
 "Text–type pairs readable" counts descriptions, titles, dates, related identifiers, contributors and subjects whose text can be matched to exactly its own type or scheme. The context alone (without `prepare()`) gives the same values and pairs; `prepare()` only adds node classes and language tags.
 
-The one remaining loss is a separate, older bug: DataCite writes `funderIdentifierType` as `Crossref Funder ID`, but the vocabulary term is `CrossrefFunderID`.
+DataCite writes `funderIdentifierType` as `Crossref Funder ID`; the context maps it to the vocabulary term `CrossrefFunderID`, so it is not counted as lost.
 
 ## How the mappings would change
 
@@ -136,21 +138,22 @@ comment after    Both name the resource. DataCite links to a Title node; take th
 
 `to-schemaorg-dcterms.rq` shows the conversion working: on the "before" files it produces nothing; on the "after" files it produces the abstract, main title and a `dcterms:RightsStatement` with the licence name and URL.
 
-## Not done, and open questions
+## Open questions at the time, and how they were resolved
 
-- **Breaking change:** anyone who already uses `dcp:description` (or `title`, `subject`, …) with plain text in RDF must move the text to the node's `rdf:value`. This needs a version bump and an announcement, including to the reporter.
-- **`rdf:value` or a DataCite property:** `rdf:value` is the standard choice and the context already uses it for language and coordinates, but some communities prefer a named property per element.
+- **Breaking change:** anyone who already uses `dcp:description` (or `title`, `subject`, …) with plain text in RDF must move the text to the node's `rdf:value`. This needs a version bump and an announcement, including to the reporter. *Resolved:* published as revision 4.7-r2; the 4.7 files stay frozen.
+- **`rdf:value` or a DataCite property:** `rdf:value` is the standard choice and the context already uses it for language and coordinates, but some communities prefer a named property per element. *Resolved:* `rdf:value`, kept out of the OWL files and checked by SHACL shapes.
 - **What a context cannot do:** without `prepare()`, nodes are untyped (their class follows from the new `rdfs:range`) and the language is a `dcterms:language` statement rather than a tag on the text.
-- **Whole-vocabulary downloads:** `dist/datacite-4.7.ttl`, `.rdf` and `.jsonld` were not rebuilt; that needs Apache Jena `riot`. The OWL file and per-term files are rebuilt.
+- **Whole-vocabulary downloads:** `dist/datacite-4.7.ttl`, `.rdf` and `.jsonld` were not rebuilt; that needs Apache Jena `riot`. The OWL file and per-term files are rebuilt. *Resolved:* the 4.7-r2 downloads are built from the same source, and CI checks that `dist/datacite.*` equals the current version.
 - **Separate older bugs found while testing:**
-  - `funderIdentifierType` value spelling, as above.
-  - `nameIdentifier` and `affiliationIdentifier` are typed as web addresses, so a non-URL identifier becomes a broken relative address.
+  - `funderIdentifierType` value spelling, as above. *Resolved.*
+  - `nameIdentifier` and `affiliationIdentifier` are typed as web addresses, so a non-URL identifier becomes a broken relative address. *Resolved:* such identifiers stay text.
+- **Found later:** creator order and polygon point order were lost (now `schema:position`), related-item publishers stayed text, and alternate identifiers that the REST API lists under `identifiers` were dropped. All are fixed in the converter and covered by tests.
 
 ## Run it
 
 ```bash
-pip install -r rdf-build-scripts/requirements-namespace.txt
+pip install -r rdf-build-scripts/requirements-mappings.txt
 cd prototypes/structured-values
 python compare.py
-python datacite_to_rdf.py records/real-dataset.json --context ../../production-namespace/context/fullcontext.jsonld
+python ../../validation-and-conversion/scripts/datacite_to_rdf.py ../../validation-and-conversion/examples/real-dataset-dryad.json
 ```

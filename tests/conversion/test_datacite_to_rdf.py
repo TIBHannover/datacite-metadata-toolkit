@@ -22,9 +22,13 @@ DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 DCC = rdflib.Namespace("https://w3id.org/tib/datacite/class/")
 DCV = "https://w3id.org/tib/datacite/vocab/"
 POSITION = rdflib.URIRef("https://schema.org/position")
-# Derived citation formats, language codes (they become tags) and the legacy
-# "identifiers" list, which repeats alternateIdentifiers.
-SKIP_KEYS = {"schemaOrg", "bibtex", "citeproc", "ris", "lang", "doi", "identifiers"}
+# Derived citation formats and language codes (they become tags).
+SKIP_KEYS = {"schemaOrg", "bibtex", "citeproc", "ris", "lang", "doi"}
+# API list key -> DataCite property linking the owner to each item's node.
+OWNED = {"titles": "title", "subjects": "subject", "dates": "date", "alternateIdentifiers": "alternateIdentifier",
+         "identifiers": "alternateIdentifier", "relatedIdentifiers": "relatedIdentifier", "rightsList": "rights",
+         "descriptions": "description", "creators": "creator", "contributors": "contributor",
+         "fundingReferences": "fundingReference", "geoLocations": "geoLocation", "relatedItems": "relatedItem"}
 PAIRS = [
     ("descriptions", "description", "descriptionType"),
     ("titles", "title", "titleType"),
@@ -75,6 +79,37 @@ def graph_strings(graph):
     return found
 
 
+def reachable_strings(graph, node, found=None):
+    """Strings for every node reachable from node: literals, IRIs and IRI tails."""
+    found = set() if found is None else found
+    for o in graph.objects(node, None):
+        text = str(o).strip()
+        if text in found:
+            continue
+        found.add(text)
+        if isinstance(o, rdflib.URIRef):
+            found.add(text.rsplit("/", 1)[-1])
+        else:
+            reachable_strings(graph, o, found)
+    return found
+
+
+def misplaced(graph, owner, attributes, where=""):
+    """Items whose values are not all found under one node linked from their owner."""
+    problems = []
+    for key, prop in OWNED.items():
+        for index, item in enumerate(attributes.get(key) or []):
+            if not isinstance(item, dict):
+                continue
+            values = {ALIASES.get(v, v) for _, v in leaves(item)}
+            holders = [n for n in graph.objects(owner, DCP[prop]) if values <= reachable_strings(graph, n)]
+            if not holders:
+                problems.append(f"{where}{key}[{index}]")
+            elif key == "relatedItems":
+                problems += misplaced(graph, holders[0], item, f"{where}{key}[{index}].")
+    return problems
+
+
 def convert(path):
     attributes = record_attributes(path)
     return attributes, to_graph(attributes, load_context(DEFAULT_CONTEXT))
@@ -87,6 +122,13 @@ class RecordConversionTest(unittest.TestCase):
             present = graph_strings(graph)
             lost = [(k, v) for k, v in leaves(attributes) if ALIASES.get(v, v) not in present]
             self.assertEqual(lost, [], path.name)
+
+    def test_each_item_stays_on_its_own_node(self):
+        """Every value of a list item is found under one node linked from the item's owner."""
+        for path in RECORDS:
+            attributes, graph = convert(path)
+            record = rdflib.URIRef("https://doi.org/" + attributes["doi"])
+            self.assertEqual(misplaced(graph, record, attributes), [], path.name)
 
     def test_each_text_keeps_its_own_type(self):
         for path in RECORDS:
@@ -139,6 +181,41 @@ class StructureTest(unittest.TestCase):
         graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
         self.assertIn(rdflib.Literal("0000 0004 1936 7347"), set(graph.objects(None, DCP.affiliationIdentifier)))
 
+    def test_api_identifiers_become_alternate_identifiers(self):
+        doi = "10.1234/test"
+        attributes = {"doi": doi, "identifiers": [
+            {"identifier": "ABC-123", "identifierType": "Local accession number"},
+            {"identifier": "https://doi.org/" + doi, "identifierType": "DOI"}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        nodes = list(graph.objects(rdflib.URIRef("https://doi.org/" + doi), DCP.alternateIdentifier))
+        self.assertEqual(len(nodes), 1, "the record's own DOI is not an alternate identifier")
+        self.assertEqual(str(graph.value(nodes[0], rdflib.RDF.value)), "ABC-123")
+        self.assertEqual(str(graph.value(nodes[0], DCP.alternateIdentifierType)), "Local accession number")
+
+    def test_identifiers_repeating_alternate_identifiers_are_not_duplicated(self):
+        self.assertEqual(len(list(self.graph.objects(self.record, DCP.alternateIdentifier))),
+                         len(self.attributes["alternateIdentifiers"]))
+
+    def test_doi_suffix_does_not_discard_a_distinct_identifier(self):
+        doi = "10.1234/test"
+        other = "10.9999/10.1234/test"
+        attributes = {"doi": doi, "identifiers": [
+            {"identifier": other, "identifierType": "DOI"},
+            {"identifier": "https://dx.doi.org/10.1234/TEST", "identifierType": "DOI"}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        nodes = list(graph.objects(rdflib.URIRef("https://doi.org/" + doi), DCP.alternateIdentifier))
+        self.assertEqual(len(nodes), 1)
+        self.assertEqual(str(graph.value(nodes[0], rdflib.RDF.value)), other)
+
+    def test_string_affiliations_conform_for_creators_and_related_items(self):
+        attributes = {"doi": "10.1234/test", "creators": [{"name": "A", "affiliation": ["University"]}],
+                      "relatedItems": [{"creators": [{"name": "B", "affiliation": ["Other University"]}]}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        names = {str(graph.value(node, rdflib.RDF.value)) for node in graph.objects(None, DCP.affiliation)}
+        self.assertEqual(names, {"University", "Other University"})
+        conforms, _, report = pyshacl.validate(graph, shacl_graph=str(SHAPES))
+        self.assertTrue(conforms, report)
+
     def test_related_item_publisher_is_a_node(self):
         item = next(self.graph.objects(self.record, DCP.relatedItem))
         publisher = next(self.graph.objects(item, DCP.publisher))
@@ -174,6 +251,49 @@ class CreatorOrderTest(unittest.TestCase):
         self.assertEqual(creator_names(graph, item), [c["name"] for c in attributes["relatedItems"][0]["creators"]])
 
 
+def point(latitude, longitude):
+    return {"pointLatitude": latitude, "pointLongitude": longitude}
+
+
+SQUARE = [point("0", "0"), point("0", "1"), point("1", "1"), point("1", "0"), point("0", "0")]
+
+
+class PolygonTest(unittest.TestCase):
+    def convert(self, polygon):
+        attributes = {"doi": "10.1234/geo", "geoLocations": [{"geoLocationPolygon": polygon}]}
+        graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+        location = next(graph.objects(rdflib.URIRef("https://doi.org/10.1234/geo"), DCP.geoLocation))
+        return graph, list(graph.objects(location, DCP.geoLocationPolygon))
+
+    def points(self, graph, polygon):
+        nodes = sorted(graph.objects(polygon, DCP.polygonPoint), key=lambda n: graph.value(n, POSITION).toPython())
+        return [point(str(graph.value(n, DCP.pointLatitude)), str(graph.value(n, DCP.pointLongitude))) for n in nodes]
+
+    def test_points_form_one_polygon_in_drawing_order(self):
+        attributes, graph = convert(EXAMPLES / "record.json")
+        location = next(graph.objects(rdflib.URIRef("https://doi.org/" + attributes["doi"]), DCP.geoLocation))
+        polygons = list(graph.objects(location, DCP.geoLocationPolygon))
+        self.assertEqual(len(polygons), 1)
+        expected = [entry["polygonPoint"] for entry in attributes["geoLocations"][0]["geoLocationPolygon"]]
+        self.assertEqual(self.points(graph, polygons[0]), expected)
+
+    def test_in_polygon_point_is_kept(self):
+        graph, polygons = self.convert([{"polygonPoint": p} for p in SQUARE] + [{"inPolygonPoint": point("0.5", "0.5")}])
+        inside = graph.value(polygons[0], DCP.inPolygonPoint)
+        self.assertEqual((str(graph.value(inside, DCP.pointLatitude)), str(graph.value(inside, DCP.pointLongitude))), ("0.5", "0.5"))
+        self.assertEqual(self.points(graph, polygons[0]), SQUARE)
+
+    def test_several_polygons_stay_apart(self):
+        other = [point("5", "5"), point("5", "6"), point("6", "6"), point("5", "5")]
+        graph, polygons = self.convert([[{"polygonPoint": p} for p in SQUARE], [{"polygonPoint": p} for p in other]])
+        self.assertEqual(sorted(len(self.points(graph, p)) for p in polygons), [4, 5])
+
+    def test_xml_shaped_polygon(self):
+        graph, polygons = self.convert({"polygonPoint": SQUARE, "inPolygonPoint": point("0.5", "0.5")})
+        self.assertEqual(self.points(graph, polygons[0]), SQUARE)
+        self.assertIsNotNone(graph.value(polygons[0], DCP.inPolygonPoint))
+
+
 SHAPE_PREFIXES = """
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcp: <https://w3id.org/tib/datacite/property/> .
@@ -193,6 +313,10 @@ BROKEN = {
                                      '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 1 ] .',
     "gap in creator positions": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 1 ] , '
                                 '[ a dcc:Creator ; dcp:creatorName "B" ; schema:position 3 ] .',
+    "polygon point without a position": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPolygon [ dcp:polygonPoint '
+        + ' , '.join(f'[ dcp:pointLatitude "{i}" ; dcp:pointLongitude "0" ]' for i in range(4)) + ' ] ] .',
+    "polygon with three points": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPolygon [ dcp:polygonPoint '
+        + ' , '.join(f'[ dcp:pointLatitude "{i}" ; dcp:pointLongitude "0" ; schema:position {i + 1} ]' for i in range(3)) + ' ] ] .',
     "creator position starts at 0": 'doi:x dcp:creator [ a dcc:Creator ; dcp:creatorName "A" ; schema:position 0 ] .',
     "language tag on a date": 'doi:x dcp:date [ a dcc:Date ; rdf:value "2020"@en ; '
                               'dcp:dateType <https://w3id.org/tib/datacite/vocab/dateType/Issued> ] .',

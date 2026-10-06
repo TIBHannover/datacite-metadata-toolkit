@@ -516,6 +516,18 @@
       "notes": "Keep A as the described resource and B as the related resource. Select dcterms:source with this direction; preserve the more specific DataCite relation qualifier when the target is broader."
     },
     {
+      "id": "relation-issourceof",
+      "subject_ids": [
+        "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf"
+      ],
+      "condition": "relationType is IsSourceOf on related resource B in record A.",
+      "source_path": "relatedIdentifier or relatedItem with relationType=IsSourceOf",
+      "target_path": "B -> dcterms:source -> A",
+      "operation": "inverse",
+      "lossiness": "conditional",
+      "notes": "Swap the direction: dcterms:source points from B to A. Keep the DataCite relation qualifier, since the target statement is about B, not the described resource A."
+    },
+    {
       "id": "contributor-roles",
       "subject_ids": [
         "https://w3id.org/tib/datacite/property/contributorType",
