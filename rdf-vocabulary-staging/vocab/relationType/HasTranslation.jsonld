@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasTranslation",
   "type": "Concept",
-  "prefLabel": "HasTranslation",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "HasTranslation"
+    },
+    {
+      "@language": "cs",
+      "@value": "má překlad"
+    }
+  ],
   "notation": "HasTranslation",
-  "definition": "indicates A has a translation B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A has a translation B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A má překlad B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "scopeNote": "When a resource is shared in one language and later translated, use HasTranslation to link original to translation. If released simultaneously in multiple languages, connect in both directions.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Created",
   "type": "Concept",
-  "prefLabel": "Created",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Created"
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum vytvoření"
+    }
+  ],
   "notation": "Created",
-  "definition": "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. \nDoporučeno použít pro lepší vyhledávání."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "scopeNote": "Recommended for discovery."
+  "scopeNote": "Recommended for discovery.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

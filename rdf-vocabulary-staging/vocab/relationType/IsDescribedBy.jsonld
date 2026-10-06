@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDescribedBy",
   "type": "Concept",
-  "prefLabel": "IsDescribedBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsDescribedBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "je popsán (čím)"
+    }
+  ],
   "notation": "IsDescribedBy",
-  "definition": "indicates A is described by B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is described by B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je popsán B"
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

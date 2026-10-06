@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/TranslatedTitle",
   "type": "Concept",
-  "prefLabel": "TranslatedTitle",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "TranslatedTitle"
+    },
+    {
+      "@language": "cs",
+      "@value": "Přeložený název"
+    }
+  ],
   "notation": "TranslatedTitle",
-  "definition": "A title that is a translation of the primary title into another language.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "A title that is a translation of the primary title into another language."
+    },
+    {
+      "@language": "cs",
+      "@value": "Název, který je překladem primárního názvu do jiného jazyka."
+    }
+  ],
   "scopeNote": "Use the xml:lang attribute to indicate the language of the translated title.",
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType"
+  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

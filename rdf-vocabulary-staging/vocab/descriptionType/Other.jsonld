@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other",
   "type": "Concept",
-  "prefLabel": "Other",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Other"
+    },
+    {
+      "@language": "cs",
+      "@value": "Jiný"
+    }
+  ],
   "notation": "Other",
-  "definition": "Other description information that does not fit into an existing category.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Other description information that does not fit into an existing category."
+    },
+    {
+      "@language": "cs",
+      "@value": "Další popisné informace, které nelze zařadit do existující kategorie."
+    }
+  ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
-  "scopeNote": "Use for any other description type."
+  "scopeNote": "Use for any other description type.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }
