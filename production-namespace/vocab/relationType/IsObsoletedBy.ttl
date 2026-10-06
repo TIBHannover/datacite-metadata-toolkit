@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy> a skos:Concept ;
-    skos:definition "Indicates A is replaced by B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je nahrazen B"@cs,
+        "Indicates A is replaced by B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsObsoletedBy" ;
-    skos:prefLabel "IsObsoletedBy" ;
+    skos:prefLabel "je nahrazen (čím)"@cs,
+        "IsObsoletedBy"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

@@ -1,10 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Available> a skos:Concept ;
-    skos:definition "The date the resource is made publicly available. May be a range." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition """Datum, kdy je zdroj zpřístupněn veřejnosti. Může se jednat o časové rozmezí. 
+Užívejte i pro označení konce období embarga."""@cs,
+        "The date the resource is made publicly available. May be a range."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Available" ;
-    skos:prefLabel "Available" ;
+    skos:prefLabel "Datum zveřejnění"@cs,
+        "Available"@en ;
     skos:scopeNote "To indicate the end of an embargo period, use Available." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy",
   "type": "Concept",
-  "prefLabel": "IsReferencedBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsReferencedBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "je na něj odkazováno z (čeho)"
+    }
+  ],
   "notation": "IsReferencedBy",
-  "definition": "indicates A is used as a source of information by B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is used as a source of information by B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že na A je odkazován z B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "Recommended for discovery.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

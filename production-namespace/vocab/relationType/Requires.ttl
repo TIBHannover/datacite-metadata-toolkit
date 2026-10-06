@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Requires> a skos:Concept ;
-    skos:definition "Indicates A requires B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A vyžaduje B"@cs,
+        "Indicates A requires B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Requires" ;
-    skos:prefLabel "Requires" ;
+    skos:prefLabel "požaduje (co)"@cs,
+        "Requires"@en ;
     skos:scopeNote "May be used to indicate software dependencies." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

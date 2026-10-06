@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy",
   "type": "Concept",
-  "prefLabel": "IsCompiledBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsCompiledBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "kompilován (čím)"
+    }
+  ],
   "notation": "IsCompiledBy",
-  "definition": "indicates B is used to compile or create A",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates B is used to compile or create A"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že B je použit ke kompilaci nebo vytvoření A"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "May indicate a traditional text compilation, or the compiler program used to generate executable software.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

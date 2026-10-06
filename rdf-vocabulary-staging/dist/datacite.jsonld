@@ -34,6 +34,10 @@
       "@id": "skos:scopeNote",
       "@language": "en"
     },
+    "changeNote": {
+      "@id": "skos:changeNote",
+      "@language": "en"
+    },
     "notation": "skos:notation",
     "inScheme": {
       "@id": "skos:inScheme",
@@ -1426,12 +1430,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Accepted",
       "type": "Concept",
-      "prefLabel": "Accepted",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Accepted"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum přijetí"
+        }
+      ],
       "notation": "Accepted",
-      "definition": "The date that the publisher accepted the resource into their system.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date that the publisher accepted the resource into their system."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum, kdy vydavatel přijal zdroj do svého systému. \nPro označení začátku období embarga použijte podle potřeby možnost Datum přijetí nebo Datum podání."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "To indicate the start of an embargo period, use Accepted or Submitted, as appropriate.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Accepted.jsonld"
       ]
@@ -1439,12 +1465,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Available",
       "type": "Concept",
-      "prefLabel": "Available",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Available"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum zveřejnění"
+        }
+      ],
       "notation": "Available",
-      "definition": "The date the resource is made publicly available. May be a range.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date the resource is made publicly available. May be a range."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum, kdy je zdroj zpřístupněn veřejnosti. Může se jednat o časové rozmezí. \nUžívejte i pro označení konce období embarga."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "To indicate the end of an embargo period, use Available.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Available.jsonld"
       ]
@@ -1452,12 +1500,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Collected",
       "type": "Concept",
-      "prefLabel": "Collected",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Collected"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum sběru"
+        }
+      ],
       "notation": "Collected",
-      "definition": "The date or date range in which the resource content was collected.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date or date range in which the resource content was collected."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum nebo časové rozmezí, ve kterém byl shromážděn obsah zdroje."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Collected.jsonld"
       ]
@@ -1465,11 +1535,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Copyrighted",
       "type": "Concept",
-      "prefLabel": "Copyrighted",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Copyrighted"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum udělení copyrightu"
+        }
+      ],
       "notation": "Copyrighted",
-      "definition": "The specific, documented date at which the resource receives a copyrighted status, if applicable.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The specific, documented date at which the resource receives a copyrighted status, if applicable."
+        },
+        {
+          "@language": "cs",
+          "@value": "Konkrétní, zdokumentované datum, kdy zdroj získá status autorskoprávně chráněného díla, ​​pokud lze na dílo ochranu uplatnit."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Copyrighted.jsonld"
       ]
@@ -1477,12 +1569,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Coverage",
       "type": "Concept",
-      "prefLabel": "Coverage",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Coverage"
+        },
+        {
+          "@language": "cs",
+          "@value": "Časové pokrytí"
+        }
+      ],
       "notation": "Coverage",
-      "definition": "The date or date range that the resource content applies to, describes, or covers.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date or date range that the resource content applies to, describes, or covers."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum nebo časové rozmezí, na které se obsah zdroje vztahuje, které popisuje nebo pokrývá."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Coverage.jsonld"
       ]
@@ -1490,12 +1604,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Created",
       "type": "Concept",
-      "prefLabel": "Created",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Created"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum vytvoření"
+        }
+      ],
       "notation": "Created",
-      "definition": "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. \nDoporučeno použít pro lepší vyhledávání."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "Recommended for discovery.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Created.jsonld"
       ]
@@ -1503,11 +1639,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Issued",
       "type": "Concept",
-      "prefLabel": "Issued",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Issued"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum vydání"
+        }
+      ],
       "notation": "Issued",
-      "definition": "The date that the resource is published or distributed, e.g., to a data centre.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date that the resource is published or distributed, e.g., to a data centre."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum, kdy je zdroj zveřejněn nebo distribuován, např. v repozitáři nebo jiném systému."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Issued.jsonld"
       ]
@@ -1515,11 +1673,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Other",
       "type": "Concept",
-      "prefLabel": "Other",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Other"
+        },
+        {
+          "@language": "cs",
+          "@value": "Jiné datum"
+        }
+      ],
       "notation": "Other",
-      "definition": "Other date that does not fit into an existing category.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Other date that does not fit into an existing category."
+        },
+        {
+          "@language": "cs",
+          "@value": "Jiná datace, která se vztahuje ke zdroji a nepatří do existující kategorie."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Other.jsonld"
       ]
@@ -1527,12 +1707,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Submitted",
       "type": "Concept",
-      "prefLabel": "Submitted",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Submitted"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum podání"
+        }
+      ],
       "notation": "Submitted",
-      "definition": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum, kdy tvůrce odešle (odevzdá) zdroj vydavateli. Toto datum se může lišit od Data přijetí, pokud vydavatel následně uplatní recenzní proces nebo jiný proces výběru.\nDoporučeno použít pro lepší vyhledávání."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Submitted.jsonld"
       ]
@@ -1540,11 +1742,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Updated",
       "type": "Concept",
-      "prefLabel": "Updated",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Updated"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum aktualizace"
+        }
+      ],
       "notation": "Updated",
-      "definition": "The date of the last update to the resource, when the resource is being added to. May be a range.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date of the last update to the resource, when the resource is being added to. May be a range."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum poslední aktualizace zdroje. Může se jednat i o časové rozmezí."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Updated.jsonld"
       ]
@@ -1552,11 +1776,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Valid",
       "type": "Concept",
-      "prefLabel": "Valid",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Valid"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum platnosti"
+        }
+      ],
       "notation": "Valid",
-      "definition": "The date or date range during which the dataset or resource is accurate.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date or date range during which the dataset or resource is accurate."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum nebo časové rozmezí, po které je dataset nebo zdroj platný a aktuální."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Valid.jsonld"
       ]
@@ -1564,12 +1810,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Withdrawn",
       "type": "Concept",
-      "prefLabel": "Withdrawn",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Withdrawn"
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum odstranění"
+        }
+      ],
       "notation": "Withdrawn",
-      "definition": "The date the resource is removed.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The date the resource is removed."
+        },
+        {
+          "@language": "cs",
+          "@value": "Datum odstranění zdroje. Je vhodné uvést důvod odstranění."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
       "scopeNote": "It is good practice to include a Description that indicates the reason for the retraction or withdrawal.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/dateType/Withdrawn.jsonld"
       ]
@@ -1595,14 +1863,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Abstract",
       "type": "Concept",
-      "prefLabel": "Abstract",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Abstract"
+        },
+        {
+          "@language": "cs",
+          "@value": "Abstrakt"
+        }
+      ],
       "notation": "Abstract",
-      "definition": "A brief description of the resource and the context in which the resource was created.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "A brief description of the resource and the context in which the resource was created."
+        },
+        {
+          "@language": "cs",
+          "@value": "Stručný popis zdroje a kontextu, v jehož rámci zdroj vznikl."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "Recommended for discovery. Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.",
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Abstract.jsonld"
@@ -1611,14 +1901,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Methods",
       "type": "Concept",
-      "prefLabel": "Methods",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Methods"
+        },
+        {
+          "@language": "cs",
+          "@value": "Metodologie"
+        }
+      ],
       "notation": "Methods",
-      "definition": "The methodology employed for the study or research.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "The methodology employed for the study or research."
+        },
+        {
+          "@language": "cs",
+          "@value": "Metodologie použitá pro studii nebo výzkum."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "Recommended for discovery. Full documentation about methods supports open science.",
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Methods.jsonld"
@@ -1627,12 +1939,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other",
       "type": "Concept",
-      "prefLabel": "Other",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Other"
+        },
+        {
+          "@language": "cs",
+          "@value": "Jiný"
+        }
+      ],
       "notation": "Other",
-      "definition": "Other description information that does not fit into an existing category.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Other description information that does not fit into an existing category."
+        },
+        {
+          "@language": "cs",
+          "@value": "Další popisné informace, které nelze zařadit do existující kategorie."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "Use for any other description type.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other.jsonld"
       ]
@@ -1640,12 +1974,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/SeriesInformation",
       "type": "Concept",
-      "prefLabel": "SeriesInformation",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "SeriesInformation"
+        },
+        {
+          "@language": "cs",
+          "@value": "Informace o sérii"
+        }
+      ],
       "notation": "SeriesInformation",
-      "definition": "Information about a repeating series, such as volume, issue, number.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Information about a repeating series, such as volume, issue, number."
+        },
+        {
+          "@language": "cs",
+          "@value": "Informace o sérii, například svazek a číslo."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/SeriesInformation.jsonld"
       ]
@@ -1653,14 +2009,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TableOfContents",
       "type": "Concept",
-      "prefLabel": "TableOfContents",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "TableOfContents"
+        },
+        {
+          "@language": "cs",
+          "@value": "Obsah"
+        }
+      ],
       "notation": "TableOfContents",
-      "definition": "A listing of the Table of Contents.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "A listing of the Table of Contents."
+        },
+        {
+          "@language": "cs",
+          "@value": "Obsah zdroje."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "Use “<br>” to indicate a line break for improved rendering of multiple paragraphs, but otherwise no html markup.",
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TableOfContents.jsonld"
@@ -1669,12 +2047,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo",
       "type": "Concept",
-      "prefLabel": "TechnicalInfo",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "TechnicalInfo"
+        },
+        {
+          "@language": "cs",
+          "@value": "Technická informace"
+        }
+      ],
       "notation": "TechnicalInfo",
-      "definition": "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument."
+        },
+        {
+          "@language": "cs",
+          "@value": "Podrobné informace, které mohou souviset s návrhem, implementací, provozem, použitím a/nebo údržbou systému nebo přístroje nebo jiným nastavením procesu získání či ověření datasetu či jiného zdroje."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
       "scopeNote": "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate.",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo.jsonld"
       ]
@@ -2349,14 +2749,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Cites",
       "type": "Concept",
-      "prefLabel": "Cites",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Cites"
+        },
+        {
+          "@language": "cs",
+          "@value": "cituje (co)"
+        }
+      ],
       "notation": "Cites",
-      "definition": "indicates that A includes B in a citation",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A includes B in a citation"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A cituje B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Cites.jsonld"
@@ -2365,14 +2787,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Collects",
       "type": "Concept",
-      "prefLabel": "Collects",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Collects"
+        },
+        {
+          "@language": "cs",
+          "@value": "sbírá"
+        }
+      ],
       "notation": "Collects",
-      "definition": "Indicates A collects B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A collects B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A sbírá/shromažďuje B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May indicate relationship between an instrument and a dataset it collected/observed.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Collects.jsonld"
@@ -2381,14 +2825,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Compiles",
       "type": "Concept",
-      "prefLabel": "Compiles",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Compiles"
+        },
+        {
+          "@language": "cs",
+          "@value": "kompiluje (co)"
+        }
+      ],
       "notation": "Compiles",
-      "definition": "indicates B is the result of a compile or creation event using A",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates B is the result of a compile or creation event using A"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B je výsledkem kompilace nebo vytvoření za použití A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used for software and text; a compiler can be a computer program or a person.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Compiles.jsonld"
@@ -2397,13 +2863,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Continues",
       "type": "Concept",
-      "prefLabel": "Continues",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Continues"
+        },
+        {
+          "@language": "cs",
+          "@value": "pokračuje (čím)"
+        }
+      ],
       "notation": "Continues",
-      "definition": "indicates A is a continuation of the work B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a continuation of the work B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je pokračováním díla B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Continues.jsonld"
@@ -2412,13 +2900,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Describes",
       "type": "Concept",
-      "prefLabel": "Describes",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Describes"
+        },
+        {
+          "@language": "cs",
+          "@value": "popisuje (co)"
+        }
+      ],
       "notation": "Describes",
-      "definition": "indicates A describes B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A describes B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A popisuje B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Describes.jsonld"
@@ -2427,14 +2937,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Documents",
       "type": "Concept",
-      "prefLabel": "Documents",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Documents"
+        },
+        {
+          "@language": "cs",
+          "@value": "dokumentuje (co)"
+        }
+      ],
       "notation": "Documents",
-      "definition": "indicates A is documentation about/explaining B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is documentation about/explaining B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je dokumentací vysvětlující B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used for software documentation.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Documents.jsonld"
@@ -2443,13 +2975,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasMetadata",
       "type": "Concept",
-      "prefLabel": "HasMetadata",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "HasMetadata"
+        },
+        {
+          "@language": "cs",
+          "@value": "má metadata"
+        }
+      ],
       "notation": "HasMetadata",
-      "definition": "indicates resource A has additional metadata B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates resource A has additional metadata B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že zdroj A má další metadata B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasMetadata\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567890</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasMetadata.jsonld"
@@ -2458,14 +3012,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasPart",
       "type": "Concept",
-      "prefLabel": "HasPart",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "HasPart"
+        },
+        {
+          "@language": "cs",
+          "@value": "má část/i"
+        }
+      ],
       "notation": "HasPart",
-      "definition": "indicates A includes the part B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A includes the part B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A má část B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasPart.jsonld"
@@ -2474,14 +3050,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasTranslation",
       "type": "Concept",
-      "prefLabel": "HasTranslation",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "HasTranslation"
+        },
+        {
+          "@language": "cs",
+          "@value": "má překlad"
+        }
+      ],
       "notation": "HasTranslation",
-      "definition": "indicates A has a translation B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A has a translation B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A má překlad B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "When a resource is shared in one language and later translated, use HasTranslation to link original to translation. If released simultaneously in multiple languages, connect in both directions.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasTranslation.jsonld"
@@ -2490,14 +3088,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasVersion",
       "type": "Concept",
-      "prefLabel": "HasVersion",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "HasVersion"
+        },
+        {
+          "@language": "cs",
+          "@value": "má verzi"
+        }
+      ],
       "notation": "HasVersion",
-      "definition": "indicates A has a version B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A has a version B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A má verzi B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "The registered resource such as a software package or code repository has a versioned instance (A has instance B). May relate an un-versioned code repository to a specific software version.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasVersion\">10.5281/ZENODO.832053</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/HasVersion.jsonld"
@@ -2506,14 +3126,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCitedBy",
       "type": "Concept",
-      "prefLabel": "IsCitedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsCitedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je citován (čím)"
+        }
+      ],
       "notation": "IsCitedBy",
-      "definition": "indicates that B includes A in a citation",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that B includes A in a citation"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B cituje A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCitedBy.jsonld"
@@ -2522,14 +3164,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCollectedBy",
       "type": "Concept",
-      "prefLabel": "IsCollectedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsCollectedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je sbírán (čím)"
+        }
+      ],
       "notation": "IsCollectedBy",
-      "definition": "Indicates A is collected by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A is collected by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je sbírán/shromažďován entitou B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May indicate relationship between a dataset and an instrument used to collect/measure/observe data.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCollectedBy\">10.5072/instrument</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCollectedBy.jsonld"
@@ -2538,14 +3202,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCompiledBy",
       "type": "Concept",
-      "prefLabel": "IsCompiledBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsCompiledBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "kompilován (čím)"
+        }
+      ],
       "notation": "IsCompiledBy",
-      "definition": "indicates B is used to compile or create A",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates B is used to compile or create A"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B je použit ke kompilaci nebo vytvoření A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May indicate a traditional text compilation, or the compiler program used to generate executable software.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsCompiledBy.jsonld"
@@ -2554,13 +3240,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsContinuedBy",
       "type": "Concept",
-      "prefLabel": "IsContinuedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsContinuedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je pokračováním (čeho)"
+        }
+      ],
       "notation": "IsContinuedBy",
-      "definition": "indicates A is continued by the work B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is continued by the work B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A pokračuje dílem B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsContinuedBy.jsonld"
@@ -2569,14 +3277,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDerivedFrom",
       "type": "Concept",
-      "prefLabel": "IsDerivedFrom",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsDerivedFrom"
+        },
+        {
+          "@language": "cs",
+          "@value": "je odvozen od (čeho)"
+        }
+      ],
       "notation": "IsDerivedFrom",
-      "definition": "indicates B is a source upon which A is based",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates B is a source upon which A is based"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B je zdrojem, na kterém je A založen"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Use for a resource that is a derivative of an original resource. Example context: dataset derived from a larger dataset and manipulated.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDerivedFrom.jsonld"
@@ -2585,13 +3315,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDescribedBy",
       "type": "Concept",
-      "prefLabel": "IsDescribedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsDescribedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je popsán (čím)"
+        }
+      ],
       "notation": "IsDescribedBy",
-      "definition": "indicates A is described by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is described by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je popsán B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDescribedBy.jsonld"
@@ -2600,14 +3352,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDocumentedBy",
       "type": "Concept",
-      "prefLabel": "IsDocumentedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsDocumentedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je zdokumentován (čím)"
+        }
+      ],
       "notation": "IsDocumentedBy",
-      "definition": "indicates B is documentation about/explaining A",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates B is documentation about/explaining A"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B je dokumentací vysvětlující A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used for software documentation.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsDocumentedBy\">http://tobias-lib.uni-tuebingen.de/volltexte/2000/96/</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsDocumentedBy.jsonld"
@@ -2616,14 +3390,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsIdenticalTo",
       "type": "Concept",
-      "prefLabel": "IsIdenticalTo",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsIdenticalTo"
+        },
+        {
+          "@language": "cs",
+          "@value": "je identický s"
+        }
+      ],
       "notation": "IsIdenticalTo",
-      "definition": "indicates that A is identical to B, for use when there is a need to register two separate instances of the same resource",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A is identical to B, for use when there is a need to register two separate instances of the same resource"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je identické s B (použije se v případě potřeby zaregistrovat dvě samostatné instance téhož zdroje)"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Use when the same resource is saved in another location (e.g., another institution).",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsIdenticalTo\">http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsIdenticalTo.jsonld"
@@ -2632,13 +3428,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsMetadataFor",
       "type": "Concept",
-      "prefLabel": "IsMetadataFor",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsMetadataFor"
+        },
+        {
+          "@language": "cs",
+          "@value": "je metadaty pro"
+        }
+      ],
       "notation": "IsMetadataFor",
-      "definition": "indicates additional metadata A for a resource B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates additional metadata A for a resource B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje další metadata A pro zdroj B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsMetadataFor.jsonld"
@@ -2647,13 +3465,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsNewVersionOf",
       "type": "Concept",
-      "prefLabel": "IsNewVersionOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsNewVersionOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je novou verzí (čeho)"
+        }
+      ],
       "notation": "IsNewVersionOf",
-      "definition": "indicates A is a new edition of B, where the new edition has been modified or updated",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a new edition of B, where the new edition has been modified or updated"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsNewVersionOf.jsonld"
@@ -2662,13 +3502,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsObsoletedBy",
       "type": "Concept",
-      "prefLabel": "IsObsoletedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsObsoletedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je nahrazen (čím)"
+        }
+      ],
       "notation": "IsObsoletedBy",
-      "definition": "Indicates A is replaced by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A is replaced by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je nahrazen B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsObsoletedBy.jsonld"
@@ -2677,14 +3539,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsOriginalFormOf",
       "type": "Concept",
-      "prefLabel": "IsOriginalFormOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsOriginalFormOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je původní variantou (čeho)"
+        }
+      ],
       "notation": "IsOriginalFormOf",
-      "definition": "indicates A is the original form of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is the original form of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je původní variantou B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used for different software operating systems or compiler formats.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsOriginalFormOf.jsonld"
@@ -2693,14 +3577,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPartOf",
       "type": "Concept",
-      "prefLabel": "IsPartOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsPartOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je součástí"
+        }
+      ],
       "notation": "IsPartOf",
-      "definition": "indicates A is a portion of B; may be used for elements of a series",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a portion of B; may be used for elements of a series"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je součástí B; lze použít pro jednotlivé prvky řady (série)"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery. Primarily applied to container-contained relationships. May be used for individual software modules; code repository-to-version should use IsVersionOf/HasVersion.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPartOf.jsonld"
@@ -2709,13 +3615,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPreviousVersionOf",
       "type": "Concept",
-      "prefLabel": "IsPreviousVersionOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsPreviousVersionOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je předchozí verzí (čeho)"
+        }
+      ],
       "notation": "IsPreviousVersionOf",
-      "definition": "indicates A is a previous edition of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a previous edition of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je předchozím vydáním B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPreviousVersionOf.jsonld"
@@ -2724,13 +3652,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPublishedIn",
       "type": "Concept",
-      "prefLabel": "IsPublishedIn",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsPublishedIn"
+        },
+        {
+          "@language": "cs",
+          "@value": "je publikován v"
+        }
+      ],
       "notation": "IsPublishedIn",
-      "definition": "indicates A is published inside B, but is independent of other things published inside of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is published inside B, but is independent of other things published inside of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je publikován v B, ale je nezávislý na ostatních věcech publikovaných uvnitř B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsPublishedIn.jsonld"
@@ -2739,14 +3689,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReferencedBy",
       "type": "Concept",
-      "prefLabel": "IsReferencedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsReferencedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je na něj odkazováno z (čeho)"
+        }
+      ],
       "notation": "IsReferencedBy",
-      "definition": "indicates A is used as a source of information by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is used as a source of information by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že na A je odkazován z B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReferencedBy.jsonld"
@@ -2755,14 +3727,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsRequiredBy",
       "type": "Concept",
-      "prefLabel": "IsRequiredBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsRequiredBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je požadován (čím)"
+        }
+      ],
       "notation": "IsRequiredBy",
-      "definition": "Indicates A is required by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A is required by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je vyžadován entitou B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used to indicate software dependencies.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsRequiredBy.jsonld"
@@ -2771,13 +3765,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReviewedBy",
       "type": "Concept",
-      "prefLabel": "IsReviewedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsReviewedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "je recenzován (čím)"
+        }
+      ],
       "notation": "IsReviewedBy",
-      "definition": "indicates that A is reviewed by B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A is reviewed by B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je recenzován entitou B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsReviewedBy.jsonld"
@@ -2786,14 +3802,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSourceOf",
       "type": "Concept",
-      "prefLabel": "IsSourceOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsSourceOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je zdrojem odvozené verze"
+        }
+      ],
       "notation": "IsSourceOf",
-      "definition": "indicates A is a source upon which B is based",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a source upon which B is based"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je zdrojem, na kterém je B založen"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "IsSourceOf is the original resource from which a derivative resource was created (e.g., original dataset without value manipulation).",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsSourceOf\">http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSourceOf.jsonld"
@@ -2802,14 +3840,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementedBy",
       "type": "Concept",
-      "prefLabel": "IsSupplementedBy",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsSupplementedBy"
+        },
+        {
+          "@language": "cs",
+          "@value": "má doplněk"
+        }
+      ],
       "notation": "IsSupplementedBy",
-      "definition": "indicates that B is a supplement to A",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that B is a supplement to A"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B je doplňkem A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsSupplementedBy\">16911322</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementedBy.jsonld"
@@ -2818,14 +3878,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementTo",
       "type": "Concept",
-      "prefLabel": "IsSupplementTo",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsSupplementTo"
+        },
+        {
+          "@language": "cs",
+          "@value": "je doplňkem k (čemu)"
+        }
+      ],
       "notation": "IsSupplementTo",
-      "definition": "indicates that A is a supplement to B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A is a supplement to B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je doplňkem B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:0168-ssoar-13172</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsSupplementTo.jsonld"
@@ -2834,14 +3916,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsTranslationOf",
       "type": "Concept",
-      "prefLabel": "IsTranslationOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsTranslationOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je překladem (čeho)"
+        }
+      ],
       "notation": "IsTranslationOf",
-      "definition": "indicates A is a translation of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a translation of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je překladem B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "When a resource is shared in one language and later translated, use IsTranslationOf to link translation to original.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsTranslationOf.jsonld"
@@ -2850,14 +3954,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVariantFormOf",
       "type": "Concept",
-      "prefLabel": "IsVariantFormOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsVariantFormOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je variantou (čeho)"
+        }
+      ],
       "notation": "IsVariantFormOf",
-      "definition": "indicates A is a variant or different form of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a variant or different form of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je variantou nebo jinou formou B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Use for a different form of one thing. May be used for different software operating systems or compiler formats.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVariantFormOf.jsonld"
@@ -2866,14 +3992,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVersionOf",
       "type": "Concept",
-      "prefLabel": "IsVersionOf",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "IsVersionOf"
+        },
+        {
+          "@language": "cs",
+          "@value": "je verzí"
+        }
+      ],
       "notation": "IsVersionOf",
-      "definition": "indicates A is a version of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates A is a version of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A je verzí B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "The registered resource is an instance of a target resource (A is an instance of B). May relate a specific software version to its code repository.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVersionOf\">10.5281/ZENODO.832054</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsVersionOf.jsonld"
@@ -2882,13 +4030,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Obsoletes",
       "type": "Concept",
-      "prefLabel": "Obsoletes",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Obsoletes"
+        },
+        {
+          "@language": "cs",
+          "@value": "nahrazuje (co)"
+        }
+      ],
       "notation": "Obsoletes",
-      "definition": "Indicates A replaces B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A replaces B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A nahrazuje B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Obsoletes.jsonld"
@@ -2897,15 +4067,37 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Other",
       "type": "Concept",
-      "prefLabel": "Other",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Other"
+        },
+        {
+          "@language": "cs",
+          "@value": "jiná role"
+        }
+      ],
       "notation": "Other",
-      "definition": "indicates that A is related to B and the relationship does not fit into an existing category",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A is related to B and the relationship does not fit into an existing category"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A souvisí s B a tento vztah neodpovídá žádné z existujících kategorií"
+        }
+      ],
       "scopeNote": "If selected, supply a value for relationTypeInformation describing the nature of the relationship; applies to both relatedIdentifier and relatedItem.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Other\" relationTypeInformation=\"is output of\" resourceTypeGeneral=\"Project\">10.21384/p27z-6n52</relatedIdentifier>"
       ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Other.jsonld"
       ]
@@ -2913,14 +4105,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/References",
       "type": "Concept",
-      "prefLabel": "References",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "References"
+        },
+        {
+          "@language": "cs",
+          "@value": "odkazuje (na co)"
+        }
+      ],
       "notation": "References",
-      "definition": "indicates B is used as a source of information for A",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates B is used as a source of information for A"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že B odkazuje na A"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "Recommended for discovery.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/References.jsonld"
@@ -2929,14 +4143,36 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Requires",
       "type": "Concept",
-      "prefLabel": "Requires",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Requires"
+        },
+        {
+          "@language": "cs",
+          "@value": "požaduje (co)"
+        }
+      ],
       "notation": "Requires",
-      "definition": "Indicates A requires B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Indicates A requires B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že A vyžaduje B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "scopeNote": "May be used to indicate software dependencies.",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Requires.jsonld"
@@ -2945,13 +4181,35 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Reviews",
       "type": "Concept",
-      "prefLabel": "Reviews",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Reviews"
+        },
+        {
+          "@language": "cs",
+          "@value": "recenzuje (co)"
+        }
+      ],
       "notation": "Reviews",
-      "definition": "indicates that A is a review of B",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "indicates that A is a review of B"
+        },
+        {
+          "@language": "cs",
+          "@value": "označuje, že entita A je recenzí B"
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>"
+      ],
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
       ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/relationType/Reviews.jsonld"
@@ -3585,12 +4843,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/AlternativeTitle",
       "type": "Concept",
-      "prefLabel": "AlternativeTitle",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "AlternativeTitle"
+        },
+        {
+          "@language": "cs",
+          "@value": "Alternativní název"
+        }
+      ],
       "notation": "AlternativeTitle",
-      "definition": "A title by which the resource is also known, used as an alternative to the primary title.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "A title by which the resource is also known, used as an alternative to the primary title."
+        },
+        {
+          "@language": "cs",
+          "@value": "Název, pod kterým je zdroj také známý, používaný jako alternativa k primárnímu názvu."
+        }
+      ],
       "scopeNote": "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.",
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/titleType/AlternativeTitle.jsonld"
       ]
@@ -3598,11 +4878,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/Other",
       "type": "Concept",
-      "prefLabel": "Other",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Other"
+        },
+        {
+          "@language": "cs",
+          "@value": "Jiný"
+        }
+      ],
       "notation": "Other",
-      "definition": "Any title type not covered by the other values in the titleType controlled list.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "Any title type not covered by the other values in the titleType controlled list."
+        },
+        {
+          "@language": "cs",
+          "@value": "Jakýkoli typ názvu, který není pokryt jinými hodnotami v řízeném slovníku titleType."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/titleType/Other.jsonld"
       ]
@@ -3610,11 +4912,33 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/Subtitle",
       "type": "Concept",
-      "prefLabel": "Subtitle",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "Subtitle"
+        },
+        {
+          "@language": "cs",
+          "@value": "Podnázev"
+        }
+      ],
       "notation": "Subtitle",
-      "definition": "A secondary title that follows the main title and provides additional information about the resource.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "A secondary title that follows the main title and provides additional information about the resource."
+        },
+        {
+          "@language": "cs",
+          "@value": "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."
+        }
+      ],
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/titleType/Subtitle.jsonld"
       ]
@@ -3622,12 +4946,34 @@
     {
       "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/TranslatedTitle",
       "type": "Concept",
-      "prefLabel": "TranslatedTitle",
+      "prefLabel": [
+        {
+          "@language": "en",
+          "@value": "TranslatedTitle"
+        },
+        {
+          "@language": "cs",
+          "@value": "Přeložený název"
+        }
+      ],
       "notation": "TranslatedTitle",
-      "definition": "A title that is a translation of the primary title into another language.",
+      "definition": [
+        {
+          "@language": "en",
+          "@value": "A title that is a translation of the primary title into another language."
+        },
+        {
+          "@language": "cs",
+          "@value": "Název, který je překladem primárního názvu do jiného jazyka."
+        }
+      ],
       "scopeNote": "Use the xml:lang attribute to indicate the language of the translated title.",
       "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
       "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
+      "modified": "2026-09-18",
+      "changeNote": [
+        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+      ],
       "seeAlso": [
         "https://schema.stage.datacite.org/linked-data/vocab/titleType/TranslatedTitle.jsonld"
       ]

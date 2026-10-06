@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy> a skos:Concept ;
-    skos:definition "indicates B is used to compile or create A" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že B je použit ke kompilaci nebo vytvoření A"@cs,
+        "indicates B is used to compile or create A"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsCompiledBy" ;
-    skos:prefLabel "IsCompiledBy" ;
+    skos:prefLabel "kompilován (čím)"@cs,
+        "IsCompiledBy"@en ;
     skos:scopeNote "May indicate a traditional text compilation, or the compiler program used to generate executable software." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

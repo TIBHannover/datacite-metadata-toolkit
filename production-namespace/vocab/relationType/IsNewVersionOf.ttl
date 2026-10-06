@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf> a skos:Concept ;
-    skos:definition "indicates A is a new edition of B, where the new edition has been modified or updated" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno"@cs,
+        "indicates A is a new edition of B, where the new edition has been modified or updated"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsNewVersionOf" ;
-    skos:prefLabel "IsNewVersionOf" ;
+    skos:prefLabel "je novou verzí (čeho)"@cs,
+        "IsNewVersionOf"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

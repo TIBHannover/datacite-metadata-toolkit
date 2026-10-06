@@ -1,9 +1,15 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/titleType/Subtitle> a skos:Concept ;
-    skos:definition "A secondary title that follows the main title and provides additional information about the resource." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."@cs,
+        "A secondary title that follows the main title and provides additional information about the resource."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/titleType> ;
     skos:notation "Subtitle" ;
-    skos:prefLabel "Subtitle" ;
+    skos:prefLabel "Podnázev"@cs,
+        "Subtitle"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/titleType> .
 

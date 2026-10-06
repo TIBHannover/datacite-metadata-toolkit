@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Documents> a skos:Concept ;
-    skos:definition "indicates A is documentation about/explaining B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je dokumentací vysvětlující B"@cs,
+        "indicates A is documentation about/explaining B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Documents" ;
-    skos:prefLabel "Documents" ;
+    skos:prefLabel "dokumentuje (co)"@cs,
+        "Documents"@en ;
     skos:scopeNote "May be used for software documentation." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy",
   "type": "Concept",
-  "prefLabel": "IsContinuedBy",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsContinuedBy"
+    },
+    {
+      "@language": "cs",
+      "@value": "je pokračováním (čeho)"
+    }
+  ],
   "notation": "IsContinuedBy",
-  "definition": "indicates A is continued by the work B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is continued by the work B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A pokračuje dílem B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

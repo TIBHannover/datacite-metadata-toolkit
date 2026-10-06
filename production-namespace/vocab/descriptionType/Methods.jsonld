@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
   "type": "Concept",
-  "prefLabel": "Methods",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Methods"
+    },
+    {
+      "@language": "cs",
+      "@value": "Metodologie"
+    }
+  ],
   "notation": "Methods",
-  "definition": "The methodology employed for the study or research.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The methodology employed for the study or research."
+    },
+    {
+      "@language": "cs",
+      "@value": "Metodologie použitá pro studii nebo výzkum."
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "scopeNote": "Recommended for discovery. Full documentation about methods supports open science.",
   "example": [
     "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

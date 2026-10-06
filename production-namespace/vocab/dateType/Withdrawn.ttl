@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn> a skos:Concept ;
-    skos:definition "The date the resource is removed." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Datum odstranění zdroje. Je vhodné uvést důvod odstranění."@cs,
+        "The date the resource is removed."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Withdrawn" ;
-    skos:prefLabel "Withdrawn" ;
+    skos:prefLabel "Datum odstranění"@cs,
+        "Withdrawn"@en ;
     skos:scopeNote "It is good practice to include a Description that indicates the reason for the retraction or withdrawal." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

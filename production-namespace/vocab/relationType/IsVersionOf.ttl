@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf> a skos:Concept ;
-    skos:definition "indicates A is a version of B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je verzí B"@cs,
+        "indicates A is a version of B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVersionOf\">10.5281/ZENODO.832054</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsVersionOf" ;
-    skos:prefLabel "IsVersionOf" ;
+    skos:prefLabel "je verzí"@cs,
+        "IsVersionOf"@en ;
     skos:scopeNote "The registered resource is an instance of a target resource (A is an instance of B). May relate a specific software version to its code repository." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

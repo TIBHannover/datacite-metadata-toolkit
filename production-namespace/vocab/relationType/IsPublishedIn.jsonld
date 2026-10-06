@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn",
   "type": "Concept",
-  "prefLabel": "IsPublishedIn",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsPublishedIn"
+    },
+    {
+      "@language": "cs",
+      "@value": "je publikován v"
+    }
+  ],
   "notation": "IsPublishedIn",
-  "definition": "indicates A is published inside B, but is independent of other things published inside of B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is published inside B, but is independent of other things published inside of B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je publikován v B, ale je nezávislý na ostatních věcech publikovaných uvnitř B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

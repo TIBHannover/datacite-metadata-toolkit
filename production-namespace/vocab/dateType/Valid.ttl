@@ -1,9 +1,15 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Valid> a skos:Concept ;
-    skos:definition "The date or date range during which the dataset or resource is accurate." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Datum nebo časové rozmezí, po které je dataset nebo zdroj platný a aktuální."@cs,
+        "The date or date range during which the dataset or resource is accurate."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Valid" ;
-    skos:prefLabel "Valid" ;
+    skos:prefLabel "Datum platnosti"@cs,
+        "Valid"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/Requires",
   "type": "Concept",
-  "prefLabel": "Requires",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Requires"
+    },
+    {
+      "@language": "cs",
+      "@value": "požaduje (co)"
+    }
+  ],
   "notation": "Requires",
-  "definition": "Indicates A requires B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Indicates A requires B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A vyžaduje B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "May be used to indicate software dependencies.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

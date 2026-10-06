@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Continues> a skos:Concept ;
-    skos:definition "indicates A is a continuation of the work B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je pokračováním díla B"@cs,
+        "indicates A is a continuation of the work B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Continues" ;
-    skos:prefLabel "Continues" ;
+    skos:prefLabel "pokračuje (čím)"@cs,
+        "Continues"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

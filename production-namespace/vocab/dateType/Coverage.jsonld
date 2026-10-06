@@ -2,10 +2,32 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
   "type": "Concept",
-  "prefLabel": "Coverage",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Coverage"
+    },
+    {
+      "@language": "cs",
+      "@value": "Časové pokrytí"
+    }
+  ],
   "notation": "Coverage",
-  "definition": "The date or date range that the resource content applies to, describes, or covers.",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "The date or date range that the resource content applies to, describes, or covers."
+    },
+    {
+      "@language": "cs",
+      "@value": "Datum nebo časové rozmezí, na které se obsah zdroje vztahuje, které popisuje nebo pokrývá."
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-  "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected."
+  "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected.",
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+  ]
 }

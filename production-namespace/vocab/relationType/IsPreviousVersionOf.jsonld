@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf",
   "type": "Concept",
-  "prefLabel": "IsPreviousVersionOf",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "IsPreviousVersionOf"
+    },
+    {
+      "@language": "cs",
+      "@value": "je předchozí verzí (čeho)"
+    }
+  ],
   "notation": "IsPreviousVersionOf",
-  "definition": "indicates A is a previous edition of B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates A is a previous edition of B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A je předchozím vydáním B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

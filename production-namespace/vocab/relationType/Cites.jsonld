@@ -2,13 +2,35 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/Cites",
   "type": "Concept",
-  "prefLabel": "Cites",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Cites"
+    },
+    {
+      "@language": "cs",
+      "@value": "cituje (co)"
+    }
+  ],
   "notation": "Cites",
-  "definition": "indicates that A includes B in a citation",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "indicates that A includes B in a citation"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A cituje B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "Recommended for discovery.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation> a skos:Concept ;
-    skos:definition "Information about a repeating series, such as volume, issue, number." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Informace o sérii, například svazek a číslo."@cs,
+        "Information about a repeating series, such as volume, issue, number."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/descriptionType> ;
     skos:notation "SeriesInformation" ;
-    skos:prefLabel "SeriesInformation" ;
+    skos:prefLabel "Informace o sérii"@cs,
+        "SeriesInformation"@en ;
     skos:scopeNote "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/descriptionType> .
 

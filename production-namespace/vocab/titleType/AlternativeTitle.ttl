@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle> a skos:Concept ;
-    skos:definition "A title by which the resource is also known, used as an alternative to the primary title." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Název, pod kterým je zdroj také známý, používaný jako alternativa k primárnímu názvu."@cs,
+        "A title by which the resource is also known, used as an alternative to the primary title."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/titleType> ;
     skos:notation "AlternativeTitle" ;
-    skos:prefLabel "AlternativeTitle" ;
+    skos:prefLabel "Alternativní název"@cs,
+        "AlternativeTitle"@en ;
     skos:scopeNote "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/titleType> .
 

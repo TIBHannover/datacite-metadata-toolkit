@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Coverage> a skos:Concept ;
-    skos:definition "The date or date range that the resource content applies to, describes, or covers." ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "Datum nebo časové rozmezí, na které se obsah zdroje vztahuje, které popisuje nebo pokrývá."@cs,
+        "The date or date range that the resource content applies to, describes, or covers."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/dateType> ;
     skos:notation "Coverage" ;
-    skos:prefLabel "Coverage" ;
+    skos:prefLabel "Časové pokrytí"@cs,
+        "Coverage"@en ;
     skos:scopeNote "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/dateType> .
 

@@ -2,12 +2,34 @@
   "@context": "./context.jsonld",
   "id": "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes",
   "type": "Concept",
-  "prefLabel": "Obsoletes",
+  "prefLabel": [
+    {
+      "@language": "en",
+      "@value": "Obsoletes"
+    },
+    {
+      "@language": "cs",
+      "@value": "nahrazuje (co)"
+    }
+  ],
   "notation": "Obsoletes",
-  "definition": "Indicates A replaces B",
+  "definition": [
+    {
+      "@language": "en",
+      "@value": "Indicates A replaces B"
+    },
+    {
+      "@language": "cs",
+      "@value": "označuje, že A nahrazuje B"
+    }
+  ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>"
+  ],
+  "modified": "2026-09-18",
+  "changeNote": [
+    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
   ]
 }

@@ -1,11 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy> a skos:Concept ;
-    skos:definition "indicates that B is a supplement to A" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že B je doplňkem A"@cs,
+        "indicates that B is a supplement to A"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsSupplementedBy\">16911322</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsSupplementedBy" ;
-    skos:prefLabel "IsSupplementedBy" ;
+    skos:prefLabel "má doplněk"@cs,
+        "IsSupplementedBy"@en ;
     skos:scopeNote "Recommended for discovery." ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

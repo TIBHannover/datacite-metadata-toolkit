@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Describes> a skos:Concept ;
-    skos:definition "indicates A describes B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A popisuje B"@cs,
+        "indicates A describes B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Describes" ;
-    skos:prefLabel "Describes" ;
+    skos:prefLabel "popisuje (co)"@cs,
+        "Describes"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

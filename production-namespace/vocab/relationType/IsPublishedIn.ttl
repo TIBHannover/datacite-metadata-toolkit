@@ -1,10 +1,16 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn> a skos:Concept ;
-    skos:definition "indicates A is published inside B, but is independent of other things published inside of B" ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    skos:definition "označuje, že A je publikován v B, ale je nezávislý na ostatních věcech publikovaných uvnitř B"@cs,
+        "indicates A is published inside B, but is independent of other things published inside of B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "IsPublishedIn" ;
-    skos:prefLabel "IsPublishedIn" ;
+    skos:prefLabel "je publikován v"@cs,
+        "IsPublishedIn"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 
