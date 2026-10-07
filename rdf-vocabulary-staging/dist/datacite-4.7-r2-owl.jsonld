@@ -167,6 +167,10 @@
       "type": "owl:AnnotationProperty"
     },
     {
+      "id": "https://schema.org/position",
+      "type": "owl:DatatypeProperty"
+    },
+    {
       "id": "https://w3id.org/tib/datacite/dist/datacite-4.7-r2",
       "type": "owl:Ontology",
       "title": "DataCite Linked Data 4.7-r2 Distribution",
@@ -195,7 +199,7 @@
       "id": "https://w3id.org/tib/datacite/class/Contributor",
       "type": "owl:Class",
       "label": "Contributor",
-      "comment": " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
+      "comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Contributor.jsonld"
       ]
@@ -222,7 +226,7 @@
       "id": "https://w3id.org/tib/datacite/class/Description",
       "type": "owl:Class",
       "label": "Description",
-      "comment": " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
+      "comment": "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Description.jsonld"
       ]
@@ -382,7 +386,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/affiliationIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "affiliationIdentifier",
       "comment": "Uniquely identifies the organizational affiliation of the creator.",
       "seeAlso": [
@@ -391,7 +395,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/affiliationIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "affiliationIdentifierScheme",
       "comment": "The name of the affiliation identifier scheme",
       "seeAlso": [
@@ -413,7 +417,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/alternateIdentifierType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "alternateIdentifierType",
       "comment": "The type of the AlternateIdentifier.",
       "seeAlso": [
@@ -422,7 +426,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/awardNumber",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "awardNumber",
       "comment": "The code assigned by the funder to a sponsored award (grant).",
       "seeAlso": [
@@ -431,7 +435,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/awardTitle",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "awardTitle",
       "comment": "The human readable title or name of the award (grant).",
       "seeAlso": [
@@ -449,7 +453,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/classificationCode",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "classificationCode",
       "comment": "The classification code used for the subject term in the subject scheme.",
       "seeAlso": [
@@ -471,7 +475,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/contributorName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "contributorName",
       "comment": "The full name of the contributor.",
       "seeAlso": [
@@ -502,7 +506,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/creatorName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "creatorName",
       "comment": "The full name of the creator.",
       "seeAlso": [
@@ -524,7 +528,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/dateInformation",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "dateInformation",
       "comment": "Specific information about the date, if appropriate.",
       "seeAlso": [
@@ -564,7 +568,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/eastBoundLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "eastBoundLongitude",
       "comment": "Eastern longitudinal dimension of box.",
       "seeAlso": [
@@ -573,7 +577,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/edition",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "edition",
       "comment": "Edition or version of the related item.",
       "seeAlso": [
@@ -582,7 +586,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/familyName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "familyName",
       "comment": "The surname or last name of the creator.",
       "seeAlso": [
@@ -591,7 +595,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/firstPage",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "firstPage",
       "comment": "First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
       "seeAlso": [
@@ -600,7 +604,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/format",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "format",
       "comment": "Technical format of the resource.",
       "seeAlso": [
@@ -609,7 +613,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/funderIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "funderIdentifier",
       "comment": "Uniquely identifies a funding entity, according to various types.",
       "seeAlso": [
@@ -627,7 +631,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/funderName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "funderName",
       "comment": "Name of the funding provider.",
       "seeAlso": [
@@ -671,7 +675,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/geoLocationPlace",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "geoLocationPlace",
       "comment": "Description of a geographic location.",
       "seeAlso": [
@@ -699,7 +703,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/givenName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "givenName",
       "comment": "The personal or first name of the creator.",
       "seeAlso": [
@@ -739,7 +743,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/issue",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "issue",
       "comment": "Issue number or name of the related item.",
       "seeAlso": [
@@ -748,7 +752,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/language",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "language",
       "comment": "The primary language of the resource.",
       "seeAlso": [
@@ -757,7 +761,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/lastPage",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "lastPage",
       "comment": "Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
       "seeAlso": [
@@ -775,7 +779,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/nameIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "nameIdentifierScheme",
       "comment": "The name of the name identifier scheme.",
       "seeAlso": [
@@ -793,7 +797,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/northBoundLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "northBoundLatitude",
       "comment": "Northern latitudinal dimension of box.",
       "seeAlso": [
@@ -802,7 +806,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/number",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "number",
       "comment": "Number of the resource within the related item, e.g., report number or article number.",
       "seeAlso": [
@@ -820,7 +824,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/pointLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "pointLatitude",
       "comment": "Latitudinal dimension of point.",
       "seeAlso": [
@@ -829,7 +833,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/pointLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "pointLongitude",
       "comment": "Longitudinal dimension of point.",
       "seeAlso": [
@@ -848,7 +852,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publicationYear",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publicationYear",
       "comment": "The year when the item was or will be made publicly available.",
       "seeAlso": [
@@ -870,7 +874,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publisherIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publisherIdentifier",
       "comment": "Uniquely identifies the publisher, according to various schemes.",
       "seeAlso": [
@@ -879,7 +883,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publisherIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publisherIdentifierScheme",
       "comment": "The name of the publisher identifier scheme.",
       "seeAlso": [
@@ -950,7 +954,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/relatedMetadataScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "relatedMetadataScheme",
       "comment": "The name of the scheme.",
       "seeAlso": [
@@ -968,7 +972,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/relationTypeInformation",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "relationTypeInformation",
       "comment": "Additional information about the selected relationType, if appropriate.",
       "seeAlso": [
@@ -977,7 +981,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/resourceType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "resourceType",
       "comment": "A description of the resource.",
       "seeAlso": [
@@ -1008,7 +1012,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/rightsIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "rightsIdentifier",
       "comment": "A short standardized identifier for the licence.",
       "seeAlso": [
@@ -1017,7 +1021,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/rightsIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "rightsIdentifierScheme",
       "comment": "The name of the scheme.",
       "seeAlso": [
@@ -1035,7 +1039,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/schemeType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "schemeType",
       "comment": "The type of the relatedMetadataScheme, linked with the schemeURI.",
       "seeAlso": [
@@ -1053,7 +1057,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/size",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "size",
       "comment": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
       "seeAlso": [
@@ -1062,7 +1066,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/southBoundLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "southBoundLatitude",
       "comment": "Southern latitude of box .",
       "seeAlso": [
@@ -1084,7 +1088,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/subjectScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "subjectScheme",
       "comment": "The name of the subject scheme or classification code or authority if one is used.",
       "seeAlso": [
@@ -1117,14 +1121,14 @@
       "id": "https://w3id.org/tib/datacite/property/valueURI",
       "type": "owl:ObjectProperty",
       "label": "valueURI",
-      "comment": " The URI of the subject term.",
+      "comment": "The URI of the subject term.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/property/valueURI.jsonld"
       ]
     },
     {
       "id": "https://w3id.org/tib/datacite/property/version",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "version",
       "comment": "The version number of the resource.",
       "seeAlso": [
@@ -1133,7 +1137,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/volume",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "volume",
       "comment": "Volume of the related item.",
       "seeAlso": [
@@ -1142,7 +1146,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/westBoundLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "westBoundLongitude",
       "comment": "Western longitudinal dimension of box.",
       "seeAlso": [

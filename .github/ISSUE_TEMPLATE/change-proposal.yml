@@ -1,5 +1,5 @@
-name: Change proposal (rule/profile/enums)
-description: Propose a modification to rules, profile structure, or controlled lists.
+name: Change proposal (schema, shapes, vocabulary, context)
+description: Propose a change to the JSON Schema, SHACL shapes, controlled vocabularies or JSON-LD context.
 title: "[PROPOSAL] <short summary>"
 labels: [enhancement, discussion]
 assignees: []
@@ -9,10 +9,11 @@ body:
     attributes:
       label: Target
       options:
-        - Update rule in rules.json
-        - Modify profile (datacite4.6-profile.json)
-        - Add/rename enum value (enum_lists/*)
-        - Context/term change (main_context.jsonld)
+        - JSON Schema (validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json)
+        - SHACL shapes (validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl)
+        - Add or rename a vocabulary term (rdf-vocabulary-staging/vocab/*)
+        - Class or property definition (rdf-vocabulary-staging/class/*, property/*)
+        - JSON-LD context (rdf-vocabulary-staging/context/fullcontext.jsonld)
         - Other (describe below)
   - type: textarea
     id: rationale
@@ -38,7 +39,7 @@ body:
       label: Impact analysis
       description: Affected files, backward compatibility, migration plan, examples.
       placeholder: |
-        - Affects enum_lists/relationTypes.jsonld
+        - Affects rdf-vocabulary-staging/vocab/relationType/
         - Backward compatible? Yes/No
         - Migration: map X -> Y
   - type: textarea

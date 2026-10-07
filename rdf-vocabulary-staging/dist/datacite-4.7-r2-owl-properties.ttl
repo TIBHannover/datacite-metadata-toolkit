@@ -1695,26 +1695,26 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:hasTopConcept  <https://w3id.org/tib/datacite/vocab/contributorType/Other> , <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> , <https://w3id.org/tib/datacite/vocab/contributorType/Translator> , <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> , <https://w3id.org/tib/datacite/vocab/contributorType/Sponsor> , <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> , <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> , <https://w3id.org/tib/datacite/vocab/contributorType/Researcher> , <https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson> , <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> , <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember> , <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> , <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector> , <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator> , <https://w3id.org/tib/datacite/vocab/contributorType/DataManager> , <https://w3id.org/tib/datacite/vocab/contributorType/Distributor> , <https://w3id.org/tib/datacite/vocab/contributorType/Editor> , <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> , <https://w3id.org/tib/datacite/vocab/contributorType/Producer> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader> , <https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager> .
 
 <https://w3id.org/tib/datacite/property/westBoundLongitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Western longitudinal dimension of box."@en;
         rdfs:label    "westBoundLongitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/westBoundLongitude.jsonld> .
 
 <https://w3id.org/tib/datacite/property/volume>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Volume of the related item."@en;
         rdfs:label    "volume"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/volume.jsonld> .
 
 <https://w3id.org/tib/datacite/property/version>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The version number of the resource."@en;
         rdfs:label    "version"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/version.jsonld> .
 
 <https://w3id.org/tib/datacite/property/valueURI>
         rdf:type      owl:ObjectProperty;
-        rdfs:comment  " The URI of the subject term."@en;
+        rdfs:comment  "The URI of the subject term."@en;
         rdfs:label    "valueURI"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/valueURI.jsonld> .
 
@@ -1733,7 +1733,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType." .
 
 <https://w3id.org/tib/datacite/property/subjectScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the subject scheme or classification code or authority if one is used."@en;
         rdfs:label    "subjectScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/subjectScheme.jsonld> .
@@ -1747,13 +1747,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode." .
 
 <https://w3id.org/tib/datacite/property/southBoundLatitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Southern latitude of box ."@en;
         rdfs:label    "southBoundLatitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/southBoundLatitude.jsonld> .
 
 <https://w3id.org/tib/datacite/property/size>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource."@en;
         rdfs:label    "size"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/size.jsonld> .
@@ -1765,7 +1765,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/schemeURI.jsonld> .
 
 <https://w3id.org/tib/datacite/property/schemeType>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The type of the relatedMetadataScheme, linked with the schemeURI."@en;
         rdfs:label    "schemeType"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/schemeType.jsonld> .
@@ -1777,13 +1777,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/rightsURI.jsonld> .
 
 <https://w3id.org/tib/datacite/property/rightsIdentifierScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the scheme."@en;
         rdfs:label    "rightsIdentifierScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/rightsIdentifierScheme.jsonld> .
 
 <https://w3id.org/tib/datacite/property/rightsIdentifier>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "A short standardized identifier for the licence."@en;
         rdfs:label    "rightsIdentifier"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/rightsIdentifier.jsonld> .
@@ -1803,13 +1803,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/resourceTypeGeneral.jsonld> .
 
 <https://w3id.org/tib/datacite/property/resourceType>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "A description of the resource."@en;
         rdfs:label    "resourceType"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/resourceType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/relationTypeInformation>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Additional information about the selected relationType, if appropriate."@en;
         rdfs:label    "relationTypeInformation"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/relationTypeInformation.jsonld> .
@@ -1821,7 +1821,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/relationType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/relatedMetadataScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the scheme."@en;
         rdfs:label    "relatedMetadataScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/relatedMetadataScheme.jsonld> .
@@ -1867,13 +1867,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers." .
 
 <https://w3id.org/tib/datacite/property/publisherIdentifierScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the publisher identifier scheme."@en;
         rdfs:label    "publisherIdentifierScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/publisherIdentifierScheme.jsonld> .
 
 <https://w3id.org/tib/datacite/property/publisherIdentifier>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Uniquely identifies the publisher, according to various schemes."@en;
         rdfs:label    "publisherIdentifier"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/publisherIdentifier.jsonld> .
@@ -1887,7 +1887,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme." .
 
 <https://w3id.org/tib/datacite/property/publicationYear>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The year when the item was or will be made publicly available."@en;
         rdfs:label    "publicationYear"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/publicationYear.jsonld> .
@@ -1900,13 +1900,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first)." .
 
 <https://w3id.org/tib/datacite/property/pointLongitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Longitudinal dimension of point."@en;
         rdfs:label    "pointLongitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/pointLongitude.jsonld> .
 
 <https://w3id.org/tib/datacite/property/pointLatitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Latitudinal dimension of point."@en;
         rdfs:label    "pointLatitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/pointLatitude.jsonld> .
@@ -1918,13 +1918,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/numberType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/number>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Number of the resource within the related item, e.g., report number or article number."@en;
         rdfs:label    "number"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/number.jsonld> .
 
 <https://w3id.org/tib/datacite/property/northBoundLatitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Northern latitudinal dimension of box."@en;
         rdfs:label    "northBoundLatitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/northBoundLatitude.jsonld> .
@@ -1936,7 +1936,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/nameType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/nameIdentifierScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the name identifier scheme."@en;
         rdfs:label    "nameIdentifierScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/nameIdentifierScheme.jsonld> .
@@ -1948,19 +1948,19 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/nameIdentifier.jsonld> .
 
 <https://w3id.org/tib/datacite/property/lastPage>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings."@en;
         rdfs:label    "lastPage"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/lastPage.jsonld> .
 
 <https://w3id.org/tib/datacite/property/language>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The primary language of the resource."@en;
         rdfs:label    "language"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/language.jsonld> .
 
 <https://w3id.org/tib/datacite/property/issue>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Issue number or name of the related item."@en;
         rdfs:label    "issue"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/issue.jsonld> .
@@ -1986,7 +1986,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType." .
 
 <https://w3id.org/tib/datacite/property/givenName>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The personal or first name of the creator."@en;
         rdfs:label    "givenName"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/givenName.jsonld> .
@@ -2005,7 +2005,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/geoLocationPoint.jsonld> .
 
 <https://w3id.org/tib/datacite/property/geoLocationPlace>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Description of a geographic location."@en;
         rdfs:label    "geoLocationPlace"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/geoLocationPlace.jsonld> .
@@ -2033,7 +2033,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a FundingReference node, which groups the element's sub-properties." .
 
 <https://w3id.org/tib/datacite/property/funderName>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Name of the funding provider."@en;
         rdfs:label    "funderName"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/funderName.jsonld> .
@@ -2045,37 +2045,37 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/funderIdentifierType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/funderIdentifier>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Uniquely identifies a funding entity, according to various types."@en;
         rdfs:label    "funderIdentifier"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/funderIdentifier.jsonld> .
 
 <https://w3id.org/tib/datacite/property/format>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Technical format of the resource."@en;
         rdfs:label    "format"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/format.jsonld> .
 
 <https://w3id.org/tib/datacite/property/firstPage>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings."@en;
         rdfs:label    "firstPage"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/firstPage.jsonld> .
 
 <https://w3id.org/tib/datacite/property/familyName>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The surname or last name of the creator."@en;
         rdfs:label    "familyName"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/familyName.jsonld> .
 
 <https://w3id.org/tib/datacite/property/edition>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Edition or version of the related item."@en;
         rdfs:label    "edition"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/edition.jsonld> .
 
 <https://w3id.org/tib/datacite/property/eastBoundLongitude>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Eastern longitudinal dimension of box."@en;
         rdfs:label    "eastBoundLongitude"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/eastBoundLongitude.jsonld> .
@@ -2101,7 +2101,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/dateType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/dateInformation>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Specific information about the date, if appropriate."@en;
         rdfs:label    "dateInformation"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/dateInformation.jsonld> .
@@ -2115,7 +2115,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a Date node; the node gives the date as plain text in rdf:value, alongside its dateType and dateInformation." .
 
 <https://w3id.org/tib/datacite/property/creatorName>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The full name of the creator."@en;
         rdfs:label    "creatorName"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/creatorName.jsonld> .
@@ -2135,7 +2135,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/contributorType.jsonld> .
 
 <https://w3id.org/tib/datacite/property/contributorName>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The full name of the contributor."@en;
         rdfs:label    "contributorName"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/contributorName.jsonld> .
@@ -2149,7 +2149,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation." .
 
 <https://w3id.org/tib/datacite/property/classificationCode>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The classification code used for the subject term in the subject scheme."@en;
         rdfs:label    "classificationCode"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/classificationCode.jsonld> .
@@ -2161,19 +2161,19 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/awardURI.jsonld> .
 
 <https://w3id.org/tib/datacite/property/awardTitle>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The human readable title or name of the award (grant)."@en;
         rdfs:label    "awardTitle"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/awardTitle.jsonld> .
 
 <https://w3id.org/tib/datacite/property/awardNumber>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The code assigned by the funder to a sponsored award (grant)."@en;
         rdfs:label    "awardNumber"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/awardNumber.jsonld> .
 
 <https://w3id.org/tib/datacite/property/alternateIdentifierType>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The type of the AlternateIdentifier."@en;
         rdfs:label    "alternateIdentifierType"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/alternateIdentifierType.jsonld> .
@@ -2187,13 +2187,13 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         skos:scopeNote  "In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType." .
 
 <https://w3id.org/tib/datacite/property/affiliationIdentifierScheme>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "The name of the affiliation identifier scheme"@en;
         rdfs:label    "affiliationIdentifierScheme"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/affiliationIdentifierScheme.jsonld> .
 
 <https://w3id.org/tib/datacite/property/affiliationIdentifier>
-        rdf:type      owl:ObjectProperty;
+        rdf:type      owl:DatatypeProperty;
         rdfs:comment  "Uniquely identifies the organizational affiliation of the creator."@en;
         rdfs:label    "affiliationIdentifier"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/affiliationIdentifier.jsonld> .
@@ -2313,7 +2313,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 <https://w3id.org/tib/datacite/class/Description>
         rdf:type      owl:Class;
-        rdfs:comment  " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument."@en;
+        rdfs:comment  "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument."@en;
         rdfs:label    "Description"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/class/Description.jsonld> .
 
@@ -2331,7 +2331,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 <https://w3id.org/tib/datacite/class/Contributor>
         rdf:type      owl:Class;
-        rdfs:comment  " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument."@en;
+        rdfs:comment  "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument."@en;
         rdfs:label    "Contributor"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/class/Contributor.jsonld> .
 
@@ -2340,6 +2340,9 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
         rdfs:comment  "An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file)."@en;
         rdfs:label    "AlternateIdentifier"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/class/AlternateIdentifier.jsonld> .
+
+<https://schema.org/position>
+        rdf:type  owl:DatatypeProperty .
 
 skos:topConceptOf  rdf:type  owl:AnnotationProperty .
 

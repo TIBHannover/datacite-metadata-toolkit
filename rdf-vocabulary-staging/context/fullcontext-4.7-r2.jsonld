@@ -80,7 +80,7 @@
     },
     "affiliationIdentifier": {
       "@id": "property:affiliationIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "affiliationIdentifierScheme": {
       "@id": "property:affiliationIdentifierScheme",
@@ -116,13 +116,16 @@
     },
     "publisherIdentifier": {
       "@id": "property:publisherIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "publisherIdentifierScheme": {
       "@id": "property:publisherIdentifierScheme",
       "@type": "xsd:string"
     },
-    "publicationYear": "property:publicationYear",
+    "publicationYear": {
+      "@id": "property:publicationYear",
+      "@type": "xsd:gYear"
+    },
     "resourceType": {
       "@id": "property:resourceType",
       "@type": "xsd:string"
@@ -343,58 +346,28 @@
     "geoLocationPoint": "property:geoLocationPoint",
     "pointLatitude": {
       "@id": "property:pointLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "pointLongitude": {
       "@id": "property:pointLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "geoLocationBox": "property:geoLocationBox",
     "westBoundLongitude": {
       "@id": "property:westBoundLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "eastBoundLongitude": {
       "@id": "property:eastBoundLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "southBoundLatitude": {
       "@id": "property:southBoundLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "northBoundLatitude": {
       "@id": "property:northBoundLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "geoLocationPolygon": "property:geoLocationPolygon",
     "polygonPoint": {
@@ -414,7 +387,7 @@
     },
     "funderIdentifier": {
       "@id": "property:funderIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "funderIdentifierType": {
       "@id": "property:funderIdentifierType",

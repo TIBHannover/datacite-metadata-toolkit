@@ -43,6 +43,21 @@ function runNodeScript(scriptRelPath, args) {
   }
 }
 
+function runPythonScript(scriptRelPath, args) {
+  const python = process.env.PYTHON || "python3";
+  const result = spawnSync(python, [path.join(projectRoot, scriptRelPath), ...args], {
+    cwd: projectRoot,
+    stdio: ["inherit", "inherit", "pipe"],
+  });
+  if (result.error) {
+    die(`Failed to run ${scriptRelPath}: ${result.error.message}`);
+  }
+  if (result.status !== 0) {
+    const stderrOutput = result.stderr ? result.stderr.toString().trim() : "";
+    die(`${scriptRelPath} exited with status ${result.status}${stderrOutput ? `\n${stderrOutput}` : ""}`);
+  }
+}
+
 function ensureManifestExists(version, releaseDate, allowReleaseDateUpdate = false) {
   const targetPath = path.join(vocabRoot, "manifest", `datacite-${version}.json`);
   if (fs.existsSync(targetPath)) {
@@ -117,6 +132,10 @@ function main() {
 
   runNodeScript("rdf-build-scripts/generate-index-pages.js", []);
   runNodeScript("rdf-build-scripts/update-root-index.js", []);
+
+  // Carry new vocabulary terms into the JSON Schema and the SHACL shapes.
+  runPythonScript("rdf-build-scripts/build-json-schema.py", []);
+  runPythonScript("rdf-build-scripts/build-shapes.py", []);
 }
 
 main();

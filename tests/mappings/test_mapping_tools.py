@@ -1,10 +1,13 @@
 """Regression tests for rdf-build-scripts/mapping_tools.py."""
 
+import csv
 import json
+import re
 import shutil
 import sys
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -146,6 +149,40 @@ class MutationTest(unittest.TestCase):
         (self.root / "mappings" / "jskos-mappings.json").write_text("{}", encoding="utf-8")
         build(self.root)
         build(self.root, check=True)
+
+
+class GuideNumbersTest(unittest.TestCase):
+    """The numbers in the crosswalk guide are typed by hand; they must match the mapping files."""
+
+    TARGETS = {"Schema.org": "schemaorg", "Dublin Core": "dcterms", "DCAT": "dcat", "Wikidata": "wikidata"}
+    PREDICATES = ["closeMatch", "broadMatch", "narrowMatch", "relatedMatch"]
+    OUTCOMES = ["mapped", "conversion_only", "no_equivalent", "out_of_scope"]
+
+    @staticmethod
+    def bar(html, label, unit):
+        """The flex values of the bar after "<label> <span>N <unit>", and N."""
+        match = re.search(rf'bar-label">{re.escape(label)} <span>(\d+) {unit}', html)
+        segment = html[match.end():html.index("</div></div>", match.end())]
+        return int(match.group(1)), [int(v) for v in re.findall(r"flex:(\d+)", segment)]
+
+    def test_guide_numbers_match_the_mapping_files(self):
+        html = (ROOT / "website" / "crosswalk-guide.html").read_text(encoding="utf-8")
+        total = 0
+        for label, target in self.TARGETS.items():
+            lines = [line for line in (ROOT / "mappings" / f"datacite-{target}.sssom.tsv").read_text(
+                encoding="utf-8").splitlines() if line and not line.startswith("#")]
+            rows = list(csv.DictReader(lines, delimiter="\t"))
+            total += len(rows)
+            predicates = Counter(row["predicate_id"].split(":", 1)[1] for row in rows)
+            count, flex = self.bar(html, label, "rows")
+            self.assertEqual(count, len(rows), label)
+            self.assertEqual(flex, [predicates[p] for p in self.PREDICATES if predicates[p]], label)
+            records = json.loads((ROOT / "mappings" / "coverage" / f"{target}.json").read_text(encoding="utf-8"))["records"]
+            outcomes = Counter(record["status"] for record in records)
+            count, flex = self.bar(html, label, "terms")
+            self.assertEqual(count, len(records), label)
+            self.assertEqual(flex, [outcomes[o] for o in self.OUTCOMES if outcomes[o]], label)
+        self.assertIn(f'<div class="fact"><b>{total}</b><span>mapping rows</span></div>', html)
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ but can write to a file when the ``--output`` option is used.
 
 Example usage:
 
-    python xml_to_datacite_json.py datacite-example-full-v4.xml --output record.json
+    python3 validation-and-conversion/scripts/convert.py datacite-example-full-v4.xml --output record.json
 
 """
 
@@ -78,9 +78,11 @@ def convert_affiliation(elem: ET.Element) -> Dict[str, Any]:
 
 
 def convert_creator(elem: ET.Element) -> Dict[str, Any]:
-    """Convert a <creator> element into a JSON object."""
-    # Creator name may appear as <creatorName> with nameType attribute
+    """Convert a <creator> or <contributor> element into a JSON object."""
+    # The name is <creatorName> or <contributorName>, with a nameType attribute
     creator_name_elem = elem.find("d:creatorName", NSMAP)
+    if creator_name_elem is None:
+        creator_name_elem = elem.find("d:contributorName", NSMAP)
     name = get_text(creator_name_elem)
     name_type = creator_name_elem.attrib.get("nameType") if creator_name_elem is not None else None
     given = get_text(elem.find("d:givenName", NSMAP))
@@ -191,6 +193,7 @@ def convert_related_identifier(elem: ET.Element) -> Dict[str, Any]:
         ("schemeURI", "schemeUri"),
         ("schemeType", "schemeType"),
         ("resourceTypeGeneral", "resourceTypeGeneral"),
+        ("relationTypeInformation", "relationTypeInformation"),
     ]:
         val = elem.attrib.get(xml_attr)
         if val is not None:
@@ -205,6 +208,7 @@ def convert_related_item(elem: ET.Element) -> Dict[str, Any]:
     for xml_attr, json_key in [
         ("relatedItemType", "relatedItemType"),
         ("relationType", "relationType"),
+        ("relationTypeInformation", "relationTypeInformation"),
     ]:
         val = elem.attrib.get(xml_attr)
         if val is not None:

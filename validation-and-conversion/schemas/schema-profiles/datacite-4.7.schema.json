@@ -1,0 +1,1407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/tib/datacite/schema-profiles/datacite-4.7.schema.json",
+  "title": "DataCite Metadata Schema 4.7 – REST API JSON",
+  "description": "Checks a DataCite DOI record in REST API JSON against DataCite Metadata Schema 4.7: required properties, allowed controlled values and the shape of each property. Accepts either the attributes object or a full {\"data\": {\"attributes\": ...}} document. Unknown keys are reported, so misspelt property names are caught. Controlled lists are generated from the DataCite vocabularies by rdf-build-scripts/build-json-schema.py. For linked data, use the JSON-LD context at https://w3id.org/tib/datacite/context/fullcontext.jsonld.",
+  "if": {
+    "type": "object",
+    "required": [
+      "data"
+    ]
+  },
+  "then": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "$ref": "#/$defs/attributes"
+          }
+        },
+        "required": [
+          "attributes"
+        ]
+      }
+    },
+    "required": [
+      "data"
+    ]
+  },
+  "else": {
+    "$ref": "#/$defs/attributes"
+  },
+  "$defs": {
+    "nameIdentifier": {
+      "type": "object",
+      "description": "An identifier for a person or organization, such as an ORCID iD or ROR ID (4.7 property 2.4 / 7.4).",
+      "properties": {
+        "nameIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nameIdentifierScheme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "nameIdentifier",
+        "nameIdentifierScheme"
+      ],
+      "additionalProperties": false
+    },
+    "affiliation": {
+      "description": "An organizational affiliation (4.7 property 2.5 / 7.5): a name, or an object with the name and its identifier.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "affiliationIdentifier": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "affiliationIdentifierScheme": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "schemeUri": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "creator": {
+      "type": "object",
+      "description": "A creator (4.7 property 2). The list order is DataCite's priority order.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nameType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nameType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "givenName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "familyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        },
+        "nameIdentifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nameIdentifier"
+          }
+        },
+        "affiliation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/affiliation"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "contributor": {
+      "type": "object",
+      "description": "A contributor (4.7 property 7).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nameType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nameType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "givenName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "familyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        },
+        "nameIdentifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nameIdentifier"
+          }
+        },
+        "affiliation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/affiliation"
+          }
+        },
+        "contributorType": {
+          "$ref": "#/$defs/contributorType"
+        }
+      },
+      "required": [
+        "name",
+        "contributorType"
+      ],
+      "additionalProperties": false
+    },
+    "title": {
+      "type": "object",
+      "description": "A title (4.7 property 3). A title without titleType is the main title.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "titleType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/titleType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "publisher": {
+      "description": "The publisher (4.7 property 4): a name, or an object with the name and its identifier.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "publisherIdentifier": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "publisherIdentifierScheme": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "schemeUri": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lang": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "description": "A subject (4.7 property 6).",
+      "properties": {
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subjectScheme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valueUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "classificationCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        }
+      },
+      "required": [
+        "subject"
+      ],
+      "additionalProperties": false
+    },
+    "date": {
+      "type": "object",
+      "description": "A date (4.7 property 8).",
+      "properties": {
+        "date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dateType": {
+          "$ref": "#/$defs/dateType"
+        },
+        "dateInformation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "date",
+        "dateType"
+      ],
+      "additionalProperties": false
+    },
+    "alternateIdentifier": {
+      "type": "object",
+      "description": "An identifier other than the DOI (4.7 property 11). Its type is free text.",
+      "properties": {
+        "alternateIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternateIdentifierType": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "alternateIdentifier",
+        "alternateIdentifierType"
+      ],
+      "additionalProperties": false
+    },
+    "apiIdentifier": {
+      "type": "object",
+      "description": "An entry of the REST API \"identifiers\" list: the DOI or an alternate identifier.",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identifierType": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "identifier"
+      ],
+      "additionalProperties": false
+    },
+    "relatedIdentifier": {
+      "type": "object",
+      "description": "An identifier of a related resource (4.7 property 12). relationTypeInformation is new in 4.7.",
+      "properties": {
+        "relatedIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relatedIdentifierType": {
+          "$ref": "#/$defs/relatedIdentifierType"
+        },
+        "relationType": {
+          "$ref": "#/$defs/relationType"
+        },
+        "relationTypeInformation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatedMetadataScheme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resourceTypeGeneral": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/resourceTypeGeneral"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "relatedIdentifier",
+        "relatedIdentifierType",
+        "relationType"
+      ],
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "description": "A rights statement or licence (4.7 property 16). It may be given by URI alone.",
+      "properties": {
+        "rights": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rightsUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rightsIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rightsIdentifierScheme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "description": {
+      "type": "object",
+      "description": "A description (4.7 property 17).",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "descriptionType": {
+          "$ref": "#/$defs/descriptionType"
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Language of the text, as an IETF BCP 47 tag such as \"en\" (XML: xml:lang)."
+        }
+      },
+      "required": [
+        "description",
+        "descriptionType"
+      ],
+      "additionalProperties": false
+    },
+    "point": {
+      "type": "object",
+      "description": "A point (latitude, longitude).",
+      "properties": {
+        "pointLatitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        },
+        "pointLongitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "pointLatitude",
+        "pointLongitude"
+      ],
+      "additionalProperties": false
+    },
+    "box": {
+      "type": "object",
+      "description": "A bounding box.",
+      "properties": {
+        "westBoundLongitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        },
+        "eastBoundLongitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        },
+        "southBoundLatitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        },
+        "northBoundLatitude": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "westBoundLongitude",
+        "eastBoundLongitude",
+        "southBoundLatitude",
+        "northBoundLatitude"
+      ],
+      "additionalProperties": false
+    },
+    "polygonEntry": {
+      "description": "One entry of a REST API polygon: a polygon point, or the point inside the polygon.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "polygonPoint": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "required": [
+            "polygonPoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "inPolygonPoint": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "required": [
+            "inPolygonPoint"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "polygon": {
+      "description": "A polygon. The REST API gives one polygon as a list of entries, or several as a list of such lists; XML-shaped JSON gives an object with a polygonPoint list.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/polygonEntry"
+          },
+          "minItems": 1
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/polygonEntry"
+            },
+            "minItems": 1
+          },
+          "minItems": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "polygonPoint": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/point"
+              },
+              "minItems": 4
+            },
+            "inPolygonPoint": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "required": [
+            "polygonPoint"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "geoLocation": {
+      "type": "object",
+      "description": "A spatial region or place (4.7 property 18).",
+      "properties": {
+        "geoLocationPlace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geoLocationPoint": {
+          "$ref": "#/$defs/point"
+        },
+        "geoLocationBox": {
+          "$ref": "#/$defs/box"
+        },
+        "geoLocationPolygon": {
+          "$ref": "#/$defs/polygon"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fundingReference": {
+      "type": "object",
+      "description": "Funding information (4.7 property 19).",
+      "properties": {
+        "funderName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "funderIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "funderIdentifierType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/funderIdentifierType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "awardNumber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "awardUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "awardTitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "funderName"
+      ],
+      "additionalProperties": false
+    },
+    "relatedItemIdentifier": {
+      "type": "object",
+      "description": "The identifier of a related item (4.7 property 20.1).",
+      "properties": {
+        "relatedItemIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relatedItemIdentifierType": {
+          "$ref": "#/$defs/relatedIdentifierType"
+        },
+        "relatedMetadataScheme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeUri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemeType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "relatedItemIdentifier",
+        "relatedItemIdentifierType"
+      ],
+      "additionalProperties": false
+    },
+    "relatedItem": {
+      "type": "object",
+      "description": "A related item described in the record itself (4.7 property 20). relationTypeInformation is new in 4.7.",
+      "properties": {
+        "relatedItemType": {
+          "$ref": "#/$defs/resourceTypeGeneral"
+        },
+        "relationType": {
+          "$ref": "#/$defs/relationType"
+        },
+        "relationTypeInformation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatedItemIdentifier": {
+          "$ref": "#/$defs/relatedItemIdentifier"
+        },
+        "creators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/creator"
+          }
+        },
+        "titles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/title"
+          },
+          "minItems": 1
+        },
+        "publicationYear": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1000,
+                  "maximum": 9999
+                },
+                {
+                  "type": "string",
+                  "pattern": "^\\d{4}$"
+                }
+              ],
+              "description": "A four-digit year. The REST API returns a number; XML and submissions may give text."
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "volume": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "issue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "numberType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/numberType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "firstPage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastPage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/publisher"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "edition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contributor"
+          }
+        }
+      },
+      "required": [
+        "relatedItemType",
+        "relationType",
+        "titles"
+      ],
+      "additionalProperties": false
+    },
+    "types": {
+      "type": "object",
+      "description": "Resource types (4.7 property 10). The REST API adds ris, bibtex, citeproc and schemaOrg, which it derives.",
+      "properties": {
+        "resourceTypeGeneral": {
+          "$ref": "#/$defs/resourceTypeGeneral"
+        },
+        "resourceType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ris": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bibtex": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "citeproc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schemaOrg": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "resourceTypeGeneral"
+      ],
+      "additionalProperties": false
+    },
+    "resourceTypeGeneral": {
+      "description": "DataCite 4.7 controlled list resourceTypeGeneral. Generated from rdf-vocabulary-staging/vocab/resourceTypeGeneral/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Audiovisual",
+        "Award",
+        "Book",
+        "BookChapter",
+        "Collection",
+        "ComputationalNotebook",
+        "ConferencePaper",
+        "ConferenceProceeding",
+        "DataPaper",
+        "Dataset",
+        "Dissertation",
+        "Event",
+        "Image",
+        "Instrument",
+        "InteractiveResource",
+        "Journal",
+        "JournalArticle",
+        "Model",
+        "Other",
+        "OutputManagementPlan",
+        "PeerReview",
+        "PhysicalObject",
+        "Poster",
+        "Preprint",
+        "Presentation",
+        "Project",
+        "Report",
+        "Service",
+        "Software",
+        "Sound",
+        "Standard",
+        "StudyRegistration",
+        "Text",
+        "Workflow"
+      ]
+    },
+    "titleType": {
+      "description": "DataCite 4.7 controlled list titleType. Generated from rdf-vocabulary-staging/vocab/titleType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "AlternativeTitle",
+        "Other",
+        "Subtitle",
+        "TranslatedTitle"
+      ]
+    },
+    "nameType": {
+      "description": "DataCite 4.7 controlled list nameType. Generated from rdf-vocabulary-staging/vocab/nameType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Organizational",
+        "Personal"
+      ]
+    },
+    "contributorType": {
+      "description": "DataCite 4.7 controlled list contributorType. Generated from rdf-vocabulary-staging/vocab/contributorType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "ContactPerson",
+        "DataCollector",
+        "DataCurator",
+        "DataManager",
+        "Distributor",
+        "Editor",
+        "HostingInstitution",
+        "Other",
+        "Producer",
+        "ProjectLeader",
+        "ProjectManager",
+        "ProjectMember",
+        "RegistrationAgency",
+        "RegistrationAuthority",
+        "RelatedPerson",
+        "Researcher",
+        "ResearchGroup",
+        "RightsHolder",
+        "Sponsor",
+        "Supervisor",
+        "Translator",
+        "WorkPackageLeader"
+      ]
+    },
+    "dateType": {
+      "description": "DataCite 4.7 controlled list dateType. Generated from rdf-vocabulary-staging/vocab/dateType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Accepted",
+        "Available",
+        "Collected",
+        "Copyrighted",
+        "Coverage",
+        "Created",
+        "Issued",
+        "Other",
+        "Submitted",
+        "Updated",
+        "Valid",
+        "Withdrawn"
+      ]
+    },
+    "relatedIdentifierType": {
+      "description": "DataCite 4.7 controlled list relatedIdentifierType. Generated from rdf-vocabulary-staging/vocab/relatedIdentifierType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "ARK",
+        "arXiv",
+        "bibcode",
+        "CSTR",
+        "DOI",
+        "EAN13",
+        "EISSN",
+        "Handle",
+        "IGSN",
+        "ISBN",
+        "ISSN",
+        "ISTC",
+        "LISSN",
+        "LSID",
+        "PMID",
+        "PURL",
+        "RAiD",
+        "RRID",
+        "SWHID",
+        "UPC",
+        "URL",
+        "URN",
+        "w3id"
+      ]
+    },
+    "relationType": {
+      "description": "DataCite 4.7 controlled list relationType. Generated from rdf-vocabulary-staging/vocab/relationType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Cites",
+        "Collects",
+        "Compiles",
+        "Continues",
+        "Describes",
+        "Documents",
+        "HasMetadata",
+        "HasPart",
+        "HasTranslation",
+        "HasVersion",
+        "IsCitedBy",
+        "IsCollectedBy",
+        "IsCompiledBy",
+        "IsContinuedBy",
+        "IsDerivedFrom",
+        "IsDescribedBy",
+        "IsDocumentedBy",
+        "IsIdenticalTo",
+        "IsMetadataFor",
+        "IsNewVersionOf",
+        "IsObsoletedBy",
+        "IsOriginalFormOf",
+        "IsPartOf",
+        "IsPreviousVersionOf",
+        "IsPublishedIn",
+        "IsReferencedBy",
+        "IsRequiredBy",
+        "IsReviewedBy",
+        "IsSourceOf",
+        "IsSupplementedBy",
+        "IsSupplementTo",
+        "IsTranslationOf",
+        "IsVariantFormOf",
+        "IsVersionOf",
+        "Obsoletes",
+        "Other",
+        "References",
+        "Requires",
+        "Reviews"
+      ]
+    },
+    "descriptionType": {
+      "description": "DataCite 4.7 controlled list descriptionType. Generated from rdf-vocabulary-staging/vocab/descriptionType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Abstract",
+        "Methods",
+        "Other",
+        "SeriesInformation",
+        "TableOfContents",
+        "TechnicalInfo"
+      ]
+    },
+    "funderIdentifierType": {
+      "description": "DataCite 4.7 controlled list funderIdentifierType. Generated from rdf-vocabulary-staging/vocab/funderIdentifierType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Crossref Funder ID",
+        "GRID",
+        "ISNI",
+        "Other",
+        "ROR"
+      ]
+    },
+    "numberType": {
+      "description": "DataCite 4.7 controlled list numberType. Generated from rdf-vocabulary-staging/vocab/numberType/ by rdf-build-scripts/build-json-schema.py.",
+      "enum": [
+        "Article",
+        "Chapter",
+        "Other",
+        "Report"
+      ]
+    },
+    "attributes": {
+      "type": "object",
+      "description": "The attributes of a DataCite DOI record: DataCite Metadata Schema 4.7 properties in REST API spelling, plus the REST API's own fields.",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.\\d{4,}(\\.\\d+)*/\\S+$",
+          "description": "The DOI (4.7 property 1), without https://doi.org/."
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/apiIdentifier"
+          }
+        },
+        "creators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/creator"
+          },
+          "minItems": 1
+        },
+        "titles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/title"
+          },
+          "minItems": 1
+        },
+        "publisher": {
+          "$ref": "#/$defs/publisher"
+        },
+        "publicationYear": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1000,
+              "maximum": 9999
+            },
+            {
+              "type": "string",
+              "pattern": "^\\d{4}$"
+            }
+          ],
+          "description": "A four-digit year. The REST API returns a number; XML and submissions may give text."
+        },
+        "subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subject"
+          }
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contributor"
+          }
+        },
+        "dates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/date"
+          }
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "types": {
+          "$ref": "#/$defs/types"
+        },
+        "alternateIdentifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alternateIdentifier"
+          }
+        },
+        "relatedIdentifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relatedIdentifier"
+          }
+        },
+        "sizes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rightsList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rights"
+          }
+        },
+        "descriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/description"
+          }
+        },
+        "geoLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/geoLocation"
+          }
+        },
+        "fundingReferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fundingReference"
+          }
+        },
+        "relatedItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relatedItem"
+          }
+        },
+        "prefix": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "suffix": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "url": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "contentUrl": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "container": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "event": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "state": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "reason": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "isActive": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "landingPage": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "source": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "metadataVersion": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "schemaVersion": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "created": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "registered": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "published": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "updated": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "xml": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "viewCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "downloadCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "citationCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "referenceCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "partCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "partOfCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "versionCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "versionOfCount": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "viewsOverTime": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "downloadsOverTime": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        },
+        "citationsOverTime": {
+          "description": "REST API field that is not DataCite metadata; accepted and not checked."
+        }
+      },
+      "required": [
+        "doi",
+        "creators",
+        "titles",
+        "publisher",
+        "publicationYear",
+        "types"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

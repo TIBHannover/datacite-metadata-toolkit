@@ -281,21 +281,32 @@ const OWL_ANNOTATION_PREDICATES = [
  * Project a built distribution graph into OWL-friendly form.
  *
  *   rdfs:Class      -> owl:Class
- *   rdf:Property    -> owl:ObjectProperty   (best effort; the source has no
- *                                            domain/range info to drive a
- *                                            stricter Object/Datatype split)
+ *   rdf:Property    -> owl:DatatypeProperty when its values are text or
+ *                      numbers, owl:ObjectProperty when they are nodes or IRIs
+ *                      (listed in rdf-build-scripts/property-value-kinds.json)
  *   skos:Concept    -> owl:NamedIndividual + skos:Concept
  *   skos:ConceptScheme -> owl:NamedIndividual + skos:ConceptScheme
  *
  * Every annotation predicate used in the dist is also explicitly declared
  * as owl:AnnotationProperty at the top of the graph so the file imports
- * cleanly into Protégé and other OWL tooling.
+ * cleanly into Protégé and other OWL tooling. schema:position, which DataCite
+ * RDF uses for creator and polygon-point order, is declared as a datatype
+ * property for the same reason.
  */
+function propertyKind(id) {
+  const kinds = readJson(path.join(__dirname, "property-value-kinds.json"));
+  const name = String(id).split("/").pop();
+  if (kinds.text.includes(name)) return "owl:DatatypeProperty";
+  if (kinds.resource.includes(name)) return "owl:ObjectProperty";
+  die(`Property ${id} is not listed in rdf-build-scripts/property-value-kinds.json`);
+}
+
 function projectGraphToOwl(distribution) {
   const annotationNodes = OWL_ANNOTATION_PREDICATES.map((p) => ({
     id: p,
     type: "owl:AnnotationProperty",
   }));
+  annotationNodes.push({ id: "https://schema.org/position", type: "owl:DatatypeProperty" });
 
   const transformed = distribution["@graph"].map((node) => {
     const clone = { ...node };
@@ -306,7 +317,7 @@ function projectGraphToOwl(distribution) {
       if (t === "rdfs:Class") {
         projected.push("owl:Class");
       } else if (t === "rdf:Property") {
-        projected.push("owl:ObjectProperty");
+        projected.push(propertyKind(clone.id));
       } else if (t === "skos:Concept" || t === "Concept") {
         projected.push("owl:NamedIndividual");
         projected.push(t);

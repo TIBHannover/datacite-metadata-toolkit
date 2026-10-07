@@ -2,17 +2,17 @@
 
 This toolkit helps turn **DataCite metadata**—information describing research outputs—into **linked data** that other systems can understand. It provides definitions for metadata fields, tools for validating and converting records, and crosswalks to Schema.org, Dublin Core (DCTERMS), DCAT 3, and Wikidata.
 
-The toolkit includes resources for DataCite Metadata Schema **4.6 and 4.7**. Its current linked-data modelling revision is **4.7-r2**: a second way of representing DataCite 4.7 in RDF, not a new DataCite schema release.
+The toolkit targets DataCite Metadata Schema **4.7** and keeps the earlier 4.6 files for reference. Its current linked-data modelling revision is **4.7-r2**: a second way of representing DataCite 4.7 in RDF, not a new DataCite schema release.
 
 ## Current state
 
-The 4.7-r2 changes are merged into `main`. Titles, descriptions, dates, identifiers, and other repeatable elements are grouped into separate RDF nodes, so each value stays beside its own type, language, or other details. Creator order and polygon drawing order are recorded explicitly. The converter also retains alternate identifiers and handles affiliations supplied as either names or objects.
+Titles, descriptions, dates, identifiers, and other repeatable elements are separate RDF nodes, so each value stays beside its own type, language, or other details. Creator order and polygon drawing order are recorded explicitly. Every DataCite term has a permanent address under `https://w3id.org/tib/datacite/`.
 
-**Compatibility:** 4.7-r2 changes the structure of RDF records. Existing queries and converters written for the older structure may need updating. The earlier versioned distributions remain available; use `context/fullcontext-4.7.jsonld` and `dist/datacite-4.7.*` to retain the 4.7 behaviour. The unversioned context and distribution files in this repository follow 4.7-r2.
+**Compatibility:** 4.7-r2 changes the structure of RDF records. Existing queries and converters written for the older structure may need updating. The earlier versioned distributions remain available; use `context/fullcontext-4.7.jsonld` and `dist/datacite-4.7.*` to retain the 4.7 behaviour. The unversioned context and distribution files follow 4.7-r2.
 
-The merged changes passed 47 regression tests, mapping validation, current-version alias checks, and publication-bundle checksum verification on 6 October 2026. Rebuilding the generated files produced no differences. These checks cover the tested examples and structural rules; they do not establish that every possible record or crosswalk is correct. See the latest [Check Mappings](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-mappings.yml) and [Check Production Namespace](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-production-namespace.yml) runs for current results.
+**Checks:** every pull request runs the regression tests, the mapping checks, and a rebuild of the publication bundle that must match the committed files. See the latest [Check Mappings](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-mappings.yml) and [Check Production Namespace](https://github.com/selgebali/datacite-metadata-toolkit/actions/workflows/check-production-namespace.yml) runs. These checks cover the tested examples and structural rules; they do not establish that every possible record or crosswalk is correct.
 
-**Publication status, checked 6 October 2026:** this source repository points to 4.7-r2; the TIB toolkit and publication repositories still point to 4.7. Merging here does not publish the update to the public namespace.
+**Publication status, checked 7 October 2026:** 4.7-r2 is published at `https://w3id.org/tib/datacite/`. The mapping sets (`mappings/`) and SHACL shapes (`shapes/`) are already on the GitHub Pages backend, but their w3id addresses return "Not Found" until [perma-id/w3id.org#6828](https://github.com/perma-id/w3id.org/pull/6828) is merged. Until then, use `https://tibhannover.github.io/datacite/mappings/…` and `…/shapes/…`.
 
 ## Source and publication flow
 
@@ -35,11 +35,11 @@ The folders separate editable sources, conversion tools, generated output, and d
 | Path | What to expect |
 |---|---|
 | `production-namespace/` | Generated TIB/W3ID production bundle. This is the reviewable output intended for later sync to `TIBHannover/datacite-metadata-toolkit` and then publication through `TIBHannover/datacite`. It contains W3ID-rewritten `class/`, `property/`, `vocab/`, `context/`, `manifest/`, and `dist/` artifacts plus section `index.html` pages, the published `mappings/`, and the SHACL `shapes/`. It does not own publication-root files such as the root `README.md`, `.nojekyll`, `LICENSE`, or `index.html`; those belong to `TIBHannover/datacite`. |
-| `rdf-vocabulary-staging/` | Editable linked-data source files using the staging namespace. Expect class definitions, property definitions, controlled vocabularies, JSON-LD context files, manifests, generated distribution snapshots under `dist/`, and section index pages. |
+| `rdf-vocabulary-staging/` | Editable linked-data source files. Despite the folder name, they use the canonical `https://w3id.org/tib/datacite/` IRIs. Expect class definitions, property definitions, controlled vocabularies, JSON-LD context files, manifests, generated distribution snapshots under `dist/`, and section index pages. |
 | `rdf-build-scripts/` | Build and release tooling. This includes release detection/application scripts, manifest and distribution builders, index generation, production namespace generation, OWL generation, shared libraries, and templates copied into generated bundles. |
-| `validation-and-conversion/` | JSON Schema profiles, XML validation/conversion scripts, the REST API JSON-to-RDF converter, SHACL shapes for its output, XSD files, and examples for validating or converting DataCite metadata records. |
+| `validation-and-conversion/` | The DataCite 4.7 JSON Schema, the DataCite 4.7 and 4.6 XSDs, XML validation and XML-to-JSON conversion scripts, the REST API JSON-to-RDF converter, SHACL shapes for its output, and example records. |
 | `mappings/` | Curated SSSOM mapping sets from DataCite 4.7 terms to Schema.org, DCTERMS, DCAT 3, and Wikidata, with conversion rules, coverage records, and generated SKOS/JSKOS exports. |
-| `tests/` | Automated regression tests for mappings, JSON-to-RDF conversion, and SHACL structural validation. |
+| `tests/` | Automated regression tests for mappings, XML and JSON conversion, the JSON Schema, the SHACL shapes and the OWL files. |
 | `prototypes/structured-values/` | Earlier before/after examples and comparison tools explaining the structured-value model. The maintained converter is in `validation-and-conversion/scripts/`. |
 | `reports/` | Generated release detection/application reports and plans. These are regenerated by the release tooling. |
 | `website/` | Source website pages used for human-facing documentation and landing pages. |
@@ -49,26 +49,25 @@ The folders separate editable sources, conversion tools, generated output, and d
 
 ## Namespace and resolvable IRIs
 
-The staging namespace is rooted at `https://w3id.org/tib/datacite/`. Every file in `rdf-vocabulary-staging/` and `validation-and-conversion/schemas/schema-profiles/` declares an `$id` (JSON Schema) or `@id` (JSON-LD) whose URL path mirrors its location on disk, so a file's canonical IRI is predictable from its folder:
+Every DataCite term has a permanent IRI under `https://w3id.org/tib/datacite/`. The source files in `rdf-vocabulary-staging/` use these IRIs directly, and each file's `@id` mirrors its location on disk, so a term's IRI is predictable from its folder:
 
 | Resource | Canonical IRI |
 |---|---|
-| Class | `…/linked-data/class/<ClassName>` |
-| Property | `…/linked-data/property/<propertyName>` |
-| SKOS ConceptScheme | `…/linked-data/vocab/<scheme>` |
-| SKOS Concept | `…/linked-data/vocab/<scheme>/<Term>` |
-| JSON-LD context | `…/linked-data/context/fullcontext.jsonld` |
-| Manifest | `…/linked-data/manifest/datacite-4.6.json` |
-| Schema profile | `…/linked-data/schema-profiles/<filename>` |
+| Class | `https://w3id.org/tib/datacite/class/<ClassName>` |
+| Property | `https://w3id.org/tib/datacite/property/<propertyName>` |
+| SKOS ConceptScheme | `https://w3id.org/tib/datacite/vocab/<scheme>` |
+| SKOS Concept | `https://w3id.org/tib/datacite/vocab/<scheme>/<Term>` |
+| JSON-LD context | `https://w3id.org/tib/datacite/context/fullcontext.jsonld` |
+| Manifest | `https://w3id.org/tib/datacite/manifest/datacite-<version>.json` |
 
-`generate-production-namespace.sh` rewrites the staging identifiers to the canonical TIB/W3ID namespace and builds the publication bundle. The separate publication repository serves its files through GitHub Pages:
+`generate-production-namespace.sh` builds the publication bundle from these sources. The separate publication repository serves its files through GitHub Pages:
 
 | Layer | URL |
 |---|---|
 | Canonical persistent namespace | `https://w3id.org/tib/datacite/` |
 | GitHub Pages publication backend | `https://tibhannover.github.io/datacite/` |
 
-In that setup, RDF identifiers use w3id, while GitHub Pages serves the concrete files. For example, the canonical term IRI `https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset` resolves through w3id to the file served at `https://tibhannover.github.io/datacite/vocab/resourceTypeGeneral/Dataset.jsonld`.
+In that setup, RDF identifiers use w3id, while GitHub Pages serves the concrete files. For example, the canonical term IRI `https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Dataset` resolves through w3id to the file served at `https://tibhannover.github.io/datacite/vocab/resourceTypeGeneral/Dataset.jsonld`. A client that asks for Turtle (`Accept: text/turtle`) will get the `.ttl` file instead once perma-id/w3id.org#6828 is merged.
 
 ### Shared controlled lists
 
@@ -100,7 +99,7 @@ There are three kinds of artifact, and they behave differently:
 | Artifact | Example | Changes over time? | Use it when you want… |
 |---|---|---|---|
 | **Canonical term IRI** | `…/property/subject`, `…/vocab/resourceTypeGeneral/Dataset` | **Never** — stable forever | A durable identifier for a DataCite term |
-| **Frozen versioned distribution** | `dist/datacite-4.6.ttl`, `dist/datacite-4.7.ttl` | **Never** after publication | The exact state of the vocabulary as of one release |
+| **Frozen versioned distribution** | `dist/datacite-4.6.ttl`, `dist/datacite-4.7.ttl` | **Never** after publication (one documented exception: the 4.7-r2 corrections of 7 October 2026, made before r2 was announced) | The exact state of the vocabulary as of one release |
 | **Moving "latest" distribution** | `dist/datacite.ttl` (`.jsonld`, `.rdf`) | Yes — always equals the newest release | Always-current vocabulary, from one stable URL |
 
 A separate pointer file, `dist/datacite-current.jsonld`, is a small machine-readable record that simply names which release is currently the default.
@@ -161,18 +160,32 @@ Each title and creator becomes its own node: the title text is in `rdf:value` be
 
 ```bash
 npm run --silent convert:rdf -- validation-and-conversion/examples/real-dataset-dryad.json > record.ttl
-pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
+python3 -m pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
 ```
 
-The converter reads a DataCite REST API record and writes Turtle. If a creator or contributor has an empty name-identifier entry (for example, an ORCID scheme with `nameIdentifier: null`), conversion stops with the field location and an instruction to supply the identifier or remove the empty entry. It does not invent identifiers or silently drop these entries. The SHACL shapes check the conventions: text in `rdf:value`, exactly once; dates and identifiers as plain strings; creators and polygon points numbered with `schema:position`; controlled values from the DataCite vocabularies. `pip install -r rdf-build-scripts/requirements-mappings.txt` installs both tools' Python dependencies.
+`pip install -r rdf-build-scripts/requirements-mappings.txt` installs the Python dependencies of both commands. (`python3 -m pyshacl` works even when pip's script folder is not on your `PATH`.)
+
+The converter reads a DataCite REST API record, or a bare `attributes` object, and writes Turtle:
+
+- **DOI:** the record's IRI is `https://doi.org/<doi>`. A DOI written as `https://doi.org/…` or `doi:…` is reduced to the bare DOI first.
+- **Empty identifiers:** an identifier entry without a value, such as an ORCID scheme with `"nameIdentifier": null` or an empty `affiliationIdentifier`, is left out together with its scheme. The converter prints a warning naming each one (for example `warning: $.creators[0].nameIdentifiers[0]: left out the entry because nameIdentifier has no value`) and converts the rest of the record.
+- **Value types:** identifier values (`nameIdentifier`, `affiliationIdentifier`, `publisherIdentifier`, `funderIdentifier`, ...) are always text, even when they look like web addresses, because many schemes are not web addresses. Fields that DataCite defines as URIs (`schemeUri`, `rightsUri`, `valueUri`, `awardUri`) are links. Coordinates are `xsd:float` numbers and `publicationYear` is an `xsd:gYear`, whether the record writes them as JSON numbers or as text.
+
+The SHACL shapes check these conventions: text in `rdf:value`, exactly once; identifiers as text; coordinates and years with their datatypes; creators and polygon points numbered with `schema:position`; and every controlled value a real term of its DataCite vocabulary, so a misspelling such as `IsCitedby` is reported. The controlled-value part of the shapes is generated from the vocabularies by `python3 rdf-build-scripts/build-shapes.py`.
 
 ### 3. Validate a DataCite XML record
 
-`validation-and-conversion/scripts/validate_xml.rb` validates an XML file against the DataCite XSD schema. Requires Ruby.
+`validation-and-conversion/scripts/validate_xml.rb` validates an XML file against DataCite's official 4.7 XSD (`schemas/xsd/4.7/`). Pass `--xsd validation-and-conversion/schemas/xsd/4.6/metadata.xsd` to check against 4.6 instead. Requires Ruby and the `nokogiri` gem (`gem install nokogiri`).
+
+```bash
+ruby validation-and-conversion/scripts/validate_xml.rb validation-and-conversion/examples/datacite-example-full-v4.xml
+```
+
+Without Ruby, `xmllint` gives the same result: `xmllint --noout --schema validation-and-conversion/schemas/xsd/4.7/metadata.xsd record.xml`.
 
 ### 4. Convert DataCite XML to REST API JSON
 
-`validation-and-conversion/scripts/convert.py` parses a DataCite XML file and produces a JSON payload matching the DataCite REST API structure (a `data.attributes` envelope). Python 3 only — no external packages required.
+`validation-and-conversion/scripts/convert.py` parses a DataCite XML file and produces a JSON payload matching the DataCite REST API structure (a `data.attributes` envelope), including the 4.7 `relationTypeInformation`. Python 3 only — no external packages required.
 
 ```bash
 python3 validation-and-conversion/scripts/convert.py \
@@ -198,14 +211,13 @@ npm run build:production-namespace
 # Output is written to production-namespace/
 ```
 
-The default command rewrites staging IRIs from `https://w3id.org/tib/datacite/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
+The command copies the sources, which already use the canonical `https://w3id.org/tib/datacite/` IRIs, adds a Turtle file next to every term file, rebuilds the HTML index pages for the GitHub Pages project path `/datacite`, copies the published mappings and SHACL shapes, and writes a production-specific README into the bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
 
 The production bundle intentionally does not own publication-root files such as the root `README.md`, `.nojekyll`, `LICENSE`, or `index.html`; those belong to `TIBHannover/datacite`.
 
 To override the defaults:
 
 ```bash
-SOURCE_NAMESPACE="https://w3id.org/tib/datacite/" \
 CANONICAL_NAMESPACE="https://w3id.org/tib/datacite/" \
 PAGES_BASE_PATH="/datacite" \
 PUBLICATION_BASE_URL="https://tibhannover.github.io/datacite/" \
@@ -213,17 +225,26 @@ DST="production-namespace" \
 bash rdf-build-scripts/generate-production-namespace.sh
 ```
 
-### 7. Validate against a JSON Schema profile
+### 7. Validate a REST API JSON record
 
-Once deployed, each profile is fetchable at its `$id` URL — e.g. `https://w3id.org/tib/datacite/schema-profiles/integrated.json` — so validators can resolve `$ref`s remotely. You can also validate against a local copy:
+`validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json` checks a DataCite record in REST API JSON against DataCite 4.7: required properties, allowed controlled values, and the shape of each property. It accepts a full `{"data": {"attributes": …}}` document or the `attributes` object alone, and reports unknown keys, so a misspelt property name is caught.
 
 ```bash
-npx ajv-cli validate \
-    -s validation-and-conversion/schemas/schema-profiles/integrated.json \
-    -d your-metadata-record.json
+npm install
+npm run --silent validate:json -- your-record.json
 ```
 
-See the [Schema Profiles](#schema-profiles) section below for which profile to choose.
+Or in Python (`pip install jsonschema`):
+
+```python
+import json, jsonschema
+schema = json.load(open("validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json"))
+record = json.load(open("your-record.json"))
+for error in jsonschema.Draft202012Validator(schema).iter_errors(record):
+    print("/".join(map(str, error.absolute_path)), error.message)
+```
+
+See [JSON Schema](#json-schema) below for what it checks.
 
 ### 8. Explore crosswalk mappings
 
@@ -259,32 +280,20 @@ npm run test:mappings    # regression tests
 
 ---
 
-## Schema Profiles
+## JSON Schema
 
-### Which profile to use
+`datacite-4.7.schema.json` (JSON Schema draft 2020-12) describes DataCite DOI records as the REST API returns and accepts them.
 
-| File | What it is | Use it when |
-|---|---|---|
-| `datacite4.6-schema.json` | Core attribute schema | You want a minimal schema for the `data.attributes` object only |
-| `datacite4.6-profile.json` | Modular submission profile | You're validating client submissions to the REST API and prefer external `$defs`/context references |
-| `integrated.json` | Self-contained bundled profile | You need a single file with all enumerations, context, response/submit validators, and export rules embedded — no external `$ref` resolution |
-| `datacite_api.jsonld` | JSON-LD context for REST payloads | You want to interpret REST API JSON as linked data |
-| `rules.json` | Supplementary validation rules | Layered on top of the main profile for additional checks |
-| `titleTypes.jsonld` | Title-type SKOS fragment | Standalone SKOS-style definition of title types |
+- **Required:** `doi`, at least one creator with a name, at least one title, `publisher`, `publicationYear` and `types.resourceTypeGeneral`, as DataCite requires for a registered DOI.
+- **Controlled values:** every controlled list (`resourceTypeGeneral`, `relationType`, `contributorType`, ...) is generated from the vocabulary files by `python3 rdf-build-scripts/build-json-schema.py`, using the spelling the REST API uses (for example `Crossref Funder ID`). When a DataCite release adds terms, the release tooling adds the vocabulary files and this script carries them into the schema; `npm run check:json-schema` fails if they disagree.
+- **4.7 additions:** `Poster` and `Presentation`, `RAiD` and `SWHID`, relation type `Other`, and `relationTypeInformation` on related identifiers and related items.
+- **REST API fields** that are not DataCite metadata (`url`, `state`, `viewCount`, `created`, ...) are accepted without checks. Null values are accepted for optional fields, as the REST API returns them.
 
-### What's in `integrated.json`
+It was checked against 300 randomly chosen findable DOIs from the public REST API on 7 October 2026: it reported only real metadata problems, such as contributors without the required `contributorType`, and no false alarms.
 
-The integrated profile bundles five concerns into one self-contained file:
+The schema checks structure and values, not meaning: it does not check that a date is a real date or that an identifier resolves. For linked data, use the JSON-LD context and the converter described above.
 
-- **Root attributes schema** — structure and validation of `data.attributes` (creators, titles, publisher, relatedIdentifiers, …), mirroring the REST API. `additionalProperties: false` for strict client-side validation.
-- **`$defs` enumerations** — every controlled vocabulary (`resourceTypeGeneral`, `relationType`, `descriptionType`, `contributorType`, etc.) inlined. Each term has an `iriMap` entry pointing to its canonical staging IRI (`…/linked-data/vocab/<scheme>/<term>`), so the same JSON can be validated *and* exported as RDF without re-mapping.
-- **`profile.@context`** — a complete JSON-LD context mapping DataCite keys to RDF predicates (`creator → schema:creator`, `identifier → dcterms:identifier`, etc.). Embedded so consumers can generate RDF graphs without an external context fetch.
-- **`responseProfile` and `submitProfile`** — JSON:API envelope validators for GET responses and POST/PUT submissions, embedded so a single file handles both directions.
-- **`exportProfile`** — rules for converting validated JSON into RDF/JSON-LD, including language-tag handling and DOI normalization to `https://doi.org/<doi>`.
-
-### Sync check
-
-`rdf-build-scripts/synCheck.py` verifies that the controlled-list `$defs` inside `datacite4.6-profile.json` stay in sync with the published vocab term files under `rdf-vocabulary-staging/vocab/`. Run it whenever you add or remove vocabulary terms.
+The earlier 4.6 profiles are kept, unmaintained, in `schema-profiles/legacy-4.6/`.
 
 ---
 
@@ -401,6 +410,8 @@ node rdf-build-scripts/apply-datacite-release-plan.js \
 | `rdf-vocabulary-staging/dist/datacite-current.jsonld` | Pointer to the current distribution |
 | `rdf-vocabulary-staging/dist/datacite.{jsonld,ttl,rdf}` | Moving "latest" aliases |
 | `rdf-vocabulary-staging/*/index.html` | Updated vocabulary browser index pages |
+| `validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json` | Controlled lists updated with the new terms |
+| `validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl` | Controlled-value shapes updated with the new terms |
 | `reports/release-apply-4.7.md` | Summary of what was applied |
 
 ### Manual snapshot (without a plan)
@@ -415,7 +426,7 @@ To rebuild the manifest and distribution for an existing version — for example
 node rdf-build-scripts/release-snapshot.js --version 4.6
 ```
 
-This runs: `manifest-sync --write --validate` → `build-distribution` → `update-current-pointers` → `generate-index-pages` → `update-root-index`.
+This runs: `manifest-sync --write --validate` → `build-distribution` → `update-current-pointers` → `generate-index-pages` → `update-root-index` → `build-json-schema.py` → `build-shapes.py`. The last two carry new vocabulary terms into the JSON Schema and the SHACL shapes.
 
 ### Individual script reference
 
@@ -428,12 +439,13 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 | `update-current-pointers.js` | `[--version x.y]` | Writes `datacite-current.json` and `dist/datacite.jsonld` aliases |
 | `check-current-aliases.js` | — | Fails if `dist/datacite.{jsonld,ttl,rdf}` differ from the current version's files (`npm run check:current-aliases`) |
 | `generate-index-pages.js` | _(no args)_ | Regenerates HTML browser index pages for `class/`, `property/`, `vocab/`, `context/`, `dist/`, `manifest/` |
-| `generate-production-namespace.sh` | env vars: `SOURCE_NAMESPACE`, `CANONICAL_NAMESPACE`, `PAGES_BASE_PATH`, `PUBLICATION_BASE_URL`, `DST` | Builds the reviewable `production-namespace/` bundle for the TIB/W3ID publication flow |
+| `generate-production-namespace.sh` | env vars: `CANONICAL_NAMESPACE`, `PAGES_BASE_PATH`, `PUBLICATION_BASE_URL`, `DST` | Builds the reviewable `production-namespace/` bundle for the TIB/W3ID publication flow |
 | `update-root-index.js` | _(no args)_ | Patches AUTO marker blocks in `rdf-vocabulary-staging/index.html` if that file exists (no-op otherwise) |
 | `detect-datacite-release.js` | `[--version x.y] [--release-date YYYY-MM-DD]` | Detects changes, writes plan to `reports/` |
 | `apply-datacite-release-plan.js` | `--plan <path> [--modules <csv>] [--set-current]` | Applies an approved plan to vocab source files |
 | `release-snapshot.js` | `--version x.y [--release-date YYYY-MM-DD] [--no-set-current]` | Full snapshot: manifest-sync + dist + pointers + index pages |
-| `synCheck.py` | `[--profile <filename>]` | Verifies `$defs` enums in a schema profile match vocab term files on disk |
+| `build-json-schema.py` | `[--check]` | Writes the controlled lists of `datacite-4.7.schema.json` from the vocabulary files (`npm run check:json-schema`) |
+| `build-shapes.py` | `[--check]` | Writes the controlled-value shapes of the SHACL file from the vocabulary files (`npm run check:shapes`) |
 
 **Module IDs** (for `--modules` CSV in apply):
 
@@ -463,6 +475,13 @@ Revision 2 of the DataCite 4.7 modelling: same terms, a new RDF shape. It is a b
 - The converter retains alternate identifiers without mistaking a distinct DOI for the record's own DOI, and normalizes string affiliations into value nodes.
 - Crosswalk recipes cover additional DCAT relationships, DCTERMS `IsSourceOf`, and Schema.org `ComputationalNotebook` mappings.
 
+Corrections made on 7 October 2026, before the revision was announced. They bring the context and the OWL files in line with the conventions 4.7-r2 already documented:
+
+- `affiliationIdentifier`, `publisherIdentifier` and `funderIdentifier` are always text (`xsd:string`). Before, a value that was a web address became a link and any other value became text, so one property held two kinds of value.
+- Coordinates are typed `xsd:float` (as in the DataCite XSD) and `publicationYear` `xsd:gYear`. Before, they were numbers or text depending on how the record wrote them.
+- The OWL files declare each property as `owl:DatatypeProperty` (text and numbers) or `owl:ObjectProperty` (nodes and links). Before, every property was declared an object property, so text and numbers appeared on object properties, which OWL 2 DL does not allow and which OWL reasoners therefore reject.
+- The SHACL shapes check every controlled value against the full list of its vocabulary's terms, and check the identifier, coordinate and year datatypes.
+
 ### DataCite 4.7
 
 Applied on top of 4.6 via the Detect → Review → Apply pipeline. Changes:
@@ -471,7 +490,8 @@ Applied on top of 4.6 via the Detect → Review → Apply pipeline. Changes:
 - **`relatedIdentifierType`**: adds **`RAiD`**, **`SWHID`**
 - **`relationType`**: adds **`Other`**
 - New property **`relationTypeInformation`** (additional information about the selected relationType, applies to both `relatedIdentifier` and `relatedItem`)
-- **`descriptionType=SeriesInformation`** is soft-deprecated — the spec directs new content to encode series metadata via the structured `relatedItem` property with `relationType=IsPublishedIn` instead. The `SeriesInformation` term remains valid for backwards compatibility; see [vocab/descriptionType/SeriesInformation.jsonld](rdf-vocabulary-staging/vocab/descriptionType/SeriesInformation.jsonld) for the supersession note.
+
+Not a 4.7 change, but worth knowing: since `relatedItem` was introduced in 4.4, DataCite advises giving series information as a `relatedItem` with `relationType=IsPublishedIn` rather than as a description with `descriptionType=SeriesInformation`. The term remains valid; see the scope note in [vocab/descriptionType/SeriesInformation.jsonld](rdf-vocabulary-staging/vocab/descriptionType/SeriesInformation.jsonld).
 
 See `reports/release-apply-4.7.md` and `rdf-vocabulary-staging/manifest/release-matrix-4.6-4.7.json` for the full apply record.
 
@@ -487,7 +507,7 @@ Adds or updates these controlled values, all represented in the vocabulary files
 | `relationType` | `IsTranslationOf`, `HasTranslation` |
 | `dateType` | `Coverage` |
 
-4.6 also introduced the `subject` sub-property **`classificationCode`** to support subject schemes such as ANZSRC that lack per-term `valueURI`s.
+The `subject` sub-property **`classificationCode`**, for subject schemes such as ANZSRC that lack per-term `valueURI`s, dates from 4.4 and is included in the vocabulary.
 
 ---
 
@@ -501,19 +521,31 @@ Adds or updates these controlled values, all represented in the vocabulary files
 
 **SSSOM** — The Simple Standard for Sharing Ontology Mappings. A TSV-based format that records each alignment between two terms with a predicate, justification, and provenance. The `.sssom.tsv` files in `mappings/` can be loaded directly by tools such as [sssom-py](https://mapping-commons.github.io/sssom-py/) or imported into ontology alignment pipelines.
 
-**JSON Schema profile vs JSON-LD context** — The schema profiles (`validation-and-conversion/schemas/schema-profiles/`) check the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
+**JSON Schema vs JSON-LD context** — The JSON Schema (`validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json`) checks the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
 
-**Staging vs production namespace** — Source vocabulary files use the staging host `https://w3id.org/tib/datacite/`. The TIB/W3ID production namespace (`https://w3id.org/tib/datacite/`) is generated separately via `generate-production-namespace.sh` into `production-namespace/`.
+**SHACL** — The W3C Shapes Constraint Language. A SHACL file describes what valid RDF looks like; a validator such as pyshacl compares RDF data against it and reports every difference.
+
+**OWL** — The W3C Web Ontology Language. The `*-owl*` and `.owl` files describe the same vocabulary for ontology tools such as Protégé.
+
+**Source files vs publication bundle** — The source files in `rdf-vocabulary-staging/` and the generated `production-namespace/` bundle use the same `https://w3id.org/tib/datacite/` IRIs. The bundle adds Turtle copies, index pages, mappings, shapes and checksums, and is what TIB publishes.
 
 ---
 
 ## References
 
+- DataCite Metadata Schema 4.7 — https://datacite-metadata-schema.readthedocs.io/en/4.7/
+- DataCite Metadata Schema 4.7 XSD — https://schema.datacite.org/meta/kernel-4.7/
 - DataCite Metadata Schema 4.6 — https://schema.datacite.org/meta/kernel-4.6/
 - DataCite REST API — https://support.datacite.org/docs/api
-- DataCite 4.6 Release Notes — https://support.datacite.org/docs/datacite-metadata-schema-46-release-notes
 - JSON-LD specification — https://json-ld.org/
 - JSON Schema specification — https://json-schema.org/
 - SKOS Primer — https://www.w3.org/TR/skos-primer/
 - JSKOS format — https://gbv.github.io/jskos/
 - SSSOM specification — https://mapping-commons.github.io/sssom/
+- SHACL specification — https://www.w3.org/TR/shacl/
+
+---
+
+## License
+
+The toolkit code is licensed under Apache-2.0 (see `package.json`). The vocabulary, distributions and mapping sets are published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), as stated in the `LICENSE` file and in each mapping set's header.
