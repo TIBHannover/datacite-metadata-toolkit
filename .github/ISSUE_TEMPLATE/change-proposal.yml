@@ -9,7 +9,7 @@ body:
     attributes:
       label: Target
       options:
-        - JSON Schema (validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json)
+        - JSON Schema (validation-and-conversion/schemas/schema-profiles/datacite.schema.json)
         - SHACL shapes (validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl)
         - Add or rename a vocabulary term (rdf-vocabulary-staging/vocab/*)
         - Class or property definition (rdf-vocabulary-staging/class/*, property/*)

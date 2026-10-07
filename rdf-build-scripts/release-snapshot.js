@@ -133,9 +133,12 @@ function main() {
   runNodeScript("rdf-build-scripts/generate-index-pages.js", []);
   runNodeScript("rdf-build-scripts/update-root-index.js", []);
 
-  // Carry new vocabulary terms into the JSON Schema and the SHACL shapes.
-  runPythonScript("rdf-build-scripts/build-json-schema.py", []);
-  runPythonScript("rdf-build-scripts/build-shapes.py", []);
+  // Carry new vocabulary terms into the current version's JSON Schema and SHACL
+  // shapes (a new current version gets new files; earlier versions' files stay).
+  if (shouldSetCurrent) {
+    runPythonScript("rdf-build-scripts/build-json-schema.py", []);
+    runPythonScript("rdf-build-scripts/build-shapes.py", []);
+  }
 }
 
 main();

@@ -227,7 +227,7 @@ bash rdf-build-scripts/generate-production-namespace.sh
 
 ### 7. Validate a REST API JSON record
 
-`validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json` checks a DataCite record in REST API JSON against DataCite 4.7: required properties, allowed controlled values, and the shape of each property. It accepts a full `{"data": {"attributes": …}}` document or the `attributes` object alone, and reports unknown keys, so a misspelt property name is caught.
+`validation-and-conversion/schemas/schema-profiles/datacite.schema.json` checks a DataCite record in REST API JSON against DataCite 4.7: required properties, allowed controlled values, and the shape of each property. It accepts a full `{"data": {"attributes": …}}` document or the `attributes` object alone, and reports unknown keys, so a misspelt property name is caught.
 
 ```bash
 npm install
@@ -238,7 +238,7 @@ Or in Python (`pip install jsonschema`):
 
 ```python
 import json, jsonschema
-schema = json.load(open("validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json"))
+schema = json.load(open("validation-and-conversion/schemas/schema-profiles/datacite.schema.json"))
 record = json.load(open("your-record.json"))
 for error in jsonschema.Draft202012Validator(schema).iter_errors(record):
     print("/".join(map(str, error.absolute_path)), error.message)
@@ -282,7 +282,14 @@ npm run test:mappings    # regression tests
 
 ## JSON Schema
 
-`datacite-4.7.schema.json` (JSON Schema draft 2020-12) describes DataCite DOI records as the REST API returns and accepts them.
+The JSON Schema (draft 2020-12) describes DataCite DOI records as the REST API returns and accepts them. It comes in two forms, like the vocabulary downloads:
+
+| File | Changes over time? | Use it when you want… |
+|---|---|---|
+| `datacite-4.7.schema.json` (one per DataCite version) | No, once its version is no longer current | The rules of one DataCite release |
+| `datacite.schema.json` | Yes, always equals the current version's file | The newest rules, from one stable address |
+
+Once published, both resolve at their `$id`, for example `https://w3id.org/tib/datacite/schema-profiles/datacite.schema.json` (the w3id address works after perma-id/w3id.org#6828 is merged; the files are served from `https://tibhannover.github.io/datacite/schema-profiles/`).
 
 - **Required:** `doi`, at least one creator with a name, at least one title, `publisher`, `publicationYear` and `types.resourceTypeGeneral`, as DataCite requires for a registered DOI.
 - **Controlled values:** every controlled list (`resourceTypeGeneral`, `relationType`, `contributorType`, ...) is generated from the vocabulary files by `python3 rdf-build-scripts/build-json-schema.py`, using the spelling the REST API uses (for example `Crossref Funder ID`). When a DataCite release adds terms, the release tooling adds the vocabulary files and this script carries them into the schema; `npm run check:json-schema` fails if they disagree.
@@ -410,8 +417,8 @@ node rdf-build-scripts/apply-datacite-release-plan.js \
 | `rdf-vocabulary-staging/dist/datacite-current.jsonld` | Pointer to the current distribution |
 | `rdf-vocabulary-staging/dist/datacite.{jsonld,ttl,rdf}` | Moving "latest" aliases |
 | `rdf-vocabulary-staging/*/index.html` | Updated vocabulary browser index pages |
-| `validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json` | Controlled lists updated with the new terms |
-| `validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl` | Controlled-value shapes updated with the new terms |
+| `validation-and-conversion/schemas/schema-profiles/datacite-<version>.schema.json` and `datacite.schema.json` | JSON Schema with the new terms. A new DataCite version gets a new file, created from the previous one; review its hand-written rules against the release notes. |
+| `validation-and-conversion/shapes/datacite-<version>.shacl.ttl` | SHACL shapes with the new terms; likewise a new file for a new version |
 | `reports/release-apply-4.7.md` | Summary of what was applied |
 
 ### Manual snapshot (without a plan)
@@ -444,8 +451,8 @@ All scripts run from the repository root and auto-detect `rdf-vocabulary-staging
 | `detect-datacite-release.js` | `[--version x.y] [--release-date YYYY-MM-DD]` | Detects changes, writes plan to `reports/` |
 | `apply-datacite-release-plan.js` | `--plan <path> [--modules <csv>] [--set-current]` | Applies an approved plan to vocab source files |
 | `release-snapshot.js` | `--version x.y [--release-date YYYY-MM-DD] [--no-set-current]` | Full snapshot: manifest-sync + dist + pointers + index pages |
-| `build-json-schema.py` | `[--check]` | Writes the controlled lists of `datacite-4.7.schema.json` from the vocabulary files (`npm run check:json-schema`) |
-| `build-shapes.py` | `[--check]` | Writes the controlled-value shapes of the SHACL file from the vocabulary files (`npm run check:shapes`) |
+| `build-json-schema.py` | `[--check]` | Writes `datacite-<version>.schema.json` and `datacite.schema.json` for the current version, with controlled lists from the vocabulary files (`npm run check:json-schema`) |
+| `build-shapes.py` | `[--check]` | Writes the controlled-value shapes of the current version's SHACL file from the vocabulary files (`npm run check:shapes`) |
 
 **Module IDs** (for `--modules` CSV in apply):
 
@@ -521,7 +528,7 @@ The `subject` sub-property **`classificationCode`**, for subject schemes such as
 
 **SSSOM** — The Simple Standard for Sharing Ontology Mappings. A TSV-based format that records each alignment between two terms with a predicate, justification, and provenance. The `.sssom.tsv` files in `mappings/` can be loaded directly by tools such as [sssom-py](https://mapping-commons.github.io/sssom-py/) or imported into ontology alignment pipelines.
 
-**JSON Schema vs JSON-LD context** — The JSON Schema (`validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json`) checks the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
+**JSON Schema vs JSON-LD context** — The JSON Schema (`validation-and-conversion/schemas/schema-profiles/datacite.schema.json`) checks the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
 
 **SHACL** — The W3C Shapes Constraint Language. A SHACL file describes what valid RDF looks like; a validator such as pyshacl compares RDF data against it and reports every difference.
 

@@ -18,7 +18,9 @@ from datacite_to_rdf import DEFAULT_CONTEXT, load_context, prepare, record_attri
 
 EXAMPLES = ROOT / "validation-and-conversion" / "examples"
 RECORDS = [EXAMPLES / "record.json", EXAMPLES / "real-dataset-dryad.json", EXAMPLES / "real-software-zenodo.json"]
-SHAPES = ROOT / "validation-and-conversion" / "shapes" / "datacite-4.7-r2.shacl.ttl"
+CURRENT_VERSION = json.loads((ROOT / "rdf-vocabulary-staging" / "manifest" / "datacite-current.json").read_text(
+    encoding="utf-8"))["currentVersion"]
+SHAPES = ROOT / "validation-and-conversion" / "shapes" / f"datacite-{CURRENT_VERSION}.shacl.ttl"
 DIST = ROOT / "production-namespace" / "dist"
 DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 DCC = rdflib.Namespace("https://w3id.org/tib/datacite/class/")

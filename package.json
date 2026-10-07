@@ -16,8 +16,8 @@
     "test:mappings": "python3 -m unittest discover -s tests/mappings -p 'test_*.py' && node --test tests/mappings/validate.test.js",
     "test:conversion": "python3 -m unittest discover -s tests/conversion -p 'test_*.py'",
     "convert:rdf": "python3 validation-and-conversion/scripts/datacite_to_rdf.py",
-    "validate-profiles": "npx ajv-cli compile --spec=draft2020 --strict=false -s validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json",
-    "validate:json": "npx ajv-cli validate --spec=draft2020 --strict=false --all-errors -s validation-and-conversion/schemas/schema-profiles/datacite-4.7.schema.json -d"
+    "validate-profiles": "npx ajv-cli compile --spec=draft2020 --strict=false -s validation-and-conversion/schemas/schema-profiles/datacite.schema.json",
+    "validate:json": "npx ajv-cli validate --spec=draft2020 --strict=false --all-errors -s validation-and-conversion/schemas/schema-profiles/datacite.schema.json -d"
   },
   "dependencies": {
     "jskos-validate": "1.2.3"

@@ -21,9 +21,12 @@ from convert import build_json_from_xml  # noqa: E402
 from datacite_to_rdf import DEFAULT_CONTEXT, load_context, to_graph  # noqa: E402
 
 EXAMPLES = ROOT / "validation-and-conversion" / "examples"
-SCHEMA = ROOT / "validation-and-conversion" / "schemas" / "schema-profiles" / "datacite-4.7.schema.json"
+PROFILES = ROOT / "validation-and-conversion" / "schemas" / "schema-profiles"
+SCHEMA = PROFILES / "datacite.schema.json"
 XSD = ROOT / "validation-and-conversion" / "schemas" / "xsd"
-SHAPES = ROOT / "validation-and-conversion" / "shapes" / "datacite-4.7-r2.shacl.ttl"
+CURRENT_VERSION = json.loads((ROOT / "rdf-vocabulary-staging" / "manifest" / "datacite-current.json").read_text(
+    encoding="utf-8"))["currentVersion"]
+SHAPES = ROOT / "validation-and-conversion" / "shapes" / f"datacite-{CURRENT_VERSION}.shacl.ttl"
 DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 NS = "{http://datacite.org/schema/kernel-4}"
 EXAMPLE_RECORDS = ["record.json", "real-dataset-dryad.json", "real-software-zenodo.json", "datacite_example_filledin.json"]
@@ -57,6 +60,20 @@ class JsonSchemaTest(unittest.TestCase):
         result = subprocess.run([sys.executable, str(ROOT / "rdf-build-scripts" / "build-json-schema.py"), "--check"],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_current_schema_is_the_current_versions_schema(self):
+        """datacite.schema.json equals datacite-<current DataCite version>.schema.json apart from its $id,
+        and the publication bundle carries both."""
+        current = json.loads((ROOT / "rdf-vocabulary-staging" / "manifest" / "datacite-current.json").read_text(
+            encoding="utf-8"))["currentVersion"].split("-r")[0]
+        versioned = json.loads((PROFILES / f"datacite-{current}.schema.json").read_text(encoding="utf-8"))
+        moving = json.loads(SCHEMA.read_text(encoding="utf-8"))
+        self.assertTrue(versioned["$id"].endswith(f"/schema-profiles/datacite-{current}.schema.json"))
+        self.assertTrue(moving["$id"].endswith("/schema-profiles/datacite.schema.json"))
+        self.assertEqual(dict(versioned, **{"$id": None}), dict(moving, **{"$id": None}))
+        for path in PROFILES.glob("datacite*.schema.json"):
+            published = ROOT / "production-namespace" / "schema-profiles" / path.name
+            self.assertEqual(published.read_text(encoding="utf-8"), path.read_text(encoding="utf-8"), path.name)
 
     def test_example_records_are_valid(self):
         for name in EXAMPLE_RECORDS:

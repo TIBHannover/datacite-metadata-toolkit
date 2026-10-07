@@ -6,4 +6,4 @@ These files are the earlier JSON Schema profiles for DataCite Metadata Schema 4.
 - They do not accept current DataCite REST API records or the output of `validation-and-conversion/scripts/convert.py`.
 - Several contain broken references and embed a JSON-LD context that differs from the published one.
 
-Use [`../datacite-4.7.schema.json`](../datacite-4.7.schema.json) to validate DataCite records, and the published context `https://w3id.org/tib/datacite/context/fullcontext.jsonld` for linked data.
+Use [`../datacite.schema.json`](../datacite.schema.json) to validate DataCite records, and the published context `https://w3id.org/tib/datacite/context/fullcontext.jsonld` for linked data.

@@ -87,6 +87,11 @@ cp -r "$MAPPINGS_SRC/conversion" "$MAPPINGS_SRC/coverage" "$DST/mappings/"
 SHAPES_SRC="${SHAPES_SRC:-validation-and-conversion/shapes}"
 mkdir -p "$DST/shapes"
 cp "$SHAPES_SRC"/*.shacl.ttl "$DST/shapes/"
+# Publish the JSON Schema files so their $id IRIs resolve
+# (https://w3id.org/tib/datacite/schema-profiles/<file>). The legacy 4.6 profiles stay in the toolkit.
+PROFILES_SRC="${PROFILES_SRC:-validation-and-conversion/schemas/schema-profiles}"
+mkdir -p "$DST/schema-profiles"
+cp "$PROFILES_SRC"/datacite*.schema.json "$DST/schema-profiles/"
 # The crosswalk guide is the mappings/ landing page. Its "back" link points to
 # the namespace home instead of the toolkit website's docs page.
 GUIDE_SRC="${GUIDE_SRC:-website/crosswalk-guide.html}"

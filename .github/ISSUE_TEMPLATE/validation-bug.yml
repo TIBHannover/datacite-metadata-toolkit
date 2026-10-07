@@ -9,7 +9,7 @@ body:
     attributes:
       label: Affected area(s)
       options:
-        - label: JSON Schema (datacite-4.7.schema.json)
+        - label: JSON Schema (datacite.schema.json)
         - label: SHACL shapes (datacite-4.7-r2.shacl.ttl)
         - label: Vocabulary terms (rdf-vocabulary-staging/vocab/*)
         - label: JSON-LD context (fullcontext.jsonld)

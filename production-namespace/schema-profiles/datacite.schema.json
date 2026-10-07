@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://w3id.org/tib/datacite/schema-profiles/datacite-4.7.schema.json",
+  "$id": "https://w3id.org/tib/datacite/schema-profiles/datacite.schema.json",
   "title": "DataCite Metadata Schema 4.7 – REST API JSON",
   "description": "Checks a DataCite DOI record in REST API JSON against DataCite Metadata Schema 4.7: required properties, allowed controlled values and the shape of each property. Accepts either the attributes object or a full {\"data\": {\"attributes\": ...}} document. Unknown keys are reported, so misspelt property names are caught. Controlled lists are generated from the DataCite vocabularies by rdf-build-scripts/build-json-schema.py. For linked data, use the JSON-LD context at https://w3id.org/tib/datacite/context/fullcontext.jsonld.",
   "if": {

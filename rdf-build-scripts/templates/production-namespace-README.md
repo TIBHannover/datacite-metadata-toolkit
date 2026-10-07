@@ -30,6 +30,7 @@ All RDF identifiers in this bundle use the persistent W3ID namespace. The GitHub
 | `dist/` | Versioned and current distribution artifacts in JSON-LD, RDF/XML, Turtle, and OWL-related forms |
 | `mappings/` | SSSOM mapping sets, SKOS/JSKOS exports, conversion rules, coverage and RDF paths |
 | `shapes/` | SHACL shapes that check DataCite RDF made with the current context |
+| `schema-profiles/` | JSON Schema for DataCite records in REST API JSON: one file per DataCite version and `datacite.schema.json` for the current one |
 
 The generated section `index.html` files are for human browsing. The JSON-LD, Turtle, RDF/XML, manifest, and context files are the machine-readable namespace artifacts.
 

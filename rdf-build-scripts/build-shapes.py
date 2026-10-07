@@ -5,9 +5,14 @@ The current JSON-LD context names every property whose value is a controlled
 term ("@type": "@vocab") and the vocabulary it uses. For each one, this script
 writes a shape listing every term of that vocabulary with sh:in, so a misspelt
 or undefined value (relationType "IsCitedby", resourceTypeGeneral "Datset")
-fails validation. The section sits between the BEGIN and END GENERATED markers
-in validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl; the rest of the
-file is maintained by hand.
+fails validation. The section sits between the BEGIN and END GENERATED markers;
+the rest of the file is maintained by hand.
+
+The file is validation-and-conversion/shapes/datacite-<version>.shacl.ttl for the
+current version named in rdf-vocabulary-staging/manifest/datacite-current.json,
+for example datacite-4.7-r2.shacl.ttl. When a new version becomes current, its
+file is created from the newest existing one, and earlier files are left
+unchanged; review the hand-written rules against the new release.
 
 Usage:
     python3 rdf-build-scripts/build-shapes.py          # rewrite the section
@@ -21,10 +26,29 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGING = ROOT / "rdf-vocabulary-staging"
-SHAPES = ROOT / "validation-and-conversion" / "shapes" / "datacite-4.7-r2.shacl.ttl"
+SHAPES_DIR = ROOT / "validation-and-conversion" / "shapes"
 NAMESPACE = "https://w3id.org/tib/datacite/"
 BEGIN = "# BEGIN GENERATED: controlled values (rdf-build-scripts/build-shapes.py; do not edit)"
 END = "# END GENERATED: controlled values"
+
+
+def version_key(version):
+    """Sort "4.7" < "4.7-r2" < "4.8"."""
+    number, _, revision = version.partition("-r")
+    return tuple(int(part) for part in number.split(".")), int(revision or 1)
+
+
+def shapes_file():
+    """The current version's shapes file, and the file to start from if it does not exist yet."""
+    pointer = json.loads((STAGING / "manifest" / "datacite-current.json").read_text(encoding="utf-8"))
+    target = SHAPES_DIR / f"datacite-{pointer['currentVersion']}.shacl.ttl"
+    if target.exists():
+        return target, target
+    existing = sorted((p.name[len("datacite-"):-len(".shacl.ttl")] for p in SHAPES_DIR.glob("datacite-*.shacl.ttl")),
+                      key=version_key)
+    if not existing:
+        raise SystemExit(f"No datacite-<version>.shacl.ttl found in {SHAPES_DIR}")
+    return target, SHAPES_DIR / f"datacite-{existing[-1]}.shacl.ttl"
 
 
 def controlled_properties():
@@ -73,22 +97,23 @@ def main():
     parser.add_argument("--check", action="store_true", help="fail if the generated section is out of date")
     args = parser.parse_args()
 
-    text = SHAPES.read_text(encoding="utf-8")
+    target, source = shapes_file()
+    text = source.read_text(encoding="utf-8")
     if BEGIN not in text or END not in text:
-        raise SystemExit(f"{SHAPES} has no generated section markers")
+        raise SystemExit(f"{source} has no generated section markers")
     start = text.index(BEGIN)
     stop = text.index(END) + len(END)
     updated = text[:start] + section() + text[stop:]
 
     if args.check:
-        if updated != text:
-            print(f"{SHAPES.relative_to(ROOT)} is out of date; run: python3 rdf-build-scripts/build-shapes.py",
+        if target != source or updated != text:
+            print(f"{target.relative_to(ROOT)} is out of date; run: python3 rdf-build-scripts/build-shapes.py",
                   file=sys.stderr)
             return 1
         print("SHACL controlled-value shapes match the vocabularies.")
         return 0
-    SHAPES.write_text(updated, encoding="utf-8")
-    print(f"Wrote {SHAPES.relative_to(ROOT)}")
+    target.write_text(updated, encoding="utf-8")
+    print(f"Wrote {target.relative_to(ROOT)}")
     return 0
 
 
