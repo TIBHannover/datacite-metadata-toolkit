@@ -45,6 +45,7 @@
           "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
+          "lang": "en",
           "nameIdentifiers": [
             {
               "nameIdentifier": "https://ror.org/04wxnsj81",

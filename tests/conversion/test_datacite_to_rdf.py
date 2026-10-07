@@ -134,6 +134,20 @@ class RecordConversionTest(unittest.TestCase):
         self.assertIn("creatorName", result.stdout)
         self.assertNotIn("nameIdentifier ", result.stdout)
 
+    def test_unknown_keys_are_reported(self):
+        warnings = []
+        graph = to_graph({"doi": "10.1234/test", "titel": [{"title": "Lost"}], "creators": [{"name": "A", "nmae": "B"}],
+                          "types": {"resourceTypeGeneral": "Dataset", "ris": "DATA"}, "container": {"type": "Series"}},
+                         load_context(DEFAULT_CONTEXT), warnings=warnings)
+        self.assertEqual(sorted(w.split(":")[0] for w in warnings), ["$.creators[0].nmae", "$.titel"])
+        self.assertNotIn("Lost", {str(o) for o in graph.objects()})
+
+    def test_example_records_give_no_warnings(self):
+        for path in RECORDS:
+            warnings = []
+            to_graph(record_attributes(path), load_context(DEFAULT_CONTEXT), warnings=warnings)
+            self.assertEqual(warnings, [], path.name)
+
     def test_empty_identifiers_are_left_out_with_their_location(self):
         for value in (None, "", "   "):
             attributes = {"doi": "10.1234/test",
@@ -414,6 +428,8 @@ BROKEN = {
                              'dcp:pointLatitude "141.5"^^<http://www.w3.org/2001/XMLSchema#float> ; '
                              'dcp:pointLongitude "2.0"^^<http://www.w3.org/2001/XMLSchema#float> ] ] .',
     "publication year as a number": 'doi:x dcp:publicationYear 2024 .',
+    "funder identifier without its type": 'doi:x dcp:fundingReference [ a dcc:FundingReference ; '
+                                          'dcp:funderIdentifier "501100000780" ] .',
 }
 
 
@@ -454,6 +470,19 @@ class VocabularyTest(unittest.TestCase):
             uses = [t for t in graph if rdflib.RDF.value in t]
             self.assertEqual(uses, [], name)
 
+    def test_frozen_releases_are_unchanged(self):
+        result = subprocess.run([sys.executable, str(ROOT / "rdf-build-scripts" / "check-frozen-releases.py")],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_published_releases_cannot_be_rebuilt_by_accident(self):
+        for script in ("build-distribution.js", "release-snapshot.js"):
+            result = subprocess.run(["node", str(ROOT / "rdf-build-scripts" / script), "--version", "4.7"],
+                                    capture_output=True, text=True, cwd=ROOT)
+            self.assertNotEqual(result.returncode, 0, script)
+            self.assertIn("published", result.stderr + result.stdout, script)
+        self.test_frozen_releases_are_unchanged()
+
     def test_owl_property_kinds_match_converter_output(self):
         """OWL 2 DL does not allow text on an object property, so each declared kind must match the data."""
         kinds = json.loads((ROOT / "rdf-build-scripts" / "property-value-kinds.json").read_text(encoding="utf-8"))
@@ -492,7 +521,40 @@ class VocabularyTest(unittest.TestCase):
             self.assertEqual(sorted(used - concepts), [], path.name)
 
 
+# JSON-LD 1.1 (Create Term Definition): an expanded term definition may contain only these keys,
+# and a context only terms and these keywords. Other keys make strict processors (PyLD, jsonld.js) fail.
+TERM_KEYS = {"@id", "@reverse", "@container", "@context", "@direction", "@index", "@language", "@nest", "@prefix",
+             "@protected", "@type"}
+CONTEXT_KEYWORDS = {"@base", "@direction", "@import", "@language", "@propagate", "@protected", "@type", "@version",
+                    "@vocab"}
+
+
+def jsonld_problems(context, where):
+    problems = []
+    for key, definition in context.items():
+        if key.startswith("@"):
+            if key not in CONTEXT_KEYWORDS:
+                problems.append(f"{where}: keyword {key} is not allowed in a context")
+        elif isinstance(definition, dict):
+            problems += [f"{where}.{key}: {k} is not allowed in a term definition" for k in definition if k not in TERM_KEYS]
+            if isinstance(definition.get("@context"), dict):
+                problems += jsonld_problems(definition["@context"], f"{where}.{key}")
+        elif definition is not None and not isinstance(definition, str):
+            problems.append(f"{where}.{key}: a term definition is a string, null or an object")
+    return problems
+
+
 class ContextTest(unittest.TestCase):
+    def test_contexts_follow_json_ld_11(self):
+        paths = [p for folder in ("rdf-vocabulary-staging", "production-namespace")
+                 for p in (ROOT / folder).rglob("*.jsonld") if p.parent.name == "context" or p.name == "context.jsonld"]
+        self.assertGreater(len(paths), 20)
+        problems = []
+        for path in paths:
+            context = json.loads(path.read_text(encoding="utf-8"))["@context"]
+            problems += jsonld_problems(context, str(path.relative_to(ROOT)))
+        self.assertEqual(problems, [])
+
     def test_current_context_is_frozen_for_the_current_version(self):
         staging = ROOT / "rdf-vocabulary-staging"
         current = json.loads((staging / "manifest" / "datacite-current.json").read_text(encoding="utf-8"))["currentVersion"]

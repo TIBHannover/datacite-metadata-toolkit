@@ -16,8 +16,10 @@ and coordinates and years given as JSON numbers written as text, so that the
 context types them (xsd:float, xsd:gYear) the same way whichever form the record uses.
 
 Identifier entries without a value (for example an ORCID scheme with
-"nameIdentifier": null) are left out of the RDF, and a warning naming each
-one is written to standard error; the rest of the record is still converted.
+"nameIdentifier": null) are left out of the RDF, and so are keys the context
+does not know (for example a misspelt "titel"). A warning naming each one is
+written to standard error; the rest of the record is still converted. Check a
+record with the JSON Schema first to catch such mistakes before conversion.
 
 validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl checks the output.
 
@@ -63,6 +65,8 @@ IDENTIFIER_ENTRIES = {"nameIdentifiers": "nameIdentifier", "alternateIdentifiers
 # Numbers the context types (xsd:float, xsd:gYear); JSON numbers become text so the digits are kept as written.
 NUMBER_KEYS = {"pointLatitude", "pointLongitude", "westBoundLongitude", "eastBoundLongitude",
                "southBoundLatitude", "northBoundLatitude", "publicationYear"}
+# REST API keys inside "types" that are derived citation formats, not DataCite metadata.
+DERIVED_TYPES = {"ris", "bibtex", "citeproc", "schemaOrg"}
 DOI_PREFIXES = ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:")
 # REST API fields that are derived or transport-only, not DataCite metadata.
 IGNORED = {"xml", "prefix", "suffix", "container", "url", "contentUrl", "state", "viewCount", "downloadCount",
@@ -231,6 +235,31 @@ def drop_empty_identifiers(value, warnings, path="$"):
             drop_empty_identifiers(item, warnings, f"{path}.{key}")
 
 
+def context_terms(context, found=None):
+    """Every key the context defines, including keys of scoped contexts."""
+    found = set() if found is None else found
+    for key, definition in context.items():
+        found.add(key)
+        if isinstance(definition, dict) and isinstance(definition.get("@context"), dict):
+            context_terms(definition["@context"], found)
+    return found
+
+
+def unknown_keys(value, known, warnings, path="$"):
+    """Warn about keys that the context does not define and that would therefore be dropped."""
+    if isinstance(value, list):
+        for index, item in enumerate(value):
+            unknown_keys(item, known, warnings, f"{path}[{index}]")
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            if key in IGNORED or key in DERIVED_TYPES or key == "doi" or key.startswith("@"):
+                continue
+            if key not in known:
+                warnings.append(f"{path}.{key}: left out because the DataCite context does not define this key")
+            else:
+                unknown_keys(item, known, warnings, f"{path}.{key}")
+
+
 def prepare(attributes, warnings=None):
     """Return a copy of the record ready for the context; problems found are appended to warnings."""
     warnings = [] if warnings is None else warnings
@@ -249,6 +278,8 @@ def prepare(attributes, warnings=None):
 
 
 def to_graph(attributes, context, prepared=True, warnings=None):
+    if warnings is not None:
+        unknown_keys(attributes, context_terms(context), warnings)
     record = prepare(attributes, warnings) if prepared else attributes
     document = {"@context": context, "@id": "https://doi.org/" + bare_doi(attributes["doi"]), **record}
     graph = rdflib.Graph()

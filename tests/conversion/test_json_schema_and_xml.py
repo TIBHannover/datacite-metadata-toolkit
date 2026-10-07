@@ -29,6 +29,7 @@ CURRENT_VERSION = json.loads((ROOT / "rdf-vocabulary-staging" / "manifest" / "da
 SHAPES = ROOT / "validation-and-conversion" / "shapes" / f"datacite-{CURRENT_VERSION}.shacl.ttl"
 DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 NS = "{http://datacite.org/schema/kernel-4}"
+SQUARE = [{"polygonPoint": {"pointLatitude": lat, "pointLongitude": lon}} for lat, lon in [(0, 0), (0, 1), (1, 1), (0, 0)]]
 EXAMPLE_RECORDS = ["record.json", "real-dataset-dryad.json", "real-software-zenodo.json", "datacite_example_filledin.json"]
 
 
@@ -105,6 +106,16 @@ class JsonSchemaTest(unittest.TestCase):
                 "pointLatitude": 91, "pointLongitude": 0}}]),
             "publication year with a month": lambda a: a.update(publicationYear="2024-05"),
             "DOI written as a URL": lambda a: a.update(doi="https://doi.org/10.1234/x"),
+            "funder identifier without its type": lambda a: a.update(fundingReferences=[
+                {"funderName": "F", "funderIdentifier": "501100000780"}]),
+            "latitude out of range, as text": lambda a: a.update(geoLocations=[{"geoLocationPoint": {
+                "pointLatitude": "91", "pointLongitude": "0"}}]),
+            "longitude out of range, as text": lambda a: a.update(geoLocations=[{"geoLocationPoint": {
+                "pointLatitude": "0", "pointLongitude": "180.5"}}]),
+            "polygon with one point, API form": lambda a: a.update(geoLocations=[{"geoLocationPolygon": [
+                {"polygonPoint": {"pointLatitude": 1, "pointLongitude": 2}}]}]),
+            "polygon with two inPolygonPoints": lambda a: a.update(geoLocations=[{"geoLocationPolygon": SQUARE + [
+                {"inPolygonPoint": {"pointLatitude": 0.5, "pointLongitude": 0.5}}] * 2}]),
         }
         for name, change in cases.items():
             with self.subTest(name):
@@ -112,12 +123,56 @@ class JsonSchemaTest(unittest.TestCase):
                 change(record)
                 self.assertTrue(list(validator().iter_errors(record)), name)
 
+    def test_valid_records_are_accepted(self):
+        """Optional parts may be left out, and both number forms of a coordinate are checked alike."""
+        base = attributes("real-dataset-dryad.json")
+        cases = {
+            "related item identifier without its type": lambda a: a.update(relatedItems=[{
+                "relatedItemType": "Dataset", "relationType": "Cites", "titles": [{"title": "B"}],
+                "relatedItemIdentifier": {"relatedItemIdentifier": "10.1234/B"}}]),
+            "coordinates at the limits, as text": lambda a: a.update(geoLocations=[{"geoLocationPoint": {
+                "pointLatitude": "-90.0", "pointLongitude": "180"}}]),
+            "polygon with an inPolygonPoint": lambda a: a.update(geoLocations=[{"geoLocationPolygon": SQUARE + [
+                {"inPolygonPoint": {"pointLatitude": 0.5, "pointLongitude": 0.5}}]}]),
+            "two polygons": lambda a: a.update(geoLocations=[{"geoLocationPolygon": [SQUARE, SQUARE]}]),
+            "funder identifier with its type": lambda a: a.update(fundingReferences=[
+                {"funderName": "F", "funderIdentifier": "501100000780", "funderIdentifierType": "Crossref Funder ID"}]),
+            "description without text": lambda a: a.update(descriptions=[{"descriptionType": "Abstract"}]),
+        }
+        for name, change in cases.items():
+            with self.subTest(name):
+                record = copy.deepcopy(base)
+                change(record)
+                self.assertEqual([e.message for e in validator().iter_errors(record)], [], name)
+                conforms, _, report = pyshacl.validate(to_graph(record, load_context(DEFAULT_CONTEXT)),
+                                                       shacl_graph=str(SHAPES))
+                self.assertTrue(conforms, f"{name}:\n{report}")
+
     def test_47_additions_are_accepted(self):
         record = copy.deepcopy(attributes("real-dataset-dryad.json"))
         record["types"]["resourceTypeGeneral"] = "Presentation"
         record["relatedIdentifiers"] = [{"relatedIdentifier": "10.1/x", "relatedIdentifierType": "SWHID",
                                          "relationType": "Other", "relationTypeInformation": "was presented with"}]
         self.assertEqual([e.message for e in validator().iter_errors(record)], [])
+
+
+def xml_rich():
+    """A valid record whose names carry languages and whose geoLocation has two polygons, each with an inPolygonPoint."""
+    ET.register_namespace("", NS[1:-1])
+    root = ET.parse(EXAMPLES / "datacite-example-full-v4.xml").getroot()
+    lang = "{http://www.w3.org/XML/1998/namespace}lang"
+    root.find(f".//{NS}creatorName").set(lang, "fr")
+    root.find(f".//{NS}contributorName").set(lang, "de")
+    location = root.find(f"{NS}geoLocations/{NS}geoLocation")
+    for polygon in location.findall(f"{NS}geoLocationPolygon"):
+        location.remove(polygon)
+    for offset in (0, 10):
+        polygon = ET.SubElement(location, f"{NS}geoLocationPolygon")
+        for tag, (lat, lon) in [("polygonPoint", p) for p in [(1, 1), (1, 2), (2, 2), (1, 1)]] + [("inPolygonPoint", (1.2, 1.5))]:
+            point = ET.SubElement(polygon, f"{NS}{tag}")
+            ET.SubElement(point, f"{NS}pointLatitude").text = str(lat + offset)
+            ET.SubElement(point, f"{NS}pointLongitude").text = str(lon + offset)
+    return ET.tostring(root, encoding="unicode")
 
 
 class Xml47Test(unittest.TestCase):
@@ -140,6 +195,35 @@ class Xml47Test(unittest.TestCase):
                          {"uses its sample data", "chapter 2"})
         conforms, _, report = pyshacl.validate(graph, shacl_graph=str(SHAPES))
         self.assertTrue(conforms, report)
+
+    def test_name_languages_polygons_and_inner_points_are_kept(self):
+        attrs = build_json_from_xml(xml_rich())["data"]["attributes"]
+        self.assertEqual((attrs["creators"][0]["lang"], attrs["contributors"][0]["lang"]), ("fr", "de"))
+        polygons = attrs["geoLocations"][0]["geoLocationPolygon"]
+        self.assertEqual(len(polygons), 2)
+        for polygon in polygons:
+            self.assertEqual([next(iter(entry)) for entry in polygon], ["polygonPoint"] * 4 + ["inPolygonPoint"])
+        self.assertEqual([e.message for e in validator().iter_errors(attrs)], [])
+        graph = to_graph(attrs, load_context(DEFAULT_CONTEXT))
+        names = {(str(o), o.language) for o in graph.objects(None, DCP.creatorName)}
+        self.assertIn(("ExampleFamilyName, ExampleGivenName", "fr"), names)
+        self.assertIn("de", {o.language for o in graph.objects(None, DCP.contributorName)})
+        nodes = list(graph.objects(None, DCP.geoLocationPolygon))
+        self.assertEqual(len(nodes), 2)
+        for node in nodes:
+            self.assertEqual(len(list(graph.objects(node, DCP.polygonPoint))), 4)
+            self.assertIsNotNone(graph.value(node, DCP.inPolygonPoint))
+        conforms, _, report = pyshacl.validate(graph, shacl_graph=str(SHAPES))
+        self.assertTrue(conforms, report)
+
+    @unittest.skipUnless(shutil.which("xmllint"), "xmllint is not installed")
+    def test_rich_record_is_valid_xml(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "record.xml"
+            path.write_text(xml_rich(), encoding="utf-8")
+            result = subprocess.run(["xmllint", "--noout", "--schema", str(XSD / "4.7" / "metadata.xsd"), str(path)],
+                                    capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     @unittest.skipUnless(shutil.which("xmllint"), "xmllint is not installed")
     def test_47_record_needs_the_47_xsd(self):

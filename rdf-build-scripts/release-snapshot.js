@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const { compareVersions, getArgValue, listManifestVersions, resolveVocabRoot } = require("./lib/versioning");
+const { compareVersions, getArgValue, isPublishedVersion, listManifestVersions, resolveVocabRoot } = require("./lib/versioning");
 
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
@@ -112,6 +112,7 @@ function main() {
         "  --version <x.y>             Target DataCite schema version for manifest/dist outputs",
         "  --release-date YYYY-MM-DD   Stable release date for manifest/dist metadata (default: today)",
         "  --no-set-current            Build artifacts without updating datacite-current pointers",
+        "  --rebuild-frozen            Allow rebuilding a version that is already published",
       ].join("\n"),
     );
     process.exit(0);
@@ -121,10 +122,21 @@ function main() {
     die("Missing required argument: --version <x.y>");
   }
 
+  // A published release is frozen: manifest-sync and build-distribution would
+  // rewrite its manifest and distributions from the current source files.
+  const rebuildFrozen = argv.includes("--rebuild-frozen");
+  if (isPublishedVersion(vocabRoot, version) && !rebuildFrozen) {
+    die(
+      `datacite-${version} is already published. A snapshot is for a new version; to correct the current ` +
+        "version, edit its source files and run build-distribution.js. Pass --rebuild-frozen only if " +
+        "rebuilding the published release is intended, and document the change.",
+    );
+  }
+
   ensureManifestExists(version, releaseDate, Boolean(requestedReleaseDate));
 
   runNodeScript("rdf-build-scripts/manifest-sync.js", ["--write", "--validate", "--version", version]);
-  runNodeScript("rdf-build-scripts/build-distribution.js", ["--version", version]);
+  runNodeScript("rdf-build-scripts/build-distribution.js", ["--version", version, ...(rebuildFrozen ? ["--rebuild-frozen"] : [])]);
 
   if (shouldSetCurrent) {
     runNodeScript("rdf-build-scripts/update-current-pointers.js", ["--version", version]);

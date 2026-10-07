@@ -4,6 +4,63 @@ This toolkit helps turn **DataCite metadata**—information describing research 
 
 The toolkit targets DataCite Metadata Schema **4.7** and keeps the earlier 4.6 files for reference. Its current linked-data modelling revision is **4.7-r2**: a second way of representing DataCite 4.7 in RDF, not a new DataCite schema release.
 
+## Quick start
+
+You need Python 3.9 or later, Node.js 20 or later, and a copy of this repository (`git clone https://github.com/selgebali/datacite-metadata-toolkit.git`, then `cd datacite-metadata-toolkit`). Install the dependencies once, preferably inside a Python virtual environment:
+
+```bash
+python3 -m pip install -r rdf-build-scripts/requirements-mappings.txt
+```
+
+```bash
+npm install
+```
+
+Then check a DataCite record, turn it into linked data, and check the result. These commands use an example record that comes with the toolkit; replace the file name with your own record.
+
+```bash
+npm run --silent validate:json -- validation-and-conversion/examples/real-dataset-dryad.json
+```
+
+```bash
+npm run --silent convert:rdf -- validation-and-conversion/examples/real-dataset-dryad.json > record.ttl
+```
+
+```bash
+python3 -m pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl
+```
+
+Expected results: the first command prints `… valid`; the second writes `record.ttl` and prints nothing (or `warning:` lines for parts it had to leave out); the third prints `Conforms: True`.
+
+**When a check fails**, it names the place in the record and the rule. For example, `validate:json` prints `record.json invalid`, followed by:
+
+```text
+instancePath: '/data/attributes/contributors/0',
+message: "must have required property 'contributorType'"
+```
+
+`contributors/0` is the first contributor (counting starts at 0), and it needs a `contributorType`, such as `"contributorType": "DataCurator"`. A second entry, `must match "then" schema`, only says that the record as a whole failed, so ignore it. Fix the record and run the command again. Run the JSON check before converting: the converter leaves out keys it does not know, such as a misspelt `titel`, and the RDF check cannot see what is no longer there.
+
+### What the toolkit does
+
+| Task | Status |
+|---|---|
+| Check DataCite XML against the official 4.7 XSD | Works (`validate_xml.rb`, or `xmllint`) |
+| Convert DataCite XML to REST API JSON | Works (`convert.py`) |
+| Check REST API JSON against DataCite 4.7 | Works (`validate:json`) |
+| Convert REST API JSON to DataCite RDF, and check the RDF | Works (`convert:rdf`, SHACL shapes) |
+| Crosswalks to Schema.org, Dublin Core, DCAT and Wikidata | Documented mappings and conversion recipes; there is no converter that writes those formats |
+
+Each check covers a different layer:
+
+| Check | What it catches |
+|---|---|
+| XSD (XML) | The official DataCite rules for XML records |
+| JSON Schema (REST API JSON) | Missing required properties, unknown or misspelt keys, values outside the controlled lists, empty identifiers, out-of-range coordinates, too-short polygons |
+| SHACL shapes (RDF) | The structure of the RDF: one text per node, identifiers as text, creators and polygon points in order, controlled values from the DataCite vocabularies, datatypes |
+
+None of them checks that a date is a real date, that an identifier resolves, or that the description is true.
+
 ## Current state
 
 Titles, descriptions, dates, identifiers, and other repeatable elements are separate RDF nodes, so each value stays beside its own type, language, or other details. Creator order and polygon drawing order are recorded explicitly. Every DataCite term has a permanent address under `https://w3id.org/tib/datacite/`.
@@ -99,7 +156,7 @@ There are three kinds of artifact, and they behave differently:
 | Artifact | Example | Changes over time? | Use it when you want… |
 |---|---|---|---|
 | **Canonical term IRI** | `…/property/subject`, `…/vocab/resourceTypeGeneral/Dataset` | **Never** — stable forever | A durable identifier for a DataCite term |
-| **Frozen versioned distribution** | `dist/datacite-4.6.ttl`, `dist/datacite-4.7.ttl` | **Never** after publication (one documented exception: the 4.7-r2 corrections of 7 October 2026, made before r2 was announced) | The exact state of the vocabulary as of one release |
+| **Frozen versioned distribution** | `dist/datacite-4.6.ttl`, `dist/datacite-4.7.ttl` | **Never** after publication. Documented exceptions, 7 October 2026: the 4.7-r2 corrections (made before r2 was announced) and the removal of two invalid `_note` entries from the 4.7 context (no change in output); see [Version History](#version-history) | The exact state of the vocabulary as of one release |
 | **Moving "latest" distribution** | `dist/datacite.ttl` (`.jsonld`, `.rdf`) | Yes — always equals the newest release | Always-current vocabulary, from one stable URL |
 
 A separate pointer file, `dist/datacite-current.jsonld`, is a small machine-readable record that simply names which release is currently the default.
@@ -168,6 +225,7 @@ python3 -m pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl
 The converter reads a DataCite REST API record, or a bare `attributes` object, and writes Turtle:
 
 - **DOI:** the record's IRI is `https://doi.org/<doi>`. A DOI written as `https://doi.org/…` or `doi:…` is reduced to the bare DOI first.
+- **Unknown keys:** a key the context does not define, such as a misspelt `titel`, is left out with a warning. Check the record with the JSON Schema first to catch these.
 - **Empty identifiers:** an identifier entry without a value, such as an ORCID scheme with `"nameIdentifier": null` or an empty `affiliationIdentifier`, is left out together with its scheme. The converter prints a warning naming each one (for example `warning: $.creators[0].nameIdentifiers[0]: left out the entry because nameIdentifier has no value`) and converts the rest of the record.
 - **Value types:** identifier values (`nameIdentifier`, `affiliationIdentifier`, `publisherIdentifier`, `funderIdentifier`, ...) are always text, even when they look like web addresses, because many schemes are not web addresses. Fields that DataCite defines as URIs (`schemeUri`, `rightsUri`, `valueUri`, `awardUri`) are links. Coordinates are `xsd:float` numbers and `publicationYear` is an `xsd:gYear`, whether the record writes them as JSON numbers or as text.
 
@@ -296,7 +354,9 @@ Once published, both resolve at their `$id`, for example `https://w3id.org/tib/d
 - **4.7 additions:** `Poster` and `Presentation`, `RAiD` and `SWHID`, relation type `Other`, and `relationTypeInformation` on related identifiers and related items.
 - **REST API fields** that are not DataCite metadata (`url`, `state`, `viewCount`, `created`, ...) are accepted without checks. Null values are accepted for optional fields, as the REST API returns them.
 
-It was checked against 300 randomly chosen findable DOIs from the public REST API on 7 October 2026: it reported only real metadata problems, such as contributors without the required `contributorType`, and no false alarms.
+`npm run --silent check:live-sample -- --size 300` fetches randomly chosen findable DOIs from the public REST API and runs the JSON Schema, the converter and the SHACL shapes on each, printing the problems found with an example DOI for each kind. On 7 October 2026, a run over 300 DOIs flagged 18 records. Every flagged problem was checked against the DataCite 4.7 XSD and documentation, and each was a real problem in the record: contributors without a name, empty titles, empty related identifiers and name identifiers, the retired contributor type `Funder`, and a missing `resourceTypeGeneral`. The sample is random, so results differ from run to run, and one sample cannot prove there are no false alarms. If a record that follows the DataCite rules is rejected, please report the DOI.
+
+**Rules stricter than the DataCite XSD.** The schema rejects empty titles, creator names, subjects, dates and identifiers, which the XSD accepts but which carry no information. It also requires related-item titles, which the DataCite documentation makes mandatory but the XSD does not enforce. Each such field says so in its description in the schema.
 
 The schema checks structure and values, not meaning: it does not check that a date is a real date or that an identifier resolves. For linked data, use the JSON-LD context and the converter described above.
 
@@ -421,19 +481,17 @@ node rdf-build-scripts/apply-datacite-release-plan.js \
 | `validation-and-conversion/shapes/datacite-<version>.shacl.ttl` | SHACL shapes with the new terms; likewise a new file for a new version |
 | `reports/release-apply-4.7.md` | Summary of what was applied |
 
-### Manual snapshot (without a plan)
+### Published releases are frozen
 
-To rebuild the manifest and distribution for an existing version — for example after manually editing vocab files — use the snapshot workflow directly:
+Once a version is published, its manifest, context and distribution files must not change: other systems rely on them. The scripts protect them:
 
-**Via GitHub Actions:** Run **Build Versioned Snapshot** with `version` (e.g. `4.6`) and an optional `release_date`.
+- `release-snapshot.js` refuses a version that already has distribution files. It is for new versions only.
+- `build-distribution.js` refuses to rebuild a published version other than the current one, because it reads the *current* term files and would give the old release the current definitions.
+- `npm run check:frozen-releases` (also run in CI) compares the files of every earlier version with the checksums in `rdf-build-scripts/frozen-releases.json` and fails if any changed.
 
-**Locally:**
+To correct the **current** version, edit its source files and run `node rdf-build-scripts/build-distribution.js --version <current>`, then rebuild the production namespace. When a new version becomes current, record the one it replaces with `python3 rdf-build-scripts/check-frozen-releases.py --record <previous version>`. Both scripts accept `--rebuild-frozen` for a deliberate, documented exception.
 
-```bash
-node rdf-build-scripts/release-snapshot.js --version 4.6
-```
-
-This runs: `manifest-sync --write --validate` → `build-distribution` → `update-current-pointers` → `generate-index-pages` → `update-root-index` → `build-json-schema.py` → `build-shapes.py`. The last two carry new vocabulary terms into the JSON Schema and the SHACL shapes.
+**What a snapshot runs:** `manifest-sync --write --validate` → `build-distribution` → `update-current-pointers` → `generate-index-pages` → `update-root-index` → `build-json-schema.py` → `build-shapes.py`. The last two carry new vocabulary terms into the JSON Schema and the SHACL shapes of the new version.
 
 ### Individual script reference
 
@@ -488,6 +546,7 @@ Corrections made on 7 October 2026, before the revision was announced. They brin
 - Coordinates are typed `xsd:float` (as in the DataCite XSD) and `publicationYear` `xsd:gYear`. Before, they were numbers or text depending on how the record wrote them.
 - The OWL files declare each property as `owl:DatatypeProperty` (text and numbers) or `owl:ObjectProperty` (nodes and links). Before, every property was declared an object property, so text and numbers appeared on object properties, which OWL 2 DL does not allow and which OWL reasoners therefore reject.
 - The SHACL shapes check every controlled value against the full list of its vocabulary's terms, and check the identifier, coordinate and year datatypes.
+- Two explanatory `_note` entries were removed from the JSON-LD context. JSON-LD 1.1 does not allow them inside term definitions, so standards-compliant processors (PyLD, jsonld.js) rejected the whole context. The same two entries were also removed from the frozen 4.7 context, `context/fullcontext-4.7.jsonld`. These removals change no RDF output.
 
 ### DataCite 4.7
 
@@ -555,4 +614,5 @@ The `subject` sub-property **`classificationCode`**, for subject schemes such as
 
 ## License
 
-The toolkit code is licensed under Apache-2.0 (see `package.json`). The vocabulary, distributions and mapping sets are published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), as stated in the `LICENSE` file and in each mapping set's header.
+- **Code** (scripts, tests, build tooling): Apache License 2.0, in [`LICENSE-CODE`](LICENSE-CODE).
+- **Vocabulary, distributions, schemas, shapes and mapping sets:** Creative Commons Attribution 4.0 International, in [`LICENSE`](LICENSE). Each mapping set also names its licence in its header.

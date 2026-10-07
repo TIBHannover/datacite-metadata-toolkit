@@ -43,7 +43,7 @@ dcsh:ValueIsText
 # Text that DataCite lets carry a language: plain or language-tagged string.
 dcsh:TaggableText
     a sh:NodeShape ;
-    sh:targetClass dcc:Title , dcc:Description , dcc:Subject , dcc:Publisher ;
+    sh:targetClass dcc:Title , dcc:Subject , dcc:Publisher ;
     sh:targetObjectsOf dcp:affiliation ;
     sh:property [
         sh:path rdf:value ;
@@ -52,14 +52,15 @@ dcsh:TaggableText
         sh:message "The element's text is required in rdf:value, as a string or language-tagged string." ;
     ] .
 
-# A rights statement may be given by URI alone, so its text is optional.
+# A rights statement may be given by URI alone, and the DataCite XSD allows a
+# description without text, so their text is optional.
 dcsh:RightsText
     a sh:NodeShape ;
-    sh:targetClass dcc:Rights ;
+    sh:targetClass dcc:Rights , dcc:Description ;
     sh:property [
         sh:path rdf:value ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
-        sh:message "A rights statement in rdf:value is a string or language-tagged string." ;
+        sh:message "Rights or description text in rdf:value is a string or language-tagged string." ;
     ] .
 
 # Dates and identifiers are plain text: no language tag, no web address.
@@ -273,6 +274,10 @@ dcsh:NameType a sh:NodeShape ; sh:targetClass dcc:Creator , dcc:Contributor ;
     sh:property [ sh:path dcp:nameType ; sh:maxCount 1 ] .
 dcsh:FunderIdentifierType a sh:NodeShape ; sh:targetClass dcc:FundingReference ;
     sh:property [ sh:path dcp:funderIdentifierType ; sh:maxCount 1 ] .
+# A funder identifier needs its type, as in the DataCite XSD.
+dcsh:FunderIdentifierNeedsType a sh:NodeShape ; sh:targetSubjectsOf dcp:funderIdentifier ;
+    sh:property [ sh:path dcp:funderIdentifierType ; sh:minCount 1 ;
+        sh:message "A funderIdentifier needs its funderIdentifierType." ] .
 
 # ---------------------------------------------------------------------------
 # Datatypes: identifier values are text, even when they look like web

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://w3id.org/tib/datacite/schema-profiles/datacite-4.7.schema.json",
   "title": "DataCite Metadata Schema 4.7 – REST API JSON",
-  "description": "Checks a DataCite DOI record in REST API JSON against DataCite Metadata Schema 4.7: required properties, allowed controlled values and the shape of each property. Accepts either the attributes object or a full {\"data\": {\"attributes\": ...}} document. Unknown keys are reported, so misspelt property names are caught. Controlled lists are generated from the DataCite vocabularies by rdf-build-scripts/build-json-schema.py. For linked data, use the JSON-LD context at https://w3id.org/tib/datacite/context/fullcontext.jsonld.",
+  "description": "Checks a DataCite DOI record in REST API JSON against DataCite Metadata Schema 4.7: required properties, allowed controlled values and the shape of each property. Accepts either the attributes object or a full {\"data\": {\"attributes\": ...}} document. Unknown keys are reported, so misspelt property names are caught. A few rules are stricter than the DataCite XSD (no empty titles, creator names, subjects, dates or identifiers, and required related-item titles); each such field says so in its description. Controlled lists are generated from the DataCite vocabularies by rdf-build-scripts/build-json-schema.py. For linked data, use the JSON-LD context at https://w3id.org/tib/datacite/context/fullcontext.jsonld.",
   "if": {
     "type": "object",
     "required": [
@@ -103,7 +103,8 @@
       "properties": {
         "name": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "nameType": {
           "anyOf": [
@@ -217,7 +218,8 @@
       "properties": {
         "title": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "titleType": {
           "anyOf": [
@@ -295,7 +297,8 @@
       "properties": {
         "subject": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "subjectScheme": {
           "type": [
@@ -340,7 +343,8 @@
       "properties": {
         "date": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "dateType": {
           "$ref": "#/$defs/dateType"
@@ -364,7 +368,8 @@
       "properties": {
         "alternateIdentifier": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "alternateIdentifierType": {
           "type": "string",
@@ -401,7 +406,8 @@
       "properties": {
         "relatedIdentifier": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "relatedIdentifierType": {
           "$ref": "#/$defs/relatedIdentifierType"
@@ -500,8 +506,11 @@
       "description": "A description (DataCite property 17).",
       "properties": {
         "description": {
-          "type": "string",
-          "minLength": 1
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The description text. The DataCite XSD allows a description without text."
         },
         "descriptionType": {
           "$ref": "#/$defs/descriptionType"
@@ -515,7 +524,6 @@
         }
       },
       "required": [
-        "description",
         "descriptionType"
       ],
       "additionalProperties": false
@@ -525,30 +533,10 @@
       "description": "A point (latitude, longitude).",
       "properties": {
         "pointLatitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -90,
-              "maximum": 90
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/latitude"
         },
         "pointLongitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -180,
-              "maximum": 180
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/longitude"
         }
       },
       "required": [
@@ -562,56 +550,16 @@
       "description": "A bounding box.",
       "properties": {
         "westBoundLongitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -180,
-              "maximum": 180
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/longitude"
         },
         "eastBoundLongitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -180,
-              "maximum": 180
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/longitude"
         },
         "southBoundLatitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -90,
-              "maximum": 90
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/latitude"
         },
         "northBoundLatitude": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -90,
-              "maximum": 90
-            },
-            {
-              "type": "string",
-              "pattern": "^\\s*[+-]?(\\d+(\\.\\d*)?|\\.\\d+)\\s*$"
-            }
-          ]
+          "$ref": "#/$defs/latitude"
         }
       },
       "required": [
@@ -655,22 +603,14 @@
       "description": "A polygon. The REST API gives one polygon as a list of entries, or several as a list of such lists; XML-shaped JSON gives an object with a polygonPoint list.",
       "anyOf": [
         {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/polygonEntry"
-          },
-          "minItems": 1
+          "$ref": "#/$defs/polygonEntries"
         },
         {
           "type": "array",
+          "minItems": 1,
           "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/$defs/polygonEntry"
-            },
-            "minItems": 1
-          },
-          "minItems": 1
+            "$ref": "#/$defs/polygonEntries"
+          }
         },
         {
           "type": "object",
@@ -717,7 +657,7 @@
     },
     "fundingReference": {
       "type": "object",
-      "description": "Funding information (DataCite property 19).",
+      "description": "Funding information (DataCite property 19). A funderIdentifier needs its funderIdentifierType, as in the DataCite XSD.",
       "properties": {
         "funderName": {
           "type": "string",
@@ -767,15 +707,36 @@
       "required": [
         "funderName"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "funderIdentifier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "funderIdentifier"
+        ]
+      },
+      "then": {
+        "properties": {
+          "funderIdentifierType": {
+            "$ref": "#/$defs/funderIdentifierType"
+          }
+        },
+        "required": [
+          "funderIdentifierType"
+        ]
+      }
     },
     "relatedItemIdentifier": {
       "type": "object",
-      "description": "The identifier of a related item (DataCite property 20.1).",
+      "description": "The identifier of a related item (DataCite property 20.1). Its type is optional.",
       "properties": {
         "relatedItemIdentifier": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Toolkit rule: must not be empty, although the DataCite XSD accepts an empty value, because an empty value carries no information."
         },
         "relatedItemIdentifierType": {
           "$ref": "#/$defs/relatedIdentifierType"
@@ -800,14 +761,13 @@
         }
       },
       "required": [
-        "relatedItemIdentifier",
-        "relatedItemIdentifierType"
+        "relatedItemIdentifier"
       ],
       "additionalProperties": false
     },
     "relatedItem": {
       "type": "object",
-      "description": "A related item described in the record itself (DataCite property 20). relationTypeInformation is new in 4.7.",
+      "description": "A related item described in the record itself (DataCite property 20). relationTypeInformation is new in 4.7. titles is required because the DataCite documentation makes the related item's title mandatory (property 20.3, 1-n); the DataCite XSD does not enforce this.",
       "properties": {
         "relatedItemType": {
           "$ref": "#/$defs/resourceTypeGeneral"
@@ -1402,6 +1362,60 @@
         "types"
       ],
       "additionalProperties": false
+    },
+    "latitude": {
+      "description": "A latitude from -90 to 90, as a number or as text.",
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        {
+          "type": "string",
+          "pattern": "^\\s*[+-]?(90(\\.0*)?|[1-8]?[0-9](\\.[0-9]*)?|\\.[0-9]+)\\s*$"
+        }
+      ]
+    },
+    "longitude": {
+      "description": "A longitude from -180 to 180, as a number or as text.",
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "type": "string",
+          "pattern": "^\\s*[+-]?(180(\\.0*)?|(1[0-7][0-9]|[1-9]?[0-9])(\\.[0-9]*)?|\\.[0-9]+)\\s*$"
+        }
+      ]
+    },
+    "polygonEntries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/polygonEntry"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "required": [
+              "polygonPoint"
+            ]
+          },
+          "minContains": 4
+        },
+        {
+          "contains": {
+            "required": [
+              "inPolygonPoint"
+            ]
+          },
+          "minContains": 0,
+          "maxContains": 1
+        }
+      ],
+      "description": "One polygon in REST API form: at least four polygonPoint entries (the first and last the same) and at most one inPolygonPoint."
     }
   }
 }

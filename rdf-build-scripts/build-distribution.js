@@ -11,7 +11,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const { resolveManifestPath, resolveVocabRoot } = require("./lib/versioning");
+const { isPublishedVersion, resolveCurrentVersion, resolveManifestPath, resolveVocabRoot } = require("./lib/versioning");
 
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
@@ -377,6 +377,7 @@ function main() {
         "",
         "  --version <x.y>     Read rdf-vocabulary-staging/manifest/datacite-<x.y>.json",
         "  --manifest <path>   Read an explicit manifest file path",
+        "  --rebuild-frozen    Allow rebuilding a published version other than the current one",
       ].join("\n"),
     );
     process.exit(0);
@@ -391,6 +392,16 @@ function main() {
 
   const manifest = readJson(manifestPath);
   const version = manifest.version;
+  // Distributions are built from the current term files, so rebuilding an earlier
+  // published version would silently give it the current definitions.
+  if (version !== resolveCurrentVersion(vocabRoot) && isPublishedVersion(vocabRoot, version)
+      && !argv.includes("--rebuild-frozen")) {
+    die(
+      `datacite-${version} is a published, frozen release and is not the current version; ` +
+        "rebuilding it would replace its definitions with the current ones. " +
+        "Pass --rebuild-frozen only if that is intended, and document the change.",
+    );
+  }
   const distDir = path.join(vocabRoot, "dist");
   const jsonldPath = path.join(distDir, `datacite-${version}.jsonld`);
   const ttlPath = path.join(distDir, `datacite-${version}.ttl`);
