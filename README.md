@@ -49,7 +49,7 @@ The folders separate editable sources, conversion tools, generated output, and d
 
 ## Namespace and resolvable IRIs
 
-The staging namespace is rooted at `https://schema.stage.datacite.org/linked-data/`. Every file in `rdf-vocabulary-staging/` and `validation-and-conversion/schemas/schema-profiles/` declares an `$id` (JSON Schema) or `@id` (JSON-LD) whose URL path mirrors its location on disk, so a file's canonical IRI is predictable from its folder:
+The staging namespace is rooted at `https://w3id.org/tib/datacite/`. Every file in `rdf-vocabulary-staging/` and `validation-and-conversion/schemas/schema-profiles/` declares an `$id` (JSON Schema) or `@id` (JSON-LD) whose URL path mirrors its location on disk, so a file's canonical IRI is predictable from its folder:
 
 | Resource | Canonical IRI |
 |---|---|
@@ -150,7 +150,7 @@ Individual term files follow a predictable structure:
 
 ```json
 {
-  "@context": "https://schema.stage.datacite.org/linked-data/context/fullcontext.jsonld",
+  "@context": "https://w3id.org/tib/datacite/context/fullcontext.jsonld",
   "@id": "https://doi.org/10.1234/example",
   "titles": [{ "title": "Example title", "titleType": "Subtitle" }],
   "creators": [{ "name": "Smith, Jane", "nameType": "Personal" }]
@@ -198,14 +198,14 @@ npm run build:production-namespace
 # Output is written to production-namespace/
 ```
 
-The default command rewrites staging IRIs from `https://schema.stage.datacite.org/linked-data/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
+The default command rewrites staging IRIs from `https://w3id.org/tib/datacite/` to the canonical namespace `https://w3id.org/tib/datacite/`, prepares generated HTML links for the GitHub Pages project path `/datacite`, and writes a production-specific README into the generated bundle. It also writes `CHECKSUMS.sha256` and `manifest/bundle-integrity.json` so the file count and bundle checksum can be reviewed. The generated bundle is committed in this repository first so it can be reviewed and then synced to `TIBHannover/datacite-metadata-toolkit`; publication to `TIBHannover/datacite` happens from that TIB fork.
 
 The production bundle intentionally does not own publication-root files such as the root `README.md`, `.nojekyll`, `LICENSE`, or `index.html`; those belong to `TIBHannover/datacite`.
 
 To override the defaults:
 
 ```bash
-SOURCE_NAMESPACE="https://schema.stage.datacite.org/linked-data/" \
+SOURCE_NAMESPACE="https://w3id.org/tib/datacite/" \
 CANONICAL_NAMESPACE="https://w3id.org/tib/datacite/" \
 PAGES_BASE_PATH="/datacite" \
 PUBLICATION_BASE_URL="https://tibhannover.github.io/datacite/" \
@@ -215,7 +215,7 @@ bash rdf-build-scripts/generate-production-namespace.sh
 
 ### 7. Validate against a JSON Schema profile
 
-Once deployed, each profile is fetchable at its `$id` URL — e.g. `https://schema.stage.datacite.org/linked-data/schema-profiles/integrated.json` — so validators can resolve `$ref`s remotely. You can also validate against a local copy:
+Once deployed, each profile is fetchable at its `$id` URL — e.g. `https://w3id.org/tib/datacite/schema-profiles/integrated.json` — so validators can resolve `$ref`s remotely. You can also validate against a local copy:
 
 ```bash
 npx ajv-cli validate \
@@ -503,7 +503,7 @@ Adds or updates these controlled values, all represented in the vocabulary files
 
 **JSON Schema profile vs JSON-LD context** — The schema profiles (`validation-and-conversion/schemas/schema-profiles/`) check the *structure* of a JSON record (required fields, allowed values, data types). The JSON-LD context (`rdf-vocabulary-staging/context/fullcontext.jsonld`) gives those fields *semantic meaning* as linked data. Both can be applied to the same JSON document.
 
-**Staging vs production namespace** — Source vocabulary files use the staging host `https://schema.stage.datacite.org/linked-data/`. The TIB/W3ID production namespace (`https://w3id.org/tib/datacite/`) is generated separately via `generate-production-namespace.sh` into `production-namespace/`.
+**Staging vs production namespace** — Source vocabulary files use the staging host `https://w3id.org/tib/datacite/`. The TIB/W3ID production namespace (`https://w3id.org/tib/datacite/`) is generated separately via `generate-production-namespace.sh` into `production-namespace/`.
 
 ---
 

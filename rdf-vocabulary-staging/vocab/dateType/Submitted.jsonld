@@ -1,11 +1,11 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Submitted",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Submitted",
   "type": "Concept",
   "prefLabel": "Submitted",
   "notation": "Submitted",
   "definition": "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate."
 }

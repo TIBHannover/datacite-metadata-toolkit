@@ -2,16 +2,16 @@
   "@context": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "schema": "https://schema.stage.datacite.org/linked-data/",
-    "datacite": "https://schema.stage.datacite.org/linked-data/",
+    "schema": "https://w3id.org/tib/datacite/",
+    "datacite": "https://w3id.org/tib/datacite/",
     "skos": "http://www.w3.org/2004/02/skos/core#"
   },
-  "@id": "https://schema.stage.datacite.org/linked-data/property/geoLocation",
+  "@id": "https://w3id.org/tib/datacite/property/geoLocation",
   "@type": "rdf:Property",
   "rdfs:label": "geoLocation",
   "rdfs:comment": "Spatial region or named place where the data was gathered or about which the data is focused.",
   "rdfs:range": {
-    "@id": "https://schema.stage.datacite.org/linked-data/class/GeoLocation"
+    "@id": "https://w3id.org/tib/datacite/class/GeoLocation"
   },
   "skos:scopeNote": "In RDF, this property links the resource to a GeoLocation node, which groups the element's sub-properties."
 }

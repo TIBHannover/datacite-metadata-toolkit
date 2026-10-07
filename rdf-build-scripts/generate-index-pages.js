@@ -6,7 +6,7 @@ const { compareVersions, resolveCurrentVersion, resolveVocabRoot } = require("./
 
 const projectRoot = process.cwd();
 const root = resolveVocabRoot(projectRoot);
-const basePath = process.env.PAGES_BASE_PATH || "/linked-data";
+const basePath = process.env.PAGES_BASE_PATH || "/datacite";
 const currentVersion = resolveCurrentVersion(root);
 const manifestFile = path.join(root, "manifest", `datacite-${currentVersion}.json`);
 

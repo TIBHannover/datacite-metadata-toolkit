@@ -1,11 +1,11 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Coverage",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Coverage",
   "type": "Concept",
   "prefLabel": "Coverage",
   "notation": "Coverage",
   "definition": "The date or date range that the resource content applies to, describes, or covers.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected."
 }

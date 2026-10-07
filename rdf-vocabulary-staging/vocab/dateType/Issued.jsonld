@@ -1,10 +1,10 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Issued",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Issued",
   "type": "Concept",
   "prefLabel": "Issued",
   "notation": "Issued",
   "definition": "The date that the resource is published or distributed, e.g., to a data centre.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType"
 }

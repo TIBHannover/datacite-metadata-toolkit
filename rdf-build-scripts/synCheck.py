@@ -26,7 +26,7 @@ DEFAULT_PROFILE_PATH = os.path.join(
     ROOT, "validation-and-conversion", "schemas", "schema-profiles", "datacite4.6-profile.json"
 )
 VOCAB_DIR = os.path.join(ROOT, "rdf-vocabulary-staging", "vocab")
-EXPECTED_BASE = "https://schema.stage.datacite.org/linked-data/vocab/"
+EXPECTED_BASE = "https://w3id.org/tib/datacite/vocab/"
 
 ALIAS_FRAGMENTS = {"CrossrefFunderID": "Crossref Funder ID"}
 
