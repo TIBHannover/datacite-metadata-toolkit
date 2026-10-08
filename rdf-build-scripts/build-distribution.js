@@ -11,7 +11,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const { resolveManifestPath, resolveVocabRoot } = require("./lib/versioning");
+const { isPublishedVersion, resolveCurrentVersion, resolveManifestPath, resolveVocabRoot } = require("./lib/versioning");
 
 const projectRoot = process.cwd();
 const vocabRoot = resolveVocabRoot(projectRoot);
@@ -281,21 +281,32 @@ const OWL_ANNOTATION_PREDICATES = [
  * Project a built distribution graph into OWL-friendly form.
  *
  *   rdfs:Class      -> owl:Class
- *   rdf:Property    -> owl:ObjectProperty   (best effort; the source has no
- *                                            domain/range info to drive a
- *                                            stricter Object/Datatype split)
+ *   rdf:Property    -> owl:DatatypeProperty when its values are text or
+ *                      numbers, owl:ObjectProperty when they are nodes or IRIs
+ *                      (listed in rdf-build-scripts/property-value-kinds.json)
  *   skos:Concept    -> owl:NamedIndividual + skos:Concept
  *   skos:ConceptScheme -> owl:NamedIndividual + skos:ConceptScheme
  *
  * Every annotation predicate used in the dist is also explicitly declared
  * as owl:AnnotationProperty at the top of the graph so the file imports
- * cleanly into Protégé and other OWL tooling.
+ * cleanly into Protégé and other OWL tooling. schema:position, which DataCite
+ * RDF uses for creator and polygon-point order, is declared as a datatype
+ * property for the same reason.
  */
+function propertyKind(id) {
+  const kinds = readJson(path.join(__dirname, "property-value-kinds.json"));
+  const name = String(id).split("/").pop();
+  if (kinds.text.includes(name)) return "owl:DatatypeProperty";
+  if (kinds.resource.includes(name)) return "owl:ObjectProperty";
+  die(`Property ${id} is not listed in rdf-build-scripts/property-value-kinds.json`);
+}
+
 function projectGraphToOwl(distribution) {
   const annotationNodes = OWL_ANNOTATION_PREDICATES.map((p) => ({
     id: p,
     type: "owl:AnnotationProperty",
   }));
+  annotationNodes.push({ id: "https://schema.org/position", type: "owl:DatatypeProperty" });
 
   const transformed = distribution["@graph"].map((node) => {
     const clone = { ...node };
@@ -306,7 +317,7 @@ function projectGraphToOwl(distribution) {
       if (t === "rdfs:Class") {
         projected.push("owl:Class");
       } else if (t === "rdf:Property") {
-        projected.push("owl:ObjectProperty");
+        projected.push(propertyKind(clone.id));
       } else if (t === "skos:Concept" || t === "Concept") {
         projected.push("owl:NamedIndividual");
         projected.push(t);
@@ -366,6 +377,7 @@ function main() {
         "",
         "  --version <x.y>     Read rdf-vocabulary-staging/manifest/datacite-<x.y>.json",
         "  --manifest <path>   Read an explicit manifest file path",
+        "  --rebuild-frozen    Allow rebuilding a published version other than the current one",
       ].join("\n"),
     );
     process.exit(0);
@@ -380,6 +392,16 @@ function main() {
 
   const manifest = readJson(manifestPath);
   const version = manifest.version;
+  // Distributions are built from the current term files, so rebuilding an earlier
+  // published version would silently give it the current definitions.
+  if (version !== resolveCurrentVersion(vocabRoot) && isPublishedVersion(vocabRoot, version)
+      && !argv.includes("--rebuild-frozen")) {
+    die(
+      `datacite-${version} is a published, frozen release and is not the current version; ` +
+        "rebuilding it would replace its definitions with the current ones. " +
+        "Pass --rebuild-frozen only if that is intended, and document the change.",
+    );
+  }
   const distDir = path.join(vocabRoot, "dist");
   const jsonldPath = path.join(distDir, `datacite-${version}.jsonld`);
   const ttlPath = path.join(distDir, `datacite-${version}.ttl`);

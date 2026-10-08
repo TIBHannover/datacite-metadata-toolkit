@@ -1,10 +1,10 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/contributorType/RightsHolder",
+  "id": "https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder",
   "type": "Concept",
   "prefLabel": "RightsHolder",
   "notation": "RightsHolder",
   "definition": "Person or institution owning or managing property rights, including intellectual property rights over the resource.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/contributorType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/contributorType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/contributorType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/contributorType"
 }

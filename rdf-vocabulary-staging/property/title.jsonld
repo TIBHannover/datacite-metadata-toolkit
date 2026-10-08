@@ -2,16 +2,15 @@
   "@context": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "schema": "https://schema.stage.datacite.org/linked-data/",
-    "datacite": "https://schema.stage.datacite.org/linked-data/",
+    "datacite": "https://w3id.org/tib/datacite/",
     "skos": "http://www.w3.org/2004/02/skos/core#"
   },
-  "@id": "https://schema.stage.datacite.org/linked-data/property/title",
+  "@id": "https://w3id.org/tib/datacite/property/title",
   "@type": "rdf:Property",
   "rdfs:label": "title",
   "rdfs:comment": "A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.",
   "rdfs:range": {
-    "@id": "https://schema.stage.datacite.org/linked-data/class/Title"
+    "@id": "https://w3id.org/tib/datacite/class/Title"
   },
   "skos:scopeNote": "In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType."
 }

@@ -5,7 +5,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "datacite": "https://schema.stage.datacite.org/linked-data/schema-profiles/titleTypes.jsonld#"
+    "datacite": "https://w3id.org/tib/datacite/schema-profiles/titleTypes.jsonld#"
   },
   "@graph": [
     {

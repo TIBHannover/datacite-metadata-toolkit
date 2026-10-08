@@ -45,6 +45,7 @@
           "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
+          "lang": "en",
           "nameIdentifiers": [
             {
               "nameIdentifier": "https://ror.org/04wxnsj81",
@@ -108,8 +109,8 @@
       ],
       "contributors": [
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -130,8 +131,8 @@
           "contributorType": "ContactPerson"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -152,8 +153,8 @@
           "contributorType": "DataCollector"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -174,8 +175,8 @@
           "contributorType": "DataCurator"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -196,8 +197,8 @@
           "contributorType": "DataManager"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleOrganization",
+          "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
           "nameIdentifiers": [
@@ -210,8 +211,8 @@
           "contributorType": "Distributor"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -232,8 +233,8 @@
           "contributorType": "Editor"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleOrganization",
+          "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
           "nameIdentifiers": [
@@ -246,8 +247,8 @@
           "contributorType": "HostingInstitution"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -268,8 +269,8 @@
           "contributorType": "Producer"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -290,8 +291,8 @@
           "contributorType": "ProjectLeader"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -312,8 +313,8 @@
           "contributorType": "ProjectManager"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -334,8 +335,8 @@
           "contributorType": "ProjectMember"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "DataCite",
+          "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
           "nameIdentifiers": [
@@ -348,15 +349,15 @@
           "contributorType": "RegistrationAgency"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "International DOI Foundation",
+          "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
           "contributorType": "RegistrationAuthority"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -377,8 +378,8 @@
           "contributorType": "RelatedPerson"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -399,7 +400,7 @@
           "contributorType": "Researcher"
         },
         {
-          "name": null,
+          "name": "ExampleContributor",
           "nameType": null,
           "givenName": null,
           "familyName": null,
@@ -414,8 +415,8 @@
           "contributorType": "ResearchGroup"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -436,7 +437,7 @@
           "contributorType": "RightsHolder"
         },
         {
-          "name": null,
+          "name": "ExampleContributor",
           "nameType": null,
           "givenName": null,
           "familyName": null,
@@ -451,8 +452,8 @@
           "contributorType": "Sponsor"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -473,8 +474,8 @@
           "contributorType": "Supervisor"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -495,8 +496,8 @@
           "contributorType": "Translator"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleOrganization",
+          "nameType": "Organizational",
           "givenName": null,
           "familyName": null,
           "nameIdentifiers": [
@@ -509,8 +510,8 @@
           "contributorType": "WorkPackageLeader"
         },
         {
-          "name": null,
-          "nameType": null,
+          "name": "ExampleFamilyName, ExampleGivenName",
+          "nameType": "Personal",
           "givenName": "ExampleGivenName",
           "familyName": "ExampleFamilyName",
           "nameIdentifiers": [
@@ -857,8 +858,8 @@
           "edition": "Example RelatedItem Edition",
           "contributors": [
             {
-              "name": null,
-              "nameType": null,
+              "name": "ExampleFamilyName, ExampleGivenName",
+              "nameType": "Personal",
               "givenName": "ExampleGivenName",
               "familyName": "ExampleFamilyName",
               "contributorType": "Other"

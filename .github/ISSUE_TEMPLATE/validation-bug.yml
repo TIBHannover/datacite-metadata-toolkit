@@ -1,5 +1,5 @@
 name: Validation / Schema bug
-description: Something is wrong with the profile, rules, enums, context, or validator.
+description: Something is wrong with the JSON Schema, SHACL shapes, vocabulary, context, converters or validators.
 title: "[BUG] <short summary>"
 labels: [bug, validation]
 assignees: []
@@ -9,13 +9,13 @@ body:
     attributes:
       label: Affected area(s)
       options:
-        - label: datacite4.6-profile.json
-        - label: rules.json
-        - label: enum_lists/*
-        - label: main_context.jsonld
-        - label: scripts/make_datacite_context.py
-        - label: validate.js / validation pipeline
-        - label: skos-mappings/*
+        - label: JSON Schema (datacite.schema.json)
+        - label: SHACL shapes (datacite-4.7-r2.shacl.ttl)
+        - label: Vocabulary terms (rdf-vocabulary-staging/vocab/*)
+        - label: JSON-LD context (fullcontext.jsonld)
+        - label: JSON-to-RDF converter (datacite_to_rdf.py)
+        - label: XML-to-JSON converter (convert.py) or XML validation (validate_xml.rb)
+        - label: Mappings (mappings/*)
   - type: input
     id: ref
     attributes:
@@ -35,7 +35,7 @@ body:
       label: Reproduction steps
       description: CLI steps or actions to reproduce.
       placeholder: |
-        1. Run `node validate.js datacite_example_filledin.json`
+        1. Run `npm run --silent validate:json -- record.json`
         2. See error ...
     validations:
       required: true

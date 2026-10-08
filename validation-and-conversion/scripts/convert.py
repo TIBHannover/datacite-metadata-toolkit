@@ -32,7 +32,7 @@ but can write to a file when the ``--output`` option is used.
 
 Example usage:
 
-    python xml_to_datacite_json.py datacite-example-full-v4.xml --output record.json
+    python3 validation-and-conversion/scripts/convert.py datacite-example-full-v4.xml --output record.json
 
 """
 
@@ -49,6 +49,7 @@ import xml.etree.ElementTree as ET
 # element names with this namespace.  Register it globally to ease lookups.
 DC_NS = "http://datacite.org/schema/kernel-4"
 NSMAP = {"d": DC_NS}
+XML_LANG = "{http://www.w3.org/XML/1998/namespace}lang"
 
 
 def get_text(element: Optional[ET.Element]) -> Optional[str]:
@@ -78,11 +79,14 @@ def convert_affiliation(elem: ET.Element) -> Dict[str, Any]:
 
 
 def convert_creator(elem: ET.Element) -> Dict[str, Any]:
-    """Convert a <creator> element into a JSON object."""
-    # Creator name may appear as <creatorName> with nameType attribute
+    """Convert a <creator> or <contributor> element into a JSON object."""
+    # The name is <creatorName> or <contributorName>, with a nameType attribute
     creator_name_elem = elem.find("d:creatorName", NSMAP)
+    if creator_name_elem is None:
+        creator_name_elem = elem.find("d:contributorName", NSMAP)
     name = get_text(creator_name_elem)
     name_type = creator_name_elem.attrib.get("nameType") if creator_name_elem is not None else None
+    name_lang = creator_name_elem.attrib.get(XML_LANG) if creator_name_elem is not None else None
     given = get_text(elem.find("d:givenName", NSMAP))
     family = get_text(elem.find("d:familyName", NSMAP))
     # Name identifiers
@@ -110,6 +114,8 @@ def convert_creator(elem: ET.Element) -> Dict[str, Any]:
         "givenName": given,
         "familyName": family,
     }
+    if name_lang:
+        creator_obj["lang"] = name_lang
     if name_ids:
         creator_obj["nameIdentifiers"] = name_ids
     if aff_output:
@@ -130,7 +136,7 @@ def convert_title(elem: ET.Element) -> Dict[str, Any]:
     """Convert a <title> element into a JSON object."""
     obj: Dict[str, Any] = {"title": get_text(elem)}
     # xml:lang is stored with namespace xlm; in ElementTree it's an attribute with full name
-    lang = elem.attrib.get("{http://www.w3.org/XML/1998/namespace}lang")
+    lang = elem.attrib.get(XML_LANG)
     if lang:
         obj["lang"] = lang
     title_type = elem.attrib.get("titleType")
@@ -142,7 +148,7 @@ def convert_title(elem: ET.Element) -> Dict[str, Any]:
 def convert_subject(elem: ET.Element) -> Dict[str, Any]:
     """Convert a <subject> element into a JSON object."""
     obj: Dict[str, Any] = {"subject": get_text(elem)}
-    lang = elem.attrib.get("{http://www.w3.org/XML/1998/namespace}lang")
+    lang = elem.attrib.get(XML_LANG)
     if lang:
         obj["lang"] = lang
     # Additional attributes
@@ -191,6 +197,7 @@ def convert_related_identifier(elem: ET.Element) -> Dict[str, Any]:
         ("schemeURI", "schemeUri"),
         ("schemeType", "schemeType"),
         ("resourceTypeGeneral", "resourceTypeGeneral"),
+        ("relationTypeInformation", "relationTypeInformation"),
     ]:
         val = elem.attrib.get(xml_attr)
         if val is not None:
@@ -205,6 +212,7 @@ def convert_related_item(elem: ET.Element) -> Dict[str, Any]:
     for xml_attr, json_key in [
         ("relatedItemType", "relatedItemType"),
         ("relationType", "relationType"),
+        ("relationTypeInformation", "relationTypeInformation"),
     ]:
         val = elem.attrib.get(xml_attr)
         if val is not None:
@@ -294,6 +302,16 @@ def resource_type_mappings(resource_type_general: str) -> Dict[str, str]:
     return mappings.get(general, {"ris": "GEN", "bibtex": "misc", "citeproc": "other", "schemaOrg": "CreativeWork"})
 
 
+def convert_point(elem: ET.Element) -> Dict[str, Any]:
+    """Convert a point element (pointLatitude, pointLongitude) into a JSON object."""
+    point: Dict[str, Any] = {}
+    for tag in ("pointLatitude", "pointLongitude"):
+        val = get_text(elem.find(f"d:{tag}", NSMAP))
+        if val is not None:
+            point[tag] = val
+    return point
+
+
 def convert_geolocation(elem: ET.Element) -> Dict[str, Any]:
     """Convert a <geoLocation> element into a JSON object."""
     obj: Dict[str, Any] = {}
@@ -302,16 +320,8 @@ def convert_geolocation(elem: ET.Element) -> Dict[str, Any]:
         obj["geoLocationPlace"] = place
     # Point
     point_elem = elem.find("d:geoLocationPoint", NSMAP)
-    if point_elem is not None:
-        point_obj: Dict[str, Any] = {}
-        lat = get_text(point_elem.find("d:pointLatitude", NSMAP))
-        lon = get_text(point_elem.find("d:pointLongitude", NSMAP))
-        if lat is not None:
-            point_obj["pointLatitude"] = lat
-        if lon is not None:
-            point_obj["pointLongitude"] = lon
-        if point_obj:
-            obj["geoLocationPoint"] = point_obj
+    if point_elem is not None and convert_point(point_elem):
+        obj["geoLocationPoint"] = convert_point(point_elem)
     # Box
     box_elem = elem.find("d:geoLocationBox", NSMAP)
     if box_elem is not None:
@@ -327,22 +337,22 @@ def convert_geolocation(elem: ET.Element) -> Dict[str, Any]:
                 box_obj[tag[1]] = val
         if box_obj:
             obj["geoLocationBox"] = box_obj
-    # Polygon
-    polygon_elem = elem.find("d:geoLocationPolygon", NSMAP)
-    if polygon_elem is not None:
-        polygon_points = []
-        for p in polygon_elem.findall("d:polygonPoint", NSMAP):
-            pt_obj: Dict[str, Any] = {}
-            lat = get_text(p.find("d:pointLatitude", NSMAP))
-            lon = get_text(p.find("d:pointLongitude", NSMAP))
-            if lat is not None:
-                pt_obj["pointLatitude"] = lat
-            if lon is not None:
-                pt_obj["pointLongitude"] = lon
-            if pt_obj:
-                polygon_points.append({"polygonPoint": pt_obj})
-        if polygon_points:
-            obj["geoLocationPolygon"] = polygon_points
+    # Polygons: the REST API lists one polygon as [{"polygonPoint": ...}, ..., {"inPolygonPoint": ...}]
+    # and several as a list of such lists.
+    polygons = []
+    for polygon_elem in elem.findall("d:geoLocationPolygon", NSMAP):
+        entries = []
+        for tag in ("polygonPoint", "inPolygonPoint"):
+            for p in polygon_elem.findall(f"d:{tag}", NSMAP):
+                pt_obj = convert_point(p)
+                if pt_obj:
+                    entries.append({tag: pt_obj})
+        if entries:
+            polygons.append(entries)
+    if len(polygons) == 1:
+        obj["geoLocationPolygon"] = polygons[0]
+    elif polygons:
+        obj["geoLocationPolygon"] = polygons
     return obj
 
 
@@ -405,7 +415,7 @@ def build_json_from_xml(xml_str: str) -> Dict[str, Any]:
     publisher_elem = root.find("d:publisher", NSMAP)
     if publisher_elem is not None:
         publisher_obj: Dict[str, Any] = {"name": get_text(publisher_elem)}
-        lang = publisher_elem.attrib.get("{http://www.w3.org/XML/1998/namespace}lang")
+        lang = publisher_elem.attrib.get(XML_LANG)
         if lang:
             publisher_obj["lang"] = lang
         # Additional identifiers
@@ -522,7 +532,7 @@ def build_json_from_xml(xml_str: str) -> Dict[str, Any]:
     rights_objects: List[Dict[str, Any]] = []
     for r_elem in root.findall("d:rightsList/d:rights", NSMAP):
         r_obj: Dict[str, Any] = {"rights": get_text(r_elem)}
-        lang = r_elem.attrib.get("{http://www.w3.org/XML/1998/namespace}lang")
+        lang = r_elem.attrib.get(XML_LANG)
         if lang:
             r_obj["lang"] = lang
         if r_elem.attrib.get("rightsURI"):
@@ -540,7 +550,7 @@ def build_json_from_xml(xml_str: str) -> Dict[str, Any]:
     desc_objects: List[Dict[str, Any]] = []
     for d_elem in root.findall("d:descriptions/d:description", NSMAP):
         d_obj: Dict[str, Any] = {"description": get_text(d_elem)}
-        lang = d_elem.attrib.get("{http://www.w3.org/XML/1998/namespace}lang")
+        lang = d_elem.attrib.get(XML_LANG)
         if lang:
             d_obj["lang"] = lang
         desc_type = d_elem.attrib.get("descriptionType")

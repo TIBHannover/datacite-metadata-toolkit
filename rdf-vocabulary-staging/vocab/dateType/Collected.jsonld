@@ -1,11 +1,11 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Collected",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Collected",
   "type": "Concept",
   "prefLabel": "Collected",
   "notation": "Collected",
   "definition": "The date or date range in which the resource content was collected.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "To indicate precise or particular timeframes in which research was conducted."
 }

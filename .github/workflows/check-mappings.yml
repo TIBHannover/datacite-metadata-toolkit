@@ -5,14 +5,10 @@ on:
     paths:
       - "mappings/**"
       - "production-namespace/**"
-      - "rdf-build-scripts/*mapping*"
-      - "tests/mappings/**"
-      - "tests/conversion/**"
-      - "validation-and-conversion/scripts/datacite_to_rdf.py"
-      - "validation-and-conversion/examples/**"
-      - "validation-and-conversion/shapes/**"
-      - "rdf-vocabulary-staging/context/**"
-      - "validation-and-conversion/scripts/validate.js"
+      - "rdf-build-scripts/**"
+      - "rdf-vocabulary-staging/**"
+      - "tests/**"
+      - "validation-and-conversion/**"
       - "website/crosswalk-guide.html"
       - "package.json"
       - ".github/workflows/check-mappings.yml"
@@ -21,14 +17,10 @@ on:
     paths:
       - "mappings/**"
       - "production-namespace/**"
-      - "rdf-build-scripts/*mapping*"
-      - "tests/mappings/**"
-      - "tests/conversion/**"
-      - "validation-and-conversion/scripts/datacite_to_rdf.py"
-      - "validation-and-conversion/examples/**"
-      - "validation-and-conversion/shapes/**"
-      - "rdf-vocabulary-staging/context/**"
-      - "validation-and-conversion/scripts/validate.js"
+      - "rdf-build-scripts/**"
+      - "rdf-vocabulary-staging/**"
+      - "tests/**"
+      - "validation-and-conversion/**"
       - "website/crosswalk-guide.html"
       - "package.json"
       - ".github/workflows/check-mappings.yml"
@@ -54,8 +46,12 @@ jobs:
           npm install --ignore-scripts --no-package-lock
       - name: Regression tests
         run: npm run test:mappings
-      - name: JSON-to-RDF conversion tests
+      - name: Conversion, JSON Schema, SHACL and OWL tests
         run: npm run test:conversion
+      - name: Check generated JSON Schema lists and SHACL shapes match the vocabularies
+        run: |
+          npm run check:json-schema
+          npm run check:shapes
       - name: Validate sources, coverage, and generated exports
         run: npm run check:mappings
       - name: Validate official SSSOM schema and CURIE rules
