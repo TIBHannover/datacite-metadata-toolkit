@@ -2,17 +2,17 @@
   "@context": "./context.jsonld",
   "@graph": [
     {
-      "id": "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType",
+      "id": "https://w3id.org/tib/datacite/vocab/funderIdentifierType",
       "type": "ConceptScheme",
       "title": "DataCite funderIdentifierType",
       "identifier": "funderIdentifierType",
       "created": "2026-05-12",
       "hasTopConcept": [
-        "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/CrossrefFunderID",
-        "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/GRID",
-        "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/ISNI",
-        "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/ROR",
-        "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/Other"
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/GRID",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ISNI",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR",
+        "https://w3id.org/tib/datacite/vocab/funderIdentifierType/Other"
       ]
     }
   ]

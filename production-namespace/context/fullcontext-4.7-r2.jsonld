@@ -80,7 +80,7 @@
     },
     "affiliationIdentifier": {
       "@id": "property:affiliationIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "affiliationIdentifierScheme": {
       "@id": "property:affiliationIdentifierScheme",
@@ -116,13 +116,16 @@
     },
     "publisherIdentifier": {
       "@id": "property:publisherIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "publisherIdentifierScheme": {
       "@id": "property:publisherIdentifierScheme",
       "@type": "xsd:string"
     },
-    "publicationYear": "property:publicationYear",
+    "publicationYear": {
+      "@id": "property:publicationYear",
+      "@type": "xsd:gYear"
+    },
     "resourceType": {
       "@id": "property:resourceType",
       "@type": "xsd:string"
@@ -343,58 +346,28 @@
     "geoLocationPoint": "property:geoLocationPoint",
     "pointLatitude": {
       "@id": "property:pointLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "pointLongitude": {
       "@id": "property:pointLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "geoLocationBox": "property:geoLocationBox",
     "westBoundLongitude": {
       "@id": "property:westBoundLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "eastBoundLongitude": {
       "@id": "property:eastBoundLongitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "southBoundLatitude": {
       "@id": "property:southBoundLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "northBoundLatitude": {
       "@id": "property:northBoundLatitude",
-      "@context": {
-        "value": {
-          "@id": "rdf:value",
-          "@type": "xsd:float"
-        }
-      }
+      "@type": "xsd:float"
     },
     "geoLocationPolygon": "property:geoLocationPolygon",
     "polygonPoint": {
@@ -414,7 +387,7 @@
     },
     "funderIdentifier": {
       "@id": "property:funderIdentifier",
-      "@type": "@id"
+      "@type": "xsd:string"
     },
     "funderIdentifierType": {
       "@id": "property:funderIdentifierType",
@@ -446,8 +419,7 @@
       "@type": "@vocab",
       "@context": {
         "@vocab": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/"
-      },
-      "_note": "DataCite 4.7 spec property 20.a states: 'Use the controlled list values as stated in 10.a resourceTypeGeneral'. relatedItemType is NOT a parallel vocabulary; it reuses the resourceTypeGeneral concept IRIs. The contextual difference (type-of-related-item vs type-of-primary-resource) is carried by the predicate (property:relatedItemType vs property:resourceTypeGeneral), not by the object IRI."
+      }
     },
     "relatedItemIdentifier": {
       "@id": "property:relatedItemIdentifier",
@@ -462,8 +434,7 @@
       "@type": "@vocab",
       "@context": {
         "@vocab": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/"
-      },
-      "_note": "DataCite 4.7 spec property 20.1.a: relatedItemIdentifierType matches property 12.a relatedIdentifierType exactly. Concept IRIs are shared; the predicate (property:relatedItemIdentifierType vs property:relatedIdentifierType) carries the contextual semantics."
+      }
     },
     "volume": {
       "@id": "property:volume",

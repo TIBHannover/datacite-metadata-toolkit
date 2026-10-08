@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DataCite 4.6 / 4.7 — JSON‑LD Profile, Schema &amp; Crosswalks</title>
-  <meta name="description" content="DataCite 4.6 and 4.7 JSON Schema & JSON‑LD context with SKOS/JSKOS/SSSOM crosswalks. Beginner‑friendly docs, quick start, and links to the live files." />
+  <title>DataCite Metadata Toolkit</title>
+  <meta name="description" content="DataCite 4.7 linked-data vocabulary, JSON-LD context, JSON Schema, SHACL shapes and SKOS/JSKOS/SSSOM crosswalks, with a beginner-friendly quick start." />
   <style>
     :root{
       --bg: #0b0d10;
@@ -76,59 +76,51 @@
 <body>
   <header class="hero">
     <div class="wrap">
-      <h1>DataCite 4.6 / 4.7 — JSON‑LD Profile &amp; JSON Schema</h1>
+      <h1>DataCite Metadata Toolkit</h1>
       <p class="tagline">
-        Validate DataCite 4.6 and 4.7 payloads and publish them as linked data. This site hosts the live JSON Schema, the JSON‑LD <code>@context</code>, and SKOS / JSKOS / SSSOM crosswalks — with a quick start for beginners.
+        Check DataCite 4.7 records, turn them into linked data, and map them to Schema.org, Dublin Core, DCAT and Wikidata. Every DataCite term has a permanent address under <code>https://w3id.org/tib/datacite/</code>.
       </p>
       <div class="cta-row">
-        <a class="btn" href="https://schema.stage.datacite.org/linked-data/schema-profiles/integrated.json">Full Profile (JSON Schema + @context)</a>
-        <a class="btn" href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/SKOS_crosswalks.jsonld">Open SKOS_crosswalks</a>
-        <a class="btn" href="https://github.com/selgebali/datacite-metadata-toolkit#readme">README (Beginner’s Guide)</a>
+        <a class="btn" href="https://w3id.org/tib/datacite/">Browse the vocabulary</a>
+        <a class="btn" href="crosswalk-guide.html">Crosswalk Guide</a>
+        <a class="btn" href="https://github.com/selgebali/datacite-metadata-toolkit#readme">README</a>
       </div>
-      <span class="pill">Draft‑07 JSON Schema</span>
-      <span class="pill">JSON‑LD</span>
-      <span class="pill">SKOS / JSKOS</span>
+      <span class="pill">DataCite 4.7</span>
+      <span class="pill">Linked-data revision 4.7-r2</span>
+      <span class="pill">JSON Schema 2020-12</span>
+      <span class="pill">SHACL</span>
+      <span class="pill">SKOS / JSKOS / SSSOM</span>
     </div>
   </header>
 
   <main class="wrap">
-    <section id="whats-new">
-      <h2>What’s new in 4.7</h2>
-      <div class="grid">
-        <div class="card"><h3>Resource Types</h3><p><code>resourceTypeGeneral</code> adds <strong>Poster</strong>, <strong>Presentation</strong>.</p></div>
-        <div class="card"><h3>Related Identifier Types</h3><p><code>relatedIdentifierType</code> adds <strong>RAiD</strong>, <strong>SWHID</strong>.</p></div>
-        <div class="card"><h3>Relation Types</h3><p><code>relationType</code> adds <strong>Other</strong>.</p></div>
-        <div class="card"><h3>New Property</h3><p><code>relationTypeInformation</code> — additional information about the selected <code>relationType</code> (applies to <code>relatedIdentifier</code> and <code>relatedItem</code>).</p></div>
-      </div>
-    </section>
-
-    <section id="whats-new-46">
-      <h2>What’s new in 4.6</h2>
-      <div class="grid">
-        <div class="card"><h3>Resource Types</h3><p><code>resourceTypeGeneral</code> adds <strong>Project</strong>, <strong>Award</strong>.</p></div>
-        <div class="card"><h3>Identifier Types</h3><p><code>relatedIdentifierType</code> adds <strong>RRID</strong>, <strong>CSTR</strong>.</p></div>
-        <div class="card"><h3>People &amp; Relations</h3><p><code>contributorType</code> adds <strong>Translator</strong>; relation pair <strong>IsTranslationOf / HasTranslation</strong>.</p></div>
-        <div class="card"><h3>Dates</h3><p><code>dateType</code> adds <strong>Coverage</strong>.</p></div>
-      </div>
-    </section>
-
     <section id="files">
       <h2>Main files</h2>
       <div class="grid">
         <div class="card">
-          <h3>Profile (submit)</h3>
-          <p>Strict validator for client submissions. Bundles rules, controlled lists, and the JSON‑LD <code>@context</code>.</p>
-          <p><a href="https://schema.stage.datacite.org/linked-data/schema-profiles/datacite4.6-profile.json">datacite4.6-profile.json</a></p>
+          <h3>JSON-LD context</h3>
+          <p>Reads DataCite REST API JSON as linked data. Each title, description, date and identifier becomes its own node, with its text in <code>rdf:value</code>.</p>
+          <p><a href="https://w3id.org/tib/datacite/context/fullcontext.jsonld">context/fullcontext.jsonld</a></p>
         </div>
-        
         <div class="card">
-          <h3>SKOS / JSKOS / SSSOM Crosswalks</h3>
-          <p>New to crosswalks? Read the <a href="crosswalk-guide.html">DataCite Crosswalk Guide</a> to learn how to read and use the mappings.</p>
+          <h3>JSON Schema</h3>
+          <p>Checks a DataCite record in REST API JSON: required properties, allowed values and the shape of each property.</p>
+          <p><a href="https://tibhannover.github.io/datacite/schema-profiles/datacite.schema.json">schema-profiles/datacite.schema.json</a></p>
+        </div>
+        <div class="card">
+          <h3>SHACL shapes</h3>
+          <p>Check DataCite RDF: one text per node, identifiers as text, creators in order, and every controlled value a real DataCite term.</p>
+          <p><a href="https://tibhannover.github.io/datacite/shapes/datacite-4.7-r2.shacl.ttl">shapes/datacite-4.7-r2.shacl.ttl</a></p>
+        </div>
+        <div class="card">
+          <h3>Crosswalks</h3>
+          <p>New to crosswalks? Read the <a href="crosswalk-guide.html">DataCite Crosswalk Guide</a> first.</p>
           <ul>
-            <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/SKOS_crosswalks.jsonld">SKOS_crosswalks.jsonld</a></li>
-            <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/jskos-mappings.json">jskos-mappings.json</a></li>
             <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-schemaorg.sssom.tsv">datacite-schemaorg.sssom.tsv</a></li>
             <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-dcterms.sssom.tsv">datacite-dcterms.sssom.tsv</a></li>
+            <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-dcat.sssom.tsv">datacite-dcat.sssom.tsv</a></li>
+            <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/datacite-wikidata.sssom.tsv">datacite-wikidata.sssom.tsv</a></li>
+            <li><a href="https://github.com/selgebali/datacite-metadata-toolkit/blob/main/mappings/jskos-mappings.json">jskos-mappings.json</a> (for Cocoda)</li>
           </ul>
         </div>
       </div>
@@ -136,19 +128,25 @@
 
     <section id="quickstart">
       <h2>Quick start</h2>
+      <p>Run these from a copy of the <a href="https://github.com/selgebali/datacite-metadata-toolkit">toolkit repository</a>.</p>
       <div class="grid">
         <div class="card">
-          <h3>Validate a submission</h3>
-          <pre><code>pip install jsonschema</code></pre>
-          <pre><code>from jsonschema import Draft7Validator
-import json
-schema = json.load(open("validation-and-conversion/schemas/schema-profiles/datacite4.6-profile.json"))
-payload = json.load(open("example-submit.json"))
-Draft7Validator(schema).validate(payload)
-print("OK")</code></pre>
+          <h3>1. Install</h3>
+          <pre><code>pip install -r rdf-build-scripts/requirements-mappings.txt
+npm install</code></pre>
         </div>
         <div class="card">
-          <h3>Minimal submission JSON</h3>
+          <h3>2. Check a JSON record</h3>
+          <pre><code>npm run --silent validate:json -- record.json</code></pre>
+          <p>Accepts a full REST API response or just its <code>attributes</code>.</p>
+        </div>
+        <div class="card">
+          <h3>3. Convert it to RDF and check the RDF</h3>
+          <pre><code>npm run --silent convert:rdf -- record.json &gt; record.ttl
+python3 -m pyshacl -s validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl record.ttl</code></pre>
+        </div>
+        <div class="card">
+          <h3>Minimal record</h3>
           <pre><code>{
   "doi": "10.1234/example-doi",
   "creators": [{ "name": "Doe, Jane", "nameType": "Personal" }],
@@ -158,14 +156,17 @@ print("OK")</code></pre>
   "types": { "resourceTypeGeneral": "Dataset" }
 }</code></pre>
         </div>
-        <div class="card">
-          <h3>Validate a response</h3>
-          <pre><code>doc = json.load(open("validation-and-conversion/schemas/schema-profiles/integrated.json"))
-resp = json.load(open("validation-and-conversion/examples/datacite_example_filledin.json"))
-Draft7Validator(doc["responseProfile"]).validate(resp)</code></pre>
-        </div>
       </div>
-      <p class="kudos">Tip: The profile allows ORCID dashed or URI and enforces URI when scheme is ROR.</p>
+    </section>
+
+    <section id="whats-new">
+      <h2>What’s new in DataCite 4.7</h2>
+      <div class="grid">
+        <div class="card"><h3>Resource types</h3><p><code>resourceTypeGeneral</code> adds <strong>Poster</strong> and <strong>Presentation</strong>.</p></div>
+        <div class="card"><h3>Related identifier types</h3><p><code>relatedIdentifierType</code> adds <strong>RAiD</strong> and <strong>SWHID</strong>.</p></div>
+        <div class="card"><h3>Relation types</h3><p><code>relationType</code> adds <strong>Other</strong>.</p></div>
+        <div class="card"><h3>New property</h3><p><code>relationTypeInformation</code>: more information about the chosen <code>relationType</code>, on <code>relatedIdentifier</code> and <code>relatedItem</code>.</p></div>
+      </div>
     </section>
 
     <section id="learn">
@@ -174,16 +175,21 @@ Draft7Validator(doc["responseProfile"]).validate(resp)</code></pre>
         <div class="card">
           <h3>Glossary</h3>
           <ul>
-            <li><strong>JSON Schema</strong> — describes the shape of JSON.</li>
-            <li><strong>JSON‑LD</strong> — links JSON keys to IRIs via <code>@context</code>.</li>
-            <li><strong>SKOS / JSKOS</strong> — controlled vocabularies &amp; mappings.</li>
-            <li><strong>Crosswalk</strong> — alignment between DataCite, Schema.org, DCAT, etc.</li>
+            <li><strong>JSON Schema</strong>: describes the shape of a JSON document.</li>
+            <li><strong>JSON-LD</strong>: links JSON keys to web addresses (IRIs) through an <code>@context</code>.</li>
+            <li><strong>RDF</strong>: data as statements of subject, predicate and object.</li>
+            <li><strong>SHACL</strong>: a description of what valid RDF looks like, which a validator checks.</li>
+            <li><strong>SKOS / JSKOS / SSSOM</strong>: formats for controlled vocabularies and mappings.</li>
+            <li><strong>Crosswalk</strong>: a table of correspondences between DataCite and another vocabulary.</li>
           </ul>
         </div>
         <div class="card">
-          <h3>What maps to what?</h3>
-          <p><code>publisher</code> → <code>datacite:publisher</code> (and often <code>schema:publisher</code>)</p>
-          <p><code>doi</code> → <code>datacite:identifier</code> (IRI)</p>
+          <h3>What a record looks like in RDF</h3>
+          <p>A description becomes a node with its text and its type side by side:</p>
+          <pre><code>&lt;https://doi.org/10.1234/x&gt; dcp:description [
+  a dcc:Description ;
+  rdf:value "Example abstract"@en ;
+  dcp:descriptionType dcv:descriptionType/Abstract ] .</code></pre>
         </div>
       </div>
     </section>
@@ -191,11 +197,12 @@ Draft7Validator(doc["responseProfile"]).validate(resp)</code></pre>
     <section id="links">
       <h2>Authoritative docs</h2>
       <ul>
-        <li><a href="https://schema.datacite.org/meta/kernel-4.6/">DataCite Metadata Schema 4.6</a></li>
-        <li><a href="https://support.datacite.org/docs/datacite-metadata-schema-46-release-notes">DataCite 4.6 Release Notes</a></li>
+        <li><a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/">DataCite Metadata Schema 4.7</a></li>
+        <li><a href="https://schema.datacite.org/meta/kernel-4.7/">DataCite Metadata Schema 4.7 XSD</a></li>
         <li><a href="https://support.datacite.org/docs/api">DataCite REST API</a></li>
         <li><a href="https://json-schema.org/">JSON Schema</a></li>
-        <li><a href="https://json-ld.org/">JSON‑LD</a></li>
+        <li><a href="https://json-ld.org/">JSON-LD</a></li>
+        <li><a href="https://www.w3.org/TR/shacl/">SHACL</a></li>
         <li><a href="https://www.w3.org/TR/skos-primer/">SKOS Primer</a></li>
       </ul>
     </section>

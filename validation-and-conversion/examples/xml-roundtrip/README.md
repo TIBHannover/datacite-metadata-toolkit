@@ -2,7 +2,7 @@
 
 This folder contains all artefacts from the xml-js roundtrip experiment. The experiment demonstrates that a DataCite XML file can be converted to a JSON representation and converted back to XML without any data loss, producing output that validates against the DataCite XSD.
 
-For the commands used and the conclusions, see [`validation-and-conversion/roundtrip-experiment-notes.md`](../../validation-and-conversion/roundtrip-experiment-notes.md).
+For the commands used and the conclusions, see [`validation-and-conversion/roundtrip-experiment-notes.md`](../../roundtrip-experiment-notes.md).
 
 ---
 
@@ -16,7 +16,9 @@ For the commands used and the conclusions, see [`validation-and-conversion/round
 | `original.c14n.xml` | Canonicalized (c14n) form of the input XML |
 | `roundtrip.c14n.xml` | Canonicalized (c14n) form of the roundtrip XML |
 | `diff.json` | Diff output between the two canonicalized files (0 changes) |
-| `validate_xml.rb` | Ruby script used to validate `roundtrip.c14n.xml` against the DataCite XSD via bolognese |
+
+
+`roundtrip.c14n.xml` was validated against the DataCite XSD with [`validation-and-conversion/scripts/validate_xml.rb`](../../scripts/validate_xml.rb).
 
 ---
 

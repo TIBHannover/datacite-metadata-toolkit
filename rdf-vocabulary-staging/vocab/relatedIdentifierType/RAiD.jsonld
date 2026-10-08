@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/RAiD",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RAiD",
   "type": "Concept",
   "prefLabel": "RAiD",
   "altLabel": "Research Activity Identifier",
@@ -9,6 +9,6 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"RAiD\" relationType=\"IsPartOf\" resourceTypeGeneral=\"Project\">https://raid.org/10.26259/5c43ca8f</relatedIdentifier>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
 }

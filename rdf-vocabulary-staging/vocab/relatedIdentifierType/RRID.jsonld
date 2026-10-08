@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/RRID",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/RRID",
   "type": "Concept",
   "prefLabel": "RRID",
   "altLabel": "Research Resource IDentifier",
@@ -9,6 +9,6 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"RRID\" relationType=\"Cites\">RRID:SCR_014641</relatedIdentifier>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
 }

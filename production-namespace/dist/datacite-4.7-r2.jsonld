@@ -115,7 +115,7 @@
       "id": "https://w3id.org/tib/datacite/class/Contributor",
       "type": "rdfs:Class",
       "label": "Contributor",
-      "comment": " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
+      "comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Contributor.jsonld"
       ]
@@ -142,7 +142,7 @@
       "id": "https://w3id.org/tib/datacite/class/Description",
       "type": "rdfs:Class",
       "label": "Description",
-      "comment": " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
+      "comment": "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Description.jsonld"
       ]
@@ -1037,7 +1037,7 @@
       "id": "https://w3id.org/tib/datacite/property/valueURI",
       "type": "rdf:Property",
       "label": "valueURI",
-      "comment": " The URI of the subject term.",
+      "comment": "The URI of the subject term.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/property/valueURI.jsonld"
       ]

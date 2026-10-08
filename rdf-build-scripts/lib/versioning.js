@@ -109,8 +109,18 @@ function resolveVocabRoot(projectRoot) {
   return projectRoot;
 }
 
+/**
+ * True when the version already has published distribution files. Published
+ * releases are frozen: rebuilding them from the current term files would give
+ * them the current version's definitions.
+ */
+function isPublishedVersion(vocabRoot, version) {
+  return fs.existsSync(path.join(vocabRoot, "dist", `datacite-${version}.jsonld`));
+}
+
 module.exports = {
   compareVersions,
+  isPublishedVersion,
   findLatestManifestVersion,
   getArgValue,
   listManifestVersions,

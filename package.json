@@ -2,20 +2,24 @@
   "name": "datacite-metadata-toolkit",
   "version": "0.0.0",
   "private": true,
-  "description": "DataCite Metadata Schema (4.6 and 4.7): RDF/JSON-LD vocabulary, JSON Schema profiles, XML-to-JSON conversion, and SKOS/JSKOS/SSSOM crosswalks to Schema.org, DCTERMS, DCAT 3, and Wikidata.",
+  "description": "DataCite Metadata Schema 4.7: RDF/JSON-LD vocabulary, SHACL shapes, a JSON Schema for REST API records, XML and JSON converters, and SKOS/JSKOS/SSSOM crosswalks to Schema.org, DCTERMS, DCAT 3, and Wikidata.",
   "license": "Apache-2.0",
   "scripts": {
-    "syncCheck": "python3 rdf-build-scripts/synCheck.py",
+    "check:json-schema": "python3 rdf-build-scripts/build-json-schema.py --check",
+    "check:shapes": "python3 rdf-build-scripts/build-shapes.py --check",
     "build:production-namespace": "bash rdf-build-scripts/generate-production-namespace.sh",
     "check:vocab-scheme-titles": "node rdf-build-scripts/check-vocab-scheme-titles.js",
     "check:current-aliases": "node rdf-build-scripts/check-current-aliases.js",
+    "check:frozen-releases": "python3 rdf-build-scripts/check-frozen-releases.py",
     "validate-mappings": "node validation-and-conversion/scripts/validate.js mappings/jskos-mappings.json",
     "build:mappings": "python3 rdf-build-scripts/build-mappings.py",
     "check:mappings": "python3 rdf-build-scripts/build-mappings.py --check && npm run validate-mappings",
     "test:mappings": "python3 -m unittest discover -s tests/mappings -p 'test_*.py' && node --test tests/mappings/validate.test.js",
     "test:conversion": "python3 -m unittest discover -s tests/conversion -p 'test_*.py'",
     "convert:rdf": "python3 validation-and-conversion/scripts/datacite_to_rdf.py",
-    "validate-profiles": "for f in validation-and-conversion/schemas/schema-profiles/*.json validation-and-conversion/schemas/schema-profiles/*.jsonld; do echo \"=== $f ===\"; npx ajv-cli --strict=false --spec=draft2019 compile -s \"$f\" || exit 1; done"
+    "validate-profiles": "npx ajv-cli compile --spec=draft2020 --strict=false -s validation-and-conversion/schemas/schema-profiles/datacite.schema.json",
+    "validate:json": "npx ajv-cli validate --spec=draft2020 --strict=false --all-errors -s validation-and-conversion/schemas/schema-profiles/datacite.schema.json -d",
+    "check:live-sample": "python3 validation-and-conversion/scripts/check_live_sample.py"
   },
   "dependencies": {
     "jskos-validate": "1.2.3"

@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/SWHID",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/SWHID",
   "type": "Concept",
   "prefLabel": "SWHID",
   "altLabel": "SoftWare Hash Identifier",
@@ -10,6 +10,6 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"SWHID\" relationType=\"Cites\">swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2</relatedIdentifier>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
 }

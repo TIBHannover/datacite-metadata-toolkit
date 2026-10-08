@@ -11,12 +11,14 @@
   </owl:Class>
   <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
   </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://schema.org/position">
+  </owl:DatatypeProperty>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/AlternateIdentifier">
     <rdfs:comment>An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).</rdfs:comment>
     <rdfs:label>AlternateIdentifier</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/Contributor">
-    <rdfs:comment> The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.</rdfs:comment>
+    <rdfs:comment>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.</rdfs:comment>
     <rdfs:label>Contributor</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/Creator">
@@ -28,7 +30,7 @@
     <rdfs:label>Date</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/Description">
-    <rdfs:comment> All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</rdfs:comment>
+    <rdfs:comment>All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</rdfs:comment>
     <rdfs:label>Description</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="https://w3id.org/tib/datacite/class/Format">
@@ -95,356 +97,448 @@
     <rdfs:comment>The version number of the resource.</rdfs:comment>
     <rdfs:label>Version</rdfs:label>
   </rdfs:Class>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/affiliation">
+  <owl:Ontology rdf:about="https://w3id.org/tib/datacite/dist/datacite">
+    <dcterms:contributor rdf:resource="https://github.com/DenizJaeger"/>
+    <dcterms:contributor rdf:resource="https://github.com/selgebali"/>
+    <dcterms:contributor rdf:resource="https://orcid.org/0000-0003-1378-5495"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-06</dcterms:created>
+    <dcterms:description xml:lang="en">OWL representation of the DataCite linked-data vocabulary for DataCite Metadata Schema 4.7 (modelling revision 2).</dcterms:description>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:source rdf:resource="https://w3id.org/tib/datacite/manifest/datacite-4.7-r2.json"/>
+    <dcterms:title xml:lang="en">DataCite Linked Data Ontology 4.7-r2</dcterms:title>
+    <owl:versionIRI rdf:resource="https://w3id.org/tib/datacite/dist/datacite-4.7-r2"/>
+    <owl:versionInfo>4.7-r2</owl:versionInfo>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/affiliation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The organizational or institutional affiliation of the creator.</rdfs:comment>
     <rdfs:label>affiliation</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/affiliationIdentifier">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/affiliationIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Uniquely identifies the organizational affiliation of the creator.</rdfs:comment>
     <rdfs:label>affiliationIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/affiliationIdentifierScheme">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/affiliationIdentifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the affiliation identifier scheme</rdfs:comment>
     <rdfs:label>affiliationIdentifierScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/alternateIdentifier">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/alternateIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string unique within its domain of issue, such as a local identifier, a serial number of an instrument, or an inventory number.</rdfs:comment>
     <rdfs:label>alternateIdentifier</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/AlternateIdentifier"/>
     <skos:scopeNote>In RDF, this property links the resource to an AlternateIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its alternateIdentifierType.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/alternateIdentifierType">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/alternateIdentifierType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the AlternateIdentifier.</rdfs:comment>
     <rdfs:label>alternateIdentifierType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/awardNumber">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/awardNumber">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The code assigned by the funder to a sponsored award (grant).</rdfs:comment>
     <rdfs:label>awardNumber</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/awardTitle">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/awardTitle">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The human readable title or name of the award (grant).</rdfs:comment>
     <rdfs:label>awardTitle</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/awardURI">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/awardURI">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The URI leading to a page provided by the funder for more information about the award (grant).</rdfs:comment>
     <rdfs:label>awardURI</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/classificationCode">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/classificationCode">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The classification code used for the subject term in the subject scheme.</rdfs:comment>
     <rdfs:label>classificationCode</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/contributor">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/contributor">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.</rdfs:comment>
     <rdfs:label>contributor</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Contributor"/>
     <skos:scopeNote>In RDF, this property links the resource to a Contributor node; the node gives the name with contributorName, alongside its contributorType, nameType, nameIdentifier and affiliation.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/contributorName">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/contributorName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The full name of the contributor.</rdfs:comment>
     <rdfs:label>contributorName</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/contributorType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/contributorType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of contributor of the resource.</rdfs:comment>
     <rdfs:label>contributorType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/creator">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/creator">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.</rdfs:comment>
     <rdfs:label>creator</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Creator"/>
     <skos:scopeNote>In RDF, this property links the resource to a Creator node; the node gives the name with creatorName, alongside its nameType, nameIdentifier and affiliation, and records its place in DataCite's priority order with schema:position (1 = first).</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/creatorName">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/creatorName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The full name of the creator.</rdfs:comment>
     <rdfs:label>creatorName</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/date">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/date">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Different dates relevant to the work.</rdfs:comment>
     <rdfs:label>date</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Date"/>
     <skos:scopeNote>In RDF, this property links the resource to a Date node; the node gives the date as plain text in rdf:value, alongside its dateType and dateInformation.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/dateInformation">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/dateInformation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Specific information about the date, if appropriate.</rdfs:comment>
     <rdfs:label>dateInformation</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/dateType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/dateType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of date.</rdfs:comment>
     <rdfs:label>dateType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/description">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/description">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</rdfs:comment>
     <rdfs:label>description</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Description"/>
     <skos:scopeNote>In RDF, this property links the resource to a Description node; the node gives the description text in rdf:value (with a language tag when the record gives one), alongside its descriptionType.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/descriptionType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/descriptionType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the Description.</rdfs:comment>
     <rdfs:label>descriptionType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/eastBoundLongitude">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/eastBoundLongitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Eastern longitudinal dimension of box.</rdfs:comment>
     <rdfs:label>eastBoundLongitude</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/edition">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/edition">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Edition or version of the related item.</rdfs:comment>
     <rdfs:label>edition</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/familyName">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/familyName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The surname or last name of the creator.</rdfs:comment>
     <rdfs:label>familyName</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/firstPage">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/firstPage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.</rdfs:comment>
     <rdfs:label>firstPage</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/format">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/format">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Technical format of the resource.</rdfs:comment>
     <rdfs:label>format</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/funderIdentifier">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/funderIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Uniquely identifies a funding entity, according to various types.</rdfs:comment>
     <rdfs:label>funderIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/funderIdentifierType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/funderIdentifierType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the funderIdentifier.</rdfs:comment>
     <rdfs:label>funderIdentifierType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/funderName">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/funderName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Name of the funding provider.</rdfs:comment>
     <rdfs:label>funderName</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/fundingReference">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/fundingReference">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Information about financial support (funding) for the resource being registered.</rdfs:comment>
     <rdfs:label>fundingReference</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/FundingReference"/>
     <skos:scopeNote>In RDF, this property links the resource to a FundingReference node, which groups the element's sub-properties.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocation">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/geoLocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Spatial region or named place where the data was gathered or about which the data is focused.</rdfs:comment>
     <rdfs:label>geoLocation</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/GeoLocation"/>
     <skos:scopeNote>In RDF, this property links the resource to a GeoLocation node, which groups the element's sub-properties.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocationBox">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/geoLocationBox">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The spatial limits of a box.</rdfs:comment>
     <rdfs:label>geoLocationBox</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocationPlace">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/geoLocationPlace">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Description of a geographic location.</rdfs:comment>
     <rdfs:label>geoLocationPlace</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocationPoint">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/geoLocationPoint">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A point location in space.</rdfs:comment>
     <rdfs:label>geoLocationPoint</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/geoLocationPolygon">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/geoLocationPolygon">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.</rdfs:comment>
     <rdfs:label>geoLocationPolygon</rdfs:label>
     <skos:scopeNote>In RDF, this property links a GeoLocation to one polygon node, which holds the polygon's polygonPoint nodes and its optional inPolygonPoint.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/givenName">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/givenName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The personal or first name of the creator.</rdfs:comment>
     <rdfs:label>givenName</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/identifier">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The Identifier is a unique string that identifies a resource.</rdfs:comment>
     <rdfs:label>identifier</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Identifier"/>
     <skos:scopeNote>In RDF, this property links the resource to an Identifier node; the node gives the identifier as plain text in rdf:value, alongside its identifierType.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/identifierType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/identifierType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of Identifier.</rdfs:comment>
     <rdfs:label>identifierType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/inPolygonPoint">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/inPolygonPoint">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A point location in a polygon.</rdfs:comment>
     <rdfs:label>inPolygonPoint</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/issue">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/issue">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Issue number or name of the related item.</rdfs:comment>
     <rdfs:label>issue</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/language">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/language">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The primary language of the resource.</rdfs:comment>
     <rdfs:label>language</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/lastPage">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/lastPage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.</rdfs:comment>
     <rdfs:label>lastPage</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/nameIdentifier">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/nameIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Uniquely identifies an individual or legal entity, according to various schemes.</rdfs:comment>
     <rdfs:label>nameIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/nameIdentifierScheme">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/nameIdentifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the name identifier scheme.</rdfs:comment>
     <rdfs:label>nameIdentifierScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/nameType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/nameType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of name.</rdfs:comment>
     <rdfs:label>nameType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/northBoundLatitude">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/northBoundLatitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Northern latitudinal dimension of box.</rdfs:comment>
     <rdfs:label>northBoundLatitude</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/number">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/number">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Number of the resource within the related item, e.g., report number or article number.</rdfs:comment>
     <rdfs:label>number</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/numberType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/numberType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Type of the related item’s number, e.g., report number or article number.</rdfs:comment>
     <rdfs:label>numberType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/pointLatitude">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/pointLatitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Latitudinal dimension of point.</rdfs:comment>
     <rdfs:label>pointLatitude</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/pointLongitude">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/pointLongitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Longitudinal dimension of point.</rdfs:comment>
     <rdfs:label>pointLongitude</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/polygonPoint">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/polygonPoint">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A point location in a polygon.</rdfs:comment>
     <rdfs:label>polygonPoint</rdfs:label>
     <skos:scopeNote>In RDF, each polygon point is a node with pointLatitude and pointLongitude, and records its place in the polygon's drawing order with schema:position (1 = first).</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/publicationYear">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/publicationYear">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The year when the item was or will be made publicly available.</rdfs:comment>
     <rdfs:label>publicationYear</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/publisher">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/publisher">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.</rdfs:comment>
     <rdfs:label>publisher</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Publisher"/>
     <skos:scopeNote>In RDF, this property links the resource to a Publisher node; the node gives the publisher name in rdf:value (with a language tag when the record gives one), alongside its publisherIdentifier and scheme.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/publisherIdentifier">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/publisherIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Uniquely identifies the publisher, according to various schemes.</rdfs:comment>
     <rdfs:label>publisherIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/publisherIdentifierScheme">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/publisherIdentifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the publisher identifier scheme.</rdfs:comment>
     <rdfs:label>publisherIdentifierScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedIdentifier">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Identifiers of related resources. These must be globally unique identifiers.</rdfs:comment>
     <rdfs:label>relatedIdentifier</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/RelatedIdentifier"/>
     <skos:scopeNote>In RDF, this property links the resource to a RelatedIdentifier node; the node gives the identifier as plain text in rdf:value, alongside its relatedIdentifierType, relationType and other qualifiers.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedIdentifierType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedIdentifierType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the RelatedIdentifier.</rdfs:comment>
     <rdfs:label>relatedIdentifierType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedItem">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedItem">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Information about a resource related to the one being registered.</rdfs:comment>
     <rdfs:label>relatedItem</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/RelatedItem"/>
     <skos:scopeNote>In RDF, this property links the resource to a RelatedItem node, which groups the element's sub-properties.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedItemIdentifier">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedItemIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The identifier for the related item.</rdfs:comment>
     <rdfs:label>relatedItemIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedItemIdentifierType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedItemIdentifierType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the Identifier for the related item.</rdfs:comment>
     <rdfs:label>relatedItemIdentifierType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedItemType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relatedItemType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The general type of the related item.</rdfs:comment>
     <rdfs:label>relatedItemType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relatedMetadataScheme">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/relatedMetadataScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the scheme.</rdfs:comment>
     <rdfs:label>relatedMetadataScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relationType">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/relationType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Description of the relationship of the resource being registered (A) and the related resource (B).</rdfs:comment>
     <rdfs:label>relationType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/relationTypeInformation">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/relationTypeInformation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Additional information about the selected relationType, if appropriate.</rdfs:comment>
     <rdfs:label>relationTypeInformation</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/resourceType">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/resourceType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A description of the resource.</rdfs:comment>
     <rdfs:label>resourceType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/resourceTypeGeneral">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/resourceTypeGeneral">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The general type of a resource.</rdfs:comment>
     <rdfs:label>resourceTypeGeneral</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/rights">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/rights">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Any rights information for this resource.</rdfs:comment>
     <rdfs:label>rights</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Rights"/>
     <skos:scopeNote>In RDF, this property links the resource to a Rights node; the node gives the rights statement in rdf:value (with a language tag when the record gives one), alongside its rightsURI, rightsIdentifier and scheme.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/rightsIdentifier">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/rightsIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A short standardized identifier for the licence.</rdfs:comment>
     <rdfs:label>rightsIdentifier</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/rightsIdentifierScheme">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/rightsIdentifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the scheme.</rdfs:comment>
     <rdfs:label>rightsIdentifierScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/rightsURI">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/rightsURI">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The URI of the license.</rdfs:comment>
     <rdfs:label>rightsURI</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/schemeType">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/schemeType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of the relatedMetadataScheme, linked with the schemeURI.</rdfs:comment>
     <rdfs:label>schemeType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/schemeURI">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/schemeURI">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The URI of an identifier scheme.</rdfs:comment>
     <rdfs:label>schemeURI</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/size">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/size">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.</rdfs:comment>
     <rdfs:label>size</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/southBoundLatitude">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/southBoundLatitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Southern latitude of box .</rdfs:comment>
     <rdfs:label>southBoundLatitude</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/subject">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/subject">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Subject, keyword, classification code, or key phrase describing the resource.</rdfs:comment>
     <rdfs:label>subject</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Subject"/>
     <skos:scopeNote>In RDF, this property links the resource to a Subject node; the node gives the subject text in rdf:value (with a language tag when the record gives one), alongside its subjectScheme, schemeURI, valueURI and classificationCode.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/subjectScheme">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/subjectScheme">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The name of the subject scheme or classification code or authority if one is used.</rdfs:comment>
     <rdfs:label>subjectScheme</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/title">
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/title">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.</rdfs:comment>
     <rdfs:label>title</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/tib/datacite/class/Title"/>
     <skos:scopeNote>In RDF, this property links the resource to a Title node; the node gives the title text in rdf:value (with a language tag when the record gives one), alongside its titleType.</skos:scopeNote>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/titleType">
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/titleType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The type of Title (other than the Main Title).</rdfs:comment>
     <rdfs:label>titleType</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/valueURI">
-    <rdfs:comment> The URI of the subject term.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/tib/datacite/property/valueURI">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>The URI of the subject term.</rdfs:comment>
     <rdfs:label>valueURI</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/version">
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/version">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>The version number of the resource.</rdfs:comment>
     <rdfs:label>version</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/volume">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/volume">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Volume of the related item.</rdfs:comment>
     <rdfs:label>volume</rdfs:label>
-  </rdf:Property>
-  <rdf:Property rdf:about="https://w3id.org/tib/datacite/property/westBoundLongitude">
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/tib/datacite/property/westBoundLongitude">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment>Western longitudinal dimension of box.</rdfs:comment>
     <rdfs:label>westBoundLongitude</rdfs:label>
-  </rdf:Property>
+  </owl:DatatypeProperty>
   <skos:ConceptScheme rdf:about="https://w3id.org/tib/datacite/vocab/contributorType">
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-18</dcterms:created>
     <dcterms:identifier>contributorType</dcterms:identifier>
@@ -2121,16 +2215,4 @@
     <skos:scopeNote>Use the xml:lang attribute to indicate the language of the translated title.</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/tib/datacite/vocab/titleType"/>
   </skos:Concept>
-  <owl:Ontology rdf:about="https://w3id.org/tib/datacite/dist/datacite">
-    <dcterms:contributor rdf:resource="https://github.com/DenizJaeger"/>
-    <dcterms:contributor rdf:resource="https://github.com/selgebali"/>
-    <dcterms:contributor rdf:resource="https://orcid.org/0000-0003-1378-5495"/>
-    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-06</dcterms:created>
-    <dcterms:description xml:lang="en">OWL representation of the DataCite linked-data vocabulary for DataCite Metadata Schema 4.7 (modelling revision 2).</dcterms:description>
-    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:source rdf:resource="https://w3id.org/tib/datacite/manifest/datacite-4.7-r2.json"/>
-    <dcterms:title xml:lang="en">DataCite Linked Data Ontology 4.7-r2</dcterms:title>
-    <owl:versionIRI rdf:resource="https://w3id.org/tib/datacite/dist/datacite-4.7-r2"/>
-    <owl:versionInfo>4.7-r2</owl:versionInfo>
-  </owl:Ontology>
 </rdf:RDF>
