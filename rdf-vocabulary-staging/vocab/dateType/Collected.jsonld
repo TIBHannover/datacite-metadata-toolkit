@@ -26,8 +26,8 @@
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
   "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
   "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

@@ -9,7 +9,7 @@
     },
     {
       "@language": "cs",
-      "@value": "je pokračováním (čeho)"
+      "@value": "pokračuje (čím)"
     }
   ],
   "notation": "IsContinuedBy",
@@ -28,8 +28,8 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

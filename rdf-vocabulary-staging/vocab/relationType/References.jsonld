@@ -20,7 +20,7 @@
     },
     {
       "@language": "cs",
-      "@value": "označuje, že B odkazuje na A"
+      "@value": "označuje, že A používá B jako zdroj informací"
     }
   ],
   "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
@@ -29,8 +29,8 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }
