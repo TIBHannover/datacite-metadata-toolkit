@@ -130,6 +130,7 @@ function buildContext() {
     altLabel: { "@id": "skos:altLabel", "@language": "en" },
     definition: { "@id": "skos:definition", "@language": "en" },
     scopeNote: { "@id": "skos:scopeNote", "@language": "en" },
+    changeNote: { "@id": "skos:changeNote", "@language": "en" },
 
     notation: "skos:notation",
     inScheme: { "@id": "skos:inScheme", "@type": "@id" },
@@ -263,6 +264,7 @@ const OWL_ANNOTATION_PREDICATES = [
   "skos:altLabel",
   "skos:definition",
   "skos:scopeNote",
+  "skos:changeNote",
   "skos:notation",
   "skos:inScheme",
   "skos:topConceptOf",
