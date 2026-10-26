@@ -3,8 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Other> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition "označuje, že A souvisí s B a tento vztah neodpovídá žádné z existujících kategorií"@cs,
         "indicates that A is related to B and the relationship does not fit into an existing category"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Other\" relationTypeInformation=\"is output of\" resourceTypeGeneral=\"Project\">10.21384/p27z-6n52</relatedIdentifier>" ;

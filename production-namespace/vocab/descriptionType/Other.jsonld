@@ -26,8 +26,8 @@
   "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "scopeNote": "Use for any other description type.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

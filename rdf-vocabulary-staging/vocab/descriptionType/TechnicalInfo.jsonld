@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo",
+  "id": "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,11 +23,11 @@
       "@value": "Podrobné informace, které mohou souviset s návrhem, implementací, provozem, použitím a/nebo údržbou systému nebo přístroje nebo jiným nastavením procesu získání či ověření datasetu či jiného zdroje."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "scopeNote": "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

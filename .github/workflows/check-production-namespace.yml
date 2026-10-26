@@ -61,6 +61,9 @@ jobs:
       - name: Check unversioned dist files match the current version
         run: npm run check:current-aliases
 
+      - name: Check earlier, frozen releases are unchanged
+        run: npm run check:frozen-releases
+
       - name: Check multilingual annotations survive publication exports
         run: npm run test:namespace
 

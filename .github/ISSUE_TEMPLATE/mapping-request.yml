@@ -41,7 +41,7 @@ body:
     id: impact
     attributes:
       label: Impact
-      description: Which files update (skos-mappings/*), any downstream changes.
+      description: Which files update (mappings/datacite-*.sssom.tsv, mappings/conversion/*, mappings/coverage/*), any downstream changes.
   - type: checkboxes
     id: consent
     attributes:

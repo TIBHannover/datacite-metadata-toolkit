@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsRequiredBy",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,14 +23,14 @@
       "@value": "označuje, že A je vyžadován entitou B"
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "May be used to indicate software dependencies.",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

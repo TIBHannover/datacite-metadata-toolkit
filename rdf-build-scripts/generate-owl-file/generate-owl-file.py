@@ -55,6 +55,8 @@ def primary_type(types):
     ordered = [
         OWL.Ontology,
         RDFS.Class,
+        OWL.DatatypeProperty,
+        OWL.ObjectProperty,
         RDF.Property,
         OWL.Class,
         SKOS.ConceptScheme,
@@ -120,7 +122,6 @@ def main():
     g = Graph()
 
     # namespaces
-    g.bind("schema", NAMESPACE)
     g.bind("datacite", NAMESPACE)
     g.bind("rdfs", RDFS)
     g.bind("rdf", RDF)
@@ -194,6 +195,20 @@ def main():
         counter += 1
         g.parse(file, format="json-ld")
     print(f"{counter} jsonld files parsed from property directory")
+
+    # OWL tools need to know whether a property holds text or numbers
+    # (owl:DatatypeProperty) or nodes and IRIs (owl:ObjectProperty).
+    kinds = json.loads((BASE_DIR.parent / "property-value-kinds.json").read_text(encoding="utf-8"))
+    for prop in set(g.subjects(RDF.type, RDF.Property)):
+        name = str(prop).rsplit("/", 1)[-1]
+        if name in kinds["text"]:
+            g.add((prop, RDF.type, OWL.DatatypeProperty))
+        elif name in kinds["resource"]:
+            g.add((prop, RDF.type, OWL.ObjectProperty))
+        else:
+            raise SystemExit(f"Property {prop} is not listed in rdf-build-scripts/property-value-kinds.json")
+    # DataCite RDF orders creators and polygon points with schema:position.
+    g.add((URIRef("https://schema.org/position"), RDF.type, OWL.DatatypeProperty))
 
     # write to deterministic RDF/XML file
     OUT_DIR = SOURCE_DIR / "dist"

@@ -3,8 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition "označuje, že A je předchozím vydáním B"@cs,
         "indicates A is a previous edition of B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>" ;

@@ -1,10 +1,10 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/numberType/Article",
+  "id": "https://w3id.org/tib/datacite/vocab/numberType/Article",
   "type": "Concept",
   "prefLabel": "Article",
   "notation": "Article",
   "definition": "A number identifying an article within a journal issue or proceedings volume.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/numberType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/numberType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType"
 }

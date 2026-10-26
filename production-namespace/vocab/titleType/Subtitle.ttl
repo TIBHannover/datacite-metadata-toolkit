@@ -3,8 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/titleType/Subtitle> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."@cs,
         "A secondary title that follows the main title and provides additional information about the resource."@en ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/titleType> ;

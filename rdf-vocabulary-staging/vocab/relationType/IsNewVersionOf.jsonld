@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsNewVersionOf",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,13 +23,13 @@
       "@value": "označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno"
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

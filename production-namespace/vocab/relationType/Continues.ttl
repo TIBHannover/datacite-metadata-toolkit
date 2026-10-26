@@ -3,14 +3,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Continues> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition "označuje, že A je pokračováním díla B"@cs,
         "indicates A is a continuation of the work B"@en ;
     skos:example "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>" ;
     skos:inScheme <https://w3id.org/tib/datacite/vocab/relationType> ;
     skos:notation "Continues" ;
-    skos:prefLabel "pokračuje (čím)"@cs,
+    skos:prefLabel "je pokračováním (čeho)"@cs,
         "Continues"@en ;
     skos:topConceptOf <https://w3id.org/tib/datacite/vocab/relationType> .
 

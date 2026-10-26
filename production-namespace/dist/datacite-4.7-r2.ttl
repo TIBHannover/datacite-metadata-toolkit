@@ -8,8 +8,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Název, který je překladem primárního názvu do jiného jazyka."@cs , "A title that is a translation of the primary title into another language."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/titleType>;
         skos:notation      "TranslatedTitle";
@@ -20,8 +20,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/titleType/Subtitle>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/titleType/Subtitle.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."@cs , "A secondary title that follows the main title and provides additional information about the resource."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/titleType>;
         skos:notation      "Subtitle";
@@ -31,8 +31,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/titleType/Other>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/titleType/Other.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Jakýkoli typ názvu, který není pokryt jinými hodnotami v řízeném slovníku titleType."@cs , "Any title type not covered by the other values in the titleType controlled list."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/titleType>;
         skos:notation      "Other";
@@ -42,8 +42,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Název, pod kterým je zdroj také známý, používaný jako alternativa k primárnímu názvu."@cs , "A title by which the resource is also known, used as an alternative to the primary title."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/titleType>;
         skos:notation      "AlternativeTitle";
@@ -448,8 +448,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Reviews>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Reviews.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že entita A je recenzí B"@cs , "indicates that A is a review of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -460,8 +460,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Requires>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Requires.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A vyžaduje B"@cs , "Indicates A requires B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -473,9 +473,9 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/References>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/References.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
-        skos:definition    "označuje, že B odkazuje na A"@cs , "indicates B is used as a source of information for A"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
+        skos:definition    "označuje, že A používá B jako zdroj informací"@cs , "indicates B is used as a source of information for A"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
         skos:notation      "References";
@@ -486,8 +486,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Other>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Other.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A souvisí s B a tento vztah neodpovídá žádné z existujících kategorií"@cs , "indicates that A is related to B and the relationship does not fit into an existing category"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Other\" relationTypeInformation=\"is output of\" resourceTypeGeneral=\"Project\">10.21384/p27z-6n52</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -499,8 +499,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Obsoletes>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Obsoletes.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A nahrazuje B"@cs , "Indicates A replaces B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -511,8 +511,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je verzí B"@cs , "indicates A is a version of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVersionOf\">10.5281/ZENODO.832054</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -524,8 +524,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je variantou nebo jinou formou B"@cs , "indicates A is a variant or different form of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -537,8 +537,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je překladem B"@cs , "indicates A is a translation of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -550,8 +550,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B je doplňkem A"@cs , "indicates that B is a supplement to A"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsSupplementedBy\">16911322</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -563,8 +563,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je doplňkem B"@cs , "indicates that A is a supplement to B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:0168-ssoar-13172</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -576,8 +576,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je zdrojem, na kterém je B založen"@cs , "indicates A is a source upon which B is based"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsSourceOf\">http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -589,8 +589,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je recenzován entitou B"@cs , "indicates that A is reviewed by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -601,8 +601,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je vyžadován entitou B"@cs , "Indicates A is required by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -614,9 +614,9 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
-        skos:definition    "označuje, že na A je odkazován z B"@cs , "indicates A is used as a source of information by B"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
+        skos:definition    "označuje, že A je zdrojem informací pro B"@cs , "indicates A is used as a source of information by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
         skos:notation      "IsReferencedBy";
@@ -627,8 +627,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je publikován v B, ale je nezávislý na ostatních věcech publikovaných uvnitř B"@cs , "indicates A is published inside B, but is independent of other things published inside of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -639,8 +639,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je předchozím vydáním B"@cs , "indicates A is a previous edition of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -651,8 +651,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsPartOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsPartOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je součástí B; lze použít pro jednotlivé prvky řady (série)"@cs , "indicates A is a portion of B; may be used for elements of a series"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -664,8 +664,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je původní variantou B"@cs , "indicates A is the original form of B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -677,8 +677,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je nahrazen B"@cs , "Indicates A is replaced by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -689,8 +689,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je novým vydáním B, přičemž toto nové vydání bylo upraveno nebo aktualizováno"@cs , "indicates A is a new edition of B, where the new edition has been modified or updated"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -701,8 +701,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje další metadata A pro zdroj B"@cs , "indicates additional metadata A for a resource B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -713,8 +713,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je identické s B (použije se v případě potřeby zaregistrovat dvě samostatné instance téhož zdroje)"@cs , "indicates that A is identical to B, for use when there is a need to register two separate instances of the same resource"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsIdenticalTo\">http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -726,8 +726,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B je dokumentací vysvětlující A"@cs , "indicates B is documentation about/explaining A"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsDocumentedBy\">http://tobias-lib.uni-tuebingen.de/volltexte/2000/96/</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -739,8 +739,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je popsán B"@cs , "indicates A is described by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -751,8 +751,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B je zdrojem, na kterém je A založen"@cs , "indicates B is a source upon which A is based"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -764,20 +764,20 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A pokračuje dílem B"@cs , "indicates A is continued by the work B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
         skos:notation      "IsContinuedBy";
-        skos:prefLabel     "je pokračováním (čeho)"@cs , "IsContinuedBy"@en;
+        skos:prefLabel     "pokračuje (čím)"@cs , "IsContinuedBy"@en;
         skos:topConceptOf  <https://w3id.org/tib/datacite/vocab/relationType> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B je použit ke kompilaci nebo vytvoření A"@cs , "indicates B is used to compile or create A"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -789,8 +789,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je sbírán/shromažďován entitou B"@cs , "Indicates A is collected by B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCollectedBy\">10.5072/instrument</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -802,8 +802,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B cituje A"@cs , "indicates that B includes A in a citation"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -815,8 +815,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/HasVersion>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/HasVersion.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A má verzi B"@cs , "indicates A has a version B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasVersion\">10.5281/ZENODO.832053</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -828,8 +828,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/HasTranslation>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/HasTranslation.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A má překlad B"@cs , "indicates A has a translation B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -841,8 +841,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/HasPart>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/HasPart.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A má část B"@cs , "indicates A includes the part B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -854,8 +854,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/HasMetadata>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/HasMetadata.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že zdroj A má další metadata B"@cs , "indicates resource A has additional metadata B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasMetadata\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567890</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -866,8 +866,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Documents>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Documents.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je dokumentací vysvětlující B"@cs , "indicates A is documentation about/explaining B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -879,8 +879,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Describes>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Describes.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A popisuje B"@cs , "indicates A describes B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -891,20 +891,20 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Continues>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Continues.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A je pokračováním díla B"@cs , "indicates A is a continuation of the work B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
         skos:notation      "Continues";
-        skos:prefLabel     "pokračuje (čím)"@cs , "Continues"@en;
+        skos:prefLabel     "je pokračováním (čeho)"@cs , "Continues"@en;
         skos:topConceptOf  <https://w3id.org/tib/datacite/vocab/relationType> .
 
 <https://w3id.org/tib/datacite/vocab/relationType/Compiles>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Compiles.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že B je výsledkem kompilace nebo vytvoření za použití A"@cs , "indicates B is the result of a compile or creation event using A"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -916,8 +916,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Collects>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Collects.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A sbírá/shromažďuje B"@cs , "Indicates A collects B"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -929,8 +929,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/relationType/Cites>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/relationType/Cites.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "označuje, že A cituje B"@cs , "indicates that A includes B in a citation"@en;
         skos:example       "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/relationType>;
@@ -1360,8 +1360,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Podrobné informace, které mohou souviset s návrhem, implementací, provozem, použitím a/nebo údržbou systému nebo přístroje nebo jiným nastavením procesu získání či ověření datasetu či jiného zdroje."@cs , "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
         skos:notation      "TechnicalInfo";
@@ -1372,8 +1372,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Obsah zdroje."@cs , "A listing of the Table of Contents."@en;
         skos:example       "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
@@ -1385,8 +1385,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Informace o sérii, například svazek a číslo."@cs , "Information about a repeating series, such as volume, issue, number."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
         skos:notation      "SeriesInformation";
@@ -1397,8 +1397,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/Other>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/Other.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Další popisné informace, které nelze zařadit do existující kategorie."@cs , "Other description information that does not fit into an existing category."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
         skos:notation      "Other";
@@ -1409,8 +1409,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/Methods>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/Methods.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Metodologie použitá pro studii nebo výzkum."@cs , "The methodology employed for the study or research."@en;
         skos:example       "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
@@ -1422,8 +1422,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/descriptionType/Abstract.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Stručný popis zdroje a kontextu, v jehož rámci zdroj vznikl."@cs , "A brief description of the resource and the context in which the resource was created."@en;
         skos:example       "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774";
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/descriptionType>;
@@ -1443,8 +1443,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Withdrawn.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum odstranění zdroje. Je vhodné uvést důvod odstranění."@cs , "The date the resource is removed."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Withdrawn";
@@ -1455,8 +1455,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Valid>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Valid.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum nebo časové rozmezí, po které je dataset nebo zdroj platný a aktuální."@cs , "The date or date range during which the dataset or resource is accurate."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Valid";
@@ -1466,8 +1466,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Updated>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Updated.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum poslední aktualizace zdroje. Může se jednat i o časové rozmezí."@cs , "The date of the last update to the resource, when the resource is being added to. May be a range."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Updated";
@@ -1477,8 +1477,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Submitted>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Submitted.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum, kdy tvůrce odešle (odevzdá) zdroj vydavateli. Toto datum se může lišit od Data přijetí, pokud vydavatel následně uplatní recenzní proces nebo jiný proces výběru.\nDoporučeno použít pro lepší vyhledávání."@cs , "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Submitted";
@@ -1489,8 +1489,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Other>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Other.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Jiná datace, která se vztahuje ke zdroji a nepatří do existující kategorie."@cs , "Other date that does not fit into an existing category."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Other";
@@ -1500,8 +1500,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Issued>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Issued.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum, kdy je zdroj zveřejněn nebo distribuován, např. v repozitáři nebo jiném systému."@cs , "The date that the resource is published or distributed, e.g., to a data centre."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Issued";
@@ -1511,8 +1511,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Created>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Created.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. \nDoporučeno použít pro lepší vyhledávání."@cs , "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Created";
@@ -1523,8 +1523,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Coverage>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Coverage.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum nebo časové rozmezí, na které se obsah zdroje vztahuje, které popisuje nebo pokrývá."@cs , "The date or date range that the resource content applies to, describes, or covers."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Coverage";
@@ -1535,8 +1535,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Copyrighted.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Konkrétní, zdokumentované datum, kdy zdroj získá status autorskoprávně chráněného díla, ​​pokud lze na dílo ochranu uplatnit."@cs , "The specific, documented date at which the resource receives a copyrighted status, if applicable."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Copyrighted";
@@ -1546,8 +1546,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Collected>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Collected.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum nebo časové rozmezí, ve kterém byl shromážděn obsah zdroje."@cs , "The date or date range in which the resource content was collected."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Collected";
@@ -1558,8 +1558,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Available>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Available.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum, kdy je zdroj zpřístupněn veřejnosti. Může se jednat o časové rozmezí. \nUžívejte i pro označení konce období embarga."@cs , "The date the resource is made publicly available. May be a range."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Available";
@@ -1570,8 +1570,8 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 <https://w3id.org/tib/datacite/vocab/dateType/Accepted>
         rdf:type           skos:Concept;
         rdfs:seeAlso       <https://w3id.org/tib/datacite/vocab/dateType/Accepted.jsonld>;
-        dcterms:modified   "2026-09-18"^^xsd:date;
-        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en;
+        dcterms:modified   "2026-10-15"^^xsd:date;
+        skos:changeNote    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en;
         skos:definition    "Datum, kdy vydavatel přijal zdroj do svého systému. \nPro označení začátku období embarga použijte podle potřeby možnost Datum přijetí nebo Datum podání."@cs , "The date that the publisher accepted the resource into their system."@en;
         skos:inScheme      <https://w3id.org/tib/datacite/vocab/dateType>;
         skos:notation      "Accepted";
@@ -1836,7 +1836,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 <https://w3id.org/tib/datacite/property/valueURI>
         rdf:type      rdf:Property;
-        rdfs:comment  " The URI of the subject term."@en;
+        rdfs:comment  "The URI of the subject term."@en;
         rdfs:label    "valueURI"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/property/valueURI.jsonld> .
 
@@ -2435,7 +2435,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 <https://w3id.org/tib/datacite/class/Description>
         rdf:type      rdfs:Class;
-        rdfs:comment  " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument."@en;
+        rdfs:comment  "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument."@en;
         rdfs:label    "Description"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/class/Description.jsonld> .
 
@@ -2453,7 +2453,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 <https://w3id.org/tib/datacite/class/Contributor>
         rdf:type      rdfs:Class;
-        rdfs:comment  " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument."@en;
+        rdfs:comment  "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument."@en;
         rdfs:label    "Contributor"@en;
         rdfs:seeAlso  <https://w3id.org/tib/datacite/class/Contributor.jsonld> .
 

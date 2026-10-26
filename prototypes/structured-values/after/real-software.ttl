@@ -7,7 +7,7 @@
 <https://doi.org/10.5281/zenodo.22862110> dcp:creator [ a dcc:Creator ;
             schema:position 1 ;
             dcp:affiliation [ rdf:value "ORCID" ;
-                    dcp:affiliationIdentifier <https://ror.org/04fa4r544> ;
+                    dcp:affiliationIdentifier "https://ror.org/04fa4r544"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ] ;
             dcp:creatorName "Amiot, Anibal Edelberto" ;
             dcp:familyName "Amiot" ;
@@ -54,7 +54,7 @@ Code publié sous licence AGPL v3. Le traité dont est issue la construction est
             rdf:value "10.5281/zenodo.22862110" ;
             dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
     dcp:language "en" ;
-    dcp:publicationYear 2026 ;
+    dcp:publicationYear "2026"^^xsd:gYear ;
     dcp:publisher [ a dcc:Publisher ;
             rdf:value "Zenodo" ] ;
     dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;

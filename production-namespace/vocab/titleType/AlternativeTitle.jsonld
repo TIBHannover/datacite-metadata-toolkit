@@ -26,8 +26,8 @@
   "scopeNote": "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.",
   "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
   "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

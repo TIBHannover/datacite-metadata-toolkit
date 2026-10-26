@@ -3,8 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Created> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition """Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. 
 Doporučeno použít pro lepší vyhledávání."""@cs,
         "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data."@en ;

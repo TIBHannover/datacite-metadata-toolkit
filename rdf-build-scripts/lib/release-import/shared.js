@@ -294,7 +294,6 @@ function buildPropertyFile(namespace, propertyName, definition) {
     "@context": {
       rdfs: "http://www.w3.org/2000/01/rdf-schema#",
       rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-      schema: namespace,
       datacite: namespace,
     },
     "@id": `${namespace}property/${propertyName}`,
@@ -309,7 +308,6 @@ function buildClassFile(namespace, className, comment) {
     "@context": {
       rdfs: "http://www.w3.org/2000/01/rdf-schema#",
       rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-      schema: namespace,
       datacite: namespace,
     },
     "@id": `${namespace}class/${className}`,

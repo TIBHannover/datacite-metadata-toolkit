@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/IsIdenticalTo",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,14 +23,14 @@
       "@value": "označuje, že A je identické s B (použije se v případě potřeby zaregistrovat dvě samostatné instance téhož zdroje)"
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "scopeNote": "Use when the same resource is saved in another location (e.g., another institution).",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsIdenticalTo\">http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

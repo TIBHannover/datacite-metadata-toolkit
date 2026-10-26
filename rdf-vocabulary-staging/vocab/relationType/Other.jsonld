@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Other",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/Other",
   "type": "Concept",
   "prefLabel": [
     {
@@ -27,10 +27,10 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Other\" relationTypeInformation=\"is output of\" resourceTypeGeneral=\"Project\">10.21384/p27z-6n52</relatedIdentifier>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "modified": "2026-09-18",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

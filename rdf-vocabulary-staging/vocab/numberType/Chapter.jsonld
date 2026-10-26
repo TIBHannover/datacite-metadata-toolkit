@@ -1,10 +1,10 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/numberType/Chapter",
+  "id": "https://w3id.org/tib/datacite/vocab/numberType/Chapter",
   "type": "Concept",
   "prefLabel": "Chapter",
   "notation": "Chapter",
   "definition": "A number identifying a chapter within a book or monograph.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/numberType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/numberType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/numberType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/numberType"
 }

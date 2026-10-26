@@ -2,18 +2,18 @@
   "@context": "./context.jsonld",
   "@graph": [
     {
-      "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
+      "id": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "type": "ConceptScheme",
       "title": "DataCite descriptionType",
       "identifier": "descriptionType",
       "created": "2026-02-20",
       "hasTopConcept": [
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Abstract",
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Methods",
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/SeriesInformation",
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TableOfContents",
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/TechnicalInfo",
-        "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other"
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Methods",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo",
+        "https://w3id.org/tib/datacite/vocab/descriptionType/Other"
       ]
     }
   ]

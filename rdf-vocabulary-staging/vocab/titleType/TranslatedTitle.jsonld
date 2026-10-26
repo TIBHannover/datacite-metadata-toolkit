@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/TranslatedTitle",
+  "id": "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle",
   "type": "Concept",
   "prefLabel": [
     {
@@ -24,10 +24,10 @@
     }
   ],
   "scopeNote": "Use the xml:lang attribute to indicate the language of the translated title.",
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "modified": "2026-09-18",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

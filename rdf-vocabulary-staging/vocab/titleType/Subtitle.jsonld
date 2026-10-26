@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/titleType/Subtitle",
+  "id": "https://w3id.org/tib/datacite/vocab/titleType/Subtitle",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,10 +23,10 @@
       "@value": "Sekundární název, který doplňuje hlavní název a poskytuje další informace o zdroji."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/titleType",
-  "modified": "2026-09-18",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

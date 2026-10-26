@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Collected",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Collected",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,11 +23,11 @@
       "@value": "Datum nebo časové rozmezí, ve kterém byl shromážděn obsah zdroje."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

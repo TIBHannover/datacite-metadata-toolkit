@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Created",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Created",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,11 +23,11 @@
       "@value": "Datum, kdy byl zdroj sestaven; může se jednat o datum nebo časové rozmezí v minulosti, nebo o časové rozmezí či datum, kdy byl zdroj finálně zkompletován. \nDoporučeno použít pro lepší vyhledávání."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "Recommended for discovery.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

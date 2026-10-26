@@ -6,3 +6,5 @@ sssom-schema==1.0.0
 rdflib==7.6.0
 # pyshacl checks converter output against validation-and-conversion/shapes/.
 pyshacl==0.40.1
+# jsonschema checks records against validation-and-conversion/schemas/schema-profiles/datacite.schema.json.
+jsonschema==4.25.1

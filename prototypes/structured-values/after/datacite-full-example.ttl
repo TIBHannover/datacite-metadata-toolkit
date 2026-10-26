@@ -8,204 +8,246 @@
             rdf:value "12345" ;
             dcp:alternateIdentifierType "Local accession number"^^xsd:string ] ;
     dcp:contributor [ a dcc:Contributor ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Distributor> ;
-            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
-                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> ],
-        [ a dcc:Contributor ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> ;
-            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
-                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> ;
-            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
-                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ],
+            dcp:contributorName "International DOI Foundation" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAuthority> ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "https://ror.org/03yrm5c26" ;
-                    dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
+                    dcp:affiliationIdentifier "https://ror.org/03yrm5c26"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleContributor" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Sponsor> ],
         [ a dcc:Contributor ;
+            dcp:contributorName "DataCite" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RegistrationAgency> ;
             dcp:nameIdentifier [ rdf:value "https://ror.org/04wxnsj81" ;
                     dcp:nameIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ],
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
         [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+            dcp:contributorName "ExampleOrganization" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Distributor> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
+        [ a dcc:Contributor ;
+            dcp:contributorName "ExampleOrganization" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/WorkPackageLeader> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
+        [ a dcc:Contributor ;
+            dcp:contributorName "ExampleOrganization" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/HostingInstitution> ;
+            dcp:nameIdentifier [ rdf:value "https://ror.org/03yrm5c26" ;
+                    dcp:nameIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Organizational> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleOrganization" ;
+                    dcp:affiliationIdentifier "https://ror.org/03yrm5c26"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleContributor" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Editor> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleOrganization" ;
-                    dcp:affiliationIdentifier <https://ror.org/03yrm5c26> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ResearchGroup> ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ContactPerson> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Producer> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Researcher> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember> ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Producer> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RelatedPerson> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Other> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator> ;
-            dcp:familyName "ExampleFamilyName" ;
-            dcp:givenName "ExampleGivenName" ;
-            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
-                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
-        [ a dcc:Contributor ;
-            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
-                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
-                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectLeader> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Translator> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
-            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataManager> ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCollector> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ],
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
         [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Other> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/RightsHolder> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectMember> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Supervisor> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataCurator> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
             dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/ProjectManager> ;
             dcp:familyName "ExampleFamilyName" ;
             dcp:givenName "ExampleGivenName" ;
             dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
                     dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
-                    dcp:schemeURI <https://orcid.org> ] ] ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ],
+        [ a dcc:Contributor ;
+            dcp:affiliation [ rdf:value "ExampleAffiliation" ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
+                    dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
+                    dcp:schemeURI <https://ror.org> ] ;
+            dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
+            dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/DataManager> ;
+            dcp:familyName "ExampleFamilyName" ;
+            dcp:givenName "ExampleGivenName" ;
+            dcp:nameIdentifier [ rdf:value "https://orcid.org/0000-0001-5727-2427" ;
+                    dcp:nameIdentifierScheme "ORCID"^^xsd:string ;
+                    dcp:schemeURI <https://orcid.org> ] ;
+            dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
     dcp:creator [ a dcc:Creator ;
             schema:position 2 ;
             dcp:creatorName "ExampleOrganization" ;
@@ -216,7 +258,7 @@
         [ a dcc:Creator ;
             schema:position 1 ;
             dcp:affiliation [ rdf:value "ExampleAffiliation" ;
-                    dcp:affiliationIdentifier <https://ror.org/04wxnsj81> ;
+                    dcp:affiliationIdentifier "https://ror.org/04wxnsj81"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:creatorName "ExampleFamilyName, ExampleGivenName" ;
@@ -287,40 +329,40 @@
             dcp:awardNumber "12345"^^xsd:string ;
             dcp:awardTitle "Example AwardTitle"^^xsd:string ;
             dcp:awardURI <https://example.com/example-award-uri> ;
-            dcp:funderIdentifier <https://doi.org/10.13039/501100000780> ;
+            dcp:funderIdentifier "https://doi.org/10.13039/501100000780"^^xsd:string ;
             dcp:funderIdentifierType <https://w3id.org/tib/datacite/vocab/funderIdentifierType/CrossrefFunderID> ;
             dcp:funderName "Example Funder"^^xsd:string ] ;
     dcp:geoLocation [ a dcc:GeoLocation ;
-            dcp:geoLocationBox [ dcp:eastBoundLongitude "-123.02" ;
-                    dcp:northBoundLatitude "49.315" ;
-                    dcp:southBoundLatitude "49.195" ;
-                    dcp:westBoundLongitude "-123.27" ] ;
+            dcp:geoLocationBox [ dcp:eastBoundLongitude "-123.02"^^xsd:float ;
+                    dcp:northBoundLatitude "49.315"^^xsd:float ;
+                    dcp:southBoundLatitude "49.195"^^xsd:float ;
+                    dcp:westBoundLongitude "-123.27"^^xsd:float ] ;
             dcp:geoLocationPlace "Vancouver, British Columbia, Canada" ;
-            dcp:geoLocationPoint [ dcp:pointLatitude "49.2827" ;
-                    dcp:pointLongitude "-123.1207" ] ;
-            dcp:geoLocationPolygon [ dcp:polygonPoint [ schema:position 5 ;
-                            dcp:pointLatitude "41.991" ;
-                            dcp:pointLongitude "-71.032" ],
-                        [ schema:position 2 ;
-                            dcp:pointLatitude "42.893" ;
-                            dcp:pointLongitude "-69.622" ],
-                        [ schema:position 1 ;
-                            dcp:pointLatitude "41.991" ;
-                            dcp:pointLongitude "-71.032" ],
-                        [ schema:position 3 ;
-                            dcp:pointLatitude "41.991" ;
-                            dcp:pointLongitude "-68.211" ],
+            dcp:geoLocationPoint [ dcp:pointLatitude "49.2827"^^xsd:float ;
+                    dcp:pointLongitude "-123.1207"^^xsd:float ] ;
+            dcp:geoLocationPolygon [ dcp:polygonPoint [ schema:position 2 ;
+                            dcp:pointLatitude "42.893"^^xsd:float ;
+                            dcp:pointLongitude "-69.622"^^xsd:float ],
+                        [ schema:position 5 ;
+                            dcp:pointLatitude "41.991"^^xsd:float ;
+                            dcp:pointLongitude "-71.032"^^xsd:float ],
                         [ schema:position 4 ;
-                            dcp:pointLatitude "41.090" ;
-                            dcp:pointLongitude "-69.622" ] ] ] ;
+                            dcp:pointLatitude "41.090"^^xsd:float ;
+                            dcp:pointLongitude "-69.622"^^xsd:float ],
+                        [ schema:position 1 ;
+                            dcp:pointLatitude "41.991"^^xsd:float ;
+                            dcp:pointLongitude "-71.032"^^xsd:float ],
+                        [ schema:position 3 ;
+                            dcp:pointLatitude "41.991"^^xsd:float ;
+                            dcp:pointLongitude "-68.211"^^xsd:float ] ] ] ;
     dcp:identifier [ a dcc:Identifier ;
             rdf:value "10.82433/B09Z-4K37" ;
             dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
     dcp:language "en" ;
-    dcp:publicationYear 2024 ;
+    dcp:publicationYear "2024"^^xsd:gYear ;
     dcp:publisher [ a dcc:Publisher ;
             rdf:value "Example Publisher"@en ;
-            dcp:publisherIdentifier <https://ror.org/04z8jg394> ;
+            dcp:publisherIdentifier "https://ror.org/04z8jg394"^^xsd:string ;
             dcp:publisherIdentifierScheme "ROR"^^xsd:string ;
             dcp:schemeURI <https://ror.org/> ] ;
     dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;
@@ -515,9 +557,11 @@
             dcp:resourceTypeGeneral <https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Workflow> ] ;
     dcp:relatedItem [ a dcc:RelatedItem ;
             dcp:contributor [ a dcc:Contributor ;
+                    dcp:contributorName "ExampleFamilyName, ExampleGivenName" ;
                     dcp:contributorType <https://w3id.org/tib/datacite/vocab/contributorType/Other> ;
                     dcp:familyName "ExampleFamilyName" ;
-                    dcp:givenName "ExampleGivenName" ] ;
+                    dcp:givenName "ExampleGivenName" ;
+                    dcp:nameType <https://w3id.org/tib/datacite/vocab/nameType/Personal> ] ;
             dcp:creator [ a dcc:Creator ;
                     schema:position 1 ;
                     dcp:creatorName "ExampleFamilyName, ExampleGivenName" ;
@@ -530,7 +574,7 @@
             dcp:lastPage "100"^^xsd:string ;
             dcp:number "1"^^xsd:string ;
             dcp:numberType <https://w3id.org/tib/datacite/vocab/numberType/Other> ;
-            dcp:publicationYear "1990" ;
+            dcp:publicationYear "1990"^^xsd:gYear ;
             dcp:publisher [ a dcc:Publisher ;
                     rdf:value "Example RelatedItem Publisher" ] ;
             dcp:relatedItemIdentifier [ rdf:value "1234-5678" ;

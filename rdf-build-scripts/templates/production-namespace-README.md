@@ -30,18 +30,23 @@ All RDF identifiers in this bundle use the persistent W3ID namespace. The GitHub
 | `dist/` | Versioned and current distribution artifacts in JSON-LD, RDF/XML, Turtle, and OWL-related forms |
 | `mappings/` | SSSOM mapping sets, SKOS/JSKOS exports, conversion rules, coverage and RDF paths |
 | `shapes/` | SHACL shapes that check DataCite RDF made with the current context |
+| `schema-profiles/` | JSON Schema for DataCite records in REST API JSON: one file per DataCite version and `datacite.schema.json` for the current one |
 
 The generated section `index.html` files are for human browsing. The JSON-LD, Turtle, RDF/XML, manifest, and context files are the machine-readable namespace artifacts.
 
 ## Modelling conventions (4.7-r2)
 
-Revision 2 of the DataCite 4.7 modelling changes how records look in RDF. Data written for 4.7 (revision 1) must be updated. The versioned 4.7 files stay available unchanged, but the unversioned `context/fullcontext.jsonld` and `dist/datacite.*` now follow 4.7-r2.
+Revision 2 of the DataCite 4.7 modelling changes how records look in RDF. Data written for 4.7 (revision 1) must be updated. The versioned 4.7 distributions remain available; the 7 October syntax-only correction to its context is documented in the toolkit README, but the unversioned `context/fullcontext.jsonld` and `dist/datacite.*` now follow 4.7-r2.
 
 - **Own nodes:** each repeatable element (title, description, subject, date, rights, publisher, identifiers, ...) is its own node, linked from the resource by the DataCite property of the same name.
-- **Text in `rdf:value`:** the element's main text is the node's `rdf:value`, exactly once, beside its qualifiers (type, scheme, language). Titles, descriptions, subjects, rights, publishers and affiliations may carry a language tag; dates and identifiers are plain strings, never web addresses. Where DataCite itself names the text (`creatorName`, `contributorName`, `funderName`, `awardTitle`, `geoLocationPlace`), that property is used instead. `rdf:value` is not declared in the OWL files: OWL 2 DL reserves the `rdf:` namespace.
-- **Creator order:** each Creator node records its place in DataCite's priority order with `schema:position` (`https://schema.org/position`, an integer; 1 = first).
+- **Text in `rdf:value`:** the element's main text, when supplied, is the node's `rdf:value`, at most once, beside its qualifiers (type, scheme, language). Titles and other required text elements need a value; rights and descriptions may omit text as allowed by their validation rules. Titles, descriptions, subjects, rights, publishers and affiliations may carry a language tag; dates are plain strings. Where DataCite itself names the text (`creatorName`, `contributorName`, `funderName`, `awardTitle`, `geoLocationPlace`), that property is used instead. `rdf:value` is not declared in the OWL files: OWL 2 DL reserves the `rdf:` namespace.
+- **Identifiers are text:** every identifier value (the DOI, alternate and related identifiers, `nameIdentifier`, `affiliationIdentifier`, `publisherIdentifier`, `funderIdentifier`) is a plain string, even when it looks like a web address, because many identifier schemes are not web addresses. Fields that DataCite defines as URIs (`schemeURI`, `rightsURI`, `valueURI`, `awardURI`) are links.
+- **Numbers and years:** coordinates are `xsd:float` and `publicationYear` is `xsd:gYear`.
+- **Order:** each Creator node records its place in DataCite's priority order, and each polygon point its place in the drawing order, with `schema:position` (`https://schema.org/position`, an integer; 1 = first).
+- **Controlled values** are IRIs of terms in the matching DataCite vocabulary, such as `vocab/relationType/IsCitedBy`.
+- **OWL:** the OWL files declare text and number properties as `owl:DatatypeProperty` and the others as `owl:ObjectProperty`, so literal and resource values use the corresponding property kinds. The regression checks do not certify full OWL 2 DL reasoner conformance.
 
-`shapes/datacite-4.7-r2.shacl.ttl` checks these rules.
+`shapes/datacite-4.7-r2.shacl.ttl` checks these rules, including that every controlled value is a real term of its vocabulary.
 
 ## Integrity Files
 
@@ -68,7 +73,6 @@ Publication-owned root files such as `.nojekyll`, `LICENSE`, and the root `index
 
 Before publishing, verify that:
 
-- no machine-readable artifact in this bundle contains the staging namespace URL from the source tree
 - representative files such as `class/Resource.jsonld`, `property/identifier.jsonld`, `vocab/resourceTypeGeneral/Dataset.jsonld`, `context/fullcontext.jsonld`, and `manifest/datacite-current.json` use `{{CANONICAL_NAMESPACE}}`
 - `shasum -a 256 -c CHECKSUMS.sha256` succeeds from inside this directory
 - W3ID redirects resolve to the corresponding files under `{{PUBLICATION_BASE_URL}}`

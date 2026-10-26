@@ -6,7 +6,7 @@
 
 <https://doi.org/10.5061/dryad.h44j0zq16> dcp:contributor [ a dcc:Contributor ;
             dcp:affiliation [ rdf:value "University of Washington" ;
-                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifier "https://ror.org/00cvxb145"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:contributorName "Ellingboe, Ethan" ;
@@ -18,7 +18,7 @@
     dcp:creator [ a dcc:Creator ;
             schema:position 3 ;
             dcp:affiliation [ rdf:value "University of Washington" ;
-                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifier "https://ror.org/00cvxb145"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:creatorName "Sultana Priyota, Azeezah" ;
@@ -26,7 +26,7 @@
         [ a dcc:Creator ;
             schema:position 2 ;
             dcp:affiliation [ rdf:value "University of Washington" ;
-                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifier "https://ror.org/00cvxb145"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:creatorName "Huang, Monica" ;
@@ -34,7 +34,7 @@
         [ a dcc:Creator ;
             schema:position 1 ;
             dcp:affiliation [ rdf:value "University of Washington" ;
-                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifier "https://ror.org/00cvxb145"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:creatorName "Ellingboe, Ethan" ;
@@ -45,7 +45,7 @@
         [ a dcc:Creator ;
             schema:position 4 ;
             dcp:affiliation [ rdf:value "University of Washington" ;
-                    dcp:affiliationIdentifier <https://ror.org/00cvxb145> ;
+                    dcp:affiliationIdentifier "https://ror.org/00cvxb145"^^xsd:string ;
                     dcp:affiliationIdentifierScheme "ROR"^^xsd:string ;
                     dcp:schemeURI <https://ror.org> ] ;
             dcp:creatorName "Simonen, Kathrina" ;
@@ -257,17 +257,17 @@
             dcp:descriptionType <https://w3id.org/tib/datacite/vocab/descriptionType/Methods> ] ;
     dcp:fundingReference [ a dcc:FundingReference ;
             dcp:awardNumber "DE-AR0001624"^^xsd:string ;
-            dcp:funderIdentifier <https://ror.org/03q1rgc19> ;
+            dcp:funderIdentifier "https://ror.org/03q1rgc19"^^xsd:string ;
             dcp:funderIdentifierType <https://w3id.org/tib/datacite/vocab/funderIdentifierType/ROR> ;
             dcp:funderName "Advanced Research Projects Agency - Energy"^^xsd:string ] ;
     dcp:identifier [ a dcc:Identifier ;
             rdf:value "10.5061/dryad.h44j0zq16" ;
             dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] ;
     dcp:language "en" ;
-    dcp:publicationYear 2026 ;
+    dcp:publicationYear "2026"^^xsd:gYear ;
     dcp:publisher [ a dcc:Publisher ;
             rdf:value "Dryad" ;
-            dcp:publisherIdentifier <https://ror.org/00x6h5n95> ;
+            dcp:publisherIdentifier "https://ror.org/00x6h5n95"^^xsd:string ;
             dcp:publisherIdentifierScheme "ROR"^^xsd:string ;
             dcp:schemeURI <https://ror.org/> ] ;
     dcp:relatedIdentifier [ a dcc:RelatedIdentifier ;

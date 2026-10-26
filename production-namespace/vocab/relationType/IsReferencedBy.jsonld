@@ -20,7 +20,7 @@
     },
     {
       "@language": "cs",
-      "@value": "označuje, že na A je odkazován z B"
+      "@value": "označuje, že A je zdrojem informací pro B"
     }
   ],
   "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
@@ -29,8 +29,8 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

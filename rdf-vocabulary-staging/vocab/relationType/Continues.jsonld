@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relationType/Continues",
+  "id": "https://w3id.org/tib/datacite/vocab/relationType/Continues",
   "type": "Concept",
   "prefLabel": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "@language": "cs",
-      "@value": "pokračuje (čím)"
+      "@value": "je pokračováním (čeho)"
     }
   ],
   "notation": "Continues",
@@ -23,13 +23,13 @@
       "@value": "označuje, že A je pokračováním díla B"
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relationType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>"
   ],
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

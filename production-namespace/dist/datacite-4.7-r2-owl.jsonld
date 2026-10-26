@@ -175,6 +175,10 @@
       "type": "owl:AnnotationProperty"
     },
     {
+      "id": "https://schema.org/position",
+      "type": "owl:DatatypeProperty"
+    },
+    {
       "id": "https://w3id.org/tib/datacite/dist/datacite-4.7-r2",
       "type": "owl:Ontology",
       "title": "DataCite Linked Data 4.7-r2 Distribution",
@@ -203,7 +207,7 @@
       "id": "https://w3id.org/tib/datacite/class/Contributor",
       "type": "owl:Class",
       "label": "Contributor",
-      "comment": " The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
+      "comment": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property. For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository. For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Contributor.jsonld"
       ]
@@ -230,7 +234,7 @@
       "id": "https://w3id.org/tib/datacite/class/Description",
       "type": "owl:Class",
       "label": "Description",
-      "comment": " All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
+      "comment": "All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/class/Description.jsonld"
       ]
@@ -390,7 +394,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/affiliationIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "affiliationIdentifier",
       "comment": "Uniquely identifies the organizational affiliation of the creator.",
       "seeAlso": [
@@ -399,7 +403,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/affiliationIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "affiliationIdentifierScheme",
       "comment": "The name of the affiliation identifier scheme",
       "seeAlso": [
@@ -421,7 +425,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/alternateIdentifierType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "alternateIdentifierType",
       "comment": "The type of the AlternateIdentifier.",
       "seeAlso": [
@@ -430,7 +434,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/awardNumber",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "awardNumber",
       "comment": "The code assigned by the funder to a sponsored award (grant).",
       "seeAlso": [
@@ -439,7 +443,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/awardTitle",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "awardTitle",
       "comment": "The human readable title or name of the award (grant).",
       "seeAlso": [
@@ -457,7 +461,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/classificationCode",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "classificationCode",
       "comment": "The classification code used for the subject term in the subject scheme.",
       "seeAlso": [
@@ -479,7 +483,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/contributorName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "contributorName",
       "comment": "The full name of the contributor.",
       "seeAlso": [
@@ -510,7 +514,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/creatorName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "creatorName",
       "comment": "The full name of the creator.",
       "seeAlso": [
@@ -532,7 +536,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/dateInformation",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "dateInformation",
       "comment": "Specific information about the date, if appropriate.",
       "seeAlso": [
@@ -572,7 +576,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/eastBoundLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "eastBoundLongitude",
       "comment": "Eastern longitudinal dimension of box.",
       "seeAlso": [
@@ -581,7 +585,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/edition",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "edition",
       "comment": "Edition or version of the related item.",
       "seeAlso": [
@@ -590,7 +594,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/familyName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "familyName",
       "comment": "The surname or last name of the creator.",
       "seeAlso": [
@@ -599,7 +603,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/firstPage",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "firstPage",
       "comment": "First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
       "seeAlso": [
@@ -608,7 +612,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/format",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "format",
       "comment": "Technical format of the resource.",
       "seeAlso": [
@@ -617,7 +621,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/funderIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "funderIdentifier",
       "comment": "Uniquely identifies a funding entity, according to various types.",
       "seeAlso": [
@@ -635,7 +639,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/funderName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "funderName",
       "comment": "Name of the funding provider.",
       "seeAlso": [
@@ -679,7 +683,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/geoLocationPlace",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "geoLocationPlace",
       "comment": "Description of a geographic location.",
       "seeAlso": [
@@ -707,7 +711,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/givenName",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "givenName",
       "comment": "The personal or first name of the creator.",
       "seeAlso": [
@@ -747,7 +751,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/issue",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "issue",
       "comment": "Issue number or name of the related item.",
       "seeAlso": [
@@ -756,7 +760,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/language",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "language",
       "comment": "The primary language of the resource.",
       "seeAlso": [
@@ -765,7 +769,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/lastPage",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "lastPage",
       "comment": "Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.",
       "seeAlso": [
@@ -783,7 +787,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/nameIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "nameIdentifierScheme",
       "comment": "The name of the name identifier scheme.",
       "seeAlso": [
@@ -801,7 +805,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/northBoundLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "northBoundLatitude",
       "comment": "Northern latitudinal dimension of box.",
       "seeAlso": [
@@ -810,7 +814,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/number",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "number",
       "comment": "Number of the resource within the related item, e.g., report number or article number.",
       "seeAlso": [
@@ -828,7 +832,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/pointLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "pointLatitude",
       "comment": "Latitudinal dimension of point.",
       "seeAlso": [
@@ -837,7 +841,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/pointLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "pointLongitude",
       "comment": "Longitudinal dimension of point.",
       "seeAlso": [
@@ -856,7 +860,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publicationYear",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publicationYear",
       "comment": "The year when the item was or will be made publicly available.",
       "seeAlso": [
@@ -878,7 +882,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publisherIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publisherIdentifier",
       "comment": "Uniquely identifies the publisher, according to various schemes.",
       "seeAlso": [
@@ -887,7 +891,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/publisherIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "publisherIdentifierScheme",
       "comment": "The name of the publisher identifier scheme.",
       "seeAlso": [
@@ -958,7 +962,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/relatedMetadataScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "relatedMetadataScheme",
       "comment": "The name of the scheme.",
       "seeAlso": [
@@ -976,7 +980,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/relationTypeInformation",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "relationTypeInformation",
       "comment": "Additional information about the selected relationType, if appropriate.",
       "seeAlso": [
@@ -985,7 +989,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/resourceType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "resourceType",
       "comment": "A description of the resource.",
       "seeAlso": [
@@ -1016,7 +1020,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/rightsIdentifier",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "rightsIdentifier",
       "comment": "A short standardized identifier for the licence.",
       "seeAlso": [
@@ -1025,7 +1029,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/rightsIdentifierScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "rightsIdentifierScheme",
       "comment": "The name of the scheme.",
       "seeAlso": [
@@ -1043,7 +1047,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/schemeType",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "schemeType",
       "comment": "The type of the relatedMetadataScheme, linked with the schemeURI.",
       "seeAlso": [
@@ -1061,7 +1065,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/size",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "size",
       "comment": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
       "seeAlso": [
@@ -1070,7 +1074,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/southBoundLatitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "southBoundLatitude",
       "comment": "Southern latitude of box .",
       "seeAlso": [
@@ -1092,7 +1096,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/subjectScheme",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "subjectScheme",
       "comment": "The name of the subject scheme or classification code or authority if one is used.",
       "seeAlso": [
@@ -1125,14 +1129,14 @@
       "id": "https://w3id.org/tib/datacite/property/valueURI",
       "type": "owl:ObjectProperty",
       "label": "valueURI",
-      "comment": " The URI of the subject term.",
+      "comment": "The URI of the subject term.",
       "seeAlso": [
         "https://w3id.org/tib/datacite/property/valueURI.jsonld"
       ]
     },
     {
       "id": "https://w3id.org/tib/datacite/property/version",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "version",
       "comment": "The version number of the resource.",
       "seeAlso": [
@@ -1141,7 +1145,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/volume",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "volume",
       "comment": "Volume of the related item.",
       "seeAlso": [
@@ -1150,7 +1154,7 @@
     },
     {
       "id": "https://w3id.org/tib/datacite/property/westBoundLongitude",
-      "type": "owl:ObjectProperty",
+      "type": "owl:DatatypeProperty",
       "label": "westBoundLongitude",
       "comment": "Western longitudinal dimension of box.",
       "seeAlso": [
@@ -1613,9 +1617,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "To indicate the start of an embargo period, use Accepted or Submitted, as appropriate.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Accepted.jsonld"
@@ -1651,9 +1655,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "To indicate the end of an embargo period, use Available.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Available.jsonld"
@@ -1689,9 +1693,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "To indicate precise or particular timeframes in which research was conducted.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Collected.jsonld"
@@ -1726,9 +1730,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Copyrighted.jsonld"
@@ -1764,9 +1768,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "To indicate the temporal coverage of the resource, use Coverage. This may be different from Collected.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Coverage.jsonld"
@@ -1802,9 +1806,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "Recommended for discovery.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Created.jsonld"
@@ -1839,9 +1843,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Issued.jsonld"
@@ -1876,9 +1880,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Other.jsonld"
@@ -1914,9 +1918,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "Recommended for discovery. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Submitted.jsonld"
@@ -1951,9 +1955,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Updated.jsonld"
@@ -1988,9 +1992,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Valid.jsonld"
@@ -2026,9 +2030,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
       "scopeNote": "It is good practice to include a Description that indicates the reason for the retraction or withdrawal.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/dateType/Withdrawn.jsonld"
@@ -2088,9 +2092,9 @@
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.1594/PANGAEA.771774"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/Abstract.jsonld"
@@ -2129,9 +2133,9 @@
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.6078/D1K01X"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/Methods.jsonld"
@@ -2167,9 +2171,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "scopeNote": "Use for any other description type.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/Other.jsonld"
@@ -2205,9 +2209,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "scopeNote": "The information previously encoded as a description with this type should now be explicitly provided in tagged fields using the new RelatedItem property with relationType “IsPublishedIn” selected.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/SeriesInformation.jsonld"
@@ -2246,9 +2250,9 @@
       "example": [
         "https://data.datacite.org/application/vnd.datacite.datacite+xml/10.5678/LCRS/FOR816.CIT.1031"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/TableOfContents.jsonld"
@@ -2284,9 +2288,9 @@
       "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
       "scopeNote": "For software description, this may include the contents of a “readme.txt” and necessary environmental information (hardware, operational software, applications/programs with version information, a human-readable synopsis of software purpose) that cannot be described using other properties. For other uses, this can include specific and detailed information as necessary and appropriate.",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/descriptionType/TechnicalInfo.jsonld"
@@ -3115,9 +3119,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"ISBN\" relationType=\"Cites\">0761964312</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Cites.jsonld"
@@ -3156,9 +3160,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Collects\">10.5072/data</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Collects.jsonld"
@@ -3197,9 +3201,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Compiles\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Compiles.jsonld"
@@ -3218,7 +3222,7 @@
         },
         {
           "@language": "cs",
-          "@value": "pokračuje (čím)"
+          "@value": "je pokračováním (čeho)"
         }
       ],
       "notation": "Continues",
@@ -3237,9 +3241,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"Continues\">urn:nbn:de:bsz:21-opus-4966</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Continues.jsonld"
@@ -3277,9 +3281,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Describes\">10.6084/m9.figshare.c.3288407</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Describes.jsonld"
@@ -3318,9 +3322,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Documents\">10.1234/7836</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Documents.jsonld"
@@ -3358,9 +3362,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasMetadata\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567890</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/HasMetadata.jsonld"
@@ -3399,9 +3403,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"HasPart\">https://zenodo.org/record/16564/files/dune-stuff-LSSC_15.zip</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/HasPart.jsonld"
@@ -3440,9 +3444,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasTranslation\">10.21384/g01j-jm06</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/HasTranslation.jsonld"
@@ -3481,9 +3485,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"HasVersion\">10.5281/ZENODO.832053</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/HasVersion.jsonld"
@@ -3522,9 +3526,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCitedBy\">10.4232/10.ASEAS-5.2-1</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsCitedBy.jsonld"
@@ -3563,9 +3567,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsCollectedBy\">10.5072/instrument</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsCollectedBy.jsonld"
@@ -3604,9 +3608,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsCompiledBy\">http://d-nb.info/gnd/4513749-3</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsCompiledBy.jsonld"
@@ -3625,7 +3629,7 @@
         },
         {
           "@language": "cs",
-          "@value": "je pokračováním (čeho)"
+          "@value": "pokračuje (čím)"
         }
       ],
       "notation": "IsContinuedBy",
@@ -3644,9 +3648,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsContinuedBy\">urn:nbn:de:bsz:21-opus-4967</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsContinuedBy.jsonld"
@@ -3685,9 +3689,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDerivedFrom\">10.6078/M7DZ067C</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsDerivedFrom.jsonld"
@@ -3725,9 +3729,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsDescribedBy\">10.1038/sdata.2016.123</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsDescribedBy.jsonld"
@@ -3766,9 +3770,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsDocumentedBy\">http://tobias-lib.uni-tuebingen.de/volltexte/2000/96/</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsDocumentedBy.jsonld"
@@ -3807,9 +3811,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsIdenticalTo\">http://oac.cdlib.org/findaid/ark:/13030/c8r78fzq</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsIdenticalTo.jsonld"
@@ -3847,9 +3851,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsMetadataFor\" relatedMetadataScheme=\"DDI-L\" schemeURI=\"http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd\">10.1234/567891</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsMetadataFor.jsonld"
@@ -3887,9 +3891,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsNewVersionOf\">10.5438/0005</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsNewVersionOf.jsonld"
@@ -3927,9 +3931,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsObsoletedBy\">10.5438/0005</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsObsoletedBy.jsonld"
@@ -3968,9 +3972,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsOriginalFormOf\">10.1234/9035</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsOriginalFormOf.jsonld"
@@ -4009,9 +4013,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPartOf\">10.5281/zenodo.754312</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsPartOf.jsonld"
@@ -4049,9 +4053,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsPreviousVersionOf\">10.5438/0007</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsPreviousVersionOf.jsonld"
@@ -4089,9 +4093,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"ISSN\" relationType=\"IsPublishedIn\">2213-1337</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsPublishedIn.jsonld"
@@ -4121,7 +4125,7 @@
         },
         {
           "@language": "cs",
-          "@value": "označuje, že na A je odkazován z B"
+          "@value": "označuje, že A je zdrojem informací pro B"
         }
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
@@ -4130,9 +4134,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsReferencedBy\">http://www.testpubl.de</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsReferencedBy.jsonld"
@@ -4171,9 +4175,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsRequiredBy\">10.1234/8675</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsRequiredBy.jsonld"
@@ -4211,9 +4215,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsReviewedBy\">10.5256/F1000RESEARCH.4288.R4745</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsReviewedBy.jsonld"
@@ -4252,9 +4256,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URL\" relationType=\"IsSourceOf\">http://opencontext.org/projects/81204AF8-127C-4686-E9B0-1202C3A47959</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsSourceOf.jsonld"
@@ -4293,9 +4297,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"PMID\" relationType=\"IsSupplementedBy\">16911322</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementedBy.jsonld"
@@ -4334,9 +4338,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"IsSupplementTo\">urn:nbn:de:0168-ssoar-13172</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsSupplementTo.jsonld"
@@ -4375,9 +4379,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsTranslationOf\">10.21384/828a-cm38</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsTranslationOf.jsonld"
@@ -4416,9 +4420,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVariantFormOf\">10.1234/8675</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsVariantFormOf.jsonld"
@@ -4457,9 +4461,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"IsVersionOf\">10.5281/ZENODO.832054</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/IsVersionOf.jsonld"
@@ -4497,9 +4501,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Obsoletes\">10.5438/0007</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Obsoletes.jsonld"
@@ -4538,9 +4542,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/relationType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Other.jsonld"
@@ -4570,7 +4574,7 @@
         },
         {
           "@language": "cs",
-          "@value": "označuje, že B odkazuje na A"
+          "@value": "označuje, že A používá B jako zdroj informací"
         }
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/relationType",
@@ -4579,9 +4583,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"URN\" relationType=\"References\">urn:nbn:de:bsz:21-opus-963</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/References.jsonld"
@@ -4620,9 +4624,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Requires\">10.1234/867</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Requires.jsonld"
@@ -4660,9 +4664,9 @@
       "example": [
         "<relatedIdentifier relatedIdentifierType=\"DOI\" relationType=\"Reviews\">10.12688/f1000research.4001.1</relatedIdentifier>"
       ],
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/relationType/Reviews.jsonld"
@@ -5431,9 +5435,9 @@
       "scopeNote": "Use for formally recognized alternate titles. For translated titles use TranslatedTitle; for secondary titles use Subtitle.",
       "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/titleType/AlternativeTitle.jsonld"
@@ -5468,9 +5472,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/titleType/Other.jsonld"
@@ -5505,9 +5509,9 @@
       ],
       "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/titleType/Subtitle.jsonld"
@@ -5543,9 +5547,9 @@
       "scopeNote": "Use the xml:lang attribute to indicate the language of the translated title.",
       "inScheme": "https://w3id.org/tib/datacite/vocab/titleType",
       "topConceptOf": "https://w3id.org/tib/datacite/vocab/titleType",
-      "modified": "2026-09-18",
+      "modified": "2026-10-15",
       "changeNote": [
-        "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+        "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
       ],
       "seeAlso": [
         "https://w3id.org/tib/datacite/vocab/titleType/TranslatedTitle.jsonld"

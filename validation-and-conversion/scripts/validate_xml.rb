@@ -5,7 +5,7 @@ require 'nokogiri'
 require 'pathname'
 require 'optparse'
 
-DEFAULT_XSD = Pathname.new(__dir__).join('..', 'schemas', 'xsd', 'metadata-4.6.xsd').expand_path.to_s
+DEFAULT_XSD = Pathname.new(__dir__).join('..', 'schemas', 'xsd', '4.7', 'metadata.xsd').expand_path.to_s
 
 options = { xsd: DEFAULT_XSD }
 OptionParser.new do |opts|
@@ -27,7 +27,7 @@ doc = Nokogiri::XML(File.read(xml_path))
 errors = xsd.validate(doc)
 
 if errors.empty?
-  puts "OK: #{xml_path} validates against #{File.basename(options[:xsd])}"
+  puts "OK: #{xml_path} validates against #{File.join(File.basename(File.dirname(xsd_path)), File.basename(xsd_path))}"
   exit 0
 else
   warn "Validation FAILED (#{errors.size} error(s)):"

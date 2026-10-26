@@ -3,5 +3,5 @@
 
 <https://w3id.org/tib/datacite/property/valueURI> a rdf:Property ;
     rdfs:label "valueURI" ;
-    rdfs:comment " The URI of the subject term." .
+    rdfs:comment "The URI of the subject term." .
 

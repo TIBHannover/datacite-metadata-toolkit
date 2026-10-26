@@ -18,7 +18,9 @@ from datacite_to_rdf import DEFAULT_CONTEXT, load_context, prepare, record_attri
 
 EXAMPLES = ROOT / "validation-and-conversion" / "examples"
 RECORDS = [EXAMPLES / "record.json", EXAMPLES / "real-dataset-dryad.json", EXAMPLES / "real-software-zenodo.json"]
-SHAPES = ROOT / "validation-and-conversion" / "shapes" / "datacite-4.7-r2.shacl.ttl"
+CURRENT_VERSION = json.loads((ROOT / "rdf-vocabulary-staging" / "manifest" / "datacite-current.json").read_text(
+    encoding="utf-8"))["currentVersion"]
+SHAPES = ROOT / "validation-and-conversion" / "shapes" / f"datacite-{CURRENT_VERSION}.shacl.ttl"
 DIST = ROOT / "production-namespace" / "dist"
 DCP = rdflib.Namespace("https://w3id.org/tib/datacite/property/")
 DCC = rdflib.Namespace("https://w3id.org/tib/datacite/class/")
@@ -118,27 +120,60 @@ def convert(path):
 
 
 class RecordConversionTest(unittest.TestCase):
-    def test_cli_reports_empty_identifier_without_emitting_rdf(self):
+    def test_cli_warns_about_empty_identifiers_and_still_converts(self):
         with tempfile.TemporaryDirectory() as directory:
             record = Path(directory) / "record.json"
-            record.write_text(json.dumps({"creators": [{"nameIdentifiers": [{"nameIdentifier": None}]}]}))
+            record.write_text(json.dumps({"doi": "10.1234/test", "creators": [
+                {"name": "A", "nameIdentifiers": [{"nameIdentifier": None, "nameIdentifierScheme": "ORCID"}]}]}))
             result = subprocess.run(
                 [sys.executable, str(ROOT / "validation-and-conversion/scripts/datacite_to_rdf.py"), str(record)],
                 capture_output=True, text=True,
             )
-        self.assertEqual(result.returncode, 2)
-        self.assertEqual(result.stdout, "")
-        self.assertIn("$.creators[0].nameIdentifiers[0].nameIdentifier", result.stderr)
-        self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("warning: $.creators[0].nameIdentifiers[0]", result.stderr)
+        self.assertIn("creatorName", result.stdout)
+        self.assertNotIn("nameIdentifier ", result.stdout)
 
-    def test_empty_name_identifiers_are_rejected_with_their_location(self):
+    def test_unknown_keys_are_reported(self):
+        warnings = []
+        graph = to_graph({"doi": "10.1234/test", "titel": [{"title": "Lost"}], "creators": [{"name": "A", "nmae": "B"}],
+                          "types": {"resourceTypeGeneral": "Dataset", "ris": "DATA"}, "container": {"type": "Series"}},
+                         load_context(DEFAULT_CONTEXT), warnings=warnings)
+        self.assertEqual(sorted(w.split(":")[0] for w in warnings), ["$.creators[0].nmae", "$.titel"])
+        self.assertNotIn("Lost", {str(o) for o in graph.objects()})
+
+    def test_example_records_give_no_warnings(self):
+        for path in RECORDS:
+            warnings = []
+            to_graph(record_attributes(path), load_context(DEFAULT_CONTEXT), warnings=warnings)
+            self.assertEqual(warnings, [], path.name)
+
+    def test_empty_identifiers_are_left_out_with_their_location(self):
         for value in (None, "", "   "):
-            attributes = {"doi": "10.1234/test", "relatedItems": [{"creators": [
-                {"name": "A", "nameIdentifiers": [{"nameIdentifier": value, "nameIdentifierScheme": "ORCID"}]}]}]}
+            attributes = {"doi": "10.1234/test",
+                          "creators": [{"name": "A", "affiliation": [
+                              {"name": "Org", "affiliationIdentifier": value, "affiliationIdentifierScheme": "ROR"}]}],
+                          "publisher": {"name": "P", "publisherIdentifier": value, "publisherIdentifierScheme": "ROR"},
+                          "fundingReferences": [{"funderName": "F", "funderIdentifier": value,
+                                                 "funderIdentifierType": "ROR"}],
+                          "alternateIdentifiers": [{"alternateIdentifier": value, "alternateIdentifierType": "Local"}],
+                          "relatedItems": [{"relatedItemIdentifier": {"relatedItemIdentifier": value,
+                                                                      "relatedItemIdentifierType": "DOI"},
+                                            "creators": [{"name": "B", "nameIdentifiers": [
+                                                {"nameIdentifier": value, "nameIdentifierScheme": "ORCID"}]}]}]}
             original = json.dumps(attributes)
-            with self.assertRaisesRegex(ValueError, r"relatedItems\[0\].creators\[0\].nameIdentifiers\[0\]"):
-                prepare(attributes)
-            self.assertEqual(json.dumps(attributes), original)
+            warnings = []
+            graph = to_graph(attributes, load_context(DEFAULT_CONTEXT), warnings=warnings)
+            self.assertEqual(json.dumps(attributes), original, "the input record is not changed")
+            self.assertEqual(len(warnings), 6, warnings)
+            self.assertTrue(any("$.relatedItems[0].creators[0].nameIdentifiers[0]" in w for w in warnings), warnings)
+            for prop in ("affiliationIdentifier", "affiliationIdentifierScheme", "publisherIdentifier",
+                         "funderIdentifier", "funderIdentifierType", "alternateIdentifier", "relatedItemIdentifier",
+                         "nameIdentifier"):
+                self.assertEqual(list(graph.subject_objects(DCP[prop])), [], prop)
+            self.assertEqual({str(o) for o in graph.objects(None, DCP.funderName)}, {"F"})
+            conforms, _, report = pyshacl.validate(graph, shacl_graph=str(SHAPES))
+            self.assertTrue(conforms, report)
 
     def test_no_values_lost(self):
         for path in RECORDS:
@@ -203,7 +238,36 @@ class StructureTest(unittest.TestCase):
         attributes = dict(self.attributes)
         attributes["creators"] = [{"name": "Example", "affiliation": [{"name": "Org", "affiliationIdentifier": "0000 0004 1936 7347"}]}]
         graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
-        self.assertIn(rdflib.Literal("0000 0004 1936 7347"), set(graph.objects(None, DCP.affiliationIdentifier)))
+        self.assertIn(rdflib.Literal("0000 0004 1936 7347", datatype=rdflib.XSD.string),
+                      set(graph.objects(None, DCP.affiliationIdentifier)))
+
+    def test_identifier_values_are_always_text(self):
+        """A web address and a bare identifier give the same kind of value, so one property never mixes kinds."""
+        for prop in ("affiliationIdentifier", "publisherIdentifier", "funderIdentifier"):
+            values = list(self.graph.objects(None, DCP[prop]))
+            self.assertTrue(values, prop)
+            for value in values:
+                self.assertIsInstance(value, rdflib.Literal, prop)
+                self.assertEqual(value.datatype, rdflib.XSD.string, prop)
+
+    def test_doi_written_as_a_url_is_not_prefixed_twice(self):
+        for written in ("https://doi.org/10.1234/ABC", "doi:10.1234/ABC", " 10.1234/ABC "):
+            graph = to_graph({"doi": written}, load_context(DEFAULT_CONTEXT))
+            record = rdflib.URIRef("https://doi.org/10.1234/ABC")
+            self.assertEqual(str(graph.value(graph.value(record, DCP.identifier), rdflib.RDF.value)), "10.1234/ABC",
+                             written)
+
+    def test_coordinates_and_years_have_one_datatype(self):
+        """JSON numbers and strings give the same typed values, keeping the digits as written."""
+        for latitude, year in ((41.5, 2023), ("41.500", "2023")):
+            attributes = {"doi": "10.1234/geo", "publicationYear": year,
+                          "geoLocations": [{"geoLocationPoint": point(latitude, "-71.0")}],
+                          "relatedItems": [{"publicationYear": year}]}
+            graph = to_graph(attributes, load_context(DEFAULT_CONTEXT))
+            self.assertEqual({o.datatype for o in graph.objects(None, DCP.pointLatitude)}, {rdflib.XSD.float})
+            self.assertEqual({str(o) for o in graph.objects(None, DCP.pointLatitude)}, {str(latitude)})
+            self.assertEqual({(str(o), o.datatype) for o in graph.objects(None, DCP.publicationYear)},
+                             {(str(year), rdflib.XSD.gYear)})
 
     def test_api_identifiers_become_alternate_identifiers(self):
         doi = "10.1234/test"
@@ -350,6 +414,22 @@ BROKEN = {
                                  'dcp:identifierType <https://w3id.org/tib/datacite/vocab/identifierType/URL> ] .',
     "alternate identifier type as a term": 'doi:x dcp:alternateIdentifier [ a dcc:AlternateIdentifier ; rdf:value "1" ; '
                                            'dcp:alternateIdentifierType <https://w3id.org/tib/datacite/vocab/identifierType/DOI> ] .',
+    "misspelt relation type": f'doi:x dcp:relatedIdentifier [ a dcc:RelatedIdentifier ; rdf:value "10.1/a" ; '
+                              f'dcp:relatedIdentifierType <{DCV}relatedIdentifierType/DOI> ; '
+                              f'dcp:relationType <{DCV}relationType/IsCitedby> ] .',
+    "misspelt resource type": f'doi:x dcp:resourceTypeGeneral <{DCV}resourceTypeGeneral/Datset> .',
+    "related item type from another vocabulary": f'doi:x dcp:relatedItem [ a dcc:RelatedItem ; '
+                                                 f'dcp:relatedItemType <{DCV}relationType/Cites> ] .',
+    "funder identifier as a web link": 'doi:x dcp:fundingReference [ a dcc:FundingReference ; '
+                                       'dcp:funderIdentifier <https://ror.org/018mejw64> ] .',
+    "latitude as text": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPoint [ '
+                        'dcp:pointLatitude "41.5" ; dcp:pointLongitude "2.0"^^<http://www.w3.org/2001/XMLSchema#float> ] ] .',
+    "latitude out of range": 'doi:x dcp:geoLocation [ a dcc:GeoLocation ; dcp:geoLocationPoint [ '
+                             'dcp:pointLatitude "141.5"^^<http://www.w3.org/2001/XMLSchema#float> ; '
+                             'dcp:pointLongitude "2.0"^^<http://www.w3.org/2001/XMLSchema#float> ] ] .',
+    "publication year as a number": 'doi:x dcp:publicationYear 2024 .',
+    "funder identifier without its type": 'doi:x dcp:fundingReference [ a dcc:FundingReference ; '
+                                          'dcp:funderIdentifier "501100000780" ] .',
 }
 
 
@@ -368,6 +448,13 @@ class ShapesTest(unittest.TestCase):
             conforms, report = self.conforms(graph)
             self.assertTrue(conforms, f"{path.name}:\n{report}")
 
+    def test_controlled_value_shapes_list_every_vocabulary_term(self):
+        result = subprocess.run([sys.executable, str(ROOT / "rdf-build-scripts" / "build-shapes.py"), "--check"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        published = ROOT / "production-namespace" / "shapes" / SHAPES.name
+        self.assertEqual(published.read_text(encoding="utf-8"), SHAPES.read_text(encoding="utf-8"))
+
     def test_shapes_reject_broken_structure(self):
         for name, snippet in BROKEN.items():
             with self.subTest(name):
@@ -383,6 +470,48 @@ class VocabularyTest(unittest.TestCase):
             uses = [t for t in graph if rdflib.RDF.value in t]
             self.assertEqual(uses, [], name)
 
+    def test_frozen_releases_are_unchanged(self):
+        result = subprocess.run([sys.executable, str(ROOT / "rdf-build-scripts" / "check-frozen-releases.py")],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_published_releases_cannot_be_rebuilt_by_accident(self):
+        for script in ("build-distribution.js", "release-snapshot.js"):
+            result = subprocess.run(["node", str(ROOT / "rdf-build-scripts" / script), "--version", "4.7"],
+                                    capture_output=True, text=True, cwd=ROOT)
+            self.assertNotEqual(result.returncode, 0, script)
+            self.assertIn("published", result.stderr + result.stdout, script)
+        self.test_frozen_releases_are_unchanged()
+
+    def test_owl_property_kinds_match_converter_output(self):
+        """OWL 2 DL does not allow text on an object property, so each declared kind must match the data."""
+        kinds = json.loads((ROOT / "rdf-build-scripts" / "property-value-kinds.json").read_text(encoding="utf-8"))
+        properties = {p.stem for p in (ROOT / "rdf-vocabulary-staging" / "property").glob("*.jsonld")}
+        self.assertEqual(sorted(set(kinds["text"]) & set(kinds["resource"])), [])
+        self.assertEqual(set(kinds["text"]) | set(kinds["resource"]), properties)
+        extra = {"doi": "10.1234/kinds", "relatedIdentifiers": [
+            {"relatedIdentifier": "10.1/m", "relatedIdentifierType": "DOI", "relationType": "HasMetadata",
+             "relationTypeInformation": "metadata record", "relatedMetadataScheme": "DDI-L", "schemeType": "XSD"}],
+            "geoLocations": [{"geoLocationPolygon": {"polygonPoint": SQUARE, "inPolygonPoint": point("0.5", "0.5")}}]}
+        observed = {"text": set(), "resource": set()}
+        graphs = [convert(path)[1] for path in RECORDS + [EXAMPLES / "datacite_example_filledin.json"]]
+        for graph in graphs + [to_graph(extra, load_context(DEFAULT_CONTEXT))]:
+            for _, p, o in graph:
+                if str(p).startswith(str(DCP)):
+                    observed["text" if isinstance(o, rdflib.Literal) else "resource"].add(str(p)[len(str(DCP)):])
+        self.assertEqual(observed["text"] & observed["resource"], set(), "a property holds both kinds of value")
+        self.assertEqual(observed["text"] - set(kinds["text"]), set())
+        self.assertEqual(observed["resource"] - set(kinds["resource"]), set())
+        self.assertEqual(properties - observed["text"] - observed["resource"], set(), "every property is exercised")
+        owl = rdflib.OWL
+        for name in ["datacite-4.7-r2.owl", "datacite-4.7-r2-owl-properties.ttl"]:
+            graph = rdflib.Graph().parse(DIST / name, format="xml" if name.endswith(".owl") else "turtle")
+            for kind, owl_type in (("text", owl.DatatypeProperty), ("resource", owl.ObjectProperty)):
+                declared = {str(s)[len(str(DCP)):] for s in graph.subjects(rdflib.RDF.type, owl_type)
+                            if str(s).startswith(str(DCP))}
+                self.assertEqual(declared, set(kinds[kind]), f"{name}: {owl_type}")
+            self.assertIn((POSITION, rdflib.RDF.type, owl.DatatypeProperty), graph, name)
+
     def test_emitted_controlled_values_are_defined(self):
         vocabulary = rdflib.Graph().parse(DIST / "datacite-4.7-r2.ttl")
         concepts = set(vocabulary.subjects(rdflib.RDF.type, rdflib.SKOS.Concept))
@@ -392,7 +521,40 @@ class VocabularyTest(unittest.TestCase):
             self.assertEqual(sorted(used - concepts), [], path.name)
 
 
+# JSON-LD 1.1 (Create Term Definition): an expanded term definition may contain only these keys,
+# and a context only terms and these keywords. Other keys make strict processors (PyLD, jsonld.js) fail.
+TERM_KEYS = {"@id", "@reverse", "@container", "@context", "@direction", "@index", "@language", "@nest", "@prefix",
+             "@protected", "@type"}
+CONTEXT_KEYWORDS = {"@base", "@direction", "@import", "@language", "@propagate", "@protected", "@type", "@version",
+                    "@vocab"}
+
+
+def jsonld_problems(context, where):
+    problems = []
+    for key, definition in context.items():
+        if key.startswith("@"):
+            if key not in CONTEXT_KEYWORDS:
+                problems.append(f"{where}: keyword {key} is not allowed in a context")
+        elif isinstance(definition, dict):
+            problems += [f"{where}.{key}: {k} is not allowed in a term definition" for k in definition if k not in TERM_KEYS]
+            if isinstance(definition.get("@context"), dict):
+                problems += jsonld_problems(definition["@context"], f"{where}.{key}")
+        elif definition is not None and not isinstance(definition, str):
+            problems.append(f"{where}.{key}: a term definition is a string, null or an object")
+    return problems
+
+
 class ContextTest(unittest.TestCase):
+    def test_contexts_follow_json_ld_11(self):
+        paths = [p for folder in ("rdf-vocabulary-staging", "production-namespace")
+                 for p in (ROOT / folder).rglob("*.jsonld") if p.parent.name == "context" or p.name == "context.jsonld"]
+        self.assertGreater(len(paths), 20)
+        problems = []
+        for path in paths:
+            context = json.loads(path.read_text(encoding="utf-8"))["@context"]
+            problems += jsonld_problems(context, str(path.relative_to(ROOT)))
+        self.assertEqual(problems, [])
+
     def test_current_context_is_frozen_for_the_current_version(self):
         staging = ROOT / "rdf-vocabulary-staging"
         current = json.loads((staging / "manifest" / "datacite-current.json").read_text(encoding="utf-8"))["currentVersion"]
@@ -414,8 +576,7 @@ class ContextTest(unittest.TestCase):
                 continue
             if not list(graph.query(prefixes + f"SELECT ?v WHERE {{ ?r {entry['path']} ?v }}", initBindings={"r": record})):
                 empty.append(name)
-        # The example's contributors have no name, so contributorName has no value to find.
-        self.assertEqual(sorted(empty), ["contributorName"])
+        self.assertEqual(sorted(empty), [])
 
 
 if __name__ == "__main__":

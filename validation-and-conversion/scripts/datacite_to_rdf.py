@@ -11,8 +11,15 @@ cannot: an explicit rdf:type on each node, the positions of creators and
 polygon points, a language tag on the text (JSON-LD
 cannot move a sibling "lang" key onto a value), a Publisher node for a publisher
 given only as a name (as related items do), alternate identifiers that the REST
-API lists under "identifiers", and protection for identifiers that are not web
-addresses, which a JSON-LD processor would otherwise drop.
+API lists under "identifiers", the bare DOI when the record writes it as a URL,
+and coordinates and years given as JSON numbers written as text, so that the
+context types them (xsd:float, xsd:gYear) the same way whichever form the record uses.
+
+Identifier entries without a value (for example an ORCID scheme with
+"nameIdentifier": null) are left out of the RDF, and so are keys the context
+does not know (for example a misspelt "titel"). A warning naming each one is
+written to standard error; the rest of the record is still converted. Check a
+record with the JSON Schema first to catch such mistakes before conversion.
 
 validation-and-conversion/shapes/datacite-4.7-r2.shacl.ttl checks the output.
 
@@ -46,8 +53,21 @@ STRUCTURED = {
     "fundingReferences": ("class:FundingReference", None),
     "relatedItems": ("class:RelatedItem", None),
 }
-# Identifier fields the context reads as web addresses; other values stay text.
-IDENTIFIER_KEYS = {"nameIdentifier", "affiliationIdentifier", "publisherIdentifier", "funderIdentifier"}
+# Identifiers that are left out when they have no value, with the keys that only qualify them.
+IDENTIFIER_QUALIFIERS = {
+    "affiliationIdentifier": ("affiliationIdentifierScheme", "schemeUri"),
+    "publisherIdentifier": ("publisherIdentifierScheme", "schemeUri"),
+    "funderIdentifier": ("funderIdentifierType", "schemeUri"),
+}
+# List key -> key holding the identifier that each entry exists to give.
+IDENTIFIER_ENTRIES = {"nameIdentifiers": "nameIdentifier", "alternateIdentifiers": "alternateIdentifier",
+                      "relatedIdentifiers": "relatedIdentifier"}
+# Numbers the context types (xsd:float, xsd:gYear); JSON numbers become text so the digits are kept as written.
+NUMBER_KEYS = {"pointLatitude", "pointLongitude", "westBoundLongitude", "eastBoundLongitude",
+               "southBoundLatitude", "northBoundLatitude", "publicationYear"}
+# REST API keys inside "types" that are derived citation formats, not DataCite metadata.
+DERIVED_TYPES = {"ris", "bibtex", "citeproc", "schemaOrg"}
+DOI_PREFIXES = ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:")
 # REST API fields that are derived or transport-only, not DataCite metadata.
 IGNORED = {"xml", "prefix", "suffix", "container", "url", "contentUrl", "state", "viewCount", "downloadCount",
            "citationCount", "partCount", "partOfCount", "referenceCount", "versionCount", "versionOfCount",
@@ -136,26 +156,31 @@ def type_items(container):
                 type_items(item)
 
 
-def protect_identifiers(value):
-    """Keep identifiers such as "0000 0001 2096 9829" as text instead of letting them be dropped."""
+def numbers_as_text(value):
+    """Write coordinates and years given as JSON numbers as text, e.g. 2023 -> "2023"."""
     if isinstance(value, list):
         for item in value:
-            protect_identifiers(item)
+            numbers_as_text(item)
     elif isinstance(value, dict):
         for key, item in value.items():
-            if key in IDENTIFIER_KEYS and isinstance(item, str) and not item.startswith(("http://", "https://", "urn:")):
-                value[key] = {"@value": item}
+            if key in NUMBER_KEYS and isinstance(item, (int, float)) and not isinstance(item, bool):
+                value[key] = str(item)
             else:
-                protect_identifiers(item)
+                numbers_as_text(item)
+
+
+def bare_doi(value):
+    """10.1234/abc for "10.1234/abc", "https://doi.org/10.1234/abc" or "doi:10.1234/abc"."""
+    value = str(value).strip()
+    for prefix in DOI_PREFIXES:
+        if value.lower().startswith(prefix):
+            return value[len(prefix):]
+    return value
 
 
 def is_doi_of(entry, doi):
-    value = str(entry.get("identifier", "")).strip().lower()
-    for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
-        if value.startswith(prefix):
-            value = value[len(prefix):]
-            break
-    return str(entry.get("identifierType", "")).upper() == "DOI" and bool(doi) and value == doi.strip().lower()
+    value = bare_doi(entry.get("identifier", "")).lower()
+    return str(entry.get("identifierType", "")).upper() == "DOI" and bool(doi) and value == bare_doi(doi).lower()
 
 
 def merge_api_identifiers(record):
@@ -164,7 +189,7 @@ def merge_api_identifiers(record):
     alternates = record.get("alternateIdentifiers") or []
     seen = {(a.get("alternateIdentifier"), a.get("alternateIdentifierType")) for a in alternates if isinstance(a, dict)}
     for entry in record.pop("identifiers", None) or []:
-        if not isinstance(entry, dict) or not entry.get("identifier") or is_doi_of(entry, record.get("doi")):
+        if not isinstance(entry, dict) or is_blank(entry.get("identifier")) or is_doi_of(entry, record.get("doi")):
             continue
         key = (entry["identifier"], entry.get("identifierType"))
         if key not in seen:
@@ -177,30 +202,73 @@ def merge_api_identifiers(record):
         record["alternateIdentifiers"] = alternates
 
 
-def check_name_identifiers(value, path="$"):
-    """Reject identifier entries with no value rather than emitting empty RDF nodes."""
+def is_blank(value):
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
+def drop_empty_identifiers(value, warnings, path="$"):
+    """Leave out identifiers that have no value, and the entries that exist only to give one."""
     if isinstance(value, list):
         for index, item in enumerate(value):
-            check_name_identifiers(item, f"{path}[{index}]")
+            drop_empty_identifiers(item, warnings, f"{path}[{index}]")
+    elif isinstance(value, dict):
+        for key, qualifiers in IDENTIFIER_QUALIFIERS.items():
+            if key in value and is_blank(value[key]):
+                dropped = [key] + [q for q in qualifiers if q in value]
+                for name in dropped:
+                    del value[name]
+                warnings.append(f"{path}: left out {', '.join(dropped)} because {key} has no value")
+        item = value.get("relatedItemIdentifier")
+        if isinstance(item, dict) and is_blank(item.get("relatedItemIdentifier")):
+            del value["relatedItemIdentifier"]
+            warnings.append(f"{path}: left out relatedItemIdentifier because it has no value")
+        for key, item in list(value.items()):
+            if key in IDENTIFIER_ENTRIES and isinstance(item, list):
+                kept = []
+                for index, entry in enumerate(item):
+                    if isinstance(entry, dict) and is_blank(entry.get(IDENTIFIER_ENTRIES[key])):
+                        warnings.append(f"{path}.{key}[{index}]: left out the entry because "
+                                        f"{IDENTIFIER_ENTRIES[key]} has no value")
+                    else:
+                        kept.append(entry)
+                value[key] = item = kept
+            drop_empty_identifiers(item, warnings, f"{path}.{key}")
+
+
+def context_terms(context, found=None):
+    """Every key the context defines, including keys of scoped contexts."""
+    found = set() if found is None else found
+    for key, definition in context.items():
+        found.add(key)
+        if isinstance(definition, dict) and isinstance(definition.get("@context"), dict):
+            context_terms(definition["@context"], found)
+    return found
+
+
+def unknown_keys(value, known, warnings, path="$"):
+    """Warn about keys that the context does not define and that would therefore be dropped."""
+    if isinstance(value, list):
+        for index, item in enumerate(value):
+            unknown_keys(item, known, warnings, f"{path}[{index}]")
     elif isinstance(value, dict):
         for key, item in value.items():
-            if key == "nameIdentifiers" and isinstance(item, list):
-                for index, entry in enumerate(item):
-                    if isinstance(entry, dict):
-                        identifier = entry.get("nameIdentifier")
-                        if not isinstance(identifier, str) or not identifier.strip():
-                            raise ValueError(
-                                f"{path}.{key}[{index}].nameIdentifier has no nonempty identifier value; "
-                                "supply the identifier or remove the empty entry before conversion"
-                            )
-            check_name_identifiers(item, f"{path}.{key}")
+            if key in IGNORED or key in DERIVED_TYPES or key == "doi" or key.startswith("@"):
+                continue
+            if key not in known:
+                warnings.append(f"{path}.{key}: left out because the DataCite context does not define this key")
+            else:
+                unknown_keys(item, known, warnings, f"{path}.{key}")
 
 
-def prepare(attributes):
-    check_name_identifiers(attributes)
+def prepare(attributes, warnings=None):
+    """Return a copy of the record ready for the context; problems found are appended to warnings."""
+    warnings = [] if warnings is None else warnings
     record = copy.deepcopy(attributes)
+    if record.get("doi"):
+        record["doi"] = bare_doi(record["doi"])
+    drop_empty_identifiers(record, warnings)
     merge_api_identifiers(record)
-    protect_identifiers(record)
+    numbers_as_text(record)
     type_items(record)
     # The DOI is the record's identifier.
     if record.get("doi"):
@@ -209,11 +277,18 @@ def prepare(attributes):
     return record
 
 
-def to_graph(attributes, context, prepared=True):
-    record = prepare(attributes) if prepared else attributes
-    document = {"@context": context, "@id": "https://doi.org/" + attributes["doi"], **record}
+def to_graph(attributes, context, prepared=True, warnings=None):
+    if warnings is not None:
+        unknown_keys(attributes, context_terms(context), warnings)
+    record = prepare(attributes, warnings) if prepared else attributes
+    document = {"@context": context, "@id": "https://doi.org/" + bare_doi(attributes["doi"]), **record}
     graph = rdflib.Graph()
-    graph.parse(data=json.dumps(document), format="json-ld")
+    # Keep literals as the record writes them ("41.090", not "41.09").
+    normalize, rdflib.NORMALIZE_LITERALS = rdflib.NORMALIZE_LITERALS, False
+    try:
+        graph.parse(data=json.dumps(document), format="json-ld")
+    finally:
+        rdflib.NORMALIZE_LITERALS = normalize
     for prefix, namespace in {
         "dcp": "https://w3id.org/tib/datacite/property/",
         "dcc": "https://w3id.org/tib/datacite/class/",
@@ -231,10 +306,11 @@ def main():
     parser.add_argument("--context", default=str(DEFAULT_CONTEXT), help="JSON-LD context file")
     parser.add_argument("--no-prepare", action="store_true", help="use the JSON-LD context only")
     args = parser.parse_args()
-    try:
-        graph = to_graph(record_attributes(args.record), load_context(args.context), prepared=not args.no_prepare)
-    except ValueError as error:
-        parser.error(str(error))
+    warnings = []
+    graph = to_graph(record_attributes(args.record), load_context(args.context), prepared=not args.no_prepare,
+                     warnings=warnings)
+    for warning in warnings:
+        print(f"warning: {warning}", file=sys.stderr)
     sys.stdout.write(graph.serialize(format="turtle"))
 
 

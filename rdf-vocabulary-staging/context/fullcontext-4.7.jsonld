@@ -1,8 +1,8 @@
 {
   "@context": {
-    "class": "https://schema.stage.datacite.org/linked-data/class/",
-    "property": "https://schema.stage.datacite.org/linked-data/property/",
-    "vocab": "https://schema.stage.datacite.org/linked-data/vocab/",
+    "class": "https://w3id.org/tib/datacite/class/",
+    "property": "https://w3id.org/tib/datacite/property/",
+    "vocab": "https://w3id.org/tib/datacite/vocab/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xml": "http://www.w3.org/XML/1998/namespace",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -20,7 +20,7 @@
       "@id": "property:identifierType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/identifierType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/identifierType/"
       }
     },
     "creators": {"@id": "@nest"},
@@ -36,7 +36,7 @@
       "@id": "property:nameType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/nameType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/nameType/"
       }
     },
     "givenName": {
@@ -75,7 +75,7 @@
       "@id": "property:titleType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/titleType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/titleType/"
       }
     },
     "publisher": {
@@ -98,7 +98,7 @@
       "@id": "property:resourceTypeGeneral",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/"
       }
     },
     "subjects": {"@id": "@nest"},
@@ -131,7 +131,7 @@
       "@id": "property:contributorType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/contributorType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/contributorType/"
       }
     },
     "dates": {"@id": "@nest"},
@@ -143,7 +143,7 @@
       "@id": "property:dateType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/dateType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/dateType/"
       }
     },
     "dateInformation": {
@@ -177,14 +177,14 @@
       "@id": "property:relatedIdentifierType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/"
       }
     },
     "relationType": {
       "@id": "property:relationType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/relationType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/relationType/"
       }
     },
     "relationTypeInformation": {
@@ -232,7 +232,7 @@
       "@id": "property:descriptionType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/descriptionType/"
       }
     },
     "geoLocations": {"@id": "@nest"},
@@ -316,7 +316,7 @@
       "@id": "property:funderIdentifierType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/funderIdentifierType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/funderIdentifierType/"
       }
     },
     "awardNumber": {
@@ -337,9 +337,8 @@
       "@id": "property:relatedItemType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/"
-      },
-      "_note": "DataCite 4.7 spec property 20.a states: 'Use the controlled list values as stated in 10.a resourceTypeGeneral'. relatedItemType is NOT a parallel vocabulary; it reuses the resourceTypeGeneral concept IRIs. The contextual difference (type-of-related-item vs type-of-primary-resource) is carried by the predicate (property:relatedItemType vs property:resourceTypeGeneral), not by the object IRI."
+        "@vocab": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/"
+      }
     },
     "relatedItemIdentifier": {
       "@id": "property:relatedItemIdentifier",
@@ -349,9 +348,8 @@
       "@id": "property:relatedItemIdentifierType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/"
-      },
-      "_note": "DataCite 4.7 spec property 20.1.a: relatedItemIdentifierType matches property 12.a relatedIdentifierType exactly. Concept IRIs are shared; the predicate (property:relatedItemIdentifierType vs property:relatedIdentifierType) carries the contextual semantics."
+        "@vocab": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/"
+      }
     },
     "volume": {
       "@id": "property:volume",
@@ -369,7 +367,7 @@
       "@id": "property:numberType",
       "@type": "@vocab",
       "@context": {
-        "@vocab": "https://schema.stage.datacite.org/linked-data/vocab/numberType/"
+        "@vocab": "https://w3id.org/tib/datacite/vocab/numberType/"
       }
     },
     "firstPage": {

@@ -1,0 +1,21 @@
+{
+  "4.6": {
+    "rdf-vocabulary-staging/dist/datacite-4.6-owl-properties.ttl": "185054950eb009aaeb6d9f62a5a487d8a1d3d25d38092c7d235d83e82507dd49",
+    "rdf-vocabulary-staging/dist/datacite-4.6-owl.jsonld": "cc204c901907f36c33cc1e6ced3e5736261e7b39cf3e9da602908fd407ca31d6",
+    "rdf-vocabulary-staging/dist/datacite-4.6.jsonld": "2bd0ed2b3e7a2d83385fe5827c488b0c3f0410f2b3ca59eb5163348542f1b5f4",
+    "rdf-vocabulary-staging/dist/datacite-4.6.rdf": "e07b12472977cbba4ee16a1799ec617daf44eef2d41bf4d0fa031237d3f12e53",
+    "rdf-vocabulary-staging/dist/datacite-4.6.ttl": "191d688dec9738d83bdc2111c0607e25e7a9479c5bc2cee7eb32f6d9ac28c4c0",
+    "rdf-vocabulary-staging/manifest/datacite-4.6.json": "a6190181ed16e0ae2cece973530a73fb15916871039f91cc7f4cd0cd6bd1ffe8"
+  },
+  "4.7": {
+    "rdf-vocabulary-staging/context/fullcontext-4.7.jsonld": "5e057fc51d4fdbedfb88b3a42552c754e1ea8215362ff56c0821385d9e4a0fca",
+    "rdf-vocabulary-staging/dist/datacite-4.7-owl-properties.ttl": "14dba22ba87295e492a71cf4da345c7a0aae14fa55c6ad03e8c8331a1627b796",
+    "rdf-vocabulary-staging/dist/datacite-4.7-owl.jsonld": "cb83bb04b11340f739dc922280300dc7994b2e5429d3d72661f6362ed29b6da9",
+    "rdf-vocabulary-staging/dist/datacite-4.7.jsonld": "a0203549f4225083ba80772f013d65851281fc43cdbc10fc68d5fa7f5b0414de",
+    "rdf-vocabulary-staging/dist/datacite-4.7.owl": "a99ce533156186a3022875386b0a99db657f62a953cd2d4ae8b075555e8772f3",
+    "rdf-vocabulary-staging/dist/datacite-4.7.rdf": "4aa9eea6aad69b30ed61b725b3f34012038ce2cc1070986f523b34922c3ea7dd",
+    "rdf-vocabulary-staging/dist/datacite-4.7.ttl": "3f7af3044684899ed5dd9d98a142a11329363cdedbd0ef5156108c35b4b9e543",
+    "rdf-vocabulary-staging/manifest/datacite-4.7.json": "44e1cd1637c7598908cd8acd4219420210a107c41bc25968586dec43ac4837f7",
+    "rdf-vocabulary-staging/manifest/release-matrix-4.6-4.7.json": "407c09f997b04455ac5581eddac4a92ad88cfd21b688c5839a4749867d793e33"
+  }
+}

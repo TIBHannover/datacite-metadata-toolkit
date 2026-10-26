@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/dateType/Accepted",
+  "id": "https://w3id.org/tib/datacite/vocab/dateType/Accepted",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,11 +23,11 @@
       "@value": "Datum, kdy vydavatel přijal zdroj do svého systému. \nPro označení začátku období embarga použijte podle potřeby možnost Datum přijetí nebo Datum podání."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/dateType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/dateType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/dateType",
   "scopeNote": "To indicate the start of an embargo period, use Accepted or Submitted, as appropriate.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

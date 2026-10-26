@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType/LISSN",
+  "id": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType/LISSN",
   "type": "Concept",
   "prefLabel": "LISSN",
   "altLabel": "Linking ISSN",
@@ -9,6 +9,6 @@
   "example": [
     "<relatedIdentifier relatedIdentifierType=\"LISSN\" relationType=\"Cites\">1188-1534</relatedIdentifier>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/relatedIdentifierType"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/relatedIdentifierType"
 }

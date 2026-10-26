@@ -3,8 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/tib/datacite/vocab/dateType/Accepted> a skos:Concept ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
-    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"@en ;
+    dcterms:modified "2026-10-15"^^xsd:date ;
+    skos:changeNote "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"@en ;
     skos:definition """Datum, kdy vydavatel přijal zdroj do svého systému. 
 Pro označení začátku období embarga použijte podle potřeby možnost Datum přijetí nebo Datum podání."""@cs,
         "The date that the publisher accepted the resource into their system."@en ;

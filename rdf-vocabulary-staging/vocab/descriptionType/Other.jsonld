@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType/Other",
+  "id": "https://w3id.org/tib/datacite/vocab/descriptionType/Other",
   "type": "Concept",
   "prefLabel": [
     {
@@ -23,11 +23,11 @@
       "@value": "Další popisné informace, které nelze zařadit do existující kategorie."
     }
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/descriptionType",
+  "inScheme": "https://w3id.org/tib/datacite/vocab/descriptionType",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/descriptionType",
   "scopeNote": "Use for any other description type.",
-  "modified": "2026-09-18",
+  "modified": "2026-10-15",
   "changeNote": [
-    "Added/updated Czech translation for prefLabel and/or definition (2026-09-18)"
+    "Added/updated Czech translation for prefLabel and/or definition (2026-10-15)"
   ]
 }

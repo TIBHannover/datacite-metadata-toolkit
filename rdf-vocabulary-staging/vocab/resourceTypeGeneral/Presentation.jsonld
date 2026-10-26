@@ -1,6 +1,6 @@
 {
   "@context": "./context.jsonld",
-  "id": "https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral/Presentation",
+  "id": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral/Presentation",
   "type": "Concept",
   "prefLabel": "Presentation",
   "notation": "Presentation",
@@ -9,6 +9,6 @@
   "example": [
     "<resourceType resourceTypeGeneral=\"Presentation\">Conference presentation slides</resourceType>"
   ],
-  "inScheme": "https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral",
-  "topConceptOf": "https://schema.stage.datacite.org/linked-data/vocab/resourceTypeGeneral"
+  "inScheme": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral",
+  "topConceptOf": "https://w3id.org/tib/datacite/vocab/resourceTypeGeneral"
 }
